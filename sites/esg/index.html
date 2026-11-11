@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown ESG | Tư vấn Chiến lược ESG, Báo cáo Phát triển Bền vững & Net Zero</title>
+<meta name="description" content="Crown ESG - Tư vấn chiến lược ESG, lập và xác nhận độc lập báo cáo phát triển bền vững (GRI, TCFD, ISSB), kiểm kê khí nhà kính, tuân thủ CBAM, tư vấn nhà máy xanh. Một đối tác cho trọn vẹn hành trình ESG của doanh nghiệp xuất khẩu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}
+  /* Ảnh minh họa cho sáu dịch vụ; giữ bố cục và nội dung gốc. */
+  .svc-card{display:flex;flex-direction:column;}
+  .esg-service-photo{aspect-ratio:16/10;overflow:hidden;border-radius:12px;margin-bottom:22px;background:var(--gold-100);}
+  .esg-service-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+  .svc-card:hover .esg-service-photo img{transform:scale(1.035);}
+  .svc-card > .svc-link{margin-top:auto;padding-top:8px;}
+  @media(prefers-reduced-motion:reduce){.esg-service-photo img{transition:none;}}
+
+  /* Cân chiều cao sáu dịch vụ; không cắt hoặc ẩn nội dung. */
+  #dichvu .svc-grid{grid-auto-rows:1fr;}
+  #dichvu .esg-service-photo{flex-shrink:0;}
+  #dichvu .svc-card > h3{line-height:1.4;}
+  #dichvu .svc-card > .desc{line-height:1.65;}
+  #dichvu .svc-card > .benefit{line-height:1.6;}
+  #dichvu .svc-card > .svc-link{margin-top:auto;}
+  @media(max-width:640px){#dichvu .svc-grid{grid-auto-rows:auto;}}
+</style></noscript>
+<style>
+  :root{
+    --navy-900:#0B0B0B;
+    --navy-800:#163823;
+    --navy-700:#1E4E30;
+    --navy-600:#276139;
+    --gold-600:#1F6B3F;
+    --gold-500:#2F8C55;
+    --gold-400:#6FCB93;
+    --gold-100:#E3F1E8;
+    --cream:#FAFAF8;
+    --ink:#111111;
+    --muted:#5B6660;
+    --white:#FFFFFF;
+    --line:#E3E3DE;
+    --orange:#F2871F;
+    --radius:14px;
+    --shadow:0 20px 50px -20px rgba(10,20,14,0.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy-900);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--gold-600);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold-500);display:inline-block;}
+  .section-head{max-width:680px;margin-bottom:52px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin-bottom:16px;}
+  .section-head p{color:var(--muted);font-size:17px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;transition:all .25s ease;white-space:nowrap;
+  }
+  .btn-gold{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn-gold:hover{background:var(--gold-500);border-color:var(--gold-500);color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(47,140,85,0.5);}
+  .btn-outline-light{border-color:rgba(255,255,255,0.4);color:#fff;}
+  .btn-outline-light:hover{background:rgba(255,255,255,0.12);border-color:#fff;}
+  .btn-outline-navy{border-color:var(--navy-700);color:var(--navy-800);}
+  .btn-outline-navy:hover{background:var(--navy-900);color:#fff;}
+  .btn-navy{background:var(--navy-900);color:#fff;}
+  .btn-navy:hover{background:var(--navy-700);transform:translateY(-2px);}
+  .btn-sm{padding:10px 20px;font-size:13px;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(8,8,8,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    transition:background .3s ease;
+  }
+  .header-inner{
+    max-width:1240px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;color:#fff;}
+  .brand-mark{position:relative;display:inline-flex;}
+  .brand-mark .crown-icon{
+    position:absolute;top:-12px;left:26px;font-size:13px;color:var(--gold-500);
+  }
+  .brand-mark .word{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.3px;
+    color:#fff;line-height:1;
+  }
+  .logo .sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-top:4px;}
+
+  nav.main-nav{display:flex;align-items:center;gap:6px;}
+  nav.main-nav > ul{display:flex;align-items:center;gap:4px;}
+  nav.main-nav > ul > li{position:relative;}
+  nav.main-nav > ul > li > a{
+    display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.88);white-space:nowrap;
+    font-size:14.5px;font-weight:600;padding:10px 12px;border-radius:8px;transition:.2s;
+  }
+  nav.main-nav > ul > li > a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .switcher-wrap{position:relative;}
+  .switcher-btn{
+    display:flex;align-items:center;gap:8px;color:#fff;font-size:13.5px;font-weight:600;
+    border:1px solid rgba(255,255,255,0.22);padding:9px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+  }
+  .switcher-btn:hover{border-color:var(--gold-400);}
+  .switcher-menu{
+    position:absolute;top:100%;right:0;margin-top:10px;width:220px;background:#fff;border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s ease;
+  }
+  .switcher-wrap:hover .switcher-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .switcher-menu a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy-900);}
+  .switcher-menu a:hover{background:var(--cream);}
+  .burger{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;padding:190px 0 110px;color:#fff;
+    background:
+      linear-gradient(90deg, rgba(8,12,10,0.68) 0%, rgba(8,12,10,0.48) 40%, rgba(8,12,10,0.12) 72%, rgba(8,12,10,0.06) 100%),
+      url('https://images.pexels.com/photos/443414/pexels-photo-443414.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+  .hero h1{color:#fff;font-size:clamp(32px,4.2vw,52px);line-height:1.2;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--gold-400);}
+  .hero p.lead{font-size:17.5px;color:rgba(255,255,255,0.78);max-width:540px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-actions .btn i{font-size:12px;}
+  .hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--gold-500);padding-left:14px;}
+  .hero-stats strong{display:block;font-family:'Playfair Display',serif;font-size:26px;color:#fff;}
+  .hero-stats span{font-size:12.5px;color:rgba(255,255,255,0.6);}
+
+  .hero-card{
+    position:relative;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+    border-radius:20px;padding:30px;backdrop-filter:blur(6px);
+  }
+  .hero-card h3{color:#fff;font-size:18px;margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:700;}
+  .hero-card ul li{display:flex;gap:12px;align-items:flex-start;padding:9.5px 0;border-bottom:1px dashed rgba(255,255,255,0.14);font-size:13.3px;color:rgba(255,255,255,0.85);}
+  .hero-card ul li:last-child{border-bottom:none;}
+  .hero-card ul li i{color:var(--gold-400);margin-top:3px;}
+  .float-chip{
+    position:absolute;width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 16px 28px -10px rgba(0,0,0,0.45);z-index:3;
+  }
+  .float-chip.fc-1{top:-22px;left:-22px;background:var(--gold-500);color:var(--navy-900);}
+  .float-chip.fc-2{bottom:-18px;right:26px;background:var(--navy-900);color:var(--gold-400);border:1px solid rgba(111,203,147,0.4);}
+
+  /* ===== ILLUSTRATION PANELS ===== */
+  .illus{
+    position:relative;height:168px;border-radius:14px;overflow:hidden;margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,#EEF7F1,#F9FBFA);
+  }
+  .illus::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(47,140,85,0.16);top:-55px;right:-45px;}
+  .illus::after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(11,11,11,0.05);bottom:-40px;left:-25px;}
+  .illus .illus-chip{
+    position:absolute;z-index:2;width:42px;height:42px;border-radius:11px;background:var(--navy-900);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:16px;bottom:14px;right:14px;
+    box-shadow:0 10px 20px -8px rgba(0,0,0,0.3);
+  }
+  .illus.illus-photo{background-size:cover;background-position:center;}
+  .illus.illus-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(165deg, rgba(11,11,11,0.12), rgba(11,11,11,0.6));}
+  .illus.illus-photo::after{display:none;}
+
+  /* ===== PAIN POINTS (Nỗi lo chung) ===== */
+  .pain{padding:100px 0 40px;background:var(--white);}
+  .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .pain-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
+    transition:.25s ease;position:relative;overflow:hidden;
+  }
+  .pain-card:hover{box-shadow:var(--shadow);transform:translateY(-6px);border-color:transparent;}
+  .pain-card h3{font-size:17.5px;margin-bottom:8px;line-height:1.3;}
+  .pain-card p{color:var(--muted);font-size:13.5px;}
+
+  /* ===== URGENCY / REALITY CHECK (bối cảnh thực tế) ===== */
+  .urgency{background:var(--navy-900);color:#fff;padding:90px 0 70px;position:relative;overflow:hidden;}
+  .urgency .section-head h2{color:#fff;}
+  .urgency .section-head p{color:rgba(255,255,255,0.65);}
+  .urgency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .urgency-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:26px 24px;transition:.25s ease;}
+  .urgency-card:hover{border-color:rgba(242,135,31,0.5);transform:translateY(-4px);background:rgba(255,255,255,0.06);}
+  .urgency-card .ic{width:44px;height:44px;border-radius:12px;background:rgba(242,135,31,0.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;}
+  .urgency-card h4{color:#fff;font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.4;margin-bottom:8px;}
+  .urgency-card p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.55;}
+
+  /* ===== CTA BANNER (mid-page) ===== */
+  .cta-banner-mid{
+    position:relative;overflow:hidden;padding:66px 0;color:#fff;text-align:center;
+    background:
+      radial-gradient(900px 500px at 15% 120%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(120deg,var(--navy-900),var(--navy-700));
+  }
+  .cta-banner-mid .container{max-width:720px;}
+  .cta-banner-mid .eyebrow{color:var(--gold-400);justify-content:center;}
+  .cta-banner-mid h2{color:#fff;font-size:clamp(24px,3vw,32px);margin-bottom:14px;}
+  .cta-banner-mid p{color:rgba(255,255,255,0.75);font-size:15.5px;margin-bottom:30px;}
+  .cta-actions-mid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .hotline-badge{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--gold-400);}
+  .hotline-badge i{font-size:20px;}
+
+  /* ===== SERVICES GRID (6 dịch vụ) ===== */
+  .services{padding:96px 0;background:var(--cream);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .svc-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;
+    display:flex;flex-direction:column;transition:.25s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .svc-ic{
+    width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy-800),var(--navy-900));color:var(--gold-400);font-size:18px;
+  }
+  .svc-tag{font-size:10.5px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:var(--gold-600);background:var(--gold-100);padding:5px 9px;border-radius:999px;}
+  .svc-card h3{font-size:16.5px;margin-bottom:9px;line-height:1.32;}
+  .svc-card .desc{color:var(--muted);font-size:13.2px;margin-bottom:13px;}
+  .svc-card .benefit{
+    font-size:12.5px;color:var(--navy-800);background:var(--gold-100);border-radius:10px;padding:10px 12px;
+    margin-bottom:16px;flex:1;
+  }
+  .svc-card .benefit strong{display:block;font-size:10.5px;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-600);margin-bottom:4px;}
+  .svc-card .svc-link{
+    font-size:13px;font-weight:700;color:var(--navy-900);display:inline-flex;align-items:center;gap:8px;
+    padding-top:13px;border-top:1px solid var(--line);
+  }
+  .svc-card .svc-link i{font-size:11px;transition:.2s;}
+  .svc-card:hover .svc-link i{transform:translateX(4px);}
+
+  /* ===== WHY US (Vì sao chọn Crown ESG) ===== */
+  .why{position:relative;overflow:hidden;padding:100px 0;background:var(--navy-900);color:#fff;}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:rgba(255,255,255,0.7);}
+  .why-list{display:flex;flex-direction:column;gap:22px;}
+  .why-list li{display:flex;gap:16px;}
+  .why-list .ic{
+    width:44px;height:44px;flex:none;border-radius:12px;background:rgba(47,140,85,0.14);
+    color:var(--gold-400);display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .why-list h4{color:#fff;font-family:'Inter',sans-serif;font-size:16px;margin-bottom:4px;}
+  .why-list p{color:rgba(255,255,255,0.65);font-size:14px;}
+  .why-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat-box{border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:26px;text-align:center;}
+  .stat-box strong{display:block;font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-400);margin-bottom:6px;}
+  .stat-box span{font-size:12.5px;color:rgba(255,255,255,0.65);}
+  .watermark-icon{
+    position:absolute;font-size:220px;color:rgba(111,203,147,0.07);pointer-events:none;z-index:0;
+    top:50%;right:-30px;transform:translateY(-50%);
+  }
+
+  /* ===== CONSULTATION FORM (Đặt lịch tư vấn) ===== */
+  .contact{padding:100px 0;background:linear-gradient(160deg,var(--navy-800),var(--navy-900));color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .contact h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:16px;}
+  .contact p{color:rgba(255,255,255,0.72);font-size:16px;margin-bottom:30px;}
+  .contact-info{display:flex;flex-direction:column;gap:18px;}
+  .contact-info li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.85);}
+  .contact-info li .ic{flex:none;}
+  .contact-info .ic{width:40px;height:40px;border-radius:10px;background:rgba(47,140,85,0.16);color:var(--gold-400);display:flex;align-items:center;justify-content:center;}
+  .contact-form{background:#fff;border-radius:18px;padding:34px;color:var(--ink);}
+  .contact-form h3{font-size:19px;margin-bottom:18px;color:var(--navy-900);}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .contact-form input,.contact-form select,.contact-form textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:var(--cream);
+  }
+  .contact-form textarea{grid-column:1/-1;min-height:80px;resize:vertical;margin-bottom:14px;}
+  .contact-form button{width:100%;}
+
+  /* ===== PROCESS (Quy trình hợp tác) ===== */
+  .process{padding:100px 0;background:var(--white);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  .step{position:relative;padding:30px 22px;border-radius:var(--radius);background:var(--cream);border:1px solid var(--line);}
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-500);font-weight:700;display:block;margin-bottom:14px;
+  }
+  .step h4{font-size:16.5px;margin-bottom:8px;color:var(--navy-900);}
+  .step p{font-size:13.5px;color:var(--muted);}
+
+  /* ===== TEAM ===== */
+  .team{padding:96px 0;background:var(--cream);}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .team-card{
+    text-align:center;border:1px solid var(--line);border-radius:var(--radius);padding:32px 22px;transition:.25s ease;background:#fff;
+  }
+  .team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .team-card h4{font-size:17px;margin-bottom:4px;}
+  .team-card .role{display:block;font-size:12.5px;font-weight:700;color:var(--gold-600);margin-bottom:12px;}
+  .team-card p{font-size:13.5px;color:var(--muted);}
+  .team-photo{
+    position:relative;height:190px;border-radius:14px;overflow:hidden;margin-bottom:20px;
+    background:linear-gradient(160deg,var(--navy-900),var(--navy-800));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .team-photo::before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(111,203,147,0.18);top:-55px;right:-55px;}
+  .team-photo::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.05);bottom:-40px;left:-30px;}
+  .team-photo i{position:relative;z-index:2;font-size:60px;color:var(--gold-400);}
+  .team-photo .initials{
+    position:absolute;z-index:2;bottom:12px;left:16px;font-family:'Playfair Display',serif;
+    font-size:13px;letter-spacing:3px;color:rgba(255,255,255,0.55);text-transform:uppercase;
+  }
+  .team-photo.has-photo{background-size:cover;background-position:center top;}
+  .team-photo.has-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(195deg, rgba(11,11,11,0.05), rgba(11,11,11,0.7));}
+  .team-photo.has-photo::after{display:none;}
+  .team-photo.has-photo i{display:none;}
+  .team-photo.has-photo .initials{color:rgba(255,255,255,0.9);}
+
+  /* ===== CHECKLIST CTA (cuối trang) ===== */
+  .checklist{padding:100px 0;background:var(--white);}
+  .checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .checklist h2{margin-bottom:16px;}
+  .checklist p{color:var(--muted);font-size:16px;margin-bottom:22px;}
+  .checklist-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
+  .checklist-tags span{font-size:12.5px;font-weight:600;color:var(--gold-600);background:var(--gold-100);padding:7px 14px;border-radius:999px;}
+  .checklist-form{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .checklist-form h3{font-size:18px;margin-bottom:16px;}
+  .checklist-form input,.checklist-form select{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:#fff;margin-bottom:14px;
+  }
+  .checklist-form button{width:100%;}
+  .checklist-altlink{text-align:center;font-size:13px;color:var(--muted);margin-top:16px;}
+  .checklist-altlink a{color:var(--gold-600);font-weight:700;}
+
+  /* ===== PROMO BANNERS (bản tin / hệ sinh thái) ===== */
+  .promo-wrap{background:var(--white);padding:0 0 96px;}
+  .promo-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.08);border:1px solid rgba(47,140,85,0.25);border-radius:16px;
+    padding:30px 34px;max-width:1192px;margin:0 auto 24px;
+  }
+  .promo-banner.ecosystem{background:var(--navy-900);border-color:rgba(255,255,255,0.12);}
+  .promo-banner h4{color:var(--navy-900);font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .promo-banner.ecosystem h4{color:#fff;}
+  .promo-banner p{font-size:13.5px;color:var(--muted);max-width:520px;}
+  .promo-banner.ecosystem p{color:rgba(255,255,255,0.6);}
+  .promo-banner .btn{flex:none;white-space:nowrap;}
+  .promo-form{display:flex;gap:10px;flex:none;flex-wrap:wrap;}
+  .promo-form input{padding:13px 16px;border:1px solid var(--line);border-radius:999px;font-family:'Inter',sans-serif;font-size:14px;min-width:220px;}
+  .promo-social{display:flex;gap:10px;flex:none;}
+  .promo-social a{
+    width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);color:#fff;
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .promo-social a:hover{background:var(--gold-500);border-color:var(--gold-500);color:var(--navy-900);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-900);color:rgba(255,255,255,0.7);padding:70px 0 24px;border-top:1px solid rgba(255,255,255,0.08);}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1.3fr 1fr 1fr 1fr;gap:32px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-addr{margin-bottom:16px;}
+  .footer-addr strong{display:block;color:#fff;font-size:13px;margin-bottom:5px;}
+  .footer-addr p{font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+  .footer-addr a{color:rgba(255,255,255,0.7);font-size:12.5px;}
+  .footer-addr a:hover{color:var(--gold-400);}
+  .footer-logo{display:flex;align-items:center;color:#fff;margin-bottom:16px;padding-top:10px;}
+  .footer-col h5{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;font-family:'Inter',sans-serif;}
+  .footer-col ul li{margin-bottom:11px;font-size:14px;}
+  .footer-col ul li a:hover{color:var(--gold-400);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:12px;}
+  .footer-social{display:flex;gap:10px;}
+  .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .footer-social a:hover{background:var(--gold-500);color:var(--navy-900);border-color:var(--gold-500);}
+  .footer-recruit{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.12);border:1px solid rgba(47,140,85,0.3);border-radius:16px;
+    padding:28px 32px;margin-top:44px;
+  }
+  .footer-recruit h4{color:#fff;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .footer-recruit p{font-size:13.5px;color:rgba(255,255,255,0.6);max-width:520px;}
+  .footer-recruit .btn{flex:none;white-space:nowrap;}
+
+
+  /* ===== FLOATING QUICK CONTACT ===== */
+  .fab-call{
+    position:fixed;top:130px;right:24px;z-index:1100;width:56px;height:56px;border-radius:50%;
+    background:var(--gold-500);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 14px 28px -8px rgba(47,140,85,0.55);transition:.2s;
+  }
+  .fab-call:hover{background:var(--navy-900);transform:scale(1.06);}
+  .fab-call-ring{
+    position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold-500);
+    animation:fabPulse 1.8s ease-out infinite;pointer-events:none;
+  }
+  @keyframes fabPulse{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(1.6);opacity:0;}
+  }
+  .fab-stack{
+    position:fixed;bottom:28px;right:24px;z-index:1100;display:flex;flex-direction:column;gap:14px;align-items:center;
+  }
+  .fab-btn{
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:20px;color:#fff;box-shadow:0 12px 26px -8px rgba(0,0,0,0.35);border:none;cursor:pointer;transition:.2s;
+  }
+  .fab-btn:hover{transform:scale(1.08);}
+  .fab-messenger{background:#0084FF;}
+  .fab-zalo{background:#0068FF;font-family:'Inter',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2px;}
+
+  /* fade in */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  #dichvu,#khacbiet,#tuvan,#quytrinh,#team,#checklist{scroll-margin-top:90px;}
+
+  @media(max-width:1080px){
+    nav.main-nav{display:none;}
+    .burger{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-card{max-width:520px;}
+    .pain-grid,.urgency-grid{grid-template-columns:repeat(2,1fr);}
+    .svc-grid,.team-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid,.contact-grid,.checklist-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .pain-grid,.svc-grid,.process-grid,.team-grid,.urgency-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-recruit,.promo-banner{flex-direction:column;align-items:flex-start;text-align:left;}
+    .footer-recruit .btn,.promo-banner .btn{width:100%;text-align:center;justify-content:center;}
+    .promo-form{width:100%;}
+    .promo-form input{min-width:0;flex:1;}
+    .hero{padding:150px 0 70px;}
+    .contact-form .row{grid-template-columns:1fr;}
+    .hero-stats{gap:22px;}
+    .hero-actions .btn{width:100%;}
+    .fab-call{top:110px;right:16px;width:50px;height:50px;font-size:19px;}
+    .fab-stack{right:16px;bottom:22px;gap:12px;}
+    .fab-btn{width:46px;height:46px;font-size:18px;}
+    .cta-actions-mid{flex-direction:column;}
+  }
+
+  /* Ảnh minh họa cho sáu dịch vụ; giữ bố cục và nội dung gốc. */
+  .svc-card{display:flex;flex-direction:column;}
+  .esg-service-photo{aspect-ratio:16/10;overflow:hidden;border-radius:12px;margin-bottom:22px;background:var(--gold-100);}
+  .esg-service-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+  .svc-card:hover .esg-service-photo img{transform:scale(1.035);}
+  .svc-card > .svc-link{margin-top:auto;padding-top:8px;}
+  @media(prefers-reduced-motion:reduce){.esg-service-photo img{transition:none;}}
+
+  /* Cân chiều cao sáu dịch vụ; không cắt hoặc ẩn nội dung. */
+  #dichvu .svc-grid{grid-auto-rows:1fr;}
+  #dichvu .esg-service-photo{flex-shrink:0;}
+  #dichvu .svc-card > h3{line-height:1.4;}
+  #dichvu .svc-card > .desc{line-height:1.65;}
+  #dichvu .svc-card > .benefit{line-height:1.6;}
+  #dichvu .svc-card > .svc-link{margin-top:auto;}
+  @media(max-width:640px){#dichvu .svc-grid{grid-auto-rows:auto;}}
+
+  /* Giữ màu ảnh tự nhiên; tăng tương phản cục bộ ở vùng nội dung. */
+  .hero::after{background-image:none;}
+  .hero h1{text-shadow:0 2px 12px rgba(0,0,0,.3);}
+  .hero p.lead{color:rgba(255,255,255,.95);text-shadow:0 1px 6px rgba(0,0,0,.45);}
+  .hero-stats span{color:rgba(255,255,255,.88);}
+  .hero-card{background:rgba(10,18,13,.62);backdrop-filter:blur(3px);}
+  @media(max-width:1080px){
+    .hero{background-image:linear-gradient(90deg,rgba(8,12,10,.64),rgba(8,12,10,.25)),url('https://images.pexels.com/photos/443414/pexels-photo-443414.jpeg?auto=compress&cs=tinysrgb&w=1600');}
+  }
+
+  /* Thông tin từng văn phòng: biểu tượng cố định, nội dung căn cùng một trục. */
+  footer .footer-addr{margin-bottom:24px;}
+  footer .footer-addr strong{font-size:14px;line-height:1.45;margin-bottom:12px;}
+  footer .footer-contact-row{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:10px;margin:0 0 9px;}
+  footer .footer-contact-row > i{color:var(--gold-400);font-size:15px;line-height:1.65;text-align:center;}
+  footer .footer-contact-row > span,footer .footer-contact-row > a{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.75);overflow-wrap:anywhere;}
+  footer .footer-contact-row > a:hover{color:var(--gold-400);}
+  footer .footer-contact-row > a:focus-visible{outline:2px solid var(--gold-400);outline-offset:3px;}
+</style>
+<style id="crown-shared-navigation">
+/* Shared language and Crown ecosystem controls. */
+.lang-switcher-wrap,.switcher-wrap{position:relative;flex-shrink:0;}
+.lang-switcher-btn,.switcher-btn{font-family:inherit;display:flex;align-items:center;gap:7px;color:#fff;font-size:13px;font-weight:600;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);cursor:pointer;}
+.lang-switcher-btn .fa-chevron-down,.switcher-btn .fa-chevron-down{font-size:10px;}
+.lang-switcher-menu,.switcher-menu{position:absolute;top:calc(100% + 8px);right:0;width:230px;max-width:calc(100vw - 24px);max-height:70vh;overflow:auto;background:#fff;border-radius:12px;box-shadow:0 14px 36px #0003;padding:8px;border:1px solid #e4e8e5;z-index:1200;opacity:1;visibility:visible;transform:none;}
+.lang-switcher-menu{width:180px;}
+.lang-switcher-menu[hidden],.switcher-menu[hidden]{display:none!important;}
+.lang-option{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:8px;font-weight:600;font-size:13.5px;line-height:1.5;color:#12392b;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;}
+.lang-option:hover,.switcher-menu a:hover{background:#f1f6f2;}
+.lang-option.active,.switcher-menu a[aria-current="page"]{background:#e7f1e8;color:#205b38;}
+.switcher-menu a[aria-current="page"]::after{content:'✓';margin-left:8px;}
+.lang-switcher-btn:focus-visible,.switcher-btn:focus-visible,.lang-option:focus-visible,.switcher-menu a:focus-visible{outline:2px solid #79bd8e;outline-offset:3px;}
+.header-inner{gap:16px;}.header-actions{gap:8px;flex-shrink:0;}
+.svc-card,.service-card,.pain-card,.urgency-card,.process-card,.team-card{min-width:0;overflow-wrap:break-word;}
+html:lang(zh),html:lang(ja){line-break:strict;}html:lang(ko){word-break:keep-all;overflow-wrap:break-word;}
+
+@media(max-width:640px){.header-inner{flex-wrap:wrap;gap:8px;}.header-actions{margin-left:auto;}.lang-switcher-btn,.switcher-btn{font-size:12px;padding:8px 10px;}.switcher-btn-label{max-width:135px;white-space:normal;} .hero{padding-top:190px;}}
+</style>
+<style id="crown-desktop-header">
+/* Desktop navigation stays visible alongside language and ecosystem controls. */
+@media(min-width:1081px){
+  .header-inner{max-width:1440px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;}
+  nav.main-nav{display:flex;min-width:0;justify-content:center;}
+  nav.main-nav > ul{flex-wrap:wrap;justify-content:center;column-gap:0;row-gap:0;}
+  nav.main-nav > ul > li > a{padding:9px 10px;}
+  .header-inner > .logo{max-width:220px;}
+  .header-actions .burger{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="https://crown.com.vn" class="logo">
+      <span class="brand-mark">
+        <i class="fa-solid fa-crown crown-icon"></i>
+        <span class="word">Crown</span>
+      </span>
+      <span class="sub">Crown ESG · Phát triển Bền vững</span>
+    </a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="https://crown.com.vn">Trang chủ Crown</a></li>
+        <li><a href="#dichvu">Dịch vụ ESG</a></li>
+        <li><a href="#khacbiet">Vì sao Crown ESG</a></li>
+        <li><a href="#quytrinh">Quy trình</a></li>
+        <li><a href="#team">Đội ngũ</a></li>
+        <li><a href="#tuvan">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<div class="lang-switcher-wrap"><button type="button" class="lang-switcher-btn" id="langSwitcherBtn" aria-label="Chọn ngôn ngữ" aria-expanded="false" aria-controls="crownLanguageMenu"><span class="flag" aria-hidden="true">🇻🇳</span> <span id="langCurrentLabel">VI</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="lang-switcher-menu" id="crownLanguageMenu" hidden><button type="button" class="lang-option" data-lang="vi" lang="vi" aria-pressed="true"><span class="flag" aria-hidden="true">🇻🇳</span> Tiếng Việt</button><button type="button" class="lang-option" data-lang="en" lang="en" aria-pressed="false"><span class="flag" aria-hidden="true">🇬🇧</span> English</button><button type="button" class="lang-option" data-lang="zh" lang="zh" aria-pressed="false"><span class="flag" aria-hidden="true">🇨🇳</span> 中文</button><button type="button" class="lang-option" data-lang="ja" lang="ja" aria-pressed="false"><span class="flag" aria-hidden="true">🇯🇵</span> 日本語</button><button type="button" class="lang-option" data-lang="ko" lang="ko" aria-pressed="false"><span class="flag" aria-hidden="true">🇰🇷</span> 한국어</button><button type="button" class="lang-option" data-lang="th" lang="th" aria-pressed="false"><span class="flag" aria-hidden="true">🇹🇭</span> ภาษาไทย</button></div></div><div class="switcher-wrap"><button type="button" class="switcher-btn" id="crownEcosystemBtn" aria-expanded="false" aria-controls="crownEcosystemMenu"><i class="fa-solid fa-grip" aria-hidden="true"></i><span class="switcher-btn-label">Hệ sinh thái Crown</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="switcher-menu" id="crownEcosystemMenu" hidden><a href="https://crown.com.vn">Crown Audit & Advisory</a><a href="https://audit.crown.com.vn">Crown Audit</a><a href="https://cons.crown.com.vn">Crown Cons</a><a href="https://acc.crown.com.vn">Crown Accounting</a><a href="https://tax.crown.com.vn">Crown Tax</a><a href="https://fas.crown.com.vn">Crown FAS</a><a href="https://esg.crown.com.vn" aria-current="page">Crown ESG</a></div></div>
+      <i class="fa-solid fa-bars burger" id="burgerBtn"></i>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-400);">Crown ESG — Tư vấn Phát triển bền vững chuyên sâu</div>
+      <h1>Đáp ứng chuẩn ESG toàn cầu, <em>giữ vững</em> đơn hàng và dòng vốn cho doanh nghiệp bạn</h1>
+      <p class="lead">Từ chiến lược ESG, báo cáo bền vững đến kiểm kê khí nhà kính và CBAM — Crown ESG giúp doanh nghiệp đáp ứng yêu cầu của thị trường quốc tế, ngân hàng và nhà đầu tư.</p>
+      <div class="hero-actions">
+        <a href="#dichvu" class="btn btn-outline-light">Xem 6 dịch vụ ESG <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#khacbiet" class="btn btn-outline-light">Vì sao chọn Crown ESG <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6</strong><span>Dịch vụ ESG chuyên biệt</span></div>
+        <div><strong>Big4</strong><span>Nền tảng chuyên môn của đội ngũ Partner</span></div>
+        <div><strong>360°</strong><span>Góc nhìn ESG toàn diện, đa chuyên môn</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <span class="float-chip fc-1"><i class="fa-solid fa-leaf"></i></span>
+      <span class="float-chip fc-2"><i class="fa-solid fa-shield-halved"></i></span>
+      <h3>6 dịch vụ trọng tâm của Crown ESG</h3>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> <span>Tư vấn chiến lược ESG &amp; lộ trình phát triển bền vững</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Báo cáo phát triển bền vững chuẩn quốc tế (GRI, TCFD, ISSB)</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Đánh giá/xác nhận độc lập báo cáo ESG</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm kê khí nhà kính &amp; lộ trình Net Zero</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Tư vấn tuân thủ CBAM &amp; chuỗi cung ứng</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Tư vấn triển khai nhà máy xanh (LEED, EDGE, LOTUS)</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="noilo">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Những áp lực ESG đang hiện hữu</div>
+      <h2>ESG không còn là xu hướng — mà đang quyết định đơn hàng và dòng vốn</h2>
+      <p>Bốn áp lực ESG ảnh hưởng trực tiếp đến năng lực cạnh tranh và khả năng tiếp cận nguồn lực của doanh nghiệp.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/6595774/pexels-photo-6595774.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-ship"></i></span></div>
+        <h3>Áp lực đáp ứng yêu cầu ESG từ thị trường xuất khẩu</h3>
+        <p>Các nhà mua hàng lớn và thị trường xuất khẩu như EU, Mỹ ngày càng yêu cầu bằng chứng tuân thủ ESG, CBAM và trách nhiệm chuỗi cung ứng — không đáp ứng đồng nghĩa nguy cơ mất đơn hàng.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/18935245/pexels-photo-18935245.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-chart-line"></i></span></div>
+        <h3>Khó huy động vốn từ các quỹ đầu tư chuyên nghiệp</h3>
+        <p>Thiếu báo cáo ESG bài bản khiến doanh nghiệp khó thuyết phục quỹ đầu tư và đối tác chiến lược quốc tế trong quá trình thẩm định trước khi rót vốn.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/8441784/pexels-photo-8441784.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-building-columns"></i></span></div>
+        <h3>Chưa kết nối được nguồn vốn vay ưu đãi lãi suất thấp</h3>
+        <p>Ngân hàng ngày càng ưu tiên tín dụng xanh cho doanh nghiệp có hồ sơ ESG rõ ràng — thiếu dữ liệu và báo cáo phù hợp khiến doanh nghiệp bỏ lỡ cơ hội vay vốn lãi suất ưu đãi.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/35105456/pexels-photo-35105456.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-leaf"></i></span></div>
+        <h3>Áp lực từ mục tiêu Net Zero của Chính phủ Việt Nam</h3>
+        <p>Cam kết Net Zero đang được cụ thể hóa thành các yêu cầu về kiểm kê khí nhà kính — doanh nghiệp cần chuẩn bị lộ trình tuân thủ ngay từ bây giờ để không bị động.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="urgency" id="thuctrang">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="color:var(--orange);">Bối cảnh thực tế hiện nay</div>
+      <h2>ESG và những yêu cầu doanh nghiệp cần đáp ứng</h2>
+      <p>Yêu cầu ESG đang mở rộng từ tập đoàn lớn sang chuỗi cung ứng và doanh nghiệp vừa và nhỏ.</p>
+    </div>
+    <div class="urgency-grid">
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-earth-asia"></i></span>
+        <h4>Net Zero đang được cụ thể hóa thành quy định</h4>
+        <p>Lộ trình Net Zero đang được cụ thể hóa thành yêu cầu kiểm kê khí nhà kính đối với doanh nghiệp thuộc danh mục quản lý, tác động trực tiếp đến hoạt động tuân thủ.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-earth-europe"></i></span>
+        <h4>CBAM của EU bước vào giai đoạn áp dụng đầy đủ</h4>
+        <p>Cơ chế điều chỉnh biên giới carbon (CBAM) ảnh hưởng trực tiếp đến doanh nghiệp xuất khẩu sang EU ở nhiều ngành hàng — thiếu dữ liệu phát thải có thể khiến hàng hóa mất lợi thế cạnh tranh về chi phí.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-truck-field"></i></span>
+        <h4>Nhà mua hàng lớn đưa ESG vào tiêu chí chọn nhà cung cấp</h4>
+        <p>Nhiều tập đoàn đa quốc gia yêu cầu báo cáo ESG minh bạch khi lựa chọn và duy trì hợp tác với nhà cung cấp.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-sack-dollar"></i></span>
+        <h4>Tổ chức tài chính quốc tế ưu tiên vốn cho dự án đạt chuẩn ESG</h4>
+        <p>Ngân hàng và quỹ đầu tư quốc tế ngày càng gắn điều kiện tín dụng xanh, lãi suất ưu đãi với hồ sơ ESG minh bạch và có thể kiểm chứng của doanh nghiệp.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-file-signature"></i></span>
+        <h4>Doanh nghiệp niêm yết chịu áp lực công bố thông tin phát triển bền vững</h4>
+        <p>Doanh nghiệp niêm yết cần công bố thông tin phát triển bền vững minh bạch trong báo cáo thường niên gửi cổ đông, nhà đầu tư.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-user-graduate"></i></span>
+        <h4>ESG là nghiệp vụ đòi hỏi chuyên môn kỹ thuật và pháp lý chuyên sâu</h4>
+        <p>Đo lường phát thải và xác nhận độc lập đòi hỏi chuyên môn phù hợp để bảo đảm báo cáo đáp ứng yêu cầu thị trường.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner-mid">
+  <div class="container">
+    <div class="eyebrow">Đừng để chậm chân trong cuộc đua ESG</div>
+    <h2>Trao đổi ngay với chuyên gia ESG Crown — hoàn toàn miễn phí</h2>
+    <p>Crown ESG tư vấn sơ bộ miễn phí trong 24 giờ làm việc, giúp bạn chuẩn bị hồ sơ cho khách hàng, ngân hàng và nhà đầu tư.</p>
+    <div class="cta-actions-mid">
+      <a href="tel:0904501512" class="hotline-badge"><i class="fa-solid fa-phone"></i> Gọi ngay: 090 450 1512</a>
+      <a href="#tuvan" class="btn btn-gold">Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="dichvu">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">6 dịch vụ trọng tâm</div>
+      <h2>Giải pháp Crown ESG cho từng vấn đề của doanh nghiệp</h2>
+      <p>Sáu dịch vụ giải quyết từng nhóm yêu cầu ESG — giúp bạn chọn đúng giải pháp cho doanh nghiệp.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <!-- Ảnh minh họa dịch vụ 1: thay đường dẫn src bằng ảnh chính thức khi có. -->
+        <div class="esg-service-photo">
+          <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Thảo luận và hoạch định chiến lược ESG" loading="lazy" decoding="async" width="900" height="560" style="object-position:center;">
+        </div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-compass-drafting"></i></span><span class="svc-tag">Chiến lược</span></div>
+        <h3>Tư vấn chiến lược ESG<br>&amp; lộ trình phát triển bền vững</h3>
+        <p class="desc">Đánh giá hiện trạng, xác định vấn đề trọng yếu và xây dựng lộ trình ESG phù hợp ngành nghề, quy mô doanh nghiệp.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Có lộ trình rõ ràng, ưu tiên đúng vấn đề, tránh đầu tư dàn trải.</div>
+        <a href="#tuvan" class="svc-link" data-service="Tư vấn chiến lược ESG & lộ trình phát triển bền vững">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <!-- Ảnh minh họa dịch vụ 2: thay đường dẫn src bằng ảnh chính thức khi có. -->
+        <div class="esg-service-photo">
+          <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Dữ liệu và báo cáo phát triển bền vững" loading="lazy" decoding="async" width="900" height="560" style="object-position:center;">
+        </div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-file-lines"></i></span><span class="svc-tag">Báo cáo ESG</span></div>
+        <h3>Lập báo cáo phát triển bền vững<br>theo chuẩn mực quốc tế</h3>
+        <p class="desc">Xây dựng báo cáo theo GRI, TCFD, ISSB, phục vụ công bố thông tin và đáp ứng yêu cầu từ các đối tác.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Minh bạch thông tin, đáp ứng yêu cầu của đối tác và nhà đầu tư.</div>
+        <a href="#tuvan" class="svc-link" data-service="Lập báo cáo phát triển bền vững theo chuẩn quốc tế (GRI, TCFD, ISSB)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <!-- Ảnh minh họa dịch vụ 3: thay đường dẫn src bằng ảnh chính thức khi có. -->
+        <div class="esg-service-photo">
+          <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Rà soát hồ sơ và xác nhận độc lập" loading="lazy" decoding="async" width="900" height="560" style="object-position:center;">
+        </div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-stamp"></i></span><span class="svc-tag">Assurance</span></div>
+        <h3>Đánh giá &amp; xác nhận độc lập<br>báo cáo phát triển bền vững</h3>
+        <p class="desc">Xác nhận độc lập báo cáo ESG (ESG Assurance), tăng độ tin cậy và minh bạch của thông tin trước bên thứ ba.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Tăng độ tin cậy, củng cố niềm tin của đối tác và nhà đầu tư.</div>
+        <a href="#tuvan" class="svc-link" data-service="Đánh giá/xác nhận độc lập báo cáo ESG (ESG Assurance)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <!-- Ảnh minh họa dịch vụ 4: thay đường dẫn src bằng ảnh chính thức khi có. -->
+        <div class="esg-service-photo">
+          <img src="https://images.pexels.com/photos/35105434/pexels-photo-35105434.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Năng lượng mặt trời và giảm phát thải" loading="lazy" decoding="async" width="900" height="560" style="object-position:center;">
+        </div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-cloud"></i></span><span class="svc-tag">Net Zero</span></div>
+        <h3>Kiểm kê khí nhà kính<br>&amp; lộ trình giảm phát thải</h3>
+        <p class="desc">Đo lường, kiểm kê khí nhà kính theo ISO 14064 và xây dựng lộ trình giảm phát thải hướng tới mục tiêu Net Zero.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Chủ động tuân thủ, sẵn sàng dữ liệu khi đối tác hoặc cơ quan quản lý yêu cầu.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm kê khí nhà kính & tư vấn lộ trình giảm phát thải (ISO 14064, Net Zero)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <!-- Ảnh minh họa dịch vụ 5: thay đường dẫn src bằng ảnh chính thức khi có. -->
+        <div class="esg-service-photo">
+          <img src="https://images.pexels.com/photos/6595774/pexels-photo-6595774.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Vận tải biển và chuỗi cung ứng quốc tế" loading="lazy" decoding="async" width="900" height="560" style="object-position:center;">
+        </div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-earth-europe"></i></span><span class="svc-tag">CBAM</span></div>
+        <h3>Tư vấn tuân thủ CBAM<br>&amp; yêu cầu ESG chuỗi cung ứng</h3>
+        <p class="desc">Hỗ trợ tính toán phát thải, chuẩn bị hồ sơ CBAM và đáp ứng yêu cầu ESG từ các chuỗi cung ứng quốc tế.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Bảo vệ đơn hàng, chủ động trước yêu cầu ESG của thị trường xuất khẩu.</div>
+        <a href="#tuvan" class="svc-link" data-service="Tư vấn tuân thủ CBAM & yêu cầu ESG từ chuỗi cung ứng">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <!-- Ảnh minh họa dịch vụ 6: thay đường dẫn src bằng ảnh chính thức khi có. -->
+        <div class="esg-service-photo">
+          <img src="https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Công trình và nhà máy xanh" loading="lazy" decoding="async" width="900" height="560" style="object-position:center;">
+        </div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-industry"></i></span><span class="svc-tag">Nhà máy xanh</span></div>
+        <h3>Tư vấn triển khai nhà máy xanh<br>theo chuẩn công trình bền vững</h3>
+        <p class="desc">Định hướng thiết kế và vận hành nhà máy theo LEED, EDGE, LOTUS, phù hợp mục tiêu công trình xanh của doanh nghiệp.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Nâng cao hình ảnh thương hiệu, tối ưu chi phí năng lượng trong dài hạn.</div>
+        <a href="#tuvan" class="svc-link" data-service="Tư vấn triển khai nhà máy xanh (LEED, EDGE, LOTUS...)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="khacbiet">
+  <i class="fa-solid fa-leaf watermark-icon"></i>
+  <div class="container why-grid">
+    <div>
+      <div class="section-head center">
+        <div class="eyebrow">Sự khác biệt của Crown ESG</div>
+        <h2>Một đối tác — góc nhìn toàn diện cho hành trình ESG</h2>
+        <p>Crown ESG kết hợp tài chính xanh, kiểm tra - đánh giá, kỹ thuật và tuân thủ để giúp doanh nghiệp đáp ứng yêu cầu của thị trường, ngân hàng và nhà đầu tư quốc tế.</p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <span class="ic"><i class="fa-solid fa-layer-group"></i></span>
+          <div><h4>Tư vấn ESG từ nhiều góc nhìn chuyên môn</h4><p>Kết hợp tài chính xanh, kiểm tra - đánh giá và kỹ thuật môi trường để xử lý vấn đề ESG toàn diện.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-route"></i></span>
+          <div><h4>Một đầu mối cho toàn bộ hành trình ESG</h4><p>Một đầu mối từ chiến lược, báo cáo, kiểm kê khí nhà kính đến CBAM và nhà máy xanh.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-globe"></i></span>
+          <div><h4>Am hiểu cả quy định Việt Nam lẫn chuẩn mực quốc tế</h4><p>Kết hợp quy định trong nước với GRI, TCFD, ISSB và CBAM để tư vấn phù hợp doanh nghiệp Việt Nam.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-coins"></i></span>
+          <div><h4>Chi phí hợp lý, không cần thuê tư vấn quốc tế đắt đỏ</h4><p>Dịch vụ theo chuẩn quốc tế, với chi phí phù hợp năng lực tài chính của doanh nghiệp Việt Nam.</p></div>
+        </li>
+      </ul>
+      <div style="margin-top:30px;text-align:center;">
+        <a href="#tuvan" class="btn btn-gold">Tìm giải pháp ESG phù hợp — Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="stat-box reveal"><strong>6</strong><span>Dịch vụ ESG chuyên biệt</span></div>
+      <div class="stat-box reveal"><strong>Big4</strong><span>Nền tảng chuyên môn của đội ngũ Partner</span></div>
+      <div class="stat-box reveal"><strong>360°</strong><span>Góc nhìn ESG toàn diện, đa chuyên môn</span></div>
+      <div class="stat-box reveal"><strong>1:1</strong><span>Đồng hành xuyên suốt theo từng vấn đề</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="tuvan">
+  <div class="container contact-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow" style="color:var(--gold-400);justify-content:center;">Kết nối với Crown ESG</div>
+        <h2>Đặt lịch tư vấn ESG miễn phí</h2>
+        <p>Để lại thông tin để Crown ESG liên hệ tư vấn sơ bộ miễn phí trong 24 giờ làm việc, không ràng buộc.</p>
+      </div>
+      <ul class="contact-info">
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline Hà Nội</strong><a href="tel:0904501512" style="color:rgba(255,255,255,0.85);">090 450 1512</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline TP. Hồ Chí Minh</strong><a href="tel:0862231919" style="color:rgba(255,255,255,0.85);">086 223 1919</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP Hà Nội</strong><a href="mailto:hn@crown.com.vn" style="color:rgba(255,255,255,0.85);">hn@crown.com.vn</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP TP. Hồ Chí Minh</strong><a href="mailto:hcm@crown.com.vn" style="color:rgba(255,255,255,0.85);">hcm@crown.com.vn</a></div></li>
+      </ul>
+    </div>
+    <form class="contact-form" id="tuvanForm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.');">
+      <h3>Đăng ký nhận tư vấn miễn phí</h3>
+      <div class="row">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="text" placeholder="Tên doanh nghiệp">
+      </div>
+      <div class="row">
+        <input type="tel" placeholder="Số điện thoại" required>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <select id="tuvanService" style="margin-bottom:14px;">
+        <option value="">Dịch vụ quan tâm</option>
+        <option>Tư vấn chiến lược ESG & lộ trình phát triển bền vững</option>
+        <option>Lập báo cáo phát triển bền vững theo chuẩn quốc tế (GRI, TCFD, ISSB)</option>
+        <option>Đánh giá/xác nhận độc lập báo cáo ESG (ESG Assurance)</option>
+        <option>Kiểm kê khí nhà kính & tư vấn lộ trình giảm phát thải (ISO 14064, Net Zero)</option>
+        <option>Tư vấn tuân thủ CBAM & yêu cầu ESG từ chuỗi cung ứng</option>
+        <option>Tư vấn triển khai nhà máy xanh (LEED, EDGE, LOTUS...)</option>
+      </select>
+      <textarea placeholder="Mô tả ngắn vấn đề bạn đang gặp phải..."></textarea>
+      <button type="submit" class="btn btn-navy">Gửi yêu cầu tư vấn miễn phí</button>
+    </form>
+  </div>
+</section>
+
+<section class="process" id="quytrinh">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Quy trình hợp tác</div>
+      <h2>Bốn bước Crown ESG đồng hành cùng doanh nghiệp</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal"><h4>Khảo sát &amp; đánh giá hiện trạng</h4><p>Đánh giá mức độ sẵn sàng ESG hiện tại, xác định vấn đề trọng yếu theo ngành và yêu cầu của thị trường xuất khẩu, nhà đầu tư.</p></div>
+      <div class="step reveal"><h4>Xây dựng lộ trình &amp; phạm vi</h4><p>Đề xuất lộ trình ESG phù hợp, minh bạch phạm vi công việc, thời gian và chi phí trước khi triển khai.</p></div>
+      <div class="step reveal"><h4>Triển khai thực hiện</h4><p>Đội ngũ chuyên gia thực hiện báo cáo, kiểm kê phát thải hoặc xác nhận độc lập theo lộ trình đã thống nhất.</p></div>
+      <div class="step reveal"><h4>Đồng hành cập nhật định kỳ</h4><p>Hỗ trợ cập nhật báo cáo, chuẩn mực mới và cảnh báo sớm các yêu cầu ESG mới từ thị trường.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Đội ngũ chuyên gia</div>
+      <h2>Những con người dẫn dắt Crown</h2>
+      <p>Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/17049766/pexels-photo-17049766.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Đức Hưng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.Đ.H</span></div>
+        <h4>Nguyễn Đức Hưng</h4>
+        <span class="role">Tổng Giám đốc</span>
+        <p>Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit &amp; Advisory.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/9208551/pexels-photo-9208551.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Trần Thành Trung"><i class="fa-solid fa-user-tie"></i><span class="initials">T.T.T</span></div>
+        <h4>Trần Thành Trung</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044806/pexels-photo-21044806.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Văn Bình"><i class="fa-solid fa-user-tie"></i><span class="initials">N.V.B</span></div>
+        <h4>Nguyễn Văn Bình</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044845/pexels-photo-21044845.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Thị Ý"><i class="fa-solid fa-user-tie"></i><span class="initials">N.T.Ý</span></div>
+        <h4>Nguyễn Thị Ý</h4>
+        <span class="role">Giám đốc Tư vấn thuế</span>
+        <p>Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/15092609/pexels-photo-15092609.png?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nghiêm Ngọc Hoàng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.H</span></div>
+        <h4>Nghiêm Ngọc Hoàng</h4>
+        <span class="role">Giám đốc kiểm toán mảng XDCB</span>
+        <p>Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/26524785/pexels-photo-26524785.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Ngọc Tùng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.T</span></div>
+        <h4>Nguyễn Ngọc Tùng</h4>
+        <span class="role">Giám đốc mảng Tư vấn Tài chính</span>
+        <p>Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:28px;">* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.</p>
+  </div>
+</section>
+
+<section class="checklist" id="checklist">
+  <div class="container checklist-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow">Tài liệu dành riêng cho bạn</div>
+        <h2>Nhận Bộ tiêu chí tự đánh giá mức độ sẵn sàng ESG miễn phí</h2>
+        <p>Tự đánh giá nhanh mức độ sẵn sàng ESG của doanh nghiệp bạn theo từng ngành — từ xuất khẩu, sản xuất đến bất động sản và tài chính.</p>
+      </div>
+      <div class="checklist-tags" style="justify-content:center;">
+        <span>Sản xuất &amp; Xuất khẩu</span>
+        <span>Bất động sản &amp; Xây dựng</span>
+        <span>Ngân hàng &amp; Tài chính</span>
+        <span>Bán lẻ, Thương mại &amp; Dịch vụ</span>
+      </div>
+    </div>
+    <div class="checklist-form">
+      <h3><i class="fa-solid fa-file-shield" style="color:var(--gold-600);"></i> Nhận Bộ tiêu chí tự đánh giá ESG theo ngành</h3>
+      <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.');">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="email" placeholder="Email nhận tài liệu" required>
+        <select>
+          <option value="">Ngành hoạt động của bạn</option>
+          <option>Sản xuất &amp; Xuất khẩu</option>
+          <option>Bất động sản &amp; Xây dựng</option>
+          <option>Ngân hàng &amp; Tài chính</option>
+          <option>Bán lẻ, Thương mại &amp; Dịch vụ</option>
+          <option>Khác</option>
+        </select>
+        <button type="submit" class="btn btn-gold">Nhận Bộ tiêu chí miễn phí <i class="fa-solid fa-download"></i></button>
+      </form>
+      <p class="checklist-altlink">Muốn trao đổi trực tiếp hơn? <a href="#tuvan">Đặt lịch tư vấn tại đây</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="promo-wrap">
+  <div class="promo-banner reveal">
+    <div>
+      <h4>Cập nhật quy định ESG &amp; CBAM mới nhất mỗi tháng</h4>
+      <p>Đăng ký nhận bản tin ESG hàng tháng từ Crown ESG, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật về ESG và phát triển bền vững.</p>
+    </div>
+    <form class="promo-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.');">
+      <input type="email" placeholder="Email của bạn" required>
+      <button type="submit" class="btn btn-navy">Đăng ký bản tin</button>
+    </form>
+  </div>
+  <div class="promo-banner ecosystem reveal">
+    <div>
+      <h4>Không chỉ có ESG — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực</h4>
+      <p>Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính doanh nghiệp và Xây dựng cơ bản — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit &amp; Advisory.</p>
+    </div>
+    <a href="https://crown.com.vn" class="btn btn-gold">Khám phá Crown Audit &amp; Advisory <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="brand-mark">
+            <i class="fa-solid fa-crown crown-icon"></i>
+            <span class="word">Crown</span>
+          </span>
+        </div>
+        <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Địa chỉ &amp; Liên hệ</h5>
+        <div class="footer-addr">
+          <strong>Trụ sở chính</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Số 7, ngõ 699 Trương Định, Phường Hoàng Mai, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:info@crown.com.vn">info@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP Hà Nội</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Tầng 7, VIC Building, 18 Ngụy Như Kon Tum, Phường Thành Xuân, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0904501512">090 450 1512</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hn@crown.com.vn">hn@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP TP. Hồ Chí Minh</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0862231919">086 223 1919</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hcm@crown.com.vn">hcm@crown.com.vn</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Bảo đảm &amp; Tuân thủ</h5>
+        <ul>
+          <li><a href="https://audit.crown.com.vn" target="_blank" rel="noopener">Crown Audit</a></li>
+          <li><a href="https://cons.crown.com.vn" target="_blank" rel="noopener">Crown Cons</a></li>
+          <li><a href="https://acc.crown.com.vn" target="_blank" rel="noopener">Crown Accounting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tư vấn &amp; Tối ưu</h5>
+        <ul>
+          <li><a href="https://tax.crown.com.vn" target="_blank" rel="noopener">Crown Tax</a></li>
+          <li><a href="https://fas.crown.com.vn" target="_blank" rel="noopener">Crown FAS</a></li>
+          <li><a href="https://esg.crown.com.vn" target="_blank" rel="noopener">Crown ESG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Chương trình &amp; Liên hệ</h5>
+        <ul>
+          <li><a href="#tuvan">Đăng ký tư vấn</a></li>
+          <li><a href="#khacbiet">Vì sao chọn Crown</a></li>
+          <li><a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-recruit reveal">
+      <div>
+        <h4>Gia nhập đội ngũ Crown</h4>
+        <p>Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.</p>
+      </div>
+      <a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener" class="btn btn-gold">Xem cơ hội nghề nghiệp <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.</span>
+      <span>Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating quick-contact widgets ===== -->
+<a href="tel:0904501512" class="fab-call" aria-label="Gọi ngay cho Crown ESG">
+  <i class="fa-solid fa-phone"></i>
+  <span class="fab-call-ring"></span>
+</a>
+
+<div class="fab-stack">
+  <a href="https://m.me/crownaudit" target="_blank" rel="noopener" class="fab-btn fab-messenger" aria-label="Chat qua Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+  </a>
+  <a href="https://zalo.me/0904501512" target="_blank" rel="noopener" class="fab-btn fab-zalo" aria-label="Chat qua Zalo">
+    <span>Zalo</span>
+  </a>
+</div>
+
+<script>
+  // Mobile burger -> scroll to top nav section (demo behavior)
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.1, rootMargin:'0px 0px -5% 0px'});
+    revealEls.forEach(el=>io.observe(el));
+    setTimeout(()=>revealEls.forEach(el=>el.classList.add('in')), 4000);
+  } else {
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+
+  // Header shrink shadow on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 20){ header.style.boxShadow='0 10px 30px -12px rgba(0,0,0,0.4)'; }
+    else{ header.style.boxShadow='none'; }
+  });
+
+  // Pre-select the relevant service in the consultation form when a service-card link is clicked
+  const tuvanService = document.getElementById('tuvanService');
+  document.querySelectorAll('.svc-link[data-service]').forEach(link => {
+    link.addEventListener('click', () => {
+      if(tuvanService){ tuvanService.value = link.getAttribute('data-service'); }
+    });
+  });
+
+  // Đồng bộ chiều cao theo nội dung thực tế, cập nhật khi đổi khổ màn hình.
+  (() => {
+    const grid = document.querySelector('#dichvu .svc-grid');
+    const cards = [...grid.querySelectorAll('.svc-card')];
+    const groups = ['h3', '.desc', '.benefit'];
+    let frame;
+    const align = () => {
+      groups.forEach(selector => {
+        const elements = cards.map(card => card.querySelector(selector));
+        elements.forEach(el => el.style.minHeight = '');
+        if (window.matchMedia('(min-width:641px)').matches) {
+          const height = Math.ceil(Math.max(...elements.map(el => el.getBoundingClientRect().height)));
+          elements.forEach(el => el.style.minHeight = height + 'px');
+        }
+      });
+    };
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(align); };
+    window.addEventListener('resize', schedule);
+    window.addEventListener('load', schedule);
+    if (document.fonts) document.fonts.ready.then(schedule);
+    schedule();
+  })();
+</script>
+
+<script id="crown-localization">
+(() => {
+  'use strict';
+  const translations = {"& lộ trình giảm phát thải": {"en": "and emissions reduction roadmaps", "zh": "与减排路线图", "ja": "排出削減計画", "ko": "및 배출 감축 로드맵", "th": "และแผนลดการปล่อย"}, "& lộ trình phát triển bền vững": {"en": "and sustainability roadmaps", "zh": "与可持续发展路线图", "ja": "持続可能な発展の計画", "ko": "및 지속가능발전 로드맵", "th": "และแผนความยั่งยืน"}, "& yêu cầu ESG chuỗi cung ứng": {"en": "and supply chain ESG requirements", "zh": "与供应链ESG要求", "ja": "供給網のESG要件", "ko": "및 공급망 ESG 요구", "th": "และข้อกำหนด ESG ห่วงโซ่อุปทาน"}, "* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.": {"en": "* Illustrative avatar images — update with actual photos of each member before publishing.", "zh": "* 头像图片仅为示意 — 正式发布前请更新各成员的实际照片。", "ja": "※ プロフィール画像はサンプルです。公開前に各メンバーの実際の写真に更新してください。", "ko": "* 예시 프로필 이미지입니다 — 게시 전 각 구성원의 실제 사진으로 업데이트하세요.", "th": "* รูปโปรไฟล์เป็นภาพประกอบ — โปรดอัปเดตเป็นรูปถ่ายจริงของสมาชิกแต่ละคนก่อนเผยแพร่"}, "6 dịch vụ trọng tâm": {"en": "6 core services", "zh": "6项核心服务", "ja": "6つの主要サービス", "ko": "6가지 핵심 서비스", "th": "6 บริการหลัก"}, "6 dịch vụ trọng tâm của Crown ESG": {"en": "6 core Crown ESG services", "zh": "Crown ESG 的6项核心服务", "ja": "Crown ESG の6つの主要サービス", "ko": "Crown ESG의 6가지 핵심 서비스", "th": "6 บริการหลักของ Crown ESG"}, "Am hiểu cả quy định Việt Nam lẫn chuẩn mực quốc tế": {"en": "Understanding Vietnamese regulations and international standards", "zh": "熟悉越南规定与国际标准", "ja": "ベトナムの法令と国際基準を理解", "ko": "베트남 규정 및 국제 기준 이해", "th": "เข้าใจกฎเวียดนามและมาตรฐานสากล"}, "Assurance": {"en": "Assurance", "zh": "鉴证", "ja": "保証", "ko": "인증", "th": "การให้ความเชื่อมั่น"}, "Bán lẻ, Thương mại & Dịch vụ": {"en": "Retail, Trading & Services", "zh": "零售、贸易与服务", "ja": "小売・商業・サービス", "ko": "소매·무역·서비스", "th": "ค้าปลีก การค้า และบริการ"}, "Báo cáo ESG": {"en": "ESG reporting", "zh": "ESG报告", "ja": "ESG報告", "ko": "ESG 보고", "th": "รายงาน ESG"}, "Báo cáo phát triển bền vững chuẩn quốc tế (GRI, TCFD, ISSB)": {"en": "International-standard sustainability reporting (GRI, TCFD, ISSB)", "zh": "国际标准可持续发展报告（GRI、TCFD、ISSB）", "ja": "国際基準のサステナビリティ報告（GRI・TCFD・ISSB）", "ko": "국제 기준 지속가능성 보고 (GRI, TCFD, ISSB)", "th": "รายงานความยั่งยืนมาตรฐานสากล (GRI, TCFD, ISSB)"}, "Bảo vệ đơn hàng, chủ động trước yêu cầu ESG của thị trường xuất khẩu.": {"en": "Protect orders and prepare for export-market ESG requirements.", "zh": "守护订单，主动应对出口市场ESG要求。", "ja": "受注を守り、輸出市場のESG要件に備えます。", "ko": "수주를 보호하고 수출시장 ESG 요구에 대비합니다.", "th": "รักษาคำสั่งซื้อและเตรียมรับ ESG ตลาดส่งออก"}, "Bảo đảm & Tuân thủ": {"en": "Assurance & Compliance", "zh": "鉴证与合规", "ja": "アシュアランス＆コンプライアンス", "ko": "어슈어런스 & 컴플라이언스", "th": "การรับรองและการปฏิบัติตามกฎระเบียบ"}, "Bất động sản & Xây dựng": {"en": "Real Estate & Construction", "zh": "房地产与建设", "ja": "不動産・建設", "ko": "부동산 및 건설", "th": "อสังหาริมทรัพย์และก่อสร้าง"}, "Bối cảnh thực tế hiện nay": {"en": "Current business context", "zh": "当前背景", "ja": "現在の事業環境", "ko": "현재 경영 환경", "th": "บริบทปัจจุบัน"}, "Bốn bước Crown ESG đồng hành cùng doanh nghiệp": {"en": "Four steps of Crown ESG support", "zh": "Crown ESG 的四步合作流程", "ja": "Crown ESG の4ステップ", "ko": "Crown ESG의 4단계 지원", "th": "4 ขั้นตอนที่ Crown ESG ดูแลธุรกิจ"}, "Bốn áp lực ESG ảnh hưởng trực tiếp đến năng lực cạnh tranh và khả năng tiếp cận nguồn lực của doanh nghiệp.": {"en": "Four ESG pressures directly affect competitiveness and access to business resources.", "zh": "四类ESG压力直接影响竞争力与资源获取能力。", "ja": "4つのESG課題が競争力と経営資源へのアクセスに直接影響します。", "ko": "네 가지 ESG 과제가 경쟁력과 자원 접근성에 직접 영향을 줍니다.", "th": "แรงกดดัน ESG สี่ด้านกระทบการแข่งขันและการเข้าถึงทรัพยากรโดยตรง"}, "CBAM của EU bước vào giai đoạn áp dụng đầy đủ": {"en": "EU CBAM enters its full application phase", "zh": "欧盟CBAM进入全面实施阶段", "ja": "EUのCBAMが本格適用段階へ", "ko": "EU CBAM 본격 적용 단계 진입", "th": "CBAM ของ EU เข้าสู่ช่วงบังคับใช้เต็มรูปแบบ"}, "Cam kết Net Zero đang được cụ thể hóa thành các yêu cầu về kiểm kê khí nhà kính — doanh nghiệp cần chuẩn bị lộ trình tuân thủ ngay từ bây giờ để không bị động.": {"en": "Net Zero commitments are becoming greenhouse gas inventory requirements; businesses need a compliance roadmap now to stay prepared.", "zh": "净零承诺正落实为温室气体盘查要求，企业应立即准备合规路线以免被动。", "ja": "ネットゼロの約束が温室効果ガス算定要件へ具体化しており、今から対応計画が必要です。", "ko": "넷제로 약속이 온실가스 인벤토리 요구로 구체화되므로 지금 준수 로드맵을 준비해야 합니다.", "th": "คำมั่น Net Zero กำลังเป็นข้อกำหนดบัญชีก๊าซเรือนกระจก ธุรกิจควรเตรียมแผนตั้งแต่ตอนนี้"}, "Chat qua Messenger": {"en": "Chat via Messenger", "zh": "通过 Messenger 聊天", "ja": "Messengerでチャット", "ko": "Messenger로 채팅하기", "th": "แชทผ่าน Messenger"}, "Chat qua Zalo": {"en": "Chat via Zalo", "zh": "通过 Zalo 聊天", "ja": "Zaloでチャット", "ko": "Zalo로 채팅하기", "th": "แชทผ่าน Zalo"}, "Chi phí hợp lý, không cần thuê tư vấn quốc tế đắt đỏ": {"en": "Appropriate fees without costly international consultants", "zh": "合理费用，无需高价国际顾问", "ja": "高額な国際コンサルに頼らない適切な料金", "ko": "고가 국제 컨설팅 없이 적절한 비용", "th": "ค่าใช้จ่ายเหมาะสมโดยไม่ต้องจ้างที่ปรึกษาสากลราคาแพง"}, "Chiến lược": {"en": "Strategy", "zh": "战略", "ja": "戦略", "ko": "전략", "th": "กลยุทธ์"}, "Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.": {"en": "We're always looking for talented people passionate about audit, accounting, tax and financial advisory to help build a world-class service ecosystem.", "zh": "我们始终在寻找热爱审计、会计、税务和财务咨询领域的人才，共同打造国际化水准的服务生态系统。", "ja": "監査・会計・税務・財務アドバイザリー分野に情熱を持つ人材を常に求めています。共に国際水準のサービスエコシステムを築きましょう。", "ko": "감사, 회계, 세무 및 재무 자문 분야에 열정을 가진 인재를 항상 찾고 있습니다. 세계적 수준의 서비스 생태계를 함께 만들어가요.", "th": "เรากำลังมองหาบุคลากรที่มีใจรักในด้านตรวจสอบบัญชี บัญชี ภาษี และที่ปรึกษาทางการเงิน มาร่วมสร้างระบบนิเวศบริการระดับสากลไปด้วยกัน"}, "Chưa kết nối được nguồn vốn vay ưu đãi lãi suất thấp": {"en": "Missing access to preferential low-interest financing", "zh": "未能获取低息优惠贷款", "ja": "低金利の優遇融資に届かない", "ko": "저금리 우대 금융 접근의 어려움", "th": "ยังเข้าถึงสินเชื่อดอกเบี้ยพิเศษไม่ได้"}, "Chương trình & Liên hệ": {"en": "Programs & Contact", "zh": "项目与联系", "ja": "プログラム・お問い合わせ", "ko": "프로그램 및 문의", "th": "โครงการและติดต่อ"}, "Chọn ngôn ngữ": {"en": "Select language", "zh": "选择语言", "ja": "言語を選択", "ko": "언어 선택", "th": "เลือกภาษา"}, "Chủ động tuân thủ, sẵn sàng dữ liệu khi đối tác hoặc cơ quan quản lý yêu cầu.": {"en": "Prepare compliance and data before requests from partners or regulators.", "zh": "主动合规，提前准备伙伴或监管机关所需数据。", "ja": "取引先や当局の要請に備え、遵守とデータ準備を進めます。", "ko": "파트너·규제기관 요청에 앞서 준수와 데이터를 준비합니다.", "th": "เตรียมปฏิบัติตามกฎและข้อมูลก่อนคู่ค้าหรือหน่วยงานร้องขอ"}, "Crown Audit & Advisory": {"en": "Crown Audit & Advisory", "zh": "Crown Audit & Advisory", "ja": "Crown Audit & Advisory", "ko": "Crown Audit & Advisory", "th": "Crown Audit & Advisory"}, "Crown ESG - Tư vấn chiến lược ESG, lập và xác nhận độc lập báo cáo phát triển bền vững (GRI, TCFD, ISSB), kiểm kê khí nhà kính, tuân thủ CBAM, tư vấn nhà máy xanh. Một đối tác cho trọn vẹn hành trình ESG của doanh nghiệp xuất khẩu.": {"en": "Crown ESG provides ESG strategy, sustainability reporting and independent assurance (GRI, TCFD, ISSB), greenhouse gas inventories, CBAM compliance and green factory advice for exporters' ESG journeys.", "zh": "Crown ESG 提供ESG战略、可持续报告及独立鉴证、温室气体盘查、CBAM合规和绿色工厂咨询，支持出口企业的ESG全程。", "ja": "ESG戦略、報告・独立保証、温室効果ガス算定、CBAM、グリーン工場助言で輸出企業のESGを支えます。", "ko": "ESG 전략, 보고·독립 인증, 온실가스 인벤토리, CBAM, 친환경 공장 자문으로 수출기업의 ESG를 지원합니다.", "th": "บริการกลยุทธ์ ESG รายงานและให้ความเชื่อมั่นอิสระ บัญชีก๊าซ CBAM และโรงงานเขียว ดูแลเส้นทาง ESG ของผู้ส่งออก"}, "Crown ESG kết hợp tài chính xanh, kiểm tra - đánh giá, kỹ thuật và tuân thủ để giúp doanh nghiệp đáp ứng yêu cầu của thị trường, ngân hàng và nhà đầu tư quốc tế.": {"en": "Crown ESG combines green finance, review and assessment, engineering and compliance to address international market, bank and investor requirements.", "zh": "Crown ESG 融合绿色金融、检查评估、工程技术与合规，帮助企业满足国际市场、银行及投资者要求。", "ja": "環境金融、確認・評価、技術、遵守を組み合わせ、国際市場・銀行・投資家の要件に対応します。", "ko": "녹색금융, 검토·평가, 기술, 준수를 결합하여 국제 시장·은행·투자자 요구를 지원합니다.", "th": "ผสานการเงินสีเขียว ตรวจประเมิน วิศวกรรม และกฎระเบียบเพื่อตอบตลาด ธนาคาร และนักลงทุนสากล"}, "Crown ESG tư vấn sơ bộ miễn phí trong 24 giờ làm việc, giúp bạn chuẩn bị hồ sơ cho khách hàng, ngân hàng và nhà đầu tư.": {"en": "Crown ESG offers a free initial consultation within 24 business hours to help prepare records for customers, banks and investors.", "zh": "Crown ESG 在24个工作小时内提供免费初步咨询，协助准备面向客户、银行及投资者的资料。", "ja": "24営業時間以内の無料初回相談で、顧客・銀行・投資家向けの資料準備を支援します。", "ko": "영업시간 기준 24시간 내 무료 초기 상담으로 고객·은행·투자자용 자료 준비를 돕습니다.", "th": "ปรึกษาเบื้องต้นฟรีภายใน 24 ชั่วโมงทำการ เพื่อช่วยเตรียมเอกสารให้ลูกค้า ธนาคาร และนักลงทุน"}, "Crown ESG | Tư vấn Chiến lược ESG, Báo cáo Phát triển Bền vững & Net Zero": {"en": "Crown ESG | ESG strategy, sustainability reporting and Net Zero", "zh": "Crown ESG | ESG战略、可持续发展报告与净零", "ja": "Crown ESG | ESG戦略・持続可能性報告・ネットゼロ", "ko": "Crown ESG | ESG 전략·지속가능성 보고·넷제로", "th": "Crown ESG | กลยุทธ์ ESG รายงานความยั่งยืน และ Net Zero"}, "Crown ESG · Phát triển Bền vững": {"en": "Crown ESG · Sustainable Development", "zh": "Crown ESG · 可持续发展", "ja": "Crown ESG · 持続可能な発展", "ko": "Crown ESG · 지속가능발전", "th": "Crown ESG · การพัฒนาที่ยั่งยืน"}, "Crown ESG — Tư vấn Phát triển bền vững chuyên sâu": {"en": "Crown ESG — Specialist Sustainability Advisory", "zh": "Crown ESG — 专业可持续发展咨询", "ja": "Crown ESG — サステナビリティ専門アドバイザリー", "ko": "Crown ESG — 전문 지속가능성 자문", "th": "Crown ESG — ที่ปรึกษาความยั่งยืนเฉพาะทาง"}, "Các nhà mua hàng lớn và thị trường xuất khẩu như EU, Mỹ ngày càng yêu cầu bằng chứng tuân thủ ESG, CBAM và trách nhiệm chuỗi cung ứng — không đáp ứng đồng nghĩa nguy cơ mất đơn hàng.": {"en": "Major buyers and export markets such as the EU and US increasingly require evidence of ESG, CBAM and supply chain responsibility; non-compliance risks lost orders.", "zh": "大型买家和欧盟、美国等出口市场日益要求ESG、CBAM及供应链责任证明，未能满足可能失去订单。", "ja": "大手買い手やEU・米国などの市場はESG、CBAM、供給網責任の証拠を求め、未対応は失注リスクにつながります。", "ko": "대형 구매자와 EU·미국 등 수출시장은 ESG, CBAM, 공급망 책임 증빙을 요구하며 미충족 시 수주를 잃을 수 있습니다.", "th": "ผู้ซื้อใหญ่และตลาดเช่น EU สหรัฐฯ ต้องการหลักฐาน ESG, CBAM และความรับผิดชอบห่วงโซ่มากขึ้น หากไม่ผ่านอาจเสียคำสั่งซื้อ"}, "Có lộ trình rõ ràng, ưu tiên đúng vấn đề, tránh đầu tư dàn trải.": {"en": "Set a clear roadmap and priorities to avoid unfocused investment.", "zh": "明确路线与重点，避免分散投资。", "ja": "明確な計画と優先順位で、投資の分散を防ぎます。", "ko": "명확한 계획과 우선순위로 분산된 투자를 방지합니다.", "th": "มีแผนและลำดับสำคัญชัดเจน ลดการลงทุนกระจัดกระจาย"}, "Công trình và nhà máy xanh": {"en": "Green buildings and factories", "zh": "绿色建筑与工厂", "ja": "グリーン建築・工場", "ko": "친환경 건물 및 공장", "th": "อาคารและโรงงานสีเขียว"}, "Cơ chế điều chỉnh biên giới carbon (CBAM) ảnh hưởng trực tiếp đến doanh nghiệp xuất khẩu sang EU ở nhiều ngành hàng — thiếu dữ liệu phát thải có thể khiến hàng hóa mất lợi thế cạnh tranh về chi phí.": {"en": "CBAM directly affects exporters to the EU across several sectors; missing emissions data can weaken cost competitiveness.", "zh": "CBAM直接影响多个行业对欧出口企业，缺少排放数据可能削弱产品的成本竞争优势。", "ja": "CBAMは複数業種のEU輸出に影響し、排出データ不足はコスト競争力を弱める恐れがあります。", "ko": "CBAM은 여러 업종의 EU 수출에 영향을 주며 배출 데이터 부족은 비용 경쟁력을 약화할 수 있습니다.", "th": "CBAM กระทบผู้ส่งออกไป EU หลายอุตสาหกรรม การขาดข้อมูลปล่อยก๊าซอาจลดความได้เปรียบต้นทุน"}, "Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo — the form will be connected upon official deployment.", "zh": "感谢您！这是界面演示版 — 表单将在正式上线时接入系统。", "ja": "ありがとうございます！これはUIデモです。正式運用開始時にフォームが接続されます。", "ko": "감사합니다! 이것은 UI 데모입니다 — 양식은 공식 배포 시 연결됩니다.", "th": "ขอบคุณค่ะ/ครับ! นี่คือเดโมอินเทอร์เฟซ — แบบฟอร์มจะเชื่อมต่อเมื่อเปิดใช้งานอย่างเป็นทางการ"}, "Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.": {"en": "Thank you! This is a UI demo. The guide will be emailed once the form is connected for launch.", "zh": "感谢您！这是界面演示，表单正式接入后将通过邮件发送资料。", "ja": "ありがとうございます。これはデモです。正式にフォームを接続後、資料をメールでお送りします。", "ko": "감사합니다! 현재 데모이며 정식 양식 연결 후 자료를 이메일로 보내드립니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต เอกสารจะส่งทางอีเมลเมื่อเชื่อมแบบฟอร์มใช้งานจริง"}, "Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo. Newsletter registration will be connected for launch.", "zh": "感谢您！这是界面演示，通讯订阅将在正式上线时接入。", "ja": "ありがとうございます。これはデモです。配信登録は正式運用時に接続されます。", "ko": "감사합니다! 현재 데모이며 소식지 등록은 정식 운영 시 연결됩니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต การสมัครข่าวจะเชื่อมเมื่อใช้งานจริง"}, "Cập nhật quy định ESG & CBAM mới nhất mỗi tháng": {"en": "Monthly updates on ESG and CBAM requirements", "zh": "每月更新ESG与CBAM规定", "ja": "ESG・CBAMの最新要件を毎月お届け", "ko": "매월 ESG·CBAM 규정 업데이트", "th": "อัปเดตกฎ ESG และ CBAM ล่าสุดทุกเดือน"}, "Doanh nghiệp niêm yết chịu áp lực công bố thông tin phát triển bền vững": {"en": "Listed businesses face sustainability disclosure pressure", "zh": "上市企业面临可持续发展信息披露压力", "ja": "上場企業に求められる持続可能性の開示", "ko": "상장기업의 지속가능성 공시 압력", "th": "บริษัทจดทะเบียนเผชิญแรงกดดันเปิดเผยความยั่งยืน"}, "Doanh nghiệp niêm yết cần công bố thông tin phát triển bền vững minh bạch trong báo cáo thường niên gửi cổ đông, nhà đầu tư.": {"en": "Listed businesses need transparent sustainability information in annual reports to shareholders and investors.", "zh": "上市企业需在提交股东和投资者的年报中透明披露可持续发展信息。", "ja": "上場企業は株主・投資家向け年次報告で、持続可能性情報を透明に開示する必要があります。", "ko": "상장기업은 주주·투자자 대상 연차보고서에 지속가능성 정보를 투명하게 공시해야 합니다.", "th": "บริษัทจดทะเบียนต้องเปิดเผยข้อมูลความยั่งยืนโปร่งใสในรายงานประจำปีแก่ผู้ถือหุ้นและนักลงทุน"}, "Dịch vụ ESG": {"en": "ESG services", "zh": "ESG服务", "ja": "ESGサービス", "ko": "ESG 서비스", "th": "บริการ ESG"}, "Dịch vụ ESG chuyên biệt": {"en": "Specialist ESG services", "zh": "专业ESG服务", "ja": "専門ESGサービス", "ko": "전문 ESG 서비스", "th": "บริการ ESG เฉพาะทาง"}, "Dịch vụ quan tâm": {"en": "Service of interest", "zh": "感兴趣的服务", "ja": "ご興味のあるサービス", "ko": "관심 서비스", "th": "บริการที่สนใจ"}, "Dịch vụ theo chuẩn quốc tế, với chi phí phù hợp năng lực tài chính của doanh nghiệp Việt Nam.": {"en": "International-standard services at fees suited to Vietnamese businesses' financial capacity.", "zh": "国际标准服务，费用符合越南企业财务能力。", "ja": "国際水準のサービスを、ベトナム企業の財務力に合う料金で提供します。", "ko": "국제 수준의 서비스를 베트남 기업 재무 여건에 맞는 비용으로 제공합니다.", "th": "บริการมาตรฐานสากลด้วยค่าใช้จ่ายเหมาะกำลังการเงินธุรกิจเวียดนาม"}, "Dữ liệu và báo cáo phát triển bền vững": {"en": "Sustainability data and reporting", "zh": "可持续发展数据与报告", "ja": "持続可能性のデータ・報告", "ko": "지속가능성 데이터 및 보고", "th": "ข้อมูลและรายงานความยั่งยืน"}, "ESG không còn là xu hướng — mà đang quyết định đơn hàng và dòng vốn": {"en": "ESG now shapes orders and access to capital", "zh": "ESG正影响订单与资金获取", "ja": "受注と資金調達を左右するESG", "ko": "ESG는 수주와 자금 조달을 좌우합니다", "th": "ESG กำลังกำหนดคำสั่งซื้อและแหล่งทุน"}, "ESG là nghiệp vụ đòi hỏi chuyên môn kỹ thuật và pháp lý chuyên sâu": {"en": "ESG requires specialist technical and legal expertise", "zh": "ESG需要深入的技术与法律专业能力", "ja": "ESGには技術・法務の専門性が必要", "ko": "ESG에는 기술·법률 전문성이 필요합니다", "th": "ESG ต้องใช้ความเชี่ยวชาญเทคนิคและกฎหมาย"}, "ESG và những yêu cầu doanh nghiệp cần đáp ứng": {"en": "ESG requirements businesses need to address", "zh": "企业需要应对的ESG要求", "ja": "企業が対応すべきESG要件", "ko": "기업이 대응해야 할 ESG 요구", "th": "ข้อกำหนด ESG ที่ธุรกิจต้องตอบ"}, "Email": {"en": "Email", "zh": "电子邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมล"}, "Email VP Hà Nội": {"en": "Hanoi office email", "zh": "河内办公室邮箱", "ja": "ハノイオフィスのメール", "ko": "하노이 사무소 이메일", "th": "อีเมลสำนักงานฮานอย"}, "Email VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City office email", "zh": "胡志明市办公室邮箱", "ja": "ホーチミン市オフィスのメール", "ko": "호치민시 사무소 이메일", "th": "อีเมลสำนักงานโฮจิมินห์"}, "Email của bạn": {"en": "Your email", "zh": "您的邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมลของคุณ"}, "Email nhận tài liệu": {"en": "Email for receiving the guide", "zh": "接收资料的邮箱", "ja": "資料受信用メール", "ko": "자료 수신 이메일", "th": "อีเมลรับเอกสาร"}, "Gia nhập đội ngũ Crown": {"en": "Join the Crown Team", "zh": "加入 Crown 团队", "ja": "Crownチームに参加する", "ko": "Crown 팀에 합류하세요", "th": "ร่วมเป็นส่วนหนึ่งของทีม Crown"}, "Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.": {"en": "Supervises audit expertise and develops the professional capacity of the audit team.", "zh": "监督审计专业水准，并致力于培养审计团队的专业能力。", "ja": "監査の専門性を監督し、監査チームの能力開発を推進します。", "ko": "감사 전문성을 감독하고 감사팀의 역량 개발을 담당합니다.", "th": "กำกับดูแลความเชี่ยวชาญด้านการตรวจสอบบัญชีและพัฒนาศักยภาพทีมผู้สอบบัญชี"}, "Giám đốc Tư vấn thuế": {"en": "Tax Advisory Director", "zh": "税务咨询总监", "ja": "税務アドバイザリーディレクター", "ko": "세무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาภาษี"}, "Giám đốc kiểm toán mảng XDCB": {"en": "Director of Capital Construction Audit", "zh": "基本建设审计总监", "ja": "建設プロジェクト監査ディレクター", "ko": "건설투자감사 이사", "th": "ผู้อำนวยการฝ่ายตรวจสอบการก่อสร้างพื้นฐาน"}, "Giám đốc mảng Tư vấn Tài chính": {"en": "Financial Advisory Director", "zh": "财务咨询总监", "ja": "財務アドバイザリーディレクター", "ko": "재무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาทางการเงิน"}, "Giải pháp Crown ESG cho từng vấn đề của doanh nghiệp": {"en": "Crown ESG solutions for your business challenges", "zh": "应对企业各类问题的 Crown ESG 解决方案", "ja": "企業の課題に応じた Crown ESG の支援", "ko": "기업 과제별 Crown ESG 솔루션", "th": "โซลูชัน Crown ESG สำหรับโจทย์ธุรกิจ"}, "Góc nhìn ESG toàn diện, đa chuyên môn": {"en": "A comprehensive, multidisciplinary ESG perspective", "zh": "全面、多专业的ESG视角", "ja": "多分野を統合したESGの視点", "ko": "다분야 통합 ESG 관점", "th": "มุมมอง ESG รอบด้านจากหลายความเชี่ยวชาญ"}, "Gọi ngay cho Crown ESG": {"en": "Call Crown ESG", "zh": "致电 Crown ESG", "ja": "Crown ESG に電話", "ko": "Crown ESG 전화", "th": "โทรหา Crown ESG"}, "Gọi ngay: 090 450 1512": {"en": "Call: 090 450 1512", "zh": "致电：090 450 1512", "ja": "お電話：090 450 1512", "ko": "전화: 090 450 1512", "th": "โทร: 090 450 1512"}, "Gửi yêu cầu tư vấn miễn phí": {"en": "Send a free consultation request", "zh": "提交免费咨询申请", "ja": "無料相談を送信", "ko": "무료 상담 요청 전송", "th": "ส่งคำขอปรึกษาฟรี"}, "Hotline Hà Nội": {"en": "Hanoi Hotline", "zh": "河内热线", "ja": "ハノイホットライン", "ko": "하노이 핫라인", "th": "สายด่วนฮานอย"}, "Hotline TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Hotline", "zh": "胡志明市热线", "ja": "ホーチミン市ホットライン", "ko": "호치민시 핫라인", "th": "สายด่วนโฮจิมินห์"}, "Hệ sinh thái Crown": {"en": "Crown ecosystem", "zh": "Crown 生态体系", "ja": "Crown グループ", "ko": "Crown 생태계", "th": "เครือ Crown"}, "Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.": {"en": "An ecosystem of Audit, Accounting, Tax, Financial Advisory and ESG services — partnering with Vietnamese businesses for sustainable growth.", "zh": "审计、会计、税务咨询、财务及ESG服务生态系统 — 携手越南企业实现可持续发展。", "ja": "監査・会計・税務・財務アドバイザリー・ESGのサービスエコシステムで、ベトナム企業の持続的成長に寄り添います。", "ko": "감사, 회계, 세무 자문, 재무 및 ESG 서비스 생태계 — 베트남 기업의 지속가능한 성장을 함께합니다.", "th": "ระบบนิเวศบริการตรวจสอบบัญชี บัญชี ที่ปรึกษาภาษี การเงิน และ ESG เคียงข้างธุรกิจเวียดนามสู่การเติบโตอย่างยั่งยืน"}, "Họ và tên": {"en": "Full name", "zh": "姓名", "ja": "お名前", "ko": "성함", "th": "ชื่อ-นามสกุล"}, "Hỗ trợ cập nhật báo cáo, chuẩn mực mới và cảnh báo sớm các yêu cầu ESG mới từ thị trường.": {"en": "Support report and standards updates and provide early alerts on new market ESG requirements.", "zh": "协助更新报告与新标准，提前提示市场新增ESG要求。", "ja": "報告・基準の更新を支え、市場の新たなESG要件を早期通知します。", "ko": "보고서·기준 업데이트를 지원하고 새로운 시장 ESG 요구를 조기에 알립니다.", "th": "ช่วยอัปเดตรายงานและมาตรฐาน พร้อมแจ้ง ESG ใหม่จากตลาดล่วงหน้า"}, "Hỗ trợ tính toán phát thải, chuẩn bị hồ sơ CBAM và đáp ứng yêu cầu ESG từ các chuỗi cung ứng quốc tế.": {"en": "Support emissions calculations, CBAM documentation and ESG requirements from international supply chains.", "zh": "协助排放计算、CBAM资料准备，满足国际供应链ESG要求。", "ja": "排出量計算、CBAM資料、国際供給網のESG要件への対応を支援します。", "ko": "배출량 계산, CBAM 문서, 국제 공급망 ESG 요구 대응을 지원합니다.", "th": "ช่วยคำนวณการปล่อย เตรียมเอกสาร CBAM และตอบ ESG จากห่วงโซ่สากล"}, "Khác": {"en": "Other", "zh": "其他", "ja": "その他", "ko": "기타", "th": "อื่น ๆ"}, "Khám phá Crown Audit & Advisory": {"en": "Explore Crown Audit & Advisory", "zh": "了解 Crown Audit & Advisory", "ja": "Crown Audit & Advisoryを見る", "ko": "Crown Audit & Advisory 살펴보기", "th": "สำรวจ Crown Audit & Advisory"}, "Khó huy động vốn từ các quỹ đầu tư chuyên nghiệp": {"en": "Difficulty raising capital from professional investment funds", "zh": "难以获得专业投资基金资金", "ja": "専門投資ファンドからの調達が困難", "ko": "전문 투자펀드 자금 조달의 어려움", "th": "ระดมทุนจากกองทุนมืออาชีพยากขึ้น"}, "Không chỉ có ESG — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực": {"en": "Beyond ESG — Crown supports businesses across multiple fields", "zh": "不止ESG — Crown 在多个领域支持企业", "ja": "ESGにとどまらず、多分野で企業を支援", "ko": "ESG를 넘어 다양한 분야에서 지원하는 Crown", "th": "มากกว่า ESG — Crown ดูแลธุรกิจหลายด้าน"}, "Khảo sát & đánh giá hiện trạng": {"en": "Current-state review and assessment", "zh": "现状调研与评估", "ja": "現状調査・評価", "ko": "현황 조사 및 평가", "th": "สำรวจและประเมินสถานะปัจจุบัน"}, "Kiểm kê khí nhà kính": {"en": "Greenhouse gas inventories", "zh": "温室气体盘查", "ja": "温室効果ガス算定", "ko": "온실가스 인벤토리", "th": "บัญชีก๊าซเรือนกระจก"}, "Kiểm kê khí nhà kính & lộ trình Net Zero": {"en": "Greenhouse gas inventories and Net Zero roadmaps", "zh": "温室气体盘查与净零路线图", "ja": "温室効果ガス算定・ネットゼロ計画", "ko": "온실가스 인벤토리 및 넷제로 로드맵", "th": "บัญชีก๊าซเรือนกระจกและแผน Net Zero"}, "Kiểm kê khí nhà kính & tư vấn lộ trình giảm phát thải (ISO 14064, Net Zero)": {"en": "Greenhouse gas inventories and emissions reduction advisory (ISO 14064, Net Zero)", "zh": "温室气体盘查与减排路线咨询（ISO 14064、净零）", "ja": "温室効果ガス算定・削減計画支援（ISO 14064・ネットゼロ）", "ko": "온실가스 인벤토리·감축 로드맵 자문 (ISO 14064, Net Zero)", "th": "บัญชีก๊าซเรือนกระจกและแผนลดการปล่อย (ISO 14064, Net Zero)"}, "Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính doanh nghiệp và Xây dựng cơ bản — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit & Advisory.": {"en": "Audit, Accounting, Tax Advisory, Corporate Finance and Construction — explore the full Crown Audit & Advisory ecosystem.", "zh": "审计、会计、税务咨询、企业财务与建设项目 — 探索 Crown Audit & Advisory 全部服务。", "ja": "監査、会計、税務、企業財務、建設まで、Crown Audit & Advisory の全サービスをご覧ください。", "ko": "감사, 회계, 세무 자문, 기업금융, 건설 — Crown Audit & Advisory의 전체 서비스를 확인하세요.", "th": "ตรวจสอบบัญชี บัญชี ที่ปรึกษาภาษี การเงินองค์กร และก่อสร้าง — สำรวจบริการทั้งหมดของ Crown Audit & Advisory"}, "Kết hợp quy định trong nước với GRI, TCFD, ISSB và CBAM để tư vấn phù hợp doanh nghiệp Việt Nam.": {"en": "Combine domestic rules with GRI, TCFD, ISSB and CBAM for advice suited to Vietnamese businesses.", "zh": "结合国内规定与GRI、TCFD、ISSB、CBAM，为越南企业提供适合的建议。", "ja": "国内法令とGRI・TCFD・ISSB・CBAMを組み合わせ、ベトナム企業に合う助言を行います。", "ko": "국내 규정과 GRI·TCFD·ISSB·CBAM을 결합하여 베트남 기업에 맞는 자문을 제공합니다.", "th": "ผสานกฎในประเทศกับ GRI, TCFD, ISSB, CBAM เพื่อแนะนำให้เหมาะธุรกิจเวียดนาม"}, "Kết hợp tài chính xanh, kiểm tra - đánh giá và kỹ thuật môi trường để xử lý vấn đề ESG toàn diện.": {"en": "Combine green finance, review and assessment, and environmental engineering for comprehensive ESG support.", "zh": "结合绿色金融、检查评估和环境工程，全面处理ESG问题。", "ja": "環境金融、確認・評価、環境技術を統合してESGを総合支援します。", "ko": "녹색금융, 검토·평가, 환경기술을 결합하여 ESG를 종합 지원합니다.", "th": "รวมการเงินสีเขียว ตรวจประเมิน และวิศวกรรมสิ่งแวดล้อมเพื่อดูแล ESG รอบด้าน"}, "Kết nối với Crown ESG": {"en": "Connect with Crown ESG", "zh": "联系 Crown ESG", "ja": "Crown ESG に相談", "ko": "Crown ESG 문의", "th": "ติดต่อ Crown ESG"}, "Liên hệ": {"en": "Contact", "zh": "联系方式", "ja": "お問い合わせ", "ko": "문의", "th": "การติดต่อ"}, "Lập báo cáo phát triển bền vững": {"en": "Sustainability reporting", "zh": "编制可持续发展报告", "ja": "サステナビリティ報告の作成", "ko": "지속가능성 보고서 작성", "th": "จัดทำรายงานความยั่งยืน"}, "Lập báo cáo phát triển bền vững theo chuẩn quốc tế (GRI, TCFD, ISSB)": {"en": "International-standard sustainability reporting (GRI, TCFD, ISSB)", "zh": "编制国际标准可持续发展报告（GRI、TCFD、ISSB）", "ja": "国際基準のサステナビリティ報告（GRI・TCFD・ISSB）", "ko": "국제 기준 지속가능성 보고서 작성 (GRI, TCFD, ISSB)", "th": "จัดรายงานความยั่งยืนมาตรฐานสากล (GRI, TCFD, ISSB)"}, "Lộ trình Net Zero đang được cụ thể hóa thành yêu cầu kiểm kê khí nhà kính đối với doanh nghiệp thuộc danh mục quản lý, tác động trực tiếp đến hoạt động tuân thủ.": {"en": "Net Zero roadmaps are translating into greenhouse gas inventory requirements for listed regulated businesses, directly affecting compliance activities.", "zh": "净零路线正转化为纳入管理名录企业的温室气体盘查要求，直接影响合规工作。", "ja": "管理対象企業の温室効果ガス算定要件として具体化し、遵守業務に直接影響しています。", "ko": "관리 대상 목록에 포함된 기업의 온실가스 인벤토리 요구로 구체화되어 준수 업무에 영향을 줍니다.", "th": "แผน Net Zero ถูกแปลงเป็นข้อกำหนดบัญชีก๊าซเรือนกระจกสำหรับธุรกิจในบัญชีกำกับ กระทบงานปฏิบัติตามกฎโดยตรง"}, "Lợi ích": {"en": "Benefits", "zh": "服务益处", "ja": "メリット", "ko": "기대 효과", "th": "ประโยชน์"}, "Minh bạch thông tin, đáp ứng yêu cầu của đối tác và nhà đầu tư.": {"en": "Provide transparent information for partners and investors.", "zh": "透明披露信息，满足伙伴与投资者要求。", "ja": "透明な情報で取引先・投資家の要件に応えます。", "ko": "투명한 정보로 파트너·투자자 요구에 대응합니다.", "th": "ข้อมูลโปร่งใส ตอบข้อกำหนดคู่ค้าและนักลงทุน"}, "Muốn trao đổi trực tiếp hơn?": {"en": "Prefer to discuss directly?", "zh": "希望直接沟通？", "ja": "直接のご相談をご希望ですか", "ko": "직접 상담을 원하시나요?", "th": "ต้องการปรึกษาโดยตรง?"}, "Mô tả ngắn vấn đề bạn đang gặp phải...": {"en": "Briefly describe the issue you are facing...", "zh": "请简要描述您遇到的问题…", "ja": "お困りの内容を簡単にご記入ください…", "ko": "겪고 계신 문제를 간략히 적어주세요…", "th": "อธิบายปัญหาที่พบโดยย่อ..."}, "Một đầu mối cho toàn bộ hành trình ESG": {"en": "One contact for the entire ESG journey", "zh": "ESG全程单一服务窗口", "ja": "ESG全体を一つの窓口で", "ko": "전체 ESG 여정의 단일 창구", "th": "ผู้ประสานงานเดียวตลอดเส้นทาง ESG"}, "Một đầu mối từ chiến lược, báo cáo, kiểm kê khí nhà kính đến CBAM và nhà máy xanh.": {"en": "One contact from strategy, reporting and greenhouse gas inventories to CBAM and green factories.", "zh": "从战略、报告、温室气体盘查到CBAM及绿色工厂，统一窗口服务。", "ja": "戦略、報告、ガス算定からCBAM・工場まで一つの窓口で対応します。", "ko": "전략, 보고, 온실가스 산정부터 CBAM·친환경 공장까지 하나의 창구로 지원합니다.", "th": "จุดติดต่อเดียวตั้งแต่กลยุทธ์ รายงาน บัญชีก๊าซ ถึง CBAM และโรงงานเขียว"}, "Một đối tác — góc nhìn toàn diện cho hành trình ESG": {"en": "One partner with a comprehensive view of your ESG journey", "zh": "一个伙伴，为ESG之旅提供全面视角", "ja": "ESGの歩みを総合的に支える一つのパートナー", "ko": "ESG 여정을 종합적으로 보는 하나의 파트너", "th": "พันธมิตรเดียว มุมมองรอบด้านตลอดเส้นทาง ESG"}, "Net Zero đang được cụ thể hóa thành quy định": {"en": "Net Zero is becoming regulation", "zh": "净零目标正落实为规定", "ja": "規制へ具体化するネットゼロ", "ko": "규정으로 구체화되는 넷제로", "th": "Net Zero กำลังเป็นกฎข้อบังคับ"}, "Ngành hoạt động của bạn": {"en": "Your industry", "zh": "所属行业", "ja": "業種", "ko": "업종", "th": "อุตสาหกรรมของคุณ"}, "Ngân hàng & Tài chính": {"en": "Banking & Finance", "zh": "银行与金融", "ja": "銀行・金融", "ko": "은행 및 금융", "th": "ธนาคารและการเงิน"}, "Ngân hàng ngày càng ưu tiên tín dụng xanh cho doanh nghiệp có hồ sơ ESG rõ ràng — thiếu dữ liệu và báo cáo phù hợp khiến doanh nghiệp bỏ lỡ cơ hội vay vốn lãi suất ưu đãi.": {"en": "Banks increasingly prioritize green credit for businesses with clear ESG records; inadequate data and reports can mean missed preferential financing opportunities.", "zh": "银行日益优先向ESG资料清晰的企业提供绿色信贷，数据和报告不足可能错失优惠融资。", "ja": "銀行は明確なESG資料を持つ企業への環境融資を重視しており、データ不足は優遇機会の損失につながります。", "ko": "은행은 명확한 ESG 자료를 갖춘 기업의 녹색금융을 우선하여 데이터·보고 부족 시 우대 기회를 놓칠 수 있습니다.", "th": "ธนาคารให้ความสำคัญสินเชื่อสีเขียวแก่ธุรกิจที่มีเอกสาร ESG ชัดเจน การขาดข้อมูลอาจทำให้พลาดดอกเบี้ยพิเศษ"}, "Ngân hàng và quỹ đầu tư quốc tế ngày càng gắn điều kiện tín dụng xanh, lãi suất ưu đãi với hồ sơ ESG minh bạch và có thể kiểm chứng của doanh nghiệp.": {"en": "International banks and funds increasingly link green credit and preferential rates to transparent, verifiable ESG records.", "zh": "国际银行和基金日益将绿色信贷、优惠利率与透明可验证的ESG资料挂钩。", "ja": "国際銀行・ファンドは、環境融資や優遇金利を透明で検証可能なESG資料に結び付けています。", "ko": "국제 은행·펀드는 녹색금융과 우대금리를 투명하고 검증 가능한 ESG 자료에 연계합니다.", "th": "ธนาคารและกองทุนสากลผูกสินเชื่อสีเขียวกับดอกเบี้ยพิเศษเข้ากับเอกสาร ESG ที่โปร่งใสตรวจสอบได้มากขึ้น"}, "Nhiều tập đoàn đa quốc gia yêu cầu báo cáo ESG minh bạch khi lựa chọn và duy trì hợp tác với nhà cung cấp.": {"en": "Many multinationals require transparent ESG reporting when selecting and retaining suppliers.", "zh": "许多跨国企业在选择供应商及维持合作时要求透明ESG报告。", "ja": "多国籍企業の多くが、供給者の選定・継続に透明なESG報告を求めています。", "ko": "다수의 다국적 기업이 공급업체 선정·유지 시 투명한 ESG 보고를 요구합니다.", "th": "บริษัทข้ามชาติหลายแห่งต้องการรายงาน ESG โปร่งใสในการเลือกและรักษาผู้ส่งมอบ"}, "Nhà mua hàng lớn đưa ESG vào tiêu chí chọn nhà cung cấp": {"en": "Major buyers include ESG in supplier selection", "zh": "大型买家将ESG纳入供应商选择标准", "ja": "大手買い手が供給者選定にESGを採用", "ko": "대형 구매자의 공급업체 선정 기준에 ESG 반영", "th": "ผู้ซื้อใหญ่ใช้ ESG คัดเลือกผู้ส่งมอบ"}, "Nhà máy xanh": {"en": "Green factories", "zh": "绿色工厂", "ja": "グリーン工場", "ko": "친환경 공장", "th": "โรงงานสีเขียว"}, "Nhận Bộ tiêu chí miễn phí": {"en": "Get the free assessment guide", "zh": "免费领取自评标准", "ja": "無料評価ガイドを受け取る", "ko": "무료 평가 가이드 받기", "th": "รับเกณฑ์ประเมินฟรี"}, "Nhận Bộ tiêu chí tự đánh giá ESG theo ngành": {"en": "Get the industry-specific ESG self-assessment guide", "zh": "领取行业ESG自评标准", "ja": "業種別ESG自己評価ガイドを受け取る", "ko": "업종별 ESG 자가평가 가이드 받기", "th": "รับเกณฑ์ประเมิน ESG ตามอุตสาหกรรม"}, "Nhận Bộ tiêu chí tự đánh giá mức độ sẵn sàng ESG miễn phí": {"en": "Get a free ESG readiness self-assessment guide", "zh": "免费领取ESG准备度自评标准", "ja": "ESG準備度の無料自己評価ガイド", "ko": "무료 ESG 준비 수준 자가평가 가이드", "th": "รับเกณฑ์ประเมินความพร้อม ESG ฟรี"}, "Những con người dẫn dắt Crown": {"en": "The people leading Crown", "zh": "引领 Crown 的核心人才", "ja": "Crownを率いる人々", "ko": "Crown을 이끄는 사람들", "th": "บุคลากรผู้นำ Crown"}, "Những áp lực ESG đang hiện hữu": {"en": "ESG pressures facing businesses today", "zh": "企业当前面临的ESG压力", "ja": "今直面するESGの課題", "ko": "현재 직면한 ESG 과제", "th": "แรงกดดัน ESG ที่กำลังเผชิญ"}, "Nâng cao hình ảnh thương hiệu, tối ưu chi phí năng lượng trong dài hạn.": {"en": "Strengthen brand image and optimize long-term energy costs.", "zh": "提升品牌形象，优化长期能源成本。", "ja": "ブランドイメージ向上と長期的なエネルギー費用最適化を支えます。", "ko": "브랜드 이미지를 높이고 장기 에너지 비용을 최적화합니다.", "th": "เสริมภาพลักษณ์และเพิ่มประสิทธิภาพต้นทุนพลังงานระยะยาว"}, "Năng lượng mặt trời và giảm phát thải": {"en": "Solar energy and emissions reduction", "zh": "太阳能与减排", "ja": "太陽光発電と排出削減", "ko": "태양광 및 배출 감축", "th": "พลังงานแสงอาทิตย์และลดการปล่อย"}, "Nền tảng chuyên môn của đội ngũ Partner": {"en": "Our Partners' professional foundation", "zh": "合伙人团队的专业基础", "ja": "パートナー陣の専門基盤", "ko": "파트너 팀의 전문 기반", "th": "พื้นฐานความเชี่ยวชาญของทีมพาร์ตเนอร์"}, "Phó Tổng Giám đốc": {"en": "Deputy General Director", "zh": "副总经理", "ja": "副総経理", "ko": "부총괄이사", "th": "รองผู้อำนวยการใหญ่"}, "Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.": {"en": "Oversees audit quality and manages partnerships with major corporate clients.", "zh": "负责审计质量把控，并主导与大型企业客户的合作关系。", "ja": "監査品質を管理し、大手企業クライアントとの提携関係を統括します。", "ko": "감사 품질을 관리하고 대기업 고객과의 협력 관계를 총괄합니다.", "th": "รับผิดชอบคุณภาพงานตรวจสอบบัญชีและความสัมพันธ์ความร่วมมือกับลูกค้าองค์กรขนาดใหญ่"}, "Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.": {"en": "Oversees audits of capital investment settlement for capital construction projects.", "zh": "负责基本建设项目投资决算审计工作。", "ja": "建設プロジェクトの投資決算監査を担当します。", "ko": "건설투자사업 자본결산 감사를 담당합니다.", "th": "รับผิดชอบการตรวจสอบบัญชีการชำระบัญชีเงินลงทุนโครงการก่อสร้างพื้นฐาน"}, "Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.": {"en": "Oversees in-depth tax advisory, tax obligation optimization and legal compliance for businesses.", "zh": "负责企业深度税务咨询、税务义务优化及合规工作。", "ja": "企業への専門的な税務アドバイザリー、税務最適化、法令遵守を担当します。", "ko": "기업 대상 심층 세무자문, 세무 최적화 및 법적 컴플라이언스를 담당합니다.", "th": "รับผิดชอบการให้คำปรึกษาด้านภาษีเชิงลึก การปรับปรุงภาระภาษี และการปฏิบัติตามกฎหมายสำหรับธุรกิจ"}, "Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.": {"en": "Leads financial restructuring advisory, capital raising and investment transactions for businesses.", "zh": "负责企业财务重组咨询、融资及投资交易服务。", "ja": "財務再編アドバイザリー、資金調達、投資取引を統括します。", "ko": "재무구조 개편 자문, 자금조달 및 투자거래를 이끕니다.", "th": "นำการให้คำปรึกษาการปรับโครงสร้างทางการเงิน การระดมทุน และธุรกรรมการลงทุนสำหรับธุรกิจ"}, "Quy trình": {"en": "Process", "zh": "流程", "ja": "プロセス", "ko": "절차", "th": "ขั้นตอน"}, "Quy trình hợp tác": {"en": "Our Process", "zh": "合作流程", "ja": "連携プロセス", "ko": "협업 프로세스", "th": "ขั้นตอนการทำงานร่วมกัน"}, "Rà soát hồ sơ và xác nhận độc lập": {"en": "Document review and independent assurance", "zh": "资料复核与独立鉴证", "ja": "資料確認・独立保証", "ko": "문서 검토 및 독립 인증", "th": "ตรวจเอกสารและให้ความเชื่อมั่นอิสระ"}, "Sáu dịch vụ giải quyết từng nhóm yêu cầu ESG — giúp bạn chọn đúng giải pháp cho doanh nghiệp.": {"en": "Six services address different ESG requirements so you can choose the right solution.", "zh": "六项服务应对不同ESG要求，帮助企业选择合适方案。", "ja": "ESGの要件別に6サービスを用意し、適切な選択を支えます。", "ko": "여섯 서비스가 ESG 요구별로 대응하여 적합한 솔루션 선택을 돕습니다.", "th": "หกบริการตอบข้อกำหนด ESG แต่ละกลุ่ม ช่วยเลือกโซลูชันที่เหมาะสม"}, "Sản xuất & Xuất khẩu": {"en": "Manufacturing & Export", "zh": "制造与出口", "ja": "製造・輸出", "ko": "제조 및 수출", "th": "การผลิตและส่งออก"}, "Số điện thoại": {"en": "Phone number", "zh": "电话号码", "ja": "電話番号", "ko": "전화번호", "th": "หมายเลขโทรศัพท์"}, "Sự khác biệt của Crown ESG": {"en": "What sets Crown ESG apart", "zh": "Crown ESG 的独特优势", "ja": "Crown ESG の強み", "ko": "Crown ESG의 차별점", "th": "จุดเด่นของ Crown ESG"}, "Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.": {"en": "Demo design — illustrative content, update with real figures before publishing.", "zh": "演示版设计 — 内容仅供示意，正式发布前请更新真实数据。", "ja": "デモデザインです。サンプルコンテンツのため、公開前に実際のデータへ更新してください。", "ko": "데모 디자인입니다 — 예시 콘텐츠이며, 게시 전 실제 수치로 업데이트하세요.", "th": "ดีไซน์เดโม — เนื้อหาเป็นตัวอย่างประกอบ โปรดอัปเดตข้อมูลจริงก่อนเผยแพร่"}, "Thiếu báo cáo ESG bài bản khiến doanh nghiệp khó thuyết phục quỹ đầu tư và đối tác chiến lược quốc tế trong quá trình thẩm định trước khi rót vốn.": {"en": "Without structured ESG reports, businesses may struggle to convince international investors and strategic partners during pre-investment due diligence.", "zh": "缺少规范ESG报告，企业在投资前尽调中可能难以说服国际基金与战略伙伴。", "ja": "体系的なESG報告がなければ、投資前調査で国際投資家や戦略的提携先を説得しにくくなります。", "ko": "체계적인 ESG 보고가 없으면 투자 전 실사에서 국제 투자자와 전략적 파트너를 설득하기 어렵습니다.", "th": "หากขาดรายงาน ESG ที่เป็นระบบ อาจโน้มน้าวกองทุนและพันธมิตรสากลในขั้นตรวจสอบก่อนลงทุนได้ยาก"}, "Thảo luận và hoạch định chiến lược ESG": {"en": "ESG strategy discussion and planning", "zh": "ESG战略讨论与规划", "ja": "ESG戦略の協議・計画", "ko": "ESG 전략 논의 및 계획", "th": "หารือและวางกลยุทธ์ ESG"}, "Trang chủ Crown": {"en": "Crown homepage", "zh": "Crown 首页", "ja": "Crownトップ", "ko": "Crown 홈", "th": "หน้าหลัก Crown"}, "Trao đổi ngay với chuyên gia ESG Crown — hoàn toàn miễn phí": {"en": "Speak with a Crown ESG expert — free of charge", "zh": "免费咨询 Crown ESG 专家", "ja": "Crown ESG の専門家に無料相談", "ko": "Crown ESG 전문가와 무료 상담", "th": "ปรึกษาผู้เชี่ยวชาญ ESG Crown ฟรี"}, "Triển khai thực hiện": {"en": "Implementation", "zh": "实施执行", "ja": "実施", "ko": "실행", "th": "ดำเนินงาน"}, "Trụ sở chính": {"en": "Head Office", "zh": "总部", "ja": "本社", "ko": "본사", "th": "สำนักงานใหญ่"}, "Tuyển dụng": {"en": "Careers", "zh": "招聘", "ja": "採用情報", "ko": "채용정보", "th": "ร่วมงานกับเรา"}, "Tài liệu dành riêng cho bạn": {"en": "Resources for your business", "zh": "企业资料", "ja": "お役立ち資料", "ko": "기업 자료", "th": "เอกสารสำหรับธุรกิจ"}, "Tên doanh nghiệp": {"en": "Company name", "zh": "公司名称", "ja": "会社名", "ko": "회사명", "th": "ชื่อบริษัท"}, "Tìm giải pháp ESG phù hợp — Đặt lịch tư vấn miễn phí": {"en": "Find the right ESG solution — Book a free consultation", "zh": "寻找适合的ESG方案 — 预约免费咨询", "ja": "適切なESGソリューションを無料相談", "ko": "적합한 ESG 솔루션 — 무료 상담 예약", "th": "ค้นหาโซลูชัน ESG ที่เหมาะสม — นัดปรึกษาฟรี"}, "Tăng độ tin cậy, củng cố niềm tin của đối tác và nhà đầu tư.": {"en": "Strengthen information reliability and partner and investor confidence.", "zh": "提升信息可靠性，增强伙伴与投资者信任。", "ja": "情報の信頼性を高め、取引先・投資家の信頼を支えます。", "ko": "정보 신뢰성과 파트너·투자자 신뢰를 강화합니다.", "th": "เพิ่มความน่าเชื่อถือและความมั่นใจของคู่ค้ากับนักลงทุน"}, "Tư vấn & Tối ưu": {"en": "Advisory & Optimization", "zh": "咨询与优化", "ja": "アドバイザリー＆最適化", "ko": "어드바이저리 & 최적화", "th": "ที่ปรึกษาและการเพิ่มประสิทธิภาพ"}, "Tư vấn ESG từ nhiều góc nhìn chuyên môn": {"en": "ESG advisory from multiple professional perspectives", "zh": "多专业视角的ESG咨询", "ja": "多分野の専門性によるESG助言", "ko": "다분야 전문 관점의 ESG 자문", "th": "ที่ปรึกษา ESG จากหลายมุมวิชาชีพ"}, "Tư vấn chiến lược ESG": {"en": "ESG strategy advisory", "zh": "ESG战略咨询", "ja": "ESG戦略支援", "ko": "ESG 전략 자문", "th": "ที่ปรึกษากลยุทธ์ ESG"}, "Tư vấn chiến lược ESG & lộ trình phát triển bền vững": {"en": "ESG strategy and sustainability roadmaps", "zh": "ESG战略与可持续发展路线图", "ja": "ESG戦略・持続可能な発展の計画", "ko": "ESG 전략 및 지속가능발전 로드맵", "th": "กลยุทธ์ ESG และแผนความยั่งยืน"}, "Tư vấn ngay về dịch vụ này": {"en": "Discuss this service", "zh": "咨询此项服务", "ja": "このサービスについて相談", "ko": "서비스 상담", "th": "ปรึกษาบริการนี้"}, "Tư vấn triển khai nhà máy xanh": {"en": "Green factory implementation advisory", "zh": "绿色工厂实施咨询", "ja": "グリーン工場の導入支援", "ko": "친환경 공장 구축 자문", "th": "ที่ปรึกษาจัดทำโรงงานสีเขียว"}, "Tư vấn triển khai nhà máy xanh (LEED, EDGE, LOTUS)": {"en": "Green factory advisory (LEED, EDGE, LOTUS)", "zh": "绿色工厂实施咨询（LEED、EDGE、LOTUS）", "ja": "グリーン工場導入支援（LEED・EDGE・LOTUS）", "ko": "친환경 공장 구축 자문 (LEED, EDGE, LOTUS)", "th": "ที่ปรึกษาโรงงานสีเขียว (LEED, EDGE, LOTUS)"}, "Tư vấn triển khai nhà máy xanh (LEED, EDGE, LOTUS...)": {"en": "Green factory implementation advisory (LEED, EDGE, LOTUS, etc.)", "zh": "绿色工厂实施咨询（LEED、EDGE、LOTUS等）", "ja": "グリーン工場導入支援（LEED・EDGE・LOTUS等）", "ko": "친환경 공장 구축 자문 (LEED, EDGE, LOTUS 등)", "th": "ที่ปรึกษาโรงงานสีเขียว (LEED, EDGE, LOTUS ฯลฯ)"}, "Tư vấn tuân thủ CBAM": {"en": "CBAM compliance advisory", "zh": "CBAM合规咨询", "ja": "CBAM遵守支援", "ko": "CBAM 준수 자문", "th": "ที่ปรึกษาปฏิบัติตาม CBAM"}, "Tư vấn tuân thủ CBAM & chuỗi cung ứng": {"en": "CBAM and supply chain compliance advisory", "zh": "CBAM与供应链合规咨询", "ja": "CBAM・サプライチェーン遵守支援", "ko": "CBAM 및 공급망 준수 자문", "th": "ที่ปรึกษา CBAM และข้อกำหนดห่วงโซ่อุปทาน"}, "Tư vấn tuân thủ CBAM & yêu cầu ESG từ chuỗi cung ứng": {"en": "CBAM and supply chain ESG compliance advisory", "zh": "CBAM与供应链ESG合规咨询", "ja": "CBAM・供給網のESG遵守支援", "ko": "CBAM·공급망 ESG 준수 자문", "th": "ที่ปรึกษา CBAM และ ESG ห่วงโซ่อุปทาน"}, "Tổ chức tài chính quốc tế ưu tiên vốn cho dự án đạt chuẩn ESG": {"en": "International financial institutions prioritize ESG-aligned projects", "zh": "国际金融机构优先支持符合ESG标准的项目", "ja": "ESGに適合する案件を重視する国際金融機関", "ko": "ESG 충족 프로젝트를 우선하는 국제 금융기관", "th": "สถาบันการเงินสากลให้ทุนแก่โครงการผ่าน ESG ก่อน"}, "Tổng Giám đốc": {"en": "General Director", "zh": "总经理", "ja": "最高経営責任者", "ko": "대표이사", "th": "กรรมการผู้จัดการใหญ่"}, "Từ chiến lược ESG, báo cáo bền vững đến kiểm kê khí nhà kính và CBAM — Crown ESG giúp doanh nghiệp đáp ứng yêu cầu của thị trường quốc tế, ngân hàng và nhà đầu tư.": {"en": "From ESG strategy and sustainability reporting to greenhouse gas inventories and CBAM, Crown ESG helps meet international market, bank and investor requirements.", "zh": "从ESG战略、可持续发展报告到温室气体盘查与CBAM，Crown ESG 帮助企业满足国际市场、银行和投资者要求。", "ja": "ESG戦略、報告、温室効果ガス算定、CBAMまで、国際市場・銀行・投資家の要件への対応を支援します。", "ko": "ESG 전략, 지속가능성 보고, 온실가스 인벤토리, CBAM까지 국제 시장·은행·투자자 요구에 대응하도록 돕습니다.", "th": "ตั้งแต่กลยุทธ์ ESG รายงานความยั่งยืน บัญชีก๊าซเรือนกระจก ถึง CBAM เราช่วยตอบข้อกำหนดตลาดสากล ธนาคาร และนักลงทุน"}, "Tự đánh giá nhanh mức độ sẵn sàng ESG của doanh nghiệp bạn theo từng ngành — từ xuất khẩu, sản xuất đến bất động sản và tài chính.": {"en": "Quickly assess ESG readiness by industry, from export and manufacturing to real estate and finance.", "zh": "按行业快速评估ESG准备度，覆盖出口、制造、房地产及金融。", "ja": "輸出・製造から不動産・金融まで、業種別にESG準備度を簡単に確認できます。", "ko": "수출·제조부터 부동산·금융까지 업종별 ESG 준비 수준을 빠르게 평가합니다.", "th": "ประเมิน ESG ตามอุตสาหกรรมอย่างรวดเร็ว ตั้งแต่ส่งออก ผลิต ถึงอสังหาริมทรัพย์และการเงิน"}, "VP Hà Nội": {"en": "Hanoi Office", "zh": "河内办公室", "ja": "ハノイオフィス", "ko": "하노이 사무소", "th": "สำนักงานฮานอย"}, "VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Office", "zh": "胡志明市办公室", "ja": "ホーチミン市オフィス", "ko": "호치민시 사무소", "th": "สำนักงานโฮจิมินห์"}, "Vì sao Crown ESG": {"en": "Why Crown ESG", "zh": "为何选择 Crown ESG", "ja": "Crown ESG を選ぶ理由", "ko": "Crown ESG를 선택하는 이유", "th": "ทำไมต้อง Crown ESG"}, "Vì sao chọn Crown": {"en": "Why choose Crown", "zh": "为何选择 Crown", "ja": "Crownが選ばれる理由", "ko": "Crown을 선택하는 이유", "th": "ทำไมต้องเลือก Crown"}, "Vì sao chọn Crown ESG": {"en": "Why choose Crown ESG", "zh": "为何选择 Crown ESG", "ja": "Crown ESG を選ぶ理由", "ko": "Crown ESG를 선택하는 이유", "th": "เหตุผลที่เลือก Crown ESG"}, "Vận tải biển và chuỗi cung ứng quốc tế": {"en": "Shipping and international supply chains", "zh": "海运与国际供应链", "ja": "海運と国際供給網", "ko": "해운 및 국제 공급망", "th": "ขนส่งทางทะเลและห่วงโซ่อุปทานสากล"}, "Xem 6 dịch vụ ESG": {"en": "Explore 6 ESG services", "zh": "查看6项ESG服务", "ja": "6つのESGサービスを見る", "ko": "6가지 ESG 서비스 보기", "th": "ดู 6 บริการ ESG"}, "Xem cơ hội nghề nghiệp": {"en": "View Career Opportunities", "zh": "查看职业机会", "ja": "求人情報を見る", "ko": "채용 기회 보기", "th": "ดูโอกาสทางอาชีพ"}, "Xác nhận độc lập báo cáo ESG (ESG Assurance), tăng độ tin cậy và minh bạch của thông tin trước bên thứ ba.": {"en": "Independent ESG assurance strengthens the reliability and transparency of information presented to third parties.", "zh": "独立ESG鉴证，提升面向第三方信息的可靠性与透明度。", "ja": "独立したESG保証により、第三者向け情報の信頼性と透明性を高めます。", "ko": "독립 ESG 인증으로 제3자에게 제시하는 정보의 신뢰성과 투명성을 높입니다.", "th": "ให้ความเชื่อมั่น ESG อิสระ เพิ่มความน่าเชื่อถือและโปร่งใสของข้อมูลต่อบุคคลที่สาม"}, "Xây dựng báo cáo theo GRI, TCFD, ISSB, phục vụ công bố thông tin và đáp ứng yêu cầu từ các đối tác.": {"en": "Develop reports under GRI, TCFD and ISSB to support disclosures and meet partner requirements.", "zh": "依据GRI、TCFD、ISSB编制报告，支持信息披露并满足合作伙伴要求。", "ja": "GRI・TCFD・ISSBに基づく報告で、開示と取引先要件に対応します。", "ko": "GRI·TCFD·ISSB 기반 보고서로 공시와 파트너 요구에 대응합니다.", "th": "จัดรายงานตาม GRI, TCFD, ISSB เพื่อเปิดเผยข้อมูลและตอบคู่ค้า"}, "Xây dựng lộ trình & phạm vi": {"en": "Develop the roadmap and scope", "zh": "制定路线与范围", "ja": "計画と範囲の策定", "ko": "로드맵 및 범위 수립", "th": "จัดแผนและขอบเขต"}, "Yêu cầu ESG đang mở rộng từ tập đoàn lớn sang chuỗi cung ứng và doanh nghiệp vừa và nhỏ.": {"en": "ESG requirements are extending from large groups to supply chains and SMEs.", "zh": "ESG要求正从大型集团延伸至供应链及中小企业。", "ja": "ESG要件は大企業から供給網や中小企業へ広がっています。", "ko": "ESG 요구가 대기업에서 공급망과 중소기업으로 확대되고 있습니다.", "th": "ข้อกำหนด ESG ขยายจากกลุ่มใหญ่สู่ห่วงโซ่อุปทานและ SME"}, "báo cáo phát triển bền vững": {"en": "of sustainability reports", "zh": "可持续发展报告", "ja": "サステナビリティ報告", "ko": "지속가능성 보고서", "th": "รายงานความยั่งยืน"}, "giữ vững": {"en": "secure", "zh": "稳固", "ja": "守る", "ko": "지켜갑니다", "th": "รักษา"}, "theo chuẩn công trình bền vững": {"en": "to sustainable building standards", "zh": "遵循可持续建筑标准", "ja": "持続可能な建築基準に沿って", "ko": "지속가능 건축 기준에 따라", "th": "ตามมาตรฐานอาคารยั่งยืน"}, "theo chuẩn mực quốc tế": {"en": "to international standards", "zh": "遵循国际标准", "ja": "国際基準に準拠", "ko": "국제 기준에 따라", "th": "ตามมาตรฐานสากล"}, "© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.": {"en": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "zh": "© 2026 Crown 审计与咨询有限公司。版权所有。", "ja": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "ko": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "th": "© 2026 บริษัท Crown Audit and Advisory จำกัด สงวนลิขสิทธิ์"}, "Áp lực từ mục tiêu Net Zero của Chính phủ Việt Nam": {"en": "Pressure from Vietnam's Net Zero goals", "zh": "越南政府净零目标带来的压力", "ja": "ベトナムのネットゼロ目標への対応", "ko": "베트남 넷제로 목표에 따른 압력", "th": "แรงกดดันจากเป้า Net Zero ของเวียดนาม"}, "Áp lực đáp ứng yêu cầu ESG từ thị trường xuất khẩu": {"en": "Pressure to meet export-market ESG requirements", "zh": "出口市场ESG要求带来的压力", "ja": "輸出市場のESG要件への対応圧力", "ko": "수출시장의 ESG 요구 대응 압력", "th": "แรงกดดัน ESG จากตลาดส่งออก"}, "Đo lường phát thải và xác nhận độc lập đòi hỏi chuyên môn phù hợp để bảo đảm báo cáo đáp ứng yêu cầu thị trường.": {"en": "Emissions measurement and independent assurance require relevant expertise to ensure reports meet market requirements.", "zh": "排放计量与独立鉴证需要适当专业能力，以确保报告满足市场要求。", "ja": "排出量測定と独立保証には、市場要件に合う報告のための専門性が必要です。", "ko": "배출 측정과 독립 인증에는 보고서의 시장 요구 충족을 위한 적절한 전문성이 필요합니다.", "th": "การวัดการปล่อยและให้ความเชื่อมั่นอิสระต้องใช้ความเชี่ยวชาญเพื่อให้รายงานตอบตลาด"}, "Đo lường, kiểm kê khí nhà kính theo ISO 14064 và xây dựng lộ trình giảm phát thải hướng tới mục tiêu Net Zero.": {"en": "Measure and inventory greenhouse gases under ISO 14064 and develop an emissions reduction roadmap toward Net Zero.", "zh": "依据ISO 14064计量、盘查温室气体，制定迈向净零的减排路线。", "ja": "ISO 14064に基づき温室効果ガスを測定・算定し、ネットゼロへの削減計画を作成します。", "ko": "ISO 14064에 따라 온실가스를 측정·산정하고 넷제로를 위한 감축 로드맵을 수립합니다.", "th": "วัดและจัดบัญชีก๊าซตาม ISO 14064 พร้อมแผนลดการปล่อยสู่ Net Zero"}, "Đánh giá & xác nhận độc lập": {"en": "Independent review and assurance", "zh": "独立评估与鉴证", "ja": "独立した評価・保証", "ko": "독립 평가 및 인증", "th": "ประเมินและให้ความเชื่อมั่นอิสระ"}, "Đánh giá hiện trạng, xác định vấn đề trọng yếu và xây dựng lộ trình ESG phù hợp ngành nghề, quy mô doanh nghiệp.": {"en": "Assess current practices, identify material issues and develop an ESG roadmap suited to your industry and business size.", "zh": "评估现状、识别重大议题，制定符合行业与企业规模的ESG路线。", "ja": "現状と重要課題を把握し、業種・規模に合ったESG計画を作成します。", "ko": "현황과 중요 이슈를 파악하여 업종·규모에 맞는 ESG 로드맵을 수립합니다.", "th": "ประเมินสถานะ ระบุประเด็นสำคัญ และวางแผน ESG ตามอุตสาหกรรมกับขนาดธุรกิจ"}, "Đánh giá mức độ sẵn sàng ESG hiện tại, xác định vấn đề trọng yếu theo ngành và yêu cầu của thị trường xuất khẩu, nhà đầu tư.": {"en": "Assess current ESG readiness and identify material issues by industry and export-market or investor requirements.", "zh": "评估ESG准备程度，按行业及出口市场、投资者要求识别重大议题。", "ja": "ESGの準備状況を評価し、業種と輸出市場・投資家要件に応じた重要課題を把握します。", "ko": "ESG 준비 수준을 평가하고 업종·수출시장·투자자 요구에 따른 중요 이슈를 파악합니다.", "th": "ประเมินความพร้อม ESG ระบุประเด็นสำคัญตามอุตสาหกรรมและข้อกำหนดตลาดกับนักลงทุน"}, "Đánh giá/xác nhận độc lập báo cáo ESG": {"en": "Independent ESG report review and assurance", "zh": "ESG报告独立评估与鉴证", "ja": "ESG報告の独立評価・保証", "ko": "ESG 보고서 독립 평가·인증", "th": "ประเมินและให้ความเชื่อมั่นรายงาน ESG อิสระ"}, "Đánh giá/xác nhận độc lập báo cáo ESG (ESG Assurance)": {"en": "Independent ESG report review and assurance (ESG Assurance)", "zh": "ESG报告独立评估与鉴证（ESG Assurance）", "ja": "ESG報告の独立評価・保証（ESG Assurance）", "ko": "ESG 보고서 독립 평가·인증 (ESG Assurance)", "th": "ประเมินและให้ความเชื่อมั่นรายงาน ESG อิสระ (ESG Assurance)"}, "Đáp ứng chuẩn ESG toàn cầu,": {"en": "Meet global ESG standards,", "zh": "符合全球ESG标准，", "ja": "世界のESG基準に応え、", "ko": "글로벌 ESG 기준을 충족하고,", "th": "ตอบมาตรฐาน ESG สากล"}, "Đăng ký bản tin": {"en": "Subscribe", "zh": "订阅简报", "ja": "ニュースレター登録", "ko": "소식지 구독", "th": "สมัครข่าวสาร"}, "Đăng ký nhận bản tin ESG hàng tháng từ Crown ESG, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật về ESG và phát triển bền vững.": {"en": "Subscribe to Crown ESG's monthly newsletter or follow us on Facebook for ESG and sustainability updates.", "zh": "订阅 Crown ESG 月度通讯，或关注 Facebook 获取ESG与可持续发展更新。", "ja": "Crown ESG の月刊ニュースレターや Facebook でESG・持続可能性の情報をご確認ください。", "ko": "Crown ESG 월간 소식지를 구독하거나 Facebook에서 ESG·지속가능성 소식을 확인하세요.", "th": "สมัครจดหมายข่าว Crown ESG รายเดือนหรือติดตาม Facebook เพื่อรับข่าว ESG และความยั่งยืน"}, "Đăng ký nhận tư vấn miễn phí": {"en": "Request a free consultation", "zh": "申请免费咨询", "ja": "無料相談を申し込む", "ko": "무료 상담 신청", "th": "ลงทะเบียนปรึกษาฟรี"}, "Đăng ký tư vấn": {"en": "Request a consultation", "zh": "申请咨询", "ja": "相談を申し込む", "ko": "상담 신청", "th": "ลงทะเบียนขอรับคำปรึกษา"}, "Đặt lịch tư vấn ESG miễn phí": {"en": "Book a free ESG consultation", "zh": "预约免费ESG咨询", "ja": "無料ESG相談を予約", "ko": "무료 ESG 상담 예약", "th": "นัดปรึกษา ESG ฟรี"}, "Đặt lịch tư vấn miễn phí": {"en": "Book a free consultation", "zh": "预约免费咨询", "ja": "無料相談を予約", "ko": "무료 상담 예약", "th": "นัดปรึกษาฟรี"}, "Đặt lịch tư vấn tại đây": {"en": "Book a consultation here", "zh": "在此预约咨询", "ja": "こちらから相談予約", "ko": "여기에서 상담 예약", "th": "นัดปรึกษาที่นี่"}, "Đề xuất lộ trình ESG phù hợp, minh bạch phạm vi công việc, thời gian và chi phí trước khi triển khai.": {"en": "Propose an appropriate ESG roadmap with transparent scope, timing and fees before implementation.", "zh": "提出适合的ESG路线，在实施前明确范围、时间和费用。", "ja": "適切なESG計画を提案し、開始前に範囲・日程・料金を明示します。", "ko": "적절한 ESG 로드맵을 제안하고 착수 전 범위·기간·비용을 명확히 합니다.", "th": "เสนอแผน ESG ที่เหมาะสม แจ้งขอบเขต เวลา และค่าใช้จ่ายก่อนเริ่ม"}, "Để lại thông tin để Crown ESG liên hệ tư vấn sơ bộ miễn phí trong 24 giờ làm việc, không ràng buộc.": {"en": "Leave your details for a free, no-obligation initial consultation from Crown ESG within 24 business hours.", "zh": "留下信息，Crown ESG 将在24个工作小时内提供免费且无附加义务的初步咨询。", "ja": "情報をお送りいただくと、24営業時間以内に契約義務のない無料初回相談をご案内します。", "ko": "정보를 남기시면 영업시간 기준 24시간 내 의무 없는 무료 초기 상담을 제공합니다.", "th": "ฝากข้อมูลเพื่อปรึกษาเบื้องต้นฟรีภายใน 24 ชั่วโมงทำการโดยไม่มีข้อผูกมัด"}, "Địa chỉ & Liên hệ": {"en": "Address & Contact", "zh": "地址与联系方式", "ja": "住所・お問い合わせ", "ko": "주소 및 연락처", "th": "ที่อยู่และการติดต่อ"}, "Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit & Advisory.": {"en": "Sets strategic direction and oversees the overall operations of Crown Audit & Advisory.", "zh": "制定发展战略方向，全面领导Crown Audit & Advisory的整体运营。", "ja": "Crown Audit & Advisoryの発展戦略を策定し、全体運営を統括します。", "ko": "Crown Audit & Advisory의 발전 전략을 수립하고 전반적인 운영을 총괄합니다.", "th": "กำหนดทิศทางกลยุทธ์การพัฒนาและบริหารการดำเนินงานโดยรวมของ Crown Audit & Advisory"}, "Định hướng thiết kế và vận hành nhà máy theo LEED, EDGE, LOTUS, phù hợp mục tiêu công trình xanh của doanh nghiệp.": {"en": "Guide factory design and operations under LEED, EDGE and LOTUS in line with business green building goals.", "zh": "按LEED、EDGE、LOTUS指导工厂设计与运营，符合企业绿色建筑目标。", "ja": "LEED・EDGE・LOTUSを踏まえ、企業の環境建築目標に合う設計・運用を助言します。", "ko": "LEED·EDGE·LOTUS에 따라 기업 친환경 건축 목표에 맞는 공장 설계·운영을 안내합니다.", "th": "แนะนำออกแบบและดำเนินโรงงานตาม LEED, EDGE, LOTUS ให้ตรงเป้าอาคารเขียวของธุรกิจ"}, "Đồng hành cập nhật định kỳ": {"en": "Ongoing updates and support", "zh": "持续更新与支持", "ja": "定期更新と継続支援", "ko": "정기 업데이트 및 지원", "th": "ดูแลและอัปเดตต่อเนื่อง"}, "Đồng hành xuyên suốt theo từng vấn đề": {"en": "End-to-end support for each issue", "zh": "围绕各项问题全程支持", "ja": "課題ごとの一貫した支援", "ko": "문제별 전 과정 지원", "th": "ดูแลตลอดทางในแต่ละประเด็น"}, "Đội ngũ": {"en": "Team", "zh": "团队", "ja": "チーム", "ko": "팀 소개", "th": "ทีมงาน"}, "Đội ngũ chuyên gia": {"en": "Our Expert Team", "zh": "专家团队", "ja": "専門家チーム", "ko": "전문가팀", "th": "ทีมผู้เชี่ยวชาญ"}, "Đội ngũ chuyên gia thực hiện báo cáo, kiểm kê phát thải hoặc xác nhận độc lập theo lộ trình đã thống nhất.": {"en": "Experts prepare reports, emissions inventories or independent assurance according to the agreed roadmap.", "zh": "专家按照约定路线开展报告编制、排放盘查或独立鉴证。", "ja": "合意した計画に沿い、報告・排出量算定・独立保証を実施します。", "ko": "합의한 계획에 따라 보고서·배출 인벤토리·독립 인증을 수행합니다.", "th": "ผู้เชี่ยวชาญจัดรายงาน บัญชีก๊าซ หรือให้ความเชื่อมั่นตามแผนตกลง"}, "Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.": {"en": "Experienced auditors, tax experts, financial and ESG advisors — working together on every client file to ensure consistent service quality.", "zh": "经验丰富的审计师、税务专家、财务与ESG顾问团队，共同协作处理每一份客户档案，确保服务质量始终如一。", "ja": "経験豊富な監査人、税務専門家、財務・ESGアドバイザーが各案件で連携し、一貫した品質のサービスを提供します。", "ko": "경험이 풍부한 감사인, 세무 전문가, 재무 및 ESG 자문위원이 모든 고객 사안에 협력하여 일관된 서비스 품질을 보장합니다.", "th": "ทีมผู้สอบบัญชี ผู้เชี่ยวชาญด้านภาษี ที่ปรึกษาทางการเงินและ ESG ที่มีประสบการณ์ ทำงานร่วมกันในทุกงานของลูกค้าเพื่อคุณภาพบริการที่สม่ำเสมอ"}, "Đừng để chậm chân trong cuộc đua ESG": {"en": "Keep pace with ESG requirements", "zh": "及时应对ESG要求", "ja": "ESGへの対応を遅らせないために", "ko": "ESG 대응에 뒤처지지 마세요", "th": "อย่าช้าในการปรับตัว ESG"}, "đơn hàng và dòng vốn cho doanh nghiệp bạn": {"en": "orders and capital for your business", "zh": "企业订单与资金", "ja": "企業の受注と資金を", "ko": "기업의 수주와 자금을", "th": "คำสั่งซื้อและเงินทุนของธุรกิจ"}, "Ảnh chân dung minh họa Nghiêm Ngọc Hoàng": {"en": "Illustrative portrait: Nghiêm Ngọc Hoàng", "zh": "示意肖像：Nghiêm Ngọc Hoàng", "ja": "イメージ肖像：Nghiêm Ngọc Hoàng", "ko": "예시 인물 사진: Nghiêm Ngọc Hoàng", "th": "ภาพบุคคลประกอบ: Nghiêm Ngọc Hoàng"}, "Ảnh chân dung minh họa Nguyễn Ngọc Tùng": {"en": "Illustrative portrait: Nguyễn Ngọc Tùng", "zh": "示意肖像：Nguyễn Ngọc Tùng", "ja": "イメージ肖像：Nguyễn Ngọc Tùng", "ko": "예시 인물 사진: Nguyễn Ngọc Tùng", "th": "ภาพบุคคลประกอบ: Nguyễn Ngọc Tùng"}, "Ảnh chân dung minh họa Nguyễn Thị Ý": {"en": "Illustrative portrait: Nguyễn Thị Ý", "zh": "示意肖像：Nguyễn Thị Ý", "ja": "イメージ肖像：Nguyễn Thị Ý", "ko": "예시 인물 사진: Nguyễn Thị Ý", "th": "ภาพบุคคลประกอบ: Nguyễn Thị Ý"}, "Ảnh chân dung minh họa Nguyễn Văn Bình": {"en": "Illustrative portrait: Nguyễn Văn Bình", "zh": "示意肖像：Nguyễn Văn Bình", "ja": "イメージ肖像：Nguyễn Văn Bình", "ko": "예시 인물 사진: Nguyễn Văn Bình", "th": "ภาพบุคคลประกอบ: Nguyễn Văn Bình"}, "Ảnh chân dung minh họa Nguyễn Đức Hưng": {"en": "Illustrative portrait: Nguyễn Đức Hưng", "zh": "示意肖像：Nguyễn Đức Hưng", "ja": "イメージ肖像：Nguyễn Đức Hưng", "ko": "예시 인물 사진: Nguyễn Đức Hưng", "th": "ภาพบุคคลประกอบ: Nguyễn Đức Hưng"}, "Ảnh chân dung minh họa Trần Thành Trung": {"en": "Illustrative portrait: Trần Thành Trung", "zh": "示意肖像：Trần Thành Trung", "ja": "イメージ肖像：Trần Thành Trung", "ko": "예시 인물 사진: Trần Thành Trung", "th": "ภาพบุคคลประกอบ: Trần Thành Trung"}};
+  const isHomepage = false;
+  const languages = ['vi','en','zh','ja','ko','th'];
+  const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
+  const crownHosts = new Set(['crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn']);
+  const normalize = value => value.replace(/\s+/g,' ').trim();
+  let locale = 'vi';
+  const translate = (value, language) => language === 'vi' ? value : (translations[normalize(value)]?.[language] ?? value);
+  // Keep the original service values: changing visible labels must not change CTA selection.
+  document.querySelectorAll('option').forEach(option => {
+    if (!option.hasAttribute('value')) option.setAttribute('value', option.value);
+  });
+  const keyed = isHomepage ? Array.from(document.querySelectorAll('[data-i18n]')).filter(el => I18N[el.dataset.i18n]).map(el => ({el, nodes:Array.from(el.childNodes).filter(n=>n.nodeType===3).map(node=>({node,original:node.nodeValue})), entry:I18N[el.dataset.i18n]})) : [];
+  const keyedElements = new Set(keyed.map(record => record.el));
+  const textRecords = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest('script,style,noscript,.lang-switcher-wrap')) continue;
+    let keyedAncestor = false;
+    for (let e=parent;e;e=e.parentElement) if (keyedElements.has(e)) {keyedAncestor=true;break;}
+    if (keyedAncestor) continue;
+    const original=node.nodeValue;
+    if(translations[normalize(original)]) textRecords.push({node,original});
+  }
+  const attributes=[];
+  document.querySelectorAll('[placeholder],[aria-label],[title],[alt],meta[name="description"]').forEach(el => {
+    for (const name of ['placeholder','aria-label','title','alt','content']) {
+      const original=el.getAttribute(name);
+      if(original && translations[normalize(original)]) attributes.push({el,name,original});
+    }
+  });
+  const originalTitle=document.title;
+  const links=Array.from(document.querySelectorAll('a[href]')).filter(a => {
+    try{return crownHosts.has(new URL(a.getAttribute('href'),location.href).hostname);}catch{return false;}
+  }).map(el=>({el,href:el.getAttribute('href')}));
+  function applyLanguage(language, persist=false) {
+    if(!languages.includes(language)) language='vi';
+    locale=language;
+    if(isHomepage) currentLang=language;
+    document.documentElement.lang=language;
+    keyed.forEach(({nodes,entry})=>{
+      let written=false;
+      nodes.forEach(({node,original})=>{
+        if(language==='vi') node.nodeValue=original;
+        else if(original.trim() && !written){node.nodeValue=original.match(/^\s*/)[0]+entry[language]+original.match(/\s*$/)[0];written=true;}
+        else if(original.trim()) node.nodeValue='';
+      });
+    });
+    textRecords.forEach(({node,original})=>{
+      const translated=translate(original,language);
+      node.nodeValue=language==='vi' ? original : original.match(/^\s*/)[0]+translated.trim()+original.match(/\s*$/)[0];
+    });
+    attributes.forEach(({el,name,original})=>el.setAttribute(name,translate(original,language)));
+    document.title=translate(originalTitle,language);
+    document.getElementById('langCurrentLabel').textContent=language.toUpperCase();
+    document.querySelector('#langSwitcherBtn .flag').textContent=flags[language];
+    document.querySelectorAll('.lang-option').forEach(button=>{
+      const active=button.dataset.lang===language;
+      button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
+    });
+    links.forEach(({el,href})=>{
+      const url=new URL(href,location.href);url.searchParams.set('lang',language);el.href=url.href;
+    });
+    if(persist){
+      try{localStorage.setItem('crown.language',language);}catch{}
+      if(crownHosts.has(location.hostname)) document.cookie=`crown_language=${language}; Domain=crown.com.vn; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
+      try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}
+    }
+    // Existing equal-height card layouts recalculate against the translated text.
+    requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  }
+  const originalAlert=window.alert.bind(window);
+  window.alert=message=>originalAlert(translate(String(message),locale));
+  const menus=[
+    {button:document.getElementById('langSwitcherBtn'),panel:document.getElementById('crownLanguageMenu')},
+    {button:document.getElementById('crownEcosystemBtn'),panel:document.getElementById('crownEcosystemMenu')}
+  ];
+  function closeMenus(){menus.forEach(({button,panel})=>{panel.hidden=true;button.setAttribute('aria-expanded','false');});}
+  menus.forEach(({button,panel})=>{
+    button.addEventListener('click',()=>{const opening=panel.hidden;closeMenus();panel.hidden=!opening;button.setAttribute('aria-expanded',String(opening));});
+    button.addEventListener('keydown',event=>{
+      if(event.key==='ArrowDown'){event.preventDefault();closeMenus();panel.hidden=false;button.setAttribute('aria-expanded','true');panel.querySelector('button,a').focus();}
+    });
+    panel.addEventListener('keydown',event=>{
+      const options=Array.from(panel.querySelectorAll('button,a'));const index=options.indexOf(document.activeElement);
+      if(event.key==='ArrowDown'||event.key==='ArrowUp') {event.preventDefault();options[(index+(event.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();}
+      if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
+    });
+  });
+  document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{applyLanguage(button.dataset.lang,true);closeMenus();menus[0].button.focus();}));
+  document.addEventListener('click',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const opened=menus.find(m=>!m.panel.hidden);closeMenus();opened?.button.focus();}});
+  document.addEventListener('focusin',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  let initial=new URLSearchParams(location.search).get('lang');
+  if(!languages.includes(initial)){
+    try{initial=document.cookie.match(/(?:^|;\s*)crown_language=(vi|en|zh|ja|ko|th)(?:;|$)/)?.[1] || localStorage.getItem('crown.language');}catch{}
+  }
+  applyLanguage(initial);
+  window.CrownLanguage={set:language=>applyLanguage(language,true),get:()=>locale};
+})();
+
+</script>
+</body>
+</html>
