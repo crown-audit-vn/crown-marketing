@@ -44,6 +44,51 @@ Khuyến nghị **Ignored Build Step** (mỗi project) — chỉ build khi site 
 bash scripts/should-build.sh sites/esg
 ```
 
+### Deploy từ máy (CLI — từng site hoặc tất cả)
+
+Git push vẫn tự deploy qua Vercel; dùng CLI khi muốn đẩy **một site** mà không redeploy cả monorepo.
+
+```sh
+npm install
+npm run deploy          # bảng lệnh deploy
+```
+
+**Link lần đầu** (mỗi thư mục site một lần, sau khi đã tạo Vercel project trên dashboard):
+
+```sh
+cd sites/acc
+npx vercel link    # chọn project có Root Directory = sites/acc
+```
+
+**Deploy production một site:**
+
+```sh
+npm run deploy:acc
+```
+
+**Deploy tất cả site (lần lượt):**
+
+```sh
+npm run deploy:all
+```
+
+**Preview (không ghi đè production):**
+
+```sh
+npm run deploy:tax -- --preview
+npm run deploy:all -- --preview
+```
+
+| Site | Lệnh deploy |
+|------|-------------|
+| Trang chủ | `npm run deploy:www` |
+| Audit | `npm run deploy:audit` |
+| Cons | `npm run deploy:cons` |
+| Acc | `npm run deploy:acc` |
+| Tax | `npm run deploy:tax` |
+| FAS | `npm run deploy:fas` |
+| ESG | `npm run deploy:esg` |
+
 ## Trạng thái site
 
 | Thư mục   | Subdomain            | Nội dung        |
