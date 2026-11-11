@@ -14,7 +14,8 @@ crown-marketing/
 │   ├── cons/         → cons.crown.com.vn
 │   ├── acc/          → acc.crown.com.vn
 │   ├── tax/          → tax.crown.com.vn
-│   └── fas/          → fas.crown.com.vn
+│   ├── fas/          → fas.crown.com.vn
+│   └── up/           → up.crown.com.vn (Crown Up)
 └── scripts/
 ```
 
@@ -36,6 +37,7 @@ Mỗi site là một thư mục độc lập với `index.html` ở root — ph�
 | `sites/tax`           | `tax.crown.com.vn`   |
 | `sites/fas`           | `fas.crown.com.vn`   |
 | `sites/esg`           | `esg.crown.com.vn`   |
+| `sites/up`            | `up.crown.com.vn`    |
 
 Khuyến nghị **Ignored Build Step** (mỗi project) — chỉ build khi site đó hoặc `shared/` thay đổi:
 
@@ -88,6 +90,7 @@ npm run deploy:all -- --preview
 | Tax | `npm run deploy:tax` |
 | FAS | `npm run deploy:fas` |
 | ESG | `npm run deploy:esg` |
+| Crown Up | `npm run deploy:up` |
 
 ## Trạng thái site
 
@@ -100,8 +103,9 @@ npm run deploy:all -- --preview
 | `acc`     | `acc.crown.com.vn`   | Landing đầy đủ  |
 | `tax`     | `tax.crown.com.vn`   | Landing đầy đủ  |
 | `fas`     | `fas.crown.com.vn`   | Landing đầy đủ  |
+| `up`      | `up.crown.com.vn`    | Landing đầy đủ (Crown Up) |
 
-Nguồn HTML khách hàng: đồng bộ từ bộ file `0._Crown_homepage_1.html` … `6._Crown_ESG.html` vào `sites/<tên>/index.html`.
+Nguồn HTML khách hàng: đồng bộ từ bộ file `0._Crown_homepage_1.html` … `7._Crown_Up.html` vào `sites/<tên>/index.html`.
 
 ## Phát triển local
 
@@ -130,6 +134,7 @@ Mỗi lệnh mở HTTP server tĩnh; mở URL in ra terminal (hoặc bảng dư�
 | Tax | `npm run dev:tax` | http://localhost:5004 |
 | FAS | `npm run dev:fas` | http://localhost:5005 |
 | ESG | `npm run dev:esg` | http://localhost:5006 |
+| Crown Up | `npm run dev:up` | http://localhost:5007 |
 
 Ví dụ:
 

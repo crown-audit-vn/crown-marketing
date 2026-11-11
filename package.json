@@ -11,6 +11,7 @@
     "dev:tax": "serve sites/tax -l 5004",
     "dev:fas": "serve sites/fas -l 5005",
     "dev:esg": "serve sites/esg -l 5006",
+    "dev:up": "serve sites/up -l 5007",
     "deploy": "node scripts/deploy-help.mjs",
     "deploy:all": "node scripts/deploy-all.mjs",
     "deploy:www": "node scripts/deploy-site.mjs www",
@@ -19,7 +20,8 @@
     "deploy:acc": "node scripts/deploy-site.mjs acc",
     "deploy:tax": "node scripts/deploy-site.mjs tax",
     "deploy:fas": "node scripts/deploy-site.mjs fas",
-    "deploy:esg": "node scripts/deploy-site.mjs esg"
+    "deploy:esg": "node scripts/deploy-site.mjs esg",
+    "deploy:up": "node scripts/deploy-site.mjs up"
   },
   "devDependencies": {
     "serve": "^14.2.4",
