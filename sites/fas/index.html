@@ -1,23 +1,1163 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crown Financial Advisory | Sắp ra mắt</title>
-  <meta name="robots" content="noindex">
-  <style>
-    body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; color: #111; background: #fafaf8; }
-    main { text-align: center; padding: 2rem; max-width: 32rem; }
-    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    p { color: #5b6660; }
-    a { color: #1f6b3f; font-weight: 600; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown FAS | Cố vấn Tài chính Doanh nghiệp, M&A, Định giá &amp; Khơi thông nguồn vốn</title>
+<meta name="description" content="Crown FAS - Thiết kế phương án tài chính và khơi thông nguồn vốn, Giám đốc tài chính thuê ngoài (Virtual CFO), tái cấu trúc tài chính, thẩm định tài chính (FDD), định giá doanh nghiệp và cố vấn chiến lược M&A. Bảo vệ giá trị doanh nghiệp, khơi thông dòng vốn cho từng giai đoạn tăng trưởng.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+<style>
+  :root{
+    --navy-900:#0B0B0B;
+    --navy-800:#163823;
+    --navy-700:#1E4E30;
+    --navy-600:#276139;
+    --gold-600:#1F6B3F;
+    --gold-500:#2F8C55;
+    --gold-400:#6FCB93;
+    --gold-100:#E3F1E8;
+    --cream:#FAFAF8;
+    --ink:#111111;
+    --muted:#5B6660;
+    --white:#FFFFFF;
+    --line:#E3E3DE;
+    --orange:#F2871F;
+    --radius:14px;
+    --shadow:0 20px 50px -20px rgba(10,20,14,0.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy-900);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--gold-600);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold-500);display:inline-block;}
+  .section-head{max-width:680px;margin-bottom:52px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin-bottom:16px;}
+  .section-head p{color:var(--muted);font-size:17px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;transition:all .25s ease;white-space:nowrap;
+  }
+  .btn-gold{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn-gold:hover{background:var(--gold-500);border-color:var(--gold-500);color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(47,140,85,0.5);}
+  .btn-outline-light{border-color:rgba(255,255,255,0.4);color:#fff;}
+  .btn-outline-light:hover{background:rgba(255,255,255,0.12);border-color:#fff;}
+  .btn-outline-navy{border-color:var(--navy-700);color:var(--navy-800);}
+  .btn-outline-navy:hover{background:var(--navy-900);color:#fff;}
+  .btn-navy{background:var(--navy-900);color:#fff;}
+  .btn-navy:hover{background:var(--navy-700);transform:translateY(-2px);}
+  .btn-sm{padding:10px 20px;font-size:13px;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(8,8,8,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    transition:background .3s ease;
+  }
+  .header-inner{
+    max-width:1240px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;color:#fff;}
+  .brand-mark{position:relative;display:inline-flex;}
+  .brand-mark .crown-icon{
+    position:absolute;top:-12px;left:26px;font-size:13px;color:var(--gold-500);
+  }
+  .brand-mark .word{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.3px;
+    color:#fff;line-height:1;
+  }
+  .logo .sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-top:4px;}
+
+  nav.main-nav{display:flex;align-items:center;gap:6px;}
+  nav.main-nav > ul{display:flex;align-items:center;gap:4px;}
+  nav.main-nav > ul > li{position:relative;}
+  nav.main-nav > ul > li > a{
+    display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.88);white-space:nowrap;
+    font-size:14.5px;font-weight:600;padding:10px 12px;border-radius:8px;transition:.2s;
+  }
+  nav.main-nav > ul > li > a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .switcher-wrap{position:relative;}
+  .switcher-btn{
+    display:flex;align-items:center;gap:8px;color:#fff;font-size:13.5px;font-weight:600;
+    border:1px solid rgba(255,255,255,0.22);padding:9px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+  }
+  .switcher-btn:hover{border-color:var(--gold-400);}
+  .switcher-menu{
+    position:absolute;top:100%;right:0;margin-top:10px;width:220px;background:#fff;border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s ease;
+  }
+  .switcher-wrap:hover .switcher-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .switcher-menu a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy-900);}
+  .switcher-menu a:hover{background:var(--cream);}
+  .burger{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;padding:190px 0 110px;color:#fff;
+    background:
+      radial-gradient(1100px 600px at 85% -10%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(160deg, rgba(11,11,11,0.92) 0%, rgba(22,56,35,0.88) 55%, rgba(30,78,48,0.85) 100%),
+      url('https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+  .hero h1{color:#fff;font-size:clamp(32px,4.2vw,52px);line-height:1.2;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--gold-400);}
+  .hero p.lead{font-size:17.5px;color:rgba(255,255,255,0.78);max-width:540px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-actions .btn i{font-size:12px;}
+  .hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--gold-500);padding-left:14px;}
+  .hero-stats strong{display:block;font-family:'Playfair Display',serif;font-size:26px;color:#fff;}
+  .hero-stats span{font-size:12.5px;color:rgba(255,255,255,0.6);}
+
+  .hero-card{
+    position:relative;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+    border-radius:20px;padding:30px;backdrop-filter:blur(6px);
+  }
+  .hero-card h3{color:#fff;font-size:18px;margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:700;}
+  .hero-card ul li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,0.14);font-size:14px;color:rgba(255,255,255,0.85);}
+  .hero-card ul li:last-child{border-bottom:none;}
+  .hero-card ul li i{color:var(--gold-400);margin-top:3px;}
+  .float-chip{
+    position:absolute;width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 16px 28px -10px rgba(0,0,0,0.45);z-index:3;
+  }
+  .float-chip.fc-1{top:-22px;left:-22px;background:var(--gold-500);color:var(--navy-900);}
+  .float-chip.fc-2{bottom:-18px;right:26px;background:var(--navy-900);color:var(--gold-400);border:1px solid rgba(111,203,147,0.4);}
+
+  /* ===== ILLUSTRATION PANELS ===== */
+  .illus{
+    position:relative;height:168px;border-radius:14px;overflow:hidden;margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,#EEF7F1,#F9FBFA);
+  }
+  .illus::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(47,140,85,0.16);top:-55px;right:-45px;}
+  .illus::after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(11,11,11,0.05);bottom:-40px;left:-25px;}
+  .illus .illus-chip{
+    position:absolute;z-index:2;width:42px;height:42px;border-radius:11px;background:var(--navy-900);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:16px;bottom:14px;right:14px;
+    box-shadow:0 10px 20px -8px rgba(0,0,0,0.3);
+  }
+  .illus.illus-photo{background-size:cover;background-position:center;}
+  .illus.illus-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(165deg, rgba(11,11,11,0.12), rgba(11,11,11,0.6));}
+  .illus.illus-photo::after{display:none;}
+
+  /* ===== PAIN POINTS (Nỗi lo chung) ===== */
+  .pain{padding:100px 0 40px;background:var(--white);}
+  .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .pain-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
+    transition:.25s ease;position:relative;overflow:hidden;
+  }
+  .pain-card:hover{box-shadow:var(--shadow);transform:translateY(-6px);border-color:transparent;}
+  .pain-card h3{font-size:17.5px;margin-bottom:8px;line-height:1.3;}
+  .pain-card p{color:var(--muted);font-size:13.5px;}
+
+  /* ===== URGENCY / REALITY CHECK (bối cảnh thực tế) ===== */
+  .urgency{background:var(--navy-900);color:#fff;padding:90px 0 70px;position:relative;overflow:hidden;}
+  .urgency .section-head h2{color:#fff;}
+  .urgency .section-head p{color:rgba(255,255,255,0.65);}
+  .urgency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .urgency-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:26px 24px;transition:.25s ease;}
+  .urgency-card:hover{border-color:rgba(242,135,31,0.5);transform:translateY(-4px);background:rgba(255,255,255,0.06);}
+  .urgency-card .ic{width:44px;height:44px;border-radius:12px;background:rgba(242,135,31,0.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;}
+  .urgency-card h4{color:#fff;font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.4;margin-bottom:8px;}
+  .urgency-card p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.55;}
+
+  /* ===== CTA BANNER (mid-page) ===== */
+  .cta-banner-mid{
+    position:relative;overflow:hidden;padding:66px 0;color:#fff;text-align:center;
+    background:
+      radial-gradient(900px 500px at 15% 120%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(120deg,var(--navy-900),var(--navy-700));
+  }
+  .cta-banner-mid .container{max-width:720px;}
+  .cta-banner-mid .eyebrow{color:var(--gold-400);justify-content:center;}
+  .cta-banner-mid h2{color:#fff;font-size:clamp(24px,3vw,32px);margin-bottom:14px;}
+  .cta-banner-mid p{color:rgba(255,255,255,0.75);font-size:15.5px;margin-bottom:30px;}
+  .cta-actions-mid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .hotline-badge{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--gold-400);}
+  .hotline-badge i{font-size:20px;}
+
+  /* ===== SERVICES GRID (6 dịch vụ cốt lõi) ===== */
+  .services{padding:96px 0;background:var(--cream);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .svc-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+    display:flex;flex-direction:column;transition:.25s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .svc-ic{
+    width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy-800),var(--navy-900));color:var(--gold-400);font-size:20px;
+  }
+  .svc-tag{font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--gold-600);background:var(--gold-100);padding:5px 10px;border-radius:999px;}
+  .svc-card h3{font-size:18.5px;margin-bottom:10px;line-height:1.3;}
+  .svc-card .desc{color:var(--muted);font-size:13.8px;margin-bottom:14px;}
+  .svc-card .benefit{
+    font-size:13px;color:var(--navy-800);background:var(--gold-100);border-radius:10px;padding:10px 12px;
+    margin-bottom:18px;flex:1;
+  }
+  .svc-card .benefit strong{display:block;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-600);margin-bottom:4px;}
+  .svc-card .svc-link{
+    font-size:13.5px;font-weight:700;color:var(--navy-900);display:inline-flex;align-items:center;gap:8px;
+    padding-top:14px;border-top:1px solid var(--line);
+  }
+  .svc-card .svc-link i{font-size:11px;transition:.2s;}
+  .svc-card:hover .svc-link i{transform:translateX(4px);}
+  .svc-illus{height:140px;margin-bottom:18px;}
+
+  /* ===== WHY US (Vì sao chọn Crown FAS) ===== */
+  .why{position:relative;overflow:hidden;padding:100px 0;background:var(--navy-900);color:#fff;}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:rgba(255,255,255,0.7);}
+  .why-list{display:flex;flex-direction:column;gap:22px;}
+  .why-list li{display:flex;gap:16px;}
+  .why-list .ic{
+    width:44px;height:44px;flex:none;border-radius:12px;background:rgba(47,140,85,0.14);
+    color:var(--gold-400);display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .why-list h4{color:#fff;font-family:'Inter',sans-serif;font-size:16px;margin-bottom:4px;}
+  .why-list p{color:rgba(255,255,255,0.65);font-size:14px;}
+  .why-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat-box{border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:26px;text-align:center;}
+  .stat-box strong{display:block;font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-400);margin-bottom:6px;}
+  .stat-box span{font-size:12.5px;color:rgba(255,255,255,0.65);}
+  .watermark-icon{
+    position:absolute;font-size:220px;color:rgba(111,203,147,0.07);pointer-events:none;z-index:0;
+    top:50%;right:-30px;transform:translateY(-50%);
+  }
+
+  /* ===== CONSULTATION FORM (Đặt lịch tư vấn) ===== */
+  .contact{padding:100px 0;background:linear-gradient(160deg,var(--navy-800),var(--navy-900));color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .contact h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:16px;}
+  .contact p{color:rgba(255,255,255,0.72);font-size:16px;margin-bottom:30px;}
+  .contact-info{display:flex;flex-direction:column;gap:18px;}
+  .contact-info li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.85);}
+  .contact-info li .ic{flex:none;}
+  .contact-info .ic{width:40px;height:40px;border-radius:10px;background:rgba(47,140,85,0.16);color:var(--gold-400);display:flex;align-items:center;justify-content:center;}
+  .contact-form{background:#fff;border-radius:18px;padding:34px;color:var(--ink);}
+  .contact-form h3{font-size:19px;margin-bottom:18px;color:var(--navy-900);}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .contact-form input,.contact-form select,.contact-form textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:var(--cream);
+  }
+  .contact-form textarea{grid-column:1/-1;min-height:80px;resize:vertical;margin-bottom:14px;}
+  .contact-form button{width:100%;}
+
+  /* ===== PROCESS (Quy trình hợp tác) ===== */
+  .process{padding:100px 0;background:var(--white);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  .step{position:relative;padding:30px 22px;border-radius:var(--radius);background:var(--cream);border:1px solid var(--line);}
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-500);font-weight:700;display:block;margin-bottom:14px;
+  }
+  .step h4{font-size:16.5px;margin-bottom:8px;color:var(--navy-900);}
+  .step p{font-size:13.5px;color:var(--muted);}
+
+  /* ===== TEAM ===== */
+  .team{padding:96px 0;background:var(--cream);}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .team-card{
+    text-align:center;border:1px solid var(--line);border-radius:var(--radius);padding:32px 22px;transition:.25s ease;background:#fff;
+  }
+  .team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .team-card h4{font-size:17px;margin-bottom:4px;}
+  .team-card .role{display:block;font-size:12.5px;font-weight:700;color:var(--gold-600);margin-bottom:12px;}
+  .team-card p{font-size:13.5px;color:var(--muted);}
+  .team-photo{
+    position:relative;height:190px;border-radius:14px;overflow:hidden;margin-bottom:20px;
+    background:linear-gradient(160deg,var(--navy-900),var(--navy-800));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .team-photo::before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(111,203,147,0.18);top:-55px;right:-55px;}
+  .team-photo::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.05);bottom:-40px;left:-30px;}
+  .team-photo i{position:relative;z-index:2;font-size:60px;color:var(--gold-400);}
+  .team-photo .initials{
+    position:absolute;z-index:2;bottom:12px;left:16px;font-family:'Playfair Display',serif;
+    font-size:13px;letter-spacing:3px;color:rgba(255,255,255,0.55);text-transform:uppercase;
+  }
+  .team-photo.has-photo{background-size:cover;background-position:center top;}
+  .team-photo.has-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(195deg, rgba(11,11,11,0.05), rgba(11,11,11,0.7));}
+  .team-photo.has-photo::after{display:none;}
+  .team-photo.has-photo i{display:none;}
+  .team-photo.has-photo .initials{color:rgba(255,255,255,0.9);}
+
+  /* ===== CHECKLIST CTA (cuối trang) ===== */
+  .checklist{padding:100px 0;background:var(--white);}
+  .checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .checklist h2{margin-bottom:16px;}
+  .checklist p{color:var(--muted);font-size:16px;margin-bottom:22px;}
+  .checklist-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
+  .checklist-tags span{font-size:12.5px;font-weight:600;color:var(--gold-600);background:var(--gold-100);padding:7px 14px;border-radius:999px;}
+  .checklist-form{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .checklist-form h3{font-size:18px;margin-bottom:16px;}
+  .checklist-form input,.checklist-form select{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:#fff;margin-bottom:14px;
+  }
+  .checklist-form button{width:100%;}
+  .checklist-altlink{text-align:center;font-size:13px;color:var(--muted);margin-top:16px;}
+  .checklist-altlink a{color:var(--gold-600);font-weight:700;}
+
+  /* ===== PROMO BANNERS (bản tin / hệ sinh thái) ===== */
+  .promo-wrap{background:var(--white);padding:0 0 96px;}
+  .promo-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.08);border:1px solid rgba(47,140,85,0.25);border-radius:16px;
+    padding:30px 34px;max-width:1192px;margin:0 auto 24px;
+  }
+  .promo-banner.ecosystem{background:var(--navy-900);border-color:rgba(255,255,255,0.12);}
+  .promo-banner h4{color:var(--navy-900);font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .promo-banner.ecosystem h4{color:#fff;}
+  .promo-banner p{font-size:13.5px;color:var(--muted);max-width:520px;}
+  .promo-banner.ecosystem p{color:rgba(255,255,255,0.6);}
+  .promo-banner .btn{flex:none;white-space:nowrap;}
+  .promo-form{display:flex;gap:10px;flex:none;flex-wrap:wrap;}
+  .promo-form input{padding:13px 16px;border:1px solid var(--line);border-radius:999px;font-family:'Inter',sans-serif;font-size:14px;min-width:220px;}
+  .promo-social{display:flex;gap:10px;flex:none;}
+  .promo-social a{
+    width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);color:#fff;
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .promo-social a:hover{background:var(--gold-500);border-color:var(--gold-500);color:var(--navy-900);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-900);color:rgba(255,255,255,0.7);padding:70px 0 24px;border-top:1px solid rgba(255,255,255,0.08);}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1.3fr 1fr 1fr 1fr;gap:32px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-addr{margin-bottom:16px;}
+  .footer-addr strong{display:block;color:#fff;font-size:13px;margin-bottom:5px;}
+  .footer-addr p{font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+  .footer-addr a{color:rgba(255,255,255,0.7);font-size:12.5px;}
+  .footer-addr a:hover{color:var(--gold-400);}
+  .footer-logo{display:flex;align-items:center;color:#fff;margin-bottom:16px;padding-top:10px;}
+  .footer-col h5{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;font-family:'Inter',sans-serif;}
+  .footer-col ul li{margin-bottom:11px;font-size:14px;}
+  .footer-col ul li a:hover{color:var(--gold-400);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:12px;}
+  .footer-social{display:flex;gap:10px;}
+  .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .footer-social a:hover{background:var(--gold-500);color:var(--navy-900);border-color:var(--gold-500);}
+  .footer-recruit{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.12);border:1px solid rgba(47,140,85,0.3);border-radius:16px;
+    padding:28px 32px;margin-top:44px;
+  }
+  .footer-recruit h4{color:#fff;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .footer-recruit p{font-size:13.5px;color:rgba(255,255,255,0.6);max-width:520px;}
+  .footer-recruit .btn{flex:none;white-space:nowrap;}
+
+
+  /* ===== FLOATING QUICK CONTACT ===== */
+  .fab-call{
+    position:fixed;top:130px;right:24px;z-index:1100;width:56px;height:56px;border-radius:50%;
+    background:var(--gold-500);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 14px 28px -8px rgba(47,140,85,0.55);transition:.2s;
+  }
+  .fab-call:hover{background:var(--navy-900);transform:scale(1.06);}
+  .fab-call-ring{
+    position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold-500);
+    animation:fabPulse 1.8s ease-out infinite;pointer-events:none;
+  }
+  @keyframes fabPulse{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(1.6);opacity:0;}
+  }
+  .fab-stack{
+    position:fixed;bottom:28px;right:24px;z-index:1100;display:flex;flex-direction:column;gap:14px;align-items:center;
+  }
+  .fab-btn{
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:20px;color:#fff;box-shadow:0 12px 26px -8px rgba(0,0,0,0.35);border:none;cursor:pointer;transition:.2s;
+  }
+  .fab-btn:hover{transform:scale(1.08);}
+  .fab-messenger{background:#0084FF;}
+  .fab-zalo{background:#0068FF;font-family:'Inter',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2px;}
+
+  /* fade in */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  #dichvu,#khacbiet,#tuvan,#quytrinh,#team,#checklist{scroll-margin-top:90px;}
+
+  @media(max-width:1080px){
+    nav.main-nav{display:none;}
+    .burger{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-card{max-width:520px;}
+    .pain-grid,.urgency-grid{grid-template-columns:repeat(2,1fr);}
+    .svc-grid,.team-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid,.contact-grid,.checklist-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .pain-grid,.svc-grid,.process-grid,.team-grid,.urgency-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-recruit,.promo-banner{flex-direction:column;align-items:flex-start;text-align:left;}
+    .footer-recruit .btn,.promo-banner .btn{width:100%;text-align:center;justify-content:center;}
+    .promo-form{width:100%;}
+    .promo-form input{min-width:0;flex:1;}
+    .hero{padding:150px 0 70px;}
+    .contact-form .row{grid-template-columns:1fr;}
+    .hero-stats{gap:22px;}
+    .hero-actions .btn{width:100%;}
+    .fab-call{top:110px;right:16px;width:50px;height:50px;font-size:19px;}
+    .fab-stack{right:16px;bottom:22px;gap:12px;}
+    .fab-btn{width:46px;height:46px;font-size:18px;}
+    .cta-actions-mid{flex-direction:column;}
+  }
+
+  /* Hiển thị đầy đủ; cân đối các thẻ mà không cắt hoặc ẩn nội dung. */
+  #dichvu .svc-grid{grid-auto-rows:1fr;}
+  #dichvu .svc-card{display:flex;flex-direction:column;min-width:0;}
+  #dichvu .svc-card > .illus{aspect-ratio:16/10;height:auto;flex-shrink:0;}
+  #dichvu .svc-top{gap:10px;flex-wrap:wrap;}
+  #dichvu .svc-ic{flex-shrink:0;}
+  #dichvu .svc-tag{white-space:normal;max-width:100%;}
+  #dichvu .svc-card h3{line-height:1.4;}
+  #dichvu .svc-card .desc{line-height:1.65;}
+  #dichvu .svc-card .benefit{line-height:1.6;flex:none;}
+  #dichvu .svc-link{margin-top:auto;}
+  @media(max-width:640px){#dichvu .svc-grid{grid-auto-rows:auto;}}
+
+  /* Thông tin từng văn phòng: biểu tượng cố định, nội dung căn cùng một trục. */
+  footer .footer-addr{margin-bottom:24px;}
+  footer .footer-addr strong{font-size:14px;line-height:1.45;margin-bottom:12px;}
+  footer .footer-contact-row{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:10px;margin:0 0 9px;}
+  footer .footer-contact-row > i{color:var(--gold-400);font-size:15px;line-height:1.65;text-align:center;}
+  footer .footer-contact-row > span,footer .footer-contact-row > a{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.75);overflow-wrap:anywhere;}
+  footer .footer-contact-row > a:hover{color:var(--gold-400);}
+  footer .footer-contact-row > a:focus-visible{outline:2px solid var(--gold-400);outline-offset:3px;}
+</style>
+<style id="crown-shared-navigation">
+/* Shared language and Crown ecosystem controls. */
+.lang-switcher-wrap,.switcher-wrap{position:relative;flex-shrink:0;}
+.lang-switcher-btn,.switcher-btn{font-family:inherit;display:flex;align-items:center;gap:7px;color:#fff;font-size:13px;font-weight:600;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);cursor:pointer;}
+.lang-switcher-btn .fa-chevron-down,.switcher-btn .fa-chevron-down{font-size:10px;}
+.lang-switcher-menu,.switcher-menu{position:absolute;top:calc(100% + 8px);right:0;width:230px;max-width:calc(100vw - 24px);max-height:70vh;overflow:auto;background:#fff;border-radius:12px;box-shadow:0 14px 36px #0003;padding:8px;border:1px solid #e4e8e5;z-index:1200;opacity:1;visibility:visible;transform:none;}
+.lang-switcher-menu{width:180px;}
+.lang-switcher-menu[hidden],.switcher-menu[hidden]{display:none!important;}
+.lang-option{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:8px;font-weight:600;font-size:13.5px;line-height:1.5;color:#12392b;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;}
+.lang-option:hover,.switcher-menu a:hover{background:#f1f6f2;}
+.lang-option.active,.switcher-menu a[aria-current="page"]{background:#e7f1e8;color:#205b38;}
+.switcher-menu a[aria-current="page"]::after{content:'✓';margin-left:8px;}
+.lang-switcher-btn:focus-visible,.switcher-btn:focus-visible,.lang-option:focus-visible,.switcher-menu a:focus-visible{outline:2px solid #79bd8e;outline-offset:3px;}
+.header-inner{gap:16px;}.header-actions{gap:8px;flex-shrink:0;}
+.svc-card,.service-card,.pain-card,.urgency-card,.process-card,.team-card{min-width:0;overflow-wrap:break-word;}
+html:lang(zh),html:lang(ja){line-break:strict;}html:lang(ko){word-break:keep-all;overflow-wrap:break-word;}
+
+@media(max-width:640px){.header-inner{flex-wrap:wrap;gap:8px;}.header-actions{margin-left:auto;}.lang-switcher-btn,.switcher-btn{font-size:12px;padding:8px 10px;}.switcher-btn-label{max-width:135px;white-space:normal;} .hero{padding-top:190px;}}
+</style>
+<style id="crown-desktop-header">
+/* Desktop navigation stays visible alongside language and ecosystem controls. */
+@media(min-width:1081px){
+  .header-inner{max-width:1440px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;}
+  nav.main-nav{display:flex;min-width:0;justify-content:center;}
+  nav.main-nav > ul{flex-wrap:wrap;justify-content:center;column-gap:0;row-gap:0;}
+  nav.main-nav > ul > li > a{padding:9px 10px;}
+  .header-inner > .logo{max-width:220px;}
+  .header-actions .burger{display:none;}
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Crown Financial Advisory</h1>
-    <p>Trang giới thiệu đang được hoàn thiện.</p>
-    <p><a href="https://crown.com.vn">Về trang chủ Crown</a></p>
-  </main>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="https://crown.com.vn" class="logo">
+      <span class="brand-mark">
+        <i class="fa-solid fa-crown crown-icon"></i>
+        <span class="word">Crown</span>
+      </span>
+      <span class="sub">Crown FAS · Cố vấn Tài chính Doanh nghiệp</span>
+    </a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="https://crown.com.vn">Trang chủ Crown</a></li>
+        <li><a href="#dichvu">Dịch vụ tài chính</a></li>
+        <li><a href="#khacbiet">Vì sao Crown FAS</a></li>
+        <li><a href="#team">Đội ngũ</a></li>
+        <li><a href="#tuvan">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<div class="lang-switcher-wrap"><button type="button" class="lang-switcher-btn" id="langSwitcherBtn" aria-label="Chọn ngôn ngữ" aria-expanded="false" aria-controls="crownLanguageMenu"><span class="flag" aria-hidden="true">🇻🇳</span> <span id="langCurrentLabel">VI</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="lang-switcher-menu" id="crownLanguageMenu" hidden><button type="button" class="lang-option" data-lang="vi" lang="vi" aria-pressed="true"><span class="flag" aria-hidden="true">🇻🇳</span> Tiếng Việt</button><button type="button" class="lang-option" data-lang="en" lang="en" aria-pressed="false"><span class="flag" aria-hidden="true">🇬🇧</span> English</button><button type="button" class="lang-option" data-lang="zh" lang="zh" aria-pressed="false"><span class="flag" aria-hidden="true">🇨🇳</span> 中文</button><button type="button" class="lang-option" data-lang="ja" lang="ja" aria-pressed="false"><span class="flag" aria-hidden="true">🇯🇵</span> 日本語</button><button type="button" class="lang-option" data-lang="ko" lang="ko" aria-pressed="false"><span class="flag" aria-hidden="true">🇰🇷</span> 한국어</button><button type="button" class="lang-option" data-lang="th" lang="th" aria-pressed="false"><span class="flag" aria-hidden="true">🇹🇭</span> ภาษาไทย</button></div></div><div class="switcher-wrap"><button type="button" class="switcher-btn" id="crownEcosystemBtn" aria-expanded="false" aria-controls="crownEcosystemMenu"><i class="fa-solid fa-grip" aria-hidden="true"></i><span class="switcher-btn-label">Hệ sinh thái Crown</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="switcher-menu" id="crownEcosystemMenu" hidden><a href="https://crown.com.vn">Crown Audit & Advisory</a><a href="https://audit.crown.com.vn">Crown Audit</a><a href="https://cons.crown.com.vn">Crown Cons</a><a href="https://acc.crown.com.vn">Crown Accounting</a><a href="https://tax.crown.com.vn">Crown Tax</a><a href="https://fas.crown.com.vn" aria-current="page">Crown FAS</a><a href="https://esg.crown.com.vn">Crown ESG</a></div></div>
+      <i class="fa-solid fa-bars burger" id="burgerBtn"></i>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-400);">Crown FAS — Cố vấn Tài chính Doanh nghiệp chuyên sâu</div>
+      <h1>Bảo vệ giá trị doanh nghiệp, <em>khơi thông</em> dòng vốn cho từng giai đoạn tăng trưởng</h1>
+      <p class="lead">Từ phương án vốn, CFO thuê ngoài đến thẩm định, định giá và M&A — Crown FAS giúp doanh nghiệp làm rõ giá trị, kiểm soát dòng tiền và chuẩn bị cơ sở cho các quyết định tài chính.</p>
+      <div class="hero-actions">
+        <a href="#dichvu" class="btn btn-outline-light">Xem dịch vụ tài chính <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#khacbiet" class="btn btn-outline-light">Vì sao chọn Crown FAS <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6</strong><span>Dịch vụ tài chính chuyên biệt</span></div>
+        <div><strong>Big4</strong><span>Tư duy kiểm toán trong đội ngũ</span></div>
+        <div><strong>24h</strong><span>Phản hồi tư vấn sơ bộ</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <span class="float-chip fc-1"><i class="fa-solid fa-chart-line"></i></span>
+      <span class="float-chip fc-2"><i class="fa-solid fa-shield-halved"></i></span>
+      <h3>6 dịch vụ trọng tâm của Crown FAS</h3>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> <span>Thiết kế phương án tài chính và khơi thông nguồn vốn</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Giám đốc tài chính thuê ngoài (Virtual CFO)</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Tái cấu trúc tài chính và tối ưu dòng tiền</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Thẩm định tài chính và bóc tách rủi ro (FDD)</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Định giá doanh nghiệp và cấu trúc giao dịch</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Cố vấn chiến lược mua bán và sáp nhập (M&A)</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="noilo">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Những nỗi lo thường trực</div>
+      <h2>Rủi ro tài chính có thể chặn đứng cả cơ hội tăng trưởng lẫn một thương vụ lớn</h2>
+      <p>Dù doanh nghiệp bạn đang khát vốn để tăng trưởng hay chuẩn bị bước vào một thương vụ, bốn vấn đề dưới đây có thể quyết định thành bại.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/7927581/pexels-photo-7927581.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-building-columns"></i></span></div>
+        <h3>Khát vốn nhưng bị ngân hàng từ chối vì hồ sơ tài chính không đạt chuẩn</h3>
+        <p>Ngân hàng Việt Nam phần lớn cho vay dựa trên tài sản đảm bảo — hồ sơ tài chính thiếu chuẩn hóa khiến doanh nghiệp bị từ chối hoặc chỉ được giải ngân một phần nhỏ nhu cầu thực tế.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/6632511/pexels-photo-6632511.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-heart-pulse"></i></span></div>
+        <h3>Dòng tiền đứt gãy, không biết bắt đầu tái cấu trúc từ đâu</h3>
+        <p>Nợ vay chồng chất, mảng kinh doanh đốt tiền âm thầm kéo cả doanh nghiệp xuống — nếu không có phương án tái cấu trúc kịp thời, doanh nghiệp có thể rơi vào tình trạng chết lâm sàng.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/5849579/pexels-photo-5849579.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-scale-unbalanced"></i></span></div>
+        <h3>Đối mặt gọi vốn hoặc M&A nhưng không biết định giá đúng</h3>
+        <p>Thiếu căn cứ định giá chuẩn mực khiến chủ doanh nghiệp dễ bị quỹ đầu tư hoặc đối tác ép giá thấp hơn giá trị thực trên bàn đàm phán.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/7947669/pexels-photo-7947669.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-magnifying-glass-dollar"></i></span></div>
+        <h3>Mua một doanh nghiệp mà không lường trước rủi ro ẩn trong sổ sách</h3>
+        <p>Nợ ngầm, lợi nhuận ảo, chi phí bị giấu giếm có thể biến một thương vụ tưởng hời thành quả bom nổ chậm sau khi đã xuống tiền.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="urgency" id="thuctrang">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="color:var(--orange);">Bối cảnh thực tế hiện nay</div>
+      <h2>Vì sao tài chính doanh nghiệp cần một cố vấn chiến lược, không chỉ một người ghi số</h2>
+      <p>Thị trường vốn và M&A tại Việt Nam đang thay đổi nhanh — doanh nghiệp không chuẩn bị kỹ dễ bỏ lỡ cơ hội hoặc chịu thiệt trên bàn đàm phán.</p>
+    </div>
+    <div class="urgency-grid">
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-building-columns"></i></span>
+        <h4>Ngân hàng Việt Nam ngày càng siết chuẩn tín dụng, ưu tiên hồ sơ minh bạch</h4>
+        <p>Xu hướng thẩm định tín dụng ngày càng chặt chẽ khiến doanh nghiệp thiếu hồ sơ tài chính chuẩn hóa càng khó tiếp cận vốn vay ưu đãi.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-handshake"></i></span>
+        <h4>Thị trường M&amp;A tại Việt Nam ngày càng sôi động</h4>
+        <p>Cả nhà đầu tư trong nước và quốc tế đang tìm kiếm cơ hội mua lại, góp vốn vào doanh nghiệp Việt Nam — thiếu chuẩn bị dễ khiến doanh nghiệp bị động trước một đề nghị mua lại.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <h4>Quỹ đầu tư thẩm định khắt khe hơn trước khi rót vốn</h4>
+        <p>Doanh nghiệp thiếu chuẩn bị dữ liệu tài chính bài bản dễ mất lợi thế đàm phán ngay từ vòng gọi vốn đầu tiên.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-user-tie"></i></span>
+        <h4>Phần lớn SME Việt Nam thiếu bộ phận tài chính chiến lược chuyên trách</h4>
+        <p>Không có ai đủ chuyên môn tham mưu các quyết định vốn lớn dễ dẫn đến quyết định cảm tính, gây rủi ro dài hạn cho doanh nghiệp.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+        <h4>Thị trường vốn ngày càng đòi hỏi minh bạch thông tin tài chính</h4>
+        <p>Cả ngân hàng, quỹ đầu tư lẫn đối tác chiến lược đều ưu tiên làm việc với doanh nghiệp có hồ sơ tài chính rõ ràng, có thể kiểm chứng.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-arrow-trend-up"></i></span>
+        <h4>Chi phí vốn biến động, doanh nghiệp cần chiến lược tài chính linh hoạt</h4>
+        <p>Một chiến lược tài chính cứng nhắc khó thích ứng khi lãi suất và điều kiện thị trường vốn thay đổi liên tục.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner-mid">
+  <div class="container">
+    <div class="eyebrow">Đừng để dòng vốn quyết định thay tương lai doanh nghiệp bạn</div>
+    <h2>Trao đổi ngay với chuyên gia Crown FAS — hoàn toàn miễn phí</h2>
+    <p>Dù bạn đang cần khơi thông nguồn vốn, tái cấu trúc dòng tiền, hay chuẩn bị một thương vụ M&A, đội ngũ Crown FAS sẵn sàng tư vấn sơ bộ miễn phí trong 24 giờ làm việc.</p>
+    <div class="cta-actions-mid">
+      <a href="tel:0904501512" class="hotline-badge"><i class="fa-solid fa-phone"></i> Gọi ngay: 090 450 1512</a>
+      <a href="#tuvan" class="btn btn-gold">Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="dichvu">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">6 dịch vụ cốt lõi</div>
+      <h2>Giải pháp Crown FAS cho từng giai đoạn tài chính của doanh nghiệp</h2>
+      <p>Sáu dịch vụ đáp ứng nhu cầu vốn, điều hành tài chính, tái cấu trúc và chuẩn bị giao dịch mua bán, sáp nhập.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/6801647/pexels-photo-6801647.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-money-bill-trend-up"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-money-bill-trend-up"></i></span><span class="svc-tag">Khơi thông vốn</span></div>
+        <h3>Thiết kế phương án tài chính và khơi thông nguồn vốn</h3>
+        <p class="desc">Chuyển kế hoạch kinh doanh thành phương án tài chính, làm rõ nhu cầu vốn, dòng tiền và khả năng trả nợ; chuẩn bị hồ sơ phù hợp yêu cầu của ngân hàng và các định chế tài chính.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Có phương án vốn và hồ sơ rõ ràng để làm việc với bên tài trợ, đánh giá chi phí và điều kiện huy động vốn.</div>
+        <a href="#tuvan" class="svc-link" data-service="Thiết kế phương án tài chính và khơi thông nguồn vốn">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7643900/pexels-photo-7643900.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-user-tie"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-user-tie"></i></span><span class="svc-tag">Virtual CFO</span></div>
+        <h3>Giám đốc tài chính thuê ngoài (Virtual CFO)</h3>
+        <p class="desc">Đồng hành cùng HĐQT và ban điều hành về chiến lược tài chính, phân bổ vốn, dự báo dòng tiền và làm việc với ngân hàng, quỹ đầu tư; tập trung vào quyết định chiến lược, khác với vận hành kế toán hàng ngày.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Bổ sung năng lực tham mưu tài chính cấp cao theo nhu cầu, giúp lãnh đạo đánh giá các quyết định vốn trước khi thực hiện.</div>
+        <a href="#tuvan" class="svc-link" data-service="Giám đốc tài chính thuê ngoài (Virtual CFO)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/590045/pexels-photo-590045.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-heart-pulse"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-heart-pulse"></i></span><span class="svc-tag">Tái cấu trúc</span></div>
+        <h3>Tái cấu trúc tài chính và tối ưu dòng tiền</h3>
+        <p class="desc">Rà soát cơ cấu tài sản, nợ và hiệu quả kinh doanh; xây dựng phương án cơ cấu kỳ hạn vay, điều chỉnh hoạt động kém hiệu quả và thiết lập lại kỷ luật quản lý vốn.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Làm rõ ưu tiên tái cấu trúc, giảm áp lực dòng tiền và củng cố khả năng đáp ứng nghĩa vụ tài chính của doanh nghiệp.</div>
+        <a href="#tuvan" class="svc-link" data-service="Tái cấu trúc tài chính và tối ưu dòng tiền">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7821688/pexels-photo-7821688.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-magnifying-glass-dollar"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-magnifying-glass-dollar"></i></span><span class="svc-tag">Thẩm định tài chính</span></div>
+        <h3>Thẩm định tài chính và bóc tách rủi ro (FDD)</h3>
+        <p class="desc">Phân tích báo cáo và dữ liệu tài chính để làm rõ chất lượng lợi nhuận, các khoản nợ, chi phí và nghĩa vụ tiềm ẩn trước giao dịch mua bán, sáp nhập doanh nghiệp.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Cung cấp căn cứ đánh giá rủi ro, xác định nội dung cần làm rõ và hỗ trợ đàm phán giá, điều kiện giao dịch.</div>
+        <a href="#tuvan" class="svc-link" data-service="Thẩm định tài chính và bóc tách rủi ro (FDD)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/6802049/pexels-photo-6802049.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-scale-balanced"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-scale-balanced"></i></span><span class="svc-tag">Định giá doanh nghiệp</span></div>
+        <h3>Định giá doanh nghiệp và cấu trúc giao dịch</h3>
+        <p class="desc">Áp dụng các phương pháp định giá phù hợp để xác định giá trị doanh nghiệp; tư vấn cấu trúc thanh toán, cân nhắc tác động đến dòng tiền và chi phí thuế của giao dịch.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Có cơ sở thương lượng giá và so sánh phương án giao dịch, hạn chế quyết định mua bán thiếu căn cứ về giá trị.</div>
+        <a href="#tuvan" class="svc-link" data-service="Định giá doanh nghiệp và cấu trúc giao dịch">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/33175650/pexels-photo-33175650.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-handshake"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-handshake"></i></span><span class="svc-tag">Cố vấn M&amp;A</span></div>
+        <h3>Cố vấn chiến lược mua bán và sáp nhập (M&A)</h3>
+        <p class="desc">Điều phối thương vụ từ chuẩn bị hồ sơ, bảo mật thông tin đến đàm phán và hoàn tất; Crown FAS phối hợp với Crown Tax về cấu trúc thuế, kết nối hai chuyên môn qua một đầu mối.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Duy trì sự phối hợp giữa các bên, hỗ trợ kiểm soát tiến độ và bảo vệ quyền lợi doanh nghiệp trong quá trình giao dịch.</div>
+        <a href="#tuvan" class="svc-link" data-service="Cố vấn chiến lược mua bán và sáp nhập (M&A)">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="khacbiet">
+  <i class="fa-solid fa-chess-king watermark-icon"></i>
+  <div class="container why-grid">
+    <div>
+      <div class="section-head center">
+        <div class="eyebrow">Sự khác biệt của Crown FAS</div>
+        <h2>Bảo vệ giá trị doanh nghiệp bằng tư duy chiến lược cấp cao, không phải vận hành sổ sách</h2>
+        <p>Crown FAS kết nối phân tích tài chính với mục tiêu kinh doanh, hỗ trợ lãnh đạo cân nhắc phương án vốn, tái cấu trúc và giao dịch trên cơ sở dữ liệu.</p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <span class="ic"><i class="fa-solid fa-chess-king"></i></span>
+          <div><h4>Tư duy chiến lược cấp cao, không phải vận hành sổ sách</h4><p>Virtual CFO tham mưu cho HĐQT và ban điều hành về chiến lược, phân bổ vốn và dòng tiền, bổ trợ cho chức năng kế toán và kiểm soát vận hành.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-people-arrows"></i></span>
+          <div><h4>Song hành cùng Crown Tax trong mọi thương vụ M&amp;A</h4><p>Crown FAS dẫn dắt chiến lược và định giá thương vụ, Crown Tax xử lý toàn bộ cấu trúc thuế — hai chuyên môn độc lập, một đầu mối chăm sóc xuyên suốt.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-landmark"></i></span>
+          <div><h4>Am hiểu khẩu vị rủi ro ngân hàng Việt Nam lẫn chuẩn định giá quốc tế</h4><p>Đội ngũ vừa nắm rõ cách ngân hàng trong nước thẩm định hồ sơ vay vốn, vừa áp dụng chuẩn mực định giá và M&A quốc tế vào từng thương vụ.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-user-secret"></i></span>
+          <div><h4>Bảo mật thông tin trong quá trình tư vấn</h4><p>Thông tin về kế hoạch vốn, giao dịch và tái cấu trúc được quản lý theo phạm vi chia sẻ, đầu mối phối hợp và cam kết bảo mật đã thống nhất.</p></div>
+        </li>
+      </ul>
+      <div style="margin-top:30px;text-align:center;">
+        <a href="#tuvan" class="btn btn-gold">Tìm giải pháp tài chính phù hợp — Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="stat-box reveal"><strong>6</strong><span>Dịch vụ tài chính chuyên biệt</span></div>
+      <div class="stat-box reveal"><strong>Big4</strong><span>Tư duy kiểm toán trong đội ngũ</span></div>
+      <div class="stat-box reveal"><strong>2 đơn vị</strong><span>Tax + FAS song hành trong M&A</span></div>
+      <div class="stat-box reveal"><strong>24h</strong><span>Phản hồi tư vấn sơ bộ</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="tuvan">
+  <div class="container contact-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow" style="color:var(--gold-400);justify-content:center;">Kết nối với Crown FAS</div>
+        <h2>Đặt lịch tư vấn tài chính miễn phí</h2>
+        <p>Để lại thông tin, đội ngũ chuyên gia tài chính Crown sẽ liên hệ tư vấn sơ bộ trong vòng 24 giờ làm việc — hoàn toàn miễn phí, không ràng buộc.</p>
+      </div>
+      <ul class="contact-info">
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline Hà Nội</strong><a href="tel:0904501512" style="color:rgba(255,255,255,0.85);">090 450 1512</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline TP. Hồ Chí Minh</strong><a href="tel:0862231919" style="color:rgba(255,255,255,0.85);">086 223 1919</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP Hà Nội</strong><a href="mailto:hn@crown.com.vn" style="color:rgba(255,255,255,0.85);">hn@crown.com.vn</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP TP. Hồ Chí Minh</strong><a href="mailto:hcm@crown.com.vn" style="color:rgba(255,255,255,0.85);">hcm@crown.com.vn</a></div></li>
+      </ul>
+    </div>
+    <form class="contact-form" id="tuvanForm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.');">
+      <h3>Đăng ký nhận tư vấn miễn phí</h3>
+      <div class="row">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="text" placeholder="Tên doanh nghiệp">
+      </div>
+      <div class="row">
+        <input type="tel" placeholder="Số điện thoại" required>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <select id="tuvanService" style="margin-bottom:14px;">
+        <option value="">Dịch vụ quan tâm</option>
+        <option>Thiết kế phương án tài chính và khơi thông nguồn vốn</option>
+        <option>Giám đốc tài chính thuê ngoài (Virtual CFO)</option>
+        <option>Tái cấu trúc tài chính và tối ưu dòng tiền</option>
+        <option>Thẩm định tài chính và bóc tách rủi ro (FDD)</option>
+        <option>Định giá doanh nghiệp và cấu trúc giao dịch</option>
+        <option>Cố vấn chiến lược mua bán và sáp nhập (M&A)</option>
+      </select>
+      <textarea placeholder="Mô tả ngắn vấn đề bạn đang gặp phải..."></textarea>
+      <button type="submit" class="btn btn-navy">Gửi yêu cầu tư vấn miễn phí</button>
+    </form>
+  </div>
+</section>
+
+<section class="process" id="quytrinh">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Quy trình hợp tác</div>
+      <h2>Bốn bước Crown FAS đồng hành cùng doanh nghiệp</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal"><h4>Khảo sát &amp; đánh giá hiện trạng</h4><p>Đánh giá tình hình tài chính hiện tại, xác định mục tiêu và mức độ sẵn sàng của doanh nghiệp.</p></div>
+      <div class="step reveal"><h4>Đề xuất giải pháp &amp; phạm vi</h4><p>Xây dựng phương án phù hợp, minh bạch phạm vi công việc và chi phí trước khi triển khai.</p></div>
+      <div class="step reveal"><h4>Triển khai thực hiện</h4><p>Đội ngũ chuyên gia thực hiện theo lộ trình rõ ràng, cập nhật tiến độ và rủi ro thường xuyên.</p></div>
+      <div class="step reveal"><h4>Đồng hành &amp; bảo vệ giá trị</h4><p>Tiếp tục đồng hành sau khi hoàn tất, đảm bảo giá trị doanh nghiệp được bảo vệ lâu dài.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Đội ngũ chuyên gia</div>
+      <h2>Những con người dẫn dắt Crown</h2>
+      <p>Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/17049766/pexels-photo-17049766.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Đức Hưng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.Đ.H</span></div>
+        <h4>Nguyễn Đức Hưng</h4>
+        <span class="role">Tổng Giám đốc</span>
+        <p>Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit &amp; Advisory.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/9208551/pexels-photo-9208551.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Trần Thành Trung"><i class="fa-solid fa-user-tie"></i><span class="initials">T.T.T</span></div>
+        <h4>Trần Thành Trung</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044806/pexels-photo-21044806.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Văn Bình"><i class="fa-solid fa-user-tie"></i><span class="initials">N.V.B</span></div>
+        <h4>Nguyễn Văn Bình</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044845/pexels-photo-21044845.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Thị Ý"><i class="fa-solid fa-user-tie"></i><span class="initials">N.T.Ý</span></div>
+        <h4>Nguyễn Thị Ý</h4>
+        <span class="role">Giám đốc Tư vấn thuế</span>
+        <p>Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/15092609/pexels-photo-15092609.png?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nghiêm Ngọc Hoàng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.H</span></div>
+        <h4>Nghiêm Ngọc Hoàng</h4>
+        <span class="role">Giám đốc kiểm toán mảng XDCB</span>
+        <p>Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/26524785/pexels-photo-26524785.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Ngọc Tùng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.T</span></div>
+        <h4>Nguyễn Ngọc Tùng</h4>
+        <span class="role">Giám đốc mảng Tư vấn Tài chính</span>
+        <p>Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:28px;">* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.</p>
+  </div>
+</section>
+
+<section class="checklist" id="checklist">
+  <div class="container checklist-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow">Tài liệu dành riêng cho bạn</div>
+        <h2>Nhận Bộ checklist tự đánh giá sức khỏe tài chính &amp; mức độ sẵn sàng gọi vốn miễn phí</h2>
+        <p>Tự đánh giá nhanh sức khỏe tài chính và mức độ sẵn sàng gọi vốn của doanh nghiệp bạn — trước khi bước vào bàn đàm phán với ngân hàng, quỹ đầu tư hay đối tác M&A.</p>
+      </div>
+      <div class="checklist-tags" style="justify-content:center;">
+        <span>Doanh nghiệp đang tăng trưởng</span>
+        <span>Chuẩn bị gọi vốn / IPO</span>
+        <span>Mua bán &amp; Sáp nhập</span>
+        <span>FDI / Đầu tư nước ngoài</span>
+      </div>
+    </div>
+    <div class="checklist-form">
+      <h3><i class="fa-solid fa-file-shield" style="color:var(--gold-600);"></i> Nhận Bộ checklist tự đánh giá tài chính &amp; sẵn sàng gọi vốn</h3>
+      <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.');">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="email" placeholder="Email nhận tài liệu" required>
+        <select>
+          <option value="">Giai đoạn của doanh nghiệp bạn</option>
+          <option>Doanh nghiệp đang tăng trưởng</option>
+          <option>Chuẩn bị gọi vốn / IPO</option>
+          <option>Mua bán &amp; Sáp nhập</option>
+          <option>FDI / Đầu tư nước ngoài</option>
+          <option>Khác</option>
+        </select>
+        <button type="submit" class="btn btn-gold">Nhận Checklist miễn phí <i class="fa-solid fa-download"></i></button>
+      </form>
+      <p class="checklist-altlink">Muốn trao đổi trực tiếp hơn? <a href="#tuvan">Đặt lịch tư vấn tại đây</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="promo-wrap">
+  <div class="promo-banner reveal">
+    <div>
+      <h4>Cập nhật xu hướng tài chính doanh nghiệp &amp; M&amp;A mỗi tháng</h4>
+      <p>Đăng ký nhận bản tin tài chính hàng tháng từ Crown FAS, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật.</p>
+    </div>
+    <form class="promo-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.');">
+      <input type="email" placeholder="Email của bạn" required>
+      <button type="submit" class="btn btn-navy">Đăng ký bản tin</button>
+    </form>
+  </div>
+  <div class="promo-banner ecosystem reveal">
+    <div>
+      <h4>Không chỉ có Tài chính doanh nghiệp — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực</h4>
+      <p>Kiểm toán, Kế toán, Tư vấn Thuế, ESG và Xây dựng cơ bản — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit &amp; Advisory.</p>
+    </div>
+    <a href="https://crown.com.vn" class="btn btn-gold">Khám phá Crown Audit &amp; Advisory <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="brand-mark">
+            <i class="fa-solid fa-crown crown-icon"></i>
+            <span class="word">Crown</span>
+          </span>
+        </div>
+        <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Địa chỉ &amp; Liên hệ</h5>
+        <div class="footer-addr">
+          <strong>Trụ sở chính</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Số 7, ngõ 699 Trương Định, Phường Hoàng Mai, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:info@crown.com.vn">info@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP Hà Nội</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Tầng 7, VIC Building, 18 Ngụy Như Kon Tum, Phường Thành Xuân, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0904501512">090 450 1512</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hn@crown.com.vn">hn@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP TP. Hồ Chí Minh</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0862231919">086 223 1919</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hcm@crown.com.vn">hcm@crown.com.vn</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Bảo đảm &amp; Tuân thủ</h5>
+        <ul>
+          <li><a href="https://audit.crown.com.vn" target="_blank" rel="noopener">Crown Audit</a></li>
+          <li><a href="https://cons.crown.com.vn" target="_blank" rel="noopener">Crown Cons</a></li>
+          <li><a href="https://acc.crown.com.vn" target="_blank" rel="noopener">Crown Accounting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tư vấn &amp; Tối ưu</h5>
+        <ul>
+          <li><a href="https://tax.crown.com.vn" target="_blank" rel="noopener">Crown Tax</a></li>
+          <li><a href="https://fas.crown.com.vn" target="_blank" rel="noopener">Crown FAS</a></li>
+          <li><a href="https://esg.crown.com.vn" target="_blank" rel="noopener">Crown ESG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Chương trình &amp; Liên hệ</h5>
+        <ul>
+          <li><a href="#tuvan">Đăng ký tư vấn</a></li>
+          <li><a href="#khacbiet">Vì sao chọn Crown</a></li>
+          <li><a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-recruit reveal">
+      <div>
+        <h4>Gia nhập đội ngũ Crown</h4>
+        <p>Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.</p>
+      </div>
+      <a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener" class="btn btn-gold">Xem cơ hội nghề nghiệp <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.</span>
+      <span>Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating quick-contact widgets ===== -->
+<a href="tel:0904501512" class="fab-call" aria-label="Gọi ngay cho Crown FAS">
+  <i class="fa-solid fa-phone"></i>
+  <span class="fab-call-ring"></span>
+</a>
+
+<div class="fab-stack">
+  <a href="https://m.me/crownaudit" target="_blank" rel="noopener" class="fab-btn fab-messenger" aria-label="Chat qua Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+  </a>
+  <a href="https://zalo.me/0904501512" target="_blank" rel="noopener" class="fab-btn fab-zalo" aria-label="Chat qua Zalo">
+    <span>Zalo</span>
+  </a>
+</div>
+
+<script>
+  // Mobile burger -> scroll to top nav section (demo behavior)
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.1, rootMargin:'0px 0px -5% 0px'});
+    revealEls.forEach(el=>io.observe(el));
+    setTimeout(()=>revealEls.forEach(el=>el.classList.add('in')), 4000);
+  } else {
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+
+  // Header shrink shadow on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 20){ header.style.boxShadow='0 10px 30px -12px rgba(0,0,0,0.4)'; }
+    else{ header.style.boxShadow='none'; }
+  });
+
+  // Pre-select the relevant service in the consultation form when a service-card link is clicked
+  const tuvanService = document.getElementById('tuvanService');
+  document.querySelectorAll('.svc-link[data-service]').forEach(link => {
+    link.addEventListener('click', () => {
+      if(tuvanService){ tuvanService.value = link.getAttribute('data-service'); }
+    });
+  });
+
+  // Cân bằng chiều cao tiêu đề, mô tả và lợi ích khi ảnh, phông chữ đã tải.
+  (() => {
+    const cards=[...document.querySelectorAll('#dichvu .svc-card')];
+    let frame;
+    const align=()=>{
+      ['.svc-top','h3','.desc','.benefit'].forEach(selector=>{
+        const els=cards.map(card=>card.querySelector(selector)).filter(Boolean);
+        els.forEach(el=>el.style.minHeight='');
+        if(matchMedia('(min-width:641px)').matches&&els.length){
+          const h=Math.ceil(Math.max(...els.map(el=>el.getBoundingClientRect().height)));
+          els.forEach(el=>el.style.minHeight=h+'px');
+        }
+      });
+    };
+    const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(align);};
+    addEventListener('resize',schedule);addEventListener('load',schedule);
+    if(document.fonts)document.fonts.ready.then(schedule);
+    schedule();
+  })();
+</script>
+
+<script id="crown-localization">
+(() => {
+  'use strict';
+  const translations = {"* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.": {"en": "* Illustrative avatar images — update with actual photos of each member before publishing.", "zh": "* 头像图片仅为示意 — 正式发布前请更新各成员的实际照片。", "ja": "※ プロフィール画像はサンプルです。公開前に各メンバーの実際の写真に更新してください。", "ko": "* 예시 프로필 이미지입니다 — 게시 전 각 구성원의 실제 사진으로 업데이트하세요.", "th": "* รูปโปรไฟล์เป็นภาพประกอบ — โปรดอัปเดตเป็นรูปถ่ายจริงของสมาชิกแต่ละคนก่อนเผยแพร่"}, "2 đơn vị": {"en": "2 teams", "zh": "2个团队", "ja": "2つの専門チーム", "ko": "2개 전문팀", "th": "2 ทีม"}, "6 dịch vụ cốt lõi": {"en": "6 core services", "zh": "6项核心服务", "ja": "6つの主要サービス", "ko": "6가지 핵심 서비스", "th": "6 บริการหลัก"}, "6 dịch vụ trọng tâm của Crown FAS": {"en": "6 core Crown FAS services", "zh": "Crown FAS 的6项核心服务", "ja": "Crown FAS の6つの主要サービス", "ko": "Crown FAS의 6가지 핵심 서비스", "th": "6 บริการหลักของ Crown FAS"}, "Am hiểu khẩu vị rủi ro ngân hàng Việt Nam lẫn chuẩn định giá quốc tế": {"en": "Understanding Vietnamese bank risk appetites and international valuation standards", "zh": "熟悉越南银行风险偏好与国际估值标准", "ja": "国内銀行の審査視点と国際評価基準を理解", "ko": "베트남 은행 위험 성향과 국제 가치평가 기준 이해", "th": "เข้าใจความเสี่ยงที่ธนาคารเวียดนามรับได้และมาตรฐานมูลค่าสากล"}, "Bảo mật thông tin trong quá trình tư vấn": {"en": "Confidentiality throughout advisory work", "zh": "咨询过程中的信息保密", "ja": "助言業務における情報保護", "ko": "자문 과정의 기밀 보호", "th": "รักษาความลับตลอดการให้คำปรึกษา"}, "Bảo vệ giá trị doanh nghiệp bằng tư duy chiến lược cấp cao, không phải vận hành sổ sách": {"en": "Protecting business value through senior strategic advice beyond bookkeeping", "zh": "以高级战略思维守护企业价值，而非日常记账", "ja": "高度な戦略的助言で企業価値を守る", "ko": "고급 전략 자문으로 기업가치 보호", "th": "ปกป้องมูลค่าด้วยแนวคิดกลยุทธ์ระดับสูง ไม่ใช่งานบัญชีประจำ"}, "Bảo vệ giá trị doanh nghiệp,": {"en": "Protect business value,", "zh": "守护企业价值，", "ja": "企業価値を守り、", "ko": "기업가치를 지키고,", "th": "ปกป้องมูลค่าธุรกิจ"}, "Bảo đảm & Tuân thủ": {"en": "Assurance & Compliance", "zh": "鉴证与合规", "ja": "アシュアランス＆コンプライアンス", "ko": "어슈어런스 & 컴플라이언스", "th": "การรับรองและการปฏิบัติตามกฎระเบียบ"}, "Bối cảnh thực tế hiện nay": {"en": "Current business context", "zh": "当前背景", "ja": "現在の事業環境", "ko": "현재 경영 환경", "th": "บริบทปัจจุบัน"}, "Bốn bước Crown FAS đồng hành cùng doanh nghiệp": {"en": "Four steps of Crown FAS support", "zh": "Crown FAS 的四步合作流程", "ja": "Crown FAS の4ステップ", "ko": "Crown FAS의 4단계 지원", "th": "4 ขั้นตอนที่ Crown FAS ดูแลธุรกิจ"}, "Bổ sung năng lực tham mưu tài chính cấp cao theo nhu cầu, giúp lãnh đạo đánh giá các quyết định vốn trước khi thực hiện.": {"en": "Add senior financial advisory capacity as needed so leaders can assess capital decisions before acting.", "zh": "按需补充高级财务参谋能力，帮助领导层在实施前评估资本决策。", "ja": "必要に応じて上級財務助言を補い、実行前の資金判断の評価を支えます。", "ko": "수요에 맞춰 고급 재무 자문을 보완하여 실행 전 자금 결정을 평가하도록 돕습니다.", "th": "เสริมที่ปรึกษาการเงินระดับสูงตามต้องการ ช่วยประเมินการตัดสินใจทุนก่อนลงมือ"}, "Chat qua Messenger": {"en": "Chat via Messenger", "zh": "通过 Messenger 聊天", "ja": "Messengerでチャット", "ko": "Messenger로 채팅하기", "th": "แชทผ่าน Messenger"}, "Chat qua Zalo": {"en": "Chat via Zalo", "zh": "通过 Zalo 聊天", "ja": "Zaloでチャット", "ko": "Zalo로 채팅하기", "th": "แชทผ่าน Zalo"}, "Chi phí vốn biến động, doanh nghiệp cần chiến lược tài chính linh hoạt": {"en": "Changing capital costs call for flexible financial strategies", "zh": "资本成本波动，需要灵活财务策略", "ja": "資本コストの変動に柔軟な財務戦略を", "ko": "자본 비용 변동에 대응하는 유연한 재무 전략", "th": "ต้นทุนทุนผันผวน ต้องมีกลยุทธ์การเงินยืดหยุ่น"}, "Chuyển kế hoạch kinh doanh thành phương án tài chính, làm rõ nhu cầu vốn, dòng tiền và khả năng trả nợ; chuẩn bị hồ sơ phù hợp yêu cầu của ngân hàng và các định chế tài chính.": {"en": "Translate business plans into financial proposals, clarify funding needs, cash flow and repayment capacity, and prepare records suited to banks and financial institutions.", "zh": "将经营计划转化为财务方案，明确资金需求、现金流和偿债能力，准备符合银行与金融机构要求的资料。", "ja": "事業計画を財務案に落とし込み、必要資金、資金繰り、返済力を明確にして金融機関向け資料を準備します。", "ko": "사업 계획을 재무안으로 구체화하고 자금 수요, 현금흐름, 상환 능력을 파악하여 금융기관에 적합한 자료를 준비합니다.", "th": "แปลงแผนธุรกิจเป็นแผนการเงิน ระบุเงินทุน เงินสด และความสามารถชำระหนี้ พร้อมเอกสารตามธนาคารต้องการ"}, "Chuẩn bị gọi vốn / IPO": {"en": "Preparing for fundraising / IPO", "zh": "准备融资／IPO", "ja": "資金調達・IPO準備", "ko": "투자 유치 / IPO 준비", "th": "เตรียมระดมทุน / IPO"}, "Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.": {"en": "We're always looking for talented people passionate about audit, accounting, tax and financial advisory to help build a world-class service ecosystem.", "zh": "我们始终在寻找热爱审计、会计、税务和财务咨询领域的人才，共同打造国际化水准的服务生态系统。", "ja": "監査・会計・税務・財務アドバイザリー分野に情熱を持つ人材を常に求めています。共に国際水準のサービスエコシステムを築きましょう。", "ko": "감사, 회계, 세무 및 재무 자문 분야에 열정을 가진 인재를 항상 찾고 있습니다. 세계적 수준의 서비스 생태계를 함께 만들어가요.", "th": "เรากำลังมองหาบุคลากรที่มีใจรักในด้านตรวจสอบบัญชี บัญชี ภาษี และที่ปรึกษาทางการเงิน มาร่วมสร้างระบบนิเวศบริการระดับสากลไปด้วยกัน"}, "Chương trình & Liên hệ": {"en": "Programs & Contact", "zh": "项目与联系", "ja": "プログラム・お問い合わせ", "ko": "프로그램 및 문의", "th": "โครงการและติดต่อ"}, "Chọn ngôn ngữ": {"en": "Select language", "zh": "选择语言", "ja": "言語を選択", "ko": "언어 선택", "th": "เลือกภาษา"}, "Crown Audit & Advisory": {"en": "Crown Audit & Advisory", "zh": "Crown Audit & Advisory", "ja": "Crown Audit & Advisory", "ko": "Crown Audit & Advisory", "th": "Crown Audit & Advisory"}, "Crown FAS - Thiết kế phương án tài chính và khơi thông nguồn vốn, Giám đốc tài chính thuê ngoài (Virtual CFO), tái cấu trúc tài chính, thẩm định tài chính (FDD), định giá doanh nghiệp và cố vấn chiến lược M&A. Bảo vệ giá trị doanh nghiệp, khơi thông dòng vốn cho từng giai đoạn tăng trưởng.": {"en": "Crown FAS provides financial planning, funding access, Virtual CFO, restructuring, FDD, valuation and M&A advisory to protect business value and support growth.", "zh": "Crown FAS 提供财务规划、融资、Virtual CFO、重组、财务尽调、估值和并购咨询，保护企业价值并支持成长。", "ja": "財務計画、調達、Virtual CFO、再編、FDD、評価、M&A助言で企業価値と成長を支援します。", "ko": "재무 계획, 자금 조달, Virtual CFO, 구조조정, FDD, 가치평가, M&A 자문으로 기업가치와 성장을 지원합니다.", "th": "บริการแผนการเงิน แหล่งทุน Virtual CFO ปรับโครงสร้าง FDD ประเมินมูลค่า และ M&A เพื่อปกป้องมูลค่าและสนับสนุนการเติบโต"}, "Crown FAS dẫn dắt chiến lược và định giá thương vụ, Crown Tax xử lý toàn bộ cấu trúc thuế — hai chuyên môn độc lập, một đầu mối chăm sóc xuyên suốt.": {"en": "Crown FAS leads deal strategy and valuation while Crown Tax handles tax structuring: two specialist teams, one continuous point of contact.", "zh": "Crown FAS 主导战略与估值，Crown Tax 负责税务架构，两项独立专业、一个全程服务窗口。", "ja": "FAS が戦略・評価を、Tax が税務構造を担当し、2つの専門性を一つの窓口で提供します。", "ko": "FAS가 전략·평가를, Tax가 세무 구조를 담당하며 두 전문팀이 하나의 창구로 지속 지원합니다.", "th": "FAS นำกลยุทธ์และประเมินมูลค่า ส่วน Tax ดูแลโครงสร้างภาษี สองความเชี่ยวชาญผ่านผู้ดูแลเดียว"}, "Crown FAS kết nối phân tích tài chính với mục tiêu kinh doanh, hỗ trợ lãnh đạo cân nhắc phương án vốn, tái cấu trúc và giao dịch trên cơ sở dữ liệu.": {"en": "Crown FAS connects financial analysis with business goals to help leaders assess funding, restructuring and transaction options using data.", "zh": "Crown FAS 将财务分析与经营目标结合，帮助领导层基于数据评估融资、重组和交易方案。", "ja": "財務分析と経営目標を結び、資金調達・再編・取引の選択肢をデータに基づき検討します。", "ko": "재무 분석과 사업 목표를 연결하여 데이터에 기반한 자금 조달·구조조정·거래안 검토를 돕습니다.", "th": "เชื่อมวิเคราะห์การเงินกับเป้าธุรกิจ ช่วยผู้นำพิจารณาทุน ปรับโครงสร้าง และธุรกรรมด้วยข้อมูล"}, "Crown FAS | Cố vấn Tài chính Doanh nghiệp, M&A, Định giá & Khơi thông nguồn vốn": {"en": "Crown FAS | Corporate finance, M&A, valuation and funding", "zh": "Crown FAS | 企业财务、并购、估值与融资", "ja": "Crown FAS | 企業財務・M&A・評価・資金調達", "ko": "Crown FAS | 기업 재무·M&A·가치평가·자금 조달", "th": "Crown FAS | การเงินองค์กร M&A ประเมินมูลค่า และแหล่งทุน"}, "Crown FAS · Cố vấn Tài chính Doanh nghiệp": {"en": "Crown FAS · Corporate Finance Advisory", "zh": "Crown FAS · 企业财务咨询", "ja": "Crown FAS · 企業財務アドバイザリー", "ko": "Crown FAS · 기업 재무 자문", "th": "Crown FAS · ที่ปรึกษาการเงินองค์กร"}, "Crown FAS — Cố vấn Tài chính Doanh nghiệp chuyên sâu": {"en": "Crown FAS — Specialist Corporate Finance Advisory", "zh": "Crown FAS — 专业企业财务咨询", "ja": "Crown FAS — 専門的な企業財務アドバイザリー", "ko": "Crown FAS — 전문 기업 재무 자문", "th": "Crown FAS — ที่ปรึกษาการเงินองค์กรเฉพาะทาง"}, "Cung cấp căn cứ đánh giá rủi ro, xác định nội dung cần làm rõ và hỗ trợ đàm phán giá, điều kiện giao dịch.": {"en": "Provide a basis for risk assessment, identify matters needing clarification and support negotiation of price and transaction terms.", "zh": "为风险评估提供依据，识别需澄清事项，支持价格与交易条件谈判。", "ja": "リスク評価の根拠と確認事項を示し、価格・取引条件の交渉を支援します。", "ko": "위험 평가 근거와 확인 사항을 제시하고 가격·거래 조건 협상을 지원합니다.", "th": "ให้ฐานประเมินความเสี่ยง ระบุเรื่องที่ต้องชี้แจง และช่วยเจรจาราคากับเงื่อนไข"}, "Có cơ sở thương lượng giá và so sánh phương án giao dịch, hạn chế quyết định mua bán thiếu căn cứ về giá trị.": {"en": "Establish a basis for price negotiations and comparing transaction options, reducing unsupported acquisition or disposal decisions.", "zh": "为价格谈判和交易方案比较提供依据，减少缺乏价值依据的买卖决策。", "ja": "価格交渉や選択肢比較の根拠を提供し、価値の裏付けを欠く売買判断を抑えます。", "ko": "가격 협상과 거래안 비교 근거를 제공하여 가치 근거가 부족한 매매 결정을 줄입니다.", "th": "สร้างฐานต่อรองราคาและเปรียบเทียบทางเลือก ลดการซื้อขายที่ขาดหลักฐานด้านมูลค่า"}, "Có phương án vốn và hồ sơ rõ ràng để làm việc với bên tài trợ, đánh giá chi phí và điều kiện huy động vốn.": {"en": "Build a clear funding plan and documentation to engage financiers and assess financing costs and terms.", "zh": "建立清晰融资方案与资料，用于对接资金方并评估融资成本和条件。", "ja": "明確な計画と資料で資金提供者と協議し、調達費用・条件を評価します。", "ko": "명확한 자금 계획과 자료로 자금 제공자와 협의하고 비용과 조건을 평가합니다.", "th": "มีแผนและเอกสารชัดเจนเพื่อติดต่อผู้ให้ทุนและประเมินต้นทุนกับเงื่อนไข"}, "Cả ngân hàng, quỹ đầu tư lẫn đối tác chiến lược đều ưu tiên làm việc với doanh nghiệp có hồ sơ tài chính rõ ràng, có thể kiểm chứng.": {"en": "Banks, investment funds and strategic partners prioritize businesses with clear, verifiable financial records.", "zh": "银行、投资基金及战略伙伴均优先选择财务资料清晰、可验证的企业。", "ja": "銀行、ファンド、戦略的提携先は、明確で検証可能な財務資料を持つ企業を重視します。", "ko": "은행, 펀드, 전략적 파트너는 명확하고 검증 가능한 재무 자료를 가진 기업을 우선합니다.", "th": "ธนาคาร กองทุน และพันธมิตรเชิงกลยุทธ์ให้ความสำคัญกับธุรกิจที่มีข้อมูลการเงินชัดเจนตรวจสอบได้"}, "Cả nhà đầu tư trong nước và quốc tế đang tìm kiếm cơ hội mua lại, góp vốn vào doanh nghiệp Việt Nam — thiếu chuẩn bị dễ khiến doanh nghiệp bị động trước một đề nghị mua lại.": {"en": "Domestic and international investors seek acquisitions and equity investments in Vietnam; unprepared businesses may be caught off guard by an offer.", "zh": "境内外投资者寻找收购和参股越南企业的机会，准备不足的企业面对要约容易被动。", "ja": "国内外の投資家が買収・出資機会を探す中、準備不足の企業は提案への対応が後手に回りがちです。", "ko": "국내외 투자자가 인수·출자 기회를 찾는 가운데 준비되지 않은 기업은 제안에 수동적으로 대응할 수 있습니다.", "th": "นักลงทุนในและต่างประเทศมองหาซื้อหรือร่วมทุนในธุรกิจเวียดนาม หากไม่เตรียมพร้อมอาจตั้งรับไม่ทันข้อเสนอ"}, "Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo — the form will be connected upon official deployment.", "zh": "感谢您！这是界面演示版 — 表单将在正式上线时接入系统。", "ja": "ありがとうございます！これはUIデモです。正式運用開始時にフォームが接続されます。", "ko": "감사합니다! 이것은 UI 데모입니다 — 양식은 공식 배포 시 연결됩니다.", "th": "ขอบคุณค่ะ/ครับ! นี่คือเดโมอินเทอร์เฟซ — แบบฟอร์มจะเชื่อมต่อเมื่อเปิดใช้งานอย่างเป็นทางการ"}, "Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.": {"en": "Thank you! This is a UI demo. The guide will be emailed once the form is connected for launch.", "zh": "感谢您！这是界面演示，表单正式接入后将通过邮件发送资料。", "ja": "ありがとうございます。これはデモです。正式にフォームを接続後、資料をメールでお送りします。", "ko": "감사합니다! 현재 데모이며 정식 양식 연결 후 자료를 이메일로 보내드립니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต เอกสารจะส่งทางอีเมลเมื่อเชื่อมแบบฟอร์มใช้งานจริง"}, "Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo. Newsletter registration will be connected for launch.", "zh": "感谢您！这是界面演示，通讯订阅将在正式上线时接入。", "ja": "ありがとうございます。これはデモです。配信登録は正式運用時に接続されます。", "ko": "감사합니다! 현재 데모이며 소식지 등록은 정식 운영 시 연결됩니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต การสมัครข่าวจะเชื่อมเมื่อใช้งานจริง"}, "Cập nhật xu hướng tài chính doanh nghiệp & M&A mỗi tháng": {"en": "Monthly corporate finance and M&A trends", "zh": "每月企业财务与并购趋势", "ja": "企業財務・M&A動向を毎月お届け", "ko": "매월 기업 재무·M&A 동향", "th": "อัปเดตแนวโน้มการเงินองค์กรและ M&A ทุกเดือน"}, "Cố vấn M&A": {"en": "M&A advisory", "zh": "并购咨询", "ja": "M&Aアドバイザリー", "ko": "M&A 자문", "th": "ที่ปรึกษา M&A"}, "Cố vấn chiến lược mua bán và sáp nhập (M&A)": {"en": "Strategic M&A advisory", "zh": "并购战略咨询", "ja": "M&A戦略アドバイザリー", "ko": "전략적 M&A 자문", "th": "ที่ปรึกษากลยุทธ์ควบรวมกิจการ (M&A)"}, "Doanh nghiệp thiếu chuẩn bị dữ liệu tài chính bài bản dễ mất lợi thế đàm phán ngay từ vòng gọi vốn đầu tiên.": {"en": "Poorly prepared financial data can weaken negotiating leverage from the first fundraising round.", "zh": "财务数据准备不足，可能使企业从首轮融资便失去谈判优势。", "ja": "財務データの準備不足は、初回の調達から交渉上の優位性を損ないます。", "ko": "재무 데이터 준비 부족은 첫 투자 유치 단계부터 협상력을 약화할 수 있습니다.", "th": "ข้อมูลการเงินที่ไม่พร้อมอาจทำให้เสียความได้เปรียบตั้งแต่รอบระดมทุนแรก"}, "Doanh nghiệp đang tăng trưởng": {"en": "Growing businesses", "zh": "成长型企业", "ja": "成長企業", "ko": "성장 기업", "th": "ธุรกิจกำลังเติบโต"}, "Duy trì sự phối hợp giữa các bên, hỗ trợ kiểm soát tiến độ và bảo vệ quyền lợi doanh nghiệp trong quá trình giao dịch.": {"en": "Maintain coordination among parties, support timeline management and protect business interests throughout the transaction.", "zh": "保持各方协作，支持进度控制，并在交易中维护企业权益。", "ja": "当事者間の連携と日程管理を支え、取引全体で企業の利益を守ります。", "ko": "당사자 간 협업과 일정 관리를 지원하고 거래 전반에서 기업 이익을 보호합니다.", "th": "ประสานทุกฝ่าย ช่วยควบคุมเวลา และปกป้องผลประโยชน์ตลอดธุรกรรม"}, "Dòng tiền đứt gãy, không biết bắt đầu tái cấu trúc từ đâu": {"en": "Cash flow disruption with no clear restructuring starting point", "zh": "现金流断裂，却不知如何启动重组", "ja": "資金繰りが悪化し、再編の着手点が見えない", "ko": "현금흐름 단절과 불명확한 구조조정 방향", "th": "เงินสดสะดุดและไม่รู้เริ่มปรับโครงสร้างตรงไหน"}, "Dù bạn đang cần khơi thông nguồn vốn, tái cấu trúc dòng tiền, hay chuẩn bị một thương vụ M&A, đội ngũ Crown FAS sẵn sàng tư vấn sơ bộ miễn phí trong 24 giờ làm việc.": {"en": "For funding access, cash flow restructuring or M&A preparation, Crown FAS offers a free initial consultation within 24 business hours.", "zh": "无论拓展融资、重组现金流或准备并购，Crown FAS 将在24个工作小时内提供免费初步咨询。", "ja": "資金調達、資金繰り再編、M&A準備について、24営業時間以内に無料初回相談をご案内します。", "ko": "자금 조달, 현금흐름 구조조정, M&A 준비에 대해 영업시간 기준 24시간 내 무료 초기 상담을 제공합니다.", "th": "ไม่ว่าจะหาแหล่งทุน ปรับเงินสด หรือเตรียม M&A เราให้คำปรึกษาเบื้องต้นฟรีภายใน 24 ชั่วโมงทำการ"}, "Dù doanh nghiệp bạn đang khát vốn để tăng trưởng hay chuẩn bị bước vào một thương vụ, bốn vấn đề dưới đây có thể quyết định thành bại.": {"en": "Whether seeking growth capital or preparing a transaction, these four issues can determine success or failure.", "zh": "无论寻求成长资金或准备交易，以下四类问题都可能决定成败。", "ja": "成長資金の確保でも取引の準備でも、次の4課題が成否を左右し得ます。", "ko": "성장 자금 확보나 거래 준비 시 다음 네 문제가 성패를 좌우할 수 있습니다.", "th": "ไม่ว่าจะต้องการทุนเติบโตหรือเตรียมทำดีล ปัญหาทั้งสี่นี้อาจตัดสินความสำเร็จ"}, "Dịch vụ quan tâm": {"en": "Service of interest", "zh": "感兴趣的服务", "ja": "ご興味のあるサービス", "ko": "관심 서비스", "th": "บริการที่สนใจ"}, "Dịch vụ tài chính": {"en": "Financial services", "zh": "财务服务", "ja": "財務サービス", "ko": "재무 서비스", "th": "บริการการเงิน"}, "Dịch vụ tài chính chuyên biệt": {"en": "Specialist financial services", "zh": "专业财务服务", "ja": "専門財務サービス", "ko": "전문 재무 서비스", "th": "บริการการเงินเฉพาะทาง"}, "Email": {"en": "Email", "zh": "电子邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมล"}, "Email VP Hà Nội": {"en": "Hanoi office email", "zh": "河内办公室邮箱", "ja": "ハノイオフィスのメール", "ko": "하노이 사무소 이메일", "th": "อีเมลสำนักงานฮานอย"}, "Email VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City office email", "zh": "胡志明市办公室邮箱", "ja": "ホーチミン市オフィスのメール", "ko": "호치민시 사무소 이메일", "th": "อีเมลสำนักงานโฮจิมินห์"}, "Email của bạn": {"en": "Your email", "zh": "您的邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมลของคุณ"}, "Email nhận tài liệu": {"en": "Email for receiving the guide", "zh": "接收资料的邮箱", "ja": "資料受信用メール", "ko": "자료 수신 이메일", "th": "อีเมลรับเอกสาร"}, "FDI / Đầu tư nước ngoài": {"en": "FDI / Foreign investment", "zh": "外商直接投资／外资", "ja": "FDI・外国投資", "ko": "FDI / 외국인 투자", "th": "FDI / การลงทุนต่างชาติ"}, "Gia nhập đội ngũ Crown": {"en": "Join the Crown Team", "zh": "加入 Crown 团队", "ja": "Crownチームに参加する", "ko": "Crown 팀에 합류하세요", "th": "ร่วมเป็นส่วนหนึ่งของทีม Crown"}, "Giai đoạn của doanh nghiệp bạn": {"en": "Your business stage", "zh": "企业阶段", "ja": "企業の段階", "ko": "기업 단계", "th": "ระยะของธุรกิจ"}, "Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.": {"en": "Supervises audit expertise and develops the professional capacity of the audit team.", "zh": "监督审计专业水准，并致力于培养审计团队的专业能力。", "ja": "監査の専門性を監督し、監査チームの能力開発を推進します。", "ko": "감사 전문성을 감독하고 감사팀의 역량 개발을 담당합니다.", "th": "กำกับดูแลความเชี่ยวชาญด้านการตรวจสอบบัญชีและพัฒนาศักยภาพทีมผู้สอบบัญชี"}, "Giám đốc Tư vấn thuế": {"en": "Tax Advisory Director", "zh": "税务咨询总监", "ja": "税務アドバイザリーディレクター", "ko": "세무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาภาษี"}, "Giám đốc kiểm toán mảng XDCB": {"en": "Director of Capital Construction Audit", "zh": "基本建设审计总监", "ja": "建設プロジェクト監査ディレクター", "ko": "건설투자감사 이사", "th": "ผู้อำนวยการฝ่ายตรวจสอบการก่อสร้างพื้นฐาน"}, "Giám đốc mảng Tư vấn Tài chính": {"en": "Financial Advisory Director", "zh": "财务咨询总监", "ja": "財務アドバイザリーディレクター", "ko": "재무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาทางการเงิน"}, "Giám đốc tài chính thuê ngoài (Virtual CFO)": {"en": "Outsourced Chief Financial Officer (Virtual CFO)", "zh": "外包财务总监（Virtual CFO）", "ja": "外部財務責任者（Virtual CFO）", "ko": "최고재무책임자 아웃소싱 (Virtual CFO)", "th": "ผู้อำนวยการการเงินเอาต์ซอร์ซ (Virtual CFO)"}, "Giải pháp Crown FAS cho từng giai đoạn tài chính của doanh nghiệp": {"en": "Crown FAS solutions for every financial stage", "zh": "适合各财务阶段的 Crown FAS 解决方案", "ja": "各財務段階に応じた Crown FAS の支援", "ko": "재무 단계별 Crown FAS 솔루션", "th": "โซลูชัน Crown FAS สำหรับทุกช่วงการเงิน"}, "Gọi ngay cho Crown FAS": {"en": "Call Crown FAS", "zh": "致电 Crown FAS", "ja": "Crown FAS に電話", "ko": "Crown FAS 전화", "th": "โทรหา Crown FAS"}, "Gọi ngay: 090 450 1512": {"en": "Call: 090 450 1512", "zh": "致电：090 450 1512", "ja": "お電話：090 450 1512", "ko": "전화: 090 450 1512", "th": "โทร: 090 450 1512"}, "Gửi yêu cầu tư vấn miễn phí": {"en": "Send a free consultation request", "zh": "提交免费咨询申请", "ja": "無料相談を送信", "ko": "무료 상담 요청 전송", "th": "ส่งคำขอปรึกษาฟรี"}, "Hotline Hà Nội": {"en": "Hanoi Hotline", "zh": "河内热线", "ja": "ハノイホットライン", "ko": "하노이 핫라인", "th": "สายด่วนฮานอย"}, "Hotline TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Hotline", "zh": "胡志明市热线", "ja": "ホーチミン市ホットライン", "ko": "호치민시 핫라인", "th": "สายด่วนโฮจิมินห์"}, "Hệ sinh thái Crown": {"en": "Crown ecosystem", "zh": "Crown 生态体系", "ja": "Crown グループ", "ko": "Crown 생태계", "th": "เครือ Crown"}, "Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.": {"en": "An ecosystem of Audit, Accounting, Tax, Financial Advisory and ESG services — partnering with Vietnamese businesses for sustainable growth.", "zh": "审计、会计、税务咨询、财务及ESG服务生态系统 — 携手越南企业实现可持续发展。", "ja": "監査・会計・税務・財務アドバイザリー・ESGのサービスエコシステムで、ベトナム企業の持続的成長に寄り添います。", "ko": "감사, 회계, 세무 자문, 재무 및 ESG 서비스 생태계 — 베트남 기업의 지속가능한 성장을 함께합니다.", "th": "ระบบนิเวศบริการตรวจสอบบัญชี บัญชี ที่ปรึกษาภาษี การเงิน และ ESG เคียงข้างธุรกิจเวียดนามสู่การเติบโตอย่างยั่งยืน"}, "Họ và tên": {"en": "Full name", "zh": "姓名", "ja": "お名前", "ko": "성함", "th": "ชื่อ-นามสกุล"}, "Khác": {"en": "Other", "zh": "其他", "ja": "その他", "ko": "기타", "th": "อื่น ๆ"}, "Khám phá Crown Audit & Advisory": {"en": "Explore Crown Audit & Advisory", "zh": "了解 Crown Audit & Advisory", "ja": "Crown Audit & Advisoryを見る", "ko": "Crown Audit & Advisory 살펴보기", "th": "สำรวจ Crown Audit & Advisory"}, "Khát vốn nhưng bị ngân hàng từ chối vì hồ sơ tài chính không đạt chuẩn": {"en": "Funding needs rejected because financial records fall short", "zh": "财务资料不达标，融资需求遭银行拒绝", "ja": "財務資料の不備で融資が得られない", "ko": "미흡한 재무 자료로 인한 대출 거절", "th": "ต้องการทุนแต่ธนาคารปฏิเสธเพราะเอกสารไม่ผ่าน"}, "Không chỉ có Tài chính doanh nghiệp — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực": {"en": "Beyond corporate finance — Crown supports businesses across multiple fields", "zh": "不止企业财务 — Crown 在多个领域支持企业", "ja": "企業財務にとどまらず、多分野で企業を支援", "ko": "기업 재무를 넘어 다양한 분야에서 지원하는 Crown", "th": "มากกว่าการเงินองค์กร — Crown ดูแลธุรกิจหลายด้าน"}, "Không có ai đủ chuyên môn tham mưu các quyết định vốn lớn dễ dẫn đến quyết định cảm tính, gây rủi ro dài hạn cho doanh nghiệp.": {"en": "Without qualified advice on major capital decisions, businesses risk intuition-led choices with long-term consequences.", "zh": "重大资本决策缺少专业参谋，容易凭直觉决策并带来长期风险。", "ja": "大きな資金判断に専門的助言がなければ、直感的な選択が長期的なリスクを招きます。", "ko": "대규모 자금 결정에 전문 조언이 없으면 직관적 선택으로 장기 위험이 발생할 수 있습니다.", "th": "หากไม่มีผู้เชี่ยวชาญแนะนำการตัดสินใจทุนใหญ่ อาจตัดสินใจด้วยความรู้สึกและสร้างความเสี่ยงระยะยาว"}, "Khơi thông vốn": {"en": "Unlocking capital", "zh": "拓展融资", "ja": "資金調達支援", "ko": "자금 조달 지원", "th": "เปิดทางแหล่งทุน"}, "Khảo sát & đánh giá hiện trạng": {"en": "Current-state review and assessment", "zh": "现状调研与评估", "ja": "現状調査・評価", "ko": "현황 조사 및 평가", "th": "สำรวจและประเมินสถานะปัจจุบัน"}, "Kiểm toán, Kế toán, Tư vấn Thuế, ESG và Xây dựng cơ bản — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit & Advisory.": {"en": "Audit, Accounting, Tax Advisory, ESG and Construction — explore the full Crown Audit & Advisory ecosystem.", "zh": "审计、会计、税务咨询、ESG 与建设项目 — 探索 Crown Audit & Advisory 全部服务。", "ja": "監査、会計、税務、ESG、建設まで、Crown Audit & Advisory の全サービスをご覧ください。", "ko": "감사, 회계, 세무 자문, ESG, 건설 — Crown Audit & Advisory의 전체 서비스를 확인하세요.", "th": "ตรวจสอบบัญชี บัญชี ที่ปรึกษาภาษี ESG และก่อสร้าง — สำรวจบริการทั้งหมดของ Crown Audit & Advisory"}, "Kết nối với Crown FAS": {"en": "Connect with Crown FAS", "zh": "联系 Crown FAS", "ja": "Crown FAS に相談", "ko": "Crown FAS 문의", "th": "ติดต่อ Crown FAS"}, "Liên hệ": {"en": "Contact", "zh": "联系方式", "ja": "お問い合わせ", "ko": "문의", "th": "การติดต่อ"}, "Làm rõ ưu tiên tái cấu trúc, giảm áp lực dòng tiền và củng cố khả năng đáp ứng nghĩa vụ tài chính của doanh nghiệp.": {"en": "Clarify restructuring priorities, ease cash flow pressure and strengthen the ability to meet financial obligations.", "zh": "明确重组优先事项，缓解现金流压力，增强履行财务义务的能力。", "ja": "再編の優先順位を明確にし、資金負担の軽減と債務履行能力の強化を支えます。", "ko": "구조조정 우선순위를 정하고 현금흐름 부담을 줄이며 재무 의무 이행 능력을 강화합니다.", "th": "ระบุลำดับปรับโครงสร้าง ลดแรงกดดันเงินสด และเสริมความสามารถชำระภาระการเงิน"}, "Lợi ích": {"en": "Benefits", "zh": "服务益处", "ja": "メリット", "ko": "기대 효과", "th": "ประโยชน์"}, "Mua bán & Sáp nhập": {"en": "Mergers & Acquisitions", "zh": "并购", "ja": "合併・買収", "ko": "인수 및 합병", "th": "ซื้อขายและควบรวม"}, "Mua một doanh nghiệp mà không lường trước rủi ro ẩn trong sổ sách": {"en": "Acquiring a business without seeing hidden risks in its books", "zh": "收购企业却未识别账簿中的隐性风险", "ja": "帳簿の潜在リスクを見抜けない企業買収", "ko": "장부 속 숨은 위험을 파악하지 못한 인수", "th": "ซื้อกิจการโดยไม่เห็นความเสี่ยงซ่อนในบัญชี"}, "Muốn trao đổi trực tiếp hơn?": {"en": "Prefer to discuss directly?", "zh": "希望直接沟通？", "ja": "直接のご相談をご希望ですか", "ko": "직접 상담을 원하시나요?", "th": "ต้องการปรึกษาโดยตรง?"}, "Mô tả ngắn vấn đề bạn đang gặp phải...": {"en": "Briefly describe the issue you are facing...", "zh": "请简要描述您遇到的问题…", "ja": "お困りの内容を簡単にご記入ください…", "ko": "겪고 계신 문제를 간략히 적어주세요…", "th": "อธิบายปัญหาที่พบโดยย่อ..."}, "Một chiến lược tài chính cứng nhắc khó thích ứng khi lãi suất và điều kiện thị trường vốn thay đổi liên tục.": {"en": "Rigid financial strategies struggle to adapt to changing interest rates and capital market conditions.", "zh": "僵化的财务策略难以适应利率与资本市场条件的持续变化。", "ja": "硬直的な財務戦略は、金利や市場条件の変化に適応しにくくなります。", "ko": "경직된 재무 전략은 금리와 자본시장 조건 변화에 적응하기 어렵습니다.", "th": "กลยุทธ์ที่แข็งตัวปรับได้ยากเมื่อดอกเบี้ยและเงื่อนไขตลาดทุนเปลี่ยนต่อเนื่อง"}, "Ngân hàng Việt Nam ngày càng siết chuẩn tín dụng, ưu tiên hồ sơ minh bạch": {"en": "Vietnamese banks tighten credit standards and prioritize transparent records", "zh": "越南银行提高信贷标准，重视透明资料", "ja": "銀行の審査厳格化と透明な資料の重視", "ko": "베트남 은행의 신용 기준 강화와 투명성 중시", "th": "ธนาคารเวียดนามเข้มงวดสินเชื่อและให้ความสำคัญเอกสารโปร่งใส"}, "Ngân hàng Việt Nam phần lớn cho vay dựa trên tài sản đảm bảo — hồ sơ tài chính thiếu chuẩn hóa khiến doanh nghiệp bị từ chối hoặc chỉ được giải ngân một phần nhỏ nhu cầu thực tế.": {"en": "Vietnamese banks largely lend against collateral; unstandardized financial records can lead to rejection or funding well below actual needs.", "zh": "越南银行贷款大多依赖抵押，财务资料不规范可能导致申请被拒或获贷远低于实际需求。", "ja": "ベトナムの銀行融資は担保重視で、資料不備により融資拒否や必要額を下回る融資となることがあります。", "ko": "베트남 은행은 주로 담보 중심으로 대출하므로 미비한 재무 자료는 거절이나 필요액보다 적은 대출로 이어질 수 있습니다.", "th": "ธนาคารเวียดนามส่วนใหญ่ปล่อยกู้ตามหลักประกัน เอกสารไม่เป็นมาตรฐานอาจทำให้ถูกปฏิเสธหรือได้วงเงินต่ำกว่าที่ต้องการมาก"}, "Nhận Bộ checklist tự đánh giá sức khỏe tài chính & mức độ sẵn sàng gọi vốn miễn phí": {"en": "Get a free financial health and fundraising readiness checklist", "zh": "免费领取财务健康与融资准备度自查清单", "ja": "財務健全性・資金調達準備の無料チェックリスト", "ko": "무료 재무 건전성·투자 유치 준비 체크리스트", "th": "รับเช็กลิสต์สุขภาพการเงินและความพร้อมระดมทุนฟรี"}, "Nhận Bộ checklist tự đánh giá tài chính & sẵn sàng gọi vốn": {"en": "Get the financial health and fundraising readiness checklist", "zh": "领取财务与融资准备度自查清单", "ja": "財務・資金調達準備のチェックリストを受け取る", "ko": "재무·투자 유치 준비 체크리스트 받기", "th": "รับเช็กลิสต์การเงินและความพร้อมระดมทุน"}, "Nhận Checklist miễn phí": {"en": "Get the free checklist", "zh": "免费领取清单", "ja": "無料チェックリストを入手", "ko": "무료 체크리스트 받기", "th": "รับเช็กลิสต์ฟรี"}, "Những con người dẫn dắt Crown": {"en": "The people leading Crown", "zh": "引领 Crown 的核心人才", "ja": "Crownを率いる人々", "ko": "Crown을 이끄는 사람들", "th": "บุคลากรผู้นำ Crown"}, "Những nỗi lo thường trực": {"en": "Common concerns", "zh": "常见顾虑", "ja": "よくある懸念", "ko": "주요 고민", "th": "ความกังวลที่พบบ่อย"}, "Nợ ngầm, lợi nhuận ảo, chi phí bị giấu giếm có thể biến một thương vụ tưởng hời thành quả bom nổ chậm sau khi đã xuống tiền.": {"en": "Hidden debts, overstated profits and concealed costs can turn an apparent bargain into a ticking time bomb after payment.", "zh": "隐性债务、虚增利润及隐瞒费用，可能使看似划算的交易在付款后变成隐患。", "ja": "隠れた債務、架空利益、未開示費用により、割安に見えた取引が支払後に大きなリスクとなり得ます。", "ko": "숨은 채무, 부풀린 이익, 은폐 비용은 유리해 보이던 거래를 지급 후 잠재 위기로 바꿀 수 있습니다.", "th": "หนี้แฝง กำไรเทียม และต้นทุนซ่อนอาจเปลี่ยนดีลที่ดูคุ้มให้เป็นระเบิดเวลาหลังจ่ายเงิน"}, "Nợ vay chồng chất, mảng kinh doanh đốt tiền âm thầm kéo cả doanh nghiệp xuống — nếu không có phương án tái cấu trúc kịp thời, doanh nghiệp có thể rơi vào tình trạng chết lâm sàng.": {"en": "Mounting debt and cash-draining operations can drag down the entire business; without timely restructuring, it may become effectively dormant.", "zh": "债务累积、耗资业务可能拖累整个企业，若未及时重组，企业可能陷入停滞。", "ja": "債務増加と資金を消耗する事業が全社を圧迫し、再編が遅れると実質的な機能停止に陥りかねません。", "ko": "누적 채무와 현금을 소진하는 사업이 기업 전체를 끌어내릴 수 있으며 적시 구조조정이 없으면 사실상 기능이 마비될 수 있습니다.", "th": "หนี้สะสมและกิจการที่เผาเงินอาจฉุดทั้งบริษัท หากไม่ปรับโครงสร้างทันเวลาอาจเข้าสู่ภาวะหยุดชะงัก"}, "Phân tích báo cáo và dữ liệu tài chính để làm rõ chất lượng lợi nhuận, các khoản nợ, chi phí và nghĩa vụ tiềm ẩn trước giao dịch mua bán, sáp nhập doanh nghiệp.": {"en": "Analyze financial statements and data to assess earnings quality, debts, costs and potential obligations before an M&A transaction.", "zh": "在并购交易前分析财务报表和数据，厘清盈利质量、债务、成本及潜在义务。", "ja": "M&A前に財務報告・データを分析し、利益の質、債務、費用、潜在義務を明確にします。", "ko": "M&A 전 재무제표와 데이터를 분석하여 이익의 질, 채무, 비용, 잠재 의무를 파악합니다.", "th": "วิเคราะห์รายงานและข้อมูลก่อน M&A เพื่อชี้คุณภาพกำไร หนี้ ต้นทุน และภาระที่อาจมี"}, "Phó Tổng Giám đốc": {"en": "Deputy General Director", "zh": "副总经理", "ja": "副総経理", "ko": "부총괄이사", "th": "รองผู้อำนวยการใหญ่"}, "Phản hồi tư vấn sơ bộ": {"en": "Initial consultation response", "zh": "初步咨询回复", "ja": "初期相談への回答", "ko": "초기 상담 응답", "th": "ตอบปรึกษาเบื้องต้น"}, "Phần lớn SME Việt Nam thiếu bộ phận tài chính chiến lược chuyên trách": {"en": "Most Vietnamese SMEs lack a dedicated strategic finance function", "zh": "多数越南中小企业缺少专职战略财务部门", "ja": "戦略財務の専任機能を欠く多くの中小企業", "ko": "전담 전략 재무 조직이 없는 다수의 베트남 중소기업", "th": "SME เวียดนามส่วนใหญ่ขาดฝ่ายการเงินเชิงกลยุทธ์"}, "Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.": {"en": "Oversees audit quality and manages partnerships with major corporate clients.", "zh": "负责审计质量把控，并主导与大型企业客户的合作关系。", "ja": "監査品質を管理し、大手企業クライアントとの提携関係を統括します。", "ko": "감사 품질을 관리하고 대기업 고객과의 협력 관계를 총괄합니다.", "th": "รับผิดชอบคุณภาพงานตรวจสอบบัญชีและความสัมพันธ์ความร่วมมือกับลูกค้าองค์กรขนาดใหญ่"}, "Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.": {"en": "Oversees audits of capital investment settlement for capital construction projects.", "zh": "负责基本建设项目投资决算审计工作。", "ja": "建設プロジェクトの投資決算監査を担当します。", "ko": "건설투자사업 자본결산 감사를 담당합니다.", "th": "รับผิดชอบการตรวจสอบบัญชีการชำระบัญชีเงินลงทุนโครงการก่อสร้างพื้นฐาน"}, "Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.": {"en": "Oversees in-depth tax advisory, tax obligation optimization and legal compliance for businesses.", "zh": "负责企业深度税务咨询、税务义务优化及合规工作。", "ja": "企業への専門的な税務アドバイザリー、税務最適化、法令遵守を担当します。", "ko": "기업 대상 심층 세무자문, 세무 최적화 및 법적 컴플라이언스를 담당합니다.", "th": "รับผิดชอบการให้คำปรึกษาด้านภาษีเชิงลึก การปรับปรุงภาระภาษี และการปฏิบัติตามกฎหมายสำหรับธุรกิจ"}, "Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.": {"en": "Leads financial restructuring advisory, capital raising and investment transactions for businesses.", "zh": "负责企业财务重组咨询、融资及投资交易服务。", "ja": "財務再編アドバイザリー、資金調達、投資取引を統括します。", "ko": "재무구조 개편 자문, 자금조달 및 투자거래를 이끕니다.", "th": "นำการให้คำปรึกษาการปรับโครงสร้างทางการเงิน การระดมทุน และธุรกรรมการลงทุนสำหรับธุรกิจ"}, "Quy trình hợp tác": {"en": "Our Process", "zh": "合作流程", "ja": "連携プロセス", "ko": "협업 프로세스", "th": "ขั้นตอนการทำงานร่วมกัน"}, "Quỹ đầu tư thẩm định khắt khe hơn trước khi rót vốn": {"en": "Investment funds conduct stricter pre-investment due diligence", "zh": "投资基金在出资前开展更严格尽调", "ja": "投資前調査を厳格化するファンド", "ko": "투자 전 실사를 강화하는 펀드", "th": "กองทุนตรวจสอบเข้มขึ้นก่อนลงทุน"}, "Rà soát cơ cấu tài sản, nợ và hiệu quả kinh doanh; xây dựng phương án cơ cấu kỳ hạn vay, điều chỉnh hoạt động kém hiệu quả và thiết lập lại kỷ luật quản lý vốn.": {"en": "Review assets, liabilities and business performance; plan debt maturities, address underperforming activities and restore capital management discipline.", "zh": "复核资产、负债和经营绩效，制定债务期限调整方案，改善低效业务，重建资金管理纪律。", "ja": "資産・負債・業績を確認し、借入期限の再編、不採算事業の改善、資金管理規律の再構築を計画します。", "ko": "자산·부채·성과를 검토하고 차입 만기 조정, 저성과 사업 개선, 자금 관리 규율 재정립을 계획합니다.", "th": "ตรวจสินทรัพย์ หนี้ และผลดำเนินงาน วางแผนปรับระยะหนี้ ปรับกิจการด้อยประสิทธิภาพ และสร้างวินัยบริหารทุนใหม่"}, "Rủi ro tài chính có thể chặn đứng cả cơ hội tăng trưởng lẫn một thương vụ lớn": {"en": "Financial risks can block growth opportunities and major transactions", "zh": "财务风险可能阻碍成长机会与重大交易", "ja": "財務リスクは成長機会や大型取引を妨げる", "ko": "재무 위험은 성장 기회와 대형 거래를 막을 수 있습니다", "th": "ความเสี่ยงการเงินอาจขวางโอกาสเติบโตและดีลใหญ่"}, "Song hành cùng Crown Tax trong mọi thương vụ M&A": {"en": "Working alongside Crown Tax in every M&A deal", "zh": "每项并购均与 Crown Tax 协同", "ja": "M&Aで Crown Tax と連携", "ko": "모든 M&A에서 Crown Tax와 협업", "th": "ร่วม Crown Tax ในทุกดีล M&A"}, "Sáu dịch vụ đáp ứng nhu cầu vốn, điều hành tài chính, tái cấu trúc và chuẩn bị giao dịch mua bán, sáp nhập.": {"en": "Six services address funding, financial management, restructuring and M&A preparation.", "zh": "六项服务满足融资、财务管理、重组及并购准备需求。", "ja": "資金調達、財務運営、再編、M&A準備に応える6つのサービスです。", "ko": "자금 조달, 재무 관리, 구조조정, M&A 준비를 여섯 서비스로 지원합니다.", "th": "หกบริการตอบโจทย์ทุน บริหารการเงิน ปรับโครงสร้าง และเตรียมควบรวม"}, "Số điện thoại": {"en": "Phone number", "zh": "电话号码", "ja": "電話番号", "ko": "전화번호", "th": "หมายเลขโทรศัพท์"}, "Sự khác biệt của Crown FAS": {"en": "What sets Crown FAS apart", "zh": "Crown FAS 的独特优势", "ja": "Crown FAS の強み", "ko": "Crown FAS의 차별점", "th": "จุดเด่นของ Crown FAS"}, "Tax + FAS song hành trong M&A": {"en": "Tax + FAS together in M&A", "zh": "Tax + FAS 协同并购", "ja": "M&Aを支える Tax + FAS", "ko": "M&A에서 함께하는 Tax + FAS", "th": "Tax + FAS ร่วมดูแล M&A"}, "Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.": {"en": "Demo design — illustrative content, update with real figures before publishing.", "zh": "演示版设计 — 内容仅供示意，正式发布前请更新真实数据。", "ja": "デモデザインです。サンプルコンテンツのため、公開前に実際のデータへ更新してください。", "ko": "데모 디자인입니다 — 예시 콘텐츠이며, 게시 전 실제 수치로 업데이트하세요.", "th": "ดีไซน์เดโม — เนื้อหาเป็นตัวอย่างประกอบ โปรดอัปเดตข้อมูลจริงก่อนเผยแพร่"}, "Thiết kế phương án tài chính và khơi thông nguồn vốn": {"en": "Financial planning and funding access", "zh": "财务方案设计与融资渠道拓展", "ja": "財務計画・資金調達支援", "ko": "재무 계획 및 자금 조달 지원", "th": "ออกแบบแผนการเงินและเปิดทางแหล่งทุน"}, "Thiếu căn cứ định giá chuẩn mực khiến chủ doanh nghiệp dễ bị quỹ đầu tư hoặc đối tác ép giá thấp hơn giá trị thực trên bàn đàm phán.": {"en": "Without a sound valuation basis, owners may face pressure from investors or counterparties to accept less than the business's true value.", "zh": "缺少规范的估值依据，企业主在谈判中容易被投资者或交易方压价。", "ja": "適切な評価根拠がなければ、投資家や相手方から実際の価値を下回る価格を求められやすくなります。", "ko": "타당한 가치평가 근거가 없으면 투자자나 상대방으로부터 실제 가치보다 낮은 가격을 요구받기 쉽습니다.", "th": "หากขาดฐานประเมินที่เหมาะสม เจ้าของอาจถูกกองทุนหรือคู่เจรจากดราคาต่ำกว่ามูลค่าจริง"}, "Thông tin về kế hoạch vốn, giao dịch và tái cấu trúc được quản lý theo phạm vi chia sẻ, đầu mối phối hợp và cam kết bảo mật đã thống nhất.": {"en": "Funding, transaction and restructuring information is managed under agreed sharing scopes, contact arrangements and confidentiality commitments.", "zh": "融资、交易及重组信息按照约定的共享范围、协作窗口和保密承诺管理。", "ja": "資金計画・取引・再編情報を、合意した共有範囲、担当窓口、守秘義務に基づき管理します。", "ko": "자금 계획·거래·구조조정 정보를 합의한 공유 범위, 담당 창구, 기밀 약정에 따라 관리합니다.", "th": "จัดการข้อมูลทุน ธุรกรรม และปรับโครงสร้างตามขอบเขตแชร์ ผู้ประสานงาน และข้อตกลงรักษาความลับ"}, "Thẩm định tài chính": {"en": "Financial due diligence", "zh": "财务尽职调查", "ja": "財務デューデリジェンス", "ko": "재무 실사", "th": "ตรวจสอบสถานะการเงิน"}, "Thẩm định tài chính và bóc tách rủi ro (FDD)": {"en": "Financial due diligence and risk analysis (FDD)", "zh": "财务尽调与风险分析（FDD）", "ja": "財務デューデリジェンス・リスク分析（FDD）", "ko": "재무 실사 및 위험 분석 (FDD)", "th": "ตรวจสอบสถานะการเงินและวิเคราะห์ความเสี่ยง (FDD)"}, "Thị trường M&A tại Việt Nam ngày càng sôi động": {"en": "Vietnam's M&A market is increasingly active", "zh": "越南并购市场日益活跃", "ja": "活発化するベトナムのM&A市場", "ko": "활성화되는 베트남 M&A 시장", "th": "ตลาด M&A เวียดนามคึกคักขึ้น"}, "Thị trường vốn ngày càng đòi hỏi minh bạch thông tin tài chính": {"en": "Capital markets demand greater financial transparency", "zh": "资本市场日益要求财务透明", "ja": "資本市場が求める財務の透明性", "ko": "자본시장의 재무 투명성 요구 증가", "th": "ตลาดทุนต้องการข้อมูลการเงินโปร่งใสมากขึ้น"}, "Thị trường vốn và M&A tại Việt Nam đang thay đổi nhanh — doanh nghiệp không chuẩn bị kỹ dễ bỏ lỡ cơ hội hoặc chịu thiệt trên bàn đàm phán.": {"en": "Vietnam's capital and M&A markets are changing rapidly; insufficient preparation can mean missed opportunities or weaker negotiating positions.", "zh": "越南资本与并购市场快速变化，准备不足可能错失机会或在谈判中处于劣势。", "ja": "ベトナムの資本・M&A市場は急変しており、準備不足は機会損失や交渉力低下を招きます。", "ko": "베트남 자본·M&A 시장의 빠른 변화 속 준비 부족은 기회 상실이나 협상력 약화를 초래합니다.", "th": "ตลาดทุนและ M&A เวียดนามเปลี่ยนเร็ว การเตรียมไม่พร้อมอาจทำให้เสียโอกาสหรือเสียเปรียบเจรจา"}, "Tiếp tục đồng hành sau khi hoàn tất, đảm bảo giá trị doanh nghiệp được bảo vệ lâu dài.": {"en": "Continue support after completion to safeguard business value over the long term.", "zh": "完成后继续支持，长期守护企业价值。", "ja": "完了後も支援を続け、長期的な企業価値を守ります。", "ko": "완료 후에도 지원을 이어가며 장기적인 기업가치를 보호합니다.", "th": "ดูแลต่อหลังเสร็จสิ้นเพื่อปกป้องมูลค่าธุรกิจระยะยาว"}, "Trang chủ Crown": {"en": "Crown homepage", "zh": "Crown 首页", "ja": "Crownトップ", "ko": "Crown 홈", "th": "หน้าหลัก Crown"}, "Trao đổi ngay với chuyên gia Crown FAS — hoàn toàn miễn phí": {"en": "Speak with a Crown FAS expert — free of charge", "zh": "免费咨询 Crown FAS 专家", "ja": "Crown FAS の専門家に無料相談", "ko": "Crown FAS 전문가와 무료 상담", "th": "ปรึกษาผู้เชี่ยวชาญ Crown FAS ฟรี"}, "Triển khai thực hiện": {"en": "Implementation", "zh": "实施执行", "ja": "実施", "ko": "실행", "th": "ดำเนินงาน"}, "Trụ sở chính": {"en": "Head Office", "zh": "总部", "ja": "本社", "ko": "본사", "th": "สำนักงานใหญ่"}, "Tuyển dụng": {"en": "Careers", "zh": "招聘", "ja": "採用情報", "ko": "채용정보", "th": "ร่วมงานกับเรา"}, "Tài liệu dành riêng cho bạn": {"en": "Resources for your business", "zh": "企业资料", "ja": "お役立ち資料", "ko": "기업 자료", "th": "เอกสารสำหรับธุรกิจ"}, "Tái cấu trúc": {"en": "Restructuring", "zh": "重组", "ja": "再編", "ko": "구조조정", "th": "ปรับโครงสร้าง"}, "Tái cấu trúc tài chính và tối ưu dòng tiền": {"en": "Financial restructuring and cash flow optimization", "zh": "财务重组与现金流优化", "ja": "財務再編・キャッシュフロー最適化", "ko": "재무 구조조정 및 현금흐름 최적화", "th": "ปรับโครงสร้างการเงินและเพิ่มประสิทธิภาพเงินสด"}, "Tên doanh nghiệp": {"en": "Company name", "zh": "公司名称", "ja": "会社名", "ko": "회사명", "th": "ชื่อบริษัท"}, "Tìm giải pháp tài chính phù hợp — Đặt lịch tư vấn miễn phí": {"en": "Find the right financial solution — Book a free consultation", "zh": "寻找适合的财务方案 — 预约免费咨询", "ja": "適切な財務ソリューションを無料相談", "ko": "적합한 재무 솔루션 — 무료 상담 예약", "th": "ค้นหาโซลูชันการเงินที่เหมาะสม — นัดปรึกษาฟรี"}, "Tư duy chiến lược cấp cao, không phải vận hành sổ sách": {"en": "Senior strategic thinking beyond bookkeeping", "zh": "高级战略思维，超越日常记账", "ja": "経理業務を超えた高度な戦略思考", "ko": "기장을 넘어선 고급 전략적 사고", "th": "แนวคิดกลยุทธ์ระดับสูงเหนือการบันทึกบัญชี"}, "Tư duy kiểm toán trong đội ngũ": {"en": "An audit mindset throughout our team", "zh": "团队具备审计思维", "ja": "監査の視点を持つチーム", "ko": "감사 관점을 갖춘 팀", "th": "ทีมงานที่มีมุมมองด้านการตรวจสอบ"}, "Tư vấn & Tối ưu": {"en": "Advisory & Optimization", "zh": "咨询与优化", "ja": "アドバイザリー＆最適化", "ko": "어드바이저리 & 최적화", "th": "ที่ปรึกษาและการเพิ่มประสิทธิภาพ"}, "Tư vấn ngay về dịch vụ này": {"en": "Discuss this service", "zh": "咨询此项服务", "ja": "このサービスについて相談", "ko": "서비스 상담", "th": "ปรึกษาบริการนี้"}, "Tổng Giám đốc": {"en": "General Director", "zh": "总经理", "ja": "最高経営責任者", "ko": "대표이사", "th": "กรรมการผู้จัดการใหญ่"}, "Từ phương án vốn, CFO thuê ngoài đến thẩm định, định giá và M&A — Crown FAS giúp doanh nghiệp làm rõ giá trị, kiểm soát dòng tiền và chuẩn bị cơ sở cho các quyết định tài chính.": {"en": "From funding plans and outsourced CFOs to due diligence, valuation and M&A, Crown FAS helps clarify value, manage cash flow and inform financial decisions.", "zh": "从融资方案、外包 CFO 到尽调、估值与并购，Crown FAS 帮助企业明确价值、管理现金流，为财务决策提供依据。", "ja": "資金計画、CFO委託、調査、評価、M&Aまで、価値の明確化と資金管理を通じ財務判断を支えます。", "ko": "자금 계획, CFO 아웃소싱, 실사, 가치평가, M&A까지 기업가치와 현금흐름을 명확히 하고 재무 의사결정을 돕습니다.", "th": "ตั้งแต่แผนทุน CFO เอาต์ซอร์ซ ตรวจสอบสถานะ ประเมินมูลค่า ถึง M&A เราช่วยชี้มูลค่า ควบคุมเงินสด และวางฐานการตัดสินใจ"}, "Tự đánh giá nhanh sức khỏe tài chính và mức độ sẵn sàng gọi vốn của doanh nghiệp bạn — trước khi bước vào bàn đàm phán với ngân hàng, quỹ đầu tư hay đối tác M&A.": {"en": "Assess your financial health and fundraising readiness before negotiating with banks, investment funds or M&A partners.", "zh": "在与银行、基金或并购伙伴谈判前，快速评估财务健康与融资准备度。", "ja": "銀行、ファンド、M&A相手との交渉前に、財務健全性と資金調達準備を確認できます。", "ko": "은행, 펀드, M&A 파트너와 협상하기 전 재무 건전성과 투자 유치 준비 수준을 평가합니다.", "th": "ประเมินสุขภาพการเงินและความพร้อมก่อนเจรจากับธนาคาร กองทุน หรือคู่ M&A"}, "VP Hà Nội": {"en": "Hanoi Office", "zh": "河内办公室", "ja": "ハノイオフィス", "ko": "하노이 사무소", "th": "สำนักงานฮานอย"}, "VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Office", "zh": "胡志明市办公室", "ja": "ホーチミン市オフィス", "ko": "호치민시 사무소", "th": "สำนักงานโฮจิมินห์"}, "Virtual CFO tham mưu cho HĐQT và ban điều hành về chiến lược, phân bổ vốn và dòng tiền, bổ trợ cho chức năng kế toán và kiểm soát vận hành.": {"en": "The Virtual CFO advises boards and management on strategy, capital allocation and cash flow, complementing accounting and operational controls.", "zh": "Virtual CFO 为董事会和管理层提供战略、资本配置及现金流建议，补充会计和运营控制职能。", "ja": "Virtual CFO が戦略、資金配分、資金繰りを助言し、会計と業務統制を補完します。", "ko": "Virtual CFO는 전략, 자본 배분, 현금흐름을 자문하여 회계 및 운영 통제를 보완합니다.", "th": "Virtual CFO แนะนำกลยุทธ์ จัดสรรทุน และเงินสดแก่บอร์ดกับผู้บริหาร เสริมงานบัญชีและควบคุม"}, "Vì sao Crown FAS": {"en": "Why Crown FAS", "zh": "为何选择 Crown FAS", "ja": "Crown FAS を選ぶ理由", "ko": "Crown FAS를 선택하는 이유", "th": "ทำไมต้อง Crown FAS"}, "Vì sao chọn Crown": {"en": "Why choose Crown", "zh": "为何选择 Crown", "ja": "Crownが選ばれる理由", "ko": "Crown을 선택하는 이유", "th": "ทำไมต้องเลือก Crown"}, "Vì sao chọn Crown FAS": {"en": "Why choose Crown FAS", "zh": "为何选择 Crown FAS", "ja": "Crown FAS を選ぶ理由", "ko": "Crown FAS를 선택하는 이유", "th": "เหตุผลที่เลือก Crown FAS"}, "Vì sao tài chính doanh nghiệp cần một cố vấn chiến lược, không chỉ một người ghi số": {"en": "Why corporate finance needs a strategic adviser, beyond recordkeeping", "zh": "为何企业财务需要战略顾问，而不只是记账人员", "ja": "企業財務に戦略的助言が必要な理由", "ko": "기업 재무에 전략 자문이 필요한 이유", "th": "ทำไมการเงินองค์กรต้องมีที่ปรึกษากลยุทธ์นอกเหนือจากผู้บันทึกตัวเลข"}, "Xem cơ hội nghề nghiệp": {"en": "View Career Opportunities", "zh": "查看职业机会", "ja": "求人情報を見る", "ko": "채용 기회 보기", "th": "ดูโอกาสทางอาชีพ"}, "Xem dịch vụ tài chính": {"en": "Explore financial services", "zh": "查看财务服务", "ja": "財務サービスを見る", "ko": "재무 서비스 보기", "th": "ดูบริการการเงิน"}, "Xu hướng thẩm định tín dụng ngày càng chặt chẽ khiến doanh nghiệp thiếu hồ sơ tài chính chuẩn hóa càng khó tiếp cận vốn vay ưu đãi.": {"en": "Tighter credit assessments make preferential financing harder to obtain without standardized financial records.", "zh": "信贷审核趋严，缺少规范财务资料的企业更难获取优惠贷款。", "ja": "厳格な信用審査により、整備された財務資料なしで有利な融資を得ることが難しくなっています。", "ko": "신용 심사가 엄격해져 표준화된 재무 자료 없이 우대 금융을 확보하기 어려워집니다.", "th": "การประเมินสินเชื่อที่เข้มขึ้นทำให้ธุรกิจที่ขาดเอกสารมาตรฐานเข้าถึงเงินกู้เงื่อนไขดีได้ยาก"}, "Xây dựng phương án phù hợp, minh bạch phạm vi công việc và chi phí trước khi triển khai.": {"en": "Develop an appropriate approach with transparent scope and fees before implementation.", "zh": "制定适合的方案，在实施前明确工作范围与费用。", "ja": "適切な方針を作成し、実施前に業務範囲と費用を明示します。", "ko": "적절한 방안을 수립하고 착수 전에 업무 범위와 비용을 명확히 합니다.", "th": "จัดแนวทางที่เหมาะสม พร้อมขอบเขตงานและค่าใช้จ่ายโปร่งใสก่อนเริ่ม"}, "dòng vốn cho từng giai đoạn tăng trưởng": {"en": "capital for every stage of growth", "zh": "各成长阶段的资金渠道", "ja": "各成長段階に必要な資金へ", "ko": "성장의 모든 단계에서", "th": "เงินทุนสำหรับทุกช่วงการเติบโต"}, "khơi thông": {"en": "unlock", "zh": "畅通", "ja": "資金の流れを開く", "ko": "자금 흐름을 열어갑니다", "th": "เปิดทาง"}, "© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.": {"en": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "zh": "© 2026 Crown 审计与咨询有限公司。版权所有。", "ja": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "ko": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "th": "© 2026 บริษัท Crown Audit and Advisory จำกัด สงวนลิขสิทธิ์"}, "Áp dụng các phương pháp định giá phù hợp để xác định giá trị doanh nghiệp; tư vấn cấu trúc thanh toán, cân nhắc tác động đến dòng tiền và chi phí thuế của giao dịch.": {"en": "Apply appropriate valuation methods and advise on payment structures, considering transaction cash flows and tax costs.", "zh": "采用适当估值方法确定企业价值，建议付款结构，并考虑交易现金流与税务成本。", "ja": "適切な評価手法で企業価値を算定し、資金繰り・税負担を踏まえた支払構造を助言します。", "ko": "적절한 평가 방법으로 기업가치를 산정하고 현금흐름과 세무 비용을 고려해 지급 구조를 자문합니다.", "th": "ใช้วิธีประเมินที่เหมาะสม แนะนำโครงสร้างชำระเงิน โดยคำนึงถึงเงินสดและต้นทุนภาษี"}, "Điều phối thương vụ từ chuẩn bị hồ sơ, bảo mật thông tin đến đàm phán và hoàn tất; Crown FAS phối hợp với Crown Tax về cấu trúc thuế, kết nối hai chuyên môn qua một đầu mối.": {"en": "Coordinate deals from documentation and confidentiality to negotiation and closing; Crown FAS works with Crown Tax on tax structures through one contact point.", "zh": "协调交易资料、保密、谈判至交割，Crown FAS 与 Crown Tax 配合处理税务架构，通过单一窗口连接两项专业。", "ja": "資料準備、守秘、交渉、完了まで調整し、税務構造は Crown Tax と連携して一つの窓口で対応します。", "ko": "자료 준비, 기밀 관리, 협상, 종결까지 조정하고 Crown Tax와 세무 구조를 협업하여 단일 창구로 지원합니다.", "th": "ประสานดีลตั้งแต่เอกสาร รักษาความลับ เจรจา จนเสร็จสิ้น โดยร่วม Crown Tax ด้านโครงสร้างภาษีผ่านผู้ประสานงานเดียว"}, "Đánh giá tình hình tài chính hiện tại, xác định mục tiêu và mức độ sẵn sàng của doanh nghiệp.": {"en": "Assess current finances and identify business goals and readiness.", "zh": "评估财务现状，明确企业目标与准备程度。", "ja": "財務の現状を評価し、目標と準備状況を把握します。", "ko": "현재 재무 상태를 평가하고 목표와 준비 수준을 파악합니다.", "th": "ประเมินการเงินปัจจุบัน ระบุเป้าหมายและความพร้อม"}, "Đăng ký bản tin": {"en": "Subscribe", "zh": "订阅简报", "ja": "ニュースレター登録", "ko": "소식지 구독", "th": "สมัครข่าวสาร"}, "Đăng ký nhận bản tin tài chính hàng tháng từ Crown FAS, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật.": {"en": "Subscribe to Crown FAS's monthly newsletter or follow us on Facebook for updates.", "zh": "订阅 Crown FAS 月度通讯，或关注 Facebook 获取更新。", "ja": "Crown FAS の月刊ニュースレターや Facebook で最新情報をご確認ください。", "ko": "Crown FAS 월간 소식지를 구독하거나 Facebook에서 업데이트를 확인하세요.", "th": "สมัครจดหมายข่าว Crown FAS รายเดือนหรือติดตาม Facebook"}, "Đăng ký nhận tư vấn miễn phí": {"en": "Request a free consultation", "zh": "申请免费咨询", "ja": "無料相談を申し込む", "ko": "무료 상담 신청", "th": "ลงทะเบียนปรึกษาฟรี"}, "Đăng ký tư vấn": {"en": "Request a consultation", "zh": "申请咨询", "ja": "相談を申し込む", "ko": "상담 신청", "th": "ลงทะเบียนขอรับคำปรึกษา"}, "Đặt lịch tư vấn miễn phí": {"en": "Book a free consultation", "zh": "预约免费咨询", "ja": "無料相談を予約", "ko": "무료 상담 예약", "th": "นัดปรึกษาฟรี"}, "Đặt lịch tư vấn tài chính miễn phí": {"en": "Book a free financial consultation", "zh": "预约免费财务咨询", "ja": "無料財務相談を予約", "ko": "무료 재무 상담 예약", "th": "นัดปรึกษาการเงินฟรี"}, "Đặt lịch tư vấn tại đây": {"en": "Book a consultation here", "zh": "在此预约咨询", "ja": "こちらから相談予約", "ko": "여기에서 상담 예약", "th": "นัดปรึกษาที่นี่"}, "Đề xuất giải pháp & phạm vi": {"en": "Propose the solution and scope", "zh": "提出方案与范围", "ja": "解決策と範囲の提案", "ko": "솔루션 및 범위 제안", "th": "เสนอโซลูชันและขอบเขต"}, "Để lại thông tin, đội ngũ chuyên gia tài chính Crown sẽ liên hệ tư vấn sơ bộ trong vòng 24 giờ làm việc — hoàn toàn miễn phí, không ràng buộc.": {"en": "Leave your details and Crown finance experts will contact you within 24 business hours for a free, no-obligation initial consultation.", "zh": "留下信息，Crown 财务专家将在24个工作小时内联系您，提供免费且无附加义务的初步咨询。", "ja": "財務専門家が24営業時間以内にご連絡し、契約義務のない無料初回相談をご案内します。", "ko": "정보를 남기시면 재무 전문가가 영업시간 기준 24시간 내 연락하여 의무 없는 무료 초기 상담을 제공합니다.", "th": "ฝากข้อมูลไว้ ผู้เชี่ยวชาญการเงินจะติดต่อภายใน 24 ชั่วโมงทำการเพื่อปรึกษาเบื้องต้นฟรีโดยไม่มีข้อผูกมัด"}, "Địa chỉ & Liên hệ": {"en": "Address & Contact", "zh": "地址与联系方式", "ja": "住所・お問い合わせ", "ko": "주소 및 연락처", "th": "ที่อยู่และการติดต่อ"}, "Định giá doanh nghiệp": {"en": "Business valuation", "zh": "企业估值", "ja": "企業価値評価", "ko": "기업가치 평가", "th": "ประเมินมูลค่าธุรกิจ"}, "Định giá doanh nghiệp và cấu trúc giao dịch": {"en": "Business valuation and deal structuring", "zh": "企业估值与交易架构", "ja": "企業価値評価・取引構造設計", "ko": "기업가치 평가 및 거래 구조 설계", "th": "ประเมินมูลค่าธุรกิจและจัดโครงสร้างธุรกรรม"}, "Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit & Advisory.": {"en": "Sets strategic direction and oversees the overall operations of Crown Audit & Advisory.", "zh": "制定发展战略方向，全面领导Crown Audit & Advisory的整体运营。", "ja": "Crown Audit & Advisoryの発展戦略を策定し、全体運営を統括します。", "ko": "Crown Audit & Advisory의 발전 전략을 수립하고 전반적인 운영을 총괄합니다.", "th": "กำหนดทิศทางกลยุทธ์การพัฒนาและบริหารการดำเนินงานโดยรวมของ Crown Audit & Advisory"}, "Đối mặt gọi vốn hoặc M&A nhưng không biết định giá đúng": {"en": "Approaching fundraising or M&A without a reliable valuation", "zh": "面临融资或并购，却缺乏合理估值", "ja": "資金調達やM&Aに向けた適切な評価がない", "ko": "투자 유치·M&A를 앞두고 적정 가치평가 부재", "th": "เตรียมระดมทุนหรือ M&A แต่ไม่รู้มูลค่าที่เหมาะสม"}, "Đồng hành & bảo vệ giá trị": {"en": "Ongoing support and value protection", "zh": "持续支持与价值保护", "ja": "継続支援と価値保護", "ko": "지속 지원 및 가치 보호", "th": "ดูแลต่อเนื่องและปกป้องมูลค่า"}, "Đồng hành cùng HĐQT và ban điều hành về chiến lược tài chính, phân bổ vốn, dự báo dòng tiền và làm việc với ngân hàng, quỹ đầu tư; tập trung vào quyết định chiến lược, khác với vận hành kế toán hàng ngày.": {"en": "Advise boards and management on financial strategy, capital allocation, cash forecasts and lender or investor engagement, focusing on strategic decisions alongside daily accounting operations.", "zh": "协助董事会及管理层制定财务战略、资本配置、现金预测并对接银行和基金，聚焦战略决策，区别于日常会计运营。", "ja": "取締役会・経営陣に財務戦略、資金配分、予測、銀行・投資家対応を助言し、日常経理とは異なる戦略判断を支えます。", "ko": "이사회·경영진의 재무 전략, 자본 배분, 현금 예측, 은행·투자자 협의를 지원하며 일상 회계와 구별되는 전략 결정에 집중합니다.", "th": "ดูแลบอร์ดและผู้บริหารเรื่องกลยุทธ์ จัดสรรทุน คาดการณ์เงินสด ติดต่อธนาคารและกองทุน โดยเน้นการตัดสินใจเชิงกลยุทธ์ต่างจากบัญชีประจำ"}, "Đội ngũ": {"en": "Team", "zh": "团队", "ja": "チーム", "ko": "팀 소개", "th": "ทีมงาน"}, "Đội ngũ chuyên gia": {"en": "Our Expert Team", "zh": "专家团队", "ja": "専門家チーム", "ko": "전문가팀", "th": "ทีมผู้เชี่ยวชาญ"}, "Đội ngũ chuyên gia thực hiện theo lộ trình rõ ràng, cập nhật tiến độ và rủi ro thường xuyên.": {"en": "Experts follow a clear roadmap and regularly update progress and risks.", "zh": "专家按清晰路线实施，定期更新进度与风险。", "ja": "明確な計画に沿って実施し、進捗とリスクを定期共有します。", "ko": "명확한 일정에 따라 수행하고 진행 상황과 위험을 정기 공유합니다.", "th": "ผู้เชี่ยวชาญดำเนินตามแผนชัดเจน อัปเดตความคืบหน้าและความเสี่ยงสม่ำเสมอ"}, "Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.": {"en": "Experienced auditors, tax experts, financial and ESG advisors — working together on every client file to ensure consistent service quality.", "zh": "经验丰富的审计师、税务专家、财务与ESG顾问团队，共同协作处理每一份客户档案，确保服务质量始终如一。", "ja": "経験豊富な監査人、税務専門家、財務・ESGアドバイザーが各案件で連携し、一貫した品質のサービスを提供します。", "ko": "경험이 풍부한 감사인, 세무 전문가, 재무 및 ESG 자문위원이 모든 고객 사안에 협력하여 일관된 서비스 품질을 보장합니다.", "th": "ทีมผู้สอบบัญชี ผู้เชี่ยวชาญด้านภาษี ที่ปรึกษาทางการเงินและ ESG ที่มีประสบการณ์ ทำงานร่วมกันในทุกงานของลูกค้าเพื่อคุณภาพบริการที่สม่ำเสมอ"}, "Đội ngũ vừa nắm rõ cách ngân hàng trong nước thẩm định hồ sơ vay vốn, vừa áp dụng chuẩn mực định giá và M&A quốc tế vào từng thương vụ.": {"en": "Our team understands local loan assessments and applies international valuation and M&A standards to each deal.", "zh": "团队熟悉国内银行贷款审核方式，并在各项交易中应用国际估值与并购标准。", "ja": "国内の融資審査を理解し、各取引に国際的な評価・M&A基準を適用します。", "ko": "국내 은행 대출 심사를 이해하고 각 거래에 국제 가치평가·M&A 기준을 적용합니다.", "th": "ทีมเข้าใจการประเมินสินเชื่อในประเทศและใช้มาตรฐานประเมินมูลค่ากับ M&A สากลในแต่ละดีล"}, "Đừng để dòng vốn quyết định thay tương lai doanh nghiệp bạn": {"en": "Take control of capital and your business's future", "zh": "主动管理资金，掌握企业未来", "ja": "資金と企業の未来を主体的に考える", "ko": "자금과 기업의 미래를 주도하세요", "th": "อย่าปล่อยให้เงินทุนกำหนดอนาคตธุรกิจแทนคุณ"}, "Ảnh chân dung minh họa Nghiêm Ngọc Hoàng": {"en": "Illustrative portrait: Nghiêm Ngọc Hoàng", "zh": "示意肖像：Nghiêm Ngọc Hoàng", "ja": "イメージ肖像：Nghiêm Ngọc Hoàng", "ko": "예시 인물 사진: Nghiêm Ngọc Hoàng", "th": "ภาพบุคคลประกอบ: Nghiêm Ngọc Hoàng"}, "Ảnh chân dung minh họa Nguyễn Ngọc Tùng": {"en": "Illustrative portrait: Nguyễn Ngọc Tùng", "zh": "示意肖像：Nguyễn Ngọc Tùng", "ja": "イメージ肖像：Nguyễn Ngọc Tùng", "ko": "예시 인물 사진: Nguyễn Ngọc Tùng", "th": "ภาพบุคคลประกอบ: Nguyễn Ngọc Tùng"}, "Ảnh chân dung minh họa Nguyễn Thị Ý": {"en": "Illustrative portrait: Nguyễn Thị Ý", "zh": "示意肖像：Nguyễn Thị Ý", "ja": "イメージ肖像：Nguyễn Thị Ý", "ko": "예시 인물 사진: Nguyễn Thị Ý", "th": "ภาพบุคคลประกอบ: Nguyễn Thị Ý"}, "Ảnh chân dung minh họa Nguyễn Văn Bình": {"en": "Illustrative portrait: Nguyễn Văn Bình", "zh": "示意肖像：Nguyễn Văn Bình", "ja": "イメージ肖像：Nguyễn Văn Bình", "ko": "예시 인물 사진: Nguyễn Văn Bình", "th": "ภาพบุคคลประกอบ: Nguyễn Văn Bình"}, "Ảnh chân dung minh họa Nguyễn Đức Hưng": {"en": "Illustrative portrait: Nguyễn Đức Hưng", "zh": "示意肖像：Nguyễn Đức Hưng", "ja": "イメージ肖像：Nguyễn Đức Hưng", "ko": "예시 인물 사진: Nguyễn Đức Hưng", "th": "ภาพบุคคลประกอบ: Nguyễn Đức Hưng"}, "Ảnh chân dung minh họa Trần Thành Trung": {"en": "Illustrative portrait: Trần Thành Trung", "zh": "示意肖像：Trần Thành Trung", "ja": "イメージ肖像：Trần Thành Trung", "ko": "예시 인물 사진: Trần Thành Trung", "th": "ภาพบุคคลประกอบ: Trần Thành Trung"}};
+  const isHomepage = false;
+  const languages = ['vi','en','zh','ja','ko','th'];
+  const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
+  const crownHosts = new Set(['crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn']);
+  const normalize = value => value.replace(/\s+/g,' ').trim();
+  let locale = 'vi';
+  const translate = (value, language) => language === 'vi' ? value : (translations[normalize(value)]?.[language] ?? value);
+  // Keep the original service values: changing visible labels must not change CTA selection.
+  document.querySelectorAll('option').forEach(option => {
+    if (!option.hasAttribute('value')) option.setAttribute('value', option.value);
+  });
+  const keyed = isHomepage ? Array.from(document.querySelectorAll('[data-i18n]')).filter(el => I18N[el.dataset.i18n]).map(el => ({el, nodes:Array.from(el.childNodes).filter(n=>n.nodeType===3).map(node=>({node,original:node.nodeValue})), entry:I18N[el.dataset.i18n]})) : [];
+  const keyedElements = new Set(keyed.map(record => record.el));
+  const textRecords = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest('script,style,noscript,.lang-switcher-wrap')) continue;
+    let keyedAncestor = false;
+    for (let e=parent;e;e=e.parentElement) if (keyedElements.has(e)) {keyedAncestor=true;break;}
+    if (keyedAncestor) continue;
+    const original=node.nodeValue;
+    if(translations[normalize(original)]) textRecords.push({node,original});
+  }
+  const attributes=[];
+  document.querySelectorAll('[placeholder],[aria-label],[title],[alt],meta[name="description"]').forEach(el => {
+    for (const name of ['placeholder','aria-label','title','alt','content']) {
+      const original=el.getAttribute(name);
+      if(original && translations[normalize(original)]) attributes.push({el,name,original});
+    }
+  });
+  const originalTitle=document.title;
+  const links=Array.from(document.querySelectorAll('a[href]')).filter(a => {
+    try{return crownHosts.has(new URL(a.getAttribute('href'),location.href).hostname);}catch{return false;}
+  }).map(el=>({el,href:el.getAttribute('href')}));
+  function applyLanguage(language, persist=false) {
+    if(!languages.includes(language)) language='vi';
+    locale=language;
+    if(isHomepage) currentLang=language;
+    document.documentElement.lang=language;
+    keyed.forEach(({nodes,entry})=>{
+      let written=false;
+      nodes.forEach(({node,original})=>{
+        if(language==='vi') node.nodeValue=original;
+        else if(original.trim() && !written){node.nodeValue=original.match(/^\s*/)[0]+entry[language]+original.match(/\s*$/)[0];written=true;}
+        else if(original.trim()) node.nodeValue='';
+      });
+    });
+    textRecords.forEach(({node,original})=>{
+      const translated=translate(original,language);
+      node.nodeValue=language==='vi' ? original : original.match(/^\s*/)[0]+translated.trim()+original.match(/\s*$/)[0];
+    });
+    attributes.forEach(({el,name,original})=>el.setAttribute(name,translate(original,language)));
+    document.title=translate(originalTitle,language);
+    document.getElementById('langCurrentLabel').textContent=language.toUpperCase();
+    document.querySelector('#langSwitcherBtn .flag').textContent=flags[language];
+    document.querySelectorAll('.lang-option').forEach(button=>{
+      const active=button.dataset.lang===language;
+      button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
+    });
+    links.forEach(({el,href})=>{
+      const url=new URL(href,location.href);url.searchParams.set('lang',language);el.href=url.href;
+    });
+    if(persist){
+      try{localStorage.setItem('crown.language',language);}catch{}
+      if(crownHosts.has(location.hostname)) document.cookie=`crown_language=${language}; Domain=crown.com.vn; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
+      try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}
+    }
+    // Existing equal-height card layouts recalculate against the translated text.
+    requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  }
+  const originalAlert=window.alert.bind(window);
+  window.alert=message=>originalAlert(translate(String(message),locale));
+  const menus=[
+    {button:document.getElementById('langSwitcherBtn'),panel:document.getElementById('crownLanguageMenu')},
+    {button:document.getElementById('crownEcosystemBtn'),panel:document.getElementById('crownEcosystemMenu')}
+  ];
+  function closeMenus(){menus.forEach(({button,panel})=>{panel.hidden=true;button.setAttribute('aria-expanded','false');});}
+  menus.forEach(({button,panel})=>{
+    button.addEventListener('click',()=>{const opening=panel.hidden;closeMenus();panel.hidden=!opening;button.setAttribute('aria-expanded',String(opening));});
+    button.addEventListener('keydown',event=>{
+      if(event.key==='ArrowDown'){event.preventDefault();closeMenus();panel.hidden=false;button.setAttribute('aria-expanded','true');panel.querySelector('button,a').focus();}
+    });
+    panel.addEventListener('keydown',event=>{
+      const options=Array.from(panel.querySelectorAll('button,a'));const index=options.indexOf(document.activeElement);
+      if(event.key==='ArrowDown'||event.key==='ArrowUp') {event.preventDefault();options[(index+(event.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();}
+      if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
+    });
+  });
+  document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{applyLanguage(button.dataset.lang,true);closeMenus();menus[0].button.focus();}));
+  document.addEventListener('click',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const opened=menus.find(m=>!m.panel.hidden);closeMenus();opened?.button.focus();}});
+  document.addEventListener('focusin',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  let initial=new URLSearchParams(location.search).get('lang');
+  if(!languages.includes(initial)){
+    try{initial=document.cookie.match(/(?:^|;\s*)crown_language=(vi|en|zh|ja|ko|th)(?:;|$)/)?.[1] || localStorage.getItem('crown.language');}catch{}
+  }
+  applyLanguage(initial);
+  window.CrownLanguage={set:language=>applyLanguage(language,true),get:()=>locale};
+})();
+
+</script>
 </body>
 </html>

@@ -1,23 +1,1268 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crown Audit &amp; Advisory | Sắp ra mắt</title>
-  <meta name="robots" content="noindex">
-  <style>
-    body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; color: #111; background: #fafaf8; }
-    main { text-align: center; padding: 2rem; max-width: 32rem; }
-    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    p { color: #5b6660; }
-    a { color: #1f6b3f; font-weight: 600; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown Audit | Kiểm toán độc lập, soát xét và kiểm toán nội bộ</title>
+<meta name="description" content="Crown Audit cung cấp 8 dịch vụ: kiểm toán báo cáo tài chính, soát xét và AUP, kiểm toán tuân thủ, hiệu quả hoạt động, đánh giá đối tác và hỗ trợ giám sát nội bộ. Trao đổi để xác định phạm vi phù hợp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}
+  /* Tám dịch vụ, bốn cột trên máy tính; đồng bộ chiều cao theo nội dung. */
+  #dichvu .svc-grid{grid-auto-rows:1fr;}
+  #dichvu .svc-card{min-width:0;padding:24px 20px;}
+  #dichvu .svc-illus{aspect-ratio:16/10;height:auto;flex-shrink:0;}
+  #dichvu .svc-top{gap:10px;flex-wrap:wrap;align-items:center;}
+  #dichvu .svc-ic{width:38px;height:38px;font-size:17px;flex-shrink:0;}
+  #dichvu .svc-tag{font-size:10px;letter-spacing:.2px;white-space:normal;max-width:100%;}
+  #dichvu .svc-card h3{font-size:17px;line-height:1.4;}
+  #dichvu .svc-card .desc{line-height:1.65;}
+  #dichvu .svc-card .benefit{line-height:1.6;flex:none;}
+  #dichvu .svc-link{margin-top:auto;}
+  .hero-stats strong,.why-stats strong{overflow-wrap:anywhere;}
+  @media(max-width:640px){#dichvu .svc-grid{grid-auto-rows:auto;}}
+</style></noscript>
+<style>
+  :root{
+    --navy-900:#0B0B0B;
+    --navy-800:#163823;
+    --navy-700:#1E4E30;
+    --navy-600:#276139;
+    --gold-600:#1F6B3F;
+    --gold-500:#2F8C55;
+    --gold-400:#6FCB93;
+    --gold-100:#E3F1E8;
+    --cream:#FAFAF8;
+    --ink:#111111;
+    --muted:#5B6660;
+    --white:#FFFFFF;
+    --line:#E3E3DE;
+    --orange:#F2871F;
+    --radius:14px;
+    --shadow:0 20px 50px -20px rgba(10,20,14,0.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy-900);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--gold-600);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold-500);display:inline-block;}
+  .section-head{max-width:680px;margin-bottom:52px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin-bottom:16px;}
+  .section-head p{color:var(--muted);font-size:17px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;transition:all .25s ease;white-space:nowrap;
+  }
+  .btn-gold{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn-gold:hover{background:var(--gold-500);border-color:var(--gold-500);color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(47,140,85,0.5);}
+  .btn-outline-light{border-color:rgba(255,255,255,0.4);color:#fff;}
+  .btn-outline-light:hover{background:rgba(255,255,255,0.12);border-color:#fff;}
+  .btn-outline-navy{border-color:var(--navy-700);color:var(--navy-800);}
+  .btn-outline-navy:hover{background:var(--navy-900);color:#fff;}
+  .btn-navy{background:var(--navy-900);color:#fff;}
+  .btn-navy:hover{background:var(--navy-700);transform:translateY(-2px);}
+  .btn-sm{padding:10px 20px;font-size:13px;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(8,8,8,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    transition:background .3s ease;
+  }
+  .header-inner{
+    max-width:1240px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;color:#fff;}
+  .brand-mark{position:relative;display:inline-flex;}
+  .brand-mark .crown-icon{
+    position:absolute;top:-12px;left:26px;font-size:13px;color:var(--gold-500);
+  }
+  .brand-mark .word{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.3px;
+    color:#fff;line-height:1;
+  }
+  .logo .sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-top:4px;}
+
+  nav.main-nav{display:flex;align-items:center;gap:6px;}
+  nav.main-nav > ul{display:flex;align-items:center;gap:4px;}
+  nav.main-nav > ul > li{position:relative;}
+  nav.main-nav > ul > li > a{
+    display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.88);white-space:nowrap;
+    font-size:14.5px;font-weight:600;padding:10px 12px;border-radius:8px;transition:.2s;
+  }
+  nav.main-nav > ul > li > a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .switcher-wrap{position:relative;}
+  .switcher-btn{
+    display:flex;align-items:center;gap:8px;color:#fff;font-size:13.5px;font-weight:600;
+    border:1px solid rgba(255,255,255,0.22);padding:9px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+  }
+  .switcher-btn:hover{border-color:var(--gold-400);}
+  .switcher-menu{
+    position:absolute;top:100%;right:0;margin-top:10px;width:220px;background:#fff;border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s ease;
+  }
+  .switcher-wrap:hover .switcher-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .switcher-menu a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy-900);}
+  .switcher-menu a:hover{background:var(--cream);}
+  .burger{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;padding:190px 0 110px;color:#fff;
+    background:
+      radial-gradient(1100px 600px at 85% -10%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(160deg, rgba(11,11,11,0.92) 0%, rgba(22,56,35,0.88) 55%, rgba(30,78,48,0.85) 100%),
+      url('https://images.pexels.com/photos/8297478/pexels-photo-8297478.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+  .hero h1{color:#fff;font-size:clamp(32px,4.2vw,52px);line-height:1.2;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--gold-400);}
+  .hero p.lead{font-size:17.5px;color:rgba(255,255,255,0.78);max-width:540px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-actions .btn i{font-size:12px;}
+  .hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--gold-500);padding-left:14px;}
+  .hero-stats strong{display:block;font-family:'Playfair Display',serif;font-size:26px;color:#fff;}
+  .hero-stats span{font-size:12.5px;color:rgba(255,255,255,0.6);}
+
+  .hero-card{
+    position:relative;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+    border-radius:20px;padding:30px;backdrop-filter:blur(6px);
+  }
+  .hero-card h3{color:#fff;font-size:18px;margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:700;}
+  .hero-card ul li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,0.14);font-size:14px;color:rgba(255,255,255,0.85);}
+  .hero-card ul li:last-child{border-bottom:none;}
+  .hero-card ul li i{color:var(--gold-400);margin-top:3px;}
+  .float-chip{
+    position:absolute;width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 16px 28px -10px rgba(0,0,0,0.45);z-index:3;
+  }
+  .float-chip.fc-1{top:-22px;left:-22px;background:var(--gold-500);color:var(--navy-900);}
+  .float-chip.fc-2{bottom:-18px;right:26px;background:var(--navy-900);color:var(--gold-400);border:1px solid rgba(111,203,147,0.4);}
+
+  /* ===== ILLUSTRATION PANELS ===== */
+  .illus{
+    position:relative;height:168px;border-radius:14px;overflow:hidden;margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,#EEF7F1,#F9FBFA);
+  }
+  .illus::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(47,140,85,0.16);top:-55px;right:-45px;}
+  .illus::after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(11,11,11,0.05);bottom:-40px;left:-25px;}
+  .illus .illus-chip{
+    position:absolute;z-index:2;width:42px;height:42px;border-radius:11px;background:var(--navy-900);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:16px;bottom:14px;right:14px;
+    box-shadow:0 10px 20px -8px rgba(0,0,0,0.3);
+  }
+  .illus.illus-photo{background-size:cover;background-position:center;}
+  .illus.illus-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(165deg, rgba(11,11,11,0.12), rgba(11,11,11,0.6));}
+  .illus.illus-photo::after{display:none;}
+
+  /* ===== PAIN POINTS (Nỗi lo chung) ===== */
+  .pain{padding:100px 0 40px;background:var(--white);}
+  .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .pain-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
+    transition:.25s ease;position:relative;overflow:hidden;
+  }
+  .pain-card:hover{box-shadow:var(--shadow);transform:translateY(-6px);border-color:transparent;}
+  .pain-card h3{font-size:17.5px;margin-bottom:8px;line-height:1.3;}
+  .pain-card p{color:var(--muted);font-size:13.5px;}
+
+  /* ===== URGENCY / REALITY CHECK (bối cảnh thực tế) ===== */
+  .urgency{background:var(--navy-900);color:#fff;padding:90px 0 70px;position:relative;overflow:hidden;}
+  .urgency .section-head h2{color:#fff;}
+  .urgency .section-head p{color:rgba(255,255,255,0.65);}
+  .urgency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .urgency-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:26px 24px;transition:.25s ease;}
+  .urgency-card:hover{border-color:rgba(242,135,31,0.5);transform:translateY(-4px);background:rgba(255,255,255,0.06);}
+  .urgency-card .ic{width:44px;height:44px;border-radius:12px;background:rgba(242,135,31,0.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;}
+  .urgency-card h4{color:#fff;font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.4;margin-bottom:8px;}
+  .urgency-card p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.55;}
+
+  /* ===== CTA BANNER (mid-page) ===== */
+  .cta-banner-mid{
+    position:relative;overflow:hidden;padding:66px 0;color:#fff;text-align:center;
+    background:
+      radial-gradient(900px 500px at 15% 120%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(120deg,var(--navy-900),var(--navy-700));
+  }
+  .cta-banner-mid .container{max-width:720px;}
+  .cta-banner-mid .eyebrow{color:var(--gold-400);justify-content:center;}
+  .cta-banner-mid h2{color:#fff;font-size:clamp(24px,3vw,32px);margin-bottom:14px;}
+  .cta-banner-mid p{color:rgba(255,255,255,0.75);font-size:15.5px;margin-bottom:30px;}
+  .cta-actions-mid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .hotline-badge{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--gold-400);}
+  .hotline-badge i{font-size:20px;}
+
+  /* ===== SERVICES GRID (8 dịch vụ cốt lõi) ===== */
+  .services{padding:96px 0;background:var(--cream);}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .svc-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+    display:flex;flex-direction:column;transition:.25s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .svc-ic{
+    width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy-800),var(--navy-900));color:var(--gold-400);font-size:20px;
+  }
+  .svc-tag{font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--gold-600);background:var(--gold-100);padding:5px 10px;border-radius:999px;}
+  .svc-card h3{font-size:18.5px;margin-bottom:10px;line-height:1.3;}
+  .svc-card .desc{color:var(--muted);font-size:13.8px;margin-bottom:14px;}
+  .svc-card .benefit{
+    font-size:13px;color:var(--navy-800);background:var(--gold-100);border-radius:10px;padding:10px 12px;
+    margin-bottom:18px;flex:1;
+  }
+  .svc-card .benefit strong{display:block;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-600);margin-bottom:4px;}
+  .svc-card .svc-link{
+    font-size:13.5px;font-weight:700;color:var(--navy-900);display:inline-flex;align-items:center;gap:8px;
+    padding-top:14px;border-top:1px solid var(--line);
+  }
+  .svc-card .svc-link i{font-size:11px;transition:.2s;}
+  .svc-card:hover .svc-link i{transform:translateX(4px);}
+  .svc-illus{height:140px;margin-bottom:18px;}
+
+  /* ===== WHY US (Vì sao chọn Crown Audit) ===== */
+  .why{position:relative;overflow:hidden;padding:100px 0;background:var(--navy-900);color:#fff;}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:rgba(255,255,255,0.7);}
+  .why-list{display:flex;flex-direction:column;gap:22px;}
+  .why-list li{display:flex;gap:16px;}
+  .why-list .ic{
+    width:44px;height:44px;flex:none;border-radius:12px;background:rgba(47,140,85,0.14);
+    color:var(--gold-400);display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .why-list h4{color:#fff;font-family:'Inter',sans-serif;font-size:16px;margin-bottom:4px;}
+  .why-list p{color:rgba(255,255,255,0.65);font-size:14px;}
+  .why-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat-box{border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:26px;text-align:center;}
+  .stat-box strong{display:block;font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-400);margin-bottom:6px;}
+  .stat-box span{font-size:12.5px;color:rgba(255,255,255,0.65);}
+  .watermark-icon{
+    position:absolute;font-size:220px;color:rgba(111,203,147,0.07);pointer-events:none;z-index:0;
+    top:50%;right:-30px;transform:translateY(-50%);
+  }
+
+  /* ===== PARTNER PROGRAM (Đối tác Kiểm toán viên) ===== */
+  .partner{position:relative;overflow:hidden;padding:100px 0;background:linear-gradient(160deg,#121212,var(--navy-900));color:#fff;}
+  .partner .section-head h2{color:#fff;}
+  .partner .section-head p{color:rgba(255,255,255,0.7);}
+  .partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .partner-principle{background:rgba(242,135,31,0.1);border:1px solid rgba(242,135,31,0.35);border-radius:14px;padding:18px 20px;font-size:14px;line-height:1.55;color:rgba(255,255,255,0.85);margin-bottom:30px;}
+  .partner-principle strong{color:var(--orange);}
+  .partner-list{display:flex;flex-direction:column;gap:22px;}
+  .partner-list li{display:flex;gap:16px;}
+  .partner-list .ic{
+    width:44px;height:44px;flex:none;border-radius:12px;background:rgba(242,135,31,0.14);
+    color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .partner-list h4{color:#fff;font-family:'Inter',sans-serif;font-size:16px;margin-bottom:4px;}
+  .partner-list p{color:rgba(255,255,255,0.65);font-size:14px;}
+  .partner-watermark{
+    position:absolute;font-size:220px;color:rgba(242,135,31,0.06);pointer-events:none;z-index:0;
+    top:50%;left:-40px;transform:translateY(-50%);
+  }
+
+  /* ===== CONSULTATION FORM (Đặt lịch tư vấn) ===== */
+  .contact{padding:100px 0;background:linear-gradient(160deg,var(--navy-800),var(--navy-900));color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .contact h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:16px;}
+  .contact p{color:rgba(255,255,255,0.72);font-size:16px;margin-bottom:30px;}
+  .contact-info{display:flex;flex-direction:column;gap:18px;}
+  .contact-info li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.85);}
+  .contact-info li .ic{flex:none;}
+  .contact-info .ic{width:40px;height:40px;border-radius:10px;background:rgba(47,140,85,0.16);color:var(--gold-400);display:flex;align-items:center;justify-content:center;}
+  .contact-form{background:#fff;border-radius:18px;padding:34px;color:var(--ink);}
+  .contact-form h3{font-size:19px;margin-bottom:18px;color:var(--navy-900);}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .contact-form input,.contact-form select,.contact-form textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:var(--cream);
+  }
+  .contact-form textarea{grid-column:1/-1;min-height:80px;resize:vertical;margin-bottom:14px;}
+  .contact-form button{width:100%;}
+
+  /* ===== PROCESS (Quy trình hợp tác) ===== */
+  .process{padding:100px 0;background:var(--white);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  .step{position:relative;padding:30px 22px;border-radius:var(--radius);background:var(--cream);border:1px solid var(--line);}
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-500);font-weight:700;display:block;margin-bottom:14px;
+  }
+  .step h4{font-size:16.5px;margin-bottom:8px;color:var(--navy-900);}
+  .step p{font-size:13.5px;color:var(--muted);}
+
+  /* ===== TEAM ===== */
+  .team{padding:96px 0;background:var(--cream);}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .team-card{
+    text-align:center;border:1px solid var(--line);border-radius:var(--radius);padding:32px 22px;transition:.25s ease;background:#fff;
+  }
+  .team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .team-card h4{font-size:17px;margin-bottom:4px;}
+  .team-card .role{display:block;font-size:12.5px;font-weight:700;color:var(--gold-600);margin-bottom:12px;}
+  .team-card p{font-size:13.5px;color:var(--muted);}
+  .team-photo{
+    position:relative;height:190px;border-radius:14px;overflow:hidden;margin-bottom:20px;
+    background:linear-gradient(160deg,var(--navy-900),var(--navy-800));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .team-photo::before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(111,203,147,0.18);top:-55px;right:-55px;}
+  .team-photo::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.05);bottom:-40px;left:-30px;}
+  .team-photo i{position:relative;z-index:2;font-size:60px;color:var(--gold-400);}
+  .team-photo .initials{
+    position:absolute;z-index:2;bottom:12px;left:16px;font-family:'Playfair Display',serif;
+    font-size:13px;letter-spacing:3px;color:rgba(255,255,255,0.55);text-transform:uppercase;
+  }
+  .team-photo.has-photo{background-size:cover;background-position:center top;}
+  .team-photo.has-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(195deg, rgba(11,11,11,0.05), rgba(11,11,11,0.7));}
+  .team-photo.has-photo::after{display:none;}
+  .team-photo.has-photo i{display:none;}
+  .team-photo.has-photo .initials{color:rgba(255,255,255,0.9);}
+
+  /* ===== CHECKLIST CTA (cuối trang) ===== */
+  .checklist{padding:100px 0;background:var(--white);}
+  .checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .checklist h2{margin-bottom:16px;}
+  .checklist p{color:var(--muted);font-size:16px;margin-bottom:22px;}
+  .checklist-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
+  .checklist-tags span{font-size:12.5px;font-weight:600;color:var(--gold-600);background:var(--gold-100);padding:7px 14px;border-radius:999px;}
+  .checklist-form{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .checklist-form h3{font-size:18px;margin-bottom:16px;}
+  .checklist-form input,.checklist-form select{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:#fff;margin-bottom:14px;
+  }
+  .checklist-form button{width:100%;}
+  .checklist-altlink{text-align:center;font-size:13px;color:var(--muted);margin-top:16px;}
+  .checklist-altlink a{color:var(--gold-600);font-weight:700;}
+
+  /* ===== PROMO BANNERS (bản tin / hệ sinh thái) ===== */
+  .promo-wrap{background:var(--white);padding:0 0 96px;}
+  .promo-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.08);border:1px solid rgba(47,140,85,0.25);border-radius:16px;
+    padding:30px 34px;max-width:1192px;margin:0 auto 24px;
+  }
+  .promo-banner.ecosystem{background:var(--navy-900);border-color:rgba(255,255,255,0.12);}
+  .promo-banner h4{color:var(--navy-900);font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .promo-banner.ecosystem h4{color:#fff;}
+  .promo-banner p{font-size:13.5px;color:var(--muted);max-width:520px;}
+  .promo-banner.ecosystem p{color:rgba(255,255,255,0.6);}
+  .promo-banner .btn{flex:none;white-space:nowrap;}
+  .promo-form{display:flex;gap:10px;flex:none;flex-wrap:wrap;}
+  .promo-form input{padding:13px 16px;border:1px solid var(--line);border-radius:999px;font-family:'Inter',sans-serif;font-size:14px;min-width:220px;}
+  .promo-social{display:flex;gap:10px;flex:none;}
+  .promo-social a{
+    width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);color:#fff;
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .promo-social a:hover{background:var(--gold-500);border-color:var(--gold-500);color:var(--navy-900);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-900);color:rgba(255,255,255,0.7);padding:70px 0 24px;border-top:1px solid rgba(255,255,255,0.08);}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1.3fr 1fr 1fr 1fr;gap:32px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-addr{margin-bottom:16px;}
+  .footer-addr strong{display:block;color:#fff;font-size:13px;margin-bottom:5px;}
+  .footer-addr p{font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+  .footer-addr a{color:rgba(255,255,255,0.7);font-size:12.5px;}
+  .footer-addr a:hover{color:var(--gold-400);}
+  .footer-logo{display:flex;align-items:center;color:#fff;margin-bottom:16px;padding-top:10px;}
+  .footer-col h5{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;font-family:'Inter',sans-serif;}
+  .footer-col ul li{margin-bottom:11px;font-size:14px;}
+  .footer-col ul li a:hover{color:var(--gold-400);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:12px;}
+  .footer-social{display:flex;gap:10px;}
+  .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .footer-social a:hover{background:var(--gold-500);color:var(--navy-900);border-color:var(--gold-500);}
+  .footer-recruit{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.12);border:1px solid rgba(47,140,85,0.3);border-radius:16px;
+    padding:28px 32px;margin-top:44px;
+  }
+  .footer-recruit h4{color:#fff;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .footer-recruit p{font-size:13.5px;color:rgba(255,255,255,0.6);max-width:520px;}
+  .footer-recruit .btn{flex:none;white-space:nowrap;}
+
+
+  /* ===== FLOATING QUICK CONTACT ===== */
+  .fab-call{
+    position:fixed;top:130px;right:24px;z-index:1100;width:56px;height:56px;border-radius:50%;
+    background:var(--gold-500);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 14px 28px -8px rgba(47,140,85,0.55);transition:.2s;
+  }
+  .fab-call:hover{background:var(--navy-900);transform:scale(1.06);}
+  .fab-call-ring{
+    position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold-500);
+    animation:fabPulse 1.8s ease-out infinite;pointer-events:none;
+  }
+  @keyframes fabPulse{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(1.6);opacity:0;}
+  }
+  .fab-stack{
+    position:fixed;bottom:28px;right:24px;z-index:1100;display:flex;flex-direction:column;gap:14px;align-items:center;
+  }
+  .fab-btn{
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:20px;color:#fff;box-shadow:0 12px 26px -8px rgba(0,0,0,0.35);border:none;cursor:pointer;transition:.2s;
+  }
+  .fab-btn:hover{transform:scale(1.08);}
+  .fab-messenger{background:#0084FF;}
+  .fab-zalo{background:#0068FF;font-family:'Inter',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2px;}
+
+  /* fade in */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  #dichvu,#khacbiet,#tuvan,#quytrinh,#team,#checklist,#doitac{scroll-margin-top:90px;}
+
+  @media(max-width:1080px){
+    nav.main-nav{display:none;}
+    .burger{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-card{max-width:520px;}
+    .pain-grid,.urgency-grid{grid-template-columns:repeat(2,1fr);}
+    .svc-grid,.team-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid,.partner-grid,.contact-grid,.checklist-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .pain-grid,.svc-grid,.process-grid,.team-grid,.urgency-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-recruit,.promo-banner{flex-direction:column;align-items:flex-start;text-align:left;}
+    .footer-recruit .btn,.promo-banner .btn{width:100%;text-align:center;justify-content:center;}
+    .promo-form{width:100%;}
+    .promo-form input{min-width:0;flex:1;}
+    .hero{padding:150px 0 70px;}
+    .contact-form .row{grid-template-columns:1fr;}
+    .hero-stats{gap:22px;}
+    .hero-actions .btn{width:100%;}
+    .fab-call{top:110px;right:16px;width:50px;height:50px;font-size:19px;}
+    .fab-stack{right:16px;bottom:22px;gap:12px;}
+    .fab-btn{width:46px;height:46px;font-size:18px;}
+    .cta-actions-mid{flex-direction:column;}
+  }
+
+  /* Tám dịch vụ, bốn cột trên máy tính; đồng bộ chiều cao theo nội dung. */
+  #dichvu .svc-grid{grid-auto-rows:1fr;}
+  #dichvu .svc-card{min-width:0;padding:24px 20px;}
+  #dichvu .svc-illus{aspect-ratio:16/10;height:auto;flex-shrink:0;}
+  #dichvu .svc-top{gap:10px;flex-wrap:wrap;align-items:center;}
+  #dichvu .svc-ic{width:38px;height:38px;font-size:17px;flex-shrink:0;}
+  #dichvu .svc-tag{font-size:10px;letter-spacing:.2px;white-space:normal;max-width:100%;}
+  #dichvu .svc-card h3{font-size:17px;line-height:1.4;}
+  #dichvu .svc-card .desc{line-height:1.65;}
+  #dichvu .svc-card .benefit{line-height:1.6;flex:none;}
+  #dichvu .svc-link{margin-top:auto;}
+  .hero-stats strong,.why-stats strong{overflow-wrap:anywhere;}
+  @media(max-width:640px){#dichvu .svc-grid{grid-auto-rows:auto;}}
+
+  /* Thông tin từng văn phòng: biểu tượng cố định, nội dung căn cùng một trục. */
+  footer .footer-addr{margin-bottom:24px;}
+  footer .footer-addr strong{font-size:14px;line-height:1.45;margin-bottom:12px;}
+  footer .footer-contact-row{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:10px;margin:0 0 9px;}
+  footer .footer-contact-row > i{color:var(--gold-400);font-size:15px;line-height:1.65;text-align:center;}
+  footer .footer-contact-row > span,footer .footer-contact-row > a{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.75);overflow-wrap:anywhere;}
+  footer .footer-contact-row > a:hover{color:var(--gold-400);}
+  footer .footer-contact-row > a:focus-visible{outline:2px solid var(--gold-400);outline-offset:3px;}
+</style>
+<style id="crown-shared-navigation">
+/* Shared language and Crown ecosystem controls. */
+.lang-switcher-wrap,.switcher-wrap{position:relative;flex-shrink:0;}
+.lang-switcher-btn,.switcher-btn{font-family:inherit;display:flex;align-items:center;gap:7px;color:#fff;font-size:13px;font-weight:600;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);cursor:pointer;}
+.lang-switcher-btn .fa-chevron-down,.switcher-btn .fa-chevron-down{font-size:10px;}
+.lang-switcher-menu,.switcher-menu{position:absolute;top:calc(100% + 8px);right:0;width:230px;max-width:calc(100vw - 24px);max-height:70vh;overflow:auto;background:#fff;border-radius:12px;box-shadow:0 14px 36px #0003;padding:8px;border:1px solid #e4e8e5;z-index:1200;opacity:1;visibility:visible;transform:none;}
+.lang-switcher-menu{width:180px;}
+.lang-switcher-menu[hidden],.switcher-menu[hidden]{display:none!important;}
+.lang-option{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:8px;font-weight:600;font-size:13.5px;line-height:1.5;color:#12392b;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;}
+.lang-option:hover,.switcher-menu a:hover{background:#f1f6f2;}
+.lang-option.active,.switcher-menu a[aria-current="page"]{background:#e7f1e8;color:#205b38;}
+.switcher-menu a[aria-current="page"]::after{content:'✓';margin-left:8px;}
+.lang-switcher-btn:focus-visible,.switcher-btn:focus-visible,.lang-option:focus-visible,.switcher-menu a:focus-visible{outline:2px solid #79bd8e;outline-offset:3px;}
+.header-inner{gap:16px;}.header-actions{gap:8px;flex-shrink:0;}
+.svc-card,.service-card,.pain-card,.urgency-card,.process-card,.team-card{min-width:0;overflow-wrap:break-word;}
+html:lang(zh),html:lang(ja){line-break:strict;}html:lang(ko){word-break:keep-all;overflow-wrap:break-word;}
+
+@media(max-width:640px){.header-inner{flex-wrap:wrap;gap:8px;}.header-actions{margin-left:auto;}.lang-switcher-btn,.switcher-btn{font-size:12px;padding:8px 10px;}.switcher-btn-label{max-width:135px;white-space:normal;} .hero{padding-top:190px;}}
+</style>
+<style id="crown-desktop-header">
+/* Desktop navigation stays visible alongside language and ecosystem controls. */
+@media(min-width:1081px){
+  .header-inner{max-width:1440px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;}
+  nav.main-nav{display:flex;min-width:0;justify-content:center;}
+  nav.main-nav > ul{flex-wrap:wrap;justify-content:center;column-gap:0;row-gap:0;}
+  nav.main-nav > ul > li > a{padding:9px 10px;}
+  .header-inner > .logo{max-width:220px;}
+  .header-actions .burger{display:none;}
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Crown Audit &amp; Advisory</h1>
-    <p>Trang giới thiệu đang được hoàn thiện.</p>
-    <p><a href="https://crown.com.vn">Về trang chủ Crown</a></p>
-  </main>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="https://crown.com.vn" class="logo">
+      <span class="brand-mark">
+        <i class="fa-solid fa-crown crown-icon"></i>
+        <span class="word">Crown</span>
+      </span>
+      <span class="sub">Crown Audit · Kiểm toán độc lập</span>
+    </a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="https://crown.com.vn">Trang chủ Crown</a></li>
+        <li><a href="#dichvu">Dịch vụ kiểm toán</a></li>
+        <li><a href="#khacbiet">Vì sao Crown Audit</a></li>
+        <li><a href="#team">Đội ngũ</a></li>
+        <li><a href="#tuvan">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<div class="lang-switcher-wrap"><button type="button" class="lang-switcher-btn" id="langSwitcherBtn" aria-label="Chọn ngôn ngữ" aria-expanded="false" aria-controls="crownLanguageMenu"><span class="flag" aria-hidden="true">🇻🇳</span> <span id="langCurrentLabel">VI</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="lang-switcher-menu" id="crownLanguageMenu" hidden><button type="button" class="lang-option" data-lang="vi" lang="vi" aria-pressed="true"><span class="flag" aria-hidden="true">🇻🇳</span> Tiếng Việt</button><button type="button" class="lang-option" data-lang="en" lang="en" aria-pressed="false"><span class="flag" aria-hidden="true">🇬🇧</span> English</button><button type="button" class="lang-option" data-lang="zh" lang="zh" aria-pressed="false"><span class="flag" aria-hidden="true">🇨🇳</span> 中文</button><button type="button" class="lang-option" data-lang="ja" lang="ja" aria-pressed="false"><span class="flag" aria-hidden="true">🇯🇵</span> 日本語</button><button type="button" class="lang-option" data-lang="ko" lang="ko" aria-pressed="false"><span class="flag" aria-hidden="true">🇰🇷</span> 한국어</button><button type="button" class="lang-option" data-lang="th" lang="th" aria-pressed="false"><span class="flag" aria-hidden="true">🇹🇭</span> ภาษาไทย</button></div></div><div class="switcher-wrap"><button type="button" class="switcher-btn" id="crownEcosystemBtn" aria-expanded="false" aria-controls="crownEcosystemMenu"><i class="fa-solid fa-grip" aria-hidden="true"></i><span class="switcher-btn-label">Hệ sinh thái Crown</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="switcher-menu" id="crownEcosystemMenu" hidden><a href="https://crown.com.vn">Crown Audit & Advisory</a><a href="https://audit.crown.com.vn" aria-current="page">Crown Audit</a><a href="https://cons.crown.com.vn">Crown Cons</a><a href="https://acc.crown.com.vn">Crown Accounting</a><a href="https://tax.crown.com.vn">Crown Tax</a><a href="https://fas.crown.com.vn">Crown FAS</a><a href="https://esg.crown.com.vn">Crown ESG</a></div></div>
+      <i class="fa-solid fa-bars burger" id="burgerBtn"></i>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-400);">Crown Audit — Kiểm toán &amp; dịch vụ liên quan</div>
+      <h1>Kiểm toán độc lập, <em>gần hơn</em> với doanh nghiệp bạn</h1>
+      <p class="lead">Từ báo cáo tài chính (BCTC) đến tuân thủ, hoạt động và kiểm soát nội bộ — Crown Audit cung cấp góc nhìn độc lập, giúp doanh nghiệp minh bạch số liệu và nhận diện vấn đề cần cải thiện.</p>
+      <div class="hero-actions">
+        <a href="#dichvu" class="btn btn-outline-light">Xem dịch vụ kiểm toán <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#tuvan" class="btn btn-gold">Trao đổi với chuyên gia <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>8</strong><span>Dịch vụ kiểm toán &amp; liên quan</span></div>
+        <div><strong>Linh hoạt</strong><span>Phối hợp theo địa bàn</span></div>
+        <div><strong>Big4</strong><span>Nền tảng kinh nghiệm chuyên môn</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <span class="float-chip fc-1"><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+      <span class="float-chip fc-2"><i class="fa-solid fa-shield-halved"></i></span>
+      <h3>8 dịch vụ trọng tâm của Crown Audit</h3>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm toán báo cáo tài chính thường niên</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm toán báo cáo tài chính vì mục đích đặc biệt</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Soát xét BCTC &amp; Thủ tục thỏa thuận trước (Review &amp; AUP)</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm toán tuân thủ</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm toán hiệu quả hoạt động &amp; dự án đầu tư</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Thẩm định năng lực đối tác trước hợp tác</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Thành viên HĐQT độc lập phụ trách KSNB</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Phòng Kiểm toán nội bộ thuê ngoài</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="noilo">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Những nỗi lo thường trực</div>
+      <h2>Doanh nghiệp cần gì từ một đối tác kiểm toán?</h2>
+      <p>Tiến độ, chất lượng hồ sơ, rủi ro chưa được nhận diện và hiệu quả sử dụng vốn là những vấn đề cần làm rõ ngay từ đầu.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/8278873/pexels-photo-8278873.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-hourglass-half"></i></span></div>
+        <h3>Lo tiến độ kéo dài, gián đoạn vận hành</h3>
+        <p>Kế hoạch và danh mục hồ sơ thiếu rõ ràng khiến kế toán phải bổ sung nhiều lần, ảnh hưởng tiến độ báo cáo và công việc hàng ngày.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/36714221/pexels-photo-36714221.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-scale-unbalanced"></i></span></div>
+        <h3>Khó đánh giá chất lượng và mức phí</h3>
+        <p>Doanh nghiệp cần hiểu phạm vi, năng lực đội ngũ và đầu ra để lựa chọn đơn vị phù hợp, thay vì chỉ so sánh báo giá.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/6964101/pexels-photo-6964101.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-triangle-exclamation"></i></span></div>
+        <h3>Lo rủi ro chưa được nhận diện kịp thời</h3>
+        <p>Sai lệch số liệu hoặc điểm yếu kiểm soát kéo dài khiến doanh nghiệp bị động khi cần giải trình với cổ đông, bên tài trợ hoặc cơ quan quản lý.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/7693699/pexels-photo-7693699.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-chart-line"></i></span></div>
+        <h3>Chưa rõ hiệu quả hoạt động và đầu tư</h3>
+        <p>Thiếu đánh giá độc lập về kết quả và cách sử dụng nguồn lực khiến lãnh đạo khó xác định nguyên nhân và ưu tiên điều chỉnh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="urgency" id="thuctrang">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="color:var(--orange);">Bối cảnh thực tế hiện nay</div>
+      <h2>Vì sao doanh nghiệp Việt Nam cần một đối tác kiểm toán đủ chuẩn và đủ gần</h2>
+      <p>Yêu cầu về minh bạch tài chính tại Việt Nam đang tăng nhanh — trong khi dịch vụ kiểm toán chuẩn Big4 lại chưa phủ đều khắp các địa phương.</p>
+    </div>
+    <div class="urgency-grid">
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+        <h4>Cơ quan thuế và cơ quan quản lý tăng cường hậu kiểm, giám sát tuân thủ doanh nghiệp</h4>
+        <p>Xu hướng hậu kiểm ngày càng phổ biến khiến doanh nghiệp thiếu chuẩn bị dễ đối mặt rủi ro bị truy thu, xử phạt.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-building-columns"></i></span>
+        <h4>Ngân hàng và nhà đầu tư ngày càng yêu cầu BCTC được kiểm toán bởi đơn vị uy tín</h4>
+        <p>Hồ sơ tài chính không được kiểm toán bởi đơn vị đủ tin cậy có thể khiến doanh nghiệp bị từ chối giải ngân hoặc rót vốn.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-gavel"></i></span>
+        <h4>Quy định pháp luật ngày càng mở rộng phạm vi bắt buộc kiểm toán</h4>
+        <p>Doanh nghiệp FDI, dự án vốn vay, tổ chức tín dụng và nhiều loại hình doanh nghiệp khác đang chịu yêu cầu kiểm toán bắt buộc ngày càng chặt chẽ.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-map-location-dot"></i></span>
+        <h4>Doanh nghiệp ở các tỉnh, thành ngoài Hà Nội, TP.HCM khó tiếp cận dịch vụ kiểm toán chuẩn Big4</h4>
+        <p>Chi phí di chuyển và thiếu nhân sự tại chỗ khiến nhiều đơn vị kiểm toán lớn khó phục vụ tốt các địa phương.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-user-graduate"></i></span>
+        <h4>Thị trường khan hiếm kiểm toán viên giàu kinh nghiệm, có chứng chỉ CPA</h4>
+        <p>Đặc biệt tại các địa phương, doanh nghiệp khó tìm được kiểm toán viên đủ chuyên môn và kinh nghiệm thực chiến.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-chart-line"></i></span>
+        <h4>Nhà đầu tư và đối tác chiến lược ngày càng quan tâm đến hiệu quả sử dụng vốn</h4>
+        <p>Không chỉ tính tuân thủ sổ sách, hiệu quả thực sự của dòng vốn đầu tư đang trở thành tiêu chí đánh giá quan trọng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner-mid">
+  <div class="container">
+    <div class="eyebrow">Bắt đầu từ nhu cầu và phạm vi công việc</div>
+    <h2>Chưa rõ doanh nghiệp cần loại dịch vụ nào?</h2>
+    <p>Chia sẻ mục đích sử dụng báo cáo, thời hạn và hiện trạng hồ sơ. Crown Audit sẽ tư vấn sơ bộ để xác định hướng tiếp cận phù hợp.</p>
+    <div class="cta-actions-mid">
+      <a href="tel:0904501512" class="hotline-badge"><i class="fa-solid fa-phone"></i> Gọi ngay: 090 450 1512</a>
+      <a href="#tuvan" class="btn btn-gold">Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="dichvu">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">8 dịch vụ cốt lõi</div>
+      <h2>Tám dịch vụ cho từng mục tiêu kiểm toán và quản trị</h2>
+      <p>Chọn theo mục đích: báo cáo tài chính, tuân thủ, hiệu quả hoạt động, đánh giá đối tác hoặc tăng cường giám sát nội bộ.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/33175657/pexels-photo-33175657.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Kiểm toán BCTC thường niên"><span class="illus-chip"><i class="fa-solid fa-file-invoice-dollar"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-file-invoice-dollar"></i></span><span class="svc-tag">Báo cáo tài chính</span></div>
+        <h3>Kiểm toán BCTC<br>thường niên</h3>
+        <p class="desc">Kiểm toán báo cáo tài chính năm theo chuẩn mực áp dụng, phục vụ nhu cầu tuân thủ và cung cấp thông tin cho các bên sử dụng.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Báo cáo kiểm toán làm cơ sở trao đổi với cổ đông, ngân hàng và cơ quan quản lý.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm toán báo cáo tài chính thường niên">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/8428059/pexels-photo-8428059.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Kiểm toán BCTC vì mục đích đặc biệt"><span class="illus-chip"><i class="fa-solid fa-file-contract"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-file-contract"></i></span><span class="svc-tag">Mục đích đặc biệt</span></div>
+        <h3>Kiểm toán BCTC<br>vì mục đích đặc biệt</h3>
+        <p class="desc">Kiểm toán báo cáo tài chính lập cho mục đích cụ thể, theo cơ sở lập báo cáo và yêu cầu của các bên sử dụng đã xác định.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Đáp ứng đúng mục đích sử dụng với phạm vi và hình thức báo cáo được thống nhất trước.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm toán báo cáo tài chính vì mục đích đặc biệt">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7821689/pexels-photo-7821689.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Soát xét BCTC & thủ tục thỏa thuận trước"><span class="illus-chip"><i class="fa-solid fa-magnifying-glass"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-magnifying-glass"></i></span><span class="svc-tag">Soát xét &amp; AUP</span></div>
+        <h3>Soát xét BCTC &amp;<br>thủ tục thỏa thuận trước</h3>
+        <p class="desc">Soát xét BCTC cung cấp sự đảm bảo có giới hạn; AUP thực hiện thủ tục đã thống nhất và báo cáo phát hiện, không đưa ra đảm bảo.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Chọn đúng hình thức làm việc theo mục tiêu rà soát và yêu cầu của bên nhận báo cáo.</div>
+        <a href="#tuvan" class="svc-link" data-service="Soát xét BCTC &amp; Thủ tục thỏa thuận trước (Review &amp; AUP)">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/6077665/pexels-photo-6077665.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Kiểm toán tuân thủ"><span class="illus-chip"><i class="fa-solid fa-scale-balanced"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-scale-balanced"></i></span><span class="svc-tag">Tuân thủ</span></div>
+        <h3>Kiểm toán<br>tuân thủ</h3>
+        <p class="desc">Đánh giá việc đáp ứng các tiêu chí đã xác định về quy định, quy chế hoặc điều kiện hợp đồng, trong phạm vi công việc được thống nhất.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Nhận diện điểm chưa phù hợp và cơ sở đề xuất biện pháp khắc phục cho doanh nghiệp.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm toán tuân thủ">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7109243/pexels-photo-7109243.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Kiểm toán hiệu quả hoạt động & dự án"><span class="illus-chip"><i class="fa-solid fa-gauge-high"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-gauge-high"></i></span><span class="svc-tag">Hiệu quả hoạt động</span></div>
+        <h3>Kiểm toán hiệu quả<br>hoạt động &amp; dự án</h3>
+        <p class="desc">Đánh giá sử dụng nguồn lực, kết quả hoạt động và tiến độ thực hiện dự án theo các mục tiêu, tiêu chí đã thống nhất với doanh nghiệp.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Cung cấp góc nhìn độc lập để lãnh đạo xác định ưu tiên và điều chỉnh kế hoạch thực hiện.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm toán hiệu quả hoạt động &amp; dự án đầu tư">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/17284804/pexels-photo-17284804.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Thẩm định năng lực đối tác trước hợp tác"><span class="illus-chip"><i class="fa-solid fa-user-shield"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-user-shield"></i></span><span class="svc-tag">Đánh giá đối tác</span></div>
+        <h3>Thẩm định năng lực<br>đối tác trước hợp tác</h3>
+        <p class="desc">Rà soát thông tin và năng lực tài chính, hồ sơ liên quan của đối tác theo phạm vi thống nhất trước khi ký kết hoặc triển khai hợp tác.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Bổ sung cơ sở đánh giá đối tác, nhận diện rủi ro và lựa chọn điều kiện hợp tác phù hợp.</div>
+        <a href="#tuvan" class="svc-link" data-service="Thẩm định năng lực đối tác trước hợp tác">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Thành viên HĐQT độc lập phụ trách KSNB"><span class="illus-chip"><i class="fa-solid fa-users-gear"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-users-gear"></i></span><span class="svc-tag">Giám sát quản trị</span></div>
+        <h3>Thành viên HĐQT độc lập<br>phụ trách KSNB</h3>
+        <p class="desc">Hỗ trợ tìm kiếm nhân sự có kinh nghiệm kiểm toán tham gia HĐQT độc lập, giám sát hệ thống kiểm soát nội bộ theo vai trò được giao.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Bổ sung góc nhìn độc lập và kinh nghiệm chuyên môn cho công tác giám sát của HĐQT.</div>
+        <a href="#tuvan" class="svc-link" data-service="Thành viên HĐQT độc lập phụ trách KSNB">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7648029/pexels-photo-7648029.jpeg?auto=compress&cs=tinysrgb&w=700')" role="img" aria-label="Ảnh minh họa: Phòng kiểm toán nội bộ thuê ngoài"><span class="illus-chip"><i class="fa-solid fa-clipboard-check"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-clipboard-check"></i></span><span class="svc-tag">Kiểm toán nội bộ</span></div>
+        <h3>Phòng kiểm toán nội bộ<br>thuê ngoài</h3>
+        <p class="desc">Xây dựng kế hoạch và thực hiện kiểm toán nội bộ theo rủi ro; báo cáo phát hiện, khuyến nghị và theo dõi tiến độ khắc phục đã thống nhất.</p>
+        <div class="benefit"><strong>Giá trị mang lại</strong>Duy trì chức năng kiểm toán nội bộ phù hợp quy mô mà không phải xây dựng toàn bộ bộ máy.</div>
+        <a href="#tuvan" class="svc-link" data-service="Phòng Kiểm toán nội bộ thuê ngoài">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="khacbiet">
+  <i class="fa-solid fa-map-location-dot watermark-icon"></i>
+  <div class="container why-grid">
+    <div>
+      <div class="section-head center">
+        <div class="eyebrow">Sự khác biệt của Crown Audit</div>
+        <h2>Chuyên môn vững, cách phối hợp rõ ràng</h2>
+        <p>Chất lượng công việc bắt đầu từ việc hiểu hoạt động doanh nghiệp, xác định đúng phạm vi và trao đổi kịp thời trong quá trình thực hiện.</p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <span class="ic"><i class="fa-solid fa-graduation-cap"></i></span>
+          <div><h4>Kinh nghiệm chuyên môn từ môi trường Big4</h4><p>Vận dụng kinh nghiệm chuyên môn vào lập kế hoạch, thu thập bằng chứng, rà soát hồ sơ và kiểm soát chất lượng từng công việc.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-map-location-dot"></i></span>
+          <div><h4>Phối hợp phù hợp với từng địa bàn</h4><p>Bố trí đầu mối và phương án làm việc theo địa điểm, lịch trình và nhu cầu hồ sơ của doanh nghiệp.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-coins"></i></span>
+          <div><h4>Phạm vi và chi phí được thống nhất trước</h4><p>Làm rõ đầu ra, thời hạn, trách nhiệm cung cấp hồ sơ và mức phí để doanh nghiệp chủ động kế hoạch phối hợp.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-circle-nodes"></i></span>
+          <div><h4>Kết nối chuyên môn khi cần xử lý vấn đề</h4><p>Các vấn đề kế toán, thuế, tài chính, ESG hoặc xây dựng được kết nối đến đơn vị phù hợp, theo phạm vi đã thống nhất.</p></div>
+        </li>
+      </ul>
+      <div style="margin-top:30px;text-align:center;">
+        <a href="#tuvan" class="btn btn-gold">Đặt lịch trao đổi với Crown Audit <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="stat-box reveal"><strong>8</strong><span>Dịch vụ kiểm toán &amp; liên quan</span></div>
+      <div class="stat-box reveal"><strong>Linh hoạt</strong><span>Phối hợp theo địa bàn</span></div>
+      <div class="stat-box reveal"><strong>Big4</strong><span>Nền tảng kinh nghiệm chuyên môn</span></div>
+      <div class="stat-box reveal"><strong>24h</strong><span>Phản hồi trong giờ làm việc</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="tuvan">
+  <div class="container contact-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow" style="color:var(--gold-400);justify-content:center;">Kết nối với Crown Audit</div>
+        <h2>Trao đổi nhu cầu kiểm toán của doanh nghiệp</h2>
+        <p>Để lại thông tin để Crown Audit liên hệ tư vấn sơ bộ miễn phí trong 24 giờ làm việc. Bạn chưa cần chuẩn bị đầy đủ hồ sơ ở bước này.</p>
+      </div>
+      <ul class="contact-info">
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline Hà Nội</strong><a href="tel:0904501512" style="color:rgba(255,255,255,0.85);">090 450 1512</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline TP. Hồ Chí Minh</strong><a href="tel:0862231919" style="color:rgba(255,255,255,0.85);">086 223 1919</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP Hà Nội</strong><a href="mailto:hn@crown.com.vn" style="color:rgba(255,255,255,0.85);">hn@crown.com.vn</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP TP. Hồ Chí Minh</strong><a href="mailto:hcm@crown.com.vn" style="color:rgba(255,255,255,0.85);">hcm@crown.com.vn</a></div></li>
+      </ul>
+    </div>
+    <form class="contact-form" id="tuvanForm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.');">
+      <h3>Đăng ký nhận tư vấn miễn phí</h3>
+      <div class="row">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="text" placeholder="Tên doanh nghiệp">
+      </div>
+      <div class="row">
+        <input type="tel" placeholder="Số điện thoại" required>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <select id="tuvanService" style="margin-bottom:14px;">
+        <option value="">Dịch vụ quan tâm</option>
+        <option>Kiểm toán báo cáo tài chính thường niên</option>
+        <option>Kiểm toán báo cáo tài chính vì mục đích đặc biệt</option>
+        <option>Soát xét BCTC &amp; Thủ tục thỏa thuận trước (Review &amp; AUP)</option>
+        <option>Kiểm toán tuân thủ</option>
+        <option>Kiểm toán hiệu quả hoạt động &amp; dự án đầu tư</option>
+        <option>Thẩm định năng lực đối tác trước hợp tác</option>
+        <option>Thành viên HĐQT độc lập phụ trách KSNB</option>
+        <option>Phòng Kiểm toán nội bộ thuê ngoài</option>
+        <option>Tôi muốn trở thành đối tác kiểm toán viên (KTV Big4/CPA)</option>
+      </select>
+      <textarea placeholder="Mô tả ngắn vấn đề bạn đang gặp phải..."></textarea>
+      <button type="submit" class="btn btn-navy">Gửi yêu cầu tư vấn miễn phí</button>
+    </form>
+  </div>
+</section>
+
+<section class="process" id="quytrinh">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Quy trình hợp tác</div>
+      <h2>Bốn bước Crown Audit đồng hành cùng doanh nghiệp</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal"><h4>Khảo sát &amp; lập kế hoạch kiểm toán</h4><p>Đánh giá sơ bộ tình hình doanh nghiệp, xác định phạm vi, rủi ro trọng yếu và lập kế hoạch kiểm toán phù hợp.</p></div>
+      <div class="step reveal"><h4>Thực hiện kiểm toán tại thực địa</h4><p>Đội ngũ kiểm toán viên làm việc trực tiếp tại doanh nghiệp, thu thập bằng chứng và trao đổi kịp thời các vấn đề phát sinh.</p></div>
+      <div class="step reveal"><h4>Rà soát chất lượng &amp; phát hành báo cáo</h4><p>Hồ sơ và dự thảo báo cáo được rà soát chất lượng; các vấn đề cần làm rõ được trao đổi trước khi phát hành.</p></div>
+      <div class="step reveal"><h4>Đồng hành sau kiểm toán</h4><p>Trao đổi các phát hiện, khuyến nghị cải thiện và phạm vi hỗ trợ tiếp theo phù hợp với vai trò của đơn vị kiểm toán.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="partner" id="doitac">
+  <i class="fa-solid fa-map-pin partner-watermark"></i>
+  <div class="container partner-grid">
+    <div>
+      <div class="section-head">
+        <div class="eyebrow" style="color:var(--orange);">Cơ hội hợp tác dành cho Kiểm toán viên</div>
+        <h2>Hợp tác cùng Crown Audit tại địa bàn bạn am hiểu</h2>
+        <p>Dành cho kiểm toán viên có kinh nghiệm và mạng lưới tại địa phương, mong muốn phát triển hoạt động chuyên môn trong mô hình hợp tác với Crown.</p>
+      </div>
+      <div class="partner-principle">
+        <strong>Nguyên tắc hợp tác:</strong> Crown chỉ giữ phần thương hiệu và kiểm soát chất lượng dịch vụ — phần lớn lợi ích thuộc về chính đối tác kiểm toán viên phụ trách địa bàn đó.
+      </div>
+      <a href="#tuvan" class="btn btn-gold" data-service-scroll>Đăng ký tìm hiểu cơ hội đối tác <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <ul class="partner-list">
+      <li>
+        <span class="ic"><i class="fa-solid fa-id-badge"></i></span>
+        <div><h4>Điều kiện trở thành đối tác</h4><p>Tối thiểu 4 năm kinh nghiệm tại Big4 hoặc 8 năm tại công ty kiểm toán khác, có chứng chỉ CPA và đáp ứng yêu cầu chuyên môn của Crown.</p></div>
+      </li>
+      <li>
+        <span class="ic"><i class="fa-solid fa-map-pin"></i></span>
+        <div><h4>Phụ trách địa bàn theo lợi thế riêng</h4><p>Được giao phụ trách một địa bàn nhất định — nơi bạn có mạng lưới quan hệ và am hiểu thị trường tốt nhất.</p></div>
+      </li>
+      <li>
+        <span class="ic"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+        <div><h4>Giữ phần lớn lợi ích từ dịch vụ</h4><p>Phạm vi thực hiện, trách nhiệm phối hợp và cơ chế phân chia lợi ích được thống nhất trước khi tiếp nhận công việc.</p></div>
+      </li>
+      <li>
+        <span class="ic"><i class="fa-solid fa-building-shield"></i></span>
+        <div><h4>Không cần lập doanh nghiệp riêng</h4><p>Phát triển khách hàng và tham gia thực hiện dịch vụ trong mô hình tổ chức, quy trình và kiểm soát chất lượng của Crown.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Đội ngũ chuyên gia</div>
+      <h2>Những con người dẫn dắt Crown</h2>
+      <p>Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/17049766/pexels-photo-17049766.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Đức Hưng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.Đ.H</span></div>
+        <h4>Nguyễn Đức Hưng</h4>
+        <span class="role">Tổng Giám đốc</span>
+        <p>Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit &amp; Advisory.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/9208551/pexels-photo-9208551.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Trần Thành Trung"><i class="fa-solid fa-user-tie"></i><span class="initials">T.T.T</span></div>
+        <h4>Trần Thành Trung</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044806/pexels-photo-21044806.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Văn Bình"><i class="fa-solid fa-user-tie"></i><span class="initials">N.V.B</span></div>
+        <h4>Nguyễn Văn Bình</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044845/pexels-photo-21044845.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Thị Ý"><i class="fa-solid fa-user-tie"></i><span class="initials">N.T.Ý</span></div>
+        <h4>Nguyễn Thị Ý</h4>
+        <span class="role">Giám đốc Tư vấn thuế</span>
+        <p>Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/15092609/pexels-photo-15092609.png?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nghiêm Ngọc Hoàng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.H</span></div>
+        <h4>Nghiêm Ngọc Hoàng</h4>
+        <span class="role">Giám đốc kiểm toán mảng XDCB</span>
+        <p>Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/26524785/pexels-photo-26524785.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Ngọc Tùng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.T</span></div>
+        <h4>Nguyễn Ngọc Tùng</h4>
+        <span class="role">Giám đốc mảng Tư vấn Tài chính</span>
+        <p>Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:28px;">* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.</p>
+  </div>
+</section>
+
+<section class="checklist" id="checklist">
+  <div class="container checklist-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow">Tài liệu dành riêng cho bạn</div>
+        <h2>Nhận Bộ checklist tự đánh giá mức độ sẵn sàng cho BCTC được kiểm toán miễn phí</h2>
+        <p>Tự đánh giá nhanh mức độ sẵn sàng của sổ sách, chứng từ và hồ sơ tài chính doanh nghiệp bạn — trước khi bước vào một cuộc kiểm toán chính thức.</p>
+      </div>
+      <div class="checklist-tags" style="justify-content:center;">
+        <span>Doanh nghiệp lần đầu kiểm toán</span>
+        <span>Chuẩn bị vay vốn / đấu thầu</span>
+        <span>Doanh nghiệp FDI</span>
+        <span>Chuẩn bị niêm yết / gọi vốn</span>
+      </div>
+    </div>
+    <div class="checklist-form">
+      <h3><i class="fa-solid fa-file-shield" style="color:var(--gold-600);"></i> Nhận Bộ checklist sẵn sàng kiểm toán miễn phí</h3>
+      <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.');">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="email" placeholder="Email nhận tài liệu" required>
+        <select>
+          <option value="">Giai đoạn của doanh nghiệp bạn</option>
+          <option>Doanh nghiệp lần đầu kiểm toán</option>
+          <option>Chuẩn bị vay vốn / đấu thầu</option>
+          <option>Doanh nghiệp FDI</option>
+          <option>Chuẩn bị niêm yết / gọi vốn</option>
+          <option>Khác</option>
+        </select>
+        <button type="submit" class="btn btn-gold">Nhận Checklist miễn phí <i class="fa-solid fa-download"></i></button>
+      </form>
+      <p class="checklist-altlink">Muốn trao đổi trực tiếp hơn? <a href="#tuvan">Đặt lịch tư vấn tại đây</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="promo-wrap">
+  <div class="promo-banner reveal">
+    <div>
+      <h4>Cập nhật quy định kiểm toán &amp; kế toán mới nhất mỗi tháng</h4>
+      <p>Đăng ký nhận bản tin hàng tháng từ Crown Audit, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật.</p>
+    </div>
+    <form class="promo-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.');">
+      <input type="email" placeholder="Email của bạn" required>
+      <button type="submit" class="btn btn-navy">Đăng ký bản tin</button>
+    </form>
+  </div>
+  <div class="promo-banner ecosystem reveal">
+    <div>
+      <h4>Không chỉ có Kiểm toán — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực</h4>
+      <p>Kế toán, Tư vấn Thuế, Tài chính doanh nghiệp, ESG và Xây dựng cơ bản — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit &amp; Advisory.</p>
+    </div>
+    <a href="https://crown.com.vn" class="btn btn-gold">Khám phá Crown Audit &amp; Advisory <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="brand-mark">
+            <i class="fa-solid fa-crown crown-icon"></i>
+            <span class="word">Crown</span>
+          </span>
+        </div>
+        <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Địa chỉ &amp; Liên hệ</h5>
+        <div class="footer-addr">
+          <strong>Trụ sở chính</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Số 7, ngõ 699 Trương Định, Phường Hoàng Mai, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:info@crown.com.vn">info@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP Hà Nội</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Tầng 7, VIC Building, 18 Ngụy Như Kon Tum, Phường Thành Xuân, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0904501512">090 450 1512</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hn@crown.com.vn">hn@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP TP. Hồ Chí Minh</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0862231919">086 223 1919</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hcm@crown.com.vn">hcm@crown.com.vn</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Bảo đảm &amp; Tuân thủ</h5>
+        <ul>
+          <li><a href="https://audit.crown.com.vn" target="_blank" rel="noopener">Crown Audit</a></li>
+          <li><a href="https://cons.crown.com.vn" target="_blank" rel="noopener">Crown Cons</a></li>
+          <li><a href="https://acc.crown.com.vn" target="_blank" rel="noopener">Crown Accounting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tư vấn &amp; Tối ưu</h5>
+        <ul>
+          <li><a href="https://tax.crown.com.vn" target="_blank" rel="noopener">Crown Tax</a></li>
+          <li><a href="https://fas.crown.com.vn" target="_blank" rel="noopener">Crown FAS</a></li>
+          <li><a href="https://esg.crown.com.vn" target="_blank" rel="noopener">Crown ESG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Chương trình &amp; Liên hệ</h5>
+        <ul>
+          <li><a href="#tuvan">Đăng ký tư vấn</a></li>
+          <li><a href="#khacbiet">Vì sao chọn Crown</a></li>
+          <li><a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-recruit reveal">
+      <div>
+        <h4>Gia nhập đội ngũ Crown</h4>
+        <p>Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.</p>
+      </div>
+      <a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener" class="btn btn-gold">Xem cơ hội nghề nghiệp <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.</span>
+      <span>Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating quick-contact widgets ===== -->
+<a href="tel:0904501512" class="fab-call" aria-label="Gọi ngay cho Crown Audit">
+  <i class="fa-solid fa-phone"></i>
+  <span class="fab-call-ring"></span>
+</a>
+
+<div class="fab-stack">
+  <a href="https://m.me/crownaudit" target="_blank" rel="noopener" class="fab-btn fab-messenger" aria-label="Chat qua Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+  </a>
+  <a href="https://zalo.me/0904501512" target="_blank" rel="noopener" class="fab-btn fab-zalo" aria-label="Chat qua Zalo">
+    <span>Zalo</span>
+  </a>
+</div>
+
+<script>
+  // Mobile burger -> scroll to top nav section (demo behavior)
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.1, rootMargin:'0px 0px -5% 0px'});
+    revealEls.forEach(el=>io.observe(el));
+    setTimeout(()=>revealEls.forEach(el=>el.classList.add('in')), 4000);
+  } else {
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+
+  // Header shrink shadow on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 20){ header.style.boxShadow='0 10px 30px -12px rgba(0,0,0,0.4)'; }
+    else{ header.style.boxShadow='none'; }
+  });
+
+  // Pre-select the relevant service in the consultation form when a service-card link is clicked
+  const tuvanService = document.getElementById('tuvanService');
+  document.querySelectorAll('.svc-link[data-service]').forEach(link => {
+    link.addEventListener('click', () => {
+      if(tuvanService){ tuvanService.value = link.getAttribute('data-service'); }
+    });
+  });
+
+  // Pre-select "partner" option when the partner-program CTA is clicked
+  document.querySelectorAll('a[data-service-scroll]').forEach(link => {
+    link.addEventListener('click', () => {
+      if(tuvanService){ tuvanService.value = 'Tôi muốn trở thành đối tác kiểm toán viên (KTV Big4/CPA)'; }
+    });
+  });
+
+  // Cân từng nhóm văn bản theo chiều cao thực tế, không cắt hoặc ẩn chữ.
+  (() => {
+    const groups=[
+      ['#dichvu .svc-card',['.svc-top','h3','.desc','.benefit']],
+      ['.pain-card',['h3','p']],
+      ['.urgency-card',['h4','p']]
+    ];
+    let frame;
+    function align(){
+      groups.forEach(([selector,parts])=>{
+        const cards=[...document.querySelectorAll(selector)];
+        parts.forEach(part=>{
+          const els=cards.map(card=>card.querySelector(part));
+          els.forEach(el=>el.style.minHeight='');
+          if(matchMedia('(min-width:641px)').matches){
+            const h=Math.ceil(Math.max(...els.map(el=>el.getBoundingClientRect().height)));
+            els.forEach(el=>el.style.minHeight=h+'px');
+          }
+        });
+      });
+    }
+    function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
+    addEventListener('resize',schedule);addEventListener('load',schedule);
+    if(document.fonts)document.fonts.ready.then(schedule);
+    schedule();
+  })();
+</script>
+
+<script id="crown-localization">
+(() => {
+  'use strict';
+  const translations = {"* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.": {"en": "* Illustrative avatar images — update with actual photos of each member before publishing.", "zh": "* 头像图片仅为示意 — 正式发布前请更新各成员的实际照片。", "ja": "※ プロフィール画像はサンプルです。公開前に各メンバーの実際の写真に更新してください。", "ko": "* 예시 프로필 이미지입니다 — 게시 전 각 구성원의 실제 사진으로 업데이트하세요.", "th": "* รูปโปรไฟล์เป็นภาพประกอบ — โปรดอัปเดตเป็นรูปถ่ายจริงของสมาชิกแต่ละคนก่อนเผยแพร่"}, "8 dịch vụ cốt lõi": {"en": "8 core services", "zh": "八项核心服务", "ja": "主要8サービス", "ko": "8대 핵심 서비스", "th": "8 บริการหลัก"}, "8 dịch vụ trọng tâm của Crown Audit": {"en": "8 core Crown Audit services", "zh": "Crown Audit 八项核心服务", "ja": "Crown Auditの主要8サービス", "ko": "Crown Audit의 8대 서비스", "th": "8 บริการหลักของ Crown Audit"}, "Báo cáo kiểm toán làm cơ sở trao đổi với cổ đông, ngân hàng và cơ quan quản lý.": {"en": "An audit report provides a basis for discussions with shareholders, banks and regulators.", "zh": "审计报告为与股东、银行及监管机构沟通提供依据。", "ja": "監査報告書は株主、銀行、当局との対話の基礎になります。", "ko": "감사보고서는 주주·은행·감독기관과 협의하는 근거가 됩니다.", "th": "รายงานสอบบัญชีเป็นหลักฐานประกอบการหารือกับผู้ถือหุ้น ธนาคาร และหน่วยงานกำกับ"}, "Báo cáo tài chính": {"en": "Financial statements", "zh": "财务报表", "ja": "財務諸表", "ko": "재무제표", "th": "งบการเงิน"}, "Bảo đảm & Tuân thủ": {"en": "Assurance & Compliance", "zh": "鉴证与合规", "ja": "アシュアランス＆コンプライアンス", "ko": "어슈어런스 & 컴플라이언스", "th": "การรับรองและการปฏิบัติตามกฎระเบียบ"}, "Bắt đầu từ nhu cầu và phạm vi công việc": {"en": "Start with needs and scope", "zh": "从需求与工作范围开始", "ja": "ニーズと業務範囲から始める", "ko": "필요와 업무 범위에서 시작", "th": "เริ่มจากความต้องการและขอบเขตงาน"}, "Bố trí đầu mối và phương án làm việc theo địa điểm, lịch trình và nhu cầu hồ sơ của doanh nghiệp.": {"en": "Organise contacts and working arrangements around business locations, schedules and document needs.", "zh": "根据地点、时间及资料需求安排联系人与工作方式。", "ja": "所在地、日程、資料ニーズに応じて窓口と作業方法を整えます。", "ko": "기업의 위치·일정·자료 수요에 맞춰 담당자와 업무 방식을 배치합니다.", "th": "จัดผู้ประสานงานและวิธีทำงานตามสถานที่ ตารางและความต้องการเอกสาร"}, "Bối cảnh thực tế hiện nay": {"en": "Current business context", "zh": "当前背景", "ja": "現在の事業環境", "ko": "현재 경영 환경", "th": "บริบทปัจจุบัน"}, "Bốn bước Crown Audit đồng hành cùng doanh nghiệp": {"en": "Four steps of working with Crown Audit", "zh": "与 Crown Audit 合作的四个步骤", "ja": "Crown Auditとの4ステップ", "ko": "Crown Audit 협업 4단계", "th": "4 ขั้นตอนร่วมงาน Crown Audit"}, "Bổ sung cơ sở đánh giá đối tác, nhận diện rủi ro và lựa chọn điều kiện hợp tác phù hợp.": {"en": "Support partner evaluation, risk identification and selection of suitable collaboration terms.", "zh": "为伙伴评价、风险识别及合作条件选择提供依据。", "ja": "取引先評価、リスク把握、適切な提携条件の選択を支援します。", "ko": "파트너 평가, 리스크 식별과 적합한 협력 조건 선택을 지원합니다.", "th": "เพิ่มหลักฐานประเมินคู่ค้า ระบุความเสี่ยง และเลือกเงื่อนไขความร่วมมือเหมาะสม"}, "Bổ sung góc nhìn độc lập và kinh nghiệm chuyên môn cho công tác giám sát của HĐQT.": {"en": "Bring an independent perspective and professional experience to board oversight.", "zh": "为董事会监督补充独立视角及专业经验。", "ja": "取締役会の監督に独立した視点と専門経験を加えます。", "ko": "이사회 감독에 독립적 관점과 전문 경험을 더합니다.", "th": "เพิ่มมุมมองอิสระและประสบการณ์วิชาชีพในการกำกับของคณะกรรมการ"}, "Chat qua Messenger": {"en": "Chat via Messenger", "zh": "通过 Messenger 聊天", "ja": "Messengerでチャット", "ko": "Messenger로 채팅하기", "th": "แชทผ่าน Messenger"}, "Chat qua Zalo": {"en": "Chat via Zalo", "zh": "通过 Zalo 聊天", "ja": "Zaloでチャット", "ko": "Zalo로 채팅하기", "th": "แชทผ่าน Zalo"}, "Chi phí di chuyển và thiếu nhân sự tại chỗ khiến nhiều đơn vị kiểm toán lớn khó phục vụ tốt các địa phương.": {"en": "Travel costs and limited local personnel make it harder for large audit firms to serve provincial businesses.", "zh": "差旅成本和当地人员不足，使大型审计机构较难服务地方企业。", "ja": "移動費用と現地人材の不足が、大手監査法人の地方対応を難しくしています。", "ko": "출장비와 현지 인력 부족은 대형 감사법인의 지방 기업 지원을 어렵게 합니다.", "th": "ค่าเดินทางและบุคลากรท้องถิ่นไม่เพียงพอทำให้บริษัทสอบบัญชีใหญ่ให้บริการต่างพื้นที่ยาก"}, "Chia sẻ mục đích sử dụng báo cáo, thời hạn và hiện trạng hồ sơ. Crown Audit sẽ tư vấn sơ bộ để xác định hướng tiếp cận phù hợp.": {"en": "Share the report purpose, deadline and current records. Crown Audit will offer an initial consultation to determine the right approach.", "zh": "告知报告用途、期限与资料现状，Crown Audit 将通过初步咨询确定合适方向。", "ja": "報告書の用途、期限、資料状況を共有いただき、初期相談で適切な進め方を検討します。", "ko": "보고 목적, 기한과 자료 현황을 공유하면 초기 상담으로 적합한 접근법을 검토합니다.", "th": "แจ้งวัตถุประสงค์รายงาน กำหนดเวลา และสถานะเอกสาร เพื่อให้ Crown Audit แนะนำแนวทางเบื้องต้น"}, "Chuyên môn vững, cách phối hợp rõ ràng": {"en": "Sound expertise, clear coordination", "zh": "专业扎实，协作明确", "ja": "確かな専門性、明確な連携", "ko": "탄탄한 전문성, 명확한 협업", "th": "เชี่ยวชาญและประสานงานชัดเจน"}, "Chuẩn bị niêm yết / gọi vốn": {"en": "Preparing for listing / fundraising", "zh": "上市／融资准备", "ja": "上場・資金調達準備", "ko": "상장·투자유치 준비", "th": "เตรียมจดทะเบียนหรือระดมทุน"}, "Chuẩn bị vay vốn / đấu thầu": {"en": "Preparing for loans / tenders", "zh": "贷款／投标准备", "ja": "融資・入札準備", "ko": "대출·입찰 준비", "th": "เตรียมเงินกู้หรือประมูล"}, "Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.": {"en": "We're always looking for talented people passionate about audit, accounting, tax and financial advisory to help build a world-class service ecosystem.", "zh": "我们始终在寻找热爱审计、会计、税务和财务咨询领域的人才，共同打造国际化水准的服务生态系统。", "ja": "監査・会計・税務・財務アドバイザリー分野に情熱を持つ人材を常に求めています。共に国際水準のサービスエコシステムを築きましょう。", "ko": "감사, 회계, 세무 및 재무 자문 분야에 열정을 가진 인재를 항상 찾고 있습니다. 세계적 수준의 서비스 생태계를 함께 만들어가요.", "th": "เรากำลังมองหาบุคลากรที่มีใจรักในด้านตรวจสอบบัญชี บัญชี ภาษี และที่ปรึกษาทางการเงิน มาร่วมสร้างระบบนิเวศบริการระดับสากลไปด้วยกัน"}, "Chưa rõ doanh nghiệp cần loại dịch vụ nào?": {"en": "Unsure which service your business needs?", "zh": "尚不清楚企业需要哪类服务？", "ja": "必要なサービスが分からない方へ", "ko": "어떤 서비스가 필요한지 궁금하신가요?", "th": "ยังไม่แน่ใจว่าธุรกิจต้องการบริการใด?"}, "Chưa rõ hiệu quả hoạt động và đầu tư": {"en": "Unclear operational and investment performance", "zh": "经营与投资效益不明", "ja": "事業・投資の効果が不明", "ko": "운영·투자 성과가 불명확함", "th": "ไม่ชัดเจนถึงประสิทธิภาพงานและการลงทุน"}, "Chương trình & Liên hệ": {"en": "Programs & Contact", "zh": "项目与联系", "ja": "プログラム・お問い合わせ", "ko": "프로그램 및 문의", "th": "โครงการและติดต่อ"}, "Chất lượng công việc bắt đầu từ việc hiểu hoạt động doanh nghiệp, xác định đúng phạm vi và trao đổi kịp thời trong quá trình thực hiện.": {"en": "Quality starts with understanding the business, defining scope and communicating promptly throughout delivery.", "zh": "工作质量始于了解经营、明确范围并在执行中及时沟通。", "ja": "事業の理解、適切な範囲設定、実施中の迅速な情報共有が品質の出発点です。", "ko": "사업 이해, 올바른 범위 설정과 수행 중 신속한 소통에서 품질이 시작됩니다.", "th": "คุณภาพเริ่มจากเข้าใจธุรกิจ กำหนดขอบเขตถูกต้อง และสื่อสารทันเวลาตลอดงาน"}, "Chọn ngôn ngữ": {"en": "Select language", "zh": "选择语言", "ja": "言語を選択", "ko": "언어 선택", "th": "เลือกภาษา"}, "Chọn theo mục đích: báo cáo tài chính, tuân thủ, hiệu quả hoạt động, đánh giá đối tác hoặc tăng cường giám sát nội bộ.": {"en": "Choose according to purpose: reporting, compliance, operational performance, partner assessment or internal oversight.", "zh": "按财务报告、合规、经营绩效、伙伴评估或内部监督需求选择。", "ja": "財務報告、法令遵守、業務評価、取引先評価、内部監督などの目的に応じて選択できます。", "ko": "보고, 준법, 운영 성과, 파트너 평가 또는 내부 감독 목적에 따라 선택하세요.", "th": "เลือกตามเป้าหมายรายงาน การปฏิบัติตามข้อกำหนด ประสิทธิภาพงาน ประเมินคู่ค้า หรือกำกับภายใน"}, "Chọn đúng hình thức làm việc theo mục tiêu rà soát và yêu cầu của bên nhận báo cáo.": {"en": "Select the right engagement for the review objective and report recipient's requirements.", "zh": "按审查目标和报告接收方要求选择合适业务形式。", "ja": "点検目的と報告先の要件に応じて業務形態を選べます。", "ko": "검토 목표와 보고서 수신자의 요구에 맞는 업무를 선택합니다.", "th": "เลือกงานให้ตรงเป้าหมายการทบทวนและความต้องการผู้รับรายงาน"}, "Crown Audit & Advisory": {"en": "Crown Audit & Advisory", "zh": "Crown Audit & Advisory", "ja": "Crown Audit & Advisory", "ko": "Crown Audit & Advisory", "th": "Crown Audit & Advisory"}, "Crown Audit cung cấp 8 dịch vụ: kiểm toán báo cáo tài chính, soát xét và AUP, kiểm toán tuân thủ, hiệu quả hoạt động, đánh giá đối tác và hỗ trợ giám sát nội bộ. Trao đổi để xác định phạm vi phù hợp.": {"en": "Crown Audit offers eight services covering financial statement audits, reviews and AUP, compliance, performance, partner assessment and internal oversight. Contact us to define the right scope.", "zh": "Crown Audit 提供8项服务，涵盖财报审计、审阅及商定程序、合规、绩效、合作伙伴评估和内部监督。欢迎洽谈适合的范围。", "ja": "財務諸表監査、レビュー・AUP、遵守、業績、取引先評価、内部監督など8サービス。適切な範囲をご相談ください。", "ko": "재무제표 감사, 검토·AUP, 준수, 성과, 파트너 평가, 내부 감독 등 8개 서비스를 제공합니다. 적절한 범위를 상담하세요.", "th": "บริการ 8 ด้าน ครอบคลุมตรวจงบ สอบทาน AUP ปฏิบัติตามกฎ ประสิทธิภาพ ประเมินคู่ค้า และกำกับภายใน ติดต่อกำหนดขอบเขตที่เหมาะสม"}, "Crown Audit | Kiểm toán độc lập, soát xét và kiểm toán nội bộ": {"en": "Crown Audit | Independent audit, review and internal audit", "zh": "Crown Audit | 独立审计、审阅与内部审计", "ja": "Crown Audit | 独立監査・レビュー・内部監査", "ko": "Crown Audit | 독립 감사·검토·내부감사", "th": "Crown Audit | สอบบัญชีอิสระ สอบทาน และตรวจสอบภายใน"}, "Crown Audit · Kiểm toán độc lập": {"en": "Crown Audit · Independent audit", "zh": "Crown Audit · 独立审计", "ja": "Crown Audit · 独立監査", "ko": "Crown Audit · 독립 감사", "th": "Crown Audit · สอบบัญชีอิสระ"}, "Crown Audit — Kiểm toán & dịch vụ liên quan": {"en": "Crown Audit — Audit & related services", "zh": "Crown Audit — 审计及相关服务", "ja": "Crown Audit — 監査・関連業務", "ko": "Crown Audit — 감사 및 관련 서비스", "th": "Crown Audit — สอบบัญชีและบริการที่เกี่ยวข้อง"}, "Crown chỉ giữ phần thương hiệu và kiểm soát chất lượng dịch vụ — phần lớn lợi ích thuộc về chính đối tác kiểm toán viên phụ trách địa bàn đó.": {"en": "Crown retains the brand and quality-control role; most benefits belong to the local audit partner.", "zh": "Crown 负责品牌与质量控制，大部分利益归负责当地业务的审计合作伙伴。", "ja": "Crownはブランドと品質管理を担い、主な利益は地域を担当する監査パートナーに帰属します。", "ko": "Crown은 브랜드와 품질 관리를 담당하고 대부분의 이익은 지역 감사 파트너에게 배분됩니다.", "th": "Crown ดูแลแบรนด์และคุณภาพ ส่วนผลประโยชน์ส่วนใหญ่เป็นของผู้สอบบัญชีพันธมิตรประจำพื้นที่"}, "Cung cấp góc nhìn độc lập để lãnh đạo xác định ưu tiên và điều chỉnh kế hoạch thực hiện.": {"en": "Provide an independent perspective to prioritise actions and adjust implementation plans.", "zh": "提供独立视角，帮助管理层确定重点及调整实施计划。", "ja": "独立した視点で優先事項の特定と実施計画の調整を支援します。", "ko": "독립적 관점으로 경영진의 우선순위 설정과 실행 계획 조정을 지원합니다.", "th": "ให้มุมมองอิสระเพื่อกำหนดลำดับความสำคัญและปรับแผนดำเนินงาน"}, "Các vấn đề kế toán, thuế, tài chính, ESG hoặc xây dựng được kết nối đến đơn vị phù hợp, theo phạm vi đã thống nhất.": {"en": "Accounting, tax, finance, ESG or construction issues are referred to the appropriate unit within the agreed scope.", "zh": "按约定范围将会计、税务、财务、ESG或建设问题对接合适单位。", "ja": "会計、税務、財務、ESG、建設の課題を合意範囲内で適切な部門につなぎます。", "ko": "합의 범위 내 회계·세무·재무·ESG·건설 과제를 적합한 조직에 연결합니다.", "th": "ประเด็นบัญชี ภาษี การเงิน ESG หรือก่อสร้าง เชื่อมให้หน่วยงานเหมาะสมตามขอบเขต"}, "Cơ hội hợp tác dành cho Kiểm toán viên": {"en": "Partnership opportunities for auditors", "zh": "审计师合作机会", "ja": "監査人向けパートナー募集", "ko": "감사인 파트너 기회", "th": "โอกาสร่วมงานสำหรับผู้สอบบัญชี"}, "Cơ quan thuế và cơ quan quản lý tăng cường hậu kiểm, giám sát tuân thủ doanh nghiệp": {"en": "Tax authorities and regulators strengthen post-review and compliance supervision", "zh": "税务及监管机构加强事后检查与合规监督", "ja": "税務当局・監督機関による事後審査と監督の強化", "ko": "세무·감독 당국의 사후 점검 및 준법 감독 강화", "th": "หน่วยงานภาษีและกำกับเพิ่มการตรวจภายหลังและติดตามการปฏิบัติตามข้อกำหนด"}, "Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo — the form will be connected upon official deployment.", "zh": "感谢您！这是界面演示版 — 表单将在正式上线时接入系统。", "ja": "ありがとうございます！これはUIデモです。正式運用開始時にフォームが接続されます。", "ko": "감사합니다! 이것은 UI 데모입니다 — 양식은 공식 배포 시 연결됩니다.", "th": "ขอบคุณค่ะ/ครับ! นี่คือเดโมอินเทอร์เฟซ — แบบฟอร์มจะเชื่อมต่อเมื่อเปิดใช้งานอย่างเป็นทางการ"}, "Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.": {"en": "Thank you! This is a UI demo. The guide will be emailed once the form is connected for launch.", "zh": "感谢您！这是界面演示，表单正式接入后将通过邮件发送资料。", "ja": "ありがとうございます。これはデモです。正式にフォームを接続後、資料をメールでお送りします。", "ko": "감사합니다! 현재 데모이며 정식 양식 연결 후 자료를 이메일로 보내드립니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต เอกสารจะส่งทางอีเมลเมื่อเชื่อมแบบฟอร์มใช้งานจริง"}, "Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo. Newsletter registration will be connected for launch.", "zh": "感谢您！这是界面演示，通讯订阅将在正式上线时接入。", "ja": "ありがとうございます。これはデモです。配信登録は正式運用時に接続されます。", "ko": "감사합니다! 현재 데모이며 소식지 등록은 정식 운영 시 연결됩니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต การสมัครข่าวจะเชื่อมเมื่อใช้งานจริง"}, "Cập nhật quy định kiểm toán & kế toán mới nhất mỗi tháng": {"en": "Monthly audit & accounting updates", "zh": "每月审计与会计动态", "ja": "監査・会計の月次情報", "ko": "감사·회계 월간 업데이트", "th": "อัปเดตสอบบัญชีและบัญชีรายเดือน"}, "Doanh nghiệp FDI": {"en": "FDI businesses", "zh": "外资企业", "ja": "FDI企業", "ko": "FDI 기업", "th": "ธุรกิจ FDI"}, "Doanh nghiệp FDI, dự án vốn vay, tổ chức tín dụng và nhiều loại hình doanh nghiệp khác đang chịu yêu cầu kiểm toán bắt buộc ngày càng chặt chẽ.": {"en": "FDI companies, loan-funded projects, credit institutions and other businesses face increasingly stringent mandatory audit requirements.", "zh": "外资企业、贷款项目、信贷机构及其他企业面临日益严格的强制审计要求。", "ja": "FDI企業、借入資金事業、信用機関などは、より厳しい監査義務への対応が求められています。", "ko": "FDI 기업, 차입금 사업, 금융기관 등은 더욱 엄격한 의무감사 요구를 받고 있습니다.", "th": "ธุรกิจ FDI โครงการเงินกู้ สถาบันสินเชื่อและธุรกิจอื่นเผชิญข้อกำหนดสอบบัญชีที่เข้มงวดขึ้น"}, "Doanh nghiệp cần gì từ một đối tác kiểm toán?": {"en": "What does your business need from an audit partner?", "zh": "企业需要怎样的审计伙伴？", "ja": "監査パートナーに何を求めますか", "ko": "기업에 필요한 감사 파트너는?", "th": "ธุรกิจต้องการอะไรจากผู้สอบบัญชี?"}, "Doanh nghiệp cần hiểu phạm vi, năng lực đội ngũ và đầu ra để lựa chọn đơn vị phù hợp, thay vì chỉ so sánh báo giá.": {"en": "Understand scope, team capability and deliverables to select the right firm, rather than comparing fees alone.", "zh": "应了解范围、团队能力及成果后选择合适机构，而非仅比较报价。", "ja": "料金だけでなく、範囲、担当者の能力、成果物を理解して選ぶ必要があります。", "ko": "견적만 비교하기보다 범위, 팀 역량과 결과물을 이해하고 적합한 업체를 선택해야 합니다.", "th": "ควรเข้าใจขอบเขต ความสามารถทีม และผลงานส่งมอบ ไม่ใช่เปรียบเทียบราคาเพียงอย่างเดียว"}, "Doanh nghiệp lần đầu kiểm toán": {"en": "First-time audit", "zh": "首次审计企业", "ja": "初めての監査", "ko": "첫 감사 기업", "th": "ธุรกิจสอบบัญชีครั้งแรก"}, "Doanh nghiệp ở các tỉnh, thành ngoài Hà Nội, TP.HCM khó tiếp cận dịch vụ kiểm toán chuẩn Big4": {"en": "Businesses outside Hanoi and HCMC struggle to access Big4-calibre audit services", "zh": "河内、胡志明市以外企业较难获得四大水准审计服务", "ja": "ハノイ・ホーチミン市以外ではBig4水準の監査へのアクセスが課題", "ko": "하노이·호치민 외 지역 기업의 Big4 수준 감사 접근 어려움", "th": "ธุรกิจนอกฮานอยและโฮจิมินห์เข้าถึงบริการสอบบัญชีระดับ Big4 ได้ยาก"}, "Duy trì chức năng kiểm toán nội bộ phù hợp quy mô mà không phải xây dựng toàn bộ bộ máy.": {"en": "Maintain internal audit capability suited to your scale without building the entire team internally.", "zh": "无需自建完整团队，维持与规模匹配的内审职能。", "ja": "全機能を社内構築せず、規模に合った内部監査機能を維持できます。", "ko": "전체 조직을 자체 구축하지 않고 규모에 맞는 내부감사 기능을 유지합니다.", "th": "คงงานตรวจสอบภายในเหมาะกับขนาดโดยไม่ต้องสร้างทั้งฝ่ายเอง"}, "Dành cho kiểm toán viên có kinh nghiệm và mạng lưới tại địa phương, mong muốn phát triển hoạt động chuyên môn trong mô hình hợp tác với Crown.": {"en": "For experienced auditors with local networks who want to develop professional work through a partnership with Crown.", "zh": "面向有经验、具当地网络并希望通过 Crown 合作模式发展专业业务的审计师。", "ja": "地域ネットワークを持ち、Crownとの連携で専門業務を広げたい経験豊富な監査人を対象とします。", "ko": "현지 네트워크를 가진 경험 많은 감사인이 Crown 협업 모델로 전문 업무를 발전시키도록 합니다.", "th": "สำหรับผู้สอบบัญชีมีประสบการณ์และเครือข่ายท้องถิ่น ต้องการเติบโตทางวิชาชีพผ่านความร่วมมือกับ Crown"}, "Dịch vụ kiểm toán": {"en": "Audit services", "zh": "审计服务", "ja": "監査サービス", "ko": "감사 서비스", "th": "บริการสอบบัญชี"}, "Dịch vụ kiểm toán & liên quan": {"en": "Audit & related services", "zh": "审计及相关服务", "ja": "監査・関連サービス", "ko": "감사 및 관련 서비스", "th": "สอบบัญชีและบริการที่เกี่ยวข้อง"}, "Dịch vụ quan tâm": {"en": "Service of interest", "zh": "感兴趣的服务", "ja": "ご興味のあるサービス", "ko": "관심 서비스", "th": "บริการที่สนใจ"}, "Email": {"en": "Email", "zh": "电子邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมล"}, "Email VP Hà Nội": {"en": "Hanoi office email", "zh": "河内办公室邮箱", "ja": "ハノイオフィスのメール", "ko": "하노이 사무소 이메일", "th": "อีเมลสำนักงานฮานอย"}, "Email VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City office email", "zh": "胡志明市办公室邮箱", "ja": "ホーチミン市オフィスのメール", "ko": "호치민시 사무소 이메일", "th": "อีเมลสำนักงานโฮจิมินห์"}, "Email của bạn": {"en": "Your email", "zh": "您的邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมลของคุณ"}, "Email nhận tài liệu": {"en": "Email for receiving the guide", "zh": "接收资料的邮箱", "ja": "資料受信用メール", "ko": "자료 수신 이메일", "th": "อีเมลรับเอกสาร"}, "Gia nhập đội ngũ Crown": {"en": "Join the Crown Team", "zh": "加入 Crown 团队", "ja": "Crownチームに参加する", "ko": "Crown 팀에 합류하세요", "th": "ร่วมเป็นส่วนหนึ่งของทีม Crown"}, "Giai đoạn của doanh nghiệp bạn": {"en": "Your business stage", "zh": "企业阶段", "ja": "企業の段階", "ko": "기업 단계", "th": "ระยะของธุรกิจ"}, "Giá trị mang lại": {"en": "Value delivered", "zh": "服务价值", "ja": "提供価値", "ko": "제공 가치", "th": "คุณค่าที่ได้รับ"}, "Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.": {"en": "Supervises audit expertise and develops the professional capacity of the audit team.", "zh": "监督审计专业水准，并致力于培养审计团队的专业能力。", "ja": "監査の専門性を監督し、監査チームの能力開発を推進します。", "ko": "감사 전문성을 감독하고 감사팀의 역량 개발을 담당합니다.", "th": "กำกับดูแลความเชี่ยวชาญด้านการตรวจสอบบัญชีและพัฒนาศักยภาพทีมผู้สอบบัญชี"}, "Giám sát quản trị": {"en": "Governance oversight", "zh": "治理监督", "ja": "ガバナンス監督", "ko": "경영 감독", "th": "กำกับการบริหาร"}, "Giám đốc Tư vấn thuế": {"en": "Tax Advisory Director", "zh": "税务咨询总监", "ja": "税務アドバイザリーディレクター", "ko": "세무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาภาษี"}, "Giám đốc kiểm toán mảng XDCB": {"en": "Director of Capital Construction Audit", "zh": "基本建设审计总监", "ja": "建設プロジェクト監査ディレクター", "ko": "건설투자감사 이사", "th": "ผู้อำนวยการฝ่ายตรวจสอบการก่อสร้างพื้นฐาน"}, "Giám đốc mảng Tư vấn Tài chính": {"en": "Financial Advisory Director", "zh": "财务咨询总监", "ja": "財務アドバイザリーディレクター", "ko": "재무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาทางการเงิน"}, "Giữ phần lớn lợi ích từ dịch vụ": {"en": "Retain most service benefits", "zh": "获得大部分服务收益", "ja": "サービス利益の大部分を確保", "ko": "서비스 이익의 대부분 확보", "th": "รับผลประโยชน์ส่วนใหญ่จากบริการ"}, "Gọi ngay cho Crown Audit": {"en": "Call Crown Audit", "zh": "致电 Crown Audit", "ja": "Crown Audit に電話", "ko": "Crown Audit 전화", "th": "โทรหา Crown Audit"}, "Gọi ngay: 090 450 1512": {"en": "Call: 090 450 1512", "zh": "致电：090 450 1512", "ja": "お電話：090 450 1512", "ko": "전화: 090 450 1512", "th": "โทร: 090 450 1512"}, "Gửi yêu cầu tư vấn miễn phí": {"en": "Send a free consultation request", "zh": "提交免费咨询申请", "ja": "無料相談を送信", "ko": "무료 상담 요청 전송", "th": "ส่งคำขอปรึกษาฟรี"}, "Hiệu quả hoạt động": {"en": "Operational performance", "zh": "经营绩效", "ja": "業務効率", "ko": "운영 성과", "th": "ประสิทธิภาพการดำเนินงาน"}, "Hotline Hà Nội": {"en": "Hanoi Hotline", "zh": "河内热线", "ja": "ハノイホットライン", "ko": "하노이 핫라인", "th": "สายด่วนฮานอย"}, "Hotline TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Hotline", "zh": "胡志明市热线", "ja": "ホーチミン市ホットライン", "ko": "호치민시 핫라인", "th": "สายด่วนโฮจิมินห์"}, "Hệ sinh thái Crown": {"en": "Crown ecosystem", "zh": "Crown 生态体系", "ja": "Crown グループ", "ko": "Crown 생태계", "th": "เครือ Crown"}, "Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.": {"en": "An ecosystem of Audit, Accounting, Tax, Financial Advisory and ESG services — partnering with Vietnamese businesses for sustainable growth.", "zh": "审计、会计、税务咨询、财务及ESG服务生态系统 — 携手越南企业实现可持续发展。", "ja": "監査・会計・税務・財務アドバイザリー・ESGのサービスエコシステムで、ベトナム企業の持続的成長に寄り添います。", "ko": "감사, 회계, 세무 자문, 재무 및 ESG 서비스 생태계 — 베트남 기업의 지속가능한 성장을 함께합니다.", "th": "ระบบนิเวศบริการตรวจสอบบัญชี บัญชี ที่ปรึกษาภาษี การเงิน และ ESG เคียงข้างธุรกิจเวียดนามสู่การเติบโตอย่างยั่งยืน"}, "Họ và tên": {"en": "Full name", "zh": "姓名", "ja": "お名前", "ko": "성함", "th": "ชื่อ-นามสกุล"}, "Hồ sơ tài chính không được kiểm toán bởi đơn vị đủ tin cậy có thể khiến doanh nghiệp bị từ chối giải ngân hoặc rót vốn.": {"en": "Financial records lacking a credible audit may result in financing or investment being declined.", "zh": "财务资料若未经可靠审计，可能导致贷款拨付或投资被拒。", "ja": "信頼できる監査がない財務資料では、融資や投資が断られる場合があります。", "ko": "신뢰할 수 있는 감사가 없는 재무자료는 대출 집행이나 투자 거절로 이어질 수 있습니다.", "th": "ข้อมูลการเงินที่ขาดการตรวจสอบน่าเชื่อถืออาจทำให้ถูกปฏิเสธเงินกู้หรือการลงทุน"}, "Hồ sơ và dự thảo báo cáo được rà soát chất lượng; các vấn đề cần làm rõ được trao đổi trước khi phát hành.": {"en": "Files and draft reports undergo quality review; matters requiring clarification are discussed before issuance.", "zh": "档案与报告草稿经过质量复核，出具前就待澄清事项进行沟通。", "ja": "資料と報告書案を品質点検し、確認事項を発行前に協議します。", "ko": "서류·보고서 초안을 품질 검토하고 발행 전 확인 사항을 논의합니다.", "th": "ทบทวนคุณภาพเอกสารและร่างรายงาน หารือสิ่งที่ต้องชี้แจงก่อนออก"}, "Hỗ trợ tìm kiếm nhân sự có kinh nghiệm kiểm toán tham gia HĐQT độc lập, giám sát hệ thống kiểm soát nội bộ theo vai trò được giao.": {"en": "Help identify experienced audit professionals to serve as independent directors overseeing internal controls within assigned roles.", "zh": "协助寻找具审计经验的人士担任独立董事，按分工监督内控。", "ja": "監査経験者を独立取締役として迎え、担当範囲で内部統制を監督する体制づくりを支援します。", "ko": "감사 경험자가 독립이사로서 맡은 역할에 따라 내부통제를 감독하도록 인재 확보를 지원합니다.", "th": "ช่วยหาบุคลากรมีประสบการณ์ตรวจสอบเข้าร่วมกรรมการอิสระ กำกับภายในตามบทบาท"}, "Hợp tác cùng Crown Audit tại địa bàn bạn am hiểu": {"en": "Partner with Crown Audit in the locality you know", "zh": "在您熟悉的地区与 Crown Audit 合作", "ja": "熟知する地域でCrown Auditと協業", "ko": "익숙한 지역에서 Crown Audit과 협력", "th": "ร่วมงาน Crown Audit ในพื้นที่ที่คุณรู้จัก"}, "Khác": {"en": "Other", "zh": "其他", "ja": "その他", "ko": "기타", "th": "อื่น ๆ"}, "Khám phá Crown Audit & Advisory": {"en": "Explore Crown Audit & Advisory", "zh": "了解 Crown Audit & Advisory", "ja": "Crown Audit & Advisoryを見る", "ko": "Crown Audit & Advisory 살펴보기", "th": "สำรวจ Crown Audit & Advisory"}, "Khó đánh giá chất lượng và mức phí": {"en": "Difficulty assessing quality and fees", "zh": "难以判断质量与费用", "ja": "品質と料金を判断しにくい", "ko": "품질과 비용 판단의 어려움", "th": "ประเมินคุณภาพและค่าบริการยาก"}, "Không chỉ có Kiểm toán — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực": {"en": "Beyond audit — Crown supports your business across disciplines", "zh": "不止审计——Crown 跨领域支持企业", "ja": "監査にとどまらない、Crownの多分野支援", "ko": "감사를 넘어 다양한 분야에서 기업을 지원하는 Crown", "th": "มากกว่าสอบบัญชี Crown ดูแลธุรกิจหลายด้าน"}, "Không chỉ tính tuân thủ sổ sách, hiệu quả thực sự của dòng vốn đầu tư đang trở thành tiêu chí đánh giá quan trọng.": {"en": "Beyond bookkeeping compliance, actual investment performance is becoming a key assessment criterion.", "zh": "除账务合规外，投资资金的实际效益正成为重要评估指标。", "ja": "帳簿の適法性だけでなく、投資資金の実際の効果が重要な評価基準になっています。", "ko": "장부 준법뿐 아니라 투자자금의 실제 성과가 중요한 평가 기준이 되고 있습니다.", "th": "นอกจากบัญชีถูกต้อง ผลจริงของเงินลงทุนก็เป็นเกณฑ์ประเมินสำคัญ"}, "Không cần lập doanh nghiệp riêng": {"en": "No need to establish a separate business", "zh": "无需另设企业", "ja": "別会社の設立は不要", "ko": "별도 법인 설립 불필요", "th": "ไม่ต้องตั้งธุรกิจแยก"}, "Khảo sát & lập kế hoạch kiểm toán": {"en": "Assess & plan the audit", "zh": "调查与审计计划", "ja": "調査・監査計画", "ko": "현황 파악 및 감사 계획", "th": "สำรวจและวางแผนตรวจสอบ"}, "Kinh nghiệm chuyên môn từ môi trường Big4": {"en": "Professional experience from the Big4 environment", "zh": "源自四大会计师事务所的专业经验", "ja": "Big4で培った専門経験", "ko": "Big4 환경에서 쌓은 전문 경험", "th": "ประสบการณ์วิชาชีพจากสภาพแวดล้อม Big4"}, "Kiểm toán": {"en": "Audit", "zh": "审计", "ja": "監査", "ko": "감사", "th": "ตรวจสอบบัญชี"}, "Kiểm toán BCTC": {"en": "Financial statement audit", "zh": "财务报表审计", "ja": "財務諸表監査", "ko": "재무제표 감사", "th": "สอบบัญชีงบการเงิน"}, "Kiểm toán báo cáo tài chính lập cho mục đích cụ thể, theo cơ sở lập báo cáo và yêu cầu của các bên sử dụng đã xác định.": {"en": "Audit financial statements prepared for a defined purpose, using the reporting basis and requirements of identified users.", "zh": "审计为特定目的编制的财务报表，依据已确定的编制基础和使用者要求。", "ja": "特定目的の財務諸表を、定められた作成基準と利用者要件に基づいて監査します。", "ko": "특정 목적의 재무제표를 정해진 작성 기준과 이용자 요구에 따라 감사합니다.", "th": "ตรวจสอบงบที่จัดทำเพื่อเป้าหมายเฉพาะ ตามเกณฑ์จัดทำและข้อกำหนดผู้ใช้ที่ระบุไว้"}, "Kiểm toán báo cáo tài chính năm theo chuẩn mực áp dụng, phục vụ nhu cầu tuân thủ và cung cấp thông tin cho các bên sử dụng.": {"en": "Annual financial statement audit under applicable standards for compliance and information needs of report users.", "zh": "根据适用准则审计年度财务报表，服务合规及报表使用者的信息需求。", "ja": "適用基準に基づく年次財務諸表監査により、法令遵守と利用者の情報ニーズに対応します。", "ko": "적용 기준에 따른 연간 재무제표 감사로 준법과 이용자의 정보 수요를 지원합니다.", "th": "สอบบัญชีงบประจำปีตามมาตรฐานที่เกี่ยวข้อง เพื่อการปฏิบัติตามข้อกำหนดและผู้ใช้ข้อมูล"}, "Kiểm toán báo cáo tài chính thường niên": {"en": "Annual financial statement audit", "zh": "年度财务报表审计", "ja": "年次財務諸表監査", "ko": "연간 재무제표 감사", "th": "สอบบัญชีงบการเงินประจำปี"}, "Kiểm toán báo cáo tài chính vì mục đích đặc biệt": {"en": "Special-purpose financial statement audit", "zh": "特殊目的财务报表审计", "ja": "特別目的財務諸表監査", "ko": "특수목적 재무제표 감사", "th": "สอบบัญชีงบการเงินเพื่อวัตถุประสงค์เฉพาะ"}, "Kiểm toán hiệu quả": {"en": "Performance audit", "zh": "绩效审计", "ja": "業績監査", "ko": "성과 감사", "th": "ตรวจสอบประสิทธิภาพ"}, "Kiểm toán hiệu quả hoạt động & dự án đầu tư": {"en": "Operational & investment project performance audit", "zh": "经营及投资项目绩效审计", "ja": "業務・投資プロジェクトの業績監査", "ko": "운영 및 투자사업 성과 감사", "th": "ตรวจสอบประสิทธิภาพการดำเนินงานและโครงการลงทุน"}, "Kiểm toán nội bộ": {"en": "Internal audit", "zh": "内部审计", "ja": "内部監査", "ko": "내부감사", "th": "ตรวจสอบภายใน"}, "Kiểm toán tuân thủ": {"en": "Compliance audit", "zh": "合规审计", "ja": "コンプライアンス監査", "ko": "준법 감사", "th": "ตรวจสอบการปฏิบัติตามข้อกำหนด"}, "Kiểm toán độc lập,": {"en": "Independent audit,", "zh": "独立审计，", "ja": "独立監査を、", "ko": "독립 감사를,", "th": "สอบบัญชีอิสระ"}, "Kế hoạch và danh mục hồ sơ thiếu rõ ràng khiến kế toán phải bổ sung nhiều lần, ảnh hưởng tiến độ báo cáo và công việc hàng ngày.": {"en": "Unclear plans and document lists lead to repeated requests, affecting reporting schedules and daily accounting work.", "zh": "计划及资料清单不明确会导致反复补件，影响报告进度和日常会计工作。", "ja": "計画や資料一覧が不明確だと追加依頼が繰り返され、報告日程や経理の日常業務に影響します。", "ko": "계획과 자료 목록이 불명확하면 반복 보완으로 보고 일정과 일상 회계업무에 영향을 줍니다.", "th": "แผนและรายการเอกสารไม่ชัดเจนทำให้ต้องส่งเพิ่มหลายครั้ง กระทบกำหนดรายงานและงานบัญชีประจำวัน"}, "Kế toán, Tư vấn Thuế, Tài chính doanh nghiệp, ESG và Xây dựng cơ bản — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit & Advisory.": {"en": "Accounting, tax, corporate finance, ESG and construction — explore the Crown Audit & Advisory ecosystem.", "zh": "会计、税务、企业财务、ESG与建设——了解 Crown Audit & Advisory 服务体系。", "ja": "会計、税務、企業財務、ESG、建設まで、Crown Audit & Advisoryのサービスをご覧ください。", "ko": "회계·세무·기업재무·ESG·건설 등 Crown Audit & Advisory 서비스를 살펴보세요.", "th": "บัญชี ภาษี การเงินองค์กร ESG และก่อสร้าง สำรวจบริการ Crown Audit & Advisory"}, "Kết nối chuyên môn khi cần xử lý vấn đề": {"en": "Connect expertise when issues arise", "zh": "按需连接专业能力", "ja": "課題に応じて専門性をつなぐ", "ko": "문제에 맞는 전문 역량 연결", "th": "เชื่อมผู้เชี่ยวชาญเมื่อเกิดประเด็น"}, "Kết nối với Crown Audit": {"en": "Connect with Crown Audit", "zh": "联系 Crown Audit", "ja": "Crown Auditへ相談", "ko": "Crown Audit에 문의", "th": "ติดต่อ Crown Audit"}, "Linh hoạt": {"en": "Flexible", "zh": "灵活", "ja": "柔軟", "ko": "유연한", "th": "ยืดหยุ่น"}, "Liên hệ": {"en": "Contact", "zh": "联系方式", "ja": "お問い合わせ", "ko": "문의", "th": "การติดต่อ"}, "Lo rủi ro chưa được nhận diện kịp thời": {"en": "Concern about risks being identified too late", "zh": "担忧风险未能及时识别", "ja": "リスクの発見が遅れる懸念", "ko": "리스크 식별 지연 우려", "th": "กังวลพบความเสี่ยงไม่ทันเวลา"}, "Lo tiến độ kéo dài, gián đoạn vận hành": {"en": "Concern about delays and operational disruption", "zh": "担忧进度拖延影响经营", "ja": "遅延や業務への影響が心配", "ko": "일정 지연과 업무 차질 우려", "th": "กังวลงานล่าช้าและกระทบการดำเนินงาน"}, "Làm rõ đầu ra, thời hạn, trách nhiệm cung cấp hồ sơ và mức phí để doanh nghiệp chủ động kế hoạch phối hợp.": {"en": "Clarify deliverables, deadlines, document responsibilities and fees so businesses can plan their participation.", "zh": "明确成果、期限、资料责任及费用，便于企业安排配合。", "ja": "成果物、期限、資料提供責任、費用を明確にし、企業が協力計画を立てられるようにします。", "ko": "결과물·기한·자료 책임·비용을 명확히 하여 기업이 협업을 계획하도록 합니다.", "th": "ชี้แจงผลส่งมอบ กำหนดเวลา หน้าที่จัดเอกสารและค่าบริการ เพื่อให้ธุรกิจวางแผนร่วมงานได้"}, "Muốn trao đổi trực tiếp hơn?": {"en": "Prefer to discuss directly?", "zh": "希望直接沟通？", "ja": "直接のご相談をご希望ですか", "ko": "직접 상담을 원하시나요?", "th": "ต้องการปรึกษาโดยตรง?"}, "Mô tả ngắn vấn đề bạn đang gặp phải...": {"en": "Briefly describe the issue you are facing...", "zh": "请简要描述您遇到的问题…", "ja": "お困りの内容を簡単にご記入ください…", "ko": "겪고 계신 문제를 간략히 적어주세요…", "th": "อธิบายปัญหาที่พบโดยย่อ..."}, "Mục đích đặc biệt": {"en": "Special purpose", "zh": "特殊目的", "ja": "特別目的", "ko": "특수목적", "th": "วัตถุประสงค์เฉพาะ"}, "Nguyên tắc hợp tác:": {"en": "Partnership principle:", "zh": "合作原则：", "ja": "連携の原則：", "ko": "협력 원칙:", "th": "หลักการร่วมงาน:"}, "Ngân hàng và nhà đầu tư ngày càng yêu cầu BCTC được kiểm toán bởi đơn vị uy tín": {"en": "Banks and investors increasingly request financial statements audited by reputable firms", "zh": "银行与投资者更要求信誉机构审计的报表", "ja": "銀行・投資家が信頼できる監査済み財務諸表を重視", "ko": "은행·투자자의 신뢰할 수 있는 감사 재무제표 요구 증가", "th": "ธนาคารและนักลงทุนต้องการงบที่ตรวจสอบโดยหน่วยงานน่าเชื่อถือมากขึ้น"}, "Nhà đầu tư và đối tác chiến lược ngày càng quan tâm đến hiệu quả sử dụng vốn": {"en": "Investors and strategic partners increasingly focus on capital efficiency", "zh": "投资者及战略伙伴更关注资金使用效率", "ja": "投資家・戦略パートナーによる資金効率の重視", "ko": "투자자·전략 파트너의 자본 효율 중시", "th": "นักลงทุนและพันธมิตรให้ความสำคัญกับประสิทธิภาพเงินทุนมากขึ้น"}, "Nhận Bộ checklist sẵn sàng kiểm toán miễn phí": {"en": "Get the free audit-readiness checklist", "zh": "领取免费审计准备清单", "ja": "無料監査準備チェックリストを受け取る", "ko": "무료 감사 준비 체크리스트 받기", "th": "รับเช็กลิสต์สอบบัญชีฟรี"}, "Nhận Bộ checklist tự đánh giá mức độ sẵn sàng cho BCTC được kiểm toán miễn phí": {"en": "Get a free audit-readiness checklist", "zh": "免费领取财务报表审计准备清单", "ja": "監査準備チェックリストを無料で入手", "ko": "무료 감사 준비 체크리스트 받기", "th": "รับเช็กลิสต์เตรียมพร้อมสอบบัญชีฟรี"}, "Nhận Checklist miễn phí": {"en": "Get the free checklist", "zh": "免费领取清单", "ja": "無料チェックリストを入手", "ko": "무료 체크리스트 받기", "th": "รับเช็กลิสต์ฟรี"}, "Nhận diện điểm chưa phù hợp và cơ sở đề xuất biện pháp khắc phục cho doanh nghiệp.": {"en": "Identify non-conformities and a basis for remedial recommendations.", "zh": "识别不符合事项，为整改建议提供依据。", "ja": "不適合事項を把握し、是正提案の根拠を示します。", "ko": "미준수 사항을 파악하고 개선 권고의 근거를 제공합니다.", "th": "ระบุจุดไม่สอดคล้องและฐานข้อมูลเสนอแนวแก้ไข"}, "Những con người dẫn dắt Crown": {"en": "The people leading Crown", "zh": "引领 Crown 的核心人才", "ja": "Crownを率いる人々", "ko": "Crown을 이끄는 사람들", "th": "บุคลากรผู้นำ Crown"}, "Những nỗi lo thường trực": {"en": "Common concerns", "zh": "常见顾虑", "ja": "よくある懸念", "ko": "주요 고민", "th": "ความกังวลที่พบบ่อย"}, "Nền tảng kinh nghiệm chuyên môn": {"en": "Foundation of professional experience", "zh": "专业经验基础", "ja": "専門経験の基盤", "ko": "전문 경험 기반", "th": "รากฐานประสบการณ์วิชาชีพ"}, "Phát triển khách hàng và tham gia thực hiện dịch vụ trong mô hình tổ chức, quy trình và kiểm soát chất lượng của Crown.": {"en": "Develop clients and deliver services within Crown's organisation, processes and quality-control model.", "zh": "在 Crown 组织、流程及质量控制模式下发展客户并参与提供服务。", "ja": "Crownの組織・手順・品質管理のもとで顧客開拓とサービス提供を行います。", "ko": "Crown 조직·절차·품질 관리 체계에서 고객을 개발하고 서비스를 수행합니다.", "th": "พัฒนาลูกค้าและร่วมบริการภายใต้องค์กร กระบวนการและควบคุมคุณภาพ Crown"}, "Phòng Kiểm toán nội bộ thuê ngoài": {"en": "Outsourced internal audit department", "zh": "外包内部审计部门", "ja": "内部監査部門の外部委託", "ko": "내부감사 부서 아웃소싱", "th": "ฝ่ายตรวจสอบภายในภายนอก"}, "Phòng kiểm toán nội bộ": {"en": "Internal audit department", "zh": "内部审计部门", "ja": "内部監査部門", "ko": "내부감사 부서", "th": "ฝ่ายตรวจสอบภายใน"}, "Phó Tổng Giám đốc": {"en": "Deputy General Director", "zh": "副总经理", "ja": "副総経理", "ko": "부총괄이사", "th": "รองผู้อำนวยการใหญ่"}, "Phạm vi thực hiện, trách nhiệm phối hợp và cơ chế phân chia lợi ích được thống nhất trước khi tiếp nhận công việc.": {"en": "Agree responsibilities, work scope and benefit-sharing before accepting assignments.", "zh": "承接工作前商定范围、协作责任与利益分配机制。", "ja": "受任前に業務範囲、役割、利益配分を合意します。", "ko": "업무 수임 전 범위·협업 책임·이익 배분을 합의합니다.", "th": "ตกลงขอบเขต หน้าที่และการแบ่งผลประโยชน์ก่อนรับงาน"}, "Phạm vi và chi phí được thống nhất trước": {"en": "Agree scope and fees upfront", "zh": "事先明确范围与费用", "ja": "範囲と料金を事前に合意", "ko": "범위와 비용 사전 합의", "th": "ตกลงขอบเขตและค่าบริการก่อน"}, "Phản hồi trong giờ làm việc": {"en": "Response during business hours", "zh": "工作时间内回复", "ja": "営業時間内に回答", "ko": "영업시간 내 응답", "th": "ตอบกลับในเวลาทำการ"}, "Phối hợp phù hợp với từng địa bàn": {"en": "Coordination suited to each location", "zh": "因地制宜的协作", "ja": "地域に応じた連携", "ko": "지역에 맞춘 협업", "th": "ประสานงานให้เหมาะแต่ละพื้นที่"}, "Phối hợp theo địa bàn": {"en": "Location-based coordination", "zh": "按地区协调", "ja": "地域に応じた連携", "ko": "지역별 협업", "th": "ประสานงานตามพื้นที่"}, "Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.": {"en": "Oversees audit quality and manages partnerships with major corporate clients.", "zh": "负责审计质量把控，并主导与大型企业客户的合作关系。", "ja": "監査品質を管理し、大手企業クライアントとの提携関係を統括します。", "ko": "감사 품질을 관리하고 대기업 고객과의 협력 관계를 총괄합니다.", "th": "รับผิดชอบคุณภาพงานตรวจสอบบัญชีและความสัมพันธ์ความร่วมมือกับลูกค้าองค์กรขนาดใหญ่"}, "Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.": {"en": "Oversees audits of capital investment settlement for capital construction projects.", "zh": "负责基本建设项目投资决算审计工作。", "ja": "建設プロジェクトの投資決算監査を担当します。", "ko": "건설투자사업 자본결산 감사를 담당합니다.", "th": "รับผิดชอบการตรวจสอบบัญชีการชำระบัญชีเงินลงทุนโครงการก่อสร้างพื้นฐาน"}, "Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.": {"en": "Oversees in-depth tax advisory, tax obligation optimization and legal compliance for businesses.", "zh": "负责企业深度税务咨询、税务义务优化及合规工作。", "ja": "企業への専門的な税務アドバイザリー、税務最適化、法令遵守を担当します。", "ko": "기업 대상 심층 세무자문, 세무 최적화 및 법적 컴플라이언스를 담당합니다.", "th": "รับผิดชอบการให้คำปรึกษาด้านภาษีเชิงลึก การปรับปรุงภาระภาษี และการปฏิบัติตามกฎหมายสำหรับธุรกิจ"}, "Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.": {"en": "Leads financial restructuring advisory, capital raising and investment transactions for businesses.", "zh": "负责企业财务重组咨询、融资及投资交易服务。", "ja": "財務再編アドバイザリー、資金調達、投資取引を統括します。", "ko": "재무구조 개편 자문, 자금조달 및 투자거래를 이끕니다.", "th": "นำการให้คำปรึกษาการปรับโครงสร้างทางการเงิน การระดมทุน และธุรกรรมการลงทุนสำหรับธุรกิจ"}, "Phụ trách địa bàn theo lợi thế riêng": {"en": "Lead a locality that matches your strengths", "zh": "按自身优势负责地区业务", "ja": "強みを活かせる地域を担当", "ko": "강점이 있는 지역 담당", "th": "รับผิดชอบพื้นที่ตามจุดแข็ง"}, "Quy trình hợp tác": {"en": "Our Process", "zh": "合作流程", "ja": "連携プロセス", "ko": "협업 프로세스", "th": "ขั้นตอนการทำงานร่วมกัน"}, "Quy định pháp luật ngày càng mở rộng phạm vi bắt buộc kiểm toán": {"en": "Laws increasingly extend mandatory audit coverage", "zh": "法律不断扩大强制审计范围", "ja": "法令による監査義務の対象拡大", "ko": "법률상 의무감사 대상 확대", "th": "กฎหมายขยายขอบเขตผู้มีหน้าที่สอบบัญชี"}, "Rà soát chất lượng & phát hành báo cáo": {"en": "Quality review & report issuance", "zh": "质量复核与出具报告", "ja": "品質点検・報告書発行", "ko": "품질 검토 및 보고서 발행", "th": "ทบทวนคุณภาพและออกรายงาน"}, "Rà soát thông tin và năng lực tài chính, hồ sơ liên quan của đối tác theo phạm vi thống nhất trước khi ký kết hoặc triển khai hợp tác.": {"en": "Review partner information, financial capacity and relevant records within the agreed scope before contracting or collaborating.", "zh": "签约或合作前，按约定范围审查伙伴信息、财务能力及相关资料。", "ja": "契約・提携前に、合意範囲内で取引先の情報、財務能力、関連資料を確認します。", "ko": "계약·협력 전 합의 범위에서 파트너 정보, 재무 역량과 관련 자료를 검토합니다.", "th": "ทบทวนข้อมูล ฐานะการเงินและเอกสารคู่ค้าตามขอบเขตก่อนทำสัญญาหรือร่วมงาน"}, "Sai lệch số liệu hoặc điểm yếu kiểm soát kéo dài khiến doanh nghiệp bị động khi cần giải trình với cổ đông, bên tài trợ hoặc cơ quan quản lý.": {"en": "Persistent data errors or control weaknesses leave businesses unprepared to explain matters to shareholders, funders or regulators.", "zh": "数据差错或内控薄弱长期存在，会使企业在向股东、资金方或监管机构说明时陷于被动。", "ja": "数値の誤りや統制の弱点が続くと、株主、資金提供者、当局への説明が後手に回ります。", "ko": "수치 오류나 통제 취약점이 지속되면 주주·자금 제공자·당국에 소명할 때 수동적으로 대응하게 됩니다.", "th": "ข้อมูลคลาดเคลื่อนหรือจุดอ่อนควบคุมที่สะสมทำให้ไม่พร้อมชี้แจงต่อผู้ถือหุ้น ผู้ให้ทุน หรือหน่วยงานกำกับ"}, "Soát xét & AUP": {"en": "Review & AUP", "zh": "审阅与AUP", "ja": "レビュー・AUP", "ko": "검토 및 AUP", "th": "สอบทานและ AUP"}, "Soát xét BCTC &": {"en": "Financial statement review &", "zh": "财务报表审阅与", "ja": "財務諸表レビュー・", "ko": "재무제표 검토 및", "th": "สอบทานงบการเงินและ"}, "Soát xét BCTC & Thủ tục thỏa thuận trước (Review & AUP)": {"en": "Financial statement review & agreed-upon procedures (Review & AUP)", "zh": "财务报表审阅与商定程序（Review & AUP）", "ja": "財務諸表レビュー・合意された手続（Review & AUP）", "ko": "재무제표 검토 및 합의된 절차(Review & AUP)", "th": "สอบทานงบการเงินและวิธีการที่ตกลงร่วมกัน (Review & AUP)"}, "Soát xét BCTC cung cấp sự đảm bảo có giới hạn; AUP thực hiện thủ tục đã thống nhất và báo cáo phát hiện, không đưa ra đảm bảo.": {"en": "Review provides limited assurance; AUP performs agreed procedures and reports findings without assurance.", "zh": "审阅提供有限保证；AUP 执行商定程序并报告发现，不提供保证。", "ja": "レビューは限定的保証を提供し、AUPは合意した手続と発見事項を報告しますが保証を提供しません。", "ko": "검토는 제한적 확신을 제공하며 AUP는 합의된 절차와 발견사항을 보고하고 확신은 제공하지 않습니다.", "th": "การสอบทานให้ความเชื่อมั่นอย่างจำกัด ส่วน AUP รายงานผลตามวิธีที่ตกลงโดยไม่ให้ความเชื่อมั่น"}, "Số điện thoại": {"en": "Phone number", "zh": "电话号码", "ja": "電話番号", "ko": "전화번호", "th": "หมายเลขโทรศัพท์"}, "Sự khác biệt của Crown Audit": {"en": "What sets Crown Audit apart", "zh": "Crown Audit 的优势", "ja": "Crown Auditの特長", "ko": "Crown Audit의 차별점", "th": "จุดเด่น Crown Audit"}, "Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.": {"en": "Demo design — illustrative content, update with real figures before publishing.", "zh": "演示版设计 — 内容仅供示意，正式发布前请更新真实数据。", "ja": "デモデザインです。サンプルコンテンツのため、公開前に実際のデータへ更新してください。", "ko": "데모 디자인입니다 — 예시 콘텐츠이며, 게시 전 실제 수치로 업데이트하세요.", "th": "ดีไซน์เดโม — เนื้อหาเป็นตัวอย่างประกอบ โปรดอัปเดตข้อมูลจริงก่อนเผยแพร่"}, "Thiếu đánh giá độc lập về kết quả và cách sử dụng nguồn lực khiến lãnh đạo khó xác định nguyên nhân và ưu tiên điều chỉnh.": {"en": "Without independent assessment of results and resource use, leaders struggle to identify causes and improvement priorities.", "zh": "缺乏对成果及资源使用的独立评估，管理层难以确定原因和改进重点。", "ja": "成果と資源利用への独立評価がなければ、原因や改善の優先順位を判断しにくくなります。", "ko": "성과와 자원 활용에 대한 독립 평가가 없으면 원인과 개선 우선순위를 파악하기 어렵습니다.", "th": "หากขาดการประเมินผลและการใช้ทรัพยากรอย่างอิสระ ผู้บริหารจะระบุสาเหตุและสิ่งที่ควรปรับก่อนยาก"}, "Thành viên HĐQT độc lập": {"en": "Independent board member", "zh": "独立董事", "ja": "独立取締役", "ko": "독립이사", "th": "กรรมการอิสระ"}, "Thành viên HĐQT độc lập phụ trách KSNB": {"en": "Independent board member overseeing internal controls", "zh": "负责内控监督的独立董事", "ja": "内部統制を監督する独立取締役", "ko": "내부통제 감독 독립이사", "th": "กรรมการอิสระกำกับการควบคุมภายใน"}, "Thẩm định năng lực": {"en": "Capability assessment", "zh": "能力评估", "ja": "能力評価", "ko": "역량 평가", "th": "ประเมินศักยภาพ"}, "Thẩm định năng lực đối tác trước hợp tác": {"en": "Partner capability assessment before collaboration", "zh": "合作前伙伴能力评估", "ja": "提携前の取引先能力評価", "ko": "협력 전 파트너 역량 평가", "th": "ประเมินศักยภาพคู่ค้าก่อนร่วมงาน"}, "Thị trường khan hiếm kiểm toán viên giàu kinh nghiệm, có chứng chỉ CPA": {"en": "Experienced CPA auditors are scarce", "zh": "经验丰富的 CPA 审计师短缺", "ja": "経験豊富なCPA監査人の不足", "ko": "경험 많은 CPA 감사인 부족", "th": "ผู้สอบบัญชี CPA ที่มีประสบการณ์ขาดแคลน"}, "Thực hiện kiểm toán tại thực địa": {"en": "On-site audit work", "zh": "现场审计", "ja": "現地での監査実施", "ko": "현장 감사 수행", "th": "ดำเนินการตรวจสอบ ณ สถานที่"}, "Tiến độ, chất lượng hồ sơ, rủi ro chưa được nhận diện và hiệu quả sử dụng vốn là những vấn đề cần làm rõ ngay từ đầu.": {"en": "Timing, file quality, unidentified risks and capital efficiency should be clarified from the start.", "zh": "进度、档案质量、未识别风险及资金使用效率都应在开始时明确。", "ja": "日程、資料の品質、未把握のリスク、資金効率を最初に明確にします。", "ko": "일정, 서류 품질, 미파악 리스크와 자본 효율성을 시작부터 명확히 해야 합니다.", "th": "กำหนดเรื่องเวลา คุณภาพเอกสาร ความเสี่ยงที่ยังไม่พบ และประสิทธิภาพเงินทุนให้ชัดเจนตั้งแต่ต้น"}, "Trang chủ Crown": {"en": "Crown homepage", "zh": "Crown 首页", "ja": "Crownトップ", "ko": "Crown 홈", "th": "หน้าหลัก Crown"}, "Trao đổi các phát hiện, khuyến nghị cải thiện và phạm vi hỗ trợ tiếp theo phù hợp với vai trò của đơn vị kiểm toán.": {"en": "Discuss findings, improvement recommendations and further support consistent with the auditor's role.", "zh": "讨论发现、改进建议及符合审计机构职责的后续支持范围。", "ja": "発見事項、改善提言、監査人の役割に適した追加支援を協議します。", "ko": "발견사항, 개선 권고와 감사인 역할에 맞는 후속 지원을 논의합니다.", "th": "หารือข้อพบ ข้อเสนอปรับปรุง และงานต่อเนื่องที่เหมาะกับบทบาทผู้สอบบัญชี"}, "Trao đổi nhu cầu": {"en": "Discuss your needs", "zh": "沟通需求", "ja": "ニーズを相談", "ko": "필요 사항 상담", "th": "ปรึกษาความต้องการ"}, "Trao đổi nhu cầu kiểm toán của doanh nghiệp": {"en": "Discuss your business audit needs", "zh": "沟通企业审计需求", "ja": "企業の監査ニーズを相談", "ko": "기업 감사 수요 상담", "th": "ปรึกษาความต้องการสอบบัญชี"}, "Trao đổi với chuyên gia": {"en": "Talk to a specialist", "zh": "联系专家", "ja": "専門家に相談", "ko": "전문가와 상담", "th": "ปรึกษาผู้เชี่ยวชาญ"}, "Trụ sở chính": {"en": "Head Office", "zh": "总部", "ja": "本社", "ko": "본사", "th": "สำนักงานใหญ่"}, "Tuyển dụng": {"en": "Careers", "zh": "招聘", "ja": "採用情報", "ko": "채용정보", "th": "ร่วมงานกับเรา"}, "Tuân thủ": {"en": "Compliance", "zh": "合规", "ja": "コンプライアンス", "ko": "준법", "th": "การปฏิบัติตามข้อกำหนด"}, "Tài liệu dành riêng cho bạn": {"en": "Resources for your business", "zh": "企业资料", "ja": "お役立ち資料", "ko": "기업 자료", "th": "เอกสารสำหรับธุรกิจ"}, "Tám dịch vụ cho từng mục tiêu kiểm toán và quản trị": {"en": "Eight services for audit and governance needs", "zh": "八项服务对应审计与治理目标", "ja": "監査と経営管理の目的に応じた8サービス", "ko": "감사·경영관리 목적별 8대 서비스", "th": "8 บริการตอบโจทย์สอบบัญชีและการบริหาร"}, "Tên doanh nghiệp": {"en": "Company name", "zh": "公司名称", "ja": "会社名", "ko": "회사명", "th": "ชื่อบริษัท"}, "Tôi muốn trở thành đối tác kiểm toán viên (KTV Big4/CPA)": {"en": "I want to become an audit partner (Big4/CPA)", "zh": "我希望成为审计合作伙伴（Big4/CPA）", "ja": "監査パートナーへの応募（Big4/CPA）", "ko": "감사 파트너 지원(Big4/CPA)", "th": "สนใจเป็นพันธมิตรผู้สอบบัญชี (Big4/CPA)"}, "Tư vấn & Tối ưu": {"en": "Advisory & Optimization", "zh": "咨询与优化", "ja": "アドバイザリー＆最適化", "ko": "어드바이저리 & 최적화", "th": "ที่ปรึกษาและการเพิ่มประสิทธิภาพ"}, "Tối thiểu 4 năm kinh nghiệm tại Big4 hoặc 8 năm tại công ty kiểm toán khác, có chứng chỉ CPA và đáp ứng yêu cầu chuyên môn của Crown.": {"en": "At least 4 years at Big4 or 8 years at another audit firm, CPA certification and Crown's professional requirements.", "zh": "至少四年四大或八年其他审计机构经验，持 CPA 资格并符合 Crown 专业要求。", "ja": "Big4で4年または他監査法人で8年以上の経験、CPA資格、Crownの専門要件を満たす方。", "ko": "Big4 4년 또는 기타 감사법인 8년 이상 경력, CPA와 Crown 전문 요건을 충족해야 합니다.", "th": "มีประสบการณ์ Big4 อย่างน้อย 4 ปี หรือบริษัทอื่น 8 ปี มี CPA และผ่านเกณฑ์วิชาชีพ Crown"}, "Tổng Giám đốc": {"en": "General Director", "zh": "总经理", "ja": "最高経営責任者", "ko": "대표이사", "th": "กรรมการผู้จัดการใหญ่"}, "Từ báo cáo tài chính (BCTC) đến tuân thủ, hoạt động và kiểm soát nội bộ — Crown Audit cung cấp góc nhìn độc lập, giúp doanh nghiệp minh bạch số liệu và nhận diện vấn đề cần cải thiện.": {"en": "From financial statements to compliance, operations and internal controls, Crown Audit provides an independent perspective to clarify data and identify improvements.", "zh": "从财务报表到合规、经营及内部控制，Crown Audit 提供独立视角，帮助企业厘清数据并识别改进事项。", "ja": "財務諸表からコンプライアンス、業務、内部統制まで、独立した視点で数値を明確にし、改善課題を把握します。", "ko": "재무제표부터 준법·운영·내부통제까지 독립적인 관점으로 수치를 명확히 하고 개선 과제를 파악합니다.", "th": "ตั้งแต่งบการเงิน การปฏิบัติตามข้อกำหนด การดำเนินงานถึงการควบคุมภายใน Crown Audit ให้มุมมองอิสระเพื่อชี้แจงข้อมูลและระบุสิ่งที่ควรปรับปรุง"}, "Tự đánh giá nhanh mức độ sẵn sàng của sổ sách, chứng từ và hồ sơ tài chính doanh nghiệp bạn — trước khi bước vào một cuộc kiểm toán chính thức.": {"en": "Quickly assess your books, supporting documents and financial records before a formal audit.", "zh": "正式审计前快速自评账簿、凭证和财务资料的准备情况。", "ja": "正式監査前に帳簿、証憑、財務資料の準備状況を確認できます。", "ko": "정식 감사 전 장부·증빙·재무자료의 준비 상태를 신속히 점검합니다.", "th": "ตรวจความพร้อมบัญชี หลักฐานและเอกสารการเงินก่อนเริ่มสอบบัญชีจริง"}, "VP Hà Nội": {"en": "Hanoi Office", "zh": "河内办公室", "ja": "ハノイオフィス", "ko": "하노이 사무소", "th": "สำนักงานฮานอย"}, "VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Office", "zh": "胡志明市办公室", "ja": "ホーチミン市オフィス", "ko": "호치민시 사무소", "th": "สำนักงานโฮจิมินห์"}, "Vì sao Crown Audit": {"en": "Why Crown Audit", "zh": "为何选择 Crown Audit", "ja": "Crown Auditを選ぶ理由", "ko": "Crown Audit을 선택하는 이유", "th": "ทำไมเลือก Crown Audit"}, "Vì sao chọn Crown": {"en": "Why choose Crown", "zh": "为何选择 Crown", "ja": "Crownが選ばれる理由", "ko": "Crown을 선택하는 이유", "th": "ทำไมต้องเลือก Crown"}, "Vì sao doanh nghiệp Việt Nam cần một đối tác kiểm toán đủ chuẩn và đủ gần": {"en": "Why Vietnamese businesses need a qualified, accessible audit partner", "zh": "为何越南企业需要专业且贴近的审计伙伴", "ja": "ベトナム企業に専門性と身近さを備えた監査パートナーが必要な理由", "ko": "베트남 기업에 전문적이고 가까운 감사 파트너가 필요한 이유", "th": "เหตุใดธุรกิจเวียดนามต้องการผู้สอบบัญชีที่มีมาตรฐานและเข้าถึงง่าย"}, "Vận dụng kinh nghiệm chuyên môn vào lập kế hoạch, thu thập bằng chứng, rà soát hồ sơ và kiểm soát chất lượng từng công việc.": {"en": "Apply professional experience to planning, evidence collection, file review and quality control on each assignment.", "zh": "将专业经验用于计划、取证、档案复核及各项工作的质量控制。", "ja": "専門経験を計画、証拠収集、資料点検、案件ごとの品質管理に活かします。", "ko": "전문 경험을 계획, 증거 수집, 서류 검토와 업무별 품질 관리에 적용합니다.", "th": "ใช้ประสบการณ์วิชาชีพวางแผน รวบรวมหลักฐาน ทบทวนเอกสารและควบคุมคุณภาพแต่ละงาน"}, "Xem cơ hội nghề nghiệp": {"en": "View Career Opportunities", "zh": "查看职业机会", "ja": "求人情報を見る", "ko": "채용 기회 보기", "th": "ดูโอกาสทางอาชีพ"}, "Xem dịch vụ kiểm toán": {"en": "Explore audit services", "zh": "了解审计服务", "ja": "監査サービスを見る", "ko": "감사 서비스 보기", "th": "ดูบริการสอบบัญชี"}, "Xu hướng hậu kiểm ngày càng phổ biến khiến doanh nghiệp thiếu chuẩn bị dễ đối mặt rủi ro bị truy thu, xử phạt.": {"en": "Growing post-review practices expose unprepared businesses to additional tax assessments and penalties.", "zh": "事后检查日益普遍，准备不足的企业容易面临补税和处罚。", "ja": "事後審査の増加により、準備不足の企業は追徴課税や処分のリスクに直面します。", "ko": "사후 점검 증가로 준비가 부족한 기업은 추가 과세·제재 리스크에 노출됩니다.", "th": "การตรวจภายหลังที่เพิ่มขึ้นทำให้ธุรกิจไม่พร้อมเสี่ยงภาษีเรียกเพิ่มและค่าปรับ"}, "Xây dựng kế hoạch và thực hiện kiểm toán nội bộ theo rủi ro; báo cáo phát hiện, khuyến nghị và theo dõi tiến độ khắc phục đã thống nhất.": {"en": "Plan and perform risk-based internal audits; report findings, recommendations and agreed remediation progress.", "zh": "制定并执行风险导向内部审计，报告发现、建议及约定整改进度。", "ja": "リスクに基づく内部監査を計画・実施し、発見事項、提言、合意した改善進捗を報告します。", "ko": "리스크 기반 내부감사를 계획·실행하고 발견사항, 권고와 합의된 개선 진행을 보고합니다.", "th": "วางแผนตรวจสอบภายในตามความเสี่ยง รายงานข้อพบ ข้อเสนอแนะและติดตามแก้ไขตามที่ตกลง"}, "Yêu cầu về minh bạch tài chính tại Việt Nam đang tăng nhanh — trong khi dịch vụ kiểm toán chuẩn Big4 lại chưa phủ đều khắp các địa phương.": {"en": "Financial transparency demands are rising in Vietnam, while Big4-calibre audit services remain unevenly available across localities.", "zh": "越南的财务透明度要求不断提高，但各地获得四大水准审计服务的机会仍不均衡。", "ja": "財務透明性への要求が高まる一方、Big4水準の監査サービスには地域差があります。", "ko": "재무 투명성 요구는 높아지지만 Big4 수준 감사 서비스의 지역별 접근성은 고르지 않습니다.", "th": "ความต้องการความโปร่งใสทางการเงินในเวียดนามเพิ่มขึ้น แต่บริการสอบบัญชีระดับ Big4 ยังเข้าถึงไม่ทั่วทุกพื้นที่"}, "gần hơn": {"en": "closer", "zh": "更贴近", "ja": "より身近に", "ko": "더 가까이", "th": "ใกล้ชิดยิ่งขึ้น"}, "hoạt động & dự án": {"en": "operations & projects", "zh": "经营与项目", "ja": "業務・プロジェクト", "ko": "운영 및 사업", "th": "การดำเนินงานและโครงการ"}, "phụ trách KSNB": {"en": "overseeing internal controls", "zh": "负责内控监督", "ja": "内部統制を監督", "ko": "내부통제 감독", "th": "กำกับการควบคุมภายใน"}, "thuê ngoài": {"en": "outsourced", "zh": "外包", "ja": "外部委託", "ko": "아웃소싱", "th": "ภายนอก"}, "thường niên": {"en": "annual", "zh": "年度", "ja": "年次", "ko": "연간", "th": "ประจำปี"}, "thủ tục thỏa thuận trước": {"en": "agreed-upon procedures", "zh": "商定程序", "ja": "合意された手続", "ko": "합의된 절차", "th": "วิธีการที่ตกลงร่วมกัน"}, "tuân thủ": {"en": "compliance", "zh": "合规", "ja": "コンプライアンス", "ko": "준법", "th": "การปฏิบัติตามข้อกำหนด"}, "vì mục đích đặc biệt": {"en": "for a special purpose", "zh": "用于特殊目的", "ja": "特別目的向け", "ko": "특수목적용", "th": "เพื่อวัตถุประสงค์เฉพาะ"}, "với doanh nghiệp bạn": {"en": "to your business", "zh": "您的企业", "ja": "企業の皆様へ", "ko": "기업 곁으로", "th": "กับธุรกิจคุณ"}, "© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.": {"en": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "zh": "© 2026 Crown 审计与咨询有限公司。版权所有。", "ja": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "ko": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "th": "© 2026 บริษัท Crown Audit and Advisory จำกัด สงวนลิขสิทธิ์"}, "Điều kiện trở thành đối tác": {"en": "Partner eligibility", "zh": "合作资格", "ja": "パートナーの条件", "ko": "파트너 자격", "th": "คุณสมบัติพันธมิตร"}, "Đánh giá sơ bộ tình hình doanh nghiệp, xác định phạm vi, rủi ro trọng yếu và lập kế hoạch kiểm toán phù hợp.": {"en": "Assess the business, define scope and key risks, and develop a suitable audit plan.", "zh": "初评企业状况，明确范围和重大风险，制定适当审计计划。", "ja": "企業状況、範囲、重要リスクを把握し、適切な監査計画を策定します。", "ko": "기업 현황, 범위와 주요 리스크를 파악하고 적합한 감사 계획을 수립합니다.", "th": "ประเมินธุรกิจ กำหนดขอบเขต ความเสี่ยงหลัก และวางแผนตรวจสอบเหมาะสม"}, "Đánh giá sử dụng nguồn lực, kết quả hoạt động và tiến độ thực hiện dự án theo các mục tiêu, tiêu chí đã thống nhất với doanh nghiệp.": {"en": "Assess resource use, operational results and project progress against objectives and criteria agreed with the business.", "zh": "依照与企业商定的目标和标准，评估资源使用、经营成果和项目进度。", "ja": "企業と合意した目標・基準に基づき、資源利用、業務成果、事業進捗を評価します。", "ko": "기업과 합의한 목표·기준에 따라 자원 활용, 운영 결과와 사업 진행을 평가합니다.", "th": "ประเมินทรัพยากร ผลงานและความคืบหน้าเทียบเป้าหมายและเกณฑ์ที่ตกลงกับธุรกิจ"}, "Đánh giá việc đáp ứng các tiêu chí đã xác định về quy định, quy chế hoặc điều kiện hợp đồng, trong phạm vi công việc được thống nhất.": {"en": "Assess compliance with defined legal, internal policy or contract criteria within the agreed scope.", "zh": "在约定范围内评估对法律、内部制度或合同既定标准的遵守情况。", "ja": "合意範囲内で、法令、社内規程、契約上の基準への適合を評価します。", "ko": "합의 범위 내 법규·내규·계약의 정해진 기준 준수를 평가합니다.", "th": "ประเมินการปฏิบัติตามกฎหมาย ระเบียบหรือเงื่อนไขสัญญาที่กำหนดภายในขอบเขตที่ตกลง"}, "Đánh giá đối tác": {"en": "Partner assessment", "zh": "伙伴评估", "ja": "取引先評価", "ko": "파트너 평가", "th": "ประเมินคู่ค้า"}, "Đáp ứng đúng mục đích sử dụng với phạm vi và hình thức báo cáo được thống nhất trước.": {"en": "Meet the intended purpose with scope and report format agreed in advance.", "zh": "按预先约定的范围与报告形式满足使用目的。", "ja": "事前合意した範囲と報告形式で、利用目的に対応します。", "ko": "사전 합의한 범위와 보고 형식으로 사용 목적에 대응합니다.", "th": "ตอบวัตถุประสงค์ตามขอบเขตและรูปแบบรายงานที่ตกลงล่วงหน้า"}, "Đăng ký bản tin": {"en": "Subscribe", "zh": "订阅简报", "ja": "ニュースレター登録", "ko": "소식지 구독", "th": "สมัครข่าวสาร"}, "Đăng ký nhận bản tin hàng tháng từ Crown Audit, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật.": {"en": "Subscribe to Crown Audit's monthly newsletter or follow us on Facebook for updates.", "zh": "订阅 Crown Audit 月刊或关注 Facebook 获取更新。", "ja": "Crown Auditの月次ニュースレターやFacebookで最新情報をご確認ください。", "ko": "Crown Audit 월간 소식지 또는 Facebook으로 소식을 받아보세요.", "th": "สมัครข่าวรายเดือน Crown Audit หรือติดตาม Facebook เพื่อรับข้อมูลใหม่"}, "Đăng ký nhận tư vấn miễn phí": {"en": "Request a free consultation", "zh": "申请免费咨询", "ja": "無料相談を申し込む", "ko": "무료 상담 신청", "th": "ลงทะเบียนปรึกษาฟรี"}, "Đăng ký tìm hiểu cơ hội đối tác": {"en": "Explore partnership opportunities", "zh": "了解合作机会", "ja": "協業について相談", "ko": "파트너 기회 알아보기", "th": "สนใจโอกาสร่วมงาน"}, "Đăng ký tư vấn": {"en": "Request a consultation", "zh": "申请咨询", "ja": "相談を申し込む", "ko": "상담 신청", "th": "ลงทะเบียนขอรับคำปรึกษา"}, "Được giao phụ trách một địa bàn nhất định — nơi bạn có mạng lưới quan hệ và am hiểu thị trường tốt nhất.": {"en": "Take responsibility for a territory where you have strong relationships and market understanding.", "zh": "负责您具有人脉与市场理解优势的地区。", "ja": "人脈と市場知識を活かせる地域を担当します。", "ko": "관계망과 시장 이해가 강한 지역을 담당합니다.", "th": "ดูแลพื้นที่ที่มีเครือข่ายและเข้าใจตลาดดี"}, "Đặc biệt tại các địa phương, doanh nghiệp khó tìm được kiểm toán viên đủ chuyên môn và kinh nghiệm thực chiến.": {"en": "Businesses, especially in provincial areas, struggle to find auditors with sufficient expertise and practical experience.", "zh": "尤其在地方，企业难以找到兼具专业能力与实务经验的审计师。", "ja": "特に地方では、十分な専門性と実務経験を備えた監査人の確保が難しい状況です。", "ko": "특히 지방 기업은 충분한 전문성과 실무 경험을 갖춘 감사인을 찾기 어렵습니다.", "th": "โดยเฉพาะต่างพื้นที่ ธุรกิจหาผู้สอบบัญชีที่เชี่ยวชาญและมีประสบการณ์จริงได้ยาก"}, "Đặt lịch trao đổi với Crown Audit": {"en": "Schedule a discussion with Crown Audit", "zh": "预约 Crown Audit 咨询", "ja": "Crown Auditとの相談を予約", "ko": "Crown Audit 상담 예약", "th": "นัดหารือกับ Crown Audit"}, "Đặt lịch tư vấn miễn phí": {"en": "Book a free consultation", "zh": "预约免费咨询", "ja": "無料相談を予約", "ko": "무료 상담 예약", "th": "นัดปรึกษาฟรี"}, "Đặt lịch tư vấn tại đây": {"en": "Book a consultation here", "zh": "在此预约咨询", "ja": "こちらから相談予約", "ko": "여기에서 상담 예약", "th": "นัดปรึกษาที่นี่"}, "Để lại thông tin để Crown Audit liên hệ tư vấn sơ bộ miễn phí trong 24 giờ làm việc. Bạn chưa cần chuẩn bị đầy đủ hồ sơ ở bước này.": {"en": "Leave your details for a free initial consultation within 24 business hours. Complete records are not required at this stage.", "zh": "留下信息，我们将在24个工作小时内提供免费初步咨询；此阶段无需备齐资料。", "ja": "情報をお寄せください。24営業時間以内に無料初期相談のご連絡をします。現段階で全資料の準備は不要です。", "ko": "정보를 남기면 24영업시간 내 무료 초기 상담을 드립니다. 이 단계에서 모든 자료를 준비할 필요는 없습니다.", "th": "ฝากข้อมูลเพื่อติดต่อปรึกษาเบื้องต้นฟรีภายใน 24 ชั่วโมงทำการ ยังไม่ต้องเตรียมเอกสารครบ"}, "Địa chỉ & Liên hệ": {"en": "Address & Contact", "zh": "地址与联系方式", "ja": "住所・お問い合わせ", "ko": "주소 및 연락처", "th": "ที่อยู่และการติดต่อ"}, "Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit & Advisory.": {"en": "Sets strategic direction and oversees the overall operations of Crown Audit & Advisory.", "zh": "制定发展战略方向，全面领导Crown Audit & Advisory的整体运营。", "ja": "Crown Audit & Advisoryの発展戦略を策定し、全体運営を統括します。", "ko": "Crown Audit & Advisory의 발전 전략을 수립하고 전반적인 운영을 총괄합니다.", "th": "กำหนดทิศทางกลยุทธ์การพัฒนาและบริหารการดำเนินงานโดยรวมของ Crown Audit & Advisory"}, "Đồng hành sau kiểm toán": {"en": "Post-audit support", "zh": "审计后支持", "ja": "監査後の支援", "ko": "감사 후 지원", "th": "ดูแลหลังสอบบัญชี"}, "Đội ngũ": {"en": "Team", "zh": "团队", "ja": "チーム", "ko": "팀 소개", "th": "ทีมงาน"}, "Đội ngũ chuyên gia": {"en": "Our Expert Team", "zh": "专家团队", "ja": "専門家チーム", "ko": "전문가팀", "th": "ทีมผู้เชี่ยวชาญ"}, "Đội ngũ kiểm toán viên làm việc trực tiếp tại doanh nghiệp, thu thập bằng chứng và trao đổi kịp thời các vấn đề phát sinh.": {"en": "Auditors work directly at the business, gather evidence and promptly discuss emerging issues.", "zh": "审计师到企业现场工作、收集证据并及时沟通问题。", "ja": "監査人が企業で作業し、証拠を収集して課題を速やかに共有します。", "ko": "감사인이 기업 현장에서 증거를 수집하고 발생 과제를 신속히 논의합니다.", "th": "ผู้สอบบัญชีทำงานที่ธุรกิจ รวบรวมหลักฐาน และหารือปัญหาทันเวลา"}, "Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.": {"en": "Experienced auditors, tax experts, financial and ESG advisors — working together on every client file to ensure consistent service quality.", "zh": "经验丰富的审计师、税务专家、财务与ESG顾问团队，共同协作处理每一份客户档案，确保服务质量始终如一。", "ja": "経験豊富な監査人、税務専門家、財務・ESGアドバイザーが各案件で連携し、一貫した品質のサービスを提供します。", "ko": "경험이 풍부한 감사인, 세무 전문가, 재무 및 ESG 자문위원이 모든 고객 사안에 협력하여 일관된 서비스 품질을 보장합니다.", "th": "ทีมผู้สอบบัญชี ผู้เชี่ยวชาญด้านภาษี ที่ปรึกษาทางการเงินและ ESG ที่มีประสบการณ์ ทำงานร่วมกันในทุกงานของลูกค้าเพื่อคุณภาพบริการที่สม่ำเสมอ"}, "đối tác trước hợp tác": {"en": "partners before collaboration", "zh": "合作前的伙伴", "ja": "提携前の取引先", "ko": "협력 전 파트너", "th": "คู่ค้าก่อนร่วมงาน"}, "Ảnh chân dung minh họa Nghiêm Ngọc Hoàng": {"en": "Illustrative portrait: Nghiêm Ngọc Hoàng", "zh": "示意肖像：Nghiêm Ngọc Hoàng", "ja": "イメージ肖像：Nghiêm Ngọc Hoàng", "ko": "예시 인물 사진: Nghiêm Ngọc Hoàng", "th": "ภาพบุคคลประกอบ: Nghiêm Ngọc Hoàng"}, "Ảnh chân dung minh họa Nguyễn Ngọc Tùng": {"en": "Illustrative portrait: Nguyễn Ngọc Tùng", "zh": "示意肖像：Nguyễn Ngọc Tùng", "ja": "イメージ肖像：Nguyễn Ngọc Tùng", "ko": "예시 인물 사진: Nguyễn Ngọc Tùng", "th": "ภาพบุคคลประกอบ: Nguyễn Ngọc Tùng"}, "Ảnh chân dung minh họa Nguyễn Thị Ý": {"en": "Illustrative portrait: Nguyễn Thị Ý", "zh": "示意肖像：Nguyễn Thị Ý", "ja": "イメージ肖像：Nguyễn Thị Ý", "ko": "예시 인물 사진: Nguyễn Thị Ý", "th": "ภาพบุคคลประกอบ: Nguyễn Thị Ý"}, "Ảnh chân dung minh họa Nguyễn Văn Bình": {"en": "Illustrative portrait: Nguyễn Văn Bình", "zh": "示意肖像：Nguyễn Văn Bình", "ja": "イメージ肖像：Nguyễn Văn Bình", "ko": "예시 인물 사진: Nguyễn Văn Bình", "th": "ภาพบุคคลประกอบ: Nguyễn Văn Bình"}, "Ảnh chân dung minh họa Nguyễn Đức Hưng": {"en": "Illustrative portrait: Nguyễn Đức Hưng", "zh": "示意肖像：Nguyễn Đức Hưng", "ja": "イメージ肖像：Nguyễn Đức Hưng", "ko": "예시 인물 사진: Nguyễn Đức Hưng", "th": "ภาพบุคคลประกอบ: Nguyễn Đức Hưng"}, "Ảnh chân dung minh họa Trần Thành Trung": {"en": "Illustrative portrait: Trần Thành Trung", "zh": "示意肖像：Trần Thành Trung", "ja": "イメージ肖像：Trần Thành Trung", "ko": "예시 인물 사진: Trần Thành Trung", "th": "ภาพบุคคลประกอบ: Trần Thành Trung"}, "Ảnh minh họa: Kiểm toán BCTC thường niên": {"en": "Illustration: Annual financial statement audit", "zh": "示意图：年度财务报表审计", "ja": "イメージ：年次財務諸表監査", "ko": "예시: 연간 재무제표 감사", "th": "ภาพประกอบ: ตรวจงบการเงินประจำปี"}, "Ảnh minh họa: Kiểm toán BCTC vì mục đích đặc biệt": {"en": "Illustration: Special-purpose financial statement audit", "zh": "示意图：特殊目的财务报表审计", "ja": "イメージ：特別目的の財務諸表監査", "ko": "예시: 특수목적 재무제표 감사", "th": "ภาพประกอบ: ตรวจงบวัตถุประสงค์เฉพาะ"}, "Ảnh minh họa: Kiểm toán hiệu quả hoạt động & dự án": {"en": "Illustration: Operational and project performance audit", "zh": "示意图：运营与项目绩效审计", "ja": "イメージ：業務・プロジェクト業績監査", "ko": "예시: 운영 및 프로젝트 성과 감사", "th": "ภาพประกอบ: ตรวจประสิทธิภาพงานและโครงการ"}, "Ảnh minh họa: Kiểm toán tuân thủ": {"en": "Illustration: Compliance audit", "zh": "示意图：合规审计", "ja": "イメージ：遵守監査", "ko": "예시: 준수 감사", "th": "ภาพประกอบ: ตรวจการปฏิบัติตามกฎ"}, "Ảnh minh họa: Phòng kiểm toán nội bộ thuê ngoài": {"en": "Illustration: Outsourced internal audit department", "zh": "示意图：内部审计部门外包", "ja": "イメージ：内部監査部門の業務委託", "ko": "예시: 내부감사 부서 아웃소싱", "th": "ภาพประกอบ: ฝ่ายตรวจสอบภายในเอาต์ซอร์ซ"}, "Ảnh minh họa: Soát xét BCTC & thủ tục thỏa thuận trước": {"en": "Illustration: Financial statement review and agreed-upon procedures", "zh": "示意图：财务报表审阅及商定程序", "ja": "イメージ：財務諸表レビュー・合意された手続", "ko": "예시: 재무제표 검토 및 합의된 절차", "th": "ภาพประกอบ: สอบทานงบและวิธีการที่ตกลงร่วมกัน"}, "Ảnh minh họa: Thành viên HĐQT độc lập phụ trách KSNB": {"en": "Illustration: Independent board member overseeing internal controls", "zh": "示意图：负责内部控制的独立董事", "ja": "イメージ：内部統制を担当する独立取締役", "ko": "예시: 내부통제 담당 독립 이사", "th": "ภาพประกอบ: กรรมการอิสระดูแลควบคุมภายใน"}, "Ảnh minh họa: Thẩm định năng lực đối tác trước hợp tác": {"en": "Illustration: Partner assessment before collaboration", "zh": "示意图：合作前的伙伴能力评估", "ja": "イメージ：提携前の取引先評価", "ko": "예시: 협력 전 파트너 평가", "th": "ภาพประกอบ: ประเมินคู่ค้าก่อนร่วมงาน"}};
+  const isHomepage = false;
+  const languages = ['vi','en','zh','ja','ko','th'];
+  const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
+  const crownHosts = new Set(['crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn']);
+  const normalize = value => value.replace(/\s+/g,' ').trim();
+  let locale = 'vi';
+  const translate = (value, language) => language === 'vi' ? value : (translations[normalize(value)]?.[language] ?? value);
+  // Keep the original service values: changing visible labels must not change CTA selection.
+  document.querySelectorAll('option').forEach(option => {
+    if (!option.hasAttribute('value')) option.setAttribute('value', option.value);
+  });
+  const keyed = isHomepage ? Array.from(document.querySelectorAll('[data-i18n]')).filter(el => I18N[el.dataset.i18n]).map(el => ({el, nodes:Array.from(el.childNodes).filter(n=>n.nodeType===3).map(node=>({node,original:node.nodeValue})), entry:I18N[el.dataset.i18n]})) : [];
+  const keyedElements = new Set(keyed.map(record => record.el));
+  const textRecords = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest('script,style,noscript,.lang-switcher-wrap')) continue;
+    let keyedAncestor = false;
+    for (let e=parent;e;e=e.parentElement) if (keyedElements.has(e)) {keyedAncestor=true;break;}
+    if (keyedAncestor) continue;
+    const original=node.nodeValue;
+    if(translations[normalize(original)]) textRecords.push({node,original});
+  }
+  const attributes=[];
+  document.querySelectorAll('[placeholder],[aria-label],[title],[alt],meta[name="description"]').forEach(el => {
+    for (const name of ['placeholder','aria-label','title','alt','content']) {
+      const original=el.getAttribute(name);
+      if(original && translations[normalize(original)]) attributes.push({el,name,original});
+    }
+  });
+  const originalTitle=document.title;
+  const links=Array.from(document.querySelectorAll('a[href]')).filter(a => {
+    try{return crownHosts.has(new URL(a.getAttribute('href'),location.href).hostname);}catch{return false;}
+  }).map(el=>({el,href:el.getAttribute('href')}));
+  function applyLanguage(language, persist=false) {
+    if(!languages.includes(language)) language='vi';
+    locale=language;
+    if(isHomepage) currentLang=language;
+    document.documentElement.lang=language;
+    keyed.forEach(({nodes,entry})=>{
+      let written=false;
+      nodes.forEach(({node,original})=>{
+        if(language==='vi') node.nodeValue=original;
+        else if(original.trim() && !written){node.nodeValue=original.match(/^\s*/)[0]+entry[language]+original.match(/\s*$/)[0];written=true;}
+        else if(original.trim()) node.nodeValue='';
+      });
+    });
+    textRecords.forEach(({node,original})=>{
+      const translated=translate(original,language);
+      node.nodeValue=language==='vi' ? original : original.match(/^\s*/)[0]+translated.trim()+original.match(/\s*$/)[0];
+    });
+    attributes.forEach(({el,name,original})=>el.setAttribute(name,translate(original,language)));
+    document.title=translate(originalTitle,language);
+    document.getElementById('langCurrentLabel').textContent=language.toUpperCase();
+    document.querySelector('#langSwitcherBtn .flag').textContent=flags[language];
+    document.querySelectorAll('.lang-option').forEach(button=>{
+      const active=button.dataset.lang===language;
+      button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
+    });
+    links.forEach(({el,href})=>{
+      const url=new URL(href,location.href);url.searchParams.set('lang',language);el.href=url.href;
+    });
+    if(persist){
+      try{localStorage.setItem('crown.language',language);}catch{}
+      if(crownHosts.has(location.hostname)) document.cookie=`crown_language=${language}; Domain=crown.com.vn; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
+      try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}
+    }
+    // Existing equal-height card layouts recalculate against the translated text.
+    requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  }
+  const originalAlert=window.alert.bind(window);
+  window.alert=message=>originalAlert(translate(String(message),locale));
+  const menus=[
+    {button:document.getElementById('langSwitcherBtn'),panel:document.getElementById('crownLanguageMenu')},
+    {button:document.getElementById('crownEcosystemBtn'),panel:document.getElementById('crownEcosystemMenu')}
+  ];
+  function closeMenus(){menus.forEach(({button,panel})=>{panel.hidden=true;button.setAttribute('aria-expanded','false');});}
+  menus.forEach(({button,panel})=>{
+    button.addEventListener('click',()=>{const opening=panel.hidden;closeMenus();panel.hidden=!opening;button.setAttribute('aria-expanded',String(opening));});
+    button.addEventListener('keydown',event=>{
+      if(event.key==='ArrowDown'){event.preventDefault();closeMenus();panel.hidden=false;button.setAttribute('aria-expanded','true');panel.querySelector('button,a').focus();}
+    });
+    panel.addEventListener('keydown',event=>{
+      const options=Array.from(panel.querySelectorAll('button,a'));const index=options.indexOf(document.activeElement);
+      if(event.key==='ArrowDown'||event.key==='ArrowUp') {event.preventDefault();options[(index+(event.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();}
+      if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
+    });
+  });
+  document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{applyLanguage(button.dataset.lang,true);closeMenus();menus[0].button.focus();}));
+  document.addEventListener('click',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const opened=menus.find(m=>!m.panel.hidden);closeMenus();opened?.button.focus();}});
+  document.addEventListener('focusin',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  let initial=new URLSearchParams(location.search).get('lang');
+  if(!languages.includes(initial)){
+    try{initial=document.cookie.match(/(?:^|;\s*)crown_language=(vi|en|zh|ja|ko|th)(?:;|$)/)?.[1] || localStorage.getItem('crown.language');}catch{}
+  }
+  applyLanguage(initial);
+  window.CrownLanguage={set:language=>applyLanguage(language,true),get:()=>locale};
+})();
+
+</script>
 </body>
 </html>

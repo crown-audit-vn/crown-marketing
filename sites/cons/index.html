@@ -1,23 +1,1132 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crown Consulting | Sắp ra mắt</title>
-  <meta name="robots" content="noindex">
-  <style>
-    body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; color: #111; background: #fafaf8; }
-    main { text-align: center; padding: 2rem; max-width: 32rem; }
-    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    p { color: #5b6660; }
-    a { color: #1f6b3f; font-weight: 600; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown Cons | Kiểm soát rủi ro dự toán &amp; Kiểm toán quyết toán vốn đầu tư xây dựng cơ bản</title>
+<meta name="description" content="Crown Cons - Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách, kiểm toán quyết toán và thiết lập khiên chắn thanh tra, tháo gỡ điểm nghẽn pháp lý cho dự án treo. Phục vụ chủ đầu tư nhà nước (Ban Quản lý dự án) và tư nhân trong toàn bộ vòng đời dự án đầu tư xây dựng cơ bản.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+<style>
+  :root{
+    --navy-900:#0B0B0B;
+    --navy-800:#163823;
+    --navy-700:#1E4E30;
+    --navy-600:#276139;
+    --gold-600:#1F6B3F;
+    --gold-500:#2F8C55;
+    --gold-400:#6FCB93;
+    --gold-100:#E3F1E8;
+    --cream:#FAFAF8;
+    --ink:#111111;
+    --muted:#5B6660;
+    --white:#FFFFFF;
+    --line:#E3E3DE;
+    --orange:#F2871F;
+    --radius:14px;
+    --shadow:0 20px 50px -20px rgba(10,20,14,0.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy-900);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--gold-600);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold-500);display:inline-block;}
+  .section-head{max-width:680px;margin-bottom:52px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin-bottom:16px;}
+  .section-head p{color:var(--muted);font-size:17px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;transition:all .25s ease;white-space:nowrap;
+  }
+  .btn-gold{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn-gold:hover{background:var(--gold-500);border-color:var(--gold-500);color:#fff;transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(47,140,85,0.5);}
+  .btn-outline-light{border-color:rgba(255,255,255,0.4);color:#fff;}
+  .btn-outline-light:hover{background:rgba(255,255,255,0.12);border-color:#fff;}
+  .btn-outline-navy{border-color:var(--navy-700);color:var(--navy-800);}
+  .btn-outline-navy:hover{background:var(--navy-900);color:#fff;}
+  .btn-navy{background:var(--navy-900);color:#fff;}
+  .btn-navy:hover{background:var(--navy-700);transform:translateY(-2px);}
+  .btn-sm{padding:10px 20px;font-size:13px;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(8,8,8,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    transition:background .3s ease;
+  }
+  .header-inner{
+    max-width:1240px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;color:#fff;}
+  .brand-mark{position:relative;display:inline-flex;}
+  .brand-mark .crown-icon{
+    position:absolute;top:-12px;left:26px;font-size:13px;color:var(--gold-500);
+  }
+  .brand-mark .word{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.3px;
+    color:#fff;line-height:1;
+  }
+  .logo .sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-top:4px;}
+
+  nav.main-nav{display:flex;align-items:center;gap:6px;}
+  nav.main-nav > ul{display:flex;align-items:center;gap:4px;}
+  nav.main-nav > ul > li{position:relative;}
+  nav.main-nav > ul > li > a{
+    display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.88);white-space:nowrap;
+    font-size:14.5px;font-weight:600;padding:10px 12px;border-radius:8px;transition:.2s;
+  }
+  nav.main-nav > ul > li > a:hover{color:#fff;background:rgba(255,255,255,0.08);}
+
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .switcher-wrap{position:relative;}
+  .switcher-btn{
+    display:flex;align-items:center;gap:8px;color:#fff;font-size:13.5px;font-weight:600;
+    border:1px solid rgba(255,255,255,0.22);padding:9px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+  }
+  .switcher-btn:hover{border-color:var(--gold-400);}
+  .switcher-menu{
+    position:absolute;top:100%;right:0;margin-top:10px;width:220px;background:#fff;border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s ease;
+  }
+  .switcher-wrap:hover .switcher-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .switcher-menu a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy-900);}
+  .switcher-menu a:hover{background:var(--cream);}
+  .burger{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;padding:190px 0 110px;color:#fff;
+    background:
+      radial-gradient(1100px 600px at 85% -10%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(160deg, rgba(11,11,11,0.92) 0%, rgba(22,56,35,0.88) 55%, rgba(30,78,48,0.85) 100%),
+      url('https://images.pexels.com/photos/29299826/pexels-photo-29299826.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+  .hero h1{color:#fff;font-size:clamp(32px,4.2vw,52px);line-height:1.2;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--gold-400);}
+  .hero p.lead{font-size:17.5px;color:rgba(255,255,255,0.78);max-width:540px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-actions .btn i{font-size:12px;}
+  .hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--gold-500);padding-left:14px;}
+  .hero-stats strong{display:block;font-family:'Playfair Display',serif;font-size:26px;color:#fff;}
+  .hero-stats span{font-size:12.5px;color:rgba(255,255,255,0.6);}
+
+  .hero-card{
+    position:relative;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+    border-radius:20px;padding:30px;backdrop-filter:blur(6px);
+  }
+  .hero-card h3{color:#fff;font-size:18px;margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:700;}
+  .hero-card ul li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,0.14);font-size:14px;color:rgba(255,255,255,0.85);}
+  .hero-card ul li:last-child{border-bottom:none;}
+  .hero-card ul li i{color:var(--gold-400);margin-top:3px;}
+  .float-chip{
+    position:absolute;width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 16px 28px -10px rgba(0,0,0,0.45);z-index:3;
+  }
+  .float-chip.fc-1{top:-22px;left:-22px;background:var(--gold-500);color:var(--navy-900);}
+  .float-chip.fc-2{bottom:-18px;right:26px;background:var(--navy-900);color:var(--gold-400);border:1px solid rgba(111,203,147,0.4);}
+
+  /* ===== ILLUSTRATION PANELS ===== */
+  .illus{
+    position:relative;height:168px;border-radius:14px;overflow:hidden;margin-bottom:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,#EEF7F1,#F9FBFA);
+  }
+  .illus::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(47,140,85,0.16);top:-55px;right:-45px;}
+  .illus::after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(11,11,11,0.05);bottom:-40px;left:-25px;}
+  .illus .illus-chip{
+    position:absolute;z-index:2;width:42px;height:42px;border-radius:11px;background:var(--navy-900);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:16px;bottom:14px;right:14px;
+    box-shadow:0 10px 20px -8px rgba(0,0,0,0.3);
+  }
+  .illus.illus-photo{background-size:cover;background-position:center;}
+  .illus.illus-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(165deg, rgba(11,11,11,0.12), rgba(11,11,11,0.6));}
+  .illus.illus-photo::after{display:none;}
+
+  /* ===== PAIN POINTS (Nỗi lo chung) ===== */
+  .pain{padding:100px 0 40px;background:var(--white);}
+  .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .pain-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
+    transition:.25s ease;position:relative;overflow:hidden;
+  }
+  .pain-card:hover{box-shadow:var(--shadow);transform:translateY(-6px);border-color:transparent;}
+  .pain-card h3{font-size:17.5px;margin-bottom:8px;line-height:1.3;}
+  .pain-card p{color:var(--muted);font-size:13.5px;}
+
+  /* ===== URGENCY / REALITY CHECK (bối cảnh thực tế) ===== */
+  .urgency{background:var(--navy-900);color:#fff;padding:90px 0 70px;position:relative;overflow:hidden;}
+  .urgency .section-head h2{color:#fff;}
+  .urgency .section-head p{color:rgba(255,255,255,0.65);}
+  .urgency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .urgency-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:26px 24px;transition:.25s ease;}
+  .urgency-card:hover{border-color:rgba(242,135,31,0.5);transform:translateY(-4px);background:rgba(255,255,255,0.06);}
+  .urgency-card .ic{width:44px;height:44px;border-radius:12px;background:rgba(242,135,31,0.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;}
+  .urgency-card h4{color:#fff;font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.4;margin-bottom:8px;}
+  .urgency-card p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.55;}
+
+  /* ===== CTA BANNER (mid-page) ===== */
+  .cta-banner-mid{
+    position:relative;overflow:hidden;padding:66px 0;color:#fff;text-align:center;
+    background:
+      radial-gradient(900px 500px at 15% 120%, rgba(47,140,85,0.28), transparent 60%),
+      linear-gradient(120deg,var(--navy-900),var(--navy-700));
+  }
+  .cta-banner-mid .container{max-width:720px;}
+  .cta-banner-mid .eyebrow{color:var(--gold-400);justify-content:center;}
+  .cta-banner-mid h2{color:#fff;font-size:clamp(24px,3vw,32px);margin-bottom:14px;}
+  .cta-banner-mid p{color:rgba(255,255,255,0.75);font-size:15.5px;margin-bottom:30px;}
+  .cta-actions-mid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .hotline-badge{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--gold-400);}
+  .hotline-badge i{font-size:20px;}
+
+  /* ===== SERVICES GRID (3 dịch vụ cốt lõi) ===== */
+  .services{padding:96px 0;background:var(--cream);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .svc-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+    display:flex;flex-direction:column;transition:.25s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .svc-ic{
+    width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy-800),var(--navy-900));color:var(--gold-400);font-size:20px;
+  }
+  .svc-tag{font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--gold-600);background:var(--gold-100);padding:5px 10px;border-radius:999px;}
+  .svc-card h3{font-size:18.5px;margin-bottom:10px;line-height:1.3;}
+  .svc-card .desc{color:var(--muted);font-size:13.8px;margin-bottom:14px;}
+  .svc-card .benefit{
+    font-size:13px;color:var(--navy-800);background:var(--gold-100);border-radius:10px;padding:10px 12px;
+    margin-bottom:18px;flex:1;
+  }
+  .svc-card .benefit strong{display:block;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;color:var(--gold-600);margin-bottom:4px;}
+  .svc-card .svc-link{
+    font-size:13.5px;font-weight:700;color:var(--navy-900);display:inline-flex;align-items:center;gap:8px;
+    padding-top:14px;border-top:1px solid var(--line);
+  }
+  .svc-card .svc-link i{font-size:11px;transition:.2s;}
+  .svc-card:hover .svc-link i{transform:translateX(4px);}
+  .svc-illus{height:140px;margin-bottom:18px;}
+
+  /* ===== WHY US (Vì sao chọn Crown Cons) ===== */
+  .why{position:relative;overflow:hidden;padding:100px 0;background:var(--navy-900);color:#fff;}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:rgba(255,255,255,0.7);}
+  .why-list{display:flex;flex-direction:column;gap:22px;}
+  .why-list li{display:flex;gap:16px;}
+  .why-list .ic{
+    width:44px;height:44px;flex:none;border-radius:12px;background:rgba(47,140,85,0.14);
+    color:var(--gold-400);display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .why-list h4{color:#fff;font-family:'Inter',sans-serif;font-size:16px;margin-bottom:4px;}
+  .why-list p{color:rgba(255,255,255,0.65);font-size:14px;}
+  .why-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat-box{border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:26px;text-align:center;}
+  .stat-box strong{display:block;font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-400);margin-bottom:6px;}
+  .stat-box span{font-size:12.5px;color:rgba(255,255,255,0.65);}
+  .watermark-icon{
+    position:absolute;font-size:220px;color:rgba(111,203,147,0.07);pointer-events:none;z-index:0;
+    top:50%;right:-30px;transform:translateY(-50%);
+  }
+
+  /* ===== CONSULTATION FORM (Đặt lịch tư vấn) ===== */
+  .contact{padding:100px 0;background:linear-gradient(160deg,var(--navy-800),var(--navy-900));color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .contact h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin-bottom:16px;}
+  .contact p{color:rgba(255,255,255,0.72);font-size:16px;margin-bottom:30px;}
+  .contact-info{display:flex;flex-direction:column;gap:18px;}
+  .contact-info li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.85);}
+  .contact-info li .ic{flex:none;}
+  .contact-info .ic{width:40px;height:40px;border-radius:10px;background:rgba(47,140,85,0.16);color:var(--gold-400);display:flex;align-items:center;justify-content:center;}
+  .contact-form{background:#fff;border-radius:18px;padding:34px;color:var(--ink);}
+  .contact-form h3{font-size:19px;margin-bottom:18px;color:var(--navy-900);}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .contact-form input,.contact-form select,.contact-form textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:var(--cream);
+  }
+  .contact-form textarea{grid-column:1/-1;min-height:80px;resize:vertical;margin-bottom:14px;}
+  .contact-form button{width:100%;}
+
+  /* ===== PROCESS (Quy trình hợp tác) ===== */
+  .process{padding:100px 0;background:var(--white);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  .step{position:relative;padding:30px 22px;border-radius:var(--radius);background:var(--cream);border:1px solid var(--line);}
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-500);font-weight:700;display:block;margin-bottom:14px;
+  }
+  .step h4{font-size:16.5px;margin-bottom:8px;color:var(--navy-900);}
+  .step p{font-size:13.5px;color:var(--muted);}
+
+  /* ===== TEAM ===== */
+  .team{padding:96px 0;background:var(--cream);}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .team-card{
+    text-align:center;border:1px solid var(--line);border-radius:var(--radius);padding:32px 22px;transition:.25s ease;background:#fff;
+  }
+  .team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .team-card h4{font-size:17px;margin-bottom:4px;}
+  .team-card .role{display:block;font-size:12.5px;font-weight:700;color:var(--gold-600);margin-bottom:12px;}
+  .team-card p{font-size:13.5px;color:var(--muted);}
+  .team-photo{
+    position:relative;height:190px;border-radius:14px;overflow:hidden;margin-bottom:20px;
+    background:linear-gradient(160deg,var(--navy-900),var(--navy-800));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .team-photo::before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(111,203,147,0.18);top:-55px;right:-55px;}
+  .team-photo::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.05);bottom:-40px;left:-30px;}
+  .team-photo i{position:relative;z-index:2;font-size:60px;color:var(--gold-400);}
+  .team-photo .initials{
+    position:absolute;z-index:2;bottom:12px;left:16px;font-family:'Playfair Display',serif;
+    font-size:13px;letter-spacing:3px;color:rgba(255,255,255,0.55);text-transform:uppercase;
+  }
+  .team-photo.has-photo{background-size:cover;background-position:center top;}
+  .team-photo.has-photo::before{width:100%;height:100%;top:0;left:0;border-radius:0;background:linear-gradient(195deg, rgba(11,11,11,0.05), rgba(11,11,11,0.7));}
+  .team-photo.has-photo::after{display:none;}
+  .team-photo.has-photo i{display:none;}
+  .team-photo.has-photo .initials{color:rgba(255,255,255,0.9);}
+
+  /* ===== CHECKLIST CTA (cuối trang) ===== */
+  .checklist{padding:100px 0;background:var(--white);}
+  .checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .checklist h2{margin-bottom:16px;}
+  .checklist p{color:var(--muted);font-size:16px;margin-bottom:22px;}
+  .checklist-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
+  .checklist-tags span{font-size:12.5px;font-weight:600;color:var(--gold-600);background:var(--gold-100);padding:7px 14px;border-radius:999px;}
+  .checklist-form{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .checklist-form h3{font-size:18px;margin-bottom:16px;}
+  .checklist-form input,.checklist-form select{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:#fff;margin-bottom:14px;
+  }
+  .checklist-form button{width:100%;}
+  .checklist-altlink{text-align:center;font-size:13px;color:var(--muted);margin-top:16px;}
+  .checklist-altlink a{color:var(--gold-600);font-weight:700;}
+
+  /* ===== PROMO BANNERS (bản tin / hệ sinh thái) ===== */
+  .promo-wrap{background:var(--white);padding:0 0 96px;}
+  .promo-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.08);border:1px solid rgba(47,140,85,0.25);border-radius:16px;
+    padding:30px 34px;max-width:1192px;margin:0 auto 24px;
+  }
+  .promo-banner.ecosystem{background:var(--navy-900);border-color:rgba(255,255,255,0.12);}
+  .promo-banner h4{color:var(--navy-900);font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .promo-banner.ecosystem h4{color:#fff;}
+  .promo-banner p{font-size:13.5px;color:var(--muted);max-width:520px;}
+  .promo-banner.ecosystem p{color:rgba(255,255,255,0.6);}
+  .promo-banner .btn{flex:none;white-space:nowrap;}
+  .promo-form{display:flex;gap:10px;flex:none;flex-wrap:wrap;}
+  .promo-form input{padding:13px 16px;border:1px solid var(--line);border-radius:999px;font-family:'Inter',sans-serif;font-size:14px;min-width:220px;}
+  .promo-social{display:flex;gap:10px;flex:none;}
+  .promo-social a{
+    width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);color:#fff;
+    display:flex;align-items:center;justify-content:center;transition:.2s;
+  }
+  .promo-social a:hover{background:var(--gold-500);border-color:var(--gold-500);color:var(--navy-900);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-900);color:rgba(255,255,255,0.7);padding:70px 0 24px;border-top:1px solid rgba(255,255,255,0.08);}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1.3fr 1fr 1fr 1fr;gap:32px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-addr{margin-bottom:16px;}
+  .footer-addr strong{display:block;color:#fff;font-size:13px;margin-bottom:5px;}
+  .footer-addr p{font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+  .footer-addr a{color:rgba(255,255,255,0.7);font-size:12.5px;}
+  .footer-addr a:hover{color:var(--gold-400);}
+  .footer-logo{display:flex;align-items:center;color:#fff;margin-bottom:16px;padding-top:10px;}
+  .footer-col h5{color:#fff;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;font-family:'Inter',sans-serif;}
+  .footer-col ul li{margin-bottom:11px;font-size:14px;}
+  .footer-col ul li a:hover{color:var(--gold-400);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:12px;}
+  .footer-social{display:flex;gap:10px;}
+  .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .footer-social a:hover{background:var(--gold-500);color:var(--navy-900);border-color:var(--gold-500);}
+  .footer-recruit{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(47,140,85,0.12);border:1px solid rgba(47,140,85,0.3);border-radius:16px;
+    padding:28px 32px;margin-top:44px;
+  }
+  .footer-recruit h4{color:#fff;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;font-weight:600;}
+  .footer-recruit p{font-size:13.5px;color:rgba(255,255,255,0.6);max-width:520px;}
+  .footer-recruit .btn{flex:none;white-space:nowrap;}
+
+
+  /* ===== FLOATING QUICK CONTACT ===== */
+  .fab-call{
+    position:fixed;top:130px;right:24px;z-index:1100;width:56px;height:56px;border-radius:50%;
+    background:var(--gold-500);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 14px 28px -8px rgba(47,140,85,0.55);transition:.2s;
+  }
+  .fab-call:hover{background:var(--navy-900);transform:scale(1.06);}
+  .fab-call-ring{
+    position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold-500);
+    animation:fabPulse 1.8s ease-out infinite;pointer-events:none;
+  }
+  @keyframes fabPulse{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(1.6);opacity:0;}
+  }
+  .fab-stack{
+    position:fixed;bottom:28px;right:24px;z-index:1100;display:flex;flex-direction:column;gap:14px;align-items:center;
+  }
+  .fab-btn{
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:20px;color:#fff;box-shadow:0 12px 26px -8px rgba(0,0,0,0.35);border:none;cursor:pointer;transition:.2s;
+  }
+  .fab-btn:hover{transform:scale(1.08);}
+  .fab-messenger{background:#0084FF;}
+  .fab-zalo{background:#0068FF;font-family:'Inter',sans-serif;font-weight:800;font-size:12px;letter-spacing:.2px;}
+
+  /* fade in */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  #dichvu,#khacbiet,#tuvan,#quytrinh,#team,#checklist{scroll-margin-top:90px;}
+
+  @media(max-width:1080px){
+    nav.main-nav{display:none;}
+    .burger{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-card{max-width:520px;}
+    .pain-grid,.urgency-grid{grid-template-columns:repeat(2,1fr);}
+    .svc-grid,.team-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid,.contact-grid,.checklist-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .pain-grid,.svc-grid,.process-grid,.team-grid,.urgency-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-recruit,.promo-banner{flex-direction:column;align-items:flex-start;text-align:left;}
+    .footer-recruit .btn,.promo-banner .btn{width:100%;text-align:center;justify-content:center;}
+    .promo-form{width:100%;}
+    .promo-form input{min-width:0;flex:1;}
+    .hero{padding:150px 0 70px;}
+    .contact-form .row{grid-template-columns:1fr;}
+    .hero-stats{gap:22px;}
+    .hero-actions .btn{width:100%;}
+    .fab-call{top:110px;right:16px;width:50px;height:50px;font-size:19px;}
+    .fab-stack{right:16px;bottom:22px;gap:12px;}
+    .fab-btn{width:46px;height:46px;font-size:18px;}
+    .cta-actions-mid{flex-direction:column;}
+  }
+
+  /* Hiển thị đầy đủ; cân đối các thẻ mà không cắt hoặc ẩn nội dung. */
+  #dichvu .svc-grid{grid-auto-rows:1fr;}
+  #dichvu .svc-card{display:flex;flex-direction:column;min-width:0;}
+  #dichvu .svc-card > .illus{aspect-ratio:16/10;height:auto;flex-shrink:0;}
+  #dichvu .svc-top{gap:10px;flex-wrap:wrap;}
+  #dichvu .svc-ic{flex-shrink:0;}
+  #dichvu .svc-tag{white-space:normal;max-width:100%;}
+  #dichvu .svc-card h3{line-height:1.4;}
+  #dichvu .svc-card .desc{line-height:1.65;}
+  #dichvu .svc-card .benefit{line-height:1.6;flex:none;}
+  #dichvu .svc-link{margin-top:auto;}
+  @media(max-width:640px){#dichvu .svc-grid{grid-auto-rows:auto;}}
+
+  /* Thông tin từng văn phòng: biểu tượng cố định, nội dung căn cùng một trục. */
+  footer .footer-addr{margin-bottom:24px;}
+  footer .footer-addr strong{font-size:14px;line-height:1.45;margin-bottom:12px;}
+  footer .footer-contact-row{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:10px;margin:0 0 9px;}
+  footer .footer-contact-row > i{color:var(--gold-400);font-size:15px;line-height:1.65;text-align:center;}
+  footer .footer-contact-row > span,footer .footer-contact-row > a{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.75);overflow-wrap:anywhere;}
+  footer .footer-contact-row > a:hover{color:var(--gold-400);}
+  footer .footer-contact-row > a:focus-visible{outline:2px solid var(--gold-400);outline-offset:3px;}
+</style>
+<style id="crown-shared-navigation">
+/* Shared language and Crown ecosystem controls. */
+.lang-switcher-wrap,.switcher-wrap{position:relative;flex-shrink:0;}
+.lang-switcher-btn,.switcher-btn{font-family:inherit;display:flex;align-items:center;gap:7px;color:#fff;font-size:13px;font-weight:600;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);cursor:pointer;}
+.lang-switcher-btn .fa-chevron-down,.switcher-btn .fa-chevron-down{font-size:10px;}
+.lang-switcher-menu,.switcher-menu{position:absolute;top:calc(100% + 8px);right:0;width:230px;max-width:calc(100vw - 24px);max-height:70vh;overflow:auto;background:#fff;border-radius:12px;box-shadow:0 14px 36px #0003;padding:8px;border:1px solid #e4e8e5;z-index:1200;opacity:1;visibility:visible;transform:none;}
+.lang-switcher-menu{width:180px;}
+.lang-switcher-menu[hidden],.switcher-menu[hidden]{display:none!important;}
+.lang-option{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:8px;font-weight:600;font-size:13.5px;line-height:1.5;color:#12392b;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;}
+.lang-option:hover,.switcher-menu a:hover{background:#f1f6f2;}
+.lang-option.active,.switcher-menu a[aria-current="page"]{background:#e7f1e8;color:#205b38;}
+.switcher-menu a[aria-current="page"]::after{content:'✓';margin-left:8px;}
+.lang-switcher-btn:focus-visible,.switcher-btn:focus-visible,.lang-option:focus-visible,.switcher-menu a:focus-visible{outline:2px solid #79bd8e;outline-offset:3px;}
+.header-inner{gap:16px;}.header-actions{gap:8px;flex-shrink:0;}
+.svc-card,.service-card,.pain-card,.urgency-card,.process-card,.team-card{min-width:0;overflow-wrap:break-word;}
+html:lang(zh),html:lang(ja){line-break:strict;}html:lang(ko){word-break:keep-all;overflow-wrap:break-word;}
+
+@media(max-width:640px){.header-inner{flex-wrap:wrap;gap:8px;}.header-actions{margin-left:auto;}.lang-switcher-btn,.switcher-btn{font-size:12px;padding:8px 10px;}.switcher-btn-label{max-width:135px;white-space:normal;} .hero{padding-top:190px;}}
+</style>
+<style id="crown-desktop-header">
+/* Desktop navigation stays visible alongside language and ecosystem controls. */
+@media(min-width:1081px){
+  .header-inner{max-width:1440px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;}
+  nav.main-nav{display:flex;min-width:0;justify-content:center;}
+  nav.main-nav > ul{flex-wrap:wrap;justify-content:center;column-gap:0;row-gap:0;}
+  nav.main-nav > ul > li > a{padding:9px 10px;}
+  .header-inner > .logo{max-width:220px;}
+  .header-actions .burger{display:none;}
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Crown Consulting</h1>
-    <p>Trang giới thiệu đang được hoàn thiện.</p>
-    <p><a href="https://crown.com.vn">Về trang chủ Crown</a></p>
-  </main>
+
+<header id="siteHeader">
+  <div class="header-inner">
+    <a href="https://crown.com.vn" class="logo">
+      <span class="brand-mark">
+        <i class="fa-solid fa-crown crown-icon"></i>
+        <span class="word">Crown</span>
+      </span>
+      <span class="sub">Crown Cons · Xây dựng cơ bản</span>
+    </a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="https://crown.com.vn">Trang chủ Crown</a></li>
+        <li><a href="#dichvu">Dịch vụ</a></li>
+        <li><a href="#khacbiet">Vì sao Crown Cons</a></li>
+        <li><a href="#team">Đội ngũ</a></li>
+        <li><a href="#tuvan">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<div class="lang-switcher-wrap"><button type="button" class="lang-switcher-btn" id="langSwitcherBtn" aria-label="Chọn ngôn ngữ" aria-expanded="false" aria-controls="crownLanguageMenu"><span class="flag" aria-hidden="true">🇻🇳</span> <span id="langCurrentLabel">VI</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="lang-switcher-menu" id="crownLanguageMenu" hidden><button type="button" class="lang-option" data-lang="vi" lang="vi" aria-pressed="true"><span class="flag" aria-hidden="true">🇻🇳</span> Tiếng Việt</button><button type="button" class="lang-option" data-lang="en" lang="en" aria-pressed="false"><span class="flag" aria-hidden="true">🇬🇧</span> English</button><button type="button" class="lang-option" data-lang="zh" lang="zh" aria-pressed="false"><span class="flag" aria-hidden="true">🇨🇳</span> 中文</button><button type="button" class="lang-option" data-lang="ja" lang="ja" aria-pressed="false"><span class="flag" aria-hidden="true">🇯🇵</span> 日本語</button><button type="button" class="lang-option" data-lang="ko" lang="ko" aria-pressed="false"><span class="flag" aria-hidden="true">🇰🇷</span> 한국어</button><button type="button" class="lang-option" data-lang="th" lang="th" aria-pressed="false"><span class="flag" aria-hidden="true">🇹🇭</span> ภาษาไทย</button></div></div><div class="switcher-wrap"><button type="button" class="switcher-btn" id="crownEcosystemBtn" aria-expanded="false" aria-controls="crownEcosystemMenu"><i class="fa-solid fa-grip" aria-hidden="true"></i><span class="switcher-btn-label">Hệ sinh thái Crown</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="switcher-menu" id="crownEcosystemMenu" hidden><a href="https://crown.com.vn">Crown Audit & Advisory</a><a href="https://audit.crown.com.vn">Crown Audit</a><a href="https://cons.crown.com.vn" aria-current="page">Crown Cons</a><a href="https://acc.crown.com.vn">Crown Accounting</a><a href="https://tax.crown.com.vn">Crown Tax</a><a href="https://fas.crown.com.vn">Crown FAS</a><a href="https://esg.crown.com.vn">Crown ESG</a></div></div>
+      <i class="fa-solid fa-bars burger" id="burgerBtn"></i>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-400);">Crown Cons — Kiểm soát &amp; Quyết toán Xây dựng cơ bản</div>
+      <h1>Lá chắn thép cho từng đồng vốn đầu tư <em>xây dựng cơ bản</em></h1>
+      <p class="lead">Từ rà soát dự toán, kiểm toán quyết toán đến tháo gỡ vướng mắc dự án tồn đọng — Crown Cons hỗ trợ chủ đầu tư nhà nước và tư nhân kiểm soát chi phí, hoàn thiện hồ sơ và chủ động giải trình.</p>
+      <div class="hero-actions">
+        <a href="#dichvu" class="btn btn-outline-light">Xem dịch vụ <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#khacbiet" class="btn btn-outline-light">Vì sao chọn Crown Cons <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>3</strong><span>Dịch vụ chuyên sâu</span></div>
+        <div><strong>80%</strong><span>Khách hàng là cơ quan nhà nước</span></div>
+        <div><strong>Big4</strong><span>Chuẩn chuyên môn đội ngũ</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <span class="float-chip fc-1"><i class="fa-solid fa-hard-hat"></i></span>
+      <span class="float-chip fc-2"><i class="fa-solid fa-shield-halved"></i></span>
+      <h3>3 dịch vụ trọng tâm của Crown Cons</h3>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Kiểm toán quyết toán và thiết lập khiên chắn thanh tra</span></li>
+        <li><i class="fa-solid fa-check"></i> <span>Tháo gỡ điểm nghẽn pháp lý cho dự án treo</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="noilo">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Những nỗi lo thường trực</div>
+      <h2>Một sai lệch nhỏ trong hồ sơ có thể trở thành trách nhiệm rất lớn</h2>
+      <p>Với đặc thù 80% khách hàng là cơ quan nhà nước, mỗi con số trong dự toán và quyết toán đều gắn liền với trách nhiệm của người ký duyệt.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/8428065/pexels-photo-8428065.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-file-circle-exclamation"></i></span></div>
+        <h3>Sợ dự toán sai định mức dẫn đến quy trách nhiệm cá nhân</h3>
+        <p>Với 80% vốn nhà nước, chỉ một sai lệch nhỏ trong áp mã định mức hay khối lượng dự toán cũng có thể trở thành khởi nguồn của một án phạt hành chính.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-magnifying-glass"></i></span></div>
+        <h3>Lo ngại Kiểm toán Nhà nước, Thanh tra Chính phủ soi xét sau quyết toán</h3>
+        <p>Hồ sơ thiếu chặt chẽ, còn sót chi phí sai quy định hay hóa đơn không hợp lệ có thể khiến người ký duyệt phải chịu trách nhiệm liên đới.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/17743460/pexels-photo-17743460.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-building-circle-xmark"></i></span></div>
+        <h3>Dự án tồn đọng nhiều năm không thể quyết toán khi bàn giao lãnh đạo</h3>
+        <p>Hồ sơ thất lạc, vướng mắc khối lượng nghiệm thu với nhà thầu cũ khiến lãnh đạo nhiệm kỳ mới phải gánh trách nhiệm cho những gì mình không trực tiếp gây ra.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="illus illus-photo" style="background-image:url('https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-coins"></i></span></div>
+        <h3>Chủ đầu tư tư nhân lo nhà thầu khai khống khối lượng, đội vốn</h3>
+        <p>Thiếu một đơn vị thẩm định độc lập khiến chủ đầu tư khó kiểm soát dòng tiền giải ngân có tương xứng với khối lượng thi công thực tế hay không.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="urgency" id="thuctrang">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="color:var(--orange);">Bối cảnh thực tế hiện nay</div>
+      <h2>Vì sao kiểm soát dự toán và quyết toán không còn là việc có thể trì hoãn</h2>
+      <p>Áp lực tuân thủ ngân sách nhà nước và trách nhiệm giải trình đang tăng nhanh hơn bao giờ hết.</p>
+    </div>
+    <div class="urgency-grid">
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-gavel"></i></span>
+        <h4>Luật Đầu tư công và Luật Ngân sách Nhà nước ngày càng siết chặt trách nhiệm giải trình</h4>
+        <p>Mọi khoản chi từ vốn nhà nước đều phải có cơ sở pháp lý rõ ràng, đúng định mức và đúng quy trình phê duyệt.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+        <h4>Kiểm toán Nhà nước và Thanh tra Chính phủ tăng cường hậu kiểm dự án đầu tư công</h4>
+        <p>Xu hướng hậu kiểm ngày càng phổ biến khiến hồ sơ quyết toán thiếu chuẩn bị kỹ dễ bị truy vấn, xử lý trách nhiệm.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-building-shield"></i></span>
+        <h4>Áp lực quyết toán đúng hạn để ghi nhận tài sản cố định (TSCĐ)</h4>
+        <p>Công trình chậm quyết toán không thể ghi nhận TSCĐ đúng thời điểm, ảnh hưởng báo cáo tài chính và kế hoạch khấu hao của đơn vị.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-building-columns"></i></span>
+        <h4>Ngân hàng yêu cầu hồ sơ quyết toán chuẩn để xét duyệt giải ngân, cho vay</h4>
+        <p>Hồ sơ quyết toán không đầy đủ hoặc thiếu tính pháp lý khiến chủ đầu tư khó tiếp cận vốn vay cho giai đoạn tiếp theo.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-user-shield"></i></span>
+        <h4>Rủi ro trách nhiệm cá nhân của lãnh đạo ký duyệt ngày càng được siết chặt</h4>
+        <p>Người đứng đầu đơn vị phải chịu trách nhiệm trực tiếp nếu hồ sơ quyết toán có sai phạm, kể cả sai phạm từ nhiệm kỳ trước.</p>
+      </div>
+      <div class="urgency-card reveal">
+        <span class="ic"><i class="fa-solid fa-clock-rotate-left"></i></span>
+        <h4>Tình trạng dự án "treo" nhiều năm ngày càng phổ biến do thay đổi nhân sự, chính sách</h4>
+        <p>Thay đổi cơ chế chính sách và luân chuyển cán bộ khiến nhiều dự án bị đình trệ, không ai đứng ra xử lý dứt điểm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner-mid">
+  <div class="container">
+    <div class="eyebrow">Đừng để một sai sót nhỏ trở thành trách nhiệm lớn</div>
+    <h2>Trao đổi ngay với chuyên gia Crown Cons — hoàn toàn miễn phí</h2>
+    <p>Dù bạn cần kiểm soát rủi ro dự toán, kiểm toán quyết toán hay tháo gỡ một dự án tồn đọng, đội ngũ Crown Cons sẵn sàng tư vấn sơ bộ miễn phí trong 24 giờ làm việc.</p>
+    <div class="cta-actions-mid">
+      <a href="tel:0904501512" class="hotline-badge"><i class="fa-solid fa-phone"></i> Gọi ngay: 090 450 1512</a>
+      <a href="#tuvan" class="btn btn-gold">Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="dichvu">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">3 dịch vụ cốt lõi</div>
+      <h2>Giải pháp Crown Cons cho toàn bộ vòng đời dự án đầu tư xây dựng cơ bản</h2>
+      <p>Ba nhóm dịch vụ đáp ứng nhu cầu kiểm soát ngân sách của chủ đầu tư nhà nước và quản lý chi phí của chủ đầu tư tư nhân.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/8961008/pexels-photo-8961008.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-shield-halved"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-shield-halved"></i></span><span class="svc-tag">Trước &amp; trong thi công</span></div>
+        <h3>Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách</h3>
+        <p class="desc">Rà soát khối lượng, định mức và cơ sở lập dự toán; đối chiếu hồ sơ thiết kế với thực tế hiện trường theo phạm vi công việc, hỗ trợ kiểm soát chi phí trước từng kỳ giải ngân.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Nhận diện khoản chi và khối lượng chưa phù hợp, củng cố cơ sở giải trình cho chủ đầu tư nhà nước và kiểm soát thanh toán cho chủ đầu tư tư nhân.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7821540/pexels-photo-7821540.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-vault"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-vault"></i></span><span class="svc-tag">Hoàn thành &amp; thuế</span></div>
+        <h3>Kiểm toán quyết toán và thiết lập khiên chắn thanh tra</h3>
+        <p class="desc">Kiểm toán quyết toán vốn đầu tư, rà soát khối lượng, chi phí và hồ sơ chứng từ; nhận diện khoản mục chưa đủ cơ sở để chủ đầu tư bổ sung, điều chỉnh và chuẩn bị giải trình.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Làm rõ cơ sở quyết toán và các vấn đề cần xử lý, giúp chủ đầu tư chủ động khi làm việc với cơ quan kiểm tra, thanh tra hoặc kiểm toán.</div>
+        <a href="#tuvan" class="svc-link" data-service="Kiểm toán quyết toán và thiết lập khiên chắn thanh tra">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="illus illus-photo svc-illus" style="background-image:url('https://images.pexels.com/photos/7642124/pexels-photo-7642124.jpeg?auto=compress&cs=tinysrgb&w=700')"><span class="illus-chip"><i class="fa-solid fa-unlock-keyhole"></i></span></div>
+        <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-unlock-keyhole"></i></span><span class="svc-tag">Dịch vụ đặc biệt</span></div>
+        <h3>Tháo gỡ điểm nghẽn pháp lý cho dự án treo</h3>
+        <p class="desc">Rà soát dự án tồn đọng do thay đổi chính sách, thiếu hồ sơ hoặc vướng mắc nghiệm thu; xác định phần việc cần bổ sung và phối hợp xây dựng hướng xử lý với các bên liên quan.</p>
+        <div class="benefit"><strong>Lợi ích</strong>Từng bước hoàn thiện hồ sơ có căn cứ, làm rõ vướng mắc để hỗ trợ quyết toán và chuẩn bị các bước giải ngân, bố trí vốn tiếp theo.</div>
+        <a href="#tuvan" class="svc-link" data-service="Tháo gỡ điểm nghẽn pháp lý cho dự án treo">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="khacbiet">
+  <i class="fa-solid fa-hard-hat watermark-icon"></i>
+  <div class="container why-grid">
+    <div>
+      <div class="section-head center">
+        <div class="eyebrow">Sự khác biệt của Crown Cons</div>
+        <h2>Chuẩn thẩm định Big4 cho lĩnh vực đầu tư xây dựng cơ bản</h2>
+        <p>Crown Cons kết hợp rà soát hồ sơ với đánh giá thực tế để hỗ trợ kiểm soát chi phí và làm rõ cơ sở quyết toán trong từng giai đoạn dự án.</p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <span class="ic"><i class="fa-solid fa-scale-balanced"></i></span>
+          <div><h4>Am hiểu sâu Luật Đầu tư công, Luật Ngân sách và chuẩn mực Kiểm toán Nhà nước</h4><p>Vận dụng hiểu biết về đầu tư công, ngân sách và yêu cầu kiểm tra để rà soát cơ sở chi phí, nhận diện nội dung cần bổ sung hoặc giải trình.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-hard-hat"></i></span>
+          <div><h4>Thẩm định độc lập tận hiện trường, không chỉ trên giấy</h4><p>Kiểm toán viên trực tiếp đối chiếu khối lượng thi công thực tế tại công trường, không chỉ dừng lại ở việc soát xét hồ sơ, chứng từ.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-people-arrows"></i></span>
+          <div><h4>Phù hợp với chủ đầu tư nhà nước và tư nhân</h4><p>Cùng một chuẩn thẩm định nghiêm ngặt, nhưng linh hoạt điều chỉnh trọng tâm theo nhu cầu tuân thủ ngân sách nhà nước hay kiểm soát dòng tiền của chủ đầu tư tư nhân.</p></div>
+        </li>
+        <li>
+          <span class="ic"><i class="fa-solid fa-key"></i></span>
+          <div><h4>Chuyên xử lý các dự án tồn đọng, phức tạp nhất</h4><p>Rà soát hồ sơ dở dang, xác định tài liệu còn thiếu và phối hợp xử lý từng vướng mắc để từng bước hoàn thiện cơ sở quyết toán.</p></div>
+        </li>
+      </ul>
+      <div style="margin-top:30px;text-align:center;">
+        <a href="#tuvan" class="btn btn-gold">Trao đổi ngay với Crown Cons — Đặt lịch tư vấn miễn phí <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="stat-box reveal"><strong>3</strong><span>Dịch vụ chuyên sâu</span></div>
+      <div class="stat-box reveal"><strong>80%</strong><span>Khách hàng là cơ quan nhà nước</span></div>
+      <div class="stat-box reveal"><strong>Big4</strong><span>Chuẩn chuyên môn đội ngũ</span></div>
+      <div class="stat-box reveal"><strong>24h</strong><span>Phản hồi tư vấn sơ bộ</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="tuvan">
+  <div class="container contact-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow" style="color:var(--gold-400);justify-content:center;">Kết nối với Crown Cons</div>
+        <h2>Đặt lịch tư vấn kiểm soát &amp; quyết toán miễn phí</h2>
+        <p>Để lại thông tin, đội ngũ chuyên gia Crown Cons sẽ liên hệ tư vấn sơ bộ trong vòng 24 giờ làm việc — hoàn toàn miễn phí, không ràng buộc.</p>
+      </div>
+      <ul class="contact-info">
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline Hà Nội</strong><a href="tel:0904501512" style="color:rgba(255,255,255,0.85);">090 450 1512</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Hotline TP. Hồ Chí Minh</strong><a href="tel:0862231919" style="color:rgba(255,255,255,0.85);">086 223 1919</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP Hà Nội</strong><a href="mailto:hn@crown.com.vn" style="color:rgba(255,255,255,0.85);">hn@crown.com.vn</a></div></li>
+        <li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email VP TP. Hồ Chí Minh</strong><a href="mailto:hcm@crown.com.vn" style="color:rgba(255,255,255,0.85);">hcm@crown.com.vn</a></div></li>
+      </ul>
+    </div>
+    <form class="contact-form" id="tuvanForm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.');">
+      <h3>Đăng ký nhận tư vấn miễn phí</h3>
+      <div class="row">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="text" placeholder="Tên đơn vị / doanh nghiệp">
+      </div>
+      <div class="row">
+        <input type="tel" placeholder="Số điện thoại" required>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <select id="tuvanService" style="margin-bottom:14px;">
+        <option value="">Dịch vụ quan tâm</option>
+        <option>Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách</option>
+        <option>Kiểm toán quyết toán và thiết lập khiên chắn thanh tra</option>
+        <option>Tháo gỡ điểm nghẽn pháp lý cho dự án treo</option>
+      </select>
+      <textarea placeholder="Mô tả ngắn vấn đề bạn đang gặp phải..."></textarea>
+      <button type="submit" class="btn btn-navy">Gửi yêu cầu tư vấn miễn phí</button>
+    </form>
+  </div>
+</section>
+
+<section class="process" id="quytrinh">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Quy trình hợp tác</div>
+      <h2>Bốn bước Crown Cons đồng hành cùng dự án của bạn</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step reveal"><h4>Khảo sát hồ sơ &amp; hiện trạng dự án</h4><p>Đánh giá sơ bộ dự toán, tiến độ thi công hoặc tình trạng hồ sơ quyết toán hiện có để xác định phạm vi công việc.</p></div>
+      <div class="step reveal"><h4>Thẩm định tại hiện trường &amp; rà soát chứng từ</h4><p>Đối chiếu khối lượng thực tế tại công trường với hồ sơ, dự toán và các quy chuẩn nhà nước hiện hành.</p></div>
+      <div class="step reveal"><h4>Xử lý sai lệch &amp; chuẩn hóa hồ sơ</h4><p>Bóc tách chi phí sai quy định, chuẩn hóa chứng từ theo chuẩn mực khắt khe nhất trước khi trình cấp có thẩm quyền.</p></div>
+      <div class="step reveal"><h4>Đồng hành đến khi quyết toán/giải ngân thành công</h4><p>Hỗ trợ giải trình trước kiểm toán, thanh tra và đồng hành cho đến khi hồ sơ được phê duyệt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Đội ngũ chuyên gia</div>
+      <h2>Những con người dẫn dắt Crown</h2>
+      <p>Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/17049766/pexels-photo-17049766.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Đức Hưng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.Đ.H</span></div>
+        <h4>Nguyễn Đức Hưng</h4>
+        <span class="role">Tổng Giám đốc</span>
+        <p>Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit &amp; Advisory.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/9208551/pexels-photo-9208551.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Trần Thành Trung"><i class="fa-solid fa-user-tie"></i><span class="initials">T.T.T</span></div>
+        <h4>Trần Thành Trung</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044806/pexels-photo-21044806.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Văn Bình"><i class="fa-solid fa-user-tie"></i><span class="initials">N.V.B</span></div>
+        <h4>Nguyễn Văn Bình</h4>
+        <span class="role">Phó Tổng Giám đốc</span>
+        <p>Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/21044845/pexels-photo-21044845.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Thị Ý"><i class="fa-solid fa-user-tie"></i><span class="initials">N.T.Ý</span></div>
+        <h4>Nguyễn Thị Ý</h4>
+        <span class="role">Giám đốc Tư vấn thuế</span>
+        <p>Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/15092609/pexels-photo-15092609.png?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nghiêm Ngọc Hoàng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.H</span></div>
+        <h4>Nghiêm Ngọc Hoàng</h4>
+        <span class="role">Giám đốc kiểm toán mảng XDCB</span>
+        <p>Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo has-photo" style="background-image:url('https://images.pexels.com/photos/26524785/pexels-photo-26524785.jpeg?auto=compress&cs=tinysrgb&w=600')" role="img" aria-label="Ảnh chân dung minh họa Nguyễn Ngọc Tùng"><i class="fa-solid fa-user-tie"></i><span class="initials">N.N.T</span></div>
+        <h4>Nguyễn Ngọc Tùng</h4>
+        <span class="role">Giám đốc mảng Tư vấn Tài chính</span>
+        <p>Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:28px;">* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.</p>
+  </div>
+</section>
+
+<section class="checklist" id="checklist">
+  <div class="container checklist-grid">
+    <div>
+      <div style="text-align:center;">
+        <div class="eyebrow">Tài liệu dành riêng cho bạn</div>
+        <h2>Nhận Bộ checklist rà soát rủi ro dự toán &amp; hồ sơ quyết toán miễn phí</h2>
+        <p>Tự rà soát nhanh các điểm rủi ro thường gặp trong dự toán và hồ sơ quyết toán công trình — trước khi trình cấp có thẩm quyền hoặc đơn vị kiểm toán, thanh tra nhà nước.</p>
+      </div>
+      <div class="checklist-tags" style="justify-content:center;">
+        <span>Dự án vốn đầu tư công</span>
+        <span>Ban Quản lý dự án</span>
+        <span>Chủ đầu tư tư nhân</span>
+        <span>Dự án tồn đọng nhiều năm</span>
+      </div>
+    </div>
+    <div class="checklist-form">
+      <h3><i class="fa-solid fa-file-shield" style="color:var(--gold-600);"></i> Nhận Bộ checklist rà soát rủi ro dự toán &amp; quyết toán miễn phí</h3>
+      <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.');">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="email" placeholder="Email nhận tài liệu" required>
+        <select>
+          <option value="">Vai trò của bạn</option>
+          <option>Ban Quản lý dự án nhà nước</option>
+          <option>Chủ đầu tư tư nhân</option>
+          <option>Nhà thầu thi công</option>
+          <option>Khác</option>
+        </select>
+        <button type="submit" class="btn btn-gold">Nhận Checklist miễn phí <i class="fa-solid fa-download"></i></button>
+      </form>
+      <p class="checklist-altlink">Muốn trao đổi trực tiếp hơn? <a href="#tuvan">Đặt lịch tư vấn tại đây</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="promo-wrap">
+  <div class="promo-banner reveal">
+    <div>
+      <h4>Cập nhật quy định đầu tư công &amp; quyết toán xây dựng cơ bản mỗi tháng</h4>
+      <p>Đăng ký nhận bản tin hàng tháng từ Crown Cons, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật.</p>
+    </div>
+    <form class="promo-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.');">
+      <input type="email" placeholder="Email của bạn" required>
+      <button type="submit" class="btn btn-navy">Đăng ký bản tin</button>
+    </form>
+  </div>
+  <div class="promo-banner ecosystem reveal">
+    <div>
+      <h4>Không chỉ có Xây dựng cơ bản — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực</h4>
+      <p>Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính doanh nghiệp và ESG — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit &amp; Advisory.</p>
+    </div>
+    <a href="https://crown.com.vn" class="btn btn-gold">Khám phá Crown Audit &amp; Advisory <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="brand-mark">
+            <i class="fa-solid fa-crown crown-icon"></i>
+            <span class="word">Crown</span>
+          </span>
+        </div>
+        <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Địa chỉ &amp; Liên hệ</h5>
+        <div class="footer-addr">
+          <strong>Trụ sở chính</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Số 7, ngõ 699 Trương Định, Phường Hoàng Mai, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:info@crown.com.vn">info@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP Hà Nội</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Tầng 7, VIC Building, 18 Ngụy Như Kon Tum, Phường Thành Xuân, TP. Hà Nội</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0904501512">090 450 1512</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hn@crown.com.vn">hn@crown.com.vn</a></div>
+        </div>
+        <div class="footer-addr">
+          <strong>VP TP. Hồ Chí Minh</strong>
+          <div class="footer-contact-row"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span></div>
+          <div class="footer-contact-row"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:0862231919">086 223 1919</a></div>
+          <div class="footer-contact-row"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hcm@crown.com.vn">hcm@crown.com.vn</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Bảo đảm &amp; Tuân thủ</h5>
+        <ul>
+          <li><a href="https://audit.crown.com.vn" target="_blank" rel="noopener">Crown Audit</a></li>
+          <li><a href="https://cons.crown.com.vn" target="_blank" rel="noopener">Crown Cons</a></li>
+          <li><a href="https://acc.crown.com.vn" target="_blank" rel="noopener">Crown Accounting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Tư vấn &amp; Tối ưu</h5>
+        <ul>
+          <li><a href="https://tax.crown.com.vn" target="_blank" rel="noopener">Crown Tax</a></li>
+          <li><a href="https://fas.crown.com.vn" target="_blank" rel="noopener">Crown FAS</a></li>
+          <li><a href="https://esg.crown.com.vn" target="_blank" rel="noopener">Crown ESG</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Chương trình &amp; Liên hệ</h5>
+        <ul>
+          <li><a href="#tuvan">Đăng ký tư vấn</a></li>
+          <li><a href="#khacbiet">Vì sao chọn Crown</a></li>
+          <li><a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener">Tuyển dụng</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-recruit reveal">
+      <div>
+        <h4>Gia nhập đội ngũ Crown</h4>
+        <p>Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.</p>
+      </div>
+      <a href="https://crown.com.vn/tuyen-dung" target="_blank" rel="noopener" class="btn btn-gold">Xem cơ hội nghề nghiệp <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.</span>
+      <span>Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating quick-contact widgets ===== -->
+<a href="tel:0904501512" class="fab-call" aria-label="Gọi ngay cho Crown Cons">
+  <i class="fa-solid fa-phone"></i>
+  <span class="fab-call-ring"></span>
+</a>
+
+<div class="fab-stack">
+  <a href="https://m.me/crownaudit" target="_blank" rel="noopener" class="fab-btn fab-messenger" aria-label="Chat qua Messenger">
+    <i class="fa-brands fa-facebook-messenger"></i>
+  </a>
+  <a href="https://zalo.me/0904501512" target="_blank" rel="noopener" class="fab-btn fab-zalo" aria-label="Chat qua Zalo">
+    <span>Zalo</span>
+  </a>
+</div>
+
+<script>
+  // Mobile burger -> scroll to top nav section (demo behavior)
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.1, rootMargin:'0px 0px -5% 0px'});
+    revealEls.forEach(el=>io.observe(el));
+    setTimeout(()=>revealEls.forEach(el=>el.classList.add('in')), 4000);
+  } else {
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+
+  // Header shrink shadow on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 20){ header.style.boxShadow='0 10px 30px -12px rgba(0,0,0,0.4)'; }
+    else{ header.style.boxShadow='none'; }
+  });
+
+  // Pre-select the relevant service in the consultation form when a service-card link is clicked
+  const tuvanService = document.getElementById('tuvanService');
+  document.querySelectorAll('.svc-link[data-service]').forEach(link => {
+    link.addEventListener('click', () => {
+      if(tuvanService){ tuvanService.value = link.getAttribute('data-service'); }
+    });
+  });
+
+  // Cân bằng chiều cao tiêu đề, mô tả và lợi ích khi ảnh, phông chữ đã tải.
+  (() => {
+    const cards=[...document.querySelectorAll('#dichvu .svc-card')];
+    let frame;
+    const align=()=>{
+      ['.svc-top','h3','.desc','.benefit'].forEach(selector=>{
+        const els=cards.map(card=>card.querySelector(selector)).filter(Boolean);
+        els.forEach(el=>el.style.minHeight='');
+        if(matchMedia('(min-width:641px)').matches&&els.length){
+          const h=Math.ceil(Math.max(...els.map(el=>el.getBoundingClientRect().height)));
+          els.forEach(el=>el.style.minHeight=h+'px');
+        }
+      });
+    };
+    const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(align);};
+    addEventListener('resize',schedule);addEventListener('load',schedule);
+    if(document.fonts)document.fonts.ready.then(schedule);
+    schedule();
+  })();
+</script>
+
+<script id="crown-localization">
+(() => {
+  'use strict';
+  const translations = {"* Ảnh đại diện minh họa — cập nhật ảnh thực tế của từng thành viên trước khi phát hành.": {"en": "* Illustrative avatar images — update with actual photos of each member before publishing.", "zh": "* 头像图片仅为示意 — 正式发布前请更新各成员的实际照片。", "ja": "※ プロフィール画像はサンプルです。公開前に各メンバーの実際の写真に更新してください。", "ko": "* 예시 프로필 이미지입니다 — 게시 전 각 구성원의 실제 사진으로 업데이트하세요.", "th": "* รูปโปรไฟล์เป็นภาพประกอบ — โปรดอัปเดตเป็นรูปถ่ายจริงของสมาชิกแต่ละคนก่อนเผยแพร่"}, "3 dịch vụ cốt lõi": {"en": "3 core services", "zh": "三项核心服务", "ja": "主要3サービス", "ko": "3대 핵심 서비스", "th": "3 บริการหลัก"}, "3 dịch vụ trọng tâm của Crown Cons": {"en": "3 core Crown Cons services", "zh": "Crown Cons 三项核心服务", "ja": "Crown Consの主要3サービス", "ko": "Crown Cons의 3대 서비스", "th": "3 บริการหลัก Crown Cons"}, "Am hiểu sâu Luật Đầu tư công, Luật Ngân sách và chuẩn mực Kiểm toán Nhà nước": {"en": "Expertise in public investment, budget law and State Audit standards", "zh": "熟悉公共投资、预算法及国家审计准则", "ja": "公共投資法・予算法・国家監査基準への精通", "ko": "공공투자·예산법·국가감사 기준 전문성", "th": "เชี่ยวชาญกฎหมายลงทุนรัฐ งบประมาณและมาตรฐานตรวจเงินแผ่นดิน"}, "Ba nhóm dịch vụ đáp ứng nhu cầu kiểm soát ngân sách của chủ đầu tư nhà nước và quản lý chi phí của chủ đầu tư tư nhân.": {"en": "Three service groups meet public investors' budget-control needs and private investors' cost-management needs.", "zh": "三组服务分别满足公共投资方的预算控制和私人投资方的成本管理需求。", "ja": "公的事業主の予算管理、民間事業主の費用管理を3つのサービス群で支援します。", "ko": "공공 발주자의 예산 관리와 민간 발주자의 비용 관리에 대응하는 3개 서비스입니다.", "th": "3 กลุ่มบริการตอบการควบคุมงบของรัฐและต้นทุนของเอกชน"}, "Ban Quản lý dự án": {"en": "Project management board", "zh": "项目管理委员会", "ja": "プロジェクト管理委員会", "ko": "사업관리단", "th": "คณะบริหารโครงการ"}, "Ban Quản lý dự án nhà nước": {"en": "Public project management board", "zh": "公共项目管理委员会", "ja": "公共事業管理委員会", "ko": "공공사업 관리단", "th": "คณะบริหารโครงการรัฐ"}, "Bóc tách chi phí sai quy định, chuẩn hóa chứng từ theo chuẩn mực khắt khe nhất trước khi trình cấp có thẩm quyền.": {"en": "Identify non-compliant costs and standardise documentation to rigorous standards before submission.", "zh": "识别违规成本，提交审批前按严格标准规范凭证。", "ja": "不適切な費用を把握し、提出前に厳格な基準で書類を整備します。", "ko": "부적격 비용을 파악하고 제출 전 엄격한 기준으로 증빙을 정비합니다.", "th": "แยกต้นทุนผิดข้อกำหนด จัดเอกสารมาตรฐานเข้มก่อนเสนออนุมัติ"}, "Bảo đảm & Tuân thủ": {"en": "Assurance & Compliance", "zh": "鉴证与合规", "ja": "アシュアランス＆コンプライアンス", "ko": "어슈어런스 & 컴플라이언스", "th": "การรับรองและการปฏิบัติตามกฎระเบียบ"}, "Bối cảnh thực tế hiện nay": {"en": "Current business context", "zh": "当前背景", "ja": "現在の事業環境", "ko": "현재 경영 환경", "th": "บริบทปัจจุบัน"}, "Bốn bước Crown Cons đồng hành cùng dự án của bạn": {"en": "Four steps of supporting your project", "zh": "支持项目的四个步骤", "ja": "プロジェクト支援の4ステップ", "ko": "사업 지원 4단계", "th": "4 ขั้นตอนดูแลโครงการ"}, "Chat qua Messenger": {"en": "Chat via Messenger", "zh": "通过 Messenger 聊天", "ja": "Messengerでチャット", "ko": "Messenger로 채팅하기", "th": "แชทผ่าน Messenger"}, "Chat qua Zalo": {"en": "Chat via Zalo", "zh": "通过 Zalo 聊天", "ja": "Zaloでチャット", "ko": "Zalo로 채팅하기", "th": "แชทผ่าน Zalo"}, "Chuyên xử lý các dự án tồn đọng, phức tạp nhất": {"en": "Specialising in complex, long-pending projects", "zh": "专长处理复杂积压项目", "ja": "複雑な長期滞留案件への対応", "ko": "복잡한 장기 미결 사업 전문", "th": "เชี่ยวชาญโครงการซับซ้อนค้างนาน"}, "Chuẩn chuyên môn đội ngũ": {"en": "Team's professional standards", "zh": "团队专业标准", "ja": "チームの専門水準", "ko": "팀 전문 기준", "th": "มาตรฐานวิชาชีพทีม"}, "Chuẩn thẩm định Big4 cho lĩnh vực đầu tư xây dựng cơ bản": {"en": "Big4-calibre appraisal for construction investment", "zh": "建设投资领域的四大水准评估", "ja": "建設投資分野にBig4水準の評価", "ko": "건설 투자 분야 Big4 수준 평가", "th": "ประเมินลงทุนก่อสร้างระดับ Big4"}, "Chúng tôi luôn tìm kiếm những nhân tài đam mê lĩnh vực kiểm toán, kế toán, thuế và tư vấn tài chính để cùng xây dựng hệ sinh thái dịch vụ đẳng cấp quốc tế.": {"en": "We're always looking for talented people passionate about audit, accounting, tax and financial advisory to help build a world-class service ecosystem.", "zh": "我们始终在寻找热爱审计、会计、税务和财务咨询领域的人才，共同打造国际化水准的服务生态系统。", "ja": "監査・会計・税務・財務アドバイザリー分野に情熱を持つ人材を常に求めています。共に国際水準のサービスエコシステムを築きましょう。", "ko": "감사, 회계, 세무 및 재무 자문 분야에 열정을 가진 인재를 항상 찾고 있습니다. 세계적 수준의 서비스 생태계를 함께 만들어가요.", "th": "เรากำลังมองหาบุคลากรที่มีใจรักในด้านตรวจสอบบัญชี บัญชี ภาษี และที่ปรึกษาทางการเงิน มาร่วมสร้างระบบนิเวศบริการระดับสากลไปด้วยกัน"}, "Chương trình & Liên hệ": {"en": "Programs & Contact", "zh": "项目与联系", "ja": "プログラム・お問い合わせ", "ko": "프로그램 및 문의", "th": "โครงการและติดต่อ"}, "Chọn ngôn ngữ": {"en": "Select language", "zh": "选择语言", "ja": "言語を選択", "ko": "언어 선택", "th": "เลือกภาษา"}, "Chủ đầu tư tư nhân": {"en": "Private investor", "zh": "私人投资方", "ja": "民間事業主", "ko": "민간 발주자", "th": "ผู้ลงทุนเอกชน"}, "Chủ đầu tư tư nhân lo nhà thầu khai khống khối lượng, đội vốn": {"en": "Private investors fear inflated quantities and cost overruns", "zh": "私人投资方担忧虚报工程量及超支", "ja": "民間事業主の数量水増し・費用超過への懸念", "ko": "민간 발주자의 물량 과장·초과 비용 우려", "th": "ผู้ลงทุนเอกชนกังวลผู้รับเหมาขยายปริมาณและงบบาน"}, "Crown Audit & Advisory": {"en": "Crown Audit & Advisory", "zh": "Crown Audit & Advisory", "ja": "Crown Audit & Advisory", "ko": "Crown Audit & Advisory", "th": "Crown Audit & Advisory"}, "Crown Cons - Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách, kiểm toán quyết toán và thiết lập khiên chắn thanh tra, tháo gỡ điểm nghẽn pháp lý cho dự án treo. Phục vụ chủ đầu tư nhà nước (Ban Quản lý dự án) và tư nhân trong toàn bộ vòng đời dự án đầu tư xây dựng cơ bản.": {"en": "Crown Cons supports budget risk control, loss prevention, settlement audits, inspection readiness and legal bottlenecks in stalled projects, serving public and private investors throughout construction projects.", "zh": "Crown Cons 提供预算风险控制、防损、决算审计、检查准备及停滞项目法律障碍处理，服务建设项目全周期的公私投资方。", "ja": "Crown Cons は予算管理、損失予防、決算監査、調査準備、停滞案件の法的課題に対応し、建設全期間で官民の事業主を支援します。", "ko": "Crown Cons는 예산 위험 통제, 손실 예방, 정산 감사, 조사 준비, 중단 프로젝트 법적 과제를 지원하며 건설 전 과정의 공공·민간 투자자를 돕습니다.", "th": "Crown Cons ดูแลความเสี่ยงงบ ป้องกันสูญเสีย ตรวจปิดโครงการ เตรียมรับตรวจ และแก้คอขวดกฎหมายโครงการค้าง สำหรับเจ้าของภาครัฐและเอกชนตลอดโครงการ"}, "Crown Cons kết hợp rà soát hồ sơ với đánh giá thực tế để hỗ trợ kiểm soát chi phí và làm rõ cơ sở quyết toán trong từng giai đoạn dự án.": {"en": "Crown Cons combines document review with on-site assessment to support cost control and clarify settlement bases at each project stage.", "zh": "Crown Cons 结合资料复核与现场评估，支持成本控制并明确项目各阶段的决算依据。", "ja": "Crown Cons は資料確認と現地評価を組み合わせ、各段階の費用管理と決算根拠の明確化を支援します。", "ko": "Crown Cons는 문서 검토와 현장 평가를 결합하여 단계별 비용 통제와 정산 근거 명확화를 지원합니다。", "th": "Crown Cons ผสานตรวจเอกสารกับประเมินหน้างาน เพื่อควบคุมต้นทุนและชี้ฐานปิดบัญชีในแต่ละช่วงโครงการ"}, "Crown Cons | Kiểm soát rủi ro dự toán & Kiểm toán quyết toán vốn đầu tư xây dựng cơ bản": {"en": "Crown Cons | Construction budget risk control and investment settlement audit", "zh": "Crown Cons | 建设预算风险控制与投资决算审计", "ja": "Crown Cons | 建設予算リスク管理・投資決算監査", "ko": "Crown Cons | 건설 예산 위험 통제·투자 정산 감사", "th": "Crown Cons | ควบคุมความเสี่ยงงบก่อสร้างและตรวจบัญชีปิดโครงการ"}, "Crown Cons · Xây dựng cơ bản": {"en": "Crown Cons · Construction", "zh": "Crown Cons · 基建", "ja": "Crown Cons · 建設", "ko": "Crown Cons · 건설", "th": "Crown Cons · ก่อสร้าง"}, "Crown Cons — Kiểm soát & Quyết toán Xây dựng cơ bản": {"en": "Crown Cons — Construction controls & settlement", "zh": "Crown Cons — 建设投资控制与决算", "ja": "Crown Cons — 建設投資管理・決算", "ko": "Crown Cons — 건설 관리·결산", "th": "Crown Cons — ควบคุมและชำระบัญชีก่อสร้าง"}, "Công trình chậm quyết toán không thể ghi nhận TSCĐ đúng thời điểm, ảnh hưởng báo cáo tài chính và kế hoạch khấu hao của đơn vị.": {"en": "Delayed settlement affects timely fixed asset recognition, financial statements and depreciation planning.", "zh": "决算延迟影响固定资产及时确认、财务报告及折旧计划。", "ja": "決算の遅れは固定資産計上の時期、財務報告、減価償却計画に影響します。", "ko": "결산 지연은 고정자산 인식 시기, 재무제표와 감가상각 계획에 영향을 줍니다.", "th": "ชำระบัญชีล่าช้ากระทบเวลาบันทึกสินทรัพย์ งบการเงินและแผนค่าเสื่อม"}, "Cùng một chuẩn thẩm định nghiêm ngặt, nhưng linh hoạt điều chỉnh trọng tâm theo nhu cầu tuân thủ ngân sách nhà nước hay kiểm soát dòng tiền của chủ đầu tư tư nhân.": {"en": "Maintain rigorous appraisal while adapting focus to public-budget compliance or private investors' cash flow control.", "zh": "保持严格评估标准，同时按公共预算合规或私人现金流控制调整重点。", "ja": "厳格な評価基準を維持しつつ、公的予算の適法性や民間の資金管理に応じて重点を調整します。", "ko": "엄격한 평가 기준을 유지하면서 공공예산 준수 또는 민간 현금흐름 관리에 초점을 맞춥니다.", "th": "ใช้มาตรฐานประเมินเข้มงวดเหมือนกัน แต่ปรับเน้นตามงบรัฐหรือกระแสเงินสดเอกชน"}, "Cảm ơn bạn! Đây là bản demo giao diện — biểu mẫu sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo — the form will be connected upon official deployment.", "zh": "感谢您！这是界面演示版 — 表单将在正式上线时接入系统。", "ja": "ありがとうございます！これはUIデモです。正式運用開始時にフォームが接続されます。", "ko": "감사합니다! 이것은 UI 데모입니다 — 양식은 공식 배포 시 연결됩니다.", "th": "ขอบคุณค่ะ/ครับ! นี่คือเดโมอินเทอร์เฟซ — แบบฟอร์มจะเชื่อมต่อเมื่อเปิดใช้งานอย่างเป็นทางการ"}, "Cảm ơn bạn! Đây là bản demo giao diện — tài liệu sẽ được gửi qua email khi biểu mẫu được kết nối chính thức.": {"en": "Thank you! This is a UI demo. The guide will be emailed once the form is connected for launch.", "zh": "感谢您！这是界面演示，表单正式接入后将通过邮件发送资料。", "ja": "ありがとうございます。これはデモです。正式にフォームを接続後、資料をメールでお送りします。", "ko": "감사합니다! 현재 데모이며 정식 양식 연결 후 자료를 이메일로 보내드립니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต เอกสารจะส่งทางอีเมลเมื่อเชื่อมแบบฟอร์มใช้งานจริง"}, "Cảm ơn bạn! Đây là bản demo giao diện — đăng ký bản tin sẽ được kết nối khi triển khai chính thức.": {"en": "Thank you! This is a UI demo. Newsletter registration will be connected for launch.", "zh": "感谢您！这是界面演示，通讯订阅将在正式上线时接入。", "ja": "ありがとうございます。これはデモです。配信登録は正式運用時に接続されます。", "ko": "감사합니다! 현재 데모이며 소식지 등록은 정식 운영 시 연결됩니다.", "th": "ขอบคุณ นี่เป็นหน้าสาธิต การสมัครข่าวจะเชื่อมเมื่อใช้งานจริง"}, "Cập nhật quy định đầu tư công & quyết toán xây dựng cơ bản mỗi tháng": {"en": "Monthly public investment & construction settlement updates", "zh": "每月公共投资与建设决算动态", "ja": "公共投資・建設決算の月次情報", "ko": "공공투자·건설결산 월간 소식", "th": "อัปเดตลงทุนรัฐและบัญชีลงทุนก่อสร้างรายเดือน"}, "Dù bạn cần kiểm soát rủi ro dự toán, kiểm toán quyết toán hay tháo gỡ một dự án tồn đọng, đội ngũ Crown Cons sẵn sàng tư vấn sơ bộ miễn phí trong 24 giờ làm việc.": {"en": "Whether you need budget risk control, settlement audit or help with a stalled project, Crown Cons offers a free initial consultation within 24 business hours.", "zh": "无论预算风险、决算审计还是积压项目，Crown Cons 均可在24个工作小时内提供免费初步咨询。", "ja": "予算管理、決算監査、滞留案件について、24営業時間以内に無料初期相談のご連絡をします。", "ko": "예산 관리·결산 감사·장기 미결 사업에 관해 24영업시간 내 무료 초기 상담을 제공합니다.", "th": "เรื่องงบประมาณ ตรวจสอบบัญชีลงทุนหรือโครงการค้าง Crown Cons พร้อมปรึกษาเบื้องต้นฟรีภายใน 24 ชั่วโมงทำการ"}, "Dịch vụ": {"en": "Services", "zh": "服务", "ja": "サービス", "ko": "서비스", "th": "บริการ"}, "Dịch vụ chuyên sâu": {"en": "Specialist services", "zh": "专业服务", "ja": "専門サービス", "ko": "전문 서비스", "th": "บริการเฉพาะทาง"}, "Dịch vụ quan tâm": {"en": "Service of interest", "zh": "感兴趣的服务", "ja": "ご興味のあるサービス", "ko": "관심 서비스", "th": "บริการที่สนใจ"}, "Dịch vụ đặc biệt": {"en": "Special services", "zh": "专项服务", "ja": "特別サービス", "ko": "특별 서비스", "th": "บริการพิเศษ"}, "Dự án tồn đọng nhiều năm": {"en": "Long-pending project", "zh": "多年积压项目", "ja": "長期滞留案件", "ko": "장기 미결 사업", "th": "โครงการค้างหลายปี"}, "Dự án tồn đọng nhiều năm không thể quyết toán khi bàn giao lãnh đạo": {"en": "Long-pending projects cannot be settled during leadership handovers", "zh": "领导交接时多年积压项目无法决算", "ja": "責任者交代時にも決算できない長期滞留案件", "ko": "책임자 인계 시에도 결산하지 못한 장기 미결 사업", "th": "โครงการค้างหลายปีชำระบัญชีไม่ได้ช่วงเปลี่ยนผู้บริหาร"}, "Dự án vốn đầu tư công": {"en": "Public investment project", "zh": "公共投资项目", "ja": "公共投資事業", "ko": "공공투자 사업", "th": "โครงการลงทุนรัฐ"}, "Email": {"en": "Email", "zh": "电子邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมล"}, "Email VP Hà Nội": {"en": "Hanoi office email", "zh": "河内办公室邮箱", "ja": "ハノイオフィスのメール", "ko": "하노이 사무소 이메일", "th": "อีเมลสำนักงานฮานอย"}, "Email VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City office email", "zh": "胡志明市办公室邮箱", "ja": "ホーチミン市オフィスのメール", "ko": "호치민시 사무소 이메일", "th": "อีเมลสำนักงานโฮจิมินห์"}, "Email của bạn": {"en": "Your email", "zh": "您的邮箱", "ja": "メールアドレス", "ko": "이메일", "th": "อีเมลของคุณ"}, "Email nhận tài liệu": {"en": "Email for receiving the guide", "zh": "接收资料的邮箱", "ja": "資料受信用メール", "ko": "자료 수신 이메일", "th": "อีเมลรับเอกสาร"}, "Gia nhập đội ngũ Crown": {"en": "Join the Crown Team", "zh": "加入 Crown 团队", "ja": "Crownチームに参加する", "ko": "Crown 팀에 합류하세요", "th": "ร่วมเป็นส่วนหนึ่งของทีม Crown"}, "Giám sát chuyên môn kiểm toán và phát triển năng lực đội ngũ kiểm toán viên.": {"en": "Supervises audit expertise and develops the professional capacity of the audit team.", "zh": "监督审计专业水准，并致力于培养审计团队的专业能力。", "ja": "監査の専門性を監督し、監査チームの能力開発を推進します。", "ko": "감사 전문성을 감독하고 감사팀의 역량 개발을 담당합니다.", "th": "กำกับดูแลความเชี่ยวชาญด้านการตรวจสอบบัญชีและพัฒนาศักยภาพทีมผู้สอบบัญชี"}, "Giám đốc Tư vấn thuế": {"en": "Tax Advisory Director", "zh": "税务咨询总监", "ja": "税務アドバイザリーディレクター", "ko": "세무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาภาษี"}, "Giám đốc kiểm toán mảng XDCB": {"en": "Director of Capital Construction Audit", "zh": "基本建设审计总监", "ja": "建設プロジェクト監査ディレクター", "ko": "건설투자감사 이사", "th": "ผู้อำนวยการฝ่ายตรวจสอบการก่อสร้างพื้นฐาน"}, "Giám đốc mảng Tư vấn Tài chính": {"en": "Financial Advisory Director", "zh": "财务咨询总监", "ja": "財務アドバイザリーディレクター", "ko": "재무자문 이사", "th": "ผู้อำนวยการที่ปรึกษาทางการเงิน"}, "Giải pháp Crown Cons cho toàn bộ vòng đời dự án đầu tư xây dựng cơ bản": {"en": "Crown Cons solutions across the construction investment lifecycle", "zh": "覆盖建设投资全周期的 Crown Cons 方案", "ja": "建設投資の全段階を支えるCrown Cons", "ko": "건설 투자 전 주기를 위한 Crown Cons 솔루션", "th": "Crown Cons ดูแลตลอดวงจรลงทุนก่อสร้าง"}, "Gọi ngay cho Crown Cons": {"en": "Call Crown Cons", "zh": "致电 Crown Cons", "ja": "Crown Cons に電話", "ko": "Crown Cons 전화", "th": "โทรหา Crown Cons"}, "Gọi ngay: 090 450 1512": {"en": "Call: 090 450 1512", "zh": "致电：090 450 1512", "ja": "お電話：090 450 1512", "ko": "전화: 090 450 1512", "th": "โทร: 090 450 1512"}, "Gửi yêu cầu tư vấn miễn phí": {"en": "Send a free consultation request", "zh": "提交免费咨询申请", "ja": "無料相談を送信", "ko": "무료 상담 요청 전송", "th": "ส่งคำขอปรึกษาฟรี"}, "Hotline Hà Nội": {"en": "Hanoi Hotline", "zh": "河内热线", "ja": "ハノイホットライン", "ko": "하노이 핫라인", "th": "สายด่วนฮานอย"}, "Hotline TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Hotline", "zh": "胡志明市热线", "ja": "ホーチミン市ホットライン", "ko": "호치민시 핫라인", "th": "สายด่วนโฮจิมินห์"}, "Hoàn thành & thuế": {"en": "Completion & tax", "zh": "竣工与税务", "ja": "完成・税務", "ko": "완료·세무", "th": "เสร็จงานและภาษี"}, "Hệ sinh thái Crown": {"en": "Crown ecosystem", "zh": "Crown 生态体系", "ja": "Crown グループ", "ko": "Crown 생태계", "th": "เครือ Crown"}, "Hệ sinh thái dịch vụ Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính và ESG — đồng hành cùng doanh nghiệp Việt Nam phát triển bền vững.": {"en": "An ecosystem of Audit, Accounting, Tax, Financial Advisory and ESG services — partnering with Vietnamese businesses for sustainable growth.", "zh": "审计、会计、税务咨询、财务及ESG服务生态系统 — 携手越南企业实现可持续发展。", "ja": "監査・会計・税務・財務アドバイザリー・ESGのサービスエコシステムで、ベトナム企業の持続的成長に寄り添います。", "ko": "감사, 회계, 세무 자문, 재무 및 ESG 서비스 생태계 — 베트남 기업의 지속가능한 성장을 함께합니다.", "th": "ระบบนิเวศบริการตรวจสอบบัญชี บัญชี ที่ปรึกษาภาษี การเงิน และ ESG เคียงข้างธุรกิจเวียดนามสู่การเติบโตอย่างยั่งยืน"}, "Họ và tên": {"en": "Full name", "zh": "姓名", "ja": "お名前", "ko": "성함", "th": "ชื่อ-นามสกุล"}, "Hồ sơ quyết toán không đầy đủ hoặc thiếu tính pháp lý khiến chủ đầu tư khó tiếp cận vốn vay cho giai đoạn tiếp theo.": {"en": "Incomplete or legally insufficient settlement records can block financing for the next phase.", "zh": "决算资料不完整或法律依据不足，会妨碍投资方取得后续阶段贷款。", "ja": "不完全または法的根拠の不十分な決算書類は、次の段階の融資を妨げます。", "ko": "불완전하거나 법적 근거가 부족한 결산 서류는 다음 단계 대출을 어렵게 합니다.", "th": "เอกสารไม่ครบหรือฐานกฎหมายไม่พอทำให้เข้าถึงสินเชื่อขั้นต่อไปยาก"}, "Hồ sơ thiếu chặt chẽ, còn sót chi phí sai quy định hay hóa đơn không hợp lệ có thể khiến người ký duyệt phải chịu trách nhiệm liên đới.": {"en": "Weak records, ineligible costs or invalid invoices may expose approvers to joint liability.", "zh": "资料不严谨、违规成本或无效发票可能使审批人承担连带责任。", "ja": "不十分な資料、不適切な費用、無効な請求書は承認者の連帯責任につながる恐れがあります。", "ko": "부실 서류·부적격 비용·무효 송장은 승인자의 연대 책임으로 이어질 수 있습니다.", "th": "เอกสารไม่รัดกุม รายจ่ายผิดข้อกำหนดหรือใบแจ้งหนี้ไม่ถูกต้องอาจทำให้ผู้อนุมัติร่วมรับผิด"}, "Hồ sơ thất lạc, vướng mắc khối lượng nghiệm thu với nhà thầu cũ khiến lãnh đạo nhiệm kỳ mới phải gánh trách nhiệm cho những gì mình không trực tiếp gây ra.": {"en": "Missing records and quantity disputes with former contractors leave new leaders facing inherited responsibility.", "zh": "资料遗失及与原承包商的验收争议，使新任领导承担并非自身造成的问题。", "ja": "資料紛失や旧施工業者との数量争議により、新任責任者が過去の問題を引き継ぐことになります。", "ko": "자료 유실과 기존 시공사 검수 물량 분쟁으로 신임 책임자가 과거 문제를 떠안습니다.", "th": "เอกสารหายและข้อพิพาทปริมาณกับผู้รับเหมาเดิมทำให้ผู้บริหารใหม่รับภาระเรื่องที่ไม่ได้ก่อ"}, "Hỗ trợ giải trình trước kiểm toán, thanh tra và đồng hành cho đến khi hồ sơ được phê duyệt.": {"en": "Support audit and inspection explanations and stay involved until records are approved.", "zh": "支持审计、检查说明，并陪伴至档案获批。", "ja": "監査・検査への説明を支援し、書類承認まで伴走します。", "ko": "감사·검사 소명을 지원하고 서류 승인까지 동행합니다.", "th": "ช่วยชี้แจงต่อหน่วยตรวจและดูแลจนเอกสารได้รับอนุมัติ"}, "Khác": {"en": "Other", "zh": "其他", "ja": "その他", "ko": "기타", "th": "อื่น ๆ"}, "Khách hàng là cơ quan nhà nước": {"en": "Public-sector clients", "zh": "政府机构客户", "ja": "政府機関の顧客", "ko": "공공기관 고객", "th": "ลูกค้าหน่วยงานรัฐ"}, "Khám phá Crown Audit & Advisory": {"en": "Explore Crown Audit & Advisory", "zh": "了解 Crown Audit & Advisory", "ja": "Crown Audit & Advisoryを見る", "ko": "Crown Audit & Advisory 살펴보기", "th": "สำรวจ Crown Audit & Advisory"}, "Không chỉ có Xây dựng cơ bản — Crown đồng hành cùng doanh nghiệp ở nhiều lĩnh vực": {"en": "Beyond construction — Crown supports businesses across disciplines", "zh": "不止建设——Crown 跨领域支持企业", "ja": "建設を超えるCrownの多分野支援", "ko": "건설을 넘어 다양한 분야를 지원하는 Crown", "th": "มากกว่างานก่อสร้าง Crown ดูแลธุรกิจหลายด้าน"}, "Khảo sát hồ sơ & hiện trạng dự án": {"en": "Review records & project conditions", "zh": "调查档案及项目现状", "ja": "資料・事業現況の調査", "ko": "자료·사업 현황 조사", "th": "สำรวจเอกสารและสถานะโครงการ"}, "Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách": {"en": "Budget risk control & prevention of public fund losses", "zh": "预算风险控制与公共资金流失防范", "ja": "予算リスク管理・公的資金損失の防止", "ko": "예산 리스크 관리 및 공공자금 손실 방지", "th": "ควบคุมความเสี่ยงงบประมาณและป้องกันเงินรัฐรั่วไหล"}, "Kiểm toán Nhà nước và Thanh tra Chính phủ tăng cường hậu kiểm dự án đầu tư công": {"en": "State Audit and Government Inspectorate intensify post-review of public investment", "zh": "国家审计与政府监察加强公共投资事后检查", "ja": "国家監査・政府監察による公共投資の事後点検強化", "ko": "국가감사·정부감찰의 공공투자 사후 점검 강화", "th": "หน่วยตรวจเงินแผ่นดินและตรวจราชการเพิ่มตรวจโครงการลงทุนรัฐภายหลัง"}, "Kiểm toán quyết toán và thiết lập khiên chắn thanh tra": {"en": "Settlement audit & inspection preparedness", "zh": "决算审计与检查应对准备", "ja": "決算監査・検査対応準備", "ko": "결산 감사 및 검사 대응 준비", "th": "ตรวจสอบบัญชีลงทุนและเตรียมรับการตรวจ"}, "Kiểm toán quyết toán vốn đầu tư, rà soát khối lượng, chi phí và hồ sơ chứng từ; nhận diện khoản mục chưa đủ cơ sở để chủ đầu tư bổ sung, điều chỉnh và chuẩn bị giải trình.": {"en": "Audit investment settlement, quantities, costs and supporting records; identify items needing additional evidence, adjustment or explanation.", "zh": "审计投资决算、数量、费用与凭证，识别需补充依据、调整或说明的项目。", "ja": "投資決算、数量、費用、証憑を点検し、追加根拠、修正、説明が必要な項目を把握します。", "ko": "투자 결산·물량·비용·증빙을 검토하고 추가 근거·조정·소명이 필요한 항목을 파악합니다.", "th": "ตรวจสอบบัญชีลงทุน ปริมาณ ต้นทุนและหลักฐาน ระบุรายการต้องเสริมฐาน ปรับหรือชี้แจง"}, "Kiểm toán viên trực tiếp đối chiếu khối lượng thi công thực tế tại công trường, không chỉ dừng lại ở việc soát xét hồ sơ, chứng từ.": {"en": "Auditors compare actual site quantities rather than limiting reviews to documents.", "zh": "审计师直接核对现场实际工程量，而非仅审查纸面资料。", "ja": "監査人が書類点検だけにとどまらず、現場の実数量を直接確認します。", "ko": "감사인이 서류 검토에 그치지 않고 현장 실제 물량을 직접 확인합니다.", "th": "ผู้สอบบัญชีเทียบปริมาณจริงหน้างาน ไม่จำกัดเพียงเอกสาร"}, "Kiểm toán, Kế toán, Tư vấn Thuế, Tài chính doanh nghiệp và ESG — khám phá toàn bộ hệ sinh thái dịch vụ của Crown Audit & Advisory.": {"en": "Audit, accounting, tax, corporate finance and ESG — explore the Crown ecosystem.", "zh": "审计、会计、税务、企业财务和 ESG——了解 Crown 服务体系。", "ja": "監査、会計、税務、企業財務、ESGまで、Crownのサービスをご覧ください。", "ko": "감사·회계·세무·기업재무·ESG 등 Crown 서비스를 살펴보세요.", "th": "สอบบัญชี บัญชี ภาษี การเงินองค์กรและ ESG สำรวจบริการ Crown"}, "Kết nối với Crown Cons": {"en": "Connect with Crown Cons", "zh": "联系 Crown Cons", "ja": "Crown Consへ相談", "ko": "Crown Cons에 문의", "th": "ติดต่อ Crown Cons"}, "Liên hệ": {"en": "Contact", "zh": "联系方式", "ja": "お問い合わせ", "ko": "문의", "th": "การติดต่อ"}, "Lo ngại Kiểm toán Nhà nước, Thanh tra Chính phủ soi xét sau quyết toán": {"en": "Concern over State Audit or Government Inspectorate review after settlement", "zh": "担忧决算后的国家审计及政府监察", "ja": "決算後の国家監査・政府監察への懸念", "ko": "결산 후 국가감사·정부감찰 우려", "th": "กังวลตรวจภายหลังโดยหน่วยงานตรวจเงินแผ่นดินและตรวจราชการ"}, "Luật Đầu tư công và Luật Ngân sách Nhà nước ngày càng siết chặt trách nhiệm giải trình": {"en": "Public investment and state budget laws tighten accountability", "zh": "公共投资及预算法强化问责", "ja": "公共投資法・国家予算法による説明責任の強化", "ko": "공공투자·국가예산법의 설명 책임 강화", "th": "กฎหมายลงทุนสาธารณะและงบรัฐเพิ่มความเข้มงวดความรับผิด"}, "Làm rõ cơ sở quyết toán và các vấn đề cần xử lý, giúp chủ đầu tư chủ động khi làm việc với cơ quan kiểm tra, thanh tra hoặc kiểm toán.": {"en": "Clarify settlement grounds and outstanding issues to prepare investors for inspection, supervision or audit.", "zh": "明确决算依据及待处理事项，帮助投资方主动应对检查、监察或审计。", "ja": "決算根拠と課題を明確にし、検査・監察・監査への準備を支援します。", "ko": "결산 근거와 처리 과제를 명확히 하여 검사·감찰·감사 대응을 지원합니다.", "th": "ชี้แจงฐานชำระบัญชีและสิ่งต้องแก้ เพื่อพร้อมทำงานกับหน่วยตรวจหรือสอบบัญชี"}, "Lá chắn thép cho từng đồng vốn đầu tư": {"en": "A strong shield for every unit of investment", "zh": "守护每一笔投资", "ja": "投資の一円一円を守る", "ko": "투자금 하나하나를 지키는", "th": "เกราะคุ้มครองทุกบาทลงทุน"}, "Lợi ích": {"en": "Benefits", "zh": "服务益处", "ja": "メリット", "ko": "기대 효과", "th": "ประโยชน์"}, "Muốn trao đổi trực tiếp hơn?": {"en": "Prefer to discuss directly?", "zh": "希望直接沟通？", "ja": "直接のご相談をご希望ですか", "ko": "직접 상담을 원하시나요?", "th": "ต้องการปรึกษาโดยตรง?"}, "Mô tả ngắn vấn đề bạn đang gặp phải...": {"en": "Briefly describe the issue you are facing...", "zh": "请简要描述您遇到的问题…", "ja": "お困りの内容を簡単にご記入ください…", "ko": "겪고 계신 문제를 간략히 적어주세요…", "th": "อธิบายปัญหาที่พบโดยย่อ..."}, "Mọi khoản chi từ vốn nhà nước đều phải có cơ sở pháp lý rõ ràng, đúng định mức và đúng quy trình phê duyệt.": {"en": "All public-funded spending needs clear legal grounds, correct norms and proper approval procedures.", "zh": "每项公款支出均须有明确法律依据、正确定额及审批程序。", "ja": "公的資金による支出には明確な法的根拠、適切な基準と承認手続が必要です。", "ko": "모든 공공지출에는 명확한 법적 근거, 적절한 기준과 승인 절차가 필요합니다.", "th": "รายจ่ายเงินรัฐทุกส่วนต้องมีฐานกฎหมาย เกณฑ์และขั้นอนุมัติถูกต้อง"}, "Một sai lệch nhỏ trong hồ sơ có thể trở thành trách nhiệm rất lớn": {"en": "A small documentation error can create major accountability", "zh": "小小的档案差错可能引发重大责任", "ja": "小さな資料の誤りが大きな責任につながる", "ko": "작은 서류 오류가 큰 책임으로 이어질 수 있습니다", "th": "เอกสารคลาดเคลื่อนเล็กน้อยอาจนำสู่ความรับผิดชอบใหญ่"}, "Ngân hàng yêu cầu hồ sơ quyết toán chuẩn để xét duyệt giải ngân, cho vay": {"en": "Banks require sound settlement records for lending and disbursement", "zh": "银行要求规范决算资料以审批放款", "ja": "融資・支払審査に必要な決算資料", "ko": "대출·집행 심사를 위한 결산 서류 요구", "th": "ธนาคารต้องการเอกสารชำระบัญชีถูกต้องเพื่ออนุมัติสินเชื่อ"}, "Người đứng đầu đơn vị phải chịu trách nhiệm trực tiếp nếu hồ sơ quyết toán có sai phạm, kể cả sai phạm từ nhiệm kỳ trước.": {"en": "Unit heads may face direct responsibility for settlement violations, including inherited violations.", "zh": "单位负责人对决算违规承担直接责任，包括前任遗留违规。", "ja": "組織責任者は、前任時代の問題を含め、決算不備の直接責任を問われます。", "ko": "기관장은 전임 시기의 문제를 포함한 결산 위반에 직접 책임을 집니다.", "th": "หัวหน้าหน่วยต้องรับผิดโดยตรงเมื่อเอกสารผิด รวมถึงเรื่องจากวาระก่อน"}, "Nhà thầu thi công": {"en": "Construction contractor", "zh": "施工承包商", "ja": "施工業者", "ko": "시공사", "th": "ผู้รับเหมาก่อสร้าง"}, "Nhận Bộ checklist rà soát rủi ro dự toán & hồ sơ quyết toán miễn phí": {"en": "Get a free budget & settlement risk checklist", "zh": "免费领取预算与决算风险清单", "ja": "予算・決算リスクの無料チェックリスト", "ko": "무료 예산·결산 리스크 체크리스트", "th": "รับเช็กลิสต์ความเสี่ยงงบและบัญชีลงทุนฟรี"}, "Nhận Bộ checklist rà soát rủi ro dự toán & quyết toán miễn phí": {"en": "Get the free budget & settlement checklist", "zh": "免费领取预算决算清单", "ja": "予算・決算チェックリストを無料で入手", "ko": "무료 예산·결산 체크리스트 받기", "th": "รับเช็กลิสต์งบและบัญชีลงทุนฟรี"}, "Nhận Checklist miễn phí": {"en": "Get the free checklist", "zh": "免费领取清单", "ja": "無料チェックリストを入手", "ko": "무료 체크리스트 받기", "th": "รับเช็กลิสต์ฟรี"}, "Nhận diện khoản chi và khối lượng chưa phù hợp, củng cố cơ sở giải trình cho chủ đầu tư nhà nước và kiểm soát thanh toán cho chủ đầu tư tư nhân.": {"en": "Identify unsupported costs or quantities, strengthen public investors' explanations and private investors' payment controls.", "zh": "识别不适当费用及数量，强化公共投资方说明依据和私人投资方付款控制。", "ja": "不適切な費用や数量を把握し、公的事業主の説明根拠と民間事業主の支払管理を強化します。", "ko": "부적합 비용·물량을 파악하여 공공 발주자의 설명 근거와 민간 발주자의 지급 관리를 강화합니다.", "th": "ระบุรายจ่ายและปริมาณไม่เหมาะสม เสริมฐานชี้แจงของรัฐและควบคุมจ่ายของเอกชน"}, "Những con người dẫn dắt Crown": {"en": "The people leading Crown", "zh": "引领 Crown 的核心人才", "ja": "Crownを率いる人々", "ko": "Crown을 이끄는 사람들", "th": "บุคลากรผู้นำ Crown"}, "Những nỗi lo thường trực": {"en": "Common concerns", "zh": "常见顾虑", "ja": "よくある懸念", "ko": "주요 고민", "th": "ความกังวลที่พบบ่อย"}, "Phó Tổng Giám đốc": {"en": "Deputy General Director", "zh": "副总经理", "ja": "副総経理", "ko": "부총괄이사", "th": "รองผู้อำนวยการใหญ่"}, "Phù hợp với chủ đầu tư nhà nước và tư nhân": {"en": "Suited to public and private investors", "zh": "适合公共及私人投资方", "ja": "公的・民間事業主に対応", "ko": "공공·민간 발주자 모두 지원", "th": "เหมาะผู้ลงทุนรัฐและเอกชน"}, "Phản hồi tư vấn sơ bộ": {"en": "Initial consultation response", "zh": "初步咨询回复", "ja": "初期相談への回答", "ko": "초기 상담 응답", "th": "ตอบปรึกษาเบื้องต้น"}, "Phụ trách chất lượng kiểm toán và quan hệ hợp tác với khách hàng doanh nghiệp lớn.": {"en": "Oversees audit quality and manages partnerships with major corporate clients.", "zh": "负责审计质量把控，并主导与大型企业客户的合作关系。", "ja": "監査品質を管理し、大手企業クライアントとの提携関係を統括します。", "ko": "감사 품질을 관리하고 대기업 고객과의 협력 관계를 총괄합니다.", "th": "รับผิดชอบคุณภาพงานตรวจสอบบัญชีและความสัมพันธ์ความร่วมมือกับลูกค้าองค์กรขนาดใหญ่"}, "Phụ trách kiểm toán quyết toán vốn đầu tư các dự án xây dựng cơ bản.": {"en": "Oversees audits of capital investment settlement for capital construction projects.", "zh": "负责基本建设项目投资决算审计工作。", "ja": "建設プロジェクトの投資決算監査を担当します。", "ko": "건설투자사업 자본결산 감사를 담당합니다.", "th": "รับผิดชอบการตรวจสอบบัญชีการชำระบัญชีเงินลงทุนโครงการก่อสร้างพื้นฐาน"}, "Phụ trách tư vấn thuế chuyên sâu, tối ưu nghĩa vụ thuế và tuân thủ pháp lý cho doanh nghiệp.": {"en": "Oversees in-depth tax advisory, tax obligation optimization and legal compliance for businesses.", "zh": "负责企业深度税务咨询、税务义务优化及合规工作。", "ja": "企業への専門的な税務アドバイザリー、税務最適化、法令遵守を担当します。", "ko": "기업 대상 심층 세무자문, 세무 최적화 및 법적 컴플라이언스를 담당합니다.", "th": "รับผิดชอบการให้คำปรึกษาด้านภาษีเชิงลึก การปรับปรุงภาระภาษี และการปฏิบัติตามกฎหมายสำหรับธุรกิจ"}, "Phụ trách tư vấn tái cấu trúc tài chính, huy động vốn và các thương vụ đầu tư cho doanh nghiệp.": {"en": "Leads financial restructuring advisory, capital raising and investment transactions for businesses.", "zh": "负责企业财务重组咨询、融资及投资交易服务。", "ja": "財務再編アドバイザリー、資金調達、投資取引を統括します。", "ko": "재무구조 개편 자문, 자금조달 및 투자거래를 이끕니다.", "th": "นำการให้คำปรึกษาการปรับโครงสร้างทางการเงิน การระดมทุน และธุรกรรมการลงทุนสำหรับธุรกิจ"}, "Quy trình hợp tác": {"en": "Our Process", "zh": "合作流程", "ja": "連携プロセス", "ko": "협업 프로세스", "th": "ขั้นตอนการทำงานร่วมกัน"}, "Rà soát dự án tồn đọng do thay đổi chính sách, thiếu hồ sơ hoặc vướng mắc nghiệm thu; xác định phần việc cần bổ sung và phối hợp xây dựng hướng xử lý với các bên liên quan.": {"en": "Review projects stalled by policy changes, missing records or acceptance disputes; identify gaps and coordinate solutions with stakeholders.", "zh": "审查因政策、缺失资料或验收争议积压的项目，确定补充工作并与相关方协调解决。", "ja": "制度変更、資料不足、検収問題による滞留案件を点検し、不足事項と関係者との対応方針を整理します。", "ko": "정책 변경·서류 부족·검수 분쟁으로 미결된 사업을 검토하고 보완 사항과 해결 방안을 조율합니다.", "th": "ทบทวนโครงการค้างจากนโยบาย เอกสารขาดหรือข้อพิพาทตรวจรับ ระบุงานเติมและประสานแนวแก้"}, "Rà soát hồ sơ dở dang, xác định tài liệu còn thiếu và phối hợp xử lý từng vướng mắc để từng bước hoàn thiện cơ sở quyết toán.": {"en": "Review unfinished records, identify missing documents and address issues step by step to establish a basis for settlement.", "zh": "审查未完资料，识别缺失文件并逐项处理，逐步完善决算依据。", "ja": "未完の資料と不足書類を確認し、課題を一つずつ解決して決算根拠を整えます。", "ko": "미완 자료와 누락 서류를 파악하고 문제를 단계별로 해결하여 결산 근거를 정비합니다.", "th": "ทบทวนเอกสารค้าง ระบุสิ่งขาดและแก้ทีละประเด็นเพื่อมีฐานชำระบัญชี"}, "Rà soát khối lượng, định mức và cơ sở lập dự toán; đối chiếu hồ sơ thiết kế với thực tế hiện trường theo phạm vi công việc, hỗ trợ kiểm soát chi phí trước từng kỳ giải ngân.": {"en": "Review quantities, norms and budget assumptions; compare design records with site conditions within scope, supporting cost control before each disbursement.", "zh": "审查工程量、定额与预算依据，按范围对照设计及现场，为每期拨款前成本控制提供支持。", "ja": "数量、基準、予算根拠を点検し、設計と現場を範囲内で照合して各支払前の費用管理を支援します。", "ko": "물량·기준·예산 근거를 검토하고 설계·현장을 범위 내 대조하여 집행 전 비용 관리를 지원합니다.", "th": "ทบทวนปริมาณ เกณฑ์และฐานประมาณการ เทียบแบบกับหน้างานตามขอบเขต เพื่อคุมต้นทุนก่อนเบิกจ่าย"}, "Rủi ro trách nhiệm cá nhân của lãnh đạo ký duyệt ngày càng được siết chặt": {"en": "Increasing personal accountability for approving leaders", "zh": "审批领导的个人责任要求提高", "ja": "承認責任者の個人責任の厳格化", "ko": "승인 책임자의 개인 책임 강화", "th": "ความรับผิดส่วนตัวของผู้ลงนามอนุมัติเข้มงวดขึ้น"}, "Số điện thoại": {"en": "Phone number", "zh": "电话号码", "ja": "電話番号", "ko": "전화번호", "th": "หมายเลขโทรศัพท์"}, "Sợ dự toán sai định mức dẫn đến quy trách nhiệm cá nhân": {"en": "Concern over personal liability from incorrect budget norms", "zh": "担忧预算定额差错引发个人责任", "ja": "予算基準の誤りによる個人責任の懸念", "ko": "잘못된 예산 기준에 따른 개인 책임 우려", "th": "กังวลประมาณการผิดเกณฑ์ทำให้รับผิดส่วนตัว"}, "Sự khác biệt của Crown Cons": {"en": "What sets Crown Cons apart", "zh": "Crown Cons 的优势", "ja": "Crown Consの特長", "ko": "Crown Cons의 차별점", "th": "จุดเด่น Crown Cons"}, "Thay đổi cơ chế chính sách và luân chuyển cán bộ khiến nhiều dự án bị đình trệ, không ai đứng ra xử lý dứt điểm.": {"en": "Policy changes and personnel transfers can leave projects unresolved without a clear owner.", "zh": "政策机制变化及人员调动使项目停滞，无人负责彻底解决。", "ja": "制度変更と人事異動により、解決の主体が不明確なまま事業が停滞します。", "ko": "제도 변경과 인사 이동으로 해결 주체 없이 사업이 정체될 수 있습니다.", "th": "กลไกนโยบายและการโยกย้ายบุคลากรทำให้โครงการค้างโดยไม่มีผู้จัดการให้จบ"}, "Thiết kế bản demo — nội dung minh họa, cập nhật số liệu thực tế trước khi phát hành.": {"en": "Demo design — illustrative content, update with real figures before publishing.", "zh": "演示版设计 — 内容仅供示意，正式发布前请更新真实数据。", "ja": "デモデザインです。サンプルコンテンツのため、公開前に実際のデータへ更新してください。", "ko": "데모 디자인입니다 — 예시 콘텐츠이며, 게시 전 실제 수치로 업데이트하세요.", "th": "ดีไซน์เดโม — เนื้อหาเป็นตัวอย่างประกอบ โปรดอัปเดตข้อมูลจริงก่อนเผยแพร่"}, "Thiếu một đơn vị thẩm định độc lập khiến chủ đầu tư khó kiểm soát dòng tiền giải ngân có tương xứng với khối lượng thi công thực tế hay không.": {"en": "Without independent assessment, investors struggle to match disbursements to actual construction quantities.", "zh": "缺少独立评估，投资方难以判断拨款是否对应实际完成工程量。", "ja": "独立評価がないと、支払額が実際の施工量に見合うか管理しにくくなります。", "ko": "독립 평가가 없으면 지급액이 실제 시공 물량과 일치하는지 관리하기 어렵습니다.", "th": "หากขาดการประเมินอิสระ ผู้ลงทุนควบคุมเงินจ่ายให้ตรงปริมาณก่อสร้างจริงได้ยาก"}, "Tháo gỡ điểm nghẽn pháp lý cho dự án treo": {"en": "Resolve legal bottlenecks in stalled projects", "zh": "解决停滞项目法律堵点", "ja": "停滞案件の法的課題への対応", "ko": "정체 사업의 법적 장애 해결", "th": "แก้ข้อกฎหมายโครงการค้าง"}, "Thẩm định tại hiện trường & rà soát chứng từ": {"en": "Site appraisal & document review", "zh": "现场评估及凭证审查", "ja": "現場評価・証憑点検", "ko": "현장 평가·증빙 검토", "th": "ประเมินหน้างานและเอกสาร"}, "Thẩm định độc lập tận hiện trường, không chỉ trên giấy": {"en": "Independent site assessment, beyond paperwork", "zh": "独立现场评估，不止于纸面", "ja": "書類だけでなく独立した現地確認", "ko": "서류를 넘어 독립적인 현장 평가", "th": "ประเมินหน้างานอิสระ ไม่ใช่แค่เอกสาร"}, "Trang chủ Crown": {"en": "Crown homepage", "zh": "Crown 首页", "ja": "Crownトップ", "ko": "Crown 홈", "th": "หน้าหลัก Crown"}, "Trao đổi ngay với Crown Cons — Đặt lịch tư vấn miễn phí": {"en": "Talk to Crown Cons — book a free consultation", "zh": "联系 Crown Cons，预约免费咨询", "ja": "Crown Consに無料相談を予約", "ko": "Crown Cons 무료 상담 예약", "th": "ปรึกษา Crown Cons นัดฟรี"}, "Trao đổi ngay với chuyên gia Crown Cons — hoàn toàn miễn phí": {"en": "Talk to Crown Cons specialists — free of charge", "zh": "免费咨询 Crown Cons 专家", "ja": "Crown Consの専門家に無料相談", "ko": "Crown Cons 전문가 무료 상담", "th": "ปรึกษาผู้เชี่ยวชาญ Crown Cons ฟรี"}, "Trước & trong thi công": {"en": "Before & during construction", "zh": "施工前及施工中", "ja": "着工前・施工中", "ko": "시공 전·중", "th": "ก่อนและระหว่างก่อสร้าง"}, "Trụ sở chính": {"en": "Head Office", "zh": "总部", "ja": "本社", "ko": "본사", "th": "สำนักงานใหญ่"}, "Tuyển dụng": {"en": "Careers", "zh": "招聘", "ja": "採用情報", "ko": "채용정보", "th": "ร่วมงานกับเรา"}, "Tài liệu dành riêng cho bạn": {"en": "Resources for your business", "zh": "企业资料", "ja": "お役立ち資料", "ko": "기업 자료", "th": "เอกสารสำหรับธุรกิจ"}, "Tên đơn vị / doanh nghiệp": {"en": "Organization / company name", "zh": "单位／企业名称", "ja": "組織・企業名", "ko": "기관 / 기업명", "th": "ชื่อหน่วยงาน / บริษัท"}, "Tình trạng dự án \"treo\" nhiều năm ngày càng phổ biến do thay đổi nhân sự, chính sách": {"en": "Personnel and policy changes leave projects stalled for years", "zh": "人事及政策变动导致项目多年停滞", "ja": "人事・制度変更による長期停滞案件の増加", "ko": "인사·정책 변경에 따른 장기 정체 사업 증가", "th": "โครงการค้างหลายปีจากเปลี่ยนคนและนโยบาย"}, "Tư vấn & Tối ưu": {"en": "Advisory & Optimization", "zh": "咨询与优化", "ja": "アドバイザリー＆最適化", "ko": "어드바이저리 & 최적화", "th": "ที่ปรึกษาและการเพิ่มประสิทธิภาพ"}, "Tư vấn ngay về dịch vụ này": {"en": "Discuss this service", "zh": "咨询此项服务", "ja": "このサービスについて相談", "ko": "서비스 상담", "th": "ปรึกษาบริการนี้"}, "Tổng Giám đốc": {"en": "General Director", "zh": "总经理", "ja": "最高経営責任者", "ko": "대표이사", "th": "กรรมการผู้จัดการใหญ่"}, "Từ rà soát dự toán, kiểm toán quyết toán đến tháo gỡ vướng mắc dự án tồn đọng — Crown Cons hỗ trợ chủ đầu tư nhà nước và tư nhân kiểm soát chi phí, hoàn thiện hồ sơ và chủ động giải trình.": {"en": "From budget reviews and settlement audits to stalled-project issues, Crown Cons helps public and private investors control costs, complete records and prepare explanations.", "zh": "从预算审查、决算审计到积压项目问题，Crown Cons 协助公私投资方控制成本、完善资料及准备说明。", "ja": "予算点検、決算監査、滞留案件への対応を通じ、公的・民間事業主の費用管理、資料整備、説明準備を支援します。", "ko": "예산 검토·결산 감사·장기 미결 사업 해결을 통해 공공·민간 발주자의 비용 관리, 자료 정비와 소명을 지원합니다.", "th": "ทบทวนงบ ตรวจสอบบัญชีลงทุนและแก้โครงการค้าง ช่วยผู้ลงทุนรัฐและเอกชนคุมต้นทุน เตรียมเอกสารและชี้แจง"}, "Từng bước hoàn thiện hồ sơ có căn cứ, làm rõ vướng mắc để hỗ trợ quyết toán và chuẩn bị các bước giải ngân, bố trí vốn tiếp theo.": {"en": "Gradually complete substantiated records, resolve issues and prepare subsequent settlement, disbursement and funding steps.", "zh": "逐步完善有据资料、厘清障碍，为决算、后续拨款和资金安排做准备。", "ja": "根拠ある資料を段階的に整え、決算・支払・次の資金措置の準備を支援します。", "ko": "근거 있는 자료를 단계적으로 정비하고 문제를 해소하여 결산·집행·후속 자금 배정을 준비합니다.", "th": "ค่อย ๆ จัดเอกสารมีหลักฐาน แก้อุปสรรคเพื่อชำระบัญชี เบิกจ่ายและจัดสรรทุนขั้นต่อไป"}, "Tự rà soát nhanh các điểm rủi ro thường gặp trong dự toán và hồ sơ quyết toán công trình — trước khi trình cấp có thẩm quyền hoặc đơn vị kiểm toán, thanh tra nhà nước.": {"en": "Check common budget and settlement risks before submitting records to authorities, auditors or inspectors.", "zh": "向主管部门、审计或监察提交前，自查预算及决算常见风险。", "ja": "当局、監査人、検査機関への提出前に、予算・決算の主なリスクを確認できます。", "ko": "당국·감사·검사기관 제출 전 예산·결산의 주요 리스크를 점검합니다.", "th": "ตรวจความเสี่ยงงบและเอกสารก่อนส่งผู้มีอำนาจ ผู้สอบบัญชีหรือหน่วยตรวจ"}, "VP Hà Nội": {"en": "Hanoi Office", "zh": "河内办公室", "ja": "ハノイオフィス", "ko": "하노이 사무소", "th": "สำนักงานฮานอย"}, "VP TP. Hồ Chí Minh": {"en": "Ho Chi Minh City Office", "zh": "胡志明市办公室", "ja": "ホーチミン市オフィス", "ko": "호치민시 사무소", "th": "สำนักงานโฮจิมินห์"}, "Vai trò của bạn": {"en": "Your role", "zh": "您的角色", "ja": "ご担当の役割", "ko": "담당 역할", "th": "บทบาทของคุณ"}, "Vì sao Crown Cons": {"en": "Why Crown Cons", "zh": "为何选择 Crown Cons", "ja": "Crown Consの特長", "ko": "Crown Cons의 차별점", "th": "ทำไมเลือก Crown Cons"}, "Vì sao chọn Crown": {"en": "Why choose Crown", "zh": "为何选择 Crown", "ja": "Crownが選ばれる理由", "ko": "Crown을 선택하는 이유", "th": "ทำไมต้องเลือก Crown"}, "Vì sao chọn Crown Cons": {"en": "Why choose Crown Cons", "zh": "为何选择 Crown Cons", "ja": "Crown Consを選ぶ理由", "ko": "Crown Cons 선택 이유", "th": "เหตุผลที่เลือก Crown Cons"}, "Vì sao kiểm soát dự toán và quyết toán không còn là việc có thể trì hoãn": {"en": "Why budget control and settlement cannot wait", "zh": "为何预算控制与决算不能再拖延", "ja": "予算管理と決算を先送りできない理由", "ko": "예산 관리와 결산을 미룰 수 없는 이유", "th": "ทำไมควบคุมงบและชำระบัญชีจึงรอไม่ได้"}, "Vận dụng hiểu biết về đầu tư công, ngân sách và yêu cầu kiểm tra để rà soát cơ sở chi phí, nhận diện nội dung cần bổ sung hoặc giải trình.": {"en": "Apply public investment, budget and inspection knowledge to review cost grounds and identify items requiring support or explanation.", "zh": "运用公共投资、预算及检查知识审查费用依据，识别需补充或说明的事项。", "ja": "公共投資、予算、検査の知識で費用根拠を確認し、追加資料や説明事項を把握します。", "ko": "공공투자·예산·검사 지식으로 비용 근거와 보완·설명 사항을 검토합니다.", "th": "ใช้ความเข้าใจลงทุนรัฐ งบและการตรวจ ทบทวนฐานต้นทุนและสิ่งต้องเพิ่มหรือชี้แจง"}, "Với 80% vốn nhà nước, chỉ một sai lệch nhỏ trong áp mã định mức hay khối lượng dự toán cũng có thể trở thành khởi nguồn của một án phạt hành chính.": {"en": "With 80% public funding, a small error in norm codes or estimated quantities may trigger administrative penalties.", "zh": "在80%公款背景下，定额编码或预算工程量的小差错也可能引发行政处罚。", "ja": "80%が公的資金の場合、基準コードや予算数量の小さな差異も行政処分の原因になり得ます。", "ko": "공공자금 80% 환경에서는 기준 코드·예산 물량의 작은 오류도 행정 제재로 이어질 수 있습니다.", "th": "เมื่อใช้เงินรัฐ 80% ความผิดรหัสเกณฑ์หรือปริมาณประมาณการเล็กน้อยอาจนำสู่โทษทางปกครอง"}, "Với đặc thù 80% khách hàng là cơ quan nhà nước, mỗi con số trong dự toán và quyết toán đều gắn liền với trách nhiệm của người ký duyệt.": {"en": "With public agencies accounting for 80% of clients, every budget and settlement figure is linked to the approver's responsibility.", "zh": "政府机构占客户80%，每项预算和决算数额都与审批人的责任相关。", "ja": "顧客の80%が政府機関であり、予算と決算の数値は承認者の責任に直結します。", "ko": "고객의 80%가 공공기관으로 예산·결산 수치 하나하나가 승인자의 책임과 연결됩니다.", "th": "ลูกค้า 80% เป็นหน่วยงานรัฐ ตัวเลขงบและบัญชีลงทุนจึงเกี่ยวกับความรับผิดของผู้อนุมัติ"}, "Xem cơ hội nghề nghiệp": {"en": "View Career Opportunities", "zh": "查看职业机会", "ja": "求人情報を見る", "ko": "채용 기회 보기", "th": "ดูโอกาสทางอาชีพ"}, "Xem dịch vụ": {"en": "Explore services", "zh": "查看服务", "ja": "サービスを見る", "ko": "서비스 보기", "th": "ดูบริการ"}, "Xu hướng hậu kiểm ngày càng phổ biến khiến hồ sơ quyết toán thiếu chuẩn bị kỹ dễ bị truy vấn, xử lý trách nhiệm.": {"en": "Growing post-review makes poorly prepared settlement files more likely to face queries and accountability action.", "zh": "事后检查增加，准备不足的决算资料更容易遭到质询及追责。", "ja": "事後審査の拡大に伴い、準備不足の決算書類は照会や責任追及を受けやすくなります。", "ko": "사후 점검이 늘어 준비가 부족한 결산 서류는 질의와 책임 추궁을 받기 쉽습니다.", "th": "การตรวจภายหลังเพิ่มทำให้เอกสารไม่พร้อมถูกสอบถามและพิจารณาความรับผิดง่ายขึ้น"}, "Xử lý sai lệch & chuẩn hóa hồ sơ": {"en": "Resolve discrepancies & standardise records", "zh": "处理差异并规范资料", "ja": "差異対応・資料標準化", "ko": "차이 해결·자료 표준화", "th": "แก้ความคลาดเคลื่อนและจัดมาตรฐานเอกสาร"}, "xây dựng cơ bản": {"en": "in construction", "zh": "建设投资", "ja": "建設投資", "ko": "건설 투자", "th": "ก่อสร้าง"}, "© 2026 Công ty TNHH Kiểm toán và Tư vấn Crown. Đã đăng ký bản quyền.": {"en": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "zh": "© 2026 Crown 审计与咨询有限公司。版权所有。", "ja": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "ko": "© 2026 Crown Audit and Advisory Co., Ltd. All rights reserved.", "th": "© 2026 บริษัท Crown Audit and Advisory จำกัด สงวนลิขสิทธิ์"}, "Áp lực quyết toán đúng hạn để ghi nhận tài sản cố định (TSCĐ)": {"en": "Timely settlement for fixed asset recognition", "zh": "按期决算与固定资产确认压力", "ja": "固定資産計上に向けた期限内決算", "ko": "고정자산 인식을 위한 적시 결산", "th": "ชำระบัญชีทันเวลาเพื่อบันทึกสินทรัพย์ถาวร"}, "Áp lực tuân thủ ngân sách nhà nước và trách nhiệm giải trình đang tăng nhanh hơn bao giờ hết.": {"en": "Pressure for public-budget compliance and accountability is rising faster than ever.", "zh": "公共预算合规与问责压力持续加速增加。", "ja": "公的予算の法令遵守と説明責任への圧力が高まっています。", "ko": "공공예산 준수와 설명 책임에 대한 압력이 더욱 커지고 있습니다.", "th": "แรงกดดันการปฏิบัติตามงบรัฐและความรับผิดเพิ่มเร็วขึ้น"}, "Đánh giá sơ bộ dự toán, tiến độ thi công hoặc tình trạng hồ sơ quyết toán hiện có để xác định phạm vi công việc.": {"en": "Initially assess budgets, construction progress or settlement records to define the work scope.", "zh": "初评预算、施工进度或现有决算资料，确定工作范围。", "ja": "予算、工事進捗、決算資料を初期評価し、業務範囲を決めます。", "ko": "예산·시공 진도·결산 자료를 초기 평가하여 업무 범위를 정합니다.", "th": "ประเมินงบ ความคืบหน้าหรือเอกสารชำระบัญชีเพื่อกำหนดขอบเขต"}, "Đăng ký bản tin": {"en": "Subscribe", "zh": "订阅简报", "ja": "ニュースレター登録", "ko": "소식지 구독", "th": "สมัครข่าวสาร"}, "Đăng ký nhận bản tin hàng tháng từ Crown Cons, hoặc theo dõi Facebook để không bỏ lỡ thông tin cập nhật.": {"en": "Subscribe to Crown Cons monthly updates or follow us on Facebook.", "zh": "订阅 Crown Cons 月刊或关注 Facebook。", "ja": "Crown Consの月次情報やFacebookをご覧ください。", "ko": "Crown Cons 월간 소식 또는 Facebook을 구독하세요.", "th": "สมัครข่าวรายเดือน Crown Cons หรือติดตาม Facebook"}, "Đăng ký nhận tư vấn miễn phí": {"en": "Request a free consultation", "zh": "申请免费咨询", "ja": "無料相談を申し込む", "ko": "무료 상담 신청", "th": "ลงทะเบียนปรึกษาฟรี"}, "Đăng ký tư vấn": {"en": "Request a consultation", "zh": "申请咨询", "ja": "相談を申し込む", "ko": "상담 신청", "th": "ลงทะเบียนขอรับคำปรึกษา"}, "Đặt lịch tư vấn kiểm soát & quyết toán miễn phí": {"en": "Book a free budget control & settlement consultation", "zh": "预约免费预算控制与决算咨询", "ja": "予算管理・決算の無料相談を予約", "ko": "예산 관리·결산 무료 상담", "th": "นัดปรึกษาควบคุมงบและชำระบัญชีฟรี"}, "Đặt lịch tư vấn miễn phí": {"en": "Book a free consultation", "zh": "预约免费咨询", "ja": "無料相談を予約", "ko": "무료 상담 예약", "th": "นัดปรึกษาฟรี"}, "Đặt lịch tư vấn tại đây": {"en": "Book a consultation here", "zh": "在此预约咨询", "ja": "こちらから相談予約", "ko": "여기에서 상담 예약", "th": "นัดปรึกษาที่นี่"}, "Để lại thông tin, đội ngũ chuyên gia Crown Cons sẽ liên hệ tư vấn sơ bộ trong vòng 24 giờ làm việc — hoàn toàn miễn phí, không ràng buộc.": {"en": "Leave your details. Crown Cons will respond within 24 business hours for a free, no-obligation initial consultation.", "zh": "留下信息，Crown Cons将在24个工作小时内联系，免费初步咨询，无后续义务。", "ja": "ご連絡先をお寄せください。24営業時間以内に無料・契約義務なしの初期相談をご案内します。", "ko": "정보를 남기면 24영업시간 내 무료·의무 없는 초기 상담을 드립니다.", "th": "ฝากข้อมูล Crown Cons ติดต่อปรึกษาเบื้องต้นฟรีภายใน 24 ชั่วโมงทำการ ไม่มีข้อผูกมัด"}, "Địa chỉ & Liên hệ": {"en": "Address & Contact", "zh": "地址与联系方式", "ja": "住所・お問い合わせ", "ko": "주소 및 연락처", "th": "ที่อยู่และการติดต่อ"}, "Định hướng chiến lược phát triển và điều hành toàn diện hoạt động của Crown Audit & Advisory.": {"en": "Sets strategic direction and oversees the overall operations of Crown Audit & Advisory.", "zh": "制定发展战略方向，全面领导Crown Audit & Advisory的整体运营。", "ja": "Crown Audit & Advisoryの発展戦略を策定し、全体運営を統括します。", "ko": "Crown Audit & Advisory의 발전 전략을 수립하고 전반적인 운영을 총괄합니다.", "th": "กำหนดทิศทางกลยุทธ์การพัฒนาและบริหารการดำเนินงานโดยรวมของ Crown Audit & Advisory"}, "Đối chiếu khối lượng thực tế tại công trường với hồ sơ, dự toán và các quy chuẩn nhà nước hiện hành.": {"en": "Compare actual construction quantities with records, budgets and applicable public standards.", "zh": "对照现场实际数量与资料、预算及现行国家标准。", "ja": "現場数量を資料、予算、現行公的基準と照合します。", "ko": "현장 물량을 서류·예산·현행 공공 기준과 대조합니다.", "th": "เทียบปริมาณจริงกับเอกสาร งบประมาณและมาตรฐานรัฐปัจจุบัน"}, "Đồng hành đến khi quyết toán/giải ngân thành công": {"en": "Support through settlement / disbursement", "zh": "陪伴至决算／拨款完成", "ja": "決算・支払の完了まで支援", "ko": "결산·집행 완료까지 지원", "th": "ดูแลจนชำระบัญชีหรือเบิกจ่ายสำเร็จ"}, "Đội ngũ": {"en": "Team", "zh": "团队", "ja": "チーム", "ko": "팀 소개", "th": "ทีมงาน"}, "Đội ngũ chuyên gia": {"en": "Our Expert Team", "zh": "专家团队", "ja": "専門家チーム", "ko": "전문가팀", "th": "ทีมผู้เชี่ยวชาญ"}, "Đội ngũ kiểm toán viên, chuyên gia thuế, tư vấn tài chính và ESG giàu kinh nghiệm — cùng phối hợp trên từng hồ sơ khách hàng để đảm bảo chất lượng dịch vụ nhất quán.": {"en": "Experienced auditors, tax experts, financial and ESG advisors — working together on every client file to ensure consistent service quality.", "zh": "经验丰富的审计师、税务专家、财务与ESG顾问团队，共同协作处理每一份客户档案，确保服务质量始终如一。", "ja": "経験豊富な監査人、税務専門家、財務・ESGアドバイザーが各案件で連携し、一貫した品質のサービスを提供します。", "ko": "경험이 풍부한 감사인, 세무 전문가, 재무 및 ESG 자문위원이 모든 고객 사안에 협력하여 일관된 서비스 품질을 보장합니다.", "th": "ทีมผู้สอบบัญชี ผู้เชี่ยวชาญด้านภาษี ที่ปรึกษาทางการเงินและ ESG ที่มีประสบการณ์ ทำงานร่วมกันในทุกงานของลูกค้าเพื่อคุณภาพบริการที่สม่ำเสมอ"}, "Đừng để một sai sót nhỏ trở thành trách nhiệm lớn": {"en": "Do not let a small error become a major responsibility", "zh": "别让小差错变成大责任", "ja": "小さな誤りを大きな責任にしないために", "ko": "작은 오류가 큰 책임이 되기 전에", "th": "อย่าให้ข้อผิดเล็กกลายเป็นความรับผิดใหญ่"}, "Ảnh chân dung minh họa Nghiêm Ngọc Hoàng": {"en": "Illustrative portrait: Nghiêm Ngọc Hoàng", "zh": "示意肖像：Nghiêm Ngọc Hoàng", "ja": "イメージ肖像：Nghiêm Ngọc Hoàng", "ko": "예시 인물 사진: Nghiêm Ngọc Hoàng", "th": "ภาพบุคคลประกอบ: Nghiêm Ngọc Hoàng"}, "Ảnh chân dung minh họa Nguyễn Ngọc Tùng": {"en": "Illustrative portrait: Nguyễn Ngọc Tùng", "zh": "示意肖像：Nguyễn Ngọc Tùng", "ja": "イメージ肖像：Nguyễn Ngọc Tùng", "ko": "예시 인물 사진: Nguyễn Ngọc Tùng", "th": "ภาพบุคคลประกอบ: Nguyễn Ngọc Tùng"}, "Ảnh chân dung minh họa Nguyễn Thị Ý": {"en": "Illustrative portrait: Nguyễn Thị Ý", "zh": "示意肖像：Nguyễn Thị Ý", "ja": "イメージ肖像：Nguyễn Thị Ý", "ko": "예시 인물 사진: Nguyễn Thị Ý", "th": "ภาพบุคคลประกอบ: Nguyễn Thị Ý"}, "Ảnh chân dung minh họa Nguyễn Văn Bình": {"en": "Illustrative portrait: Nguyễn Văn Bình", "zh": "示意肖像：Nguyễn Văn Bình", "ja": "イメージ肖像：Nguyễn Văn Bình", "ko": "예시 인물 사진: Nguyễn Văn Bình", "th": "ภาพบุคคลประกอบ: Nguyễn Văn Bình"}, "Ảnh chân dung minh họa Nguyễn Đức Hưng": {"en": "Illustrative portrait: Nguyễn Đức Hưng", "zh": "示意肖像：Nguyễn Đức Hưng", "ja": "イメージ肖像：Nguyễn Đức Hưng", "ko": "예시 인물 사진: Nguyễn Đức Hưng", "th": "ภาพบุคคลประกอบ: Nguyễn Đức Hưng"}, "Ảnh chân dung minh họa Trần Thành Trung": {"en": "Illustrative portrait: Trần Thành Trung", "zh": "示意肖像：Trần Thành Trung", "ja": "イメージ肖像：Trần Thành Trung", "ko": "예시 인물 사진: Trần Thành Trung", "th": "ภาพบุคคลประกอบ: Trần Thành Trung"}};
+  const isHomepage = false;
+  const languages = ['vi','en','zh','ja','ko','th'];
+  const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
+  const crownHosts = new Set(['crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn']);
+  const normalize = value => value.replace(/\s+/g,' ').trim();
+  let locale = 'vi';
+  const translate = (value, language) => language === 'vi' ? value : (translations[normalize(value)]?.[language] ?? value);
+  // Keep the original service values: changing visible labels must not change CTA selection.
+  document.querySelectorAll('option').forEach(option => {
+    if (!option.hasAttribute('value')) option.setAttribute('value', option.value);
+  });
+  const keyed = isHomepage ? Array.from(document.querySelectorAll('[data-i18n]')).filter(el => I18N[el.dataset.i18n]).map(el => ({el, nodes:Array.from(el.childNodes).filter(n=>n.nodeType===3).map(node=>({node,original:node.nodeValue})), entry:I18N[el.dataset.i18n]})) : [];
+  const keyedElements = new Set(keyed.map(record => record.el));
+  const textRecords = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest('script,style,noscript,.lang-switcher-wrap')) continue;
+    let keyedAncestor = false;
+    for (let e=parent;e;e=e.parentElement) if (keyedElements.has(e)) {keyedAncestor=true;break;}
+    if (keyedAncestor) continue;
+    const original=node.nodeValue;
+    if(translations[normalize(original)]) textRecords.push({node,original});
+  }
+  const attributes=[];
+  document.querySelectorAll('[placeholder],[aria-label],[title],[alt],meta[name="description"]').forEach(el => {
+    for (const name of ['placeholder','aria-label','title','alt','content']) {
+      const original=el.getAttribute(name);
+      if(original && translations[normalize(original)]) attributes.push({el,name,original});
+    }
+  });
+  const originalTitle=document.title;
+  const links=Array.from(document.querySelectorAll('a[href]')).filter(a => {
+    try{return crownHosts.has(new URL(a.getAttribute('href'),location.href).hostname);}catch{return false;}
+  }).map(el=>({el,href:el.getAttribute('href')}));
+  function applyLanguage(language, persist=false) {
+    if(!languages.includes(language)) language='vi';
+    locale=language;
+    if(isHomepage) currentLang=language;
+    document.documentElement.lang=language;
+    keyed.forEach(({nodes,entry})=>{
+      let written=false;
+      nodes.forEach(({node,original})=>{
+        if(language==='vi') node.nodeValue=original;
+        else if(original.trim() && !written){node.nodeValue=original.match(/^\s*/)[0]+entry[language]+original.match(/\s*$/)[0];written=true;}
+        else if(original.trim()) node.nodeValue='';
+      });
+    });
+    textRecords.forEach(({node,original})=>{
+      const translated=translate(original,language);
+      node.nodeValue=language==='vi' ? original : original.match(/^\s*/)[0]+translated.trim()+original.match(/\s*$/)[0];
+    });
+    attributes.forEach(({el,name,original})=>el.setAttribute(name,translate(original,language)));
+    document.title=translate(originalTitle,language);
+    document.getElementById('langCurrentLabel').textContent=language.toUpperCase();
+    document.querySelector('#langSwitcherBtn .flag').textContent=flags[language];
+    document.querySelectorAll('.lang-option').forEach(button=>{
+      const active=button.dataset.lang===language;
+      button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
+    });
+    links.forEach(({el,href})=>{
+      const url=new URL(href,location.href);url.searchParams.set('lang',language);el.href=url.href;
+    });
+    if(persist){
+      try{localStorage.setItem('crown.language',language);}catch{}
+      if(crownHosts.has(location.hostname)) document.cookie=`crown_language=${language}; Domain=crown.com.vn; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
+      try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}
+    }
+    // Existing equal-height card layouts recalculate against the translated text.
+    requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  }
+  const originalAlert=window.alert.bind(window);
+  window.alert=message=>originalAlert(translate(String(message),locale));
+  const menus=[
+    {button:document.getElementById('langSwitcherBtn'),panel:document.getElementById('crownLanguageMenu')},
+    {button:document.getElementById('crownEcosystemBtn'),panel:document.getElementById('crownEcosystemMenu')}
+  ];
+  function closeMenus(){menus.forEach(({button,panel})=>{panel.hidden=true;button.setAttribute('aria-expanded','false');});}
+  menus.forEach(({button,panel})=>{
+    button.addEventListener('click',()=>{const opening=panel.hidden;closeMenus();panel.hidden=!opening;button.setAttribute('aria-expanded',String(opening));});
+    button.addEventListener('keydown',event=>{
+      if(event.key==='ArrowDown'){event.preventDefault();closeMenus();panel.hidden=false;button.setAttribute('aria-expanded','true');panel.querySelector('button,a').focus();}
+    });
+    panel.addEventListener('keydown',event=>{
+      const options=Array.from(panel.querySelectorAll('button,a'));const index=options.indexOf(document.activeElement);
+      if(event.key==='ArrowDown'||event.key==='ArrowUp') {event.preventDefault();options[(index+(event.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();}
+      if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
+    });
+  });
+  document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{applyLanguage(button.dataset.lang,true);closeMenus();menus[0].button.focus();}));
+  document.addEventListener('click',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const opened=menus.find(m=>!m.panel.hidden);closeMenus();opened?.button.focus();}});
+  document.addEventListener('focusin',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
+  let initial=new URLSearchParams(location.search).get('lang');
+  if(!languages.includes(initial)){
+    try{initial=document.cookie.match(/(?:^|;\s*)crown_language=(vi|en|zh|ja|ko|th)(?:;|$)/)?.[1] || localStorage.getItem('crown.language');}catch{}
+  }
+  applyLanguage(initial);
+  window.CrownLanguage={set:language=>applyLanguage(language,true),get:()=>locale};
+})();
+
+</script>
 </body>
 </html>

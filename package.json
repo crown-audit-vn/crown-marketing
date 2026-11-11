@@ -1,0 +1,18 @@
+{
+  "name": "crown-marketing",
+  "private": true,
+  "description": "Static marketing sites for Crown — one Vercel project per subdomain",
+  "scripts": {
+    "dev": "node scripts/dev-help.mjs",
+    "dev:www": "serve sites/www -l 5000",
+    "dev:audit": "serve sites/audit -l 5001",
+    "dev:cons": "serve sites/cons -l 5002",
+    "dev:acc": "serve sites/acc -l 5003",
+    "dev:tax": "serve sites/tax -l 5004",
+    "dev:fas": "serve sites/fas -l 5005",
+    "dev:esg": "serve sites/esg -l 5006"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
