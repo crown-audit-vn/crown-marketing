@@ -394,6 +394,11 @@ nav.main-nav > ul > li > a:hover{background:transparent;color:#fff}
 .lang-toggle{border-color:rgba(255,255,255,.23);border-radius:3px}
 .lang-toggle button{padding:7px 11px;color:#d5e6d9}
 .lang-toggle button.active{background:#e7efe8;color:#163325}
+.header-call{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border:0;border-radius:50%;background:transparent;color:#83cea0!important;text-decoration:none;font-size:19px;line-height:1;transition:color .2s ease,background .2s ease,transform .2s ease}
+.header-call:hover,.header-call:focus-visible{color:#b7ebbd!important;background:rgba(131,206,160,.12);transform:translateY(-1px)}
+.header-call:focus-visible{outline:2px solid #83cea0;outline-offset:2px}
+@media(max-width:640px){.header-call{width:38px;height:38px;font-size:18px}.header-actions{gap:7px}}
+@media(max-width:360px){.header-call{width:34px;height:38px;font-size:17px}.header-inner{gap:10px!important}}
 .switcher-btn{border-radius:3px;border-color:rgba(255,255,255,.23)}
 
 /* Hero: authentic photography, one powerful message, no secondary sales card */
@@ -549,13 +554,22 @@ nav.main-nav > ul > li > a:hover{background:transparent;color:#fff}
 .contact-info li strong{color:#203e2b!important}
 .contact-info li a,.contact-info li a[style]{color:#346747!important}
 .contact-info li span[style]{color:#788679!important}
+.quick-contact-card{margin-top:24px;padding:0;background:transparent;border:0;box-shadow:none}
+.quick-contact-card .phone-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.quick-contact-card .phone-ic,.quick-contact-card .zalo-ic{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;background:#e5eee7;color:#346747;border-radius:3px;flex:none;text-decoration:none}
+.quick-contact-card .phone-ic{font-size:17px}
+.quick-contact-card .phone-meta{display:flex;flex-direction:column;gap:3px}
+.quick-contact-card .phone-label{font-size:12px;font-weight:700;color:#6f8572;text-transform:uppercase;letter-spacing:.04em}
+.quick-contact-card .phone-number{font-size:22px;line-height:1.2;font-weight:600;color:#17382b;text-decoration:none}
+.quick-contact-card .zalo-ic{font-size:12px;font-weight:700;background:#e7f0fc;color:#0866d9}
+.quick-contact-card a:hover{opacity:.8}
 .contact-form{background:#fff;padding:36px;border-radius:2px;box-shadow:0 22px 60px rgba(24,54,35,.08);border:1px solid #e3eae3}
 .contact-form h3{color:#17382b}
 .contact-form input,.contact-form select,.contact-form textarea{background:#f7f9f6;border:1px solid #dbe4da}
 .contact-form button{color:#193122}
 
-.promo-wrap{background:#f8faf7;padding-bottom:80px}
-.promo-banner{max-width:1148px;background:transparent;border:0;border-top:1px solid #d7e1d8;border-radius:0;margin-bottom:0;padding:30px 0}
+.promo-wrap{background:#e4eee5;padding:36px 0 40px}
+.promo-banner{max-width:1148px;background:transparent;border:0;border-radius:0;margin-bottom:0;padding:22px 0}
 .promo-banner h4{color:#17392a}
 .promo-banner p{color:#6a7c6b}
 .promo-banner .btn-outline-light{color:#264d35;border-color:#a6bbaa}
@@ -621,8 +635,8 @@ footer .footer-addr p{color:#b8cfbc}
  .eco-stat{padding:18px 11px}
  .eco-stat strong{font-size:32px}
  .contact-form{padding:23px 17px}
- .promo-wrap{padding:0 20px 55px}
- .promo-banner{padding:25px 0}
+ .promo-wrap{padding:24px 20px 28px}
+ .promo-banner{padding:14px 0}
 }
 </style><style>
 /* refined partner logo system */
@@ -892,7 +906,27 @@ footer .footer-addr p{color:#b8cfbc}
  .hero .hero-scrim {background:linear-gradient(90deg,rgba(8,28,20,.88),rgba(8,28,20,.67) 70%,rgba(8,28,20,.56));}
 }
 </style>
-</head>
+<style id="crown-network-2026-unified-contact">
+/* 2026 Crown network: consistent icon contact directory */
+footer .footer-contact-row{display:grid;grid-template-columns:20px minmax(0,1fr);align-items:start;gap:11px;margin:0 0 10px}
+footer .footer-contact-row > i{font-size:15px;color:#79c998;line-height:1.55;text-align:center}
+footer .footer-contact-row > a,footer .footer-contact-row > span{display:block;font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.75);overflow-wrap:anywhere}
+footer .footer-contact-row > a:hover{color:#d5e9d8}
+footer .footer-addr{margin:0 0 18px}
+footer .footer-addr > strong{display:block;font-size:13px;color:#fff;margin-bottom:9px;font-weight:700}
+footer .footer-col:has(.footer-addr){min-width:0}
+.contact .contact-grid > div:first-child{align-self:start}
+.contact .contact-grid > div:first-child > p{max-width:540px}
+/* A program is distinct from the six professional service units. */
+.crownup-ecosystem-link{border-top:1px solid rgba(0,0,0,.09);margin-top:7px;padding-top:12px!important}
+.crownup-ecosystem-link .up-word{color:#f28a22!important;display:inline-block;margin-left:-0.08em}
+.audit-brand-label{color:#c8d9cf;border-left:1px solid rgba(255,255,255,.27);padding-left:12px;letter-spacing:1.4px;font-size:10px;font-weight:750;white-space:nowrap}
+@media(max-width:620px){.audit-brand-label{font-size:9px;letter-spacing:.7px;padding-left:8px}}
+
+  footer .footer-contact-row > i{color:#dda85f}
+  footer .footer-contact-row > a,footer .footer-contact-row > span{color:rgba(244,239,230,.79)}
+  footer .footer-contact-row > a:hover{color:#fff}
+  </style></head>
 <body class="lang-en">
 <header id="siteHeader">
 <div class="header-inner">
@@ -915,6 +949,7 @@ footer .footer-addr p{color:#b8cfbc}
 <button class="" id="btn-vi" onclick="setLang('vi')" type="button">VI</button>
 <button class="active" id="btn-en" onclick="setLang('en')" type="button">EN</button>
 </div>
+<a class="header-call" href="tel:0584252999" aria-label="Call 0584 252 999" title="0584 252 999"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
 <button aria-label="Menu" class="burger" id="burgerBtn" type="button"><i class="fa-solid fa-bars"></i></button>
 </div>
 </div>
@@ -969,7 +1004,7 @@ footer .footer-addr p{color:#b8cfbc}
 <div class="section-head center">
 <div class="eyebrow" style="justify-content:center;"><span data-vi="">Vì sao SME giỏi vẫn mắc kẹt</span><span data-en="">Why Strong SMEs Stay Stuck</span></div>
 <h2><span data-vi="">Có tiềm năng thật, nhưng chưa đủ chuẩn để được nhìn thấy</span><span data-en="">Real potential, not yet standard enough to be seen</span></h2>
-<p><span data-vi="">Rất nhiều doanh nghiệp Việt có sản phẩm tốt, thị trường tốt, nhưng vẫn mắc kẹt ở quy mô vừa — vì thiếu những thứ nhà đầu tư và đối tác lớn thực sự nhìn vào.</span><span data-en="">Many Vietnamese businesses have a good product and a good market, yet stay stuck at mid-size — because they're missing what investors and large partners actually look for.</span></p>
+<p><span data-vi="">Rất nhiều doanh nghiệp Việt có sản phẩm tốt, thị trường tốt, nhưng vẫn mắc kẹt ở quy mô vừa — vì thiếu những thứ nhà đầu tư và đối tác lớn thực sự nhìn vào.</span><span data-en="">Many businesses operating in the Vietnamese market have a good product and a good market, yet stay stuck at mid-size — because they're missing what investors and large partners actually look for.</span></p>
 </div>
 <div class="insight-grid">
 <div class="insight-card reveal">
@@ -1251,30 +1286,34 @@ footer .footer-addr p{color:#b8cfbc}
 <div class="eyebrow" style="color:var(--champagne-500);"><span data-vi="">Hợp tác cùng Crown <span class="brand-up">Up</span></span><span data-en="">Partner with Crown <span class="brand-up">Up</span></span></div>
 <h2><span data-vi="">Gửi hồ sơ doanh nghiệp để bắt đầu hợp tác</span><span data-en="">Share Your Business Profile to Start Partnering</span></h2>
 <p><span data-vi="">Đây là đầu mối tiếp nhận chung của Crown <span class="brand-up">Up</span>. Bạn cũng có thể làm việc trực tiếp qua Tâm Doanh, Crown hoặc Koru. Hãy gửi kèm giới thiệu sản phẩm/dịch vụ, báo cáo tài chính gần nhất và kế hoạch phát triển nếu có; Tâm Doanh sẽ điều phối chuyển hồ sơ tới nhóm chuyên môn phù hợp.</span><span data-en="">This is a shared Crown <span class="brand-up">Up</span> intake channel; you may also work directly through Tâm Doanh, Crown or Koru. Please include a business overview, latest financial statements and growth plan where available. Tâm Doanh will coordinate routing to the relevant specialist team.</span></p>
-<ul class="contact-info">
-<li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;"><span data-vi="">Hotline Hà Nội</span><span data-en="">Hanoi Hotline</span></strong><a href="tel:0584252999" style="color:rgba(244,239,230,0.85);">0584.252.999</a></div></li>
-<li><span class="ic"><i class="fa-solid fa-phone"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;"><span data-vi="">Hotline TP. Hồ Chí Minh</span><span data-en="">Ho Chi Minh City Hotline</span></strong><a href="tel:0862231919" style="color:rgba(244,239,230,0.85);">086 223 1919</a></div></li>
-<li><span class="ic"><i class="fa-solid fa-envelope"></i></span> <div><strong style="display:block;color:#fff;font-size:13.5px;">Email</strong>crownup@tamdoanh.com <span style="display:block;font-size:12px;color:rgba(244,239,230,0.55);margin-top:2px;"><span data-vi="">Gửi kèm tài liệu sản phẩm/dịch vụ, báo cáo tài chính và thuyết minh dự án qua email này</span><span data-en="">Attach your product/service, financial, and project documents to this email</span></span></div></li>
-</ul>
+<div class="quick-contact-card reveal">
+<div class="phone-line">
+<a class="phone-ic" href="tel:0584252999" aria-label="Call 0584.252.999"><i class="fa-solid fa-phone"></i></a>
+<div class="phone-meta">
+<div class="phone-label"><span data-vi="">Hotline Crown <span class="brand-up">Up</span></span><span data-en="">Crown <span class="brand-up">Up</span> Hotline</span></div>
+<a class="phone-number" href="tel:0584252999">0584.252.999</a>
+</div>
+</div>
+</div>
 </div>
 <form class="contact-form" data-email-target="crownup@tamdoanh.com" id="tuvanForm">
 <h3><span data-vi="">Thông tin hợp tác</span><span data-en="">Partnership Information</span></h3>
 <div class="row">
-<input placeholder="Họ và tên" required="" type="text"/>
-<input placeholder="Tên doanh nghiệp" required="" type="text"/>
+<input data-placeholder-en="Full name" data-placeholder-vi="Họ và tên" placeholder="Họ và tên" required="" type="text"/>
+<input data-placeholder-en="Company name" data-placeholder-vi="Tên doanh nghiệp" placeholder="Tên doanh nghiệp" required="" type="text"/>
 </div>
 <div class="row">
-<input placeholder="Số điện thoại" required="" type="tel"/>
-<input placeholder="Email" required="" type="email"/>
+<input data-placeholder-en="Phone number" data-placeholder-vi="Số điện thoại" placeholder="Số điện thoại" required="" type="tel"/>
+<input data-placeholder-en="Email" data-placeholder-vi="Email" placeholder="Email" required="" type="email"/>
 </div>
 <select style="margin-bottom:14px;">
-<option value="">Doanh thu năm gần nhất</option>
-<option>Dưới 10 tỷ VNĐ</option>
-<option>10 – 50 tỷ VNĐ</option>
-<option>50 – 200 tỷ VNĐ</option>
-<option>Trên 200 tỷ VNĐ</option>
+<option data-label-en="Latest annual revenue" data-label-vi="Doanh thu năm gần nhất" value="">Doanh thu năm gần nhất</option>
+<option data-label-en="Under VND 10 billion" data-label-vi="Dưới 10 tỷ VNĐ">Dưới 10 tỷ VNĐ</option>
+<option data-label-en="VND 10–50 billion" data-label-vi="10 – 50 tỷ VNĐ">10 – 50 tỷ VNĐ</option>
+<option data-label-en="VND 50–200 billion" data-label-vi="50 – 200 tỷ VNĐ">50 – 200 tỷ VNĐ</option>
+<option data-label-en="Over VND 200 billion" data-label-vi="Trên 200 tỷ VNĐ">Trên 200 tỷ VNĐ</option>
 </select>
-<textarea placeholder="Mục tiêu 3 năm tới của doanh nghiệp bạn là gì? Bạn cũng có thể mô tả sản phẩm/dịch vụ và dự án đang triển khai."></textarea>
+<textarea data-placeholder-en="What are your business goals for the next three years? You may also describe your products, services and current projects." data-placeholder-vi="Mục tiêu 3 năm tới của doanh nghiệp bạn là gì? Bạn cũng có thể mô tả sản phẩm/dịch vụ và dự án đang triển khai." placeholder="Mục tiêu 3 năm tới của doanh nghiệp bạn là gì? Bạn cũng có thể mô tả sản phẩm/dịch vụ và dự án đang triển khai."></textarea>
 <button class="btn btn-orange" type="submit"><span data-vi="">Gửi thông tin hợp tác</span><span data-en="">Send Partnership Information</span></button>
 </form>
 </div>
@@ -1307,23 +1346,17 @@ footer .footer-addr p{color:#b8cfbc}
 </div>
 <div class="footer-col">
 <h5><span data-vi="">Địa chỉ &amp; Liên hệ</span><span data-en="">Address &amp; Contact</span></h5>
-<div class="footer-addr">
-<strong><span data-vi="">VP Hà Nội</span><span data-en="">Hanoi Office</span></strong>
-<p><span data-vi="">Tầng 7, Số 18 Ngụy Như Kon Tum, Phường Thanh Xuân, TP. Hà Nội</span><span data-en="">7th Floor, 18 Nguy Nhu Kon Tum Street, Thanh Xuan Ward, Hanoi</span></p>
-<a href="tel:0584252999">0584.252.999</a>
-</div>
-<div class="footer-addr">
-<strong><span data-vi="">VP TP. Hồ Chí Minh</span><span data-en="">Ho Chi Minh City Office</span></strong>
-<p><span data-vi="">13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span><span data-en="">13 N2 Street, Jamona Golden Silk, 16/9 Bui Van Ba, Khu Pho 10, Tan Thuan Ward, Ho Chi Minh City</span></p>
-<a href="tel:0862231919">086 223 1919</a>
-</div>
-</div>
+<div class="footer-addr"><strong><span data-vi="">VP Hà Nội</span><span data-en="">Hanoi Office</span></strong>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-location-dot"></i><span><span data-vi="">Tầng 7, Số 18 Ngụy Như Kon Tum, Phường Thanh Xuân, TP. Hà Nội</span><span data-en="">7th Floor, 18 Nguy Nhu Kon Tum Street, Thanh Xuan Ward, Hanoi, Vietnam</span></span></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0904501512">0904 501 512</a></div><div class="footer-contact-row"><i aria-hidden="true" class="fa-regular fa-envelope"></i><a href="mailto:crownup@tamdoanh.com">crownup@tamdoanh.com</a></div></div><div class="footer-addr"><strong><span data-vi="">VP HCM</span><span data-en="">HCM Office</span></strong>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-location-dot"></i><span><span data-vi="">13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span><span data-en="">13 N2 Street, Jamona Golden Silk Residential Area, 16/9 Bui Van Ba Street, Quarter 10, Tan Thuan Ward, Ho Chi Minh City, Vietnam</span></span></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0862231919">086 223 1919</a></div></div></div>
 <div class="footer-col">
 <h5><span data-vi="">Ba hệ thống phối hợp</span><span data-en="">Three Coordinated Systems</span></h5>
 <ul>
-<li><a href="https://tamdoanh.com/" target="_blank" rel="noopener noreferrer">Tâm Doanh Group</a></li>
-<li><a href="https://crown.com.vn/" target="_blank" rel="noopener noreferrer">Crown Audit &amp; Advisory</a></li>
-<li><a href="https://koru.capital/" target="_blank" rel="noopener noreferrer">Koru Capital</a></li>
+<li><a href="https://tamdoanh.com/" rel="noopener noreferrer" target="_blank">Tâm Doanh Group</a></li>
+<li><a href="https://crown.com.vn/" rel="noopener noreferrer" target="_blank">Crown Audit &amp; Advisory</a></li>
+<li><a href="https://koru.capital/" rel="noopener noreferrer" target="_blank">Koru Capital</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -1338,17 +1371,12 @@ footer .footer-addr p{color:#b8cfbc}
 </div>
 <div class="footer-bottom">
 <span>© 2026 Crown <span class="brand-up">Up</span> · Tâm Doanh Group · Crown Audit &amp; Advisory · Koru Capital</span>
-
 </div>
 </div>
 </footer>
-<a aria-label="Gọi ngay cho Crown Up" class="fab-call" href="tel:0584252999">
-<i class="fa-solid fa-phone"></i>
-<span class="fab-call-ring"></span>
-</a>
 <div class="fab-stack">
 <a aria-label="Chat qua Messenger" class="fab-btn fab-messenger" href="https://m.me/tamdoanhgroup" rel="noopener" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
-<a aria-label="Chat qua Zalo" class="fab-btn fab-zalo" href="https://zalo.me/0584252999" rel="noopener" target="_blank"><span>Zalo</span></a>
+<a aria-label="Chat qua Zalo" class="fab-btn fab-zalo" href="https://zalo.me/0862231919" rel="noopener" target="_blank"><span>Zalo</span></a>
 </div>
 <script>
   function setLang(lang){
@@ -1356,6 +1384,8 @@ footer .footer-addr p{color:#b8cfbc}
     document.getElementById('btn-vi').classList.toggle('active', lang === 'vi');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.documentElement.lang = lang;
+    document.querySelectorAll('[data-placeholder-vi][data-placeholder-en]').forEach(el => el.setAttribute('placeholder',el.getAttribute('data-placeholder-'+lang)));
+    document.querySelectorAll('[data-label-vi][data-label-en]').forEach(el => el.textContent=el.getAttribute('data-label-'+lang));
   }
 
   (function(){
@@ -1400,6 +1430,8 @@ footer .footer-addr p{color:#b8cfbc}
       window.location.href = 'mailto:crownup@tamdoanh.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
     });
   }
+
+window.addEventListener("DOMContentLoaded",()=>setLang("en"));
 </script>
 </body>
 </html>
