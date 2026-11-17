@@ -23,6 +23,11 @@ const CROWN_UP_BRAND_FILES = [
   { from: "assets/logo/crown-up/crown-up-og-share.jpg", name: "crown-og-share.jpg" },
 ];
 
+/** Extra deploy assets for sites/www (Crown Up block on homepage) */
+const WWW_EXTRA_BRAND_FILES = [
+  { from: "assets/logo/crown-up/crown-up-wordmark.png", name: "crown-up-wordmark.png" },
+];
+
 const FAVICON_SNIPPET = `<link href="/assets/crown-favicon.png" rel="icon" type="image/png"/>
 <link href="/assets/crown-favicon.png" rel="apple-touch-icon"/>`;
 
@@ -61,7 +66,7 @@ function patchHtml(html) {
   };
 
   replaceImgDataSrc("brand-logo-image", "/assets/crown-logo-header.png");
-  replaceImgDataSrc("crownup-left-logo", "/assets/crown-logo-green.png");
+  replaceImgDataSrc("crownup-left-logo", "/assets/crown-up-wordmark.png");
   replaceImgDataSrc("crownup-logo-img", "/assets/crown-logo-green.png");
 
   next = next.replace(
@@ -107,6 +112,9 @@ for (const { folder } of sites) {
   if (!existsSync(siteDir)) continue;
   const brandFiles = folder === "up" ? CROWN_UP_BRAND_FILES : BRAND_FILES;
   copyBrandToSite(siteDir, brandFiles);
+  if (folder === "www") {
+    copyBrandToSite(siteDir, WWW_EXTRA_BRAND_FILES);
+  }
   sitesSynced += 1;
 
   for (const file of walkHtmlFiles(siteDir)) {
