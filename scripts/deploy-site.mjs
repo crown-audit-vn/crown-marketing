@@ -27,6 +27,16 @@ export function deploySite(folder, { prod = true } = {}) {
     return 1;
   }
 
+  const seo = spawnSync(
+    process.execPath,
+    [resolve(__dirname, "apply-seo.mjs"), folder],
+    { cwd: root, stdio: "inherit" }
+  );
+  if (seo.status !== 0) {
+    console.error(`SEO apply failed for ${folder}`);
+    return seo.status ?? 1;
+  }
+
   const vercelLink = resolve(siteDir, ".vercel", "project.json");
   if (!existsSync(vercelLink)) {
     console.warn(

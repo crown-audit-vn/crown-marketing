@@ -23,7 +23,8 @@
     "deploy:esg": "node scripts/deploy-site.mjs esg",
     "deploy:up": "node scripts/deploy-site.mjs up",
     "sync:brand": "node scripts/sync-brand-assets.mjs",
-    "sync:images": "node scripts/extract-data-uri-images.mjs all"
+    "sync:images": "node scripts/extract-data-uri-images.mjs all",
+    "seo:apply": "node scripts/apply-seo.mjs all"
   },
   "devDependencies": {
     "serve": "^14.2.4",

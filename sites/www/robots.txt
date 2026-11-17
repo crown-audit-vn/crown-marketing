@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crown.com.vn/sitemap.xml

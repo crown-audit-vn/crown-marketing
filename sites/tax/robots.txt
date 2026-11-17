@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tax.crown.com.vn/sitemap.xml

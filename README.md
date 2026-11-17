@@ -116,6 +116,21 @@ npm run sync:images  # tách ảnh inline (lossless) → assets/images/ và site
 
 Ảnh đội ngũ dùng chung: nguồn `assets/images/team/`, deploy `sites/<tên>/assets/images/team/`.
 
+### SEO (canonical, Open Graph, schema, sitemap)
+
+Metadata tập trung trong `scripts/seo/` (ngôn ngữ chính từng site, tên thương hiệu). Mỗi lần chạy sẽ:
+
+- Chèn block `<!-- crown-seo:start -->…` vào `<head>` mọi `index.html` (canonical, robots, OG/Twitter, JSON-LD)
+- Tạo `sites/<tên>/robots.txt` và `sitemap.xml` theo domain Vercel
+- `npm run deploy:*` tự chạy SEO cho site đó trước khi deploy
+
+```sh
+npm run seo:apply              # cập nhật tất cả site
+node scripts/apply-seo.mjs www # một site
+```
+
+Sau khi import HTML mới từ khách: `sync:brand` → `sync:images` → `seo:apply`.
+
 ## Phát triển local
 
 ### Cài đặt (một lần)
