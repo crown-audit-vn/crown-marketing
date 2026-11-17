@@ -1080,6 +1080,46 @@ footer .footer-contact-row > svg.footer-contact-icon {
 @media(max-width:920px){#team .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:650px;gap:32px 22px}#team .team-card .role{min-height:0}}
 @media(max-width:560px){#team .team-grid{gap:30px 14px}#team .team-photo{width:100%}#team .team-card .role{font-size:11px}#team .team-card .team-responsibility,#team .team-card .team-credentials{font-size:11.5px}}
 </style>
+<style id="crown-team-member-modal">
+#team .team-card{cursor:pointer;transition:transform .28s ease,box-shadow .28s ease}
+#team .team-card:hover{transform:translateY(-4px)}
+#team .team-card:hover .team-photo{box-shadow:0 16px 36px rgba(20,53,39,.11)}
+#team .team-card:focus-visible{outline:2px solid #2f8c55;outline-offset:5px;border-radius:2px}
+body.team-modal-open{overflow:hidden}
+.team-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:clamp(18px,4vw,36px)}
+.team-modal[hidden]{display:none!important}
+.team-modal__backdrop{position:absolute;inset:0;background:linear-gradient(165deg,rgba(8,22,17,.72),rgba(14,40,31,.68));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0}
+.team-modal:not([hidden]) .team-modal__backdrop{animation:teamModalBackdrop .38s ease forwards}
+.team-modal__dialog{position:relative;z-index:1;display:flex;flex-direction:column;width:min(100%,920px);max-height:min(90vh,760px);overflow:hidden;background:#f8faf7;border-radius:14px;box-shadow:0 32px 80px rgba(8,24,18,.34),0 0 0 1px rgba(255,255,255,.06) inset;opacity:0;transform:translateY(18px) scale(.985)}
+.team-modal:not([hidden]) .team-modal__dialog{animation:teamModalPanel .46s cubic-bezier(.22,1,.36,1) forwards}
+.team-modal__close{position:absolute;top:16px;right:16px;z-index:3;width:42px;height:42px;border:1px solid rgba(255,255,255,.42);border-radius:50%;background:rgba(12,32,24,.42);backdrop-filter:blur(8px);color:#fff;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.team-modal__close:hover{background:rgba(12,32,24,.62);border-color:rgba(255,255,255,.65);transform:scale(1.04)}
+.team-modal__close:focus-visible{outline:2px solid #e5a137;outline-offset:3px}
+.team-modal__layout{display:grid;grid-template-columns:minmax(240px,.92fr) 1.08fr;min-height:min(72vh,560px);max-height:min(90vh,760px)}
+.team-modal__visual{position:relative;min-height:280px;background:#e8ede9;overflow:hidden}
+.team-modal__photo{position:absolute;inset:0;background-size:cover;background-position:center 12%;background-color:#dfe6e1}
+.team-modal__photo-vignette{position:absolute;inset:0;background:linear-gradient(195deg,rgba(12,28,22,.04) 18%,rgba(12,28,22,.55) 100%);pointer-events:none}
+.team-modal__body{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:clamp(28px,4vw,52px) clamp(26px,3.6vw,48px);background:linear-gradient(180deg,#fcfdfb 0%,#f3f6f2 100%)}
+.team-modal__eyebrow{margin:0 0 14px;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#3d7a5c}
+.team-modal__eyebrow::after{content:"";display:block;width:36px;height:2px;margin-top:12px;background:linear-gradient(90deg,#d99227,#e5a137);border-radius:2px}
+.team-modal__body h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.2vw,38px);line-height:1.14;font-weight:600;color:#152a21;margin:0 0 12px;letter-spacing:-.03em}
+.team-modal__role{display:block;font-size:12.5px;line-height:1.55;color:#2f6849;font-weight:650;letter-spacing:.02em;margin-bottom:22px;max-width:36ch}
+.team-modal__copy{display:flex;flex-direction:column;gap:18px}
+.team-modal__desc{margin:0;font-size:15.5px;line-height:1.82;color:#4a5c52;max-width:42ch}
+.team-modal__cred{margin:0;padding:16px 18px;font-size:13px;line-height:1.78;color:#5f6d64;background:rgba(255,255,255,.72);border:1px solid rgba(20,53,39,.08);border-left:3px solid #d99227;border-radius:0 8px 8px 0;box-shadow:0 6px 18px rgba(20,53,39,.04)}
+@media(max-width:720px){
+  .team-modal__layout{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:0;max-height:min(92vh,820px);overflow-y:auto}
+  .team-modal__visual{min-height:min(42vh,320px)}
+  .team-modal__body{padding:28px 22px 32px}
+  .team-modal__desc,.team-modal__role{max-width:none}
+  .team-modal__close{top:12px;right:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .team-modal:not([hidden]) .team-modal__backdrop,.team-modal:not([hidden]) .team-modal__dialog{animation:none;opacity:1;transform:none}
+}
+@keyframes teamModalBackdrop{to{opacity:1}}
+@keyframes teamModalPanel{to{opacity:1;transform:none}}
+</style>
 <style id="homepage-about-introduction">
 .home-about-intro{background:#fff;padding:clamp(65px,7vw,98px) 0;border-bottom:1px solid #e1e6de}.home-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}.home-about-intro h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(33px,3.7vw,49px);line-height:1.16;letter-spacing:-.03em;font-weight:600;color:#17291f;max-width:560px;margin:0}.home-about-intro .eyebrow{font-size:11px;letter-spacing:1.6px;color:#276139;margin-bottom:22px}.home-about-copy p{font-size:15px;line-height:1.9;color:#627067;margin:0 0 18px}.home-about-link{display:inline-flex;align-items:center;gap:17px;padding-bottom:7px;border-bottom:1px solid #204d36;color:#204d36;font-size:12px;font-weight:700;margin-top:7px}.home-about-link:hover{color:#2f8c55;border-color:#2f8c55}.home-about-link:focus-visible{outline:2px solid #2f8c55;outline-offset:5px}@media(max-width:900px){.home-about-grid{gap:38px}}@media(max-width:640px){.home-about-grid{grid-template-columns:1fr;gap:25px}.home-about-intro{padding:54px 0}.home-about-intro h2{font-size:clamp(32px,8vw,40px)}}
 </style><style id="insights-layout">.reveal{opacity:1!important;transform:none!important}.ins-hero{padding:155px 0 65px;background:#142f24}.ins-hero .ins-label{color:#9bd8a5}.ins-hero h1{font:600 clamp(38px,4.5vw,60px)/1.13 'Playfair Display',Georgia,serif;letter-spacing:-.03em;color:#fff;max-width:850px;margin-bottom:25px}.ins-hero p{color:#cad6cd;max-width:720px;font-size:16px;line-height:1.9}.ins-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:#276139;font-weight:700;margin-bottom:16px}.ins-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding-top:65px;padding-bottom:80px}.ins-card{display:flex;flex-direction:column;border-bottom:1px solid #d8ded7;padding-bottom:26px;min-width:0}.ins-card img{height:215px;width:100%;object-fit:cover;margin-bottom:25px}.ins-card>div{display:flex;flex-direction:column;flex:1}.ins-card h2{font:600 24px/1.35 'Playfair Display',Georgia,serif;color:#17291f;margin-bottom:16px}.ins-card p{font-size:14px;color:#627067;line-height:1.85;margin-bottom:23px}.ins-read{font-size:12px;font-weight:700;color:#204d36;display:inline-flex;gap:15px;align-items:center;margin-top:auto}.ins-read:hover{color:#2f8c55}.ins-article{max-width:820px;padding-top:55px;padding-bottom:70px}.ins-article>img{width:100%;height:360px;object-fit:cover;margin-bottom:40px}.ins-article h2{font:600 29px/1.3 'Playfair Display',Georgia,serif;color:#173b29;margin:35px 0 16px}.ins-article p{font-size:16px;line-height:1.95;color:#546459}.ins-takeaway{background:#f5f5f0;border-left:3px solid #2f8c55;padding:25px 28px;margin:38px 0}.ins-takeaway h2{font-size:23px;margin:0 0 12px}.ins-note{font-size:12px!important;color:#7d877e!important}.ins-actions{display:flex;justify-content:space-between;gap:25px;border-top:1px solid #d8ded7;margin-top:35px;padding-top:25px;flex-wrap:wrap}.ins-bottom{padding:42px 0;background:#f5f5f0}.ins-bottom a{display:inline-flex;align-items:center;gap:20px;font-weight:600;color:#204d36}.ins-date{font-size:12px;color:#b7c9bc;display:block;margin-top:22px}main a:focus-visible{outline:2px solid #2f8c55;outline-offset:4px}@media(max-width:850px){.ins-grid{grid-template-columns:1fr;gap:38px}.ins-card{display:grid;grid-template-columns:.8fr 1fr;gap:25px}.ins-card img{margin:0;height:230px}}@media(max-width:560px){.ins-hero{padding-top:145px;padding-bottom:45px}.ins-card{display:flex}.ins-card img{height:220px;margin-bottom:20px}.ins-grid{padding-top:40px;padding-bottom:50px}.ins-article>img{height:230px}.ins-article{padding-top:35px}.ins-article h2{font-size:25px}}</style><style id="homepage-orange-actions">
@@ -1602,6 +1642,27 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <i class="fa-solid fa-headset"></i>
 </button>
 </div>
+<div class="team-modal" hidden id="teamMemberModal">
+<div aria-hidden="true" class="team-modal__backdrop" data-team-modal-close=""></div>
+<div aria-labelledby="teamModalName" aria-modal="true" class="team-modal__dialog" role="dialog">
+<button aria-label="Đóng" class="team-modal__close" data-team-modal-close="" id="teamModalCloseBtn" type="button"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+<div class="team-modal__layout">
+<div class="team-modal__visual">
+<div aria-hidden="true" class="team-modal__photo" id="teamModalPhoto" role="img"></div>
+<div aria-hidden="true" class="team-modal__photo-vignette"></div>
+</div>
+<div class="team-modal__body">
+<p class="team-modal__eyebrow" id="teamModalEyebrow">Đội ngũ chuyên gia</p>
+<h3 id="teamModalName"></h3>
+<span class="team-modal__role" id="teamModalRole"></span>
+<div class="team-modal__copy">
+<p class="team-modal__desc" id="teamModalDesc"></p>
+<p class="team-modal__cred" id="teamModalCred"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="bot-panel" id="botPanel">
 <div class="bot-panel-head">
 <div class="bot-panel-title"><i class="fa-solid fa-headset"></i> <span data-i18n="bot.panelTitle">Trợ lý Crown</span></div>
@@ -1854,6 +1915,83 @@ const I18N = {"cu.headline":{"vi":"— nâng tầm doanh nghiệp","en":"— ele
   window.CrownLanguage={set:language=>applyLanguage(language,true),get:()=>locale};
 })();
 
+</script>
+<script id="crown-team-member-modal">
+(function(){
+  const modal=document.getElementById('teamMemberModal');
+  const closeBtn=document.getElementById('teamModalCloseBtn');
+  const photo=document.getElementById('teamModalPhoto');
+  const nameEl=document.getElementById('teamModalName');
+  const roleEl=document.getElementById('teamModalRole');
+  const descEl=document.getElementById('teamModalDesc');
+  const credEl=document.getElementById('teamModalCred');
+  const eyebrowEl=document.getElementById('teamModalEyebrow');
+  const cards=Array.from(document.querySelectorAll('#team .team-card'));
+  if(!modal||!cards.length) return;
+  let activeCard=null;
+  let lastFocus=null;
+  const closeLabel=()=>document.documentElement.lang==='vi'?'Đóng':'Close';
+  const eyebrowLabel=()=>document.documentElement.lang==='vi'?'Đội ngũ chuyên gia':'Our Expert Team';
+  const cardHint=(member)=>document.documentElement.lang==='vi'?member+' — xem hồ sơ':member+' — view profile';
+  function fillFromCard(card){
+    const photoDiv=card.querySelector('.team-photo');
+    const bg=photoDiv?.style.backgroundImage||'';
+    photo.style.backgroundImage=bg;
+  }
+  function refreshContent(){
+    if(!activeCard) return;
+    const card=activeCard;
+    const photoDiv=card.querySelector('.team-photo');
+    const label=photoDiv?.getAttribute('aria-label')||card.dataset.member||'';
+    photo.setAttribute('aria-label',label);
+    nameEl.textContent=card.querySelector('h4')?.textContent?.trim()||'';
+    roleEl.textContent=card.querySelector('.role')?.textContent?.trim()||'';
+    descEl.textContent=card.querySelector('.team-responsibility')?.textContent?.trim()||'';
+    credEl.textContent=card.querySelector('.team-credentials')?.textContent?.trim()||'';
+    if(eyebrowEl) eyebrowEl.textContent=eyebrowLabel();
+    closeBtn.setAttribute('aria-label',closeLabel());
+  }
+  function openModal(card){
+    activeCard=card;
+    lastFocus=document.activeElement;
+    fillFromCard(card);
+    refreshContent();
+    modal.hidden=false;
+    document.body.classList.add('team-modal-open');
+    closeBtn.focus();
+  }
+  function closeModal(){
+    modal.hidden=true;
+    document.body.classList.remove('team-modal-open');
+    activeCard=null;
+    if(lastFocus&&typeof lastFocus.focus==='function') lastFocus.focus();
+    lastFocus=null;
+  }
+  cards.forEach(card=>{
+    const member=card.dataset.member||card.querySelector('h4')?.textContent?.trim()||'';
+    card.tabIndex=0;
+    card.setAttribute('role','button');
+    card.setAttribute('aria-haspopup','dialog');
+    card.setAttribute('aria-label',cardHint(member));
+    card.addEventListener('click',()=>openModal(card));
+    card.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(card);}
+    });
+  });
+  modal.querySelectorAll('[data-team-modal-close]').forEach(el=>{
+    el.addEventListener('click',event=>{event.preventDefault();closeModal();});
+  });
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&!modal.hidden){event.stopPropagation();closeModal();}
+  },true);
+  new MutationObserver(()=>{
+    cards.forEach(card=>{
+      const member=card.dataset.member||card.querySelector('h4')?.textContent?.trim()||'';
+      card.setAttribute('aria-label',cardHint(member));
+    });
+    if(!modal.hidden) refreshContent();
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+})();
 </script>
 <script id="insights-local-preview">if(location.protocol==='file:'){const path=location.pathname;const pos=path.lastIndexOf('/insights/');const root=pos>=0?new URL(path.slice(0,pos+1),location.href):new URL(path.includes('/homepage/')?'../':'.',location.href);document.addEventListener('click',function(event){const link=event.target.closest('a[href]');if(!link)return;const dest=new URL(link.href,location.href);if(dest.hostname==='crown.com.vn'&&(dest.pathname==='/insights'||dest.pathname.startsWith('/insights/'))){event.preventDefault();const part=dest.pathname.replace(/^\/insights\/?/,'').replace(/\/$/,'');const file='insights/'+(part?part+'/':'')+'index.html';const local=new URL(file,root);local.searchParams.set('lang',document.documentElement.lang);location.href=local.href;}},true);}</script></body>
 </html>
