@@ -10,13 +10,14 @@ import {
   readFileSync,
   rmSync,
   statSync,
-  writeFileSync,
+  unlinkSync,
 } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sites } from "./sites.mjs";
 import { siteSeoByFolder } from "./seo/site-meta.mjs";
 import { headlineOverride } from "./seo/locale-headlines.mjs";
+import { writeTextIfChanged } from "./fs-write-if-changed.mjs";
 import { applyLocaleToHtml } from "./locale/apply-locale-html.mjs";
 import { applyUpLocale } from "./locale/prerender-up.mjs";
 
@@ -72,6 +73,33 @@ function discoverSourceHtml(siteDir, primaryLang) {
 }
 
 /**
+ * @param {string} altRoot
+ * @param {Set<string>} keepFiles
+ */
+function pruneStaleMirrorFiles(altRoot, keepFiles) {
+  if (!existsSync(altRoot)) return;
+
+  const stale = [];
+
+  const walk = (dir) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      const st = statSync(full);
+      if (st.isDirectory()) {
+        walk(full);
+      } else if (name === "index.html" && !keepFiles.has(full)) {
+        stale.push(full);
+      }
+    }
+  };
+
+  walk(altRoot);
+  for (const file of stale) {
+    unlinkSync(file);
+  }
+}
+
+/**
  * @param {string} folder
  */
 function prerenderSite(folder) {
@@ -84,9 +112,10 @@ function prerenderSite(folder) {
   if (!existsSync(siteDir)) throw new Error(`Missing sites/${folder}`);
 
   const altRoot = join(siteDir, targetLocale);
-  if (existsSync(altRoot)) rmSync(altRoot, { recursive: true, force: true });
 
   const sources = discoverSourceHtml(siteDir, primaryLang);
+  /** @type {Set<string>} */
+  const expectedDests = new Set();
   let written = 0;
 
   for (const src of sources) {
@@ -115,13 +144,22 @@ function prerenderSite(folder) {
           headlineOverride(folder, logicalPath, targetLocale)
         );
     const dest = outputPath(siteDir, src, targetLocale);
+    expectedDests.add(dest);
     mkdirSync(dirname(dest), { recursive: true });
-    writeFileSync(dest, localized, "utf8");
-    written += 1;
+    if (writeTextIfChanged(dest, localized)) written += 1;
   }
 
+  if (expectedDests.size === 0) {
+    if (existsSync(altRoot)) rmSync(altRoot, { recursive: true, force: true });
+  } else {
+    pruneStaleMirrorFiles(altRoot, expectedDests);
+  }
+
+  const mirrorCount = expectedDests.size;
+  const delta =
+    written > 0 ? `, cập nhật ${written} file` : mirrorCount > 0 ? "" : "";
   console.log(
-    `[${folder}] ${written} mirror page(s) → /${targetLocale}/ (${primaryLang} primary)`
+    `[${folder}] ${mirrorCount} mirror page(s) → /${targetLocale}/ (${primaryLang} primary)${delta}`
   );
 }
 

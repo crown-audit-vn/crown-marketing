@@ -159,6 +159,23 @@ export function injectSeoBlock(html, block) {
 }
 
 /**
+ * Cập nhật block SEO tại chỗ (idempotent — không thêm dòng trống mỗi lần chạy).
+ *
+ * @param {string} html
+ * @param {string} block
+ */
+export function replaceOrInjectSeoBlock(html, block) {
+  const re = new RegExp(
+    `${SEO_START}[\\s\\S]*?${SEO_END}`,
+    "i"
+  );
+  if (re.test(html)) {
+    return html.replace(re, block);
+  }
+  return injectSeoBlock(html, block);
+}
+
+/**
  * @param {string} html
  * @param {string} lang
  */

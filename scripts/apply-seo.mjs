@@ -5,21 +5,19 @@
  */
 import {
   existsSync,
-  mkdirSync,
   readdirSync,
   readFileSync,
   statSync,
-  writeFileSync,
 } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { siteByFolder, sites } from "./sites.mjs";
+import { writeTextIfChanged } from "./fs-write-if-changed.mjs";
 import {
   buildSeoBlock,
-  injectSeoBlock,
   parseDescription,
   parseTitle,
-  removeSeoBlock,
+  replaceOrInjectSeoBlock,
   setHtmlLang,
   stripLegacyCanonical,
 } from "./seo/html-seo.mjs";
@@ -212,7 +210,8 @@ function applySite(folder) {
   const sitemapEntries = [];
 
   for (const htmlPath of htmlFiles) {
-    let html = readFileSync(htmlPath, "utf8");
+    const originalHtml = readFileSync(htmlPath, "utf8");
+    let html = originalHtml;
     const urlPath = urlPathFromHtml(siteDir, htmlPath);
     const localeMeta = resolveLocalePageMeta(meta.domain, urlPath, seoMeta);
     const canonicalUrl = localeMeta.canonicalUrl;
@@ -231,7 +230,6 @@ function applySite(folder) {
       : undefined;
 
     html = stripLegacyCanonical(html);
-    html = removeSeoBlock(html);
     html = setHtmlLang(html, localeMeta.pageLocale);
 
     const block = buildSeoBlock({
@@ -257,8 +255,8 @@ function applySite(folder) {
       }),
     });
 
-    html = injectSeoBlock(html, block);
-    writeFileSync(htmlPath, html, "utf8");
+    html = replaceOrInjectSeoBlock(html, block);
+    writeTextIfChanged(htmlPath, html);
 
     const priority =
       urlPath === "/" ? "1.0" : kind === "article" ? "0.7" : "0.8";
@@ -292,7 +290,7 @@ ${sitemapEntries
 </urlset>
 `;
 
-  writeFileSync(join(siteDir, "sitemap.xml"), sitemapXml, "utf8");
+  writeTextIfChanged(join(siteDir, "sitemap.xml"), sitemapXml);
 
   const robotsTxt = `User-agent: *
 Allow: /
@@ -300,7 +298,7 @@ Allow: /
 Sitemap: https://${meta.domain}/sitemap.xml
 `;
 
-  writeFileSync(join(siteDir, "robots.txt"), robotsTxt, "utf8");
+  writeTextIfChanged(join(siteDir, "robots.txt"), robotsTxt);
 
   console.log(
     `[${folder}] ${htmlFiles.length} HTML, sitemap.xml + robots.txt → https://${meta.domain}`
