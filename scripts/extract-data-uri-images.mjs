@@ -57,8 +57,11 @@ function semanticNameForDataUri(html, dataUriStartIndex) {
     }
     return { scope: "site", base: "partner-tamdoanh" };
   }
-  if (/logo-item\s+crown|partner-logo-mark\s+crown/i.test(before)) {
+  if (/footer-partner-logos[\s\S]{0,120}logo-item\s+crown|class="logo-item crown"/i.test(before)) {
     return { scope: "site", base: "partner-crown-footer" };
+  }
+  if (/partner-logo-mark\s+crown|logo-item\s+crown/i.test(before)) {
+    return { scope: "site", base: "partner-crown" };
   }
 
   return null;

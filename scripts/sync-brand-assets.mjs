@@ -15,13 +15,21 @@ const BRAND_FILES = [
   { from: "assets/seo/crown-og-share.jpg", name: "crown-og-share.jpg" },
 ];
 
+/** Crown Up (sites/up) — wordmark & OG from assets/logo/crown-up */
+const CROWN_UP_BRAND_FILES = [
+  { from: "assets/logo/crown-wordmark-white-on-black.png", name: "crown-logo-header.png" },
+  { from: "assets/logo/crown-up/crown-up-favicon.png", name: "crown-favicon.png" },
+  { from: "assets/logo/crown-up/crown-up-wordmark.png", name: "crown-logo-green.png" },
+  { from: "assets/logo/crown-up/crown-up-og-share.jpg", name: "crown-og-share.jpg" },
+];
+
 const FAVICON_SNIPPET = `<link href="/assets/crown-favicon.png" rel="icon" type="image/png"/>
 <link href="/assets/crown-favicon.png" rel="apple-touch-icon"/>`;
 
-function copyBrandToSite(siteDir) {
+function copyBrandToSite(siteDir, brandFiles) {
   const assetsDir = join(siteDir, "assets");
   mkdirSync(assetsDir, { recursive: true });
-  for (const { from, name } of BRAND_FILES) {
+  for (const { from, name } of brandFiles) {
     const src = resolve(root, from);
     if (!existsSync(src)) {
       throw new Error(`Thiếu file logo: ${from}`);
@@ -93,7 +101,8 @@ let sitesSynced = 0;
 for (const { folder } of sites) {
   const siteDir = resolve(root, "sites", folder);
   if (!existsSync(siteDir)) continue;
-  copyBrandToSite(siteDir);
+  const brandFiles = folder === "up" ? CROWN_UP_BRAND_FILES : BRAND_FILES;
+  copyBrandToSite(siteDir, brandFiles);
   sitesSynced += 1;
 
   for (const file of walkHtmlFiles(siteDir)) {
