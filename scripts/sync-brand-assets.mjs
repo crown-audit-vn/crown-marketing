@@ -12,6 +12,7 @@ const BRAND_FILES = [
   { from: "assets/logo/crown-wordmark-white-on-black.png", name: "crown-logo-header.png" },
   { from: "assets/logo/crown-icon-green-on-black.png", name: "crown-favicon.png" },
   { from: "assets/logo/crown-wordmark-green-on-black.png", name: "crown-logo-green.png" },
+  { from: "assets/seo/crown-og-share.jpg", name: "crown-og-share.jpg" },
 ];
 
 const FAVICON_SNIPPET = `<link href="/assets/crown-favicon.png" rel="icon" type="image/png"/>

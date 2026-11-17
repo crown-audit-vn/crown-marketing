@@ -131,6 +131,10 @@ node scripts/apply-seo.mjs www # một site
 
 Sau khi import HTML mới từ khách: `sync:brand` → `sync:images` → `seo:apply`.
 
+Ảnh chia sẻ mạng xã hội: `assets/seo/crown-og-share.jpg` (16:9) → deploy `/assets/crown-og-share.jpg`. Bài Insights dùng ảnh hero (Pexels) làm `og:image` khi có.
+
+`npm run seo:gsc` — in danh sách sitemap URL để gửi Google Search Console.
+
 ## Phát triển local
 
 ### Cài đặt (một lần)

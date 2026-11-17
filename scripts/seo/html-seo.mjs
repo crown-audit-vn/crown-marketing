@@ -76,12 +76,39 @@ export function escapeAttr(s) {
  * @param {string} opts.ogLocale
  * @param {"website" | "article"} opts.ogType
  * @param {object[]} opts.jsonLd
+ * @param {string[] | undefined} opts.hreflang
+ * @param {string[] | undefined} opts.alternateOgLocales
+ * @param {{ width?: number, height?: number } | undefined} opts.ogImageSize
  */
 export function buildSeoBlock(opts) {
   const title = escapeAttr(opts.title);
   const description = escapeAttr(opts.description);
   const canonical = escapeAttr(opts.canonicalUrl);
   const ogImage = escapeAttr(opts.ogImage);
+
+  const hreflangTags = (opts.hreflang ?? [])
+    .map(
+      (code) =>
+        `<link rel="alternate" hreflang="${escapeAttr(code)}" href="${canonical}">`
+    )
+    .join("\n");
+  const xDefault =
+    opts.hreflang?.length ?
+      `<link rel="alternate" hreflang="x-default" href="${canonical}">`
+    : "";
+
+  const ogLocaleAlt = (opts.alternateOgLocales ?? [])
+    .map(
+      (locale) =>
+        `<meta property="og:locale:alternate" content="${escapeAttr(locale)}">`
+    )
+    .join("\n");
+
+  const ogImageSize =
+    opts.ogImageSize?.width && opts.ogImageSize?.height ?
+      `<meta property="og:image:width" content="${opts.ogImageSize.width}">
+<meta property="og:image:height" content="${opts.ogImageSize.height}">`
+    : "";
 
   const jsonLdScripts = opts.jsonLd
     .map(
@@ -92,14 +119,18 @@ export function buildSeoBlock(opts) {
 
   return `${SEO_START}
 <link rel="canonical" href="${canonical}">
+${hreflangTags}
+${xDefault}
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="${opts.ogType}">
 <meta property="og:site_name" content="${escapeAttr(opts.siteName)}">
 <meta property="og:locale" content="${escapeAttr(opts.ogLocale)}">
+${ogLocaleAlt}
 <meta property="og:url" content="${canonical}">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:image" content="${ogImage}">
+${ogImageSize}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">

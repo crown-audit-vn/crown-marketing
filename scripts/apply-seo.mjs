@@ -27,6 +27,11 @@ import {
   organizationSchema,
   siteSeoByFolder,
 } from "./seo/site-meta.mjs";
+import {
+  DEFAULT_OG_ASSET,
+  parseArticleHeroImage,
+  resolveOgImageUrl,
+} from "./seo/resolve-og-image.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -95,6 +100,7 @@ function buildJsonLd(p) {
     domain,
     siteName,
     seoMeta,
+    ogImage,
   } = p;
 
   /** @type {object[]} */
@@ -146,7 +152,8 @@ function buildJsonLd(p) {
   }
 
   if (kind === "article") {
-    blocks.push({
+    /** @type {Record<string, unknown>} */
+    const article = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: title.replace(/\s*\|\s*Crown\s*$/i, ""),
@@ -166,7 +173,9 @@ function buildJsonLd(p) {
           url: organizationSchema.logo,
         },
       },
-    });
+    };
+    if (ogImage) article.image = [ogImage];
+    blocks.push(article);
   }
 
   return blocks;
@@ -186,7 +195,7 @@ function applySite(folder) {
   if (!existsSync(siteDir)) throw new Error(`Missing sites/${folder}`);
 
   const htmlFiles = discoverHtmlFiles(siteDir);
-  const ogImage = absoluteUrl(meta.domain, "/assets/crown-logo-green.png");
+  const defaultOgImage = resolveOgImageUrl(meta.domain, DEFAULT_OG_ASSET);
 
   /** @type {{ loc: string, priority: string, changefreq: string }[]} */
   const sitemapEntries = [];
@@ -200,6 +209,15 @@ function applySite(folder) {
     const title = parseTitle(html) ?? seoMeta.siteName;
     const description = parseDescription(html) ?? "";
 
+    const heroSrc = kind === "article" ? parseArticleHeroImage(html) : null;
+    const ogImage = heroSrc ?
+      resolveOgImageUrl(meta.domain, heroSrc)
+    : defaultOgImage;
+    const ogImageSize =
+      ogImage === defaultOgImage ?
+        { width: 1200, height: 675 }
+      : undefined;
+
     html = stripLegacyCanonical(html);
     html = removeSeoBlock(html);
     html = setHtmlLang(html, seoMeta.lang);
@@ -209,8 +227,11 @@ function applySite(folder) {
       title,
       description,
       ogImage,
+      ogImageSize,
       siteName: seoMeta.siteName,
       ogLocale: seoMeta.ogLocale,
+      hreflang: seoMeta.hreflang,
+      alternateOgLocales: seoMeta.alternateOgLocales,
       ogType: kind === "article" ? "article" : "website",
       jsonLd: buildJsonLd({
         kind,
@@ -220,6 +241,7 @@ function applySite(folder) {
         domain: meta.domain,
         siteName: seoMeta.siteName,
         seoMeta,
+        ogImage: kind === "article" ? ogImage : undefined,
       }),
     });
 

@@ -24,7 +24,8 @@
     "deploy:up": "node scripts/deploy-site.mjs up",
     "sync:brand": "node scripts/sync-brand-assets.mjs",
     "sync:images": "node scripts/extract-data-uri-images.mjs all",
-    "seo:apply": "node scripts/apply-seo.mjs all"
+    "seo:apply": "node scripts/apply-seo.mjs all",
+    "seo:gsc": "node scripts/seo/search-console-sitemaps.mjs"
   },
   "devDependencies": {
     "serve": "^14.2.4",
