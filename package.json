@@ -30,9 +30,12 @@
     "sync:images": "node scripts/extract-data-uri-images.mjs all",
     "locale:build": "node scripts/prerender-locale.mjs all",
     "seo:apply": "node scripts/prerender-locale.mjs all && node scripts/apply-seo.mjs all",
+    "seo:check": "node scripts/seo/check-local.mjs",
+    "seo:check:live": "node scripts/seo/check-live.mjs",
     "seo:gsc": "node scripts/seo/search-console-sitemaps.mjs"
   },
   "devDependencies": {
+    "googleapis": "^190.0.0",
     "linkedom": "^0.18.15",
     "serve": "^14.2.4",
     "vercel": "^41.6.0"

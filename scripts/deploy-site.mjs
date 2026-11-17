@@ -4,6 +4,8 @@ import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { prepareDeploy } from "./prepare-deploy.mjs";
+import { runCheckLocalCli } from "./seo/check-local.mjs";
+import { runCheckLiveCli } from "./seo/check-live.mjs";
 import { siteByFolder, sites } from "./sites.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -11,10 +13,13 @@ const root = resolve(__dirname, "..");
 
 /**
  * @param {string} folder
- * @param {{ prod?: boolean; skipPrepare?: boolean; fastPrepare?: boolean }} options
- * @returns {number} exit code
+ * @param {{ prod?: boolean; skipPrepare?: boolean; fastPrepare?: boolean; skipLiveCheck?: boolean }} options
+ * @returns {Promise<number>} exit code
  */
-export function deploySite(folder, { prod = true, skipPrepare = false, fastPrepare = false } = {}) {
+export async function deploySite(
+  folder,
+  { prod = true, skipPrepare = false, fastPrepare = false, skipLiveCheck = false } = {}
+) {
   const meta = siteByFolder.get(folder);
   if (!meta) {
     console.error(`Site không hợp lệ: "${folder}".`);
@@ -32,6 +37,10 @@ export function deploySite(folder, { prod = true, skipPrepare = false, fastPrepa
     const prep = prepareDeploy(folder, { fast: fastPrepare });
     if (prep !== 0) {
       return prep;
+    }
+    const localSeo = runCheckLocalCli(folder);
+    if (localSeo !== 0) {
+      return localSeo;
     }
   }
 
@@ -78,7 +87,16 @@ export function deploySite(folder, { prod = true, skipPrepare = false, fastPrepa
     env,
   });
 
-  return result.status ?? 1;
+  const deployCode = result.status ?? 1;
+  if (deployCode !== 0) {
+    return deployCode;
+  }
+
+  if (prod && !skipLiveCheck) {
+    return runCheckLiveCli({ folders: [folder], retries: 3, delayMs: 5000 });
+  }
+
+  return 0;
 }
 
 const isMain =
@@ -88,13 +106,16 @@ if (isMain) {
   const folder = process.argv[2];
   const prod = !process.argv.includes("--preview");
   const fastPrepare = process.argv.includes("--fast");
+  const skipLiveCheck = process.argv.includes("--skip-live-check");
 
   if (!folder) {
     console.error(
-      "Usage: node scripts/deploy-site.mjs <folder> [--preview] [--fast]"
+      "Usage: node scripts/deploy-site.mjs <folder> [--preview] [--fast] [--skip-live-check]"
     );
     process.exit(1);
   }
 
-  process.exit(deploySite(folder, { prod, fastPrepare }));
+  deploySite(folder, { prod, fastPrepare, skipLiveCheck }).then((code) =>
+    process.exit(code)
+  );
 }

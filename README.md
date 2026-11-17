@@ -144,7 +144,29 @@ Sau khi import HTML mới từ khách: `sync:brand` → `sync:images` → `seo:a
 
 Ảnh chia sẻ mạng xã hội: `assets/seo/crown-og-share.jpg` (16:9) → deploy `/assets/crown-og-share.jpg`. Bài Insights dùng ảnh hero (Pexels) làm `og:image` khi có.
 
-`npm run seo:gsc` — in danh sách sitemap URL để gửi Google Search Console.
+**Kiểm tra SEO:**
+
+```sh
+npm run seo:check        # robots, sitemap, crown-seo trong sites/ (local)
+npm run seo:check:live   # robots.txt, sitemap.xml, crown-seo trên production (8 domain)
+```
+
+`npm run release` tự chạy `seo:check` trước deploy và `seo:check:live` sau khi deploy xong (retry CDN). Bỏ check live: `npm run release -- --skip-live-check`.
+
+`npm run seo:gsc` gửi `sitemap.xml` của cả 8 site vào Google Search Console (Search Console API, service account).
+
+Thiết lập (một lần):
+
+1. Tạo service account trên Google Cloud, bật **Google Search Console API**, tải JSON key.
+2. Lưu key vào `.secrets/gsc-service-account.json` (thư mục này đã được gitignore), hoặc trỏ `GSC_SERVICE_ACCOUNT_KEY` / `GOOGLE_APPLICATION_CREDENTIALS` tới file.
+3. Trong Search Console, thêm `client_email` của service account làm user (Owner hoặc Full) cho từng property — URL-prefix `https://<domain>/` hoặc Domain `sc-domain:crown.com.vn`.
+
+```sh
+npm run seo:gsc -- --dry-run   # chỉ in URL sitemap, không gọi API
+npm run seo:gsc                # submit rồi in lastSubmitted / isPending / errors
+```
+
+Ghi đè property khi cần: `--property www=sc-domain:crown.com.vn` hoặc biến môi trường `GSC_PROPERTY_WWW`.
 
 ## Phát triển local
 
