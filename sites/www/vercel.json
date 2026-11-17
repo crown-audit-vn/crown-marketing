@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "ignoreCommand": "bash ../../scripts/should-build.sh",
   "redirects": [
     {
       "source": "/tuyen-dung",

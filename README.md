@@ -39,12 +39,17 @@ Mỗi site là một thư mục độc lập với `index.html` ở root — ph�
 | `sites/esg`           | `esg.crown.com.vn`   |
 | `sites/up`            | `up.crown.com.vn`    |
 
-Khuyến nghị **Ignored Build Step** (mỗi project) — chỉ build khi site đó hoặc `shared/` thay đổi:
+Khuyến nghị **Ignored Build Step** — chỉ deploy khi `sites/<tên>` hoặc `shared/` đổi.
+
+Mỗi `sites/<tên>/vercel.json` đã có `ignoreCommand`:
 
 ```sh
-# Ví dụ project ESG (đặt trong Vercel → Settings → Ignored Build Step)
-bash scripts/should-build.sh sites/esg
+bash ../../scripts/should-build.sh
 ```
+
+(Vercel chạy lệnh từ **Root Directory** `sites/<tên>`, không phải root repo — không dùng `scripts/should-build.sh` trực tiếp.)
+
+Nếu cấu hình tay trên dashboard, dùng đúng lệnh trên hoặc để trống để lấy từ `vercel.json`.
 
 ### Deploy từ máy (CLI — từng site hoặc tất cả)
 
