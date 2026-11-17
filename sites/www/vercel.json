@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tuyen-dung",
+      "destination": "/career",
+      "permanent": true
+    }
+  ]
 }
