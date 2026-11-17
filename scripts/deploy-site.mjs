@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { prepareDeploy } from "./prepare-deploy.mjs";
 import { siteByFolder, sites } from "./sites.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -10,10 +11,10 @@ const root = resolve(__dirname, "..");
 
 /**
  * @param {string} folder
- * @param {{ prod?: boolean }} options
+ * @param {{ prod?: boolean; skipPrepare?: boolean; fastPrepare?: boolean }} options
  * @returns {number} exit code
  */
-export function deploySite(folder, { prod = true } = {}) {
+export function deploySite(folder, { prod = true, skipPrepare = false, fastPrepare = false } = {}) {
   const meta = siteByFolder.get(folder);
   if (!meta) {
     console.error(`Site không hợp lệ: "${folder}".`);
@@ -27,14 +28,11 @@ export function deploySite(folder, { prod = true } = {}) {
     return 1;
   }
 
-  const seo = spawnSync(
-    process.execPath,
-    [resolve(__dirname, "apply-seo.mjs"), folder],
-    { cwd: root, stdio: "inherit" }
-  );
-  if (seo.status !== 0) {
-    console.error(`SEO apply failed for ${folder}`);
-    return seo.status ?? 1;
+  if (!skipPrepare) {
+    const prep = prepareDeploy(folder, { fast: fastPrepare });
+    if (prep !== 0) {
+      return prep;
+    }
   }
 
   const vercelLink = resolve(siteDir, ".vercel", "project.json");
@@ -89,11 +87,14 @@ const isMain =
 if (isMain) {
   const folder = process.argv[2];
   const prod = !process.argv.includes("--preview");
+  const fastPrepare = process.argv.includes("--fast");
 
   if (!folder) {
-    console.error("Usage: node scripts/deploy-site.mjs <folder> [--preview]");
+    console.error(
+      "Usage: node scripts/deploy-site.mjs <folder> [--preview] [--fast]"
+    );
     process.exit(1);
   }
 
-  process.exit(deploySite(folder, { prod }));
+  process.exit(deploySite(folder, { prod, fastPrepare }));
 }

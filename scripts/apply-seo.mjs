@@ -32,6 +32,7 @@ import {
   parseArticleHeroImage,
   resolveOgImageUrl,
 } from "./seo/resolve-og-image.mjs";
+import { logicalPath, resolveLocalePageMeta } from "./seo/hreflang.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -82,10 +83,20 @@ function absoluteUrl(domain, path) {
  * @param {string} folder
  * @param {string} urlPath
  */
-function pageKind(folder, urlPath) {
-  if (folder === "www" && urlPath.startsWith("/insights/") && urlPath !== "/insights")
+/**
+ * @param {string} folder
+ * @param {string} urlPath
+ * @param {string} primaryLang
+ */
+function pageKind(folder, urlPath, primaryLang) {
+  const logical = logicalPath(urlPath, primaryLang);
+  if (
+    folder === "www" &&
+    logical.startsWith("/insights/") &&
+    logical !== "/insights"
+  )
     return "article";
-  return urlPath === "/" ? "home" : "page";
+  return logical === "/" ? "home" : "page";
 }
 
 /**
@@ -203,8 +214,9 @@ function applySite(folder) {
   for (const htmlPath of htmlFiles) {
     let html = readFileSync(htmlPath, "utf8");
     const urlPath = urlPathFromHtml(siteDir, htmlPath);
-    const canonicalUrl = absoluteUrl(meta.domain, urlPath);
-    const kind = pageKind(folder, urlPath);
+    const localeMeta = resolveLocalePageMeta(meta.domain, urlPath, seoMeta);
+    const canonicalUrl = localeMeta.canonicalUrl;
+    const kind = pageKind(folder, urlPath, seoMeta.lang);
 
     const title = parseTitle(html) ?? seoMeta.siteName;
     const description = parseDescription(html) ?? "";
@@ -220,7 +232,7 @@ function applySite(folder) {
 
     html = stripLegacyCanonical(html);
     html = removeSeoBlock(html);
-    html = setHtmlLang(html, seoMeta.lang);
+    html = setHtmlLang(html, localeMeta.pageLocale);
 
     const block = buildSeoBlock({
       canonicalUrl,
@@ -229,9 +241,9 @@ function applySite(folder) {
       ogImage,
       ogImageSize,
       siteName: seoMeta.siteName,
-      ogLocale: seoMeta.ogLocale,
-      hreflang: seoMeta.hreflang,
-      alternateOgLocales: seoMeta.alternateOgLocales,
+      ogLocale: localeMeta.ogLocale,
+      hreflangLinks: localeMeta.hreflangLinks,
+      alternateOgLocales: localeMeta.alternateOgLocales,
       ogType: kind === "article" ? "article" : "website",
       jsonLd: buildJsonLd({
         kind,
@@ -240,7 +252,7 @@ function applySite(folder) {
         description,
         domain: meta.domain,
         siteName: seoMeta.siteName,
-        seoMeta,
+        seoMeta: { ...seoMeta, lang: localeMeta.pageLocale },
         ogImage: kind === "article" ? ogImage : undefined,
       }),
     });

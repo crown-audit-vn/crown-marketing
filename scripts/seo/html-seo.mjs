@@ -76,7 +76,7 @@ export function escapeAttr(s) {
  * @param {string} opts.ogLocale
  * @param {"website" | "article"} opts.ogType
  * @param {object[]} opts.jsonLd
- * @param {string[] | undefined} opts.hreflang
+ * @param {{ code: string, href: string }[] | undefined} opts.hreflangLinks
  * @param {string[] | undefined} opts.alternateOgLocales
  * @param {{ width?: number, height?: number } | undefined} opts.ogImageSize
  */
@@ -86,16 +86,12 @@ export function buildSeoBlock(opts) {
   const canonical = escapeAttr(opts.canonicalUrl);
   const ogImage = escapeAttr(opts.ogImage);
 
-  const hreflangTags = (opts.hreflang ?? [])
+  const hreflangTags = (opts.hreflangLinks ?? [])
     .map(
-      (code) =>
-        `<link rel="alternate" hreflang="${escapeAttr(code)}" href="${canonical}">`
+      ({ code, href }) =>
+        `<link rel="alternate" hreflang="${escapeAttr(code)}" href="${escapeAttr(href)}">`
     )
     .join("\n");
-  const xDefault =
-    opts.hreflang?.length ?
-      `<link rel="alternate" hreflang="x-default" href="${canonical}">`
-    : "";
 
   const ogLocaleAlt = (opts.alternateOgLocales ?? [])
     .map(
@@ -120,7 +116,6 @@ export function buildSeoBlock(opts) {
   return `${SEO_START}
 <link rel="canonical" href="${canonical}">
 ${hreflangTags}
-${xDefault}
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="${opts.ogType}">
 <meta property="og:site_name" content="${escapeAttr(opts.siteName)}">

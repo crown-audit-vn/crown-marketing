@@ -22,12 +22,18 @@
     "deploy:fas": "node scripts/deploy-site.mjs fas",
     "deploy:esg": "node scripts/deploy-site.mjs esg",
     "deploy:up": "node scripts/deploy-site.mjs up",
+    "prepare:deploy": "node scripts/prepare-deploy.mjs",
+    "prepare:deploy:fast": "node scripts/prepare-deploy.mjs all --fast",
+    "release": "node scripts/deploy-all.mjs",
+    "release:preview": "node scripts/deploy-all.mjs --preview",
     "sync:brand": "node scripts/sync-brand-assets.mjs",
     "sync:images": "node scripts/extract-data-uri-images.mjs all",
-    "seo:apply": "node scripts/apply-seo.mjs all",
+    "locale:build": "node scripts/prerender-locale.mjs all",
+    "seo:apply": "node scripts/prerender-locale.mjs all && node scripts/apply-seo.mjs all",
     "seo:gsc": "node scripts/seo/search-console-sitemaps.mjs"
   },
   "devDependencies": {
+    "linkedom": "^0.18.15",
     "serve": "^14.2.4",
     "vercel": "^41.6.0"
   }

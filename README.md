@@ -53,6 +53,7 @@ Git push vẫn tự deploy qua Vercel; dùng CLI khi muốn đẩy **một site*
 ```sh
 npm install
 npm run deploy          # bảng lệnh deploy
+npm run release         # chuẩn bị (brand → ảnh → locale → SEO) + deploy production cả 8 site
 ```
 
 **Link lần đầu** (mỗi thư mục site một lần, sau khi đã tạo Vercel project trên dashboard):
@@ -71,7 +72,14 @@ npm run deploy:acc
 **Deploy tất cả site (lần lượt):**
 
 ```sh
-npm run deploy:all
+npm run deploy:all      # hoặc npm run release (cùng pipeline, tên gợi nhớ hơn)
+```
+
+**Chỉ build / SEO trước khi commit (không gọi Vercel):**
+
+```sh
+npm run prepare:deploy
+npm run prepare:deploy:fast   # bỏ qua sync brand + tách ảnh — chỉ locale + SEO
 ```
 
 **Preview (không ghi đè production):**
@@ -125,9 +133,12 @@ Metadata tập trung trong `scripts/seo/` (ngôn ngữ chính từng site, tên 
 - `npm run deploy:*` tự chạy SEO cho site đó trước khi deploy
 
 ```sh
-npm run seo:apply              # cập nhật tất cả site
-node scripts/apply-seo.mjs www # một site
+npm run seo:apply              # prerender /en hoặc /vi + SEO tất cả site
+npm run locale:build           # chỉ tạo bản mirror ngôn ngữ
+node scripts/apply-seo.mjs www # một site (nên chạy locale trước)
 ```
+
+**Hreflang:** Site tiếng Việt có bản tĩnh `/en/...`; site tiếng Anh có `/vi/...` (sinh bởi `scripts/prerender-locale.mjs`).
 
 Sau khi import HTML mới từ khách: `sync:brand` → `sync:images` → `seo:apply`.
 
