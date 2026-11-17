@@ -107,6 +107,15 @@ npm run deploy:all -- --preview
 
 Nguồn HTML khách hàng: đồng bộ từ bộ file `0._Crown_homepage_1.html` … `7._Crown_Up.html` vào `sites/<tên>/index.html`.
 
+Sau khi cập nhật HTML (nếu file mới lại chứa ảnh `data:image/...` inline), chạy:
+
+```sh
+npm run sync:brand   # logo + favicon → sites/<tên>/assets/
+npm run sync:images  # tách ảnh inline (lossless) → assets/images/ và sites/<tên>/assets/images/
+```
+
+Ảnh đội ngũ dùng chung: nguồn `assets/images/team/`, deploy `sites/<tên>/assets/images/team/`.
+
 ## Phát triển local
 
 ### Cài đặt (một lần)

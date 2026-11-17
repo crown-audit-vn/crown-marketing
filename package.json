@@ -22,7 +22,8 @@
     "deploy:fas": "node scripts/deploy-site.mjs fas",
     "deploy:esg": "node scripts/deploy-site.mjs esg",
     "deploy:up": "node scripts/deploy-site.mjs up",
-    "sync:brand": "node scripts/sync-brand-assets.mjs"
+    "sync:brand": "node scripts/sync-brand-assets.mjs",
+    "sync:images": "node scripts/extract-data-uri-images.mjs all"
   },
   "devDependencies": {
     "serve": "^14.2.4",
