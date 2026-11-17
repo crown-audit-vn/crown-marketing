@@ -926,7 +926,31 @@ footer .footer-col:has(.footer-addr){min-width:0}
   footer .footer-contact-row > i{color:#dda85f}
   footer .footer-contact-row > a,footer .footer-contact-row > span{color:rgba(244,239,230,.79)}
   footer .footer-contact-row > a:hover{color:#fff}
-  </style></head>
+  </style>
+<style id="up-ui-refresh-2026">
+/* ============================================================================
+   UI/UX refresh — airier rhythm, brighter editorial photography, accessible
+   focus states. Respects this page's intentional flat/hairline card style
+   (no new hover transforms added to insight/whatis/roadmap/partner cards).
+   ============================================================================ */
+::selection{background:var(--champagne-300,#e6cd9a);color:#1b140a}
+a,.btn,.quick-contact-card a,.phone-ic,.zalo-ic{
+  transition:color .25s cubic-bezier(.22,1,.36,1),background-color .3s cubic-bezier(.22,1,.36,1),
+             border-color .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1);
+}
+a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid #e2792a;outline-offset:3px;border-radius:4px}
+
+/* Brighter full-bleed photography interludes between sections */
+.band img{filter:brightness(1.07) contrast(1.04) saturate(.96)}
+
+/* A touch more breathing room around section headings */
+.section-head{margin-bottom:calc(clamp(30px,4.5vw,56px) + 6px)}
+
+@media(prefers-reduced-motion:reduce){
+  a,.btn,.quick-contact-card a,.phone-ic,.zalo-ic,.band img{transition:none!important}
+}
+</style>
+</head>
 <body class="lang-en">
 <header id="siteHeader">
 <div class="header-inner">

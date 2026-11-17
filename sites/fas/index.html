@@ -980,6 +980,79 @@ footer .footer-contact-row > svg.footer-contact-icon {
 #team .team-card p{line-height:1.75}
 @media(min-width:921px){#team .section-head{align-items:start}#team .section-head>h2{grid-column:1;grid-row:2;min-width:0}#team .section-head>.team-intro-copy{grid-column:2;grid-row:2;min-width:0;align-self:center}}
 </style>
+<style id="fas-ui-refresh-2026">
+/* ============================================================================
+   UI/UX refresh — airier spacing, refined type/colour rhythm, soft modern
+   card motion and brighter editorial photography.
+   Our Expert Team portraits (.team-photo) are intentionally left untouched.
+   ============================================================================ */
+
+/* -- Tokens: softer corners / shadow, shared easing for motion -- */
+:root{
+  --radius:16px;
+  --shadow:0 24px 60px -24px rgba(10,20,14,.22);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+/* -- Global polish: smoother interactions, clearer focus, nicer selection -- */
+::selection{background:var(--gold-400);color:#0c1f15}
+a,.btn,.svc-card,.pillar-card,.project-card,.news-card,.ins-card,.process .step{
+  transition:color .25s var(--ease),background-color .3s var(--ease),border-color .3s var(--ease),
+             transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.btn{box-shadow:0 10px 24px -14px rgba(10,20,14,.35)}
+a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--gold-500);outline-offset:3px;border-radius:4px}
+
+/* -- More breathing room between sections and headings ("thoáng" layout) -- */
+.pillars,.services,.projects,.why,.process,.news{
+  padding-top:calc(clamp(86px,9.5vw,138px) + 14px);
+  padding-bottom:calc(clamp(86px,9vw,136px) + 10px);
+}
+.section-head{margin-bottom:calc(clamp(34px,5vw,68px) + 10px)}
+.pillars-grid,.project-grid{row-gap:clamp(40px,5vw,72px)}
+
+/* -- Softer, more contemporary corners on editorial photography (non-team) -- */
+.illus.illus-photo,.editorial-services-photo,.home-about-photo img,
+.ins-card img,.ins-article>img,
+.pillars .pillar-card .illus,.projects .project-card:nth-child(-n+2)>.illus,
+.news .news-card .illus{border-radius:12px}
+
+/* -- Brighter, livelier photography everywhere except Our Expert Team -- */
+.illus.illus-photo{filter:brightness(1.08) contrast(1.03) saturate(1.12)!important}
+.editorial-services-photo,.home-about-photo img,.ins-card img,.ins-article>img{
+  filter:brightness(1.08) contrast(1.03) saturate(1.12);
+}
+.illus.illus-photo,.editorial-services-photo,.home-about-photo img{
+  transform:scale(1);transition:transform .6s var(--ease),filter .4s var(--ease);
+  overflow:hidden;
+}
+
+/* -- Gentle hover motion on content cards (team cards deliberately excluded) -- */
+.pillars .pillar-card:hover .illus,
+.projects .project-card:hover > .illus,
+.news .news-card:hover .illus{transform:scale(1.035)}
+.services .svc-card:hover{transform:translateX(4px)}
+.services .svc-card:hover .svc-link{letter-spacing:.04em}
+.process .step{transition:border-color .3s var(--ease)}
+.process .step:hover{border-top-color:var(--gold-500)}
+.process .step:hover::before{color:var(--gold-500)}
+.ins-card:hover h2{color:var(--gold-600)}
+.ins-card img{transition:transform .6s var(--ease),filter .4s var(--ease)}
+.ins-card:hover img{transform:scale(1.035)}
+
+/* -- Slightly roomier, friendlier typography on the hero lead copy -- */
+.hero p.lead{letter-spacing:.005em}
+
+@media(prefers-reduced-motion:reduce){
+  a,.btn,.svc-card,.pillar-card,.project-card,.news-card,.ins-card,.process .step,
+  .illus.illus-photo,.editorial-services-photo,.home-about-photo img,.ins-card img{transition:none!important}
+}
+
+/* -- Mobile: keep the extra rhythm proportionate on small screens -- */
+@media(max-width:600px){
+  .pillars,.services,.projects,.why,.process,.news{padding-top:72px;padding-bottom:78px}
+}
+</style>
 </head>
 <body>
 <header id="siteHeader">
