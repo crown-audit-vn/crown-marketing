@@ -50,11 +50,24 @@ export function deploySite(folder, { prod = true } = {}) {
     `Deploy ${meta.folder} → ${meta.domain} (${prod ? "production" : "preview"})…\n`
   );
 
+  const env = { ...process.env };
+  const hadBadToken = Boolean(env.VERCEL_TOKEN || env.VERCEL_ACCESS_TOKEN);
+  delete env.VERCEL_TOKEN;
+  delete env.VERCEL_ACCESS_TOKEN;
+  for (const key of Object.keys(env)) {
+    if (/^VERCEL_.*TOKEN$/i.test(key)) delete env[key];
+  }
+  if (hadBadToken) {
+    console.warn(
+      "Đã bỏ VERCEL_TOKEN trong môi trường — dùng session `vercel login`.\n"
+    );
+  }
+
   const result = spawnSync(vercelBin, args, {
     cwd: siteDir,
     stdio: "inherit",
     shell: process.platform === "win32",
-    env: process.env,
+    env,
   });
 
   return result.status ?? 1;
