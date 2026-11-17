@@ -1127,6 +1127,357 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
 #ecosystem .ab-orbit-center{border:4px solid #e5a137;box-shadow:0 0 0 5px #edf2e9,0 12px 28px rgba(22,57,35,.16)}
 #ecosystem .ab-orbit-unit>i{color:#e5a137;font-size:22px;width:32px;height:32px;margin-bottom:8px;background:transparent}
 @media(max-width:760px){#ecosystem .ab-orbit-unit>i{font-size:19px;width:28px;height:28px;margin-bottom:7px}#ecosystem .ab-orbit-center{border-width:3px}}
+</style><style id="ecosystem-option-b-radial-media-cards">
+/* ==========================================================================
+   OPTION B: RADIAL ORBIT WITH RICH MEDIA & TEXT CARDS
+   Preserves the circular orbit around "Clients" while expanding the 6 nodes
+   into illustrated horizontal cards with photography, specialty & value copy.
+   ========================================================================== */
+
+#about-main #ecosystem.ab-ecosystem {
+  background: #edf2e9 !important;
+  border-top: 1px solid #d5e0d0 !important;
+  border-bottom: 1px solid #d5e0d0 !important;
+  padding: clamp(78px, 8.5vw, 118px) 0 !important;
+}
+
+/* 1. Orbit Canvas Geometry (Desktop > 960px) */
+@media (min-width: 961px) {
+  #ecosystem .ab-orbit {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 1160px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1160 / 860 !important;
+    margin: 34px auto 46px !important;
+    display: block !important;
+  }
+
+  #ecosystem .ab-orbit:before,
+  #ecosystem .ab-orbit:after,
+  #ecosystem .ab-orbit-lines {
+    display: none !important;
+    content: none !important;
+  }
+
+  #ecosystem .ab-orbit-flow {
+    position: absolute !important;
+    inset: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+
+  /* Center Hub ("Clients") */
+  #ecosystem .ab-orbit-center {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 196px !important;
+    height: 196px !important;
+    aspect-ratio: 1 !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 35% 28%, #214d36 0%, #10291d 85%) !important;
+    border: 3px solid #e5a137 !important;
+    box-shadow:
+      0 0 0 8px #edf2e9,
+      0 0 0 9px rgba(47, 111, 72, 0.25),
+      0 22px 48px -12px rgba(16, 42, 29, 0.35) !important;
+    padding: 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    z-index: 2 !important;
+  }
+
+  #ecosystem .ab-orbit-center > span {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+  }
+
+  #ecosystem .ab-orbit-center p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11.5px !important;
+    line-height: 1.5 !important;
+    color: #d3e5d7 !important;
+    margin: 8px 0 0 !important;
+  }
+
+  /* 6 Radial Media Cards */
+  #ecosystem .ab-orbit-unit {
+    position: absolute !important;
+    transform: translate(-50%, -50%) !important;
+    width: 334px !important;
+    height: auto !important;
+    min-height: 116px !important;
+    aspect-ratio: auto !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    border: 1px solid #cad8c7 !important;
+    box-shadow:
+      0 4px 12px rgba(18, 48, 32, 0.05),
+      0 18px 38px -14px rgba(18, 48, 32, 0.14) !important;
+    padding: 12px 16px 12px 12px !important;
+    display: grid !important;
+    grid-template-columns: 86px minmax(0, 1fr) !important;
+    column-gap: 14px !important;
+    align-items: center !important;
+    text-align: left !important;
+    z-index: 3 !important;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease,
+      box-shadow 0.3s ease !important;
+  }
+
+  #ecosystem .ab-orbit-unit:hover {
+    transform: translate(-50%, -50%) translateY(-4px) !important;
+    border-color: #e5a137 !important;
+    box-shadow:
+      0 8px 20px rgba(229, 161, 55, 0.14),
+      0 24px 48px -12px rgba(18, 48, 32, 0.22) !important;
+  }
+
+  /* Exact Radial Coordinates on the 1160x880 Orbit */
+  #ecosystem .ab-orbit .unit-0 { left: 50% !important; top: 13% !important; }
+  #ecosystem .ab-orbit .unit-1 { left: 80.8% !important; top: 30% !important; }
+  #ecosystem .ab-orbit .unit-2 { left: 80.8% !important; top: 70% !important; }
+  #ecosystem .ab-orbit .unit-3 { left: 50% !important; top: 87% !important; }
+  #ecosystem .ab-orbit .unit-4 { left: 19.2% !important; top: 70% !important; }
+  #ecosystem .ab-orbit .unit-5 { left: 19.2% !important; top: 30% !important; }
+}
+
+/* 2. Card Internal Anatomy (Shared Across Viewports) */
+#ecosystem .ab-unit-thumb {
+  position: relative !important;
+  width: 86px !important;
+  height: 92px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background: #193829 !important;
+  flex-shrink: 0 !important;
+}
+
+#ecosystem .ab-unit-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+#ecosystem .ab-orbit-unit:hover .ab-unit-thumb img {
+  transform: scale(1.07) !important;
+}
+
+#ecosystem .ab-unit-badge {
+  position: absolute !important;
+  bottom: 6px !important;
+  right: 6px !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 7px !important;
+  background: #142f24 !important;
+  border: 1px solid rgba(229, 161, 55, 0.55) !important;
+  color: #e5a137 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 12px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28) !important;
+}
+
+#ecosystem .ab-unit-body {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+#ecosystem .ab-unit-top {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  margin-bottom: 3px !important;
+}
+
+#ecosystem .ab-orbit-unit h3 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+  color: #142f24 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  display: block !important;
+  text-align: left !important;
+}
+
+#ecosystem .ab-orbit-arrow {
+  position: static !important;
+  display: inline-block !important;
+  font-size: 13px !important;
+  color: #6b8875 !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.25s ease, color 0.25s ease !important;
+}
+
+#ecosystem .ab-orbit-unit:hover .ab-orbit-arrow {
+  transform: translate(2px, -2px) !important;
+  color: #e5a137 !important;
+}
+
+#ecosystem .ab-unit-sub {
+  display: block !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #2c6b45 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+#ecosystem .ab-orbit-unit p {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11.5px !important;
+  line-height: 1.45 !important;
+  color: #5b6b60 !important;
+  margin: 0 !important;
+  padding-top: 5px !important;
+  border-top: 1px solid #e7eee5 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  display: block !important;
+  text-align: left !important;
+}
+
+/* 3. Tablet & Mobile Responsive Layout (<= 960px) */
+@media (max-width: 960px) {
+  #ecosystem .ab-orbit {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    max-width: 720px !important;
+    margin: 28px auto 34px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  #ecosystem .ab-orbit-flow,
+  #ecosystem .ab-orbit-lines,
+  #ecosystem .ab-orbit:before,
+  #ecosystem .ab-orbit:after {
+    display: none !important;
+  }
+
+  #ecosystem .ab-orbit-center {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 176px !important;
+    height: 176px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 35% 28%, #214d36 0%, #10291d 85%) !important;
+    border: 3px solid #e5a137 !important;
+    margin-bottom: 10px !important;
+  }
+
+  #ecosystem .ab-orbit-unit {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    border: 1px solid #cad8c7 !important;
+    box-shadow: 0 8px 24px -10px rgba(18, 48, 32, 0.12) !important;
+    padding: 12px !important;
+    display: grid !important;
+    grid-template-columns: 78px minmax(0, 1fr) !important;
+    column-gap: 12px !important;
+    align-items: center !important;
+  }
+
+  #ecosystem .ab-unit-thumb {
+    width: 78px !important;
+    height: 86px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #ecosystem .ab-orbit {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 4. Bottom Promise — Refined Editorial Statement */
+#ecosystem .ab-eco-promise {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid #c5d3c0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  max-width: 780px !important;
+  margin: 44px auto 0 !important;
+  padding: 38px 20px 0 !important;
+  text-align: center !important;
+}
+
+#ecosystem .ab-eco-promise h3 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(22px, 2.4vw, 28px) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.02em !important;
+  color: #142f24 !important;
+  margin: 0 auto 14px !important;
+  max-width: 640px !important;
+}
+
+#ecosystem .ab-eco-promise p {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.85 !important;
+  color: #4f6156 !important;
+  margin: 0 auto !important;
+  max-width: 680px !important;
+}
+
+@media (max-width: 760px) {
+  #ecosystem .ab-eco-promise {
+    text-align: left !important;
+    padding: 28px 0 0 !important;
+  }
+  #ecosystem .ab-eco-promise h3,
+  #ecosystem .ab-eco-promise p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
 </style></head><body><header id="siteHeader">
 <div class="header-inner">
 <a aria-label="Crown Audit &amp; Advisory" class="logo" href="https://crown.com.vn/#top">
@@ -1184,7 +1535,38 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
 <i class="fa-solid fa-bars burger" id="burgerBtn"></i>
 </div>
 </div>
-</header><main id="about-main"><section class="ab-hero"><div class="container"><span class="ab-label">VỀ CROWN</span><div class="ab-hero-grid"><h1>Nền tảng quốc tế. Thấu hiểu Việt Nam. Đồng hành dài hạn.</h1><p>Crown Audit &amp; Advisory kết nối chuẩn mực quốc tế với thực tiễn Việt Nam, đồng hành cùng doanh nghiệp trên hành trình minh bạch, hội nhập và phát triển bền vững.</p></div><figure class="ab-city"><img class="" src="https://images.pexels.com/photos/5829484/pexels-photo-5829484.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Hanoi skyline at twilight" loading="lazy"></figure></div></section><section class="ab-section ab-origin" id="origins"><div class="container ab-split"><div class="ab-copy"><span class="ab-label">Khởi nguồn</span><h2>Từ những đồng nghiệp, đến một khát vọng chung.</h2><p>Crown được phát triển bởi những cựu kiểm toán viên từng làm việc cùng nhau trong lĩnh vực kiểm toán và tư vấn tại Deloitte Việt Nam. Nền tảng chuyên môn chung và sự tin cậy được vun đắp qua công việc là điểm khởi đầu của Crown.</p><p class="ab-origin-ambition">Chúng tôi thành lập Crown với khát vọng cung cấp chất lượng chuyên môn theo chuẩn mực quốc tế, cùng mức chi phí hợp lý với doanh nghiệp tại Việt Nam. Sự thấu hiểu thị trường nội địa giúp Crown chuyển hóa kinh nghiệm quốc tế thành cách tiếp cận phù hợp và thiết thực.</p></div><figure><img class="" src="https://images.pexels.com/photos/7964200/pexels-photo-7964200.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Professionals collaborating in an office" loading="lazy"></figure></div></section><section class="ab-section ab-purpose" id="vision-mission"><div class="container"><span class="ab-label">Tầm nhìn &amp; Sứ mệnh</span><h2>Định hướng rõ ràng. Giá trị thiết thực.</h2><div class="ab-purpose-grid"><article><h3>Tầm nhìn</h3><p>Trở thành nền tảng hàng đầu Việt Nam giúp doanh nghiệp tuân thủ hiệu quả, quản trị vững vàng và tiếp cận nguồn vốn với chi phí tối ưu.</p></article><article><h3>Sứ mệnh</h3><p>Đồng hành cùng doanh nghiệp nâng cao năng lực hội nhập và cạnh tranh quốc tế bằng cách kết nối chuẩn mực toàn cầu với lợi thế của Việt Nam.</p></article></div></div></section><section class="ab-section ab-partner" id="partnership"><div class="container"><div class="ab-split"><div><span class="ab-label">Sự đồng hành</span><h2>Không chỉ cung cấp dịch vụ. Cùng khách hàng đi xa hơn.</h2></div><div class="ab-copy"><p>Crown đồng hành cùng khách hàng xây dựng sự minh bạch, quản trị bằng con số và phong cách vận hành chuyên nghiệp. Từ kiểm toán đến tài chính, thuế và phát triển bền vững, chúng tôi kết nối các góc nhìn chuyên môn để hỗ trợ doanh nghiệp một cách toàn diện.</p></div></div><div class="ab-principles"><div><h3>Minh bạch làm nền tảng</h3></div><div><h3>Quản trị bằng con số</h3></div><div><h3>Chuyên nghiệp để phát triển</h3></div></div><p class="ab-note">Phạm vi phối hợp được xác định theo nhu cầu khách hàng và yêu cầu độc lập nghề nghiệp đối với từng dịch vụ.</p></div></section><section class="ab-section ab-values" id="values"><div class="container"><div class="ab-values-heading"><span class="ab-label">Giá trị cốt lõi</span><h2>Năm giá trị định hình cách Crown làm việc.</h2></div><div class="ab-values-list"><article><h3>Chuyên nghiệp</h3><p>Giữ vững chuẩn mực, làm việc có trách nhiệm và đặt chất lượng lên hàng đầu.</p></article><article><h3>Linh hoạt</h3><p>Thấu hiểu thực tế, điều chỉnh cách tiếp cận phù hợp với từng doanh nghiệp.</p></article><article><h3>Đồng hành</h3><p>Cùng khách hàng tháo gỡ khó khăn và phát triển lâu dài.</p></article><article><h3>Chia sẻ</h3><p>Chia sẻ kiến thức, kinh nghiệm và cơ hội để cùng tạo dựng giá trị.</p></article><article><h3>Đơn giản</h3><p>Làm rõ vấn đề phức tạp, đưa ra giải pháp dễ hiểu và dễ áp dụng.</p></article></div></div></section><section class="ab-section ab-ecosystem" id="ecosystem"><div class="container"><div class="ab-eco-head"><span class="ab-label">Hệ sinh thái chuyên môn</span><h2>Sáu năng lực kết nối. Một hành trình đồng hành.</h2><p>Crown là doanh nghiệp kiểm toán và tư vấn nội địa có hệ sinh thái đầy đủ, toàn diện để đồng hành cùng khách hàng. Sáu đơn vị thành viên kết nối năng lực kiểm toán, xây dựng, phát triển bền vững, thuế, tài chính và kế toán để đáp ứng nhu cầu ở từng giai đoạn phát triển.</p></div><div class="ab-orbit"><svg class="ab-orbit-flow" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><defs><marker id="orbit-flow-arrow-balanced" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M3 2 L9 6 L3 10" fill="none" stroke="#397b51" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><circle cx="400" cy="400" r="270" fill="none" stroke="#bacdbe" stroke-width="1.2"/><path d="M492.345,146.283 A270,270 0 0,1 535.000,166.173" fill="none" stroke="#397b51" stroke-width="1.8" marker-end="url(#orbit-flow-arrow-balanced)"/><path d="M665.898,353.115 A270,270 0 0,1 670.000,400.000" fill="none" stroke="#397b51" stroke-width="1.8" marker-end="url(#orbit-flow-arrow-balanced)"/><path d="M573.553,606.832 A270,270 0 0,1 535.000,633.827" fill="none" stroke="#397b51" stroke-width="1.8" marker-end="url(#orbit-flow-arrow-balanced)"/><path d="M307.655,653.717 A270,270 0 0,1 265.000,633.827" fill="none" stroke="#397b51" stroke-width="1.8" marker-end="url(#orbit-flow-arrow-balanced)"/><path d="M134.102,446.885 A270,270 0 0,1 130.000,400.000" fill="none" stroke="#397b51" stroke-width="1.8" marker-end="url(#orbit-flow-arrow-balanced)"/><path d="M226.447,193.168 A270,270 0 0,1 265.000,166.173" fill="none" stroke="#397b51" stroke-width="1.8" marker-end="url(#orbit-flow-arrow-balanced)"/></svg><svg class="ab-orbit-lines" viewBox="0 0 1100 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><circle cx="550" cy="350" r="270" fill="none" stroke="#b8cbbd" stroke-width="1.2"/><circle cx="550" cy="350" r="205" fill="none" stroke="#e1e8df" stroke-width="1" stroke-dasharray="3 8"/><line x1="550" y1="350" x2="550" y2="80" stroke="#d5dfd3" stroke-width="1"/><line x1="550" y1="350" x2="784" y2="215" stroke="#d5dfd3" stroke-width="1"/><line x1="550" y1="350" x2="784" y2="485" stroke="#d5dfd3" stroke-width="1"/><line x1="550" y1="350" x2="550" y2="620" stroke="#d5dfd3" stroke-width="1"/><line x1="550" y1="350" x2="316" y2="485" stroke="#d5dfd3" stroke-width="1"/><line x1="550" y1="350" x2="316" y2="215" stroke="#d5dfd3" stroke-width="1"/></svg><div class="ab-orbit-center"><span>Khách hàng</span><p>Ở trung tâm sự đồng hành</p></div><a class="ab-orbit-unit unit-0" href="https://audit.crown.com.vn"><i class="fa-solid fa-stamp" aria-hidden="true"></i><h3>Crown Audit</h3><p>Kiểm toán &amp; dịch vụ đảm bảo</p><span class="ab-orbit-arrow" aria-hidden="true">↗</span></a><a class="ab-orbit-unit unit-1" href="https://cons.crown.com.vn"><i class="fa-solid fa-building" aria-hidden="true"></i><h3>Crown Construction</h3><p>Kiểm toán &amp; quản lý dự án xây dựng</p><span class="ab-orbit-arrow" aria-hidden="true">↗</span></a><a class="ab-orbit-unit unit-2" href="https://esg.crown.com.vn"><i class="fa-solid fa-leaf" aria-hidden="true"></i><h3>Crown ESG</h3><p>Tư vấn ESG &amp; phát triển bền vững</p><span class="ab-orbit-arrow" aria-hidden="true">↗</span></a><a class="ab-orbit-unit unit-3" href="https://tax.crown.com.vn"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i><h3>Crown Tax</h3><p>Tư vấn thuế &amp; tuân thủ thuế</p><span class="ab-orbit-arrow" aria-hidden="true">↗</span></a><a class="ab-orbit-unit unit-4" href="https://fas.crown.com.vn"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><h3>Crown FAS</h3><p>Tư vấn tài chính &amp; giao dịch</p><span class="ab-orbit-arrow" aria-hidden="true">↗</span></a><a class="ab-orbit-unit unit-5" href="https://acc.crown.com.vn"><i class="fa-solid fa-calculator" aria-hidden="true"></i><h3>Crown Accounting</h3><p>Hệ thống kế toán &amp; kế toán quản trị</p><span class="ab-orbit-arrow" aria-hidden="true">↗</span></a></div><div class="ab-eco-promise"><h3>Đồng hành ở mọi giai đoạn, vững vàng trên nguyên tắc.</h3><p>Crown không từ chối khách hàng vì quy mô hay giai đoạn phát triển. Chúng tôi cung cấp dịch vụ phù hợp với từng nhu cầu, trên cơ sở tuân thủ chuẩn mực đạo đức nghề nghiệp, yêu cầu độc lập và các quy định của pháp luật.</p></div></div></section><section class="ab-section ab-clients" id="clients"><div class="container"><span class="ab-label">Khách hàng của Crown</span><h2>Hai xuất phát điểm. Cùng một hướng phát triển.</h2><div class="ab-client-grid"><article><span class="ab-client-no">VN</span><h3>Doanh nghiệp Việt Nam</h3><p>Dành cho doanh nghiệp theo đuổi tiêu chuẩn quốc tế, muốn nâng cao tính minh bạch và quản trị bằng con số để sẵn sàng cho giai đoạn phát triển tiếp theo.</p></article><article><span class="ab-client-no">FDI</span><h3>Doanh nghiệp FDI tại Việt Nam</h3><p>Dành cho doanh nghiệp muốn phát triển bền vững tại Việt Nam, cần một đối tác am hiểu địa phương để tháo gỡ rào cản, rút ngắn quá trình thích nghi và vững tâm trong hoạt động kinh doanh.</p></article></div></div></section><section class="ab-section ab-people" id="people"><div class="container ab-split"><figure><img class="" src="https://images.pexels.com/photos/7964235/pexels-photo-7964235.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Business colleagues discussing documents in an office" loading="lazy"></figure><div class="ab-copy"><span class="ab-label">Con người &amp; uy tín</span><h2>Năng lực nằm ở con người. Giá trị được giữ bằng uy tín.</h2><p>Crown đặc biệt coi trọng chất lượng nhân sự và uy tín nghề nghiệp. Chúng tôi lấy tiêu chuẩn quốc tế làm nền tảng, sự hiểu biết thị trường nội địa làm lợi thế và năng lực con người làm cốt lõi của chất lượng dịch vụ.</p><a class="ab-link" href="https://crown.com.vn/#team">Gặp gỡ đội ngũ lãnh đạo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></section><section class="ab-section ab-tech" id="technology"><div class="container ab-split"><div class="ab-copy"><span class="ab-label">Công nghệ &amp; đổi mới</span><h2>Chủ động xây dựng công nghệ. Nâng tầm năng lực kiểm toán.</h2><p>Crown tự xây dựng hệ thống phần mềm kiểm toán hiện đại, ứng dụng các tiến bộ của trí tuệ nhân tạo. Đây là một hướng đầu tư chiến lược nhằm kết hợp chất lượng nhân sự với công nghệ mới, nâng cao năng lực chuyên môn và cách thức cung cấp dịch vụ.</p></div><div class="ab-tech-visual" aria-label="People, software and AI"><div class="ab-tech-row"><h3>Chuyên môn con người</h3><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div><div class="ab-tech-row"><h3>Phần mềm do Crown phát triển</h3><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><div class="ab-tech-row"><h3>Ứng dụng trí tuệ nhân tạo</h3><i class="fa-solid fa-microchip" aria-hidden="true"></i></div></div></div></section><section class="ab-cta"><div class="container"><h2>Cùng bước tiếp trên hành trình phát triển.</h2><div><a class="ab-button" href="https://crown.com.vn/#contact">Trao đổi với Crown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="ab-link" href="https://crown.com.vn/career">Cơ hội nghề nghiệp <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></section></main><footer>
+</header><main id="about-main"><section class="ab-hero"><div class="container"><span class="ab-label">VỀ CROWN</span><div class="ab-hero-grid"><h1>Nền tảng quốc tế. Thấu hiểu Việt Nam. Đồng hành dài hạn.</h1><p>Crown Audit &amp; Advisory kết nối chuẩn mực quốc tế với thực tiễn Việt Nam, đồng hành cùng doanh nghiệp trên hành trình minh bạch, hội nhập và phát triển bền vững.</p></div><figure class="ab-city"><img class="" src="https://images.pexels.com/photos/5829484/pexels-photo-5829484.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Hanoi skyline at twilight" loading="lazy"></figure></div></section><section class="ab-section ab-origin" id="origins"><div class="container ab-split"><div class="ab-copy"><span class="ab-label">Khởi nguồn</span><h2>Từ những đồng nghiệp, đến một khát vọng chung.</h2><p>Crown được phát triển bởi những cựu kiểm toán viên từng làm việc cùng nhau trong lĩnh vực kiểm toán và tư vấn tại Deloitte Việt Nam. Nền tảng chuyên môn chung và sự tin cậy được vun đắp qua công việc là điểm khởi đầu của Crown.</p><p class="ab-origin-ambition">Chúng tôi thành lập Crown với khát vọng cung cấp chất lượng chuyên môn theo chuẩn mực quốc tế, cùng mức chi phí hợp lý với doanh nghiệp tại Việt Nam. Sự thấu hiểu thị trường nội địa giúp Crown chuyển hóa kinh nghiệm quốc tế thành cách tiếp cận phù hợp và thiết thực.</p></div><figure><img class="" src="https://images.pexels.com/photos/7964200/pexels-photo-7964200.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Professionals collaborating in an office" loading="lazy"></figure></div></section><section class="ab-section ab-purpose" id="vision-mission"><div class="container"><span class="ab-label">Tầm nhìn &amp; Sứ mệnh</span><h2>Định hướng rõ ràng. Giá trị thiết thực.</h2><div class="ab-purpose-grid"><article><h3>Tầm nhìn</h3><p>Trở thành nền tảng hàng đầu Việt Nam giúp doanh nghiệp tuân thủ hiệu quả, quản trị vững vàng và tiếp cận nguồn vốn với chi phí tối ưu.</p></article><article><h3>Sứ mệnh</h3><p>Đồng hành cùng doanh nghiệp nâng cao năng lực hội nhập và cạnh tranh quốc tế bằng cách kết nối chuẩn mực toàn cầu với lợi thế của Việt Nam.</p></article></div></div></section><section class="ab-section ab-partner" id="partnership"><div class="container"><div class="ab-split"><div><span class="ab-label">Sự đồng hành</span><h2>Không chỉ cung cấp dịch vụ. Cùng khách hàng đi xa hơn.</h2></div><div class="ab-copy"><p>Crown đồng hành cùng khách hàng xây dựng sự minh bạch, quản trị bằng con số và phong cách vận hành chuyên nghiệp. Từ kiểm toán đến tài chính, thuế và phát triển bền vững, chúng tôi kết nối các góc nhìn chuyên môn để hỗ trợ doanh nghiệp một cách toàn diện.</p></div></div><div class="ab-principles"><div><h3>Minh bạch làm nền tảng</h3></div><div><h3>Quản trị bằng con số</h3></div><div><h3>Chuyên nghiệp để phát triển</h3></div></div><p class="ab-note">Phạm vi phối hợp được xác định theo nhu cầu khách hàng và yêu cầu độc lập nghề nghiệp đối với từng dịch vụ.</p></div></section><section class="ab-section ab-values" id="values"><div class="container"><div class="ab-values-heading"><span class="ab-label">Giá trị cốt lõi</span><h2>Năm giá trị định hình cách Crown làm việc.</h2></div><div class="ab-values-list"><article><h3>Chuyên nghiệp</h3><p>Giữ vững chuẩn mực, làm việc có trách nhiệm và đặt chất lượng lên hàng đầu.</p></article><article><h3>Linh hoạt</h3><p>Thấu hiểu thực tế, điều chỉnh cách tiếp cận phù hợp với từng doanh nghiệp.</p></article><article><h3>Đồng hành</h3><p>Cùng khách hàng tháo gỡ khó khăn và phát triển lâu dài.</p></article><article><h3>Chia sẻ</h3><p>Chia sẻ kiến thức, kinh nghiệm và cơ hội để cùng tạo dựng giá trị.</p></article><article><h3>Đơn giản</h3><p>Làm rõ vấn đề phức tạp, đưa ra giải pháp dễ hiểu và dễ áp dụng.</p></article></div></div></section><section class="ab-section ab-ecosystem" id="ecosystem"><div class="container"><div class="ab-eco-head"><span class="ab-label">Hệ sinh thái chuyên môn</span><h2>Sáu năng lực kết nối. Một hành trình đồng hành.</h2><p>Crown là doanh nghiệp kiểm toán và tư vấn nội địa có hệ sinh thái đầy đủ, toàn diện để đồng hành cùng khách hàng. Sáu đơn vị thành viên kết nối năng lực kiểm toán, xây dựng, phát triển bền vững, thuế, tài chính và kế toán để đáp ứng nhu cầu ở từng giai đoạn phát triển.</p></div><div class="ab-orbit"><svg class="ab-orbit-flow" viewBox="0 0 1160 880" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="orbit-flow-arrow-b" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2 1.8 L7.5 5 L2 8.2" fill="none" stroke="#2f6f48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <radialGradient id="orbit-center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dce7d8" stop-opacity="0.75"/>
+      <stop offset="65%" stop-color="#e8efe4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#edf2e9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Ambient radial halo behind the center -->
+  <circle cx="580" cy="440" r="245" fill="url(#orbit-center-glow)"/>
+  <!-- Outer primary orbit ring -->
+  <circle cx="580" cy="440" r="310" fill="none" stroke="#b5c7b8" stroke-width="1.3"/>
+  <!-- Inner fine dashed astrological ring -->
+  <circle cx="580" cy="440" r="175" fill="none" stroke="#c2d1c4" stroke-width="1.1" stroke-dasharray="3 7"/>
+  <!-- 6 radial connection spokes from center to the 6 satellite cards -->
+  <line x1="580" y1="440" x2="580" y2="115" stroke="#c3d2c5" stroke-width="1.15" stroke-dasharray="2 5"/>
+  <line x1="580" y1="440" x2="936" y2="255" stroke="#c3d2c5" stroke-width="1.15" stroke-dasharray="2 5"/>
+  <line x1="580" y1="440" x2="936" y2="625" stroke="#c3d2c5" stroke-width="1.15" stroke-dasharray="2 5"/>
+  <line x1="580" y1="440" x2="580" y2="765" stroke="#c3d2c5" stroke-width="1.15" stroke-dasharray="2 5"/>
+  <line x1="580" y1="440" x2="224" y2="625" stroke="#c3d2c5" stroke-width="1.15" stroke-dasharray="2 5"/>
+  <line x1="580" y1="440" x2="224" y2="255" stroke="#c3d2c5" stroke-width="1.15" stroke-dasharray="2 5"/>
+  <!-- Directional flow arcs along the r=310 orbit between the 6 cards -->
+  <path d="M 712 159 A 310 310 0 0 1 778 201" fill="none" stroke="#2f6f48" stroke-width="1.6" marker-end="url(#orbit-flow-arrow-b)"/>
+  <path d="M 887 405 A 310 310 0 0 1 887 475" fill="none" stroke="#2f6f48" stroke-width="1.6" marker-end="url(#orbit-flow-arrow-b)"/>
+  <path d="M 778 679 A 310 310 0 0 1 712 721" fill="none" stroke="#2f6f48" stroke-width="1.6" marker-end="url(#orbit-flow-arrow-b)"/>
+  <path d="M 448 721 A 310 310 0 0 1 382 679" fill="none" stroke="#2f6f48" stroke-width="1.6" marker-end="url(#orbit-flow-arrow-b)"/>
+  <path d="M 273 475 A 310 310 0 0 1 273 405" fill="none" stroke="#2f6f48" stroke-width="1.6" marker-end="url(#orbit-flow-arrow-b)"/>
+  <path d="M 382 201 A 310 310 0 0 1 448 159" fill="none" stroke="#2f6f48" stroke-width="1.6" marker-end="url(#orbit-flow-arrow-b)"/>
+</svg><div class="ab-orbit-center"><span>Khách hàng</span><p>Ở trung tâm sự đồng hành</p></div><a class="ab-orbit-unit unit-0" href="https://audit.crown.com.vn"><div class="ab-unit-thumb"><img src="https://images.pexels.com/photos/33175673/pexels-photo-33175673.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Crown Audit" loading="lazy"/><span class="ab-unit-badge"><i class="fa-solid fa-stamp" aria-hidden="true"></i></span></div><div class="ab-unit-body"><div class="ab-unit-top"><h3>Crown Audit</h3><span class="ab-orbit-arrow" aria-hidden="true">↗</span></div><span class="ab-unit-sub">Kiểm toán &amp; dịch vụ đảm bảo</span><p>Minh bạch báo cáo, củng cố niềm tin</p></div></a><a class="ab-orbit-unit unit-1" href="https://cons.crown.com.vn"><div class="ab-unit-thumb"><img src="https://images.pexels.com/photos/3862628/pexels-photo-3862628.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Crown Construction" loading="lazy"/><span class="ab-unit-badge"><i class="fa-solid fa-building" aria-hidden="true"></i></span></div><div class="ab-unit-body"><div class="ab-unit-top"><h3>Crown Construction</h3><span class="ab-orbit-arrow" aria-hidden="true">↗</span></div><span class="ab-unit-sub">Kiểm toán &amp; quản lý dự án xây dựng</span><p>Kiểm soát chi phí, minh bạch vốn đầu tư</p></div></a><a class="ab-orbit-unit unit-2" href="https://esg.crown.com.vn"><div class="ab-unit-thumb"><img src="https://images.pexels.com/photos/14776867/pexels-photo-14776867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Crown ESG" loading="lazy"/><span class="ab-unit-badge"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span></div><div class="ab-unit-body"><div class="ab-unit-top"><h3>Crown ESG</h3><span class="ab-orbit-arrow" aria-hidden="true">↗</span></div><span class="ab-unit-sub">Tư vấn ESG &amp; phát triển bền vững</span><p>Rõ lộ trình ESG, sẵn sàng chuyển đổi xanh</p></div></a><a class="ab-orbit-unit unit-3" href="https://tax.crown.com.vn"><div class="ab-unit-thumb"><img src="https://images.pexels.com/photos/7821934/pexels-photo-7821934.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Crown Tax" loading="lazy"/><span class="ab-unit-badge"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span></div><div class="ab-unit-body"><div class="ab-unit-top"><h3>Crown Tax</h3><span class="ab-orbit-arrow" aria-hidden="true">↗</span></div><span class="ab-unit-sub">Tư vấn thuế &amp; tuân thủ thuế</span><p>Chủ động nghĩa vụ thuế, kiểm soát rủi ro</p></div></a><a class="ab-orbit-unit unit-4" href="https://fas.crown.com.vn"><div class="ab-unit-thumb"><img src="https://images.pexels.com/photos/7876655/pexels-photo-7876655.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Crown FAS" loading="lazy"/><span class="ab-unit-badge"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span></div><div class="ab-unit-body"><div class="ab-unit-top"><h3>Crown FAS</h3><span class="ab-orbit-arrow" aria-hidden="true">↗</span></div><span class="ab-unit-sub">Tư vấn tài chính &amp; giao dịch</span><p>Rõ giá trị doanh nghiệp, vững quyết định vốn</p></div></a><a class="ab-orbit-unit unit-5" href="https://acc.crown.com.vn"><div class="ab-unit-thumb"><img src="https://images.pexels.com/photos/6779226/pexels-photo-6779226.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Crown Accounting" loading="lazy"/><span class="ab-unit-badge"><i class="fa-solid fa-calculator" aria-hidden="true"></i></span></div><div class="ab-unit-body"><div class="ab-unit-top"><h3>Crown Accounting</h3><span class="ab-orbit-arrow" aria-hidden="true">↗</span></div><span class="ab-unit-sub">Hệ thống kế toán &amp; kế toán quản trị</span><p>Vững hệ thống kế toán, rõ số liệu điều hành</p></div></a></div><div class="ab-eco-promise"><h3>Đồng hành ở mọi giai đoạn, vững vàng trên nguyên tắc.</h3><p>Crown không từ chối khách hàng vì quy mô hay giai đoạn phát triển. Chúng tôi cung cấp dịch vụ phù hợp với từng nhu cầu, trên cơ sở tuân thủ chuẩn mực đạo đức nghề nghiệp, yêu cầu độc lập và các quy định của pháp luật.</p></div></div></section><section class="ab-section ab-clients" id="clients"><div class="container"><span class="ab-label">Khách hàng của Crown</span><h2>Hai xuất phát điểm. Cùng một hướng phát triển.</h2><div class="ab-client-grid"><article><span class="ab-client-no">VN</span><h3>Doanh nghiệp Việt Nam</h3><p>Dành cho doanh nghiệp theo đuổi tiêu chuẩn quốc tế, muốn nâng cao tính minh bạch và quản trị bằng con số để sẵn sàng cho giai đoạn phát triển tiếp theo.</p></article><article><span class="ab-client-no">FDI</span><h3>Doanh nghiệp FDI tại Việt Nam</h3><p>Dành cho doanh nghiệp muốn phát triển bền vững tại Việt Nam, cần một đối tác am hiểu địa phương để tháo gỡ rào cản, rút ngắn quá trình thích nghi và vững tâm trong hoạt động kinh doanh.</p></article></div></div></section><section class="ab-section ab-people" id="people"><div class="container ab-split"><figure><img class="" src="https://images.pexels.com/photos/7964235/pexels-photo-7964235.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Business colleagues discussing documents in an office" loading="lazy"></figure><div class="ab-copy"><span class="ab-label">Con người &amp; uy tín</span><h2>Năng lực nằm ở con người. Giá trị được giữ bằng uy tín.</h2><p>Crown đặc biệt coi trọng chất lượng nhân sự và uy tín nghề nghiệp. Chúng tôi lấy tiêu chuẩn quốc tế làm nền tảng, sự hiểu biết thị trường nội địa làm lợi thế và năng lực con người làm cốt lõi của chất lượng dịch vụ.</p><a class="ab-link" href="https://crown.com.vn/#team">Gặp gỡ đội ngũ lãnh đạo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></section><section class="ab-section ab-tech" id="technology"><div class="container ab-split"><div class="ab-copy"><span class="ab-label">Công nghệ &amp; đổi mới</span><h2>Chủ động xây dựng công nghệ. Nâng tầm năng lực kiểm toán.</h2><p>Crown tự xây dựng hệ thống phần mềm kiểm toán hiện đại, ứng dụng các tiến bộ của trí tuệ nhân tạo. Đây là một hướng đầu tư chiến lược nhằm kết hợp chất lượng nhân sự với công nghệ mới, nâng cao năng lực chuyên môn và cách thức cung cấp dịch vụ.</p></div><div class="ab-tech-visual" aria-label="People, software and AI"><div class="ab-tech-row"><h3>Chuyên môn con người</h3><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div><div class="ab-tech-row"><h3>Phần mềm do Crown phát triển</h3><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><div class="ab-tech-row"><h3>Ứng dụng trí tuệ nhân tạo</h3><i class="fa-solid fa-microchip" aria-hidden="true"></i></div></div></div></section><section class="ab-cta"><div class="container"><h2>Cùng bước tiếp trên hành trình phát triển.</h2><div><a class="ab-button" href="https://crown.com.vn/#contact">Trao đổi với Crown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="ab-link" href="https://crown.com.vn/career">Cơ hội nghề nghiệp <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></div></section></main><footer>
 <div class="container">
 <div class="footer-grid">
 <div>
