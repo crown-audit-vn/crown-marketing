@@ -36,6 +36,10 @@ function copyBrandToSite(siteDir, brandFiles) {
     }
     copyFileSync(src, join(assetsDir, name));
   }
+  const favicon = join(assetsDir, "crown-favicon.png");
+  if (existsSync(favicon)) {
+    copyFileSync(favicon, join(siteDir, "favicon.ico"));
+  }
 }
 
 /**
