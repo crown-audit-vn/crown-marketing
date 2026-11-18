@@ -4,7 +4,9 @@
   "description": "Static marketing sites for Crown — one Vercel project per subdomain",
   "scripts": {
     "dev": "node scripts/dev-help.mjs",
-    "dev:www": "serve sites/www -l 5000",
+    "dev:www": "node scripts/dev-www.mjs",
+    "dev:www:static": "serve sites/www -l 5000",
+    "dev:www:vercel": "npx vercel dev sites/www --listen 5000",
     "dev:audit": "serve sites/audit -l 5001",
     "dev:cons": "serve sites/cons -l 5002",
     "dev:acc": "serve sites/acc -l 5003",
