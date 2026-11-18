@@ -1,10 +1,18 @@
 /**
- * Proxy: www form → backend POST /api/public/consultation-leads
- * Env: CONSULTATION_LEADS_API_URL, CONSULTATION_LEADS_API_TOKEN (Vercel / .env)
+ * Central proxy: all Crown marketing sites → backend POST /api/public/consultation-leads
+ * Env: CONSULTATION_LEADS_API_URL, CONSULTATION_LEADS_API_TOKEN (Vercel project www only)
  */
+const { applyConsultationCors } = require("./consultation-cors");
+
 module.exports = async function handler(req, res) {
+  applyConsultationCors(req, res);
+
+  if (req.method === "OPTIONS") {
+    return res.status(204).end();
+  }
+
   if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+    res.setHeader("Allow", "POST, OPTIONS");
     return res.status(405).json({ error: "Method not allowed" });
   }
 

@@ -1379,7 +1379,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 
 </div>
-<form class="contact-form" data-mail-purpose="consultation" id="tuvanForm">
+<form class="contact-form" data-mail-purpose="consultation" id="tuvanForm" data-source-site="cons.crown.com.vn">
 <h3>Request a free consultation</h3>
 <div class="row">
 <input placeholder="Full name" required type="text">
@@ -1729,23 +1729,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 })();
 
 </script>
-<script id="crown-cons-contact-mail">(function(){
- document.querySelectorAll('form[data-mail-purpose]').forEach(function(form){
-  form.addEventListener('submit',function(ev){
-   ev.preventDefault();if(form.reportValidity && !form.reportValidity())return;
-   var purpose=form.dataset.mailPurpose || 'consultation';
-   var subjects={consultation:'Crown Construction – Construction audit consultation',checklist:'Crown Construction – Construction project checklist request',newsletter:'Crown Construction – Newsletter signup'};
-   var fields=[];
-   form.querySelectorAll('input,select,textarea').forEach(function(input){
-    var value=(input.value||'').trim();if(!value)return;
-    var label=input.getAttribute('placeholder')||input.getAttribute('aria-label')||input.name||input.id||'Field';
-    fields.push(label+': '+value);
-   });
-   var body=fields.join('\n')+'\n\nSent from Crown Construction website';
-   window.location.href='mailto:info@crown.com.vn?subject='+encodeURIComponent(subjects[purpose]||subjects.consultation)+'&body='+encodeURIComponent(body);
-  });
- });
-})();</script><script id="crown-team-member-modal">
+<script id="crown-team-member-modal">
 (function(){
   const modal=document.getElementById('teamMemberModal');
   const closeBtn=document.getElementById('teamModalCloseBtn');
@@ -1822,5 +1806,47 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
+<script src="/assets/consultation-leads-client.js"></script>
+<script id="crown-site-contact-forms">(function(){
+document.addEventListener('DOMContentLoaded',function(){
+  var SOURCE_SITE="cons.crown.com.vn";
+  function mailPurpose(form){
+    var purpose=form.getAttribute('data-mail-purpose')||'consultation';
+    var lang=(document.documentElement.lang||'vi').slice(0,2)==='en'?'en':'vi';
+    var values=[];
+    Array.prototype.forEach.call(form.querySelectorAll('input,select,textarea'),function(el){
+      var value=(el.value||'').trim();if(!value)return;
+      var key=el.getAttribute('placeholder')||el.getAttribute('aria-label')||el.name||el.id||'Field';
+      values.push(key+': '+value);
+    });
+    var subj='Crown — '+purpose;
+    var body=values.join('\n')+'\n\nSent from '+SOURCE_SITE;
+    window.location.href='mailto:info@crown.com.vn?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  }
+  function isConsultationForm(form){
+    if(form.id==='contactForm'||form.id==='tuvanForm')return true;
+    return form.getAttribute('data-mail-purpose')==='consultation';
+  }
+  function onSubmit(ev){
+    var form=ev.currentTarget;
+    if(isConsultationForm(form)){
+      ev.preventDefault();
+      if(!window.CrownConsultationLeads)return;
+      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE});
+      return;
+    }
+    if(form.hasAttribute('data-mail-purpose')){
+      ev.preventDefault();
+      if(form.reportValidity&&!form.reportValidity())return;
+      mailPurpose(form);
+    }
+  }
+  var selector='#tuvanForm,form[data-mail-purpose]';
+  document.querySelectorAll(selector).forEach(function(form){
+    form.removeAttribute('onsubmit');
+    form.addEventListener('submit',onSubmit);
+  });
+});
+})();</script>
 </body>
 </html>

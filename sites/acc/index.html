@@ -1356,7 +1356,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   <a class="btn accounting-zalo-action" href="https://zalo.me/0862231919" target="_blank" rel="noopener noreferrer"><span class="accounting-zalo-symbol" aria-hidden="true">Z</span><span>Chat on Zalo</span></a>
 </div>
 </div>
-<form class="contact-form" data-mail-purpose="consultation" id="tuvanForm">
+<form class="contact-form" data-mail-purpose="consultation" id="tuvanForm" data-source-site="acc.crown.com.vn">
 <h3>Request a free consultation</h3>
 <div class="row">
 <input placeholder="Full name" required="" type="text"/>
@@ -1717,34 +1717,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 })();
 
 </script>
-<script id="crown-accounting-email-contact">
-(function(){
-  function attach(form){
-    form.addEventListener('submit',function(ev){
-      ev.preventDefault();
-      if(form.reportValidity&&!form.reportValidity())return;
-      const purpose=form.getAttribute('data-mail-purpose')||'consultation';
-      const lang=document.documentElement.lang||'en';
-      const labels={
-        consultation:{en:'Crown Accounting — consultation request',vi:'Yêu cầu tư vấn Crown Accounting'},
-        checklist:{en:'Crown Accounting — checklist request',vi:'Yêu cầu checklist kế toán Crown'},
-        newsletter:{en:'Crown Accounting — newsletter request',vi:'Đăng ký thông tin từ Crown Accounting'}
-      };
-      const subj=(labels[purpose]||labels.consultation)[lang]||(labels[purpose]||labels.consultation).en;
-      const values=[];
-      Array.from(form.querySelectorAll('input,select,textarea')).forEach(function(el){
-        const value=(el.value||'').trim();
-        if(!value)return;
-        const key=el.getAttribute('placeholder')||el.getAttribute('aria-label')||el.name||el.id||'Field';
-        values.push(key+': '+value);
-      });
-      const body=values.join('\n')+'\n\nSent from Crown Accounting website';
-      window.location.href='mailto:info@crown.com.vn?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
-    });
-  }
-  document.querySelectorAll('form[data-mail-purpose]').forEach(attach);
-})();
-</script>
+
 <script id="crown-team-member-modal">
 (function(){
   const modal=document.getElementById('teamMemberModal');
@@ -1822,5 +1795,47 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
+<script src="/assets/consultation-leads-client.js"></script>
+<script id="crown-site-contact-forms">(function(){
+document.addEventListener('DOMContentLoaded',function(){
+  var SOURCE_SITE="acc.crown.com.vn";
+  function mailPurpose(form){
+    var purpose=form.getAttribute('data-mail-purpose')||'consultation';
+    var lang=(document.documentElement.lang||'vi').slice(0,2)==='en'?'en':'vi';
+    var values=[];
+    Array.prototype.forEach.call(form.querySelectorAll('input,select,textarea'),function(el){
+      var value=(el.value||'').trim();if(!value)return;
+      var key=el.getAttribute('placeholder')||el.getAttribute('aria-label')||el.name||el.id||'Field';
+      values.push(key+': '+value);
+    });
+    var subj='Crown — '+purpose;
+    var body=values.join('\n')+'\n\nSent from '+SOURCE_SITE;
+    window.location.href='mailto:info@crown.com.vn?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  }
+  function isConsultationForm(form){
+    if(form.id==='contactForm'||form.id==='tuvanForm')return true;
+    return form.getAttribute('data-mail-purpose')==='consultation';
+  }
+  function onSubmit(ev){
+    var form=ev.currentTarget;
+    if(isConsultationForm(form)){
+      ev.preventDefault();
+      if(!window.CrownConsultationLeads)return;
+      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE});
+      return;
+    }
+    if(form.hasAttribute('data-mail-purpose')){
+      ev.preventDefault();
+      if(form.reportValidity&&!form.reportValidity())return;
+      mailPurpose(form);
+    }
+  }
+  var selector='#tuvanForm,form[data-mail-purpose]';
+  document.querySelectorAll(selector).forEach(function(form){
+    form.removeAttribute('onsubmit');
+    form.addEventListener('submit',onSubmit);
+  });
+});
+})();</script>
 </body>
 </html>

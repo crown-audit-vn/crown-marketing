@@ -21,6 +21,11 @@ const consultationLeads = require(resolve(
   "api",
   "consultation-leads.js"
 ));
+const { applyConsultationCors } = require(resolve(
+  wwwDir,
+  "api",
+  "consultation-cors.js"
+));
 
 function loadDotEnv(filePath) {
   if (!existsSync(filePath)) return;
@@ -96,11 +101,9 @@ const server = createServer(async (req, res) => {
   if (path === "/api/consultation-leads") {
     const vercelRes = toVercelResponse(res);
     if (req.method === "OPTIONS") {
-      res.writeHead(204, {
-        Allow: "POST, OPTIONS",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-      });
+      applyConsultationCors(req, res);
+      res.setHeader("Allow", "POST, OPTIONS");
+      res.writeHead(204);
       res.end();
       return;
     }

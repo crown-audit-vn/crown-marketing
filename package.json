@@ -30,6 +30,7 @@
     "release:preview": "node scripts/deploy-all.mjs --preview",
     "sync:brand": "node scripts/sync-brand-assets.mjs",
     "sync:team-modal": "node scripts/patch-team-member-modal.mjs",
+    "sync:consultation": "node scripts/sync-consultation-leads.mjs",
     "sync:images": "node scripts/extract-data-uri-images.mjs all",
     "locale:build": "node scripts/prerender-locale.mjs all",
     "seo:apply": "node scripts/prerender-locale.mjs all && node scripts/apply-seo.mjs all",
