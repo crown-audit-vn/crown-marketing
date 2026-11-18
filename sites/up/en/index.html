@@ -1005,6 +1005,80 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid #e2792
   a,.btn,.quick-contact-card a,.phone-ic,.zalo-ic,.band img{transition:none!important}
 }
 </style>
+
+
+<style id="crown-enquiry-modals">
+body.team-modal-open{overflow:hidden}
+.team-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:clamp(18px,4vw,36px)}
+.team-modal[hidden]{display:none!important}
+.team-modal__backdrop{position:absolute;inset:0;background:linear-gradient(165deg,rgba(8,22,17,.72),rgba(14,40,31,.68));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0}
+.team-modal:not([hidden]) .team-modal__backdrop{animation:teamModalBackdrop .38s ease forwards}
+.team-modal__dialog{position:relative;z-index:1;display:flex;flex-direction:column;width:min(100%,920px);max-height:min(90vh,760px);overflow:hidden;background:#f8faf7;border-radius:14px;box-shadow:0 32px 80px rgba(8,24,18,.34),0 0 0 1px rgba(255,255,255,.06) inset;opacity:0;transform:translateY(18px) scale(.985)}
+.team-modal:not([hidden]) .team-modal__dialog{animation:teamModalPanel .46s cubic-bezier(.22,1,.36,1) forwards}
+.team-modal__close{position:absolute;top:16px;right:16px;z-index:3;width:42px;height:42px;border:1px solid rgba(255,255,255,.42);border-radius:50%;background:rgba(12,32,24,.42);backdrop-filter:blur(8px);color:#fff;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.team-modal__close:hover{background:rgba(12,32,24,.62);border-color:rgba(255,255,255,.65);transform:scale(1.04)}
+.team-modal__close:focus-visible{outline:2px solid #e5a137;outline-offset:3px}
+.team-modal__layout{display:grid;grid-template-columns:minmax(240px,.92fr) 1.08fr;min-height:min(72vh,560px);max-height:min(90vh,760px)}
+.team-modal__visual{position:relative;min-height:280px;background:#e8ede9;overflow:hidden}
+.team-modal__photo{position:absolute;inset:0;background-size:cover;background-position:center 12%;background-color:#dfe6e1}
+.team-modal__photo-vignette{position:absolute;inset:0;background:linear-gradient(195deg,rgba(12,28,22,.04) 18%,rgba(12,28,22,.55) 100%);pointer-events:none}
+.team-modal__body{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:clamp(28px,4vw,52px) clamp(26px,3.6vw,48px);background:linear-gradient(180deg,#fcfdfb 0%,#f3f6f2 100%)}
+.team-modal__eyebrow{margin:0 0 14px;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#3d7a5c}
+.team-modal__eyebrow::after{content:"";display:block;width:36px;height:2px;margin-top:12px;background:linear-gradient(90deg,#d99227,#e5a137);border-radius:2px}
+.team-modal__body h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.2vw,38px);line-height:1.14;font-weight:600;color:#152a21;margin:0 0 12px;letter-spacing:-.03em}
+.team-modal__role{display:block;font-size:12.5px;line-height:1.55;color:#2f6849;font-weight:650;letter-spacing:.02em;margin-bottom:22px;max-width:36ch}
+.team-modal__copy{display:flex;flex-direction:column;gap:18px}
+.team-modal__desc{margin:0;font-size:15.5px;line-height:1.82;color:#4a5c52;max-width:42ch}
+.team-modal__cred{margin:0;padding:16px 18px;font-size:13px;line-height:1.78;color:#5f6d64;background:rgba(255,255,255,.72);border:1px solid rgba(20,53,39,.08);border-left:3px solid #d99227;border-radius:0 8px 8px 0;box-shadow:0 6px 18px rgba(20,53,39,.04)}
+@media(max-width:720px){
+  .team-modal__layout{grid-template-columns:1fr;grid-template-rows:auto 1fr;min-height:0;max-height:min(92vh,820px);overflow-y:auto}
+  .team-modal__visual{min-height:min(42vh,320px)}
+  .team-modal__body{padding:28px 22px 32px}
+  .team-modal__desc,.team-modal__role{max-width:none}
+  .team-modal__close{top:12px;right:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .team-modal:not([hidden]) .team-modal__backdrop,.team-modal:not([hidden]) .team-modal__dialog{animation:none;opacity:1;transform:none}
+}
+.enquiry-success-modal{z-index:1250}
+.enquiry-success-modal .enquiry-success-dialog{width:min(100%,440px);max-height:none;padding:clamp(32px,5vw,44px) clamp(28px,4vw,40px) clamp(28px,4vw,36px);text-align:center;align-items:center}
+.enquiry-success-modal .enquiry-success-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e8f5ee,#d4ebe0);color:#2f8c55;font-size:28px;box-shadow:0 8px 24px rgba(47,140,85,.18)}
+.enquiry-success-modal .enquiry-success-dialog h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.4vw,26px);margin:0 0 12px;color:#152a21;line-height:1.2}
+.enquiry-success-modal .enquiry-success-message{margin:0 0 24px;font-size:15px;line-height:1.75;color:#4a5c52}
+.enquiry-success-modal .enquiry-success-dialog .btn{width:100%;max-width:280px;margin:0 auto}
+.enquiry-success-modal .team-modal__close{top:12px;right:12px;background:rgba(12,32,24,.1);color:#152a21;border-color:rgba(12,32,24,.12)}
+.enquiry-error-modal{z-index:1250}
+.enquiry-error-modal .enquiry-error-dialog{width:min(100%,480px);max-height:none;padding:clamp(32px,5vw,44px) clamp(28px,4vw,40px) clamp(28px,4vw,36px);text-align:center;align-items:center}
+.enquiry-error-modal .enquiry-error-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#fdf0ee,#f5ddd9);color:#c44b3a;font-size:28px;box-shadow:0 8px 24px rgba(196,75,58,.16)}
+.enquiry-error-modal .enquiry-error-dialog h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.4vw,26px);margin:0 0 12px;color:#152a21;line-height:1.2}
+.enquiry-error-modal .enquiry-error-message{margin:0 0 20px;font-size:15px;line-height:1.75;color:#4a5c52}
+.enquiry-error-modal .enquiry-error-contacts{display:flex;flex-direction:column;gap:10px;margin:0 0 24px;width:100%;max-width:320px;text-align:left}
+.enquiry-error-modal .enquiry-error-contacts a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#f5f5f0;color:#204d36;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.enquiry-error-modal .enquiry-error-contacts a:hover{background:#e8efe9;color:#2f8c55}
+.enquiry-error-modal .enquiry-error-contacts a i{width:18px;text-align:center;color:#2f8c55;flex-shrink:0}
+.enquiry-error-modal .enquiry-error-dialog .btn{width:100%;max-width:280px;margin:0 auto}
+.enquiry-error-modal .team-modal__close{top:12px;right:12px;background:rgba(12,32,24,.1);color:#152a21;border-color:rgba(12,32,24,.12)}
+@keyframes teamModalBackdrop{to{opacity:1}}
+@keyframes teamModalPanel{to{opacity:1;transform:none}}
+.enquiry-success-modal{z-index:1250}
+.enquiry-success-modal .enquiry-success-dialog{width:min(100%,440px);max-height:none;padding:clamp(32px,5vw,44px) clamp(28px,4vw,40px) clamp(28px,4vw,36px);text-align:center;align-items:center}
+.enquiry-success-modal .enquiry-success-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e8f5ee,#d4ebe0);color:#2f8c55;font-size:28px;box-shadow:0 8px 24px rgba(47,140,85,.18)}
+.enquiry-success-modal .enquiry-success-dialog h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.4vw,26px);margin:0 0 12px;color:#152a21;line-height:1.2}
+.enquiry-success-modal .enquiry-success-message{margin:0 0 24px;font-size:15px;line-height:1.75;color:#4a5c52}
+.enquiry-success-modal .enquiry-success-dialog .btn{width:100%;max-width:280px;margin:0 auto}
+.enquiry-success-modal .team-modal__close{top:12px;right:12px;background:rgba(12,32,24,.1);color:#152a21;border-color:rgba(12,32,24,.12)}
+.enquiry-error-modal{z-index:1250}
+.enquiry-error-modal .enquiry-error-dialog{width:min(100%,480px);max-height:none;padding:clamp(32px,5vw,44px) clamp(28px,4vw,40px) clamp(28px,4vw,36px);text-align:center;align-items:center}
+.enquiry-error-modal .enquiry-error-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#fdf0ee,#f5ddd9);color:#c44b3a;font-size:28px;box-shadow:0 8px 24px rgba(196,75,58,.16)}
+.enquiry-error-modal .enquiry-error-dialog h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.4vw,26px);margin:0 0 12px;color:#152a21;line-height:1.2}
+.enquiry-error-modal .enquiry-error-message{margin:0 0 20px;font-size:15px;line-height:1.75;color:#4a5c52}
+.enquiry-error-modal .enquiry-error-contacts{display:flex;flex-direction:column;gap:10px;margin:0 0 24px;width:100%;max-width:320px;text-align:left}
+.enquiry-error-modal .enquiry-error-contacts a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#f5f5f0;color:#204d36;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.enquiry-error-modal .enquiry-error-contacts a:hover{background:#e8efe9;color:#2f8c55}
+.enquiry-error-modal .enquiry-error-contacts a i{width:18px;text-align:center;color:#2f8c55;flex-shrink:0}
+.enquiry-error-modal .enquiry-error-dialog .btn{width:100%;max-width:280px;margin:0 auto}
+.enquiry-error-modal .team-modal__close{top:12px;right:12px;background:rgba(12,32,24,.1);color:#152a21;border-color:rgba(12,32,24,.12)}
+</style>
 </head>
 <body class="lang-en">
 <header id="siteHeader">
@@ -1462,6 +1536,31 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid #e2792
 </div>
 </div>
 </footer>
+<div class="team-modal enquiry-success-modal" hidden id="enquirySuccessModal">
+<div aria-hidden="true" class="team-modal__backdrop" data-enquiry-success-close=""></div>
+<div aria-labelledby="enquirySuccessTitle" aria-modal="true" class="team-modal__dialog enquiry-success-dialog" role="dialog">
+<button aria-label="Đóng" class="team-modal__close" data-enquiry-success-close="" id="enquirySuccessCloseBtn" type="button"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+<div aria-hidden="true" class="enquiry-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+<h3 id="enquirySuccessTitle">Gửi thông tin thành công</h3>
+<p class="enquiry-success-message" id="enquirySuccessMessage">Cảm ơn bạn! Crown sẽ liên hệ lại với bạn trong thời gian sớm nhất.</p>
+<button class="btn btn-gold" data-enquiry-success-close="" id="enquirySuccessOkBtn" type="button">Đã hiểu</button>
+</div>
+</div>
+<div class="team-modal enquiry-error-modal" hidden id="enquiryErrorModal">
+<div aria-hidden="true" class="team-modal__backdrop" data-enquiry-error-close=""></div>
+<div aria-labelledby="enquiryErrorTitle" aria-modal="true" class="team-modal__dialog enquiry-error-dialog" role="dialog">
+<button aria-label="Đóng" class="team-modal__close" data-enquiry-error-close="" id="enquiryErrorCloseBtn" type="button"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+<div aria-hidden="true" class="enquiry-error-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+<h3 id="enquiryErrorTitle">Không gửi được yêu cầu</h3>
+<p class="enquiry-error-message" id="enquiryErrorMessage">Thông tin chưa gửi thành công tới hệ thống. Vui lòng liên hệ Crown trực tiếp qua điện thoại hoặc email.</p>
+<div class="enquiry-error-contacts" id="enquiryErrorContacts">
+<a href="tel:0904501512" id="enquiryErrorPhoneHn"><i aria-hidden="true" class="fa-solid fa-phone"></i><span>Hotline Hà Nội: 0904 501 512</span></a>
+<a href="tel:0948737868" id="enquiryErrorPhoneHcm"><i aria-hidden="true" class="fa-solid fa-phone"></i><span>Hotline TP.HCM: 0948 737 868</span></a>
+<a href="mailto:info@crown.com.vn" id="enquiryErrorEmail"><i aria-hidden="true" class="fa-solid fa-envelope"></i><span>info@crown.com.vn</span></a>
+</div>
+<button class="btn btn-gold" data-enquiry-error-close="" id="enquiryErrorOkBtn" type="button">Đóng</button>
+</div>
+</div>
 <div class="fab-stack">
 <a aria-label="Chat qua Messenger" class="fab-btn fab-messenger" href="https://m.me/tamdoanhgroup" rel="noopener" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
 <a aria-label="Chat qua Zalo" class="fab-btn fab-zalo" href="https://zalo.me/0862231919" rel="noopener" target="_blank"><span>Zalo</span></a>
@@ -1534,7 +1633,8 @@ document.addEventListener('DOMContentLoaded',function(){
     if(isConsultationForm(form)){
       ev.preventDefault();
       if(!window.CrownConsultationLeads)return;
-      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE});
+      var lang=(document.documentElement.lang||'vi').slice(0,2)==='en'?'en':'vi';
+      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE,lang:lang});
       return;
     }
     if(form.hasAttribute('data-mail-purpose')){

@@ -2233,7 +2233,8 @@ document.addEventListener('DOMContentLoaded',function(){
     if(isConsultationForm(form)){
       ev.preventDefault();
       if(!window.CrownConsultationLeads)return;
-      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE});
+      var lang=(document.documentElement.lang||'vi').slice(0,2)==='en'?'en':'vi';
+      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE,lang:lang});
       return;
     }
     if(form.hasAttribute('data-mail-purpose')){

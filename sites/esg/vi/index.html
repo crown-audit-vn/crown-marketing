@@ -936,6 +936,25 @@ body.team-modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .team-modal:not([hidden]) .team-modal__backdrop,.team-modal:not([hidden]) .team-modal__dialog{animation:none;opacity:1;transform:none}
 }
+
+.enquiry-success-modal{z-index:1250}
+.enquiry-success-modal .enquiry-success-dialog{width:min(100%,440px);max-height:none;padding:clamp(32px,5vw,44px) clamp(28px,4vw,40px) clamp(28px,4vw,36px);text-align:center;align-items:center}
+.enquiry-success-modal .enquiry-success-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e8f5ee,#d4ebe0);color:#2f8c55;font-size:28px;box-shadow:0 8px 24px rgba(47,140,85,.18)}
+.enquiry-success-modal .enquiry-success-dialog h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.4vw,26px);margin:0 0 12px;color:#152a21;line-height:1.2}
+.enquiry-success-modal .enquiry-success-message{margin:0 0 24px;font-size:15px;line-height:1.75;color:#4a5c52}
+.enquiry-success-modal .enquiry-success-dialog .btn{width:100%;max-width:280px;margin:0 auto}
+.enquiry-success-modal .team-modal__close{top:12px;right:12px;background:rgba(12,32,24,.1);color:#152a21;border-color:rgba(12,32,24,.12)}
+.enquiry-error-modal{z-index:1250}
+.enquiry-error-modal .enquiry-error-dialog{width:min(100%,480px);max-height:none;padding:clamp(32px,5vw,44px) clamp(28px,4vw,40px) clamp(28px,4vw,36px);text-align:center;align-items:center}
+.enquiry-error-modal .enquiry-error-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#fdf0ee,#f5ddd9);color:#c44b3a;font-size:28px;box-shadow:0 8px 24px rgba(196,75,58,.16)}
+.enquiry-error-modal .enquiry-error-dialog h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.4vw,26px);margin:0 0 12px;color:#152a21;line-height:1.2}
+.enquiry-error-modal .enquiry-error-message{margin:0 0 20px;font-size:15px;line-height:1.75;color:#4a5c52}
+.enquiry-error-modal .enquiry-error-contacts{display:flex;flex-direction:column;gap:10px;margin:0 0 24px;width:100%;max-width:320px;text-align:left}
+.enquiry-error-modal .enquiry-error-contacts a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#f5f5f0;color:#204d36;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.enquiry-error-modal .enquiry-error-contacts a:hover{background:#e8efe9;color:#2f8c55}
+.enquiry-error-modal .enquiry-error-contacts a i{width:18px;text-align:center;color:#2f8c55;flex-shrink:0}
+.enquiry-error-modal .enquiry-error-dialog .btn{width:100%;max-width:280px;margin:0 auto}
+.enquiry-error-modal .team-modal__close{top:12px;right:12px;background:rgba(12,32,24,.1);color:#152a21;border-color:rgba(12,32,24,.12)}
 @keyframes teamModalBackdrop{to{opacity:1}}
 @keyframes teamModalPanel{to{opacity:1;transform:none}}
 </style>
@@ -1470,6 +1489,31 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </div>
 </div>
+<div class="team-modal enquiry-success-modal" hidden id="enquirySuccessModal">
+<div aria-hidden="true" class="team-modal__backdrop" data-enquiry-success-close=""></div>
+<div aria-labelledby="enquirySuccessTitle" aria-modal="true" class="team-modal__dialog enquiry-success-dialog" role="dialog">
+<button aria-label="Đóng" class="team-modal__close" data-enquiry-success-close="" id="enquirySuccessCloseBtn" type="button"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+<div aria-hidden="true" class="enquiry-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+<h3 id="enquirySuccessTitle">Gửi thông tin thành công</h3>
+<p class="enquiry-success-message" id="enquirySuccessMessage">Cảm ơn bạn! Crown sẽ liên hệ lại với bạn trong thời gian sớm nhất.</p>
+<button class="btn btn-gold" data-enquiry-success-close="" id="enquirySuccessOkBtn" type="button">Đã hiểu</button>
+</div>
+</div>
+<div class="team-modal enquiry-error-modal" hidden id="enquiryErrorModal">
+<div aria-hidden="true" class="team-modal__backdrop" data-enquiry-error-close=""></div>
+<div aria-labelledby="enquiryErrorTitle" aria-modal="true" class="team-modal__dialog enquiry-error-dialog" role="dialog">
+<button aria-label="Đóng" class="team-modal__close" data-enquiry-error-close="" id="enquiryErrorCloseBtn" type="button"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+<div aria-hidden="true" class="enquiry-error-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+<h3 id="enquiryErrorTitle">Không gửi được yêu cầu</h3>
+<p class="enquiry-error-message" id="enquiryErrorMessage">Thông tin chưa gửi thành công tới hệ thống. Vui lòng liên hệ Crown trực tiếp qua điện thoại hoặc email.</p>
+<div class="enquiry-error-contacts" id="enquiryErrorContacts">
+<a href="tel:0904501512" id="enquiryErrorPhoneHn"><i aria-hidden="true" class="fa-solid fa-phone"></i><span>Hotline Hà Nội: 0904 501 512</span></a>
+<a href="tel:0948737868" id="enquiryErrorPhoneHcm"><i aria-hidden="true" class="fa-solid fa-phone"></i><span>Hotline TP.HCM: 0948 737 868</span></a>
+<a href="mailto:info@crown.com.vn" id="enquiryErrorEmail"><i aria-hidden="true" class="fa-solid fa-envelope"></i><span>info@crown.com.vn</span></a>
+</div>
+<button class="btn btn-gold" data-enquiry-error-close="" id="enquiryErrorOkBtn" type="button">Đóng</button>
+</div>
+</div>
 <!-- ===== Floating quick-contact widgets ===== -->
 <a aria-label="Gọi ngay cho Crown ESG" class="fab-call" href="tel:0862231919">
 <i class="fa-solid fa-phone"></i>
@@ -1723,6 +1767,157 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 })();
 </script>
 <script src="/assets/consultation-leads-client.js"></script>
+<script id="crown-enquiry-modals">
+let enquirySuccessLastFocus = null;
+let enquiryErrorLastFocus = null;
+
+function crownEnquirySuccessCopy(lang) {
+  const copy = {
+    title: {
+      vi: 'Gửi thông tin thành công',
+      en: 'Request submitted successfully',
+    },
+    body: {
+      vi: 'Cảm ơn bạn! Thông tin đã được gửi thành công. Crown sẽ liên hệ lại với bạn trong thời gian sớm nhất.',
+      en: 'Thank you! Your request was submitted successfully. Crown will contact you shortly.',
+    },
+    close: { vi: 'Đóng', en: 'Close' },
+    ok: { vi: 'Đã hiểu', en: 'Got it' },
+  };
+  const pick = (k) => (copy[k][lang] || copy[k].vi);
+  return { title: pick('title'), body: pick('body'), close: pick('close'), ok: pick('ok') };
+}
+
+function crownShowEnquirySuccess(lang) {
+  const modal = document.getElementById('enquirySuccessModal');
+  const text = crownEnquirySuccessCopy(lang);
+  if (!modal) {
+    alert(text.body);
+    return;
+  }
+  document.getElementById('enquirySuccessTitle').textContent = text.title;
+  document.getElementById('enquirySuccessMessage').textContent = text.body;
+  const closeBtn = document.getElementById('enquirySuccessCloseBtn');
+  const okBtn = document.getElementById('enquirySuccessOkBtn');
+  if (closeBtn) closeBtn.setAttribute('aria-label', text.close);
+  if (okBtn) okBtn.textContent = text.ok;
+  enquirySuccessLastFocus = document.activeElement;
+  modal.hidden = false;
+  document.body.classList.add('team-modal-open');
+  (okBtn || closeBtn)?.focus();
+}
+
+function crownCloseEnquirySuccess() {
+  const modal = document.getElementById('enquirySuccessModal');
+  if (!modal || modal.hidden) return;
+  modal.hidden = true;
+  document.body.classList.remove('team-modal-open');
+  if (enquirySuccessLastFocus && typeof enquirySuccessLastFocus.focus === 'function') {
+    enquirySuccessLastFocus.focus();
+  }
+  enquirySuccessLastFocus = null;
+}
+
+(function initEnquirySuccessModal() {
+  const modal = document.getElementById('enquirySuccessModal');
+  if (!modal) return;
+  modal.querySelectorAll('[data-enquiry-success-close]').forEach((el) => {
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      crownCloseEnquirySuccess();
+    });
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) {
+      event.stopPropagation();
+      crownCloseEnquirySuccess();
+    }
+  }, true);
+})();
+
+function crownEnquiryErrorCopy(lang) {
+  const copy = {
+    title: {
+      vi: 'Không gửi được yêu cầu',
+      en: 'Could not submit your request',
+    },
+    body: {
+      vi: 'Thông tin chưa gửi thành công tới hệ thống. Vui lòng liên hệ Crown trực tiếp qua điện thoại hoặc email bên dưới.',
+      en: 'Your information could not be sent to our system. Please contact Crown directly by phone or email below.',
+    },
+    phoneHn: {
+      vi: 'Hotline Hà Nội: 0904 501 512',
+      en: 'Hanoi Hotline: 0904 501 512',
+    },
+    phoneHcm: {
+      vi: 'Hotline TP.HCM: 0948 737 868',
+      en: 'Ho Chi Minh City Hotline: 0948 737 868',
+    },
+    close: { vi: 'Đóng', en: 'Close' },
+    ok: { vi: 'Đóng', en: 'Close' },
+  };
+  const pick = (k) => (copy[k][lang] || copy[k].vi);
+  return {
+    title: pick('title'),
+    body: pick('body'),
+    phoneHn: pick('phoneHn'),
+    phoneHcm: pick('phoneHcm'),
+    close: pick('close'),
+    ok: pick('ok'),
+  };
+}
+
+function crownShowEnquiryError(lang) {
+  const modal = document.getElementById('enquiryErrorModal');
+  const text = crownEnquiryErrorCopy(lang);
+  if (!modal) {
+    alert(text.body);
+    return;
+  }
+  document.getElementById('enquiryErrorTitle').textContent = text.title;
+  document.getElementById('enquiryErrorMessage').textContent = text.body;
+  const phoneHn = document.querySelector('#enquiryErrorPhoneHn span');
+  const phoneHcm = document.querySelector('#enquiryErrorPhoneHcm span');
+  if (phoneHn) phoneHn.textContent = text.phoneHn;
+  if (phoneHcm) phoneHcm.textContent = text.phoneHcm;
+  const closeBtn = document.getElementById('enquiryErrorCloseBtn');
+  const okBtn = document.getElementById('enquiryErrorOkBtn');
+  if (closeBtn) closeBtn.setAttribute('aria-label', text.close);
+  if (okBtn) okBtn.textContent = text.ok;
+  enquiryErrorLastFocus = document.activeElement;
+  modal.hidden = false;
+  document.body.classList.add('team-modal-open');
+  (okBtn || closeBtn)?.focus();
+}
+
+function crownCloseEnquiryError() {
+  const modal = document.getElementById('enquiryErrorModal');
+  if (!modal || modal.hidden) return;
+  modal.hidden = true;
+  document.body.classList.remove('team-modal-open');
+  if (enquiryErrorLastFocus && typeof enquiryErrorLastFocus.focus === 'function') {
+    enquiryErrorLastFocus.focus();
+  }
+  enquiryErrorLastFocus = null;
+}
+
+(function initEnquiryErrorModal() {
+  const modal = document.getElementById('enquiryErrorModal');
+  if (!modal) return;
+  modal.querySelectorAll('[data-enquiry-error-close]').forEach((el) => {
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      crownCloseEnquiryError();
+    });
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) {
+      event.stopPropagation();
+      crownCloseEnquiryError();
+    }
+  }, true);
+})();
+</script>
 <script id="crown-site-contact-forms">(function(){
 document.addEventListener('DOMContentLoaded',function(){
   var SOURCE_SITE="esg.crown.com.vn";
@@ -1748,7 +1943,8 @@ document.addEventListener('DOMContentLoaded',function(){
     if(isConsultationForm(form)){
       ev.preventDefault();
       if(!window.CrownConsultationLeads)return;
-      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE});
+      var lang=(document.documentElement.lang||'vi').slice(0,2)==='en'?'en':'vi';
+      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE,lang:lang});
       return;
     }
     if(form.hasAttribute('data-mail-purpose')){

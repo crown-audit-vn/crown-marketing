@@ -7,6 +7,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sites } from "./sites.mjs";
 import { writeTextIfChanged } from "./fs-write-if-changed.mjs";
+import { patchEnquiryModals } from "./patch-enquiry-modals.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -50,7 +51,8 @@ document.addEventListener('DOMContentLoaded',function(){
     if(isConsultationForm(form)){
       ev.preventDefault();
       if(!window.CrownConsultationLeads)return;
-      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE});
+      var lang=(document.documentElement.lang||'vi').slice(0,2)==='en'?'en':'vi';
+      window.CrownConsultationLeads.submitFromForm(form,{sourceSite:SOURCE_SITE,lang:lang});
       return;
     }
     if(form.hasAttribute('data-mail-purpose')){
@@ -182,8 +184,10 @@ function main() {
     }
   }
 
+  const enquiryUpdated = patchEnquiryModals(only);
+
   console.log(
-    `consultation-leads sync: ${assetsUpdated} asset file(s), ${htmlUpdated} HTML file(s) updated`
+    `consultation-leads sync: ${assetsUpdated} asset file(s), ${htmlUpdated} HTML file(s), ${enquiryUpdated} enquiry modal(s) updated`
   );
 }
 
