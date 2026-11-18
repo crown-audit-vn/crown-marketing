@@ -21,11 +21,6 @@ const consultationLeads = require(resolve(
   "api",
   "consultation-leads.js"
 ));
-const { applyConsultationCors } = require(resolve(
-  wwwDir,
-  "api",
-  "consultation-cors.js"
-));
 
 function loadDotEnv(filePath) {
   if (!existsSync(filePath)) return;
@@ -91,6 +86,11 @@ function toVercelResponse(res) {
       res.writeHead(statusCode, headers);
       res.end(body);
     },
+    end(body) {
+      res.writeHead(statusCode, headers);
+      res.end(body);
+      return this;
+    },
   };
 }
 
@@ -100,19 +100,14 @@ const server = createServer(async (req, res) => {
 
   if (path === "/api/consultation-leads") {
     const vercelRes = toVercelResponse(res);
-    if (req.method === "OPTIONS") {
-      applyConsultationCors(req, res);
-      res.setHeader("Allow", "POST, OPTIONS");
-      res.writeHead(204);
-      res.end();
-      return;
-    }
 
-    try {
-      req.body = await readJsonBody(req);
-    } catch {
-      vercelRes.status(400).json({ error: "Invalid JSON body" });
-      return;
+    if (req.method === "POST") {
+      try {
+        req.body = await readJsonBody(req);
+      } catch {
+        vercelRes.status(400).json({ error: "Invalid JSON body" });
+        return;
+      }
     }
 
     try {

@@ -3,7 +3,11 @@ import { sites } from "./sites.mjs";
 
 console.log("Crown marketing — preview local\n");
 console.log("Lần đầu: npm install");
-console.log("Chạy một site:  npm run dev:<site>\n");
+console.log("Chạy một site:  npm run dev:<site>");
+console.log(
+  "Form tư vấn (audit, cons, …): chạy thêm npm run dev:www (cổng 5000, có /api + CORS)."
+);
+console.log("  Không dùng dev:www:static — không có API.\n");
 console.log("Site        Lệnh              URL local              Production");
 console.log("─".repeat(72));
 for (const s of sites) {
