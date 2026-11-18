@@ -3,7 +3,7 @@
 
   var PROD_API = "https://crown.com.vn/api/consultation-leads";
 
-  var VALIDATION_STYLE_ID = "crown-form-validation-css";
+  var FORM_STYLE_ID = "crown-form-validation-css";
 
   function pageLang() {
     if (typeof global.currentLang === "string" && global.currentLang) {
@@ -33,8 +33,12 @@
     };
   }
 
+  function submittingLabel(lang) {
+    return lang === "en" ? "Sending…" : "Đang gửi…";
+  }
+
   function injectValidationStyles() {
-    if (document.getElementById(VALIDATION_STYLE_ID)) return;
+    if (document.getElementById(FORM_STYLE_ID)) return;
     var css =
       ".contact-form .crown-field{display:flex;flex-direction:column;gap:6px;min-width:0}" +
       ".contact-form .crown-field--full{grid-column:1/-1}" +
@@ -44,11 +48,68 @@
       ".contact-form .crown-field-error{margin:0;font-size:12px;line-height:1.4;color:#8b5e55}" +
       ".contact-form input.crown-input--invalid," +
       ".contact-form select.crown-input--invalid," +
-      ".contact-form textarea.crown-input--invalid{border-color:#c9a09a}";
+      ".contact-form textarea.crown-input--invalid{border-color:#c9a09a}" +
+      ".contact-form.crown-form--submitting input," +
+      ".contact-form.crown-form--submitting select," +
+      ".contact-form.crown-form--submitting textarea{opacity:.75}" +
+      ".contact-form button.crown-btn--loading{display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:wait}" +
+      ".contact-form button.crown-btn--loading .crown-submit-spinner{width:1.05em;height:1.05em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:crown-submit-spin .7s linear infinite;flex-shrink:0;opacity:.9}" +
+      "@keyframes crown-submit-spin{to{transform:rotate(360deg)}}";
     var style = document.createElement("style");
-    style.id = VALIDATION_STYLE_ID;
+    style.id = FORM_STYLE_ID;
     style.textContent = css;
     document.head.appendChild(style);
+  }
+
+  function setFormSubmitting(form, active, lang) {
+    injectValidationStyles();
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (active) {
+      form.classList.add("crown-form--submitting");
+      form.setAttribute("aria-busy", "true");
+      Array.prototype.forEach.call(
+        form.querySelectorAll("input, select, textarea, button"),
+        function (el) {
+          if (el.disabled) {
+            el.setAttribute("data-crown-prev-disabled", "");
+          } else {
+            el.disabled = true;
+          }
+        }
+      );
+      if (submitBtn) {
+        if (!submitBtn.hasAttribute("data-crown-btn-html")) {
+          submitBtn.setAttribute("data-crown-btn-html", submitBtn.innerHTML);
+        }
+        submitBtn.classList.add("crown-btn--loading");
+        var label = submittingLabel(lang);
+        submitBtn.innerHTML =
+          '<span class="crown-submit-spinner" aria-hidden="true"></span><span>' +
+          label +
+          "</span>";
+      }
+      return;
+    }
+    form.classList.remove("crown-form--submitting");
+    form.removeAttribute("aria-busy");
+    Array.prototype.forEach.call(
+      form.querySelectorAll("input, select, textarea, button"),
+      function (el) {
+        if (el.hasAttribute("data-crown-prev-disabled")) {
+          el.removeAttribute("data-crown-prev-disabled");
+        } else {
+          el.disabled = false;
+        }
+      }
+    );
+    if (submitBtn) {
+      submitBtn.classList.remove("crown-btn--loading");
+      var saved = submitBtn.getAttribute("data-crown-btn-html");
+      if (saved != null) {
+        submitBtn.innerHTML = saved;
+        submitBtn.removeAttribute("data-crown-btn-html");
+      }
+    }
   }
 
   function isServiceSelect(el) {
@@ -362,8 +423,7 @@
     };
     if (built.service) payload.service = built.service;
 
-    var submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) submitBtn.disabled = true;
+    setFormSubmitting(form, true, lang);
 
     return fetch(apiUrl(), {
       method: "POST",
@@ -380,7 +440,7 @@
         notifyError(lang);
       })
       .finally(function () {
-        if (submitBtn) submitBtn.disabled = false;
+        setFormSubmitting(form, false, lang);
       });
   }
 
