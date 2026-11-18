@@ -1376,24 +1376,26 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid #e2792
 </div>
 </div>
 <form class="contact-form" data-email-target="crownup@tamdoanh.com" id="tuvanForm">
-<h3><span data-vi="">Thông tin hợp tác</span><span data-en="">Partnership Information</span></h3>
+<h3><span data-vi="">Đăng ký nhận tư vấn</span><span data-en="">Request a Consultation</span></h3>
 <div class="row">
 <input data-placeholder-en="Full name" data-placeholder-vi="Họ và tên" placeholder="Họ và tên" required="" type="text"/>
-<input data-placeholder-en="Company name" data-placeholder-vi="Tên doanh nghiệp" placeholder="Tên doanh nghiệp" required="" type="text"/>
+<input data-placeholder-en="Company name" data-placeholder-vi="Tên doanh nghiệp" placeholder="Tên doanh nghiệp" type="text"/>
 </div>
 <div class="row">
 <input data-placeholder-en="Phone number" data-placeholder-vi="Số điện thoại" placeholder="Số điện thoại" required="" type="tel"/>
 <input data-placeholder-en="Email" data-placeholder-vi="Email" placeholder="Email" required="" type="email"/>
 </div>
-<select style="margin-bottom:14px;">
-<option data-label-en="Latest annual revenue" data-label-vi="Doanh thu năm gần nhất" value="">Doanh thu năm gần nhất</option>
-<option data-label-en="Under VND 10 billion" data-label-vi="Dưới 10 tỷ VNĐ">Dưới 10 tỷ VNĐ</option>
-<option data-label-en="VND 10–50 billion" data-label-vi="10 – 50 tỷ VNĐ">10 – 50 tỷ VNĐ</option>
-<option data-label-en="VND 50–200 billion" data-label-vi="50 – 200 tỷ VNĐ">50 – 200 tỷ VNĐ</option>
-<option data-label-en="Over VND 200 billion" data-label-vi="Trên 200 tỷ VNĐ">Trên 200 tỷ VNĐ</option>
+<select id="tuvanService" style="margin-bottom:14px;">
+<option data-label-en="Service of interest" data-label-vi="Dịch vụ quan tâm" value="">Dịch vụ quan tâm</option>
+<option data-label-en="Crown Up program — overview" data-label-vi="Chương trình Crown Up — tổng quan" value="Chương trình Crown Up — tổng quan">Chương trình Crown Up — tổng quan</option>
+<option data-label-en="Stage I — Diagnosis &amp; direction" data-label-vi="Chặng I — Chẩn đoán &amp; Định hướng" value="Chặng I — Chẩn đoán &amp; Định hướng">Chặng I — Chẩn đoán &amp; Định hướng</option>
+<option data-label-en="Management &amp; program coordination (Tâm Doanh)" data-label-vi="Quản trị &amp; điều phối chương trình (Tâm Doanh)" value="Quản trị &amp; điều phối chương trình (Tâm Doanh)">Quản trị &amp; điều phối chương trình (Tâm Doanh)</option>
+<option data-label-en="Audit, tax &amp; finance (Crown)" data-label-vi="Kiểm toán, thuế &amp; tài chính (Crown)" value="Kiểm toán, thuế &amp; tài chính (Crown)">Kiểm toán, thuế &amp; tài chính (Crown)</option>
+<option data-label-en="Capital strategy &amp; investment (Koru)" data-label-vi="Chiến lược vốn &amp; đầu tư (Koru)" value="Chiến lược vốn &amp; đầu tư (Koru)">Chiến lược vốn &amp; đầu tư (Koru)</option>
+<option data-label-en="Not sure yet — please advise" data-label-vi="Chưa rõ — cần tư vấn định hướng" value="Chưa rõ — cần tư vấn định hướng">Chưa rõ — cần tư vấn định hướng</option>
 </select>
-<textarea data-placeholder-en="What are your business goals for the next three years? You may also describe your products, services and current projects." data-placeholder-vi="Mục tiêu 3 năm tới của doanh nghiệp bạn là gì? Bạn cũng có thể mô tả sản phẩm/dịch vụ và dự án đang triển khai." placeholder="Mục tiêu 3 năm tới của doanh nghiệp bạn là gì? Bạn cũng có thể mô tả sản phẩm/dịch vụ và dự án đang triển khai."></textarea>
-<button class="btn btn-orange" type="submit"><span data-vi="">Gửi thông tin hợp tác</span><span data-en="">Send Partnership Information</span></button>
+<textarea data-placeholder-en="What would you like advice on..." data-placeholder-vi="Nội dung cần tư vấn..." placeholder="Nội dung cần tư vấn..."></textarea>
+<button class="btn btn-orange" type="submit"><span data-vi="">Gửi yêu cầu tư vấn</span><span data-en="">Submit Request</span></button>
 </form>
 </div>
 </section>
@@ -1425,11 +1427,18 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid #e2792
 </div>
 <div class="footer-col">
 <h5><span data-vi="">Địa chỉ &amp; Liên hệ</span><span data-en="">Address &amp; Contact</span></h5>
+<div class="footer-addr"><strong><span data-vi="">Trụ sở chính</span><span data-en="">Head Office</span></strong>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-location-dot"></i><span><span data-vi="">Số 7, ngõ 699 Trương Định, Phường Hoàng Mai, TP. Hà Nội</span><span data-en="">No. 7, Alley 699, Truong Dinh Street, Hoang Mai Ward, Hanoi, Vietnam</span></span></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0904501512">0904 501 512</a></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-regular fa-envelope"></i><a href="mailto:info@crown.com.vn">info@crown.com.vn</a></div></div>
 <div class="footer-addr"><strong><span data-vi="">VP Hà Nội</span><span data-en="">Hanoi Office</span></strong>
-<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-location-dot"></i><span><span data-vi="">Tầng 7, Số 18 Ngụy Như Kon Tum, Phường Thanh Xuân, TP. Hà Nội</span><span data-en="">7th Floor, 18 Nguy Nhu Kon Tum Street, Thanh Xuan Ward, Hanoi, Vietnam</span></span></div>
-<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0904501512">0904 501 512</a></div><div class="footer-contact-row"><i aria-hidden="true" class="fa-regular fa-envelope"></i><a href="mailto:crownup@tamdoanh.com">crownup@tamdoanh.com</a></div></div><div class="footer-addr"><strong><span data-vi="">VP HCM</span><span data-en="">HCM Office</span></strong>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-location-dot"></i><span><span data-vi="">Tầng 7, VIC Building, 18 Ngụy Như Kon Tum, Phường Thành Xuân, TP. Hà Nội</span><span data-en="">7th Floor, VIC Building, 18 Nguy Nhu Kon Tum Street, Thanh Xuan, Hanoi, Vietnam</span></span></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0559468888">0559 468 888</a></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-regular fa-envelope"></i><a href="mailto:hn@crown.com.vn">hn@crown.com.vn</a></div></div>
+<div class="footer-addr"><strong><span data-vi="">VP HCM</span><span data-en="">HCM Office</span></strong>
 <div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-location-dot"></i><span><span data-vi="">13 Đường N2, KDC Jamona Golden Silk, 16/9 Bùi Văn Ba, Khu phố 10, Phường Tân Thuận, TP. Hồ Chí Minh</span><span data-en="">13 N2 Street, Jamona Golden Silk Residential Area, 16/9 Bui Van Ba Street, Quarter 10, Tan Thuan Ward, Ho Chi Minh City, Vietnam</span></span></div>
-<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0862231919">086 223 1919</a></div></div></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-solid fa-phone"></i><a href="tel:0948737868">0948 737 868</a></div>
+<div class="footer-contact-row"><i aria-hidden="true" class="fa-regular fa-envelope"></i><a href="mailto:hcm@crown.com.vn">hcm@crown.com.vn</a></div></div></div>
 <div class="footer-col">
 <h5><span data-vi="">Ba hệ thống phối hợp</span><span data-en="">Three Coordinated Systems</span></h5>
 <ul>
@@ -1503,9 +1512,9 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid #e2792
     intakeForm.addEventListener('submit', function(ev) {
       ev.preventDefault();
       const fields = Array.from(intakeForm.querySelectorAll('input, select, textarea'));
-      const labels = ['Name','Company','Phone','Email','Annual revenue','Growth objectives'];
+      const labels = ['Name','Company','Phone','Email','Service','Message'];
       const body = fields.map((field,index) => `${labels[index] || 'Details'}: ${field.value || '-'}`).join('\n');
-      const subject = 'Crown Up — Business profile & partnership enquiry';
+      const subject = 'Crown Up — Consultation enquiry';
       window.location.href = 'mailto:crownup@tamdoanh.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
     });
   }
