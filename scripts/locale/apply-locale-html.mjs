@@ -37,6 +37,8 @@ export function applyLocaleToHtml(html, locale, headlineOverride = null) {
   const translations = extractConstObject(html, "translations");
 
   const { document } = parseHTML(html);
+  // Keep entity-separated text (for example "M&A") as one translation unit.
+  document.normalize();
 
   for (const el of document.querySelectorAll("[data-i18n]")) {
     const key = el.getAttribute("data-i18n");
