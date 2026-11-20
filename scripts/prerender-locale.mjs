@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /**
- * Static locale mirrors for hreflang: vi-primary sites → sites/<name>/en/...,
- * en-primary → sites/<name>/vi/...
+ * Static locale mirrors for hreflang: English-primary sites → sites/<name>/vi/...
+ *
+ * www, cons, fas and up keep a committed Vietnamese /vi tree (the original
+ * source pages after the English-default migration). Those trees are not
+ * overwritten by a reverse prerender.
  */
 import {
   existsSync,
@@ -23,6 +26,9 @@ import { applyUpLocale } from "./locale/prerender-up.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
+
+/** @type {Set<string>} */
+const PRESERVE_ALTERNATE = new Set(["www", "cons", "fas", "up"]);
 
 /** @param {string} siteDir @param {string} relDir */
 function isAlternateLocaleDir(relDir, primaryLang) {
@@ -112,6 +118,13 @@ function prerenderSite(folder) {
   if (!existsSync(siteDir)) throw new Error(`Missing sites/${folder}`);
 
   const altRoot = join(siteDir, targetLocale);
+
+  if (PRESERVE_ALTERNATE.has(folder) && existsSync(join(altRoot, "index.html"))) {
+    console.log(
+      `[${folder}] keeping committed /${targetLocale}/ tree (not regenerated)`
+    );
+    return;
+  }
 
   const sources = discoverSourceHtml(siteDir, primaryLang);
   /** @type {Set<string>} */

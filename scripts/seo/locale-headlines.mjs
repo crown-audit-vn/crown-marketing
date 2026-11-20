@@ -11,6 +11,11 @@ export const HEADLINE_OVERRIDES = {
         "Crown Audit & Advisory provides independent audit, tax, accounting, corporate finance and ESG advisory services for businesses in Vietnam.",
     },
   },
+  "acc|/": {
+    vi: {
+      title: "Crown Accounting | Kế toán chuyên nghiệp & Outsourcing",
+    },
+  },
   "up|/": {
     en: {
       description:

@@ -4,6 +4,64 @@
   "ignoreCommand": "bash ../../scripts/should-build.sh",
   "redirects": [
     {
+      "source": "/en",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "vi"
+        }
+      ],
+      "destination": "/vi",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "vi"
+        }
+      ],
+      "destination": "/vi/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
       "source": "/vi",
       "has": [
         {

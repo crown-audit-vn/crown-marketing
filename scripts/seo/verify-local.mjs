@@ -8,8 +8,9 @@ import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sites } from "../sites.mjs";
-import { primaryLangByFolder, localePath, normalizePath } from "./locale-path.mjs";
+import { primaryLangByFolder, localePath, normalizePath, localeFromPath, logicalPath, primaryLangByHost } from "./locale-path.mjs";
 import { wwwLegacyRedirects, wwwLegacyLangHints } from "./legacy-redirects.mjs";
+import { rewriteOneHref } from "./rewrite-crown-links.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
@@ -224,12 +225,90 @@ for (const hint of sampleLegacyLang) {
 }
 
 const viInsight = `${wwwOrigin}/vi/insights/fdi-tax-compliance`;
-const viHop = await checkRedirectOrPage(viInsight, "/insights/fdi-tax-compliance");
+const viPage = await checkRedirectOrPage(viInsight);
 checked += 1;
-if (viHop.error || viHop.hops !== 1) {
-  failures.push(`/vi/insights/:slug ${viHop.error ?? `hops=${viHop.hops}`}`);
+if (viPage.error || viPage.status !== 200 || viPage.hops !== 0) {
+  failures.push(`/vi/insights/:slug expected 200 direct, hops=${viPage.hops} status=${viPage.status} ${viPage.error ?? ""}`);
 } else {
-  redirectsOk += 1;
+  pagesOk += 1;
+}
+
+const retiredEn = [
+  ["/en", "/"],
+  ["/en/about", "/about"],
+  ["/en/insights/fdi-tax-compliance", "/insights/fdi-tax-compliance"],
+];
+for (const [src, dest] of retiredEn) {
+  const hop = await checkRedirectOrPage(`${wwwOrigin}${src}`, dest);
+  checked += 1;
+  if (hop.error || hop.hops !== 1) {
+    failures.push(`${src} → ${dest}: ${hop.error ?? `hops=${hop.hops}`}`);
+  } else {
+    redirectsOk += 1;
+  }
+}
+
+// Crawl every href on every sitemap page of every site.
+const folderByHost = Object.fromEntries(sites.map((s) => [s.domain, s.folder]));
+folderByHost["www.crown.com.vn"] = "www";
+
+for (const { folder, domain } of sites) {
+  const origin = originFor(folder);
+  const primary = primaryLangByFolder[folder];
+  for (const loc of sitemapLocs(folder)) {
+    const url = new URL(loc);
+    const pageUrl = origin + url.pathname;
+    const pageLocale = localeFromPath(url.pathname) ?? primary;
+    const page = await fetchHop(pageUrl);
+    checked += 1;
+    if (page.status !== 200) {
+      failures.push(`crawl ${folder} ${url.pathname}: status ${page.status}`);
+      continue;
+    }
+    const hrefs = [...page.body.matchAll(/\shref="([^"]+)"/gi)].map((m) => m[1]);
+    for (const href of hrefs) {
+      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) continue;
+      let resolved;
+      try {
+        resolved = new URL(href, `https://${domain}${url.pathname}`);
+      } catch {
+        continue;
+      }
+      if (!primaryLangByHost[resolved.hostname]) continue;
+      if (resolved.pathname.startsWith("/assets/")) continue;
+      const expected = rewriteOneHref(href, pageLocale, domain);
+      let expectedUrl;
+      try {
+        expectedUrl = new URL(expected, `https://${domain}${url.pathname}`);
+      } catch {
+        failures.push(`crawl ${folder} ${url.pathname}: bad expected href ${href} → ${expected}`);
+        continue;
+      }
+      const hrefLogical = logicalPath(resolved.pathname);
+      const pageLogical = logicalPath(url.pathname);
+      const hrefLang = localeFromPath(resolved.pathname) ?? "en";
+      const isSwitcher =
+        resolved.hostname === domain &&
+        hrefLogical === pageLogical &&
+        hrefLang !== pageLocale;
+      const gotPath = resolved.pathname.replace(/\/+$/, "") || "/";
+      const expPath = expectedUrl.pathname.replace(/\/+$/, "") || "/";
+      if (!isSwitcher && (resolved.hostname !== expectedUrl.hostname || gotPath !== expPath)) {
+        failures.push(`crawl ${folder} ${url.pathname}: href ${href} should be ${expected} (locale ${pageLocale})`);
+        continue;
+      }
+      const fetchPath = isSwitcher ? resolved.pathname : expectedUrl.pathname;
+      const fetchHost = isSwitcher ? resolved.hostname : expectedUrl.hostname;
+      const targetFolder = folderByHost[isSwitcher ? resolved.hostname : expectedUrl.hostname];
+      if (!targetFolder) continue;
+      const targetOrigin = originFor(targetFolder);
+      const target = await fetchHop(targetOrigin + (isSwitcher ? resolved.pathname : expectedUrl.pathname));
+      checked += 1;
+      if (target.status !== 200) {
+        failures.push(`crawl ${folder} ${url.pathname}: ${isSwitcher ? resolved.hostname + resolved.pathname : expectedUrl.hostname + expectedUrl.pathname} → ${target.status}`);
+      }
+    }
+  }
 }
 
 console.log(`Checked ${checked} URLs (${pagesOk} sitemap pages, ${redirectsOk} redirects)`);

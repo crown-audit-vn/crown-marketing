@@ -14,12 +14,12 @@
 /** @type {Record<string, SiteSeoMeta>} */
 export const siteSeoByFolder = {
   www: {
-    lang: "vi",
-    ogLocale: "vi_VN",
+    lang: "en",
+    ogLocale: "en_US",
     siteName: "Crown Audit & Advisory",
     includeOrgSchema: true,
     hreflang: ["vi", "en"],
-    alternateOgLocales: ["en_US"],
+    alternateOgLocales: ["vi_VN"],
   },
   audit: {
     lang: "en",
@@ -30,12 +30,12 @@ export const siteSeoByFolder = {
     alternateOgLocales: ["vi_VN"],
   },
   cons: {
-    lang: "vi",
-    ogLocale: "vi_VN",
+    lang: "en",
+    ogLocale: "en_US",
     siteName: "Crown Construction",
     includeOrgSchema: false,
     hreflang: ["vi", "en"],
-    alternateOgLocales: ["en_US"],
+    alternateOgLocales: ["vi_VN"],
   },
   acc: {
     lang: "en",
@@ -54,12 +54,12 @@ export const siteSeoByFolder = {
     alternateOgLocales: ["vi_VN"],
   },
   fas: {
-    lang: "vi",
-    ogLocale: "vi_VN",
+    lang: "en",
+    ogLocale: "en_US",
     siteName: "Crown FAS",
     includeOrgSchema: false,
     hreflang: ["vi", "en"],
-    alternateOgLocales: ["en_US"],
+    alternateOgLocales: ["vi_VN"],
   },
   esg: {
     lang: "en",
@@ -70,12 +70,12 @@ export const siteSeoByFolder = {
     alternateOgLocales: ["vi_VN"],
   },
   up: {
-    lang: "vi",
-    ogLocale: "vi_VN",
+    lang: "en",
+    ogLocale: "en_US",
     siteName: "Crown Up",
     includeOrgSchema: false,
     hreflang: ["vi", "en"],
-    alternateOgLocales: ["en_US"],
+    alternateOgLocales: ["vi_VN"],
   },
 };
 

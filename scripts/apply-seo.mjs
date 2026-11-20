@@ -21,6 +21,7 @@ import {
   setHtmlLang,
   stripLegacyCanonical,
 } from "./seo/html-seo.mjs";
+import { rewriteCrownHrefs } from "./seo/rewrite-crown-links.mjs";
 import {
   organizationSchema,
   siteSeoByFolder,
@@ -231,6 +232,7 @@ function applySite(folder) {
 
     html = stripLegacyCanonical(html);
     html = setHtmlLang(html, localeMeta.pageLocale);
+    html = rewriteCrownHrefs(html, localeMeta.pageLocale, meta.domain);
 
     const block = buildSeoBlock({
       canonicalUrl,

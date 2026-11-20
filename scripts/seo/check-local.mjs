@@ -97,11 +97,7 @@ export function checkLocalSeo(target = "all") {
             : urlPath === "/vi" || urlPath.startsWith("/vi/") ? "vi"
             : null;
           const htmlLang = text.match(/<html\b[^>]*\slang="([^"]+)"/);
-          const expectLang =
-            altPrefix ??
-            (folderName === "www" || folderName === "cons" || folderName === "fas" || folderName === "up"
-              ? "vi"
-              : "en");
+          const expectLang = altPrefix ?? "en";
           if (htmlLang && htmlLang[1] !== expectLang) {
             issues.push({
               file: rel,

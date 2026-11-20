@@ -25,52 +25,47 @@ const root = resolve(__dirname, "../..");
  */
 export const wwwLegacyRedirects = [
   { source: "/tuyen-dung", destination: "/career", permanent: true },
-  { source: "/en/tuyen-dung", destination: "/en/career", permanent: true },
-  { source: "/vi/tuyen-dung", destination: "/career", permanent: true },
+  { source: "/en/tuyen-dung", destination: "/career", permanent: true },
+  { source: "/vi/tuyen-dung", destination: "/vi/career", permanent: true },
 
   { source: "/news", destination: "/insights", permanent: true },
-  { source: "/en/news", destination: "/en/insights", permanent: true },
-  { source: "/vi/news", destination: "/insights", permanent: true },
+  { source: "/en/news", destination: "/insights", permanent: true },
+  { source: "/vi/news", destination: "/vi/insights", permanent: true },
 
   { source: "/contact", destination: "/#contact", permanent: true },
-  { source: "/en/contact", destination: "/en#contact", permanent: true },
-  { source: "/vi/contact", destination: "/#contact", permanent: true },
+  { source: "/en/contact", destination: "/#contact", permanent: true },
+  { source: "/vi/contact", destination: "/vi#contact", permanent: true },
 
   { source: "/services", destination: "/#services", permanent: true },
-  { source: "/en/services", destination: "/en#services", permanent: true },
-  { source: "/vi/services", destination: "/#services", permanent: true },
+  { source: "/en/services", destination: "/#services", permanent: true },
+  { source: "/vi/services", destination: "/vi#services", permanent: true },
 
-  { source: "/vi", destination: "/", permanent: true },
-  { source: "/vi/about", destination: "/about", permanent: true },
-  { source: "/vi/career", destination: "/career", permanent: true },
-  { source: "/vi/insights", destination: "/insights", permanent: true },
-  { source: "/vi/insights/:slug", destination: "/insights/:slug", permanent: true },
-
-  // Service lines → current subdomain (locale-aware, no chains).
-  { source: "/services/accounting", destination: "https://acc.crown.com.vn/vi", permanent: true },
+  // Service lines → current subdomain (English default, no chains).
+  { source: "/services/accounting", destination: "https://acc.crown.com.vn/", permanent: true },
   { source: "/en/services/accounting", destination: "https://acc.crown.com.vn/", permanent: true },
   { source: "/vi/services/accounting", destination: "https://acc.crown.com.vn/vi", permanent: true },
 
-  { source: "/services/audit-assurance", destination: "https://audit.crown.com.vn/vi", permanent: true },
+  { source: "/services/audit-assurance", destination: "https://audit.crown.com.vn/", permanent: true },
   { source: "/en/services/audit-assurance", destination: "https://audit.crown.com.vn/", permanent: true },
   { source: "/vi/services/audit-assurance", destination: "https://audit.crown.com.vn/vi", permanent: true },
 
-  { source: "/services/internal-audit", destination: "https://audit.crown.com.vn/vi", permanent: true },
+  { source: "/services/internal-audit", destination: "https://audit.crown.com.vn/", permanent: true },
   { source: "/en/services/internal-audit", destination: "https://audit.crown.com.vn/", permanent: true },
   { source: "/vi/services/internal-audit", destination: "https://audit.crown.com.vn/vi", permanent: true },
 
   { source: "/services/financial-advisory", destination: "https://fas.crown.com.vn/", permanent: true },
-  { source: "/en/services/financial-advisory", destination: "https://fas.crown.com.vn/en", permanent: true },
-  { source: "/vi/services/financial-advisory", destination: "https://fas.crown.com.vn/", permanent: true },
+  { source: "/en/services/financial-advisory", destination: "https://fas.crown.com.vn/", permanent: true },
+  { source: "/vi/services/financial-advisory", destination: "https://fas.crown.com.vn/vi", permanent: true },
 
-  { source: "/services/tax-advisory", destination: "https://tax.crown.com.vn/vi", permanent: true },
+  { source: "/services/tax-advisory", destination: "https://tax.crown.com.vn/", permanent: true },
   { source: "/en/services/tax-advisory", destination: "https://tax.crown.com.vn/", permanent: true },
   { source: "/vi/services/tax-advisory", destination: "https://tax.crown.com.vn/vi", permanent: true },
 
-  { source: "/services/risk-compliance", destination: "https://esg.crown.com.vn/vi", permanent: true },
+  { source: "/services/risk-compliance", destination: "https://esg.crown.com.vn/", permanent: true },
   { source: "/en/services/risk-compliance", destination: "https://esg.crown.com.vn/", permanent: true },
   { source: "/vi/services/risk-compliance", destination: "https://esg.crown.com.vn/vi", permanent: true },
 ];
+
 
 /**
  * Explicit one-hop maps for legacy paths that also have ?lang=.
@@ -79,44 +74,33 @@ export const wwwLegacyRedirects = [
  * @type {Array<{ source: string, lang: "en" | "vi", destination: string }>}
  */
 export const wwwLegacyLangHints = [
-  { source: "/tuyen-dung", lang: "en", destination: "/en/career" },
-  { source: "/tuyen-dung", lang: "vi", destination: "/career" },
-  { source: "/en/tuyen-dung", lang: "en", destination: "/en/career" },
-  { source: "/en/tuyen-dung", lang: "vi", destination: "/career" },
-  { source: "/vi/tuyen-dung", lang: "en", destination: "/en/career" },
-  { source: "/vi/tuyen-dung", lang: "vi", destination: "/career" },
+  { source: "/tuyen-dung", lang: "en", destination: "/career" },
+  { source: "/tuyen-dung", lang: "vi", destination: "/vi/career" },
+  { source: "/en/tuyen-dung", lang: "en", destination: "/career" },
+  { source: "/en/tuyen-dung", lang: "vi", destination: "/vi/career" },
+  { source: "/vi/tuyen-dung", lang: "en", destination: "/career" },
+  { source: "/vi/tuyen-dung", lang: "vi", destination: "/vi/career" },
 
-  { source: "/news", lang: "en", destination: "/en/insights" },
-  { source: "/news", lang: "vi", destination: "/insights" },
-  { source: "/en/news", lang: "en", destination: "/en/insights" },
-  { source: "/en/news", lang: "vi", destination: "/insights" },
-  { source: "/vi/news", lang: "en", destination: "/en/insights" },
-  { source: "/vi/news", lang: "vi", destination: "/insights" },
+  { source: "/news", lang: "en", destination: "/insights" },
+  { source: "/news", lang: "vi", destination: "/vi/insights" },
+  { source: "/en/news", lang: "en", destination: "/insights" },
+  { source: "/en/news", lang: "vi", destination: "/vi/insights" },
+  { source: "/vi/news", lang: "en", destination: "/insights" },
+  { source: "/vi/news", lang: "vi", destination: "/vi/insights" },
 
-  { source: "/contact", lang: "en", destination: "/en#contact" },
-  { source: "/contact", lang: "vi", destination: "/#contact" },
-  { source: "/en/contact", lang: "en", destination: "/en#contact" },
-  { source: "/en/contact", lang: "vi", destination: "/#contact" },
-  { source: "/vi/contact", lang: "en", destination: "/en#contact" },
-  { source: "/vi/contact", lang: "vi", destination: "/#contact" },
+  { source: "/contact", lang: "en", destination: "/#contact" },
+  { source: "/contact", lang: "vi", destination: "/vi#contact" },
+  { source: "/en/contact", lang: "en", destination: "/#contact" },
+  { source: "/en/contact", lang: "vi", destination: "/vi#contact" },
+  { source: "/vi/contact", lang: "en", destination: "/#contact" },
+  { source: "/vi/contact", lang: "vi", destination: "/vi#contact" },
 
-  { source: "/services", lang: "en", destination: "/en#services" },
-  { source: "/services", lang: "vi", destination: "/#services" },
-  { source: "/en/services", lang: "en", destination: "/en#services" },
-  { source: "/en/services", lang: "vi", destination: "/#services" },
-  { source: "/vi/services", lang: "en", destination: "/en#services" },
-  { source: "/vi/services", lang: "vi", destination: "/#services" },
-
-  { source: "/vi", lang: "en", destination: "/en" },
-  { source: "/vi", lang: "vi", destination: "/" },
-  { source: "/vi/about", lang: "en", destination: "/en/about" },
-  { source: "/vi/about", lang: "vi", destination: "/about" },
-  { source: "/vi/career", lang: "en", destination: "/en/career" },
-  { source: "/vi/career", lang: "vi", destination: "/career" },
-  { source: "/vi/insights", lang: "en", destination: "/en/insights" },
-  { source: "/vi/insights", lang: "vi", destination: "/insights" },
-  { source: "/vi/insights/:slug", lang: "en", destination: "/en/insights/:slug" },
-  { source: "/vi/insights/:slug", lang: "vi", destination: "/insights/:slug" },
+  { source: "/services", lang: "en", destination: "/#services" },
+  { source: "/services", lang: "vi", destination: "/vi#services" },
+  { source: "/en/services", lang: "en", destination: "/#services" },
+  { source: "/en/services", lang: "vi", destination: "/vi#services" },
+  { source: "/vi/services", lang: "en", destination: "/#services" },
+  { source: "/vi/services", lang: "vi", destination: "/vi#services" },
 
   { source: "/services/accounting", lang: "en", destination: "https://acc.crown.com.vn/" },
   { source: "/services/accounting", lang: "vi", destination: "https://acc.crown.com.vn/vi" },
@@ -139,12 +123,12 @@ export const wwwLegacyLangHints = [
   { source: "/vi/services/internal-audit", lang: "en", destination: "https://audit.crown.com.vn/" },
   { source: "/vi/services/internal-audit", lang: "vi", destination: "https://audit.crown.com.vn/vi" },
 
-  { source: "/services/financial-advisory", lang: "en", destination: "https://fas.crown.com.vn/en" },
-  { source: "/services/financial-advisory", lang: "vi", destination: "https://fas.crown.com.vn/" },
-  { source: "/en/services/financial-advisory", lang: "en", destination: "https://fas.crown.com.vn/en" },
-  { source: "/en/services/financial-advisory", lang: "vi", destination: "https://fas.crown.com.vn/" },
-  { source: "/vi/services/financial-advisory", lang: "en", destination: "https://fas.crown.com.vn/en" },
-  { source: "/vi/services/financial-advisory", lang: "vi", destination: "https://fas.crown.com.vn/" },
+  { source: "/services/financial-advisory", lang: "en", destination: "https://fas.crown.com.vn/" },
+  { source: "/services/financial-advisory", lang: "vi", destination: "https://fas.crown.com.vn/vi" },
+  { source: "/en/services/financial-advisory", lang: "en", destination: "https://fas.crown.com.vn/" },
+  { source: "/en/services/financial-advisory", lang: "vi", destination: "https://fas.crown.com.vn/vi" },
+  { source: "/vi/services/financial-advisory", lang: "en", destination: "https://fas.crown.com.vn/" },
+  { source: "/vi/services/financial-advisory", lang: "vi", destination: "https://fas.crown.com.vn/vi" },
 
   { source: "/services/tax-advisory", lang: "en", destination: "https://tax.crown.com.vn/" },
   { source: "/services/tax-advisory", lang: "vi", destination: "https://tax.crown.com.vn/vi" },
@@ -161,12 +145,52 @@ export const wwwLegacyLangHints = [
   { source: "/vi/services/risk-compliance", lang: "vi", destination: "https://esg.crown.com.vn/vi" },
 ];
 
+
 /**
  * @param {"en" | "vi"} lang
  * @returns {VercelRedirect["has"]}
  */
 function langQuery(lang) {
   return [{ type: "query", key: "lang", value: lang }];
+}
+
+
+/**
+ * Leftover /en and /en/:path* after English became the unprefixed default.
+ * Lang query variants come first so /en/about?lang=vi is one hop to /vi/about.
+ *
+ * @returns {VercelRedirect[]}
+ */
+export function retiredEnPrefixRedirects() {
+  /** @type {VercelRedirect[]} */
+  return [
+    {
+      source: "/en",
+      has: langQuery("en"),
+      destination: "/",
+      permanent: true,
+    },
+    {
+      source: "/en/:path*",
+      has: langQuery("en"),
+      destination: "/:path*",
+      permanent: true,
+    },
+    {
+      source: "/en",
+      has: langQuery("vi"),
+      destination: "/vi",
+      permanent: true,
+    },
+    {
+      source: "/en/:path*",
+      has: langQuery("vi"),
+      destination: "/vi/:path*",
+      permanent: true,
+    },
+    { source: "/en", destination: "/", permanent: true },
+    { source: "/en/:path*", destination: "/:path*", permanent: true },
+  ];
 }
 
 /**
@@ -263,6 +287,7 @@ export function redirectsForFolder(folder) {
     rules.push(...wwwLegacyRedirects);
   }
 
+  rules.push(...retiredEnPrefixRedirects());
   rules.push(...langQueryRedirects(primary));
   return rules;
 }
@@ -289,7 +314,13 @@ export function writeSiteVercelJson(folder) {
 
   const generated = redirectsForFolder(folder);
   const seen = new Set(generated.map(ruleKey));
-  const extras = (existing.redirects ?? []).filter((r) => !seen.has(ruleKey(r)));
+  const extras = (existing.redirects ?? []).filter((r) => {
+    if (seen.has(ruleKey(r))) return false;
+    const src = r.source ?? "";
+    // Drop leftover vi-primary "strip /vi" rules now that /vi is a real locale tree.
+    if (src === "/vi" || src.startsWith("/vi/") || src.startsWith("/vi:")) return false;
+    return true;
+  });
 
   const next = {
     cleanUrls: existing.cleanUrls ?? true,

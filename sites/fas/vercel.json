@@ -12,7 +12,7 @@
           "value": "en"
         }
       ],
-      "destination": "/en",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -24,7 +24,7 @@
           "value": "en"
         }
       ],
-      "destination": "/en/:path*",
+      "destination": "/:path*",
       "permanent": true
     },
     {
@@ -36,7 +36,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/",
+      "destination": "/vi",
       "permanent": true
     },
     {
@@ -48,6 +48,64 @@
           "value": "vi"
         }
       ],
+      "destination": "/vi/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vi",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "vi"
+        }
+      ],
+      "destination": "/vi",
+      "permanent": true
+    },
+    {
+      "source": "/vi/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "vi"
+        }
+      ],
+      "destination": "/vi/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vi",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vi/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
       "destination": "/:path*",
       "permanent": true
     },
@@ -57,10 +115,10 @@
         {
           "type": "query",
           "key": "lang",
-          "value": "en"
+          "value": "vi"
         }
       ],
-      "destination": "/en",
+      "destination": "/vi",
       "permanent": true
     },
     {
@@ -69,10 +127,10 @@
         {
           "type": "query",
           "key": "lang",
-          "value": "en"
+          "value": "vi"
         }
       ],
-      "destination": "/en/:path*",
+      "destination": "/vi/:path*",
       "permanent": true
     },
     {
@@ -81,7 +139,7 @@
         {
           "type": "query",
           "key": "lang",
-          "value": "vi"
+          "value": "en"
         }
       ],
       "destination": "/",
@@ -93,7 +151,7 @@
         {
           "type": "query",
           "key": "lang",
-          "value": "vi"
+          "value": "en"
         }
       ],
       "destination": "/:path*",
