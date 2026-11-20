@@ -206,7 +206,7 @@ function applySite(folder) {
   const htmlFiles = discoverHtmlFiles(siteDir);
   const defaultOgImage = resolveOgImageUrl(meta.domain, DEFAULT_OG_ASSET);
 
-  /** @type {{ loc: string, priority: string, changefreq: string }[]} */
+  /** @type {{ loc: string, priority: string, changefreq: string, lastmod: string, hreflangLinks: { code: string, href: string }[] }[]} */
   const sitemapEntries = [];
 
   for (const htmlPath of htmlFiles) {
@@ -263,10 +263,14 @@ function applySite(folder) {
     const changefreq =
       kind === "article" ? "monthly" : urlPath === "/" ? "weekly" : "monthly";
 
+    const lastmod = statSync(htmlPath).mtime.toISOString().slice(0, 10);
+
     sitemapEntries.push({
       loc: canonicalUrl,
       priority,
       changefreq,
+      lastmod,
+      hreflangLinks: localeMeta.hreflangLinks,
     });
   }
 
@@ -277,15 +281,24 @@ function applySite(folder) {
   });
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${sitemapEntries
-  .map(
-    (e) => `  <url>
+  .map((e) => {
+    const alts = (e.hreflangLinks ?? [])
+      .map(
+        (l) =>
+          `    <xhtml:link rel="alternate" hreflang="${l.code}" href="${l.href}"/>`
+      )
+      .join("\n");
+    return `  <url>
     <loc>${e.loc}</loc>
+    <lastmod>${e.lastmod}</lastmod>
     <changefreq>${e.changefreq}</changefreq>
     <priority>${e.priority}</priority>
-  </url>`
-  )
+${alts}
+  </url>`;
+  })
   .join("\n")}
 </urlset>
 `;

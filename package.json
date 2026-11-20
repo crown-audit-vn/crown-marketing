@@ -34,7 +34,9 @@
     "sync:enquiry-modals": "node scripts/patch-enquiry-modals.mjs",
     "sync:images": "node scripts/extract-data-uri-images.mjs all",
     "locale:build": "node scripts/prerender-locale.mjs all",
-    "seo:apply": "node scripts/prerender-locale.mjs all && node scripts/apply-seo.mjs all",
+    "seo:apply": "node scripts/patch-locale-switcher.mjs && node scripts/prerender-locale.mjs all && node scripts/apply-seo.mjs all && node scripts/seo/legacy-redirects.mjs",
+    "seo:verify": "node scripts/seo/verify-local.mjs",
+    "test:locale-path": "node scripts/seo/locale-path.test.mjs",
     "seo:check": "node scripts/seo/check-local.mjs",
     "seo:check:live": "node scripts/seo/check-live.mjs",
     "seo:gsc": "node scripts/seo/search-console-sitemaps.mjs"

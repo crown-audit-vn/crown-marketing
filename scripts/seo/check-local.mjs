@@ -72,6 +72,43 @@ export function checkLocalSeo(target = "all") {
             detail: `canonical trùng (${cans.length})`,
           });
         }
+        const domainMatch = rel.match(/^sites[/\\]([^/\\]+)[/\\]/);
+        const folderName = domainMatch?.[1];
+        const site = folderName && targets.find((t) => t.folder === folderName);
+        if (site && m?.[1]) {
+          const parts = rel.split(/[\\/]/);
+          const after = parts.slice(2, -1);
+          const htmlDir = after.filter((s) => s !== "");
+          const urlPath = htmlDir.length === 0 ? "/" : `/${htmlDir.join("/")}`;
+          const expected =
+            urlPath === "/" ? `https://${site.domain}/` : `https://${site.domain}${urlPath}`;
+          if (m[1] !== expected) {
+            issues.push({
+              file: rel,
+              detail: `self-canonical sai: ${m[1]} (kỳ vọng ${expected})`,
+            });
+          }
+          const ogUrl = text.match(/property="og:url" content="([^"]+)"/);
+          if (ogUrl && ogUrl[1] !== m[1]) {
+            issues.push({ file: rel, detail: `og:url ${ogUrl[1]} != canonical` });
+          }
+          const altPrefix =
+            urlPath === "/en" || urlPath.startsWith("/en/") ? "en"
+            : urlPath === "/vi" || urlPath.startsWith("/vi/") ? "vi"
+            : null;
+          const htmlLang = text.match(/<html\b[^>]*\slang="([^"]+)"/);
+          const expectLang =
+            altPrefix ??
+            (folderName === "www" || folderName === "cons" || folderName === "fas" || folderName === "up"
+              ? "vi"
+              : "en");
+          if (htmlLang && htmlLang[1] !== expectLang) {
+            issues.push({
+              file: rel,
+              detail: `html lang=${htmlLang[1]} (kỳ vọng ${expectLang})`,
+            });
+          }
+        }
       }
     }
   }
@@ -93,6 +130,12 @@ export function checkLocalSeo(target = "all") {
       }
       if (xml.includes("localhost")) {
         issues.push({ file: `${folder}/sitemap.xml`, detail: "localhost trong sitemap" });
+      }
+      if (!xml.includes("xmlns:xhtml") || !xml.includes("xhtml:link")) {
+        issues.push({ file: `${folder}/sitemap.xml`, detail: "thiếu xhtml:link hreflang" });
+      }
+      if (!xml.includes("<lastmod>")) {
+        issues.push({ file: `${folder}/sitemap.xml`, detail: "thiếu lastmod" });
       }
     }
     if (!existsSync(rb)) {

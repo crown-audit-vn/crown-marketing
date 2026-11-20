@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="vi">
+<html data-crown-locale="vi" lang="vi">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -1664,7 +1664,54 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
   const isHomepage = false;
   const languages = ['vi','en','zh','ja','ko','th'];
   const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
-  const crownHosts = new Set(['crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn']);
+  const crownHosts = new Set(['crown.com.vn','www.crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn','up.crown.com.vn']);
+  const primaryByHost={
+    'crown.com.vn':'vi','www.crown.com.vn':'vi',
+    'cons.crown.com.vn':'vi','fas.crown.com.vn':'vi','up.crown.com.vn':'vi',
+    'acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'
+  };
+  function crownNormalizePath(pathname){
+    if(!pathname||pathname==='/')return '/';
+    const trimmed=pathname.replace(/\/+$/,'');
+    return trimmed===''?'/':trimmed;
+  }
+  function crownLogicalPath(pathname,primary){
+    const alt=primary==='vi'?'en':'vi';
+    const p=crownNormalizePath(pathname);
+    if(p==='/'+alt)return '/';
+    if(p.startsWith('/'+alt+'/'))return p.slice(alt.length+1);
+    return p;
+  }
+  function crownLocalePath(pathname,targetLang,primary){
+    const logical=crownLogicalPath(pathname,primary);
+    if(targetLang!=='en'&&targetLang!=='vi')return logical;
+    if(targetLang===primary)return logical;
+    return logical==='/'?'/'+targetLang:'/'+targetLang+logical;
+  }
+  function crownPathLocale(pathname){
+    const p=crownNormalizePath(pathname);
+    if(p==='/en'||p.startsWith('/en/'))return 'en';
+    if(p==='/vi'||p.startsWith('/vi/'))return 'vi';
+    return null;
+  }
+  function crownPageLocale(){
+    return crownPathLocale(location.pathname)
+      || document.documentElement.getAttribute('data-crown-locale')
+      || (document.documentElement.lang||'').slice(0,2)
+      || 'vi';
+  }
+  function crownLocalizeUrl(href,language){
+    const url=new URL(href,location.href);
+    url.searchParams.delete('lang');
+    const host=url.hostname;
+    if(!crownHosts.has(host)) return url.href;
+    const primary=primaryByHost[host]||'vi';
+    if(language==='en'||language==='vi'){
+      url.pathname=crownLocalePath(url.pathname,language,primary);
+    }
+    return url.pathname+url.search+url.hash;
+  }
+
   const normalize = value => value.replace(/\s+/g,' ').trim();
   let locale = 'en';
   const translate = (value, language) => translations[normalize(value)]?.[language] ?? value;
@@ -1737,13 +1784,13 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
       button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
     });
     links.forEach(({el,href})=>{
-      const url=new URL(href,location.href);url.searchParams.set('lang',language);el.href=url.href;
+      el.href=crownLocalizeUrl(href,language);
     });
     accentCrownUpText();
     if(persist){
       try{localStorage.setItem('crown.language',language);}catch{}
       if(crownHosts.has(location.hostname)) document.cookie=`crown_language=${language}; Domain=crown.com.vn; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
-      try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}
+      try{const url=new URL(location.href);url.searchParams.delete('lang');history.replaceState(null,'',url.pathname+url.search+url.hash);}catch{}
     }
     // Existing equal-height card layouts recalculate against the translated text.
     requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
@@ -1766,12 +1813,27 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
       if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
     });
   });
-  document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{applyLanguage(button.dataset.lang,true);closeMenus();menus[0].button.focus();}));
+  document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
+    const language=button.dataset.lang;
+    const primary=primaryByHost[location.hostname]||'vi';
+    if(language==='en'||language==='vi'){
+      const dest=crownLocalePath(location.pathname,language,primary);
+      const current=crownNormalizePath(location.pathname);
+      if(crownNormalizePath(dest)!==current){
+        const url=new URL(location.href);
+        url.pathname=dest;
+        url.searchParams.delete('lang');
+        location.assign(url.pathname+url.search+url.hash);
+        return;
+      }
+    }
+    applyLanguage(language,true);closeMenus();menus[0].button.focus();
+  }));
   document.addEventListener('click',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){const opened=menus.find(m=>!m.panel.hidden);closeMenus();opened?.button.focus();}});
   document.addEventListener('focusin',event=>{if(!event.target.closest('.lang-switcher-wrap,.switcher-wrap'))closeMenus();});
-  let initial=new URLSearchParams(location.search).get('lang');
-  applyLanguage(languages.includes(initial) ? initial : 'en');
+    const initial=crownPageLocale();
+  applyLanguage(languages.includes(initial)?initial:crownPageLocale());
   window.CrownLanguage={set:language=>applyLanguage(language,true),get:()=>locale};
 })();
 

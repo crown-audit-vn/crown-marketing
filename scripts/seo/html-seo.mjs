@@ -180,8 +180,18 @@ export function replaceOrInjectSeoBlock(html, block) {
  * @param {string} lang
  */
 export function setHtmlLang(html, lang) {
-  return html.replace(
-    /<html\s+lang=["'][^"']*["']/i,
-    `<html lang="${lang}"`
-  );
+  return html.replace(/<html\b[^>]*>/i, (tag) => {
+    let out = /\slang=["'][^"']*["']/.test(tag)
+      ? tag.replace(/\slang=["'][^"']*["']/, ` lang="${lang}"`)
+      : tag.replace(/<html/i, `<html lang="${lang}"`);
+    if (/\sdata-crown-locale=/.test(out)) {
+      out = out.replace(
+        /data-crown-locale=["'][^"']*["']/,
+        `data-crown-locale="${lang}"`
+      );
+    } else {
+      out = out.replace(/<html/i, `<html data-crown-locale="${lang}"`);
+    }
+    return out;
+  });
 }

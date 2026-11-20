@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="vi">
+<html data-crown-locale="vi" lang="vi">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -1107,8 +1107,8 @@ body.team-modal-open{overflow:hidden}
 </nav>
 <div class="header-actions">
 <div class="lang-toggle">
-<button class="" id="btn-vi" onclick="setLang('vi')" type="button">VI</button>
-<button class="active" id="btn-en" onclick="setLang('en')" type="button">EN</button>
+<button class="active" id="btn-vi" onclick="setLang('vi',true)" type="button">VI</button>
+<button class="" id="btn-en" onclick="setLang('en',true)" type="button">EN</button>
 </div>
 <a class="header-call" href="tel:0584252999" aria-label="Call 0584 252 999" title="0584 252 999"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
 <button aria-label="Menu" class="burger" id="burgerBtn" type="button"><i class="fa-solid fa-bars"></i></button>
@@ -1613,7 +1613,7 @@ body.team-modal-open{overflow:hidden}
     else{ header.style.boxShadow='none'; }
   });
 
-window.addEventListener("DOMContentLoaded",()=>setLang("en"));
+window.addEventListener("DOMContentLoaded",()=>{const p=(location.pathname.replace(/\/+$/,'')||'/');setLang((p==='/en'||p.startsWith('/en/'))?'en':'vi');});
 </script>
 <script src="/assets/consultation-leads-client.js"></script>
 <script id="crown-site-contact-forms">(function(){

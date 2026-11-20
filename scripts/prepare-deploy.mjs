@@ -77,12 +77,24 @@ export function prepareDeploy(target = "all", { fast = false } = {}) {
     if (code !== 0) return code;
   }
 
-  let code = runStep("Prerender locale (/en, /vi)", "prerender-locale.mjs", [
+  let code = runStep(
+    "Patch language switchers (path-based locale)",
+    "patch-locale-switcher.mjs",
+    []
+  );
+  if (code !== 0) return code;
+
+  code = runStep("Prerender locale (/en, /vi)", "prerender-locale.mjs", [
     target,
   ]);
   if (code !== 0) return code;
 
   code = runStep("SEO + sitemap + robots", "apply-seo.mjs", [target]);
+  if (code !== 0) return code;
+
+  code = runStep("Vercel redirects (?lang= + legacy paths)", "seo/legacy-redirects.mjs", [
+    target,
+  ]);
   if (code !== 0) return code;
 
   console.log(`\n${"═".repeat(60)}\n✓ Chuẩn bị xong — sẵn sàng deploy.\n`);

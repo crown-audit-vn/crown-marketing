@@ -1,123 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://crown.com.vn/</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/"/>
   </url>
   <url>
     <loc>https://crown.com.vn/about</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/about"/>
   </url>
   <url>
     <loc>https://crown.com.vn/career</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/career"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/career"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/career"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/about</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/about"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/career</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/career"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/career"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/career"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/capital-construction-audit</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/capital-construction-audit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/capital-construction-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/capital-construction-audit"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/esg-green-finance</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/esg-green-finance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/esg-green-finance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/esg-green-finance"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/fdi-tax-compliance</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/fdi-tax-compliance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/fdi-tax-compliance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/fdi-tax-compliance"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/financial-scenario-planning</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/financial-scenario-planning"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/financial-scenario-planning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/financial-scenario-planning"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/financial-statement-audit</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/financial-statement-audit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/financial-statement-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/financial-statement-audit"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/ma-due-diligence</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/ma-due-diligence"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/ma-due-diligence"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/ma-due-diligence"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/preparing-financial-records</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/preparing-financial-records"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/preparing-financial-records"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/preparing-financial-records"/>
   </url>
   <url>
     <loc>https://crown.com.vn/en/insights/two-ring-defense-accounting</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/two-ring-defense-accounting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/two-ring-defense-accounting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/two-ring-defense-accounting"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/capital-construction-audit</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/capital-construction-audit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/capital-construction-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/capital-construction-audit"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/esg-green-finance</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/esg-green-finance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/esg-green-finance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/esg-green-finance"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/fdi-tax-compliance</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/fdi-tax-compliance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/fdi-tax-compliance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/fdi-tax-compliance"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/financial-scenario-planning</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/financial-scenario-planning"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/financial-scenario-planning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/financial-scenario-planning"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/financial-statement-audit</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/financial-statement-audit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/financial-statement-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/financial-statement-audit"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/ma-due-diligence</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/ma-due-diligence"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/ma-due-diligence"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/ma-due-diligence"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/preparing-financial-records</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/preparing-financial-records"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/preparing-financial-records"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/preparing-financial-records"/>
   </url>
   <url>
     <loc>https://crown.com.vn/insights/two-ring-defense-accounting</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crown.com.vn/insights/two-ring-defense-accounting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crown.com.vn/en/insights/two-ring-defense-accounting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crown.com.vn/insights/two-ring-defense-accounting"/>
   </url>
 </urlset>
