@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" width="820" height="220">
+  <style>
+    .brand { font-family: 'Google Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 108px; letter-spacing: 0.04em; fill: #043246; }
+    .slogan { font-family: 'Google Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 38px; letter-spacing: 0.31em; fill: #043246; }
+  </style>
+  <text x="410" y="105" text-anchor="middle" class="brand">TÂM DOANH</text>
+  <line x1="145" y1="132" x2="675" y2="132" stroke="#D99B26" stroke-width="2.5" stroke-opacity="0.75" />
+  <text x="416" y="182" text-anchor="middle" class="slogan">FIND THE ZERO</text>
+</svg>
