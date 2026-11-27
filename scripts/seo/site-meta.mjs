@@ -140,5 +140,6 @@ export const organizationSchema = {
     availableLanguage: ["en", "vi"],
     name: addr.name,
   })),
-  sameAs: [],
+  /** Add LinkedIn / other profiles here when marketing confirms public URLs. */
+  sameAs: ["https://www.facebook.com/tamdoanhgroup"],
 };

@@ -31,6 +31,7 @@ import {
   resolveOgImageUrl,
 } from "./seo/resolve-og-image.mjs";
 import { logicalPath, resolveLocalePageMeta } from "./seo/hreflang.mjs";
+import { insightDatesForPath } from "./seo/insight-articles.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -211,6 +212,60 @@ function applyCwvHints(html) {
 }
 
 /**
+ * Non-LCP images: lazy + async decode on article heroes when fetchpriority is not set.
+ * @param {string} html
+ */
+function applyArticleImageHints(html) {
+  return html.replace(
+    /<figure class="ins-hero-photo">\s*<img([^>]*)>/gi,
+    (full, attrs) => {
+      const lcp = /fetchpriority\s*=\s*["']high["']/i.test(attrs);
+      let a = attrs;
+      if (!lcp && !/\sloading=/.test(a)) a += ` loading="lazy"`;
+      if (!/\sdecoding=/.test(a)) a += ` decoding="async"`;
+      return `<figure class="ins-hero-photo"><img${a}>`;
+    }
+  );
+}
+
+/**
+ * @param {string} domain
+ * @param {string} folder
+ * @param {{ loc: string }[]} sitemapEntries
+ */
+function writeLlmsTxt(domain, folder, sitemapEntries) {
+  if (folder !== "www") return;
+  const siteDir = resolve(root, "sites", folder);
+  const insights = sitemapEntries
+    .map((e) => e.loc)
+    .filter((u) => u.includes("/insights/") && !u.endsWith("/insights"))
+    .sort();
+  const services = [
+    "https://audit.crown.com.vn/",
+    "https://tax.crown.com.vn/",
+    "https://acc.crown.com.vn/",
+    "https://cons.crown.com.vn/",
+    "https://fas.crown.com.vn/",
+    "https://esg.crown.com.vn/",
+    "https://up.crown.com.vn/",
+  ];
+  const body = `# Crown Audit & Advisory Việt Nam
+
+> Independent audit, tax, accounting, corporate finance and ESG advisory in Vietnam.
+
+## Main site
+- https://${domain}/
+
+## Insights
+${insights.map((u) => `- ${u}`).join("\n")}
+
+## Service sites
+${services.map((u) => `- ${u}`).join("\n")}
+`;
+  writeTextIfChanged(join(siteDir, "llms.txt"), body);
+}
+
+/**
  * @param {string} folder
  */
 function applySite(folder) {
@@ -264,6 +319,19 @@ function applySite(folder) {
     html = setHtmlLang(html, localeMeta.pageLocale);
     html = rewriteCrownHrefs(html, localeMeta.pageLocale, meta.domain);
     html = applyCwvHints(html);
+    if (kind === "article") html = applyArticleImageHints(html);
+
+    const insightDates =
+      folder === "www" && kind === "article"
+        ? insightDatesForPath(logical)
+        : null;
+    if (folder === "www" && kind === "article" && !insightDates) {
+      throw new Error(
+        `Thiếu ngày insight trong insight-articles.mjs: ${logical} (${htmlPath})`
+      );
+    }
+    const datePublished = insightDates?.datePublished;
+    const dateModified = insightDates?.dateModified ?? insightDates?.datePublished;
 
     const faqs = extractFaq(html);
     const breadcrumbs = breadcrumbsFor(
@@ -285,6 +353,8 @@ function applySite(folder) {
       hreflangLinks: localeMeta.hreflangLinks,
       alternateOgLocales: localeMeta.alternateOgLocales,
       ogType: kind === "article" ? "article" : "website",
+      articlePublishedTime: datePublished,
+      articleModifiedTime: dateModified,
       jsonLd: buildJsonLd({
         kind,
         canonicalUrl,
@@ -299,6 +369,8 @@ function applySite(folder) {
         faqs,
         serviceName: kind === "service" ? title.replace(/\s*\|\s*Crown.*$/i, "").trim() : undefined,
         serviceType: kind === "service" ? title.replace(/\s*\|\s*Crown.*$/i, "").trim() : undefined,
+        datePublished,
+        dateModified,
       }),
     });
 
@@ -359,6 +431,8 @@ Sitemap: https://${meta.domain}/sitemap.xml
 `;
 
   writeTextIfChanged(join(siteDir, "robots.txt"), robotsTxt);
+
+  writeLlmsTxt(meta.domain, folder, sitemapEntries);
 
   console.log(
     `[${folder}] ${htmlFiles.length} HTML, sitemap.xml + robots.txt → https://${meta.domain}`

@@ -79,6 +79,8 @@ export function escapeAttr(s) {
  * @param {{ code: string, href: string }[] | undefined} opts.hreflangLinks
  * @param {string[] | undefined} opts.alternateOgLocales
  * @param {{ width?: number, height?: number } | undefined} opts.ogImageSize
+ * @param {string | undefined} opts.articlePublishedTime ISO 8601 date (articles)
+ * @param {string | undefined} opts.articleModifiedTime ISO 8601 date (articles)
  */
 export function buildSeoBlock(opts) {
   const title = escapeAttr(opts.title);
@@ -113,6 +115,12 @@ export function buildSeoBlock(opts) {
     )
     .join("\n");
 
+  const articleOgMeta =
+    opts.ogType === "article" && opts.articlePublishedTime
+      ? `<meta property="article:published_time" content="${escapeAttr(opts.articlePublishedTime)}">
+<meta property="article:modified_time" content="${escapeAttr(opts.articleModifiedTime ?? opts.articlePublishedTime)}">`
+      : "";
+
   return `${SEO_START}
 <link rel="canonical" href="${canonical}">
 ${hreflangTags}
@@ -126,6 +134,7 @@ ${ogLocaleAlt}
 <meta property="og:description" content="${description}">
 <meta property="og:image" content="${ogImage}">
 ${ogImageSize}
+${articleOgMeta}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">

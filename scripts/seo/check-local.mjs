@@ -75,6 +75,25 @@ export function checkLocalSeo(target = "all") {
         const domainMatch = rel.match(/^sites[/\\]([^/\\]+)[/\\]/);
         const folderName = domainMatch?.[1];
         const site = folderName && targets.find((t) => t.folder === folderName);
+        const isInsightArticle =
+          folderName === "www" &&
+          rel.endsWith("index.html") &&
+          /[/\\]insights[/\\][^/\\]+[/\\]index\.html$/i.test(rel) &&
+          !/[/\\]insights[/\\]index\.html$/i.test(rel);
+        if (isInsightArticle && !text.includes('"datePublished"')) {
+          issues.push({
+            file: rel,
+            detail: "Article JSON-LD thiếu datePublished",
+          });
+        }
+        if (rel === "sites/www/index.html" || rel === "sites\\www\\index.html") {
+          if (!text.includes('"sameAs"') || !text.includes("facebook.com/tamdoanhgroup")) {
+            issues.push({
+              file: rel,
+              detail: "Organization schema thiếu sameAs (profile hợp lệ)",
+            });
+          }
+        }
         if (site && m?.[1]) {
           const parts = rel.split(/[\\/]/);
           const after = parts.slice(2, -1);
@@ -145,6 +164,12 @@ export function checkLocalSeo(target = "all") {
     const og = join(siteDir, "assets", "crown-og-share.jpg");
     if (!existsSync(og)) {
       issues.push({ file: folder, detail: "thiếu assets/crown-og-share.jpg" });
+    }
+    if (folder === "www") {
+      const llms = join(siteDir, "llms.txt");
+      if (!existsSync(llms)) {
+        issues.push({ file: folder, detail: "thiếu llms.txt" });
+      }
     }
   }
 

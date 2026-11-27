@@ -6,6 +6,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { siteByFolder, sites } from "../sites.mjs";
+import { liveSeoProbes } from "./live-probes.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -103,6 +104,33 @@ async function checkOneDomain(domain) {
 }
 
 /**
+ * @param {string} domain
+ * @param {string} path
+ * @returns {Promise<LiveRow>}
+ */
+async function checkProbePath(domain, path) {
+  const url = `https://${domain}${path}`;
+  const label = `crown-seo (${path})`;
+  try {
+    const res = await fetchText(url);
+    const ok = res.status === 200 && res.body.includes(SEO_MARKER);
+    return {
+      domain,
+      check: label,
+      ok,
+      detail: ok ? "200 + marker" : `HTTP ${res.status}, thiếu crown-seo`,
+    };
+  } catch (err) {
+    return {
+      domain,
+      check: label,
+      ok: false,
+      detail: err instanceof Error ? err.message : String(err),
+    };
+  }
+}
+
+/**
  * @param {{ folders?: string[], retries?: number, delayMs?: number }} [options]
  * @returns {Promise<{ ok: boolean, rows: LiveRow[] }>}
  */
@@ -122,6 +150,13 @@ export async function checkLiveSeo({
     rows = [];
     for (const { domain } of list) {
       rows.push(...(await checkOneDomain(domain)));
+    }
+    const probeDomains = new Set(list.map((s) => s.domain));
+    for (const { domain, paths } of liveSeoProbes) {
+      if (!probeDomains.has(domain)) continue;
+      for (const path of paths) {
+        rows.push(await checkProbePath(domain, path));
+      }
     }
     const allOk = rows.every((r) => r.ok);
     if (allOk) return { ok: true, rows };

@@ -84,6 +84,8 @@ export function extractFaq(html) {
  *   faqs?: { q: string, a: string }[],
  *   serviceName?: string,
  *   serviceType?: string,
+ *   datePublished?: string,
+ *   dateModified?: string,
  * }} p
  */
 export function buildJsonLd(p) {
@@ -130,6 +132,9 @@ export function buildJsonLd(p) {
           "@type": "Organization",
           name: organizationSchema.name,
           url: organizationSchema.url,
+          ...(organizationSchema.sameAs?.length
+            ? { sameAs: organizationSchema.sameAs }
+            : {}),
         },
         address: organizationSchema.address,
         telephone: organizationSchema.telephone,
@@ -162,6 +167,9 @@ export function buildJsonLd(p) {
       },
     };
     if (p.ogImage) article.image = [p.ogImage];
+    if (p.datePublished) article.datePublished = p.datePublished;
+    if (p.dateModified) article.dateModified = p.dateModified;
+    else if (p.datePublished) article.dateModified = p.datePublished;
     blocks.push(article);
   }
 
