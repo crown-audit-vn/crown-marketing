@@ -2,6 +2,7 @@
 
 <html data-crown-locale="vi" lang="vi">
 <head>
+<link rel="preload" as="image" href="https://images.pexels.com/photos/6964119/pexels-photo-6964119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" fetchpriority="high" crossorigin="anonymous" data-crown-lcp="hero">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="/assets/crown-favicon.png" rel="icon" type="image/png"/>
@@ -29,15 +30,16 @@
 <meta property="og:title" content="Financial statement audit: beyond the compliance signature | Crown">
 <meta property="og:description" content="Management letters, revenue recognition, asset quality and the strength of internal controls.">
 <meta property="og:image" content="https://images.pexels.com/photos/6964119/pexels-photo-6964119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
-
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="933">
 <meta property="article:published_time" content="2026-11-15">
-<meta property="article:modified_time" content="2026-11-15">
+<meta property="article:modified_time" content="2026-11-27">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Financial statement audit: beyond the compliance signature | Crown">
 <meta name="twitter:description" content="Management letters, revenue recognition, asset quality and the strength of internal controls.">
 <meta name="twitter:image" content="https://images.pexels.com/photos/6964119/pexels-photo-6964119.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Financial statement audit: beyond the compliance signature | Crown","description":"Management letters, revenue recognition, asset quality and the strength of internal controls.","url":"https://crown.com.vn/vi/insights/financial-statement-audit","inLanguage":"vi","isPartOf":{"@type":"WebSite","name":"Crown Audit & Advisory Việt Nam","url":"https://crown.com.vn"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Financial statement audit: beyond the compliance signature","description":"Management letters, revenue recognition, asset quality and the strength of internal controls.","mainEntityOfPage":"https://crown.com.vn/vi/insights/financial-statement-audit","url":"https://crown.com.vn/vi/insights/financial-statement-audit","inLanguage":"vi","author":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam"},"publisher":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam","logo":{"@type":"ImageObject","url":"https://crown.com.vn/assets/crown-logo-green.png"}},"image":["https://images.pexels.com/photos/6964119/pexels-photo-6964119.jpeg?auto=compress&cs=tinysrgb&w=1400"],"datePublished":"2026-11-15","dateModified":"2026-11-15"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Financial statement audit: beyond the compliance signature","description":"Management letters, revenue recognition, asset quality and the strength of internal controls.","mainEntityOfPage":"https://crown.com.vn/vi/insights/financial-statement-audit","url":"https://crown.com.vn/vi/insights/financial-statement-audit","inLanguage":"vi","author":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam"},"publisher":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam","url":"https://crown.com.vn","logo":{"@type":"ImageObject","url":"https://crown.com.vn/assets/crown-logo-green.png"}},"image":["https://images.pexels.com/photos/6964119/pexels-photo-6964119.jpeg?auto=compress&cs=tinysrgb&w=1400"],"datePublished":"2026-11-15","dateModified":"2026-11-27"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://crown.com.vn/vi"},{"@type":"ListItem","position":2,"name":"Góc nhìn","item":"https://crown.com.vn/vi/insights"},{"@type":"ListItem","position":3,"name":"Financial statement audit: beyond the compliance signature","item":"https://crown.com.vn/vi/insights/financial-statement-audit"}]}</script>
 <!-- crown-seo:end -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -1296,7 +1298,7 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
   const languages = ['vi','en','zh','ja','ko','th'];
   const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
   const crownHosts = new Set(['crown.com.vn','www.crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn','up.crown.com.vn']);
-        const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
+          const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
   function crownNormalizePath(pathname){
     if(!pathname||pathname==='/')return '/';
     const trimmed=pathname.replace(/\/+$/,'');
@@ -1444,7 +1446,7 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
       if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
     });
   });
-          document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
+            document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
     const language=button.dataset.lang;
     if(language==='en'||language==='vi'){
       const dest=crownLocalePath(location.pathname,language);

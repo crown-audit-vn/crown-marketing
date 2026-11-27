@@ -100,6 +100,25 @@ async function checkOneDomain(domain) {
     });
   }
 
+  const llmsUrl = `https://${domain}/llms.txt`;
+  try {
+    const llms = await fetchText(llmsUrl);
+    const ok = llms.status === 200 && llms.body.length > 20 && llms.body.includes("http");
+    rows.push({
+      domain,
+      check: "llms.txt",
+      ok,
+      detail: ok ? "200" : `HTTP ${llms.status}`,
+    });
+  } catch (err) {
+    rows.push({
+      domain,
+      check: "llms.txt",
+      ok: false,
+      detail: err instanceof Error ? err.message : String(err),
+    });
+  }
+
   return rows;
 }
 
@@ -113,12 +132,22 @@ async function checkProbePath(domain, path) {
   const label = `crown-seo (${path})`;
   try {
     const res = await fetchText(url);
-    const ok = res.status === 200 && res.body.includes(SEO_MARKER);
+    let ok = res.status === 200 && res.body.includes(SEO_MARKER);
+    let detail = ok ? "200 + marker" : `HTTP ${res.status}, thiếu crown-seo`;
+    if (ok && path.includes("/insights/") && path !== "/insights") {
+      if (!res.body.includes('"datePublished"')) {
+        ok = false;
+        detail = "thiếu datePublished trong JSON-LD";
+      } else if (!res.body.includes('data-crown-lcp="hero"')) {
+        ok = false;
+        detail = "thiếu preload LCP hero";
+      }
+    }
     return {
       domain,
       check: label,
       ok,
-      detail: ok ? "200 + marker" : `HTTP ${res.status}, thiếu crown-seo`,
+      detail,
     };
   } catch (err) {
     return {

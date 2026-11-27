@@ -38,6 +38,7 @@
 <meta name="twitter:image" content="https://crown.com.vn/assets/crown-og-share.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Góc nhìn kiểm toán, thuế và tài chính | Crown","description":"Góc nhìn của Crown về kiểm toán, thuế, kế toán, tài chính doanh nghiệp, quyết toán xây dựng và phát triển bền vững dành cho doanh nghiệp tại Việt Nam.","url":"https://crown.com.vn/vi/insights","inLanguage":"vi","isPartOf":{"@type":"WebSite","name":"Crown Audit & Advisory Việt Nam","url":"https://crown.com.vn"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://crown.com.vn/vi"},{"@type":"ListItem","position":2,"name":"Góc nhìn kiểm toán, thuế và tài chính","item":"https://crown.com.vn/vi/insights"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Góc nhìn kiểm toán, thuế và tài chính","itemListElement":[{"@type":"ListItem","position":1,"name":"Quyết toán thuế TNDN: những việc cần chuẩn bị","url":"https://crown.com.vn/vi/insights/cit-finalization"},{"@type":"ListItem","position":2,"name":"Kiểm toán BCTC cho doanh nghiệp FDI tại Việt Nam","url":"https://crown.com.vn/vi/insights/fdi-financial-statement-audit"},{"@type":"ListItem","position":3,"name":"M&A due diligence and preparation","url":"https://crown.com.vn/vi/insights/ma-due-diligence"},{"@type":"ListItem","position":4,"name":"Reviewing tax obligations for FDI enterprises","url":"https://crown.com.vn/vi/insights/fdi-tax-compliance"},{"@type":"ListItem","position":5,"name":"Preparing financial records for capital raising","url":"https://crown.com.vn/vi/insights/preparing-financial-records"},{"@type":"ListItem","position":6,"name":"Financial scenario planning amidst economic volatility","url":"https://crown.com.vn/vi/insights/financial-scenario-planning"},{"@type":"ListItem","position":7,"name":"ESG reporting and green finance: the survival passport","url":"https://crown.com.vn/vi/insights/esg-green-finance"},{"@type":"ListItem","position":8,"name":"Capital construction audit: plugging the “CapEx sinkhole”","url":"https://crown.com.vn/vi/insights/capital-construction-audit"},{"@type":"ListItem","position":9,"name":"Financial statement audit: beyond the compliance signature","url":"https://crown.com.vn/vi/insights/financial-statement-audit"},{"@type":"ListItem","position":10,"name":"The “two-ring defense” accounting system","url":"https://crown.com.vn/vi/insights/two-ring-defense-accounting"}]}</script>
 <!-- crown-seo:end -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -1297,7 +1298,7 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
   const languages = ['vi','en','zh','ja','ko','th'];
   const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
   const crownHosts = new Set(['crown.com.vn','www.crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn','up.crown.com.vn']);
-        const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
+          const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
   function crownNormalizePath(pathname){
     if(!pathname||pathname==='/')return '/';
     const trimmed=pathname.replace(/\/+$/,'');
@@ -1445,7 +1446,7 @@ html{scroll-padding-top:110px}body{background:#fff;color:#29352d}.reveal{opacity
       if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
     });
   });
-          document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
+            document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
     const language=button.dataset.lang;
     if(language==='en'||language==='vi'){
       const dest=crownLocalePath(location.pathname,language);

@@ -86,6 +86,22 @@ export function checkLocalSeo(target = "all") {
             detail: "Article JSON-LD thiếu datePublished",
           });
         }
+        if (isInsightArticle && !text.includes('data-crown-lcp="hero"')) {
+          issues.push({
+            file: rel,
+            detail: "insight thiếu preload LCP hero",
+          });
+        }
+        const isInsightsIndex =
+          folderName === "www" &&
+          (rel.endsWith("insights/index.html") || rel.endsWith("insights\\index.html") ||
+            rel.endsWith("vi/insights/index.html") || rel.endsWith("vi\\insights\\index.html"));
+        if (isInsightsIndex && !text.includes('"@type":"ItemList"') && !text.includes('"@type": "ItemList"')) {
+          issues.push({
+            file: rel,
+            detail: "trang insights index thiếu ItemList JSON-LD",
+          });
+        }
         if (rel === "sites/www/index.html" || rel === "sites\\www\\index.html") {
           if (!text.includes('"sameAs"') || !text.includes("facebook.com/tamdoanhgroup")) {
             issues.push({
@@ -165,11 +181,9 @@ export function checkLocalSeo(target = "all") {
     if (!existsSync(og)) {
       issues.push({ file: folder, detail: "thiếu assets/crown-og-share.jpg" });
     }
-    if (folder === "www") {
-      const llms = join(siteDir, "llms.txt");
-      if (!existsSync(llms)) {
-        issues.push({ file: folder, detail: "thiếu llms.txt" });
-      }
+    const llms = join(siteDir, "llms.txt");
+    if (!existsSync(llms)) {
+      issues.push({ file: folder, detail: "thiếu llms.txt" });
     }
   }
 

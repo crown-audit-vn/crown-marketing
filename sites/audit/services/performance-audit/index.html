@@ -1280,7 +1280,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   const languages = ['vi','en','zh','ja','ko','th'];
   const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
   const crownHosts = new Set(['crown.com.vn','www.crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn','up.crown.com.vn']);
-        const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
+          const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
   function crownNormalizePath(pathname){
     if(!pathname||pathname==='/')return '/';
     const trimmed=pathname.replace(/\/+$/,'');
@@ -1412,7 +1412,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
       if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
     });
   });
-          document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
+            document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
     const language=button.dataset.lang;
     if(language==='en'||language==='vi'){
       const dest=crownLocalePath(location.pathname,language);

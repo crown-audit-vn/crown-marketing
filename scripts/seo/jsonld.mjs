@@ -15,6 +15,7 @@ const SCHEMA_TYPES = new Set([
   "Article",
   "Service",
   "BreadcrumbList",
+  "ItemList",
   "ListItem",
   "FAQPage",
   "Question",
@@ -54,6 +55,29 @@ export function validateJsonLd(node, issues = [], path = "$") {
  * @param {string} html
  * @returns {{ q: string, a: string }[]}
  */
+/**
+ * @param {string} html
+ * @returns {{ name: string, url: string }[]}
+ */
+export function extractInsightIndexItems(html) {
+  /** @type {Map<string, { name: string, url: string }>} */
+  const byUrl = new Map();
+  const re =
+    /<article class="ins-card"[\s\S]*?<h2>\s*<a href="([^"]+)">([\s\S]*?)<\/a>/gi;
+  let m;
+  while ((m = re.exec(html))) {
+    const url = m[1].replace(/\s+/g, "").trim();
+    const name = m[2]
+      .replace(/<[^>]+>/g, "")
+      .replace(/&amp;/g, "&")
+      .replace(/&#39;/g, "'")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (url && name && !byUrl.has(url)) byUrl.set(url, { name, url });
+  }
+  return [...byUrl.values()];
+}
+
 export function extractFaq(html) {
   const section = html.match(/<section class="svc-faq"[\s\S]*?<\/section>/i);
   if (!section) return [];
@@ -86,6 +110,7 @@ export function extractFaq(html) {
  *   serviceType?: string,
  *   datePublished?: string,
  *   dateModified?: string,
+ *   itemList?: { name: string, url: string }[],
  * }} p
  */
 export function buildJsonLd(p) {
@@ -160,6 +185,7 @@ export function buildJsonLd(p) {
       publisher: {
         "@type": "Organization",
         name: organizationSchema.name,
+        url: organizationSchema.url,
         logo: {
           "@type": "ImageObject",
           url: organizationSchema.logo,
@@ -224,6 +250,20 @@ export function buildJsonLd(p) {
           "@type": "Answer",
           text: f.a,
         },
+      })),
+    });
+  }
+
+  if (p.itemList && p.itemList.length) {
+    blocks.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: p.title.replace(/\s*\|\s*Crown.*$/i, "").trim(),
+      itemListElement: p.itemList.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        url: item.url,
       })),
     });
   }

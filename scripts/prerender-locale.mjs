@@ -28,7 +28,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 
 /** @type {Set<string>} */
-const PRESERVE_ALTERNATE = new Set(["www", "cons", "fas", "up"]);
+/** Sites with a committed /vi tree (incl. /vi/services); never prune or regenerate. */
+const PRESERVE_ALTERNATE = new Set([
+  "www",
+  "audit",
+  "acc",
+  "tax",
+  "esg",
+  "cons",
+  "fas",
+  "up",
+]);
 
 /** @param {string} siteDir @param {string} relDir */
 function isAlternateLocaleDir(relDir, primaryLang) {

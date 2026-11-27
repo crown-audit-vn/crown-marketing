@@ -1141,7 +1141,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </section>
 <section class="services" id="dichvu">
-<nav class="svc-index" data-svc-index="tax" aria-label="Xem trang từng dịch vụ"><h2>Xem trang từng dịch vụ</h2><ul><li><a href="/vi/services/transfer-pricing">Tư vấn chuyển giá và cấu trúc thuế</a></li><li><a href="/vi/services/tax-risk-review">Soát xét rủi ro thuế định kỳ</a></li><li><a href="/vi/services/tax-representation">Đại diện giải trình thuế và hỗ trợ tranh chấp</a></li><li><a href="/vi/services/ma-tax-advisory">Tư vấn thuế cho M&amp;A và tái cấu trúc doanh nghiệp</a></li><li><a href="/vi/services/vat-refunds">Hoàn thuế GTGT</a></li><li><a href="/vi/services/fdi-tax-procedures">Tư vấn thuế và thủ tục cho dự án FDI</a></li></ul></nav>
+<nav class="svc-index" data-svc-index="tax" aria-label="Explore each service"><h2>Explore each service</h2><ul><li><a href="/vi/services/transfer-pricing">Tư vấn chuyển giá, tối ưu cấu trúc thuế</a></li><li><a href="/vi/services/tax-risk-review">Soát xét rủi ro thuế định kỳ</a></li><li><a href="/vi/services/tax-representation">Đại diện giải trình và tranh tụng thuế</a></li><li><a href="/vi/services/ma-tax-advisory">Tư vấn thuế trong M&amp;A và tái cấu trúc doanh nghiệp</a></li><li><a href="/vi/services/vat-refunds">Hoàn thuế VAT</a></li><li><a href="/vi/services/fdi-tax-procedures">Tư vấn thuế và thủ tục cho dự án FDI</a></li></ul></nav>
 
 
 
@@ -1532,7 +1532,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   const languages = ['vi','en','zh','ja','ko','th'];
   const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
   const crownHosts = new Set(['crown.com.vn','www.crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn','up.crown.com.vn']);
-        const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
+          const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
   function crownNormalizePath(pathname){
     if(!pathname||pathname==='/')return '/';
     const trimmed=pathname.replace(/\/+$/,'');
@@ -1664,7 +1664,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
       if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
     });
   });
-          document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
+            document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
     const language=button.dataset.lang;
     if(language==='en'||language==='vi'){
       const dest=crownLocalePath(location.pathname,language);

@@ -39,7 +39,8 @@
     "test:locale-path": "node scripts/seo/locale-path.test.mjs && node scripts/seo/locale-redirect.test.mjs && node scripts/seo/page-meta.mjs",
     "seo:check": "node scripts/seo/check-local.mjs",
     "seo:check:live": "node scripts/seo/check-live.mjs",
-    "seo:gsc": "node scripts/seo/search-console-sitemaps.mjs"
+    "seo:gsc": "node scripts/seo/search-console-sitemaps.mjs",
+    "seo:indexnow": "node scripts/seo/indexnow.mjs"
   },
   "devDependencies": {
     "googleapis": "^190.0.0",

@@ -1135,7 +1135,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </section>
 <section class="services" id="dichvu">
-<nav class="svc-index" data-svc-index="audit" aria-label="Xem trang từng dịch vụ"><h2>Xem trang từng dịch vụ</h2><ul><li><a href="/vi/services/financial-statement-audit">Kiểm toán báo cáo tài chính thường niên</a></li><li><a href="/vi/services/special-purpose-audit">Kiểm toán BCTC vì mục đích đặc biệt</a></li><li><a href="/vi/services/review-and-aup">Soát xét BCTC và thủ tục thỏa thuận trước</a></li><li><a href="/vi/services/compliance-audit">Kiểm toán tuân thủ</a></li><li><a href="/vi/services/performance-audit">Kiểm toán hiệu quả hoạt động và dự án</a></li><li><a href="/vi/services/partner-assessment">Thẩm định năng lực đối tác trước hợp tác</a></li><li><a href="/vi/services/board-oversight">Thành viên HĐQT độc lập phụ trách kiểm soát nội bộ</a></li><li><a href="/vi/services/outsourced-internal-audit">Phòng kiểm toán nội bộ thuê ngoài</a></li></ul></nav>
+<nav class="svc-index" data-svc-index="audit" aria-label="Explore each service"><h2>Explore each service</h2><ul><li><a href="/vi/services/financial-statement-audit">Kiểm toán báo cáo tài chính thường niên</a></li><li><a href="/vi/services/special-purpose-audit">Financial statement audit for a special purpose</a></li><li><a href="/vi/services/review-and-aup">Financial statement review and agreed-upon procedures</a></li><li><a href="/vi/services/compliance-audit">Kiểm toán tuân thủ</a></li><li><a href="/vi/services/performance-audit">Performance audit of operations and projects</a></li><li><a href="/vi/services/partner-assessment">Capability assessment of partners before collaboration</a></li><li><a href="/vi/services/board-oversight">Thành viên HĐQT độc lập phụ trách KSNB</a></li><li><a href="/vi/services/outsourced-internal-audit">Phòng Kiểm toán nội bộ thuê ngoài</a></li></ul></nav>
 
 
 
@@ -1596,7 +1596,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   const languages = ['vi','en','zh','ja','ko','th'];
   const flags = {vi:'🇻🇳',en:'🇬🇧',zh:'🇨🇳',ja:'🇯🇵',ko:'🇰🇷',th:'🇹🇭'};
   const crownHosts = new Set(['crown.com.vn','www.crown.com.vn','audit.crown.com.vn','cons.crown.com.vn','acc.crown.com.vn','tax.crown.com.vn','fas.crown.com.vn','esg.crown.com.vn','up.crown.com.vn']);
-        const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
+          const primaryByHost={'crown.com.vn':'en','www.crown.com.vn':'en','cons.crown.com.vn':'en','fas.crown.com.vn':'en','up.crown.com.vn':'en','acc.crown.com.vn':'en','audit.crown.com.vn':'en','tax.crown.com.vn':'en','esg.crown.com.vn':'en'};
   function crownNormalizePath(pathname){
     if(!pathname||pathname==='/')return '/';
     const trimmed=pathname.replace(/\/+$/,'');
@@ -1728,7 +1728,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
       if(event.key==='Home'||event.key==='End'){event.preventDefault();options[event.key==='Home'?0:options.length-1].focus();}
     });
   });
-          document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
+            document.querySelectorAll('.lang-option').forEach(button=>button.addEventListener('click',()=>{
     const language=button.dataset.lang;
     if(language==='en'||language==='vi'){
       const dest=crownLocalePath(location.pathname,language);
