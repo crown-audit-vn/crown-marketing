@@ -40,10 +40,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Crown ESG","url":"https://esg.crown.com.vn/","parentOrganization":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam","url":"https://crown.com.vn","sameAs":["https://www.facebook.com/tamdoanhgroup"]},"address":{"@type":"PostalAddress","name":"Head Office","streetAddress":"No. 7, Alley 699, Truong Dinh Street, Hoang Mai Ward","addressLocality":"Hanoi","addressCountry":"VN","telephone":"+84-904-501-512"},"telephone":"+84-904-501-512","email":"info@crown.com.vn"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://esg.crown.com.vn/"}]}</script>
 <!-- crown-seo:end -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}
   /* Ảnh minh họa cho sáu dịch vụ; giữ bố cục và nội dung gốc. */
   .svc-card{display:flex;flex-direction:column;}
@@ -172,7 +170,7 @@
     position:relative;padding:190px 0 110px;color:#fff;
     background:
       linear-gradient(90deg, rgba(8,12,10,0.68) 0%, rgba(8,12,10,0.48) 40%, rgba(8,12,10,0.12) 72%, rgba(8,12,10,0.06) 100%),
-      url('https://images.pexels.com/photos/33363579/pexels-photo-33363579.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+      image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x) center/cover;
     overflow:hidden;
   }
   .hero::after{
@@ -520,7 +518,7 @@
   .hero-stats span{color:rgba(255,255,255,.88);}
   .hero-card{background:rgba(10,18,13,.62);backdrop-filter:blur(3px);}
   @media(max-width:1080px){
-    .hero{background-image:linear-gradient(90deg,rgba(8,12,10,.64),rgba(8,12,10,.25)),url('https://images.pexels.com/photos/33363579/pexels-photo-33363579.jpeg?auto=compress&cs=tinysrgb&w=1600');}
+    .hero{background-image:linear-gradient(90deg,rgba(8,12,10,.64),rgba(8,12,10,.25)),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x);}
   }
 
   /* Thông tin từng văn phòng: biểu tượng cố định, nội dung căn cùng một trục. */
@@ -593,7 +591,7 @@ header nav.main-nav > ul > li > a{font-size:13px;font-weight:600}
 .btn-gold{background:#e8a044;border-color:#e8a044;color:#10241a}
 .btn-gold:hover{background:#f5b65a;border-color:#f5b65a;color:#10241a}
 /* Spacious photographic hero; audit messaging remains the original one. */
-.hero{min-height:650px;display:flex;align-items:center;padding:140px 0 100px;background-color:#14291f;background-image:linear-gradient(90deg,rgba(7,20,14,.90) 0%,rgba(8,23,16,.72) 43%,rgba(8,23,16,.16) 100%),url('https://images.pexels.com/photos/33363579/pexels-photo-33363579.jpeg?auto=compress&cs=tinysrgb&w=1600');background-position:center;background-size:cover}
+.hero{min-height:650px;display:flex;align-items:center;padding:140px 0 100px;background-color:#14291f;background-image:linear-gradient(90deg,rgba(7,20,14,.90) 0%,rgba(8,23,16,.72) 43%,rgba(8,23,16,.16) 100%),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x);background-position:center;background-size:cover}
 .hero::after{display:none!important}
 .hero-inner{display:block;max-width:1240px}
 .hero-inner > div:first-child{max-width:770px}
@@ -846,8 +844,8 @@ footer .sub{display:none}
 
 
 /* Homepage-consistent menu, layout, and ESG image direction. */
-.hero{background-image:linear-gradient(90deg,rgba(7,32,19,.89) 0%,rgba(7,36,22,.72) 38%,rgba(7,36,22,.12) 70%),url("https://images.pexels.com/photos/33363579/pexels-photo-33363579.jpeg?auto=compress&cs=tinysrgb&w=1600")!important;background-size:cover!important;background-position:center 49%!important}
-@media(max-width:920px){.hero{background-image:linear-gradient(90deg,rgba(7,32,19,.83),rgba(7,36,22,.38)),url("https://images.pexels.com/photos/33363579/pexels-photo-33363579.jpeg?auto=compress&cs=tinysrgb&w=1600")!important;background-position:56% center!important}}
+.hero{background-image:linear-gradient(90deg,rgba(7,32,19,.89) 0%,rgba(7,36,22,.72) 38%,rgba(7,36,22,.12) 70%),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x)!important;background-size:cover!important;background-position:center 49%!important}
+@media(max-width:920px){.hero{background-image:linear-gradient(90deg,rgba(7,32,19,.83),rgba(7,36,22,.38)),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x)!important;background-position:56% center!important}}
 #team{background:#fff!important}#quytrinh{background:#f5f5f0!important}#checklist{background:#f7f8f5!important}
 #dichvu .esg-service-photo img{filter:none!important}
 /* One primary contact instead of repeating the office directory. */
@@ -1038,14 +1036,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   .pillars,.services,.projects,.why,.process,.news{padding-top:72px;padding-bottom:78px}
 }
 </style>
-
+<link rel="preload" as="image" href="/assets/images/hero-lcp-1920.avif" fetchpriority="high" type="image/avif" imagesrcset="/assets/images/hero-lcp-800.avif 800w, /assets/images/hero-lcp-1280.avif 1280w, /assets/images/hero-lcp-1920.avif 1920w" imagesizes="100vw" data-crown-lcp="hero"><link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 </head>
 <body>
 <header id="siteHeader">
 <div class="header-inner">
 <a class="logo" href="https://crown.com.vn/">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
 </span>
 <span class="audit-brand-label">ESG</span>
 </a>
@@ -1413,7 +1413,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div>
 <div class="footer-logo">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png">
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png">
 </img></span>
 </div>
 <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">An ecosystem of Audit, Accounting, Tax, Financial Advisory and ESG services — partnering with Vietnamese businesses for sustainable growth.</p>
@@ -1836,7 +1836,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
-<script src="/assets/consultation-leads-client.js"></script>
+<script src="/assets/consultation-leads-client.js" defer></script>
 <script id="crown-enquiry-modals">
 let enquirySuccessLastFocus = null;
 let enquiryErrorLastFocus = null;

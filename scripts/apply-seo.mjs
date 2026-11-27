@@ -178,6 +178,10 @@ function breadcrumbsFor(domain, urlPath, primaryLang, title, pageLocale) {
  * @param {string} html
  */
 function applyCwvHints(html) {
+  // apply-perf.mjs owns font self-hosting, LCP preload and FA loading.
+  if (html.includes('id="crown-fonts"') || html.includes('data-crown-lcp="hero"')) {
+    return html;
+  }
   let out = html;
   out = out.replace(
     /<link href="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/font-awesome\/[^"]+" rel="stylesheet">/i,

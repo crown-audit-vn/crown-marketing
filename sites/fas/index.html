@@ -39,10 +39,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Crown FAS","url":"https://fas.crown.com.vn/","parentOrganization":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam","url":"https://crown.com.vn","sameAs":["https://www.facebook.com/tamdoanhgroup"]},"address":{"@type":"PostalAddress","name":"Head Office","streetAddress":"No. 7, Alley 699, Truong Dinh Street, Hoang Mai Ward","addressLocality":"Hanoi","addressCountry":"VN","telephone":"+84-904-501-512"},"telephone":"+84-904-501-512","email":"info@crown.com.vn"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fas.crown.com.vn/"}]}</script>
 <!-- crown-seo:end -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 <style>
   :root{
@@ -155,7 +153,7 @@
     background:
       radial-gradient(1100px 600px at 85% -10%, rgba(47,140,85,0.28), transparent 60%),
       linear-gradient(160deg, rgba(11,11,11,0.92) 0%, rgba(22,56,35,0.88) 55%, rgba(30,78,48,0.85) 100%),
-      url('https://images.pexels.com/photos/7845282/pexels-photo-7845282.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+      image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x) center/cover;
     overflow:hidden;
   }
   .hero::after{
@@ -560,7 +558,7 @@ header nav.main-nav > ul > li > a{font-size:13px;font-weight:600}
 .btn-gold{background:#e8a044;border-color:#e8a044;color:#10241a}
 .btn-gold:hover{background:#f5b65a;border-color:#f5b65a;color:#10241a}
 /* Spacious photographic hero; audit messaging remains the original one. */
-.hero{min-height:650px;display:flex;align-items:center;padding:140px 0 100px;background-color:#14291f;background-image:linear-gradient(90deg,rgba(7,20,14,.90) 0%,rgba(8,23,16,.72) 43%,rgba(8,23,16,.16) 100%),url('https://images.pexels.com/photos/7845282/pexels-photo-7845282.jpeg?auto=compress&cs=tinysrgb&w=1920');background-position:center;background-size:cover}
+.hero{min-height:650px;display:flex;align-items:center;padding:140px 0 100px;background-color:#14291f;background-image:linear-gradient(90deg,rgba(7,20,14,.90) 0%,rgba(8,23,16,.72) 43%,rgba(8,23,16,.16) 100%),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x);background-position:center;background-size:cover}
 .hero::after{display:none!important}
 .hero-inner{display:block;max-width:1240px}
 .hero-inner > div:first-child{max-width:770px}
@@ -1171,14 +1169,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   .pillars,.services,.projects,.why,.process,.news{padding-top:72px;padding-bottom:78px}
 }
 </style>
-
+<link rel="preload" as="image" href="/assets/images/hero-lcp-1920.avif" fetchpriority="high" type="image/avif" imagesrcset="/assets/images/hero-lcp-800.avif 800w, /assets/images/hero-lcp-1280.avif 1280w, /assets/images/hero-lcp-1920.avif 1920w" imagesizes="100vw" data-crown-lcp="hero"><link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 <body class="lang-en">
 <header id="siteHeader">
 <div class="header-inner">
 <a class="logo" href="https://crown.com.vn/">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png">
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png">
 </span>
 <span class="audit-brand-label">FAS</span>
 </a>
@@ -1327,7 +1327,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div aria-hidden="true" class="svc-media">
 <span class="svc-media-fallback-num">01</span>
 <span class="svc-media-fallback-label">CROWN FAS</span>
-<img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/6801647/pexels-photo-6801647.jpeg?auto=compress&cs=tinysrgb&w=700">
+<img height="502" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/6801647/pexels-photo-6801647.jpeg?auto=compress&cs=tinysrgb&w=700">
 </div>
 <div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-money-bill-trend-up"></i></span><span class="svc-tag">Unlocking capital</span></div>
@@ -1341,7 +1341,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div aria-hidden="true" class="svc-media">
 <span class="svc-media-fallback-num">02</span>
 <span class="svc-media-fallback-label">CROWN FAS</span>
-<img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/7993951/pexels-photo-7993951.jpeg?auto=compress&cs=tinysrgb&w=700">
+<img height="467" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/7993951/pexels-photo-7993951.jpeg?auto=compress&cs=tinysrgb&w=700">
 </div>
 <div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-user-tie"></i></span><span class="svc-tag">Virtual CFO</span></div>
@@ -1355,7 +1355,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div aria-hidden="true" class="svc-media">
 <span class="svc-media-fallback-num">03</span>
 <span class="svc-media-fallback-label">CROWN FAS</span>
-<img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/590045/pexels-photo-590045.jpeg?auto=compress&cs=tinysrgb&w=700">
+<img height="464" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/590045/pexels-photo-590045.jpeg?auto=compress&cs=tinysrgb&w=700">
 </div>
 <div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-heart-pulse"></i></span><span class="svc-tag">Restructuring</span></div>
@@ -1369,7 +1369,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div aria-hidden="true" class="svc-media">
 <span class="svc-media-fallback-num">04</span>
 <span class="svc-media-fallback-label">CROWN FAS</span>
-<img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/7821688/pexels-photo-7821688.jpeg?auto=compress&cs=tinysrgb&w=700">
+<img height="467" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/7821688/pexels-photo-7821688.jpeg?auto=compress&cs=tinysrgb&w=700">
 </div>
 <div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-magnifying-glass-dollar"></i></span><span class="svc-tag">Financial due diligence</span></div>
@@ -1383,7 +1383,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div aria-hidden="true" class="svc-media">
 <span class="svc-media-fallback-num">05</span>
 <span class="svc-media-fallback-label">CROWN FAS</span>
-<img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/7413939/pexels-photo-7413939.jpeg?auto=compress&cs=tinysrgb&w=700">
+<img height="467" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/7413939/pexels-photo-7413939.jpeg?auto=compress&cs=tinysrgb&w=700">
 </div>
 <div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-scale-balanced"></i></span><span class="svc-tag">Business valuation</span></div>
@@ -1397,7 +1397,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div aria-hidden="true" class="svc-media">
 <span class="svc-media-fallback-num">06</span>
 <span class="svc-media-fallback-label">CROWN FAS</span>
-<img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/33175650/pexels-photo-33175650.jpeg?auto=compress&cs=tinysrgb&w=700">
+<img height="467" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" onload="this.classList.add('is-loaded')" src="https://images.pexels.com/photos/33175650/pexels-photo-33175650.jpeg?auto=compress&cs=tinysrgb&w=700">
 </div>
 <div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-handshake"></i></span><span class="svc-tag">M&amp;A advisory</span></div>
@@ -1570,7 +1570,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div>
 <div class="footer-logo">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png">
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png">
 </span>
 </div>
 <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Audit, accounting, tax, finance and ESG services for businesses operating in the Vietnamese market — supporting sustainable growth.</p>
@@ -1979,7 +1979,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
-<script src="/assets/consultation-leads-client.js"></script>
+<script src="/assets/consultation-leads-client.js" defer></script>
 <script id="crown-enquiry-modals">
 let enquirySuccessLastFocus = null;
 let enquiryErrorLastFocus = null;

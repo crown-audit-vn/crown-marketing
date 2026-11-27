@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { writeTextIfChanged } from "../fs-write-if-changed.mjs";
 import { sites } from "../sites.mjs";
 import { localePath, primaryLangByFolder } from "./locale-path.mjs";
+import { SITE_CACHE_HEADERS } from "./cache-headers.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
@@ -274,6 +275,7 @@ export function writeSiteVercelJson(folder) {
     ignoreCommand:
       existing.ignoreCommand ?? "bash ../../scripts/should-build.sh",
     redirects: generated, // extras omitted: middleware owns locale/legacy redirects
+    headers: SITE_CACHE_HEADERS,
 
   };
 

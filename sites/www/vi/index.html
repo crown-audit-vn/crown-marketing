@@ -41,10 +41,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","ProfessionalService","LocalBusiness"],"name":"Crown Audit & Advisory Việt Nam","legalName":"Crown Audit and Advisory Co., Ltd.","alternateName":["Crown Audit & Advisory","Crown"],"url":"https://crown.com.vn","logo":"https://crown.com.vn/assets/crown-logo-green.png","image":"https://crown.com.vn/assets/crown-og-share.jpg","email":"info@crown.com.vn","telephone":"+84-904-501-512","address":{"@type":"PostalAddress","name":"Head Office","streetAddress":"No. 7, Alley 699, Truong Dinh Street, Hoang Mai Ward","addressLocality":"Hanoi","addressCountry":"VN","telephone":"+84-904-501-512"},"location":[{"@type":"Place","name":"Head Office","address":{"@type":"PostalAddress","streetAddress":"No. 7, Alley 699, Truong Dinh Street, Hoang Mai Ward","addressLocality":"Hanoi","addressCountry":"VN"},"telephone":"+84-904-501-512"},{"@type":"Place","name":"Hanoi Office","address":{"@type":"PostalAddress","streetAddress":"7th Floor, VIC Building, 18 Nguy Nhu Kon Tum Street, Thanh Xuan","addressLocality":"Hanoi","addressCountry":"VN"},"telephone":"+84-559-468-888"},{"@type":"Place","name":"HCM Office","address":{"@type":"PostalAddress","streetAddress":"13 N2 Street, Jamona Golden Silk Residential Area, 16/9 Bui Van Ba Street, Quarter 10, Tan Thuan Ward","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"telephone":"+84-948-737-868"}],"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+84-904-501-512","email":"info@crown.com.vn","areaServed":"VN","availableLanguage":["en","vi"],"name":"Head Office"},{"@type":"ContactPoint","contactType":"customer service","telephone":"+84-559-468-888","email":"info@crown.com.vn","areaServed":"VN","availableLanguage":["en","vi"],"name":"Hanoi Office"},{"@type":"ContactPoint","contactType":"customer service","telephone":"+84-948-737-868","email":"info@crown.com.vn","areaServed":"VN","availableLanguage":["en","vi"],"name":"HCM Office"}],"sameAs":["https://www.facebook.com/tamdoanhgroup"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://crown.com.vn/vi"}]}</script>
 <!-- crown-seo:end -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}
   /* Cân đối nội dung homepage, giữ ảnh và nhận diện hiện tại. */
   .svc-card[id]{scroll-margin-top:110px;}
@@ -229,7 +227,7 @@
     background:
       radial-gradient(1100px 600px at 85% -10%, rgba(47,140,85,0.28), transparent 60%),
       linear-gradient(160deg, rgba(11,11,11,0.92) 0%, rgba(22,56,35,0.88) 55%, rgba(30,78,48,0.85) 100%),
-      url('https://images.pexels.com/photos/38385774/pexels-photo-38385774.jpeg?auto=compress&cs=tinysrgb&w=1600') center 35%/cover;
+      image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x) center 35%/cover;
     overflow:hidden;
   }
   .hero::after{
@@ -695,7 +693,7 @@ html:lang(zh),html:lang(ja){line-break:strict;}html:lang(ko){word-break:keep-all
   background-color:#14271F;
   background-image:
     linear-gradient(90deg,rgba(6,20,14,.80) 0%,rgba(8,26,18,.58) 32%,rgba(10,30,20,.20) 65%,rgba(8,22,15,.04) 100%),
-    url('https://images.pexels.com/photos/38385774/pexels-photo-38385774.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x);
   background-position:center,center 35%;background-size:cover;background-repeat:no-repeat;
 }
 .hero::after{display:none}
@@ -743,7 +741,7 @@ body,button,input,textarea,select{font-family:'Inter',Arial,sans-serif}
 .crownup-after-note{margin:14px 7px 0;font-size:11px;line-height:1.65;color:#6C7B70}
 @media(max-width:1080px){.crownup-feature-shell{grid-template-columns:1fr}.crownup-feature-right{border-left:0;border-top:1px solid rgba(255,255,255,.1)} }
 @media(max-width:700px){
- .hero{min-height:560px;padding:158px 0 86px;background-position:center,50% 30%;background-image:linear-gradient(90deg,rgba(6,20,14,.78),rgba(8,26,18,.45)),url('https://images.pexels.com/photos/38385774/pexels-photo-38385774.jpeg?auto=compress&cs=tinysrgb&w=1600')}
+ .hero{min-height:560px;padding:158px 0 86px;background-position:center,50% 30%;background-image:linear-gradient(90deg,rgba(6,20,14,.78),rgba(8,26,18,.45)),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x)}
  .hero h1{font-size:clamp(40px,9vw,58px);line-height:1.14}
  .hero p.lead{font-size:15px;line-height:1.75}
  .hero-ctas{align-items:stretch}
@@ -1263,13 +1261,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   .pillars,.services,.projects,.why,.process,.news{padding-top:72px;padding-bottom:78px}
 }
 </style>
+<link rel="preload" as="image" href="/assets/images/hero-lcp-1920.avif" fetchpriority="high" type="image/avif" imagesrcset="/assets/images/hero-lcp-800.avif 800w, /assets/images/hero-lcp-1280.avif 1280w, /assets/images/hero-lcp-1920.avif 1920w" imagesizes="100vw" data-crown-lcp="hero"><link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 </head>
 <body>
 <header id="siteHeader">
 <div class="header-inner">
 <a aria-label="Crown Audit &amp; Advisory" class="logo" href="#top">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
 </span>
 <span class="audit-brand-label">AUDIT &amp; ADVISORY</span></a>
 <nav class="main-nav">
@@ -1357,13 +1358,13 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </div>
 </section>
-<section class="home-about-intro" id="crown-introduction"><div class="container home-about-grid"><figure class="home-about-photo"><img src="https://images.pexels.com/photos/28715052/pexels-photo-28715052.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Illustrative modern office with natural light and an open workspace" loading="lazy" width="1000" height="1100"></figure><div class="home-about-editorial"><div><span class="eyebrow">About us</span><h2>Nền tảng quốc tế. Thấu hiểu Việt Nam. Đồng hành dài hạn.</h2></div><div class="home-about-copy"><p>Được phát triển bởi các cựu kiểm toán viên từng làm việc cùng nhau tại Deloitte Việt Nam, Crown Audit &amp; Advisory là doanh nghiệp kiểm toán và tư vấn nội địa với hệ sinh thái sáu đơn vị chuyên môn.</p><p>Chúng tôi đồng hành cùng doanh nghiệp tuân thủ hiệu quả, quản trị vững vàng và phát triển bền vững bằng chuẩn mực quốc tế, sự am hiểu thị trường Việt Nam và công nghệ.</p><a class="home-about-link" href="https://crown.com.vn/vi/about">Tìm hiểu về Crown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></section>
+<section class="home-about-intro" id="crown-introduction"><div class="container home-about-grid"><figure class="home-about-photo"><img decoding="async" src="https://images.pexels.com/photos/28715052/pexels-photo-28715052.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Illustrative modern office with natural light and an open workspace" loading="lazy" width="1000" height="1100"></figure><div class="home-about-editorial"><div><span class="eyebrow">About us</span><h2>Nền tảng quốc tế. Thấu hiểu Việt Nam. Đồng hành dài hạn.</h2></div><div class="home-about-copy"><p>Được phát triển bởi các cựu kiểm toán viên từng làm việc cùng nhau tại Deloitte Việt Nam, Crown Audit &amp; Advisory là doanh nghiệp kiểm toán và tư vấn nội địa với hệ sinh thái sáu đơn vị chuyên môn.</p><p>Chúng tôi đồng hành cùng doanh nghiệp tuân thủ hiệu quả, quản trị vững vàng và phát triển bền vững bằng chuẩn mực quốc tế, sự am hiểu thị trường Việt Nam và công nghệ.</p><a class="home-about-link" href="https://crown.com.vn/vi/about">Tìm hiểu về Crown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div></section>
 <section aria-labelledby="crownup-main-title" class="crownup-feature" id="crown-up">
 <div class="container">
 <div class="crownup-feature-shell reveal">
 <div class="crownup-feature-main">
 <div class="crownup-overline"><span aria-hidden="true" class="crownup-mark-dot"></span><span data-i18n="cu.kicker">CHƯƠNG TRÌNH PHỐI HỢP CHUYÊN MÔN</span></div>
-<h2 class="crownup-lockup-title" id="crownup-main-title"><img alt="Crown Up" class="crownup-left-logo" decoding="async" loading="eager" src="/assets/crown-up-wordmark.png"/><span class="crownup-lockup-tagline" data-i18n="cu.headline">— nâng tầm doanh nghiệp</span></h2>
+<h2 class="crownup-lockup-title" id="crownup-main-title"><img height="280" width="1079" alt="Crown Up" class="crownup-left-logo" decoding="async" loading="eager" src="/assets/crown-up-wordmark.png"/><span class="crownup-lockup-tagline" data-i18n="cu.headline">— nâng tầm doanh nghiệp</span></h2>
 <p class="crownup-feature-lead" data-crownup-accent="" data-i18n="cu.lead">Crown Up kết nối 12 đơn vị chuyên môn được lựa chọn từ Crown Audit &amp; Advisory, Tâm Doanh Group và Koru Capital để đồng hành cùng doanh nghiệp trong hành trình chuyển đổi và tăng trưởng.</p>
 <div class="crownup-feature-actions">
 <a class="crownup-main-cta" href="https://up.crown.com.vn/vi" rel="noopener" target="_blank"><span data-crownup-accent="" data-i18n="cu.cta">Khám phá toàn bộ chương trình Crown Up</span><i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -1581,7 +1582,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </div>
 </section>
-<section class="news" id="news"><div class="container"><div class="section-head"><div class="eyebrow">Góc nhìn chuyên môn</div><h2>Góc nhìn giúp doanh nghiệp ra quyết định tốt hơn.</h2><p>Khám phá những góc nhìn mới nhất về tài chính, thuế và giao dịch doanh nghiệp.</p><a class="ins-cta" href="https://crown.com.vn/vi/insights">Xem tất cả bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div><div class="container ins-featured-grid"><article class="ins-card"><a href="https://crown.com.vn/vi/insights/ma-due-diligence" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/8112180/pexels-photo-8112180.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Sáp nhập &amp; mua lại - minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Sáp nhập và mua lại</span><h2><a href="https://crown.com.vn/vi/insights/ma-due-diligence">Thẩm định và chuẩn bị cho giao dịch M&amp;A</a></h2><p>Chất lượng thu nhập, cơ chế giao dịch, cơ cấu thuế và chuẩn bị hội nhập.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/ma-due-diligence">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article><article class="ins-card"><a href="https://crown.com.vn/vi/insights/fdi-tax-compliance" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/5915292/pexels-photo-5915292.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Thuế &amp; FDI — minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Thuế &amp; FDI</span><h2><a href="https://crown.com.vn/vi/insights/fdi-tax-compliance">Rà soát nghĩa vụ thuế của doanh nghiệp FDI</a></h2><p>Chuyển giá, thuế nhà thầu, ưu đãi thuế và mối liên hệ giữa hải quan và kế toán.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/fdi-tax-compliance">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article><article class="ins-card"><a href="https://crown.com.vn/vi/insights/preparing-financial-records" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/8062355/pexels-photo-8062355.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Huy động vốn - minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Huy động vốn</span><h2><a href="https://crown.com.vn/vi/insights/preparing-financial-records">Chuẩn bị hồ sơ tài chính để huy động vốn</a></h2><p>Báo cáo tài chính, thông tin quản lý và sự sẵn sàng thẩm định cho các cuộc thảo luận của nhà đầu tư.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/preparing-financial-records">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article><article class="ins-card"><a href="https://crown.com.vn/vi/insights/financial-scenario-planning" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/4604639/pexels-photo-4604639.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Chiến lược tài chính - minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Chiến lược tài chính</span><h2><a href="https://crown.com.vn/vi/insights/financial-scenario-planning">Lập kịch bản tài chính trong bối cảnh kinh tế biến động</a></h2><p>Kịch bản doanh thu, vốn lưu động, khế ước nợ và dự báo dòng tiền trong 13 tuần.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/financial-scenario-planning">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article></div></section>
+<section class="news" id="news"><div class="container"><div class="section-head"><div class="eyebrow">Góc nhìn chuyên môn</div><h2>Góc nhìn giúp doanh nghiệp ra quyết định tốt hơn.</h2><p>Khám phá những góc nhìn mới nhất về tài chính, thuế và giao dịch doanh nghiệp.</p><a class="ins-cta" href="https://crown.com.vn/vi/insights">Xem tất cả bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div><div class="container ins-featured-grid"><article class="ins-card"><a href="https://crown.com.vn/vi/insights/ma-due-diligence" tabindex="-1" aria-hidden="true"><img decoding="async" height="935" width="1400" src="https://images.pexels.com/photos/8112180/pexels-photo-8112180.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Sáp nhập &amp; mua lại - minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Sáp nhập và mua lại</span><h2><a href="https://crown.com.vn/vi/insights/ma-due-diligence">Thẩm định và chuẩn bị cho giao dịch M&amp;A</a></h2><p>Chất lượng thu nhập, cơ chế giao dịch, cơ cấu thuế và chuẩn bị hội nhập.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/ma-due-diligence">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article><article class="ins-card"><a href="https://crown.com.vn/vi/insights/fdi-tax-compliance" tabindex="-1" aria-hidden="true"><img decoding="async" height="2100" width="1400" src="https://images.pexels.com/photos/5915292/pexels-photo-5915292.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Thuế &amp; FDI — minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Thuế &amp; FDI</span><h2><a href="https://crown.com.vn/vi/insights/fdi-tax-compliance">Rà soát nghĩa vụ thuế của doanh nghiệp FDI</a></h2><p>Chuyển giá, thuế nhà thầu, ưu đãi thuế và mối liên hệ giữa hải quan và kế toán.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/fdi-tax-compliance">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article><article class="ins-card"><a href="https://crown.com.vn/vi/insights/preparing-financial-records" tabindex="-1" aria-hidden="true"><img decoding="async" height="2100" width="1400" src="https://images.pexels.com/photos/8062355/pexels-photo-8062355.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Huy động vốn - minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Huy động vốn</span><h2><a href="https://crown.com.vn/vi/insights/preparing-financial-records">Chuẩn bị hồ sơ tài chính để huy động vốn</a></h2><p>Báo cáo tài chính, thông tin quản lý và sự sẵn sàng thẩm định cho các cuộc thảo luận của nhà đầu tư.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/preparing-financial-records">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article><article class="ins-card"><a href="https://crown.com.vn/vi/insights/financial-scenario-planning" tabindex="-1" aria-hidden="true"><img decoding="async" height="933" width="1400" src="https://images.pexels.com/photos/4604639/pexels-photo-4604639.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Chiến lược tài chính - minh họa nơi làm việc" loading="lazy"></a><div><span class="ins-label">Chiến lược tài chính</span><h2><a href="https://crown.com.vn/vi/insights/financial-scenario-planning">Lập kịch bản tài chính trong bối cảnh kinh tế biến động</a></h2><p>Kịch bản doanh thu, vốn lưu động, khế ước nợ và dự báo dòng tiền trong 13 tuần.</p><a class="ins-read" href="https://crown.com.vn/vi/insights/financial-scenario-planning">Đọc bài viết <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></article></div></section>
 <section class="contact" id="contact">
 <div class="container contact-grid">
 <div>
@@ -1620,7 +1621,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div>
 <div class="footer-logo">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="lazy" src="/assets/crown-logo-header.png"/>
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="lazy" src="/assets/crown-logo-header.png"/>
 </span>
 </div>
 <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Kiểm toán, kế toán, thuế, tài chính và ESG — đồng hành cùng các doanh nghiệp kinh doanh tại thị trường Việt Nam trên hành trình phát triển bền vững.</p>
@@ -2272,7 +2273,7 @@ const I18N = {"footer.sharedEmail.label":{"vi":"Email liên hệ","en":"Contact 
   }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
-<script src="/assets/consultation-leads-client.js"></script>
+<script src="/assets/consultation-leads-client.js" defer></script>
 <script id="crown-site-contact-forms">(function(){
 document.addEventListener('DOMContentLoaded',function(){
   var SOURCE_SITE="crown.com.vn";

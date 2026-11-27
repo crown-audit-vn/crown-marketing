@@ -40,10 +40,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Crown Construction","url":"https://cons.crown.com.vn/","parentOrganization":{"@type":"Organization","name":"Crown Audit & Advisory Việt Nam","url":"https://crown.com.vn","sameAs":["https://www.facebook.com/tamdoanhgroup"]},"address":{"@type":"PostalAddress","name":"Head Office","streetAddress":"No. 7, Alley 699, Truong Dinh Street, Hoang Mai Ward","addressLocality":"Hanoi","addressCountry":"VN","telephone":"+84-904-501-512"},"telephone":"+84-904-501-512","email":"info@crown.com.vn"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://cons.crown.com.vn/vi"}]}</script>
 <!-- crown-seo:end -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 <style>
   :root{
@@ -156,7 +154,7 @@
     background:
       radial-gradient(1100px 600px at 85% -10%, rgba(47,140,85,0.28), transparent 60%),
       linear-gradient(160deg, rgba(11,11,11,0.92) 0%, rgba(22,56,35,0.88) 55%, rgba(30,78,48,0.85) 100%),
-      url('https://images.pexels.com/photos/29299826/pexels-photo-29299826.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+      image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x) center/cover;
     overflow:hidden;
   }
   .hero::after{
@@ -561,7 +559,7 @@ header nav.main-nav > ul > li > a{font-size:13px;font-weight:600}
 .btn-gold{background:#e8a044;border-color:#e8a044;color:#10241a}
 .btn-gold:hover{background:#f5b65a;border-color:#f5b65a;color:#10241a}
 /* Spacious photographic hero; audit messaging remains the original one. */
-.hero{min-height:650px;display:flex;align-items:center;padding:140px 0 100px;background-color:#14291f;background-image:linear-gradient(90deg,rgba(7,20,14,.90) 0%,rgba(8,23,16,.72) 43%,rgba(8,23,16,.16) 100%),url('https://images.pexels.com/photos/29299826/pexels-photo-29299826.jpeg?auto=compress&cs=tinysrgb&w=1600');background-position:center;background-size:cover}
+.hero{min-height:650px;display:flex;align-items:center;padding:140px 0 100px;background-color:#14291f;background-image:linear-gradient(90deg,rgba(7,20,14,.90) 0%,rgba(8,23,16,.72) 43%,rgba(8,23,16,.16) 100%),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x);background-position:center;background-size:cover}
 .hero::after{display:none!important}
 .hero-inner{display:block;max-width:1240px}
 .hero-inner > div:first-child{max-width:770px}
@@ -899,7 +897,7 @@ footer .sub{display:none}
 
 /* Crown Construction-specific three-chapter editorial layout and contact details */
 .audit-brand-label{font-size:11px;letter-spacing:1.9px}
-.hero{background-image:linear-gradient(90deg,rgba(7,20,14,.88) 0%,rgba(8,23,16,.74) 40%,rgba(8,23,16,.19) 100%),url("https://images.pexels.com/photos/29299826/pexels-photo-29299826.jpeg?auto=compress&cs=tinysrgb&w=1600");background-position:center 47%}
+.hero{background-image:linear-gradient(90deg,rgba(7,20,14,.88) 0%,rgba(8,23,16,.74) 40%,rgba(8,23,16,.19) 100%),image-set(url("/assets/images/hero-lcp-1280.avif") type("image/avif") 1x, url("/assets/images/hero-lcp-1920.avif") type("image/avif") 2x, url("/assets/images/hero-lcp-1280.webp") type("image/webp") 1x, url("/assets/images/hero-lcp-1920.webp") type("image/webp") 2x);background-position:center 47%}
 .hero .eyebrow{color:#b8dec5!important}
 .hero h1{max-width:820px}
 #dichvu .svc-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:43px!important;grid-auto-rows:auto!important}
@@ -1188,14 +1186,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   .pillars,.services,.projects,.why,.process,.news{padding-top:72px;padding-bottom:78px}
 }
 </style>
-
+<link rel="preload" as="image" href="/assets/images/hero-lcp-1920.avif" fetchpriority="high" type="image/avif" imagesrcset="/assets/images/hero-lcp-800.avif 800w, /assets/images/hero-lcp-1280.avif 1280w, /assets/images/hero-lcp-1920.avif 1920w" imagesizes="100vw" data-crown-lcp="hero"><link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 </head>
 <body>
 <header id="siteHeader">
 <div class="header-inner">
 <a class="logo" href="https://crown.com.vn/vi">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
 </span>
 <span class="audit-brand-label">CONSTRUCTION</span>
 </a>
@@ -1336,21 +1336,21 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <p>Ba nhóm dịch vụ đáp ứng nhu cầu kiểm soát ngân sách của chủ đầu tư nhà nước và quản lý chi phí của chủ đầu tư tư nhân.</p>
 </div>
 <div class="svc-grid">
-<div class="svc-card reveal"><div aria-hidden="true" class="svc-media"><span class="svc-media-fallback-num">01</span><span class="svc-media-fallback-label">CROWN CONSTRUCTION</span><img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" src="https://images.pexels.com/photos/8470057/pexels-photo-8470057.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/></div><div class="svc-copy">
+<div class="svc-card reveal"><div aria-hidden="true" class="svc-media"><span class="svc-media-fallback-num">01</span><span class="svc-media-fallback-label">CROWN CONSTRUCTION</span><img height="467" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" src="https://images.pexels.com/photos/8470057/pexels-photo-8470057.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/></div><div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-shield-halved"></i></span><span class="svc-tag">Trước &amp; trong thi công</span></div>
 <h3>Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách</h3>
 <p class="desc">Rà soát khối lượng, định mức và cơ sở lập dự toán; đối chiếu hồ sơ thiết kế với thực tế hiện trường theo phạm vi công việc, hỗ trợ kiểm soát chi phí trước từng kỳ giải ngân.</p>
 <div class="benefit"><strong>Lợi ích</strong>Nhận diện khoản chi và khối lượng chưa phù hợp, củng cố cơ sở giải trình cho chủ đầu tư nhà nước và kiểm soát thanh toán cho chủ đầu tư tư nhân.</div>
 <a class="svc-link" data-service="Kiểm soát rủi ro dự toán và phòng thủ thất thoát ngân sách" href="#tuvan">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
 </div></div>
-<div class="svc-card reveal"><div aria-hidden="true" class="svc-media"><span class="svc-media-fallback-num">02</span><span class="svc-media-fallback-label">CROWN CONSTRUCTION</span><img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" src="https://images.pexels.com/photos/6779567/pexels-photo-6779567.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/></div><div class="svc-copy">
+<div class="svc-card reveal"><div aria-hidden="true" class="svc-media"><span class="svc-media-fallback-num">02</span><span class="svc-media-fallback-label">CROWN CONSTRUCTION</span><img height="394" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" src="https://images.pexels.com/photos/6779567/pexels-photo-6779567.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/></div><div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-vault"></i></span><span class="svc-tag">Hoàn thành &amp; thuế</span></div>
 <h3>Kiểm toán quyết toán và thiết lập khiên chắn thanh tra</h3>
 <p class="desc">Kiểm toán quyết toán vốn đầu tư, rà soát khối lượng, chi phí và hồ sơ chứng từ; nhận diện khoản mục chưa đủ cơ sở để chủ đầu tư bổ sung, điều chỉnh và chuẩn bị giải trình.</p>
 <div class="benefit"><strong>Lợi ích</strong>Làm rõ cơ sở quyết toán và các vấn đề cần xử lý, giúp chủ đầu tư chủ động khi làm việc với cơ quan kiểm tra, thanh tra hoặc kiểm toán.</div>
 <a class="svc-link" data-service="Kiểm toán quyết toán và thiết lập khiên chắn thanh tra" href="#tuvan">Tư vấn ngay về dịch vụ này <i class="fa-solid fa-arrow-right"></i></a>
 </div></div>
-<div class="svc-card reveal"><div aria-hidden="true" class="svc-media"><span class="svc-media-fallback-num">03</span><span class="svc-media-fallback-label">CROWN CONSTRUCTION</span><img alt="" decoding="async" loading="lazy" onerror="this.hidden=true" src="https://images.pexels.com/photos/4458202/pexels-photo-4458202.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/></div><div class="svc-copy">
+<div class="svc-card reveal"><div aria-hidden="true" class="svc-media"><span class="svc-media-fallback-num">03</span><span class="svc-media-fallback-label">CROWN CONSTRUCTION</span><img height="467" width="700" alt="" decoding="async" loading="lazy" onerror="this.hidden=true" src="https://images.pexels.com/photos/4458202/pexels-photo-4458202.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/></div><div class="svc-copy">
 <div class="svc-top"><span class="svc-ic"><i class="fa-solid fa-unlock-keyhole"></i></span><span class="svc-tag">Dịch vụ đặc biệt</span></div>
 <h3>Tháo gỡ điểm nghẽn pháp lý cho dự án treo</h3>
 <p class="desc">Rà soát dự án tồn đọng do thay đổi chính sách, thiếu hồ sơ hoặc vướng mắc nghiệm thu; xác định phần việc cần bổ sung và phối hợp xây dựng hướng xử lý với các bên liên quan.</p>
@@ -1516,7 +1516,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 <div>
 <div class="footer-logo">
 <span class="brand-mark brand-mark-image">
-<img alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
+<img height="358" width="1266" alt="Crown" class="brand-logo-image" decoding="async" loading="eager" src="/assets/crown-logo-header.png"/>
 </span>
 </div>
 <p style="font-size:14px;max-width:280px;color:rgba(255,255,255,0.55);">Kiểm toán, kế toán, thuế, tài chính và ESG — đồng hành cùng các doanh nghiệp kinh doanh tại thị trường Việt Nam trên hành trình phát triển bền vững.</p>
@@ -1922,7 +1922,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
-<script src="/assets/consultation-leads-client.js"></script>
+<script src="/assets/consultation-leads-client.js" defer></script>
 <script id="crown-enquiry-modals">
 let enquirySuccessLastFocus = null;
 let enquiryErrorLastFocus = null;
