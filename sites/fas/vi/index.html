@@ -1172,6 +1172,29 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
   .pillars,.services,.projects,.why,.process,.news{padding-top:72px;padding-bottom:78px}
 }
 </style>
+
+<style id="crown-svc-index">
+.svc-index-section{padding:clamp(72px,8vw,110px) 0;background:var(--cream,var(--audit-paper,#F6F4EF));}
+.svc-index{color:var(--ink,#16281f);}
+.services>.svc-index{margin-top:clamp(36px,5vw,64px);padding-top:clamp(36px,5vw,64px);border-top:1px solid var(--line,#E3E3DE);}
+.svc-index .svc-index-head{max-width:680px;margin:0 auto 36px;text-align:center;}
+.svc-index .svc-index-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-600,var(--champagne-500,#1F6B3F));margin:0 0 16px;}
+.svc-index .svc-index-eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block;}
+.svc-index .svc-index-head h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin:0 0 16px;color:var(--navy-800,#163823)!important;font-weight:600;}
+.svc-index .svc-index-head p{margin:0 auto;max-width:620px;color:var(--muted,#5B6660);font-size:16px;line-height:1.7;}
+.svc-index .svc-index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:0;padding:0;list-style:none;}
+.svc-index .svc-index-card{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-width:0;padding:20px 22px;background:#fff;border:1px solid var(--line,#E3E3DE);border-radius:var(--radius,14px);text-decoration:none!important;color:var(--navy-800,#163823)!important;font-weight:600;font-size:15.5px;line-height:1.45;box-shadow:var(--shadow,0 1px 2px rgba(16,40,28,.05));transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.svc-index .svc-index-card:hover,.svc-index .svc-index-card:focus-visible{transform:translateY(-4px);border-color:var(--gold-500,#2F8C55);box-shadow:0 10px 24px rgba(22,56,35,.08);}
+.svc-index .svc-index-card>span{min-width:0;}
+.svc-index .svc-index-card i{flex-shrink:0;margin-top:4px;color:var(--gold-600,#1F6B3F);font-size:12px;transition:transform .2s;}
+.svc-index .svc-index-card:hover i{transform:translateX(4px);}
+@media (max-width:640px){
+  .svc-index .svc-index-grid{grid-template-columns:1fr;}
+  .services>.svc-index{margin-top:32px;padding-top:32px;}
+  .svc-index .svc-index-card{padding:16px 18px;font-size:15px;}
+  .svc-index-section{padding:56px 0;}
+}
+</style>
 </head>
 <body>
 <header id="siteHeader">
@@ -1312,7 +1335,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </section>
 <section class="services" id="dichvu">
-<nav class="svc-index" data-svc-index="fas" aria-label="Xem trang từng dịch vụ"><h2>Xem trang từng dịch vụ</h2><ul><li><a href="/vi/services/financial-planning-funding">Lập phương án tài chính và tiếp cận nguồn vốn</a></li><li><a href="/vi/services/virtual-cfo">Giám đốc tài chính thuê ngoài (Virtual CFO)</a></li><li><a href="/vi/services/financial-restructuring">Tái cấu trúc tài chính và tối ưu dòng tiền</a></li><li><a href="/vi/services/financial-due-diligence">Thẩm định tài chính và phân tích rủi ro (FDD)</a></li><li><a href="/vi/services/business-valuation">Định giá doanh nghiệp và cấu trúc giao dịch</a></li><li><a href="/vi/services/ma-advisory">Tư vấn chiến lược M&amp;A</a></li></ul></nav>
+
 
 
 
@@ -1409,6 +1432,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 </div>
 </div>
 </div>
+
+<nav class="svc-index" data-svc-index="fas" aria-label="Xem trang từng dịch vụ"><div class="container"><div class="svc-index-head"><div class="svc-index-eyebrow">Trang dịch vụ</div><h2>Xem trang từng dịch vụ</h2><p>Mở trang riêng của từng dịch vụ để xem phạm vi, cách tiếp cận và các dịch vụ liên quan.</p></div><div class="svc-index-grid"><a class="svc-index-card" href="/vi/services/financial-planning-funding"><span>Lập phương án tài chính và tiếp cận nguồn vốn</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/vi/services/virtual-cfo"><span>Giám đốc tài chính thuê ngoài (Virtual CFO)</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/vi/services/financial-restructuring"><span>Tái cấu trúc tài chính và tối ưu dòng tiền</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/vi/services/financial-due-diligence"><span>Thẩm định tài chính và phân tích rủi ro (FDD)</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/vi/services/business-valuation"><span>Định giá doanh nghiệp và cấu trúc giao dịch</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/vi/services/ma-advisory"><span>Tư vấn chiến lược M&amp;A</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></nav>
 </section>
 <section class="why" id="khacbiet">
 <i class="fa-solid fa-chess-king watermark-icon"></i>

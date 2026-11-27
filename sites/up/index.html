@@ -1095,7 +1095,30 @@ body.team-modal-open{overflow:hidden}
 .partnership-logo-strip .logo-item.tamdoanh img{width:230px;max-width:100%;max-height:62px}
 .footer-partner-logos .logo-item.tamdoanh img{width:190px;max-width:100%;max-height:51px;transform:scale(1.3);transform-origin:center}
 @media(max-width:767px){.partnership-logo-strip .logo-item.tamdoanh img{width:210px;max-height:57px}.footer-partner-logos .logo-item.tamdoanh img{width:170px;max-height:46px}}
-</style></head>
+</style>
+<style id="crown-svc-index">
+.svc-index-section{padding:clamp(72px,8vw,110px) 0;background:var(--cream,var(--audit-paper,#F6F4EF));}
+.svc-index{color:var(--ink,#16281f);}
+.services>.svc-index{margin-top:clamp(36px,5vw,64px);padding-top:clamp(36px,5vw,64px);border-top:1px solid var(--line,#E3E3DE);}
+.svc-index .svc-index-head{max-width:680px;margin:0 auto 36px;text-align:center;}
+.svc-index .svc-index-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-600,var(--champagne-500,#1F6B3F));margin:0 0 16px;}
+.svc-index .svc-index-eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:inline-block;}
+.svc-index .svc-index-head h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(28px,3.4vw,40px);line-height:1.25;margin:0 0 16px;color:var(--navy-800,#163823)!important;font-weight:600;}
+.svc-index .svc-index-head p{margin:0 auto;max-width:620px;color:var(--muted,#5B6660);font-size:16px;line-height:1.7;}
+.svc-index .svc-index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:0;padding:0;list-style:none;}
+.svc-index .svc-index-card{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-width:0;padding:20px 22px;background:#fff;border:1px solid var(--line,#E3E3DE);border-radius:var(--radius,14px);text-decoration:none!important;color:var(--navy-800,#163823)!important;font-weight:600;font-size:15.5px;line-height:1.45;box-shadow:var(--shadow,0 1px 2px rgba(16,40,28,.05));transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.svc-index .svc-index-card:hover,.svc-index .svc-index-card:focus-visible{transform:translateY(-4px);border-color:var(--gold-500,#2F8C55);box-shadow:0 10px 24px rgba(22,56,35,.08);}
+.svc-index .svc-index-card>span{min-width:0;}
+.svc-index .svc-index-card i{flex-shrink:0;margin-top:4px;color:var(--gold-600,#1F6B3F);font-size:12px;transition:transform .2s;}
+.svc-index .svc-index-card:hover i{transform:translateX(4px);}
+@media (max-width:640px){
+  .svc-index .svc-index-grid{grid-template-columns:1fr;}
+  .services>.svc-index{margin-top:32px;padding-top:32px;}
+  .svc-index .svc-index-card{padding:16px 18px;font-size:15px;}
+  .svc-index-section{padding:56px 0;}
+}
+</style>
+</head>
 <body class="lang-en">
 <header id="siteHeader">
 <div class="header-inner">
@@ -1449,6 +1472,7 @@ body.team-modal-open{overflow:hidden}
 </div>
 </div>
 </section>
+<section class="svc-index-section" id="svc-pages"><nav class="svc-index" data-svc-index="up" aria-label="Explore each service"><div class="container"><div class="svc-index-head"><div class="svc-index-eyebrow">Service pages</div><h2>Explore each service</h2><p>Open a dedicated page for each service, including scope, approach and related offerings.</p></div><div class="svc-index-grid"><a class="svc-index-card" href="/services/three-systems"><span>Three specialist systems, one integrated program</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/services/four-stages"><span>Four stages, from diagnosis to investment-ready</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/services/capabilities"><span>Capabilities that move a business from potential to scale</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="svc-index-card" href="/services/who-it-is-for"><span>Businesses Crown Up is a fit for</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></nav></section>
 <section class="contact" id="tuvan">
 <div class="container contact-grid">
 <div>
@@ -1501,7 +1525,7 @@ body.team-modal-open{overflow:hidden}
 </div>
 </div>
 
-<nav class="svc-index" data-svc-index="up" aria-label="Explore each service"><h2>Explore each service</h2><ul><li><a href="/services/three-systems">Three specialist systems, one integrated program</a></li><li><a href="/services/four-stages">Four stages, from diagnosis to investment-ready</a></li><li><a href="/services/capabilities">Capabilities that move a business from potential to scale</a></li><li><a href="/services/who-it-is-for">Businesses Crown Up is a fit for</a></li></ul></nav>
+
 <footer>
 <div class="container">
 <div class="footer-grid">
