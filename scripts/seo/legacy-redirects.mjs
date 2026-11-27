@@ -239,18 +239,9 @@ export function langQueryRedirects(primaryLang) {
 export function redirectsForFolder(folder) {
   const primary = primaryLangByFolder[folder];
   if (!primary) throw new Error(`Unknown folder: ${folder}`);
-
-  /** @type {VercelRedirect[]} */
-  const rules = [];
-
-  if (folder === "www") {
-    // ?lang= and combined legacy+lang jumps are handled in middleware.js
-    // so Vercel does not re-append the query (which caused redirect loops).
-    rules.push(...wwwLegacyRedirects);
-  }
-
-  rules.push(...retiredEnPrefixRedirects());
-  return rules;
+  // Locale, /en and legacy jumps are handled exclusively in middleware.js.
+  // Platform redirects in vercel.json run first and would keep ?lang=.
+  return [];
 }
 
 /**
@@ -274,24 +265,16 @@ export function writeSiteVercelJson(folder) {
     : {};
 
   const generated = redirectsForFolder(folder);
-  const seen = new Set(generated.map(ruleKey));
-  const extras = (existing.redirects ?? []).filter((r) => {
-    if (seen.has(ruleKey(r))) return false;
-    const src = r.source ?? "";
-    // Drop leftover vi-primary "strip /vi" rules now that /vi is a real locale tree.
-    if (src === "/vi" || src.startsWith("/vi/") || src.startsWith("/vi:")) return false;
-    return true;
-  });
+  // Do not merge leftover vercel.json redirects. Platform rules run before
+  // Edge Middleware and would re-append ?lang= on /en and legacy paths.
 
   const next = {
     cleanUrls: existing.cleanUrls ?? true,
     trailingSlash: existing.trailingSlash ?? false,
     ignoreCommand:
       existing.ignoreCommand ?? "bash ../../scripts/should-build.sh",
-    redirects: [...generated, ...extras].filter((r) => {
-      const hasLang = (r.has ?? []).some((h) => h.type === "query" && h.key === "lang");
-      return !hasLang;
-    }),
+    redirects: generated, // extras omitted: middleware owns locale/legacy redirects
+
   };
 
   writeTextIfChanged(file, `${JSON.stringify(next, null, 2)}\n`);
