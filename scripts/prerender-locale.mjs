@@ -63,7 +63,7 @@ function discoverSourceHtml(siteDir, primaryLang) {
       const full = join(dir, name);
       const st = statSync(full);
       if (st.isDirectory()) {
-        if (name === "assets" || name === ".vercel") continue;
+        if (name === "assets" || name === ".vercel" || name === "services") continue;
         const rel = relative(siteDir, full);
         if (isAlternateLocaleDir(rel, primaryLang)) continue;
         walk(full);

@@ -1,28 +1,9 @@
 /**
- * Title/description overrides when JSON i18n không khớp <title>.
- * Key: `${folder}|${logicalPath}` với logicalPath `/` hoặc `/about`, …
+ * Title/description overrides. Delegates to page-meta.mjs (single source).
  */
-export const HEADLINE_OVERRIDES = {
-  "www|/": {
-    en: {
-      title:
-        "Crown Audit & Advisory | Audit, Tax, Accounting, Financial Advisory & ESG",
-      description:
-        "Crown Audit & Advisory provides independent audit, tax, accounting, corporate finance and ESG advisory services for businesses in Vietnam.",
-    },
-  },
-  "acc|/": {
-    vi: {
-      title: "Crown Accounting | Kế toán chuyên nghiệp & Outsourcing",
-    },
-  },
-  "up|/": {
-    en: {
-      description:
-        "Crown Up is a business acceleration program by Tam Doanh Group, Crown Audit & Advisory and Koru Capital — audit, tax, finance and capital strategy.",
-    },
-  },
-};
+import { PAGE_META, pageMeta } from "./page-meta.mjs";
+
+export { PAGE_META as HEADLINE_OVERRIDES, pageMeta };
 
 /**
  * @param {string} folder
@@ -30,6 +11,5 @@ export const HEADLINE_OVERRIDES = {
  * @param {"vi" | "en"} locale
  */
 export function headlineOverride(folder, logicalPath, locale) {
-  const key = `${folder}|${logicalPath === "/" ? "/" : logicalPath}`;
-  return HEADLINE_OVERRIDES[key]?.[locale] ?? null;
+  return pageMeta(folder, logicalPath, locale);
 }

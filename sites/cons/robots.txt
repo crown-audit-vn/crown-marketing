@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://cons.crown.com.vn/sitemap.xml
-# redeploy locale SEO 2026-11-27

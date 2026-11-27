@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tax.crown.com.vn/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi"/>
@@ -11,12 +11,120 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/"/>
   </url>
   <url>
+    <loc>https://tax.crown.com.vn/services/fdi-tax-procedures</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/fdi-tax-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/fdi-tax-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/fdi-tax-procedures"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/services/ma-tax-advisory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/ma-tax-advisory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/ma-tax-advisory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/ma-tax-advisory"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/services/tax-representation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/tax-representation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/tax-representation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/tax-representation"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/services/tax-risk-review</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/tax-risk-review"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/tax-risk-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/tax-risk-review"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/services/transfer-pricing</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/transfer-pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/transfer-pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/transfer-pricing"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/services/vat-refunds</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/vat-refunds"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/vat-refunds"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/vat-refunds"/>
+  </url>
+  <url>
     <loc>https://tax.crown.com.vn/vi</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/vi/services/fdi-tax-procedures</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/fdi-tax-procedures"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/fdi-tax-procedures"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/fdi-tax-procedures"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/vi/services/ma-tax-advisory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/ma-tax-advisory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/ma-tax-advisory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/ma-tax-advisory"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/vi/services/tax-representation</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/tax-representation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/tax-representation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/tax-representation"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/vi/services/tax-risk-review</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/tax-risk-review"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/tax-risk-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/tax-risk-review"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/vi/services/transfer-pricing</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/transfer-pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/transfer-pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/transfer-pricing"/>
+  </url>
+  <url>
+    <loc>https://tax.crown.com.vn/vi/services/vat-refunds</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://tax.crown.com.vn/vi/services/vat-refunds"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tax.crown.com.vn/services/vat-refunds"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tax.crown.com.vn/services/vat-refunds"/>
   </url>
 </urlset>

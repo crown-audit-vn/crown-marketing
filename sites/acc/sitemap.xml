@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://acc.crown.com.vn/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi"/>
@@ -11,12 +11,138 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/"/>
   </url>
   <url>
+    <loc>https://acc.crown.com.vn/services/accounting-system-setup</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/accounting-system-setup"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/accounting-system-setup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/accounting-system-setup"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/services/competency-assessment</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/competency-assessment"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/competency-assessment"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/competency-assessment"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/services/crown-support-intelligence</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/crown-support-intelligence"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/crown-support-intelligence"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/crown-support-intelligence"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/services/financial-controller</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/financial-controller"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/financial-controller"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/financial-controller"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/services/management-accounting</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/management-accounting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/management-accounting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/management-accounting"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/services/outsourced-accounting-payroll</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/outsourced-accounting-payroll"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/outsourced-accounting-payroll"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/outsourced-accounting-payroll"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/services/system-standardization</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/system-standardization"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/system-standardization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/system-standardization"/>
+  </url>
+  <url>
     <loc>https://acc.crown.com.vn/vi</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/accounting-system-setup</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/accounting-system-setup"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/accounting-system-setup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/accounting-system-setup"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/competency-assessment</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/competency-assessment"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/competency-assessment"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/competency-assessment"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/crown-support-intelligence</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/crown-support-intelligence"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/crown-support-intelligence"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/crown-support-intelligence"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/financial-controller</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/financial-controller"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/financial-controller"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/financial-controller"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/management-accounting</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/management-accounting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/management-accounting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/management-accounting"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/outsourced-accounting-payroll</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/outsourced-accounting-payroll"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/outsourced-accounting-payroll"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/outsourced-accounting-payroll"/>
+  </url>
+  <url>
+    <loc>https://acc.crown.com.vn/vi/services/system-standardization</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://acc.crown.com.vn/vi/services/system-standardization"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://acc.crown.com.vn/services/system-standardization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acc.crown.com.vn/services/system-standardization"/>
   </url>
 </urlset>

@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cons.crown.com.vn/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi"/>
@@ -11,12 +11,66 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/"/>
   </url>
   <url>
+    <loc>https://cons.crown.com.vn/services/budget-risk-control</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi/services/budget-risk-control"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/services/budget-risk-control"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/services/budget-risk-control"/>
+  </url>
+  <url>
+    <loc>https://cons.crown.com.vn/services/settlement-audit</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi/services/settlement-audit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/services/settlement-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/services/settlement-audit"/>
+  </url>
+  <url>
+    <loc>https://cons.crown.com.vn/services/stalled-project-legal</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi/services/stalled-project-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/services/stalled-project-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/services/stalled-project-legal"/>
+  </url>
+  <url>
     <loc>https://cons.crown.com.vn/vi</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/"/>
+  </url>
+  <url>
+    <loc>https://cons.crown.com.vn/vi/services/budget-risk-control</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi/services/budget-risk-control"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/services/budget-risk-control"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/services/budget-risk-control"/>
+  </url>
+  <url>
+    <loc>https://cons.crown.com.vn/vi/services/settlement-audit</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi/services/settlement-audit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/services/settlement-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/services/settlement-audit"/>
+  </url>
+  <url>
+    <loc>https://cons.crown.com.vn/vi/services/stalled-project-legal</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://cons.crown.com.vn/vi/services/stalled-project-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cons.crown.com.vn/services/stalled-project-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cons.crown.com.vn/services/stalled-project-legal"/>
   </url>
 </urlset>

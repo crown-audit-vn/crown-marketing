@@ -22,10 +22,9 @@ import {
   stripLegacyCanonical,
 } from "./seo/html-seo.mjs";
 import { rewriteCrownHrefs } from "./seo/rewrite-crown-links.mjs";
-import {
-  organizationSchema,
-  siteSeoByFolder,
-} from "./seo/site-meta.mjs";
+import { siteSeoByFolder } from "./seo/site-meta.mjs";
+import { pageMeta } from "./seo/page-meta.mjs";
+import { buildJsonLd, extractFaq } from "./seo/jsonld.mjs";
 import {
   DEFAULT_OG_ASSET,
   parseArticleHeroImage,
@@ -69,20 +68,6 @@ function urlPathFromHtml(siteDir, htmlPath) {
 }
 
 /**
- * @param {string} domain
- * @param {string} path
- */
-function absoluteUrl(domain, path) {
-  const origin = `https://${domain}`;
-  if (path === "/") return `${origin}/`;
-  return `${origin}${path}`;
-}
-
-/**
- * @param {string} folder
- * @param {string} urlPath
- */
-/**
  * @param {string} folder
  * @param {string} urlPath
  * @param {string} primaryLang
@@ -95,100 +80,134 @@ function pageKind(folder, urlPath, primaryLang) {
     logical !== "/insights"
   )
     return "article";
+  if (logical === "/services" || logical.startsWith("/services/")) return "service";
   return logical === "/" ? "home" : "page";
 }
 
 /**
- * @param {object} p
+ * @param {string} html
+ * @param {string} title
+ * @param {string} description
  */
-function buildJsonLd(p) {
-  const {
-    kind,
-    canonicalUrl,
-    title,
-    description,
-    domain,
-    siteName,
-    seoMeta,
-    ogImage,
-  } = p;
-
-  /** @type {object[]} */
-  const blocks = [];
-
-  const webPage = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: title,
-    description,
-    url: canonicalUrl,
-    inLanguage: seoMeta.lang,
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteName,
-      url: `https://${domain}`,
-    },
-  };
-  blocks.push(webPage);
-
-  if (kind === "home") {
-    blocks.push({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: siteName,
-      url: `https://${domain}/`,
-      inLanguage: seoMeta.lang,
-      publisher: {
-        "@type": "Organization",
-        name: organizationSchema.name,
-        url: organizationSchema.url,
-      },
-    });
-    if (seoMeta.includeOrgSchema) {
-      blocks.push({ ...organizationSchema });
-    } else {
-      blocks.push({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: siteName,
-        url: `https://${domain}/`,
-        parentOrganization: {
-          "@type": "Organization",
-          name: organizationSchema.name,
-          url: organizationSchema.url,
-        },
-      });
+function applyTitleDescription(html, title, description) {
+  let out = html;
+  if (title && /<title[^>]*>[\s\S]*?<\/title>/i.test(out)) {
+    out = out.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`);
+  }
+  if (description) {
+    if (/<meta[^>]+name=["']description["'][^>]*>/i.test(out)) {
+      out = out.replace(
+        /<meta[^>]+name=["']description["'][^>]*>/i,
+        `<meta name="description" content="${escapeAttr(description)}">`
+      );
     }
   }
+  return out;
+}
 
-  if (kind === "article") {
-    /** @type {Record<string, unknown>} */
-    const article = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: title.replace(/\s*\|\s*Crown\s*$/i, ""),
-      description,
-      mainEntityOfPage: canonicalUrl,
-      url: canonicalUrl,
-      inLanguage: seoMeta.lang,
-      author: {
-        "@type": "Organization",
-        name: organizationSchema.name,
-      },
-      publisher: {
-        "@type": "Organization",
-        name: organizationSchema.name,
-        logo: {
-          "@type": "ImageObject",
-          url: organizationSchema.logo,
-        },
-      },
-    };
-    if (ogImage) article.image = [ogImage];
-    blocks.push(article);
+/**
+ * Replace the visible text of the first H1, keeping inner markup wrappers when possible.
+ * @param {string} html
+ * @param {string} h1
+ */
+function applyH1(html, h1) {
+  if (!h1) return html;
+  return html.replace(/<h1([^>]*)>[\s\S]*?<\/h1>/i, `<h1$1>${escapeHtml(h1)}</h1>`);
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function escapeAttr(s) {
+  return escapeHtml(s).replaceAll('"', "&quot;");
+}
+
+/**
+ * @param {string} domain
+ * @param {string} urlPath
+ * @param {string} primaryLang
+ * @param {string} title
+ * @param {"vi" | "en"} pageLocale
+ */
+function breadcrumbsFor(domain, urlPath, primaryLang, title, pageLocale) {
+  const logical = logicalPath(urlPath, primaryLang);
+  const origin = `https://${domain}`;
+  const homePath = pageLocale === "vi" ? "/vi" : "/";
+  const homeName = pageLocale === "vi" ? "Trang chủ" : "Home";
+  /** @type {{ name: string, url: string }[]} */
+  const items = [{ name: homeName, url: `${origin}${homePath === "/" ? "/" : homePath}` }];
+  if (logical === "/") return items;
+
+  const parts = logical.split("/").filter(Boolean);
+  let acc = "";
+  for (let i = 0; i < parts.length; i++) {
+    acc += `/${parts[i]}`;
+    const isLast = i === parts.length - 1;
+    const localePath =
+      pageLocale === "vi" ? (acc === "/" ? "/vi" : `/vi${acc}`) : acc;
+    const name =
+      isLast
+        ? title.replace(/\s*\|\s*Crown.*$/i, "").trim()
+        : parts[i] === "services"
+          ? pageLocale === "vi" ? "Dịch vụ" : "Services"
+          : parts[i] === "insights"
+            ? pageLocale === "vi" ? "Góc nhìn" : "Insights"
+            : parts[i] === "about"
+              ? pageLocale === "vi" ? "Về chúng tôi" : "About"
+              : parts[i] === "career"
+                ? pageLocale === "vi" ? "Tuyển dụng" : "Careers"
+                : parts[i];
+    items.push({ name, url: `${origin}${localePath}` });
   }
+  return items;
+}
 
-  return blocks;
+/**
+ * Clear wins: async Font Awesome, preload header logo when present.
+ * @param {string} html
+ */
+function applyCwvHints(html) {
+  let out = html;
+  out = out.replace(
+    /<link href="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/font-awesome\/[^"]+" rel="stylesheet">/i,
+    (m) => {
+      if (m.includes("media=")) return m;
+      return m
+        .replace(
+          'rel="stylesheet"',
+          'rel="stylesheet" media="print" onload="this.media=\'all\'"'
+        );
+    }
+  );
+
+  out = out.replace(
+    /<link href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+" rel="stylesheet">/i,
+    (m) => {
+      if (m.includes("media=")) return m;
+      return m.replace(
+        'rel="stylesheet"',
+        'rel="stylesheet" media="print" onload="this.media=\'all\'"'
+      );
+    }
+  );
+
+  if (!out.includes('rel="preload"') || !out.includes("crown-logo-header.png")) {
+    if (
+      out.includes("/assets/crown-logo-header.png") &&
+      !out.includes('href="/assets/crown-logo-header.png" rel="preload"') &&
+      !out.includes('rel="preload" href="/assets/crown-logo-header.png"')
+    ) {
+      out = out.replace(
+        /(<link href="https:\/\/fonts\.gstatic\.com" rel="preconnect"[^>]*>)/i,
+        `$1\n<link rel="preload" href="/assets/crown-logo-header.png" as="image">`
+      );
+    }
+  }
+  return out;
 }
 
 /**
@@ -217,22 +236,43 @@ function applySite(folder) {
     const localeMeta = resolveLocalePageMeta(meta.domain, urlPath, seoMeta);
     const canonicalUrl = localeMeta.canonicalUrl;
     const kind = pageKind(folder, urlPath, seoMeta.lang);
+    const logical = logicalPath(urlPath, seoMeta.lang);
+    const override = pageMeta(folder, logical, localeMeta.pageLocale);
+
+    if (override?.title || override?.description) {
+      html = applyTitleDescription(
+        html,
+        override.title ?? parseTitle(html) ?? seoMeta.siteName,
+        override.description ?? parseDescription(html) ?? ""
+      );
+    }
+    if (override?.h1) {
+      html = applyH1(html, override.h1);
+    }
 
     const title = parseTitle(html) ?? seoMeta.siteName;
     const description = parseDescription(html) ?? "";
 
     const heroSrc = kind === "article" ? parseArticleHeroImage(html) : null;
-    const ogImage = heroSrc ?
-      resolveOgImageUrl(meta.domain, heroSrc)
-    : defaultOgImage;
+    const ogImage = heroSrc
+      ? resolveOgImageUrl(meta.domain, heroSrc)
+      : defaultOgImage;
     const ogImageSize =
-      ogImage === defaultOgImage ?
-        { width: 1200, height: 675 }
-      : undefined;
+      ogImage === defaultOgImage ? { width: 1200, height: 675 } : undefined;
 
     html = stripLegacyCanonical(html);
     html = setHtmlLang(html, localeMeta.pageLocale);
     html = rewriteCrownHrefs(html, localeMeta.pageLocale, meta.domain);
+    html = applyCwvHints(html);
+
+    const faqs = extractFaq(html);
+    const breadcrumbs = breadcrumbsFor(
+      meta.domain,
+      urlPath,
+      seoMeta.lang,
+      title,
+      localeMeta.pageLocale
+    );
 
     const block = buildSeoBlock({
       canonicalUrl,
@@ -252,8 +292,13 @@ function applySite(folder) {
         description,
         domain: meta.domain,
         siteName: seoMeta.siteName,
-        seoMeta: { ...seoMeta, lang: localeMeta.pageLocale },
+        pageLocale: localeMeta.pageLocale,
+        includeOrgSchema: Boolean(seoMeta.includeOrgSchema),
         ogImage: kind === "article" ? ogImage : undefined,
+        breadcrumbs,
+        faqs,
+        serviceName: kind === "service" ? title.replace(/\s*\|\s*Crown.*$/i, "").trim() : undefined,
+        serviceType: kind === "service" ? title.replace(/\s*\|\s*Crown.*$/i, "").trim() : undefined,
       }),
     });
 
@@ -261,7 +306,7 @@ function applySite(folder) {
     writeTextIfChanged(htmlPath, html);
 
     const priority =
-      urlPath === "/" ? "1.0" : kind === "article" ? "0.7" : "0.8";
+      urlPath === "/" ? "1.0" : kind === "article" ? "0.7" : kind === "service" ? "0.8" : "0.8";
     const changefreq =
       kind === "article" ? "monthly" : urlPath === "/" ? "weekly" : "monthly";
 
@@ -331,6 +376,7 @@ for (const folder of targets) {
   } catch (err) {
     failed = true;
     console.error(`[${folder}] ${err.message}`);
+    if (err.stack) console.error(err.stack);
   }
 }
 

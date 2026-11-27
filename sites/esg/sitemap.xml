@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://esg.crown.com.vn/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi"/>
@@ -11,12 +11,120 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/"/>
   </url>
   <url>
+    <loc>https://esg.crown.com.vn/services/cbam-compliance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/cbam-compliance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/cbam-compliance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/cbam-compliance"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/services/esg-strategy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/esg-strategy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/esg-strategy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/esg-strategy"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/services/ghg-inventory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/ghg-inventory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/ghg-inventory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/ghg-inventory"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/services/green-factory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/green-factory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/green-factory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/green-factory"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/services/sustainability-assurance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/sustainability-assurance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/sustainability-assurance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/sustainability-assurance"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/services/sustainability-reporting</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/sustainability-reporting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/sustainability-reporting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/sustainability-reporting"/>
+  </url>
+  <url>
     <loc>https://esg.crown.com.vn/vi</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/vi/services/cbam-compliance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/cbam-compliance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/cbam-compliance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/cbam-compliance"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/vi/services/esg-strategy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/esg-strategy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/esg-strategy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/esg-strategy"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/vi/services/ghg-inventory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/ghg-inventory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/ghg-inventory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/ghg-inventory"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/vi/services/green-factory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/green-factory"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/green-factory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/green-factory"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/vi/services/sustainability-assurance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/sustainability-assurance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/sustainability-assurance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/sustainability-assurance"/>
+  </url>
+  <url>
+    <loc>https://esg.crown.com.vn/vi/services/sustainability-reporting</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://esg.crown.com.vn/vi/services/sustainability-reporting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://esg.crown.com.vn/services/sustainability-reporting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://esg.crown.com.vn/services/sustainability-reporting"/>
   </url>
 </urlset>
