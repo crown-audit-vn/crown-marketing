@@ -196,10 +196,6 @@ function langRule(source, lang, destination) {
 export function retiredEnPrefixRedirects() {
   /** @type {VercelRedirect[]} */
   return [
-    langRule("/en", "en", "/"),
-    langRule("/en/:path*", "en", "/:path*"),
-    langRule("/en", "vi", "/vi"),
-    langRule("/en/:path*", "vi", "/vi/:path*"),
     { source: "/en", destination: "/", permanent: true },
     { source: "/en/:path*", destination: "/:path*", permanent: true },
   ];
@@ -248,14 +244,12 @@ export function redirectsForFolder(folder) {
   const rules = [];
 
   if (folder === "www") {
-    for (const hint of wwwLegacyLangHints) {
-      rules.push(langRule(hint.source, hint.lang, hint.destination));
-    }
+    // ?lang= and combined legacy+lang jumps are handled in middleware.js
+    // so Vercel does not re-append the query (which caused redirect loops).
     rules.push(...wwwLegacyRedirects);
   }
 
   rules.push(...retiredEnPrefixRedirects());
-  rules.push(...langQueryRedirects(primary));
   return rules;
 }
 
@@ -294,7 +288,10 @@ export function writeSiteVercelJson(folder) {
     trailingSlash: existing.trailingSlash ?? false,
     ignoreCommand:
       existing.ignoreCommand ?? "bash ../../scripts/should-build.sh",
-    redirects: [...generated, ...extras],
+    redirects: [...generated, ...extras].filter((r) => {
+      const hasLang = (r.has ?? []).some((h) => h.type === "query" && h.key === "lang");
+      return !hasLang;
+    }),
   };
 
   writeTextIfChanged(file, `${JSON.stringify(next, null, 2)}\n`);
