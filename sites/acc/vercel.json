@@ -12,7 +12,7 @@
           "value": "en"
         }
       ],
-      "destination": "/",
+      "destination": "/?",
       "permanent": true
     },
     {
@@ -24,7 +24,7 @@
           "value": "en"
         }
       ],
-      "destination": "/:path*",
+      "destination": "/:path*?",
       "permanent": true
     },
     {
@@ -36,7 +36,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/vi",
+      "destination": "/vi?",
       "permanent": true
     },
     {
@@ -48,7 +48,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/vi/:path*",
+      "destination": "/vi/:path*?",
       "permanent": true
     },
     {
@@ -70,7 +70,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/vi",
+      "destination": "/vi?",
       "permanent": true
     },
     {
@@ -82,7 +82,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/vi/:path*",
+      "destination": "/vi/:path*?",
       "permanent": true
     },
     {
@@ -94,7 +94,7 @@
           "value": "en"
         }
       ],
-      "destination": "/",
+      "destination": "/?",
       "permanent": true
     },
     {
@@ -106,7 +106,7 @@
           "value": "en"
         }
       ],
-      "destination": "/:path*",
+      "destination": "/:path*?",
       "permanent": true
     },
     {
@@ -118,7 +118,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/vi",
+      "destination": "/vi?",
       "permanent": true
     },
     {
@@ -130,7 +130,7 @@
           "value": "vi"
         }
       ],
-      "destination": "/vi/:path*",
+      "destination": "/vi/:path*?",
       "permanent": true
     },
     {
@@ -142,7 +142,7 @@
           "value": "en"
         }
       ],
-      "destination": "/",
+      "destination": "/?",
       "permanent": true
     },
     {
@@ -154,7 +154,7 @@
           "value": "en"
         }
       ],
-      "destination": "/:path*",
+      "destination": "/:path*?",
       "permanent": true
     }
   ]

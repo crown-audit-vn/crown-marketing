@@ -154,6 +154,38 @@ function langQuery(lang) {
   return [{ type: "query", key: "lang", value: lang }];
 }
 
+/**
+ * Vercel forwards the request query unless the destination ends with `?`.
+ * https://vercel.com/docs/project-configuration#redirects
+ *
+ * @param {string} destination
+ */
+export function destinationStripQuery(destination) {
+  if (destination.endsWith("?")) return destination;
+  const hashIdx = destination.indexOf("#");
+  if (hashIdx !== -1) {
+    const base = destination.slice(0, hashIdx);
+    const hash = destination.slice(hashIdx);
+    return `${base}?${hash}`;
+  }
+  return `${destination}?`;
+}
+
+/**
+ * @param {string} source
+ * @param {"en" | "vi"} lang
+ * @param {string} destination
+ * @returns {VercelRedirect}
+ */
+function langRule(source, lang, destination) {
+  return {
+    source,
+    has: langQuery(lang),
+    destination: destinationStripQuery(destination),
+    permanent: true,
+  };
+}
+
 
 /**
  * Leftover /en and /en/:path* after English became the unprefixed default.
@@ -164,30 +196,10 @@ function langQuery(lang) {
 export function retiredEnPrefixRedirects() {
   /** @type {VercelRedirect[]} */
   return [
-    {
-      source: "/en",
-      has: langQuery("en"),
-      destination: "/",
-      permanent: true,
-    },
-    {
-      source: "/en/:path*",
-      has: langQuery("en"),
-      destination: "/:path*",
-      permanent: true,
-    },
-    {
-      source: "/en",
-      has: langQuery("vi"),
-      destination: "/vi",
-      permanent: true,
-    },
-    {
-      source: "/en/:path*",
-      has: langQuery("vi"),
-      destination: "/vi/:path*",
-      permanent: true,
-    },
+    langRule("/en", "en", "/"),
+    langRule("/en/:path*", "en", "/:path*"),
+    langRule("/en", "vi", "/vi"),
+    langRule("/en/:path*", "vi", "/vi/:path*"),
     { source: "/en", destination: "/", permanent: true },
     { source: "/en/:path*", destination: "/:path*", permanent: true },
   ];
@@ -207,58 +219,18 @@ export function langQueryRedirects(primaryLang) {
 
   // Already on the alternate prefix.
   rules.push(
-    {
-      source: `/${alt}`,
-      has: langQuery(alt),
-      destination: `/${alt}`,
-      permanent: true,
-    },
-    {
-      source: `/${alt}/:path*`,
-      has: langQuery(alt),
-      destination: `/${alt}/:path*`,
-      permanent: true,
-    },
-    {
-      source: `/${alt}`,
-      has: langQuery(primaryLang),
-      destination: "/",
-      permanent: true,
-    },
-    {
-      source: `/${alt}/:path*`,
-      has: langQuery(primaryLang),
-      destination: "/:path*",
-      permanent: true,
-    },
+    langRule(`/${alt}`, alt, `/${alt}`),
+    langRule(`/${alt}/:path*`, alt, `/${alt}/:path*`),
+    langRule(`/${alt}`, primaryLang, "/"),
+    langRule(`/${alt}/:path*`, primaryLang, "/:path*"),
   );
 
   // Default-locale (unprefixed) paths.
   rules.push(
-    {
-      source: "/",
-      has: langQuery(alt),
-      destination: `/${alt}`,
-      permanent: true,
-    },
-    {
-      source: "/:path*",
-      has: langQuery(alt),
-      destination: `/${alt}/:path*`,
-      permanent: true,
-    },
-    {
-      source: "/",
-      has: langQuery(primaryLang),
-      destination: "/",
-      permanent: true,
-    },
-    {
-      source: "/:path*",
-      has: langQuery(primaryLang),
-      destination: "/:path*",
-      permanent: true,
-    },
+    langRule("/", alt, `/${alt}`),
+    langRule("/:path*", alt, `/${alt}/:path*`),
+    langRule("/", primaryLang, "/"),
+    langRule("/:path*", primaryLang, "/:path*"),
   );
 
   return rules;
@@ -277,12 +249,7 @@ export function redirectsForFolder(folder) {
 
   if (folder === "www") {
     for (const hint of wwwLegacyLangHints) {
-      rules.push({
-        source: hint.source,
-        has: langQuery(hint.lang),
-        destination: hint.destination,
-        permanent: true,
-      });
+      rules.push(langRule(hint.source, hint.lang, hint.destination));
     }
     rules.push(...wwwLegacyRedirects);
   }
