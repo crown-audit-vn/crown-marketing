@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://fas.crown.com.vn/sitemap.xml
+# redeploy locale SEO 2026-11-27
