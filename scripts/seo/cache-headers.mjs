@@ -8,12 +8,25 @@
  *
  * Never put redirect rules here: Vercel redirects run before Edge Middleware
  * and would break the ?lang= locale hop.
+ *
+ * More specific Cache-Control rules must come AFTER the general /assets
+ * rule, otherwise Vercel applies the last matching source and the
+ * immutable hero/font policy is overridden.
  */
 
 /** @typedef {{ source: string, headers: { key: string, value: string }[] }} VercelHeader */
 
 /** @type {VercelHeader[]} */
 export const SITE_CACHE_HEADERS = [
+  {
+    source: "/assets/:path*",
+    headers: [
+      {
+        key: "Cache-Control",
+        value: "public, max-age=86400, stale-while-revalidate=604800",
+      },
+    ],
+  },
   {
     source: "/assets/fonts/:path*",
     headers: [
@@ -24,20 +37,11 @@ export const SITE_CACHE_HEADERS = [
     ],
   },
   {
-    source: "/assets/images/hero-lcp-:name.:ext",
+    source: "/assets/images/hero-lcp-:path*",
     headers: [
       {
         key: "Cache-Control",
         value: "public, max-age=31536000, immutable",
-      },
-    ],
-  },
-  {
-    source: "/assets/:path*",
-    headers: [
-      {
-        key: "Cache-Control",
-        value: "public, max-age=86400, stale-while-revalidate=604800",
       },
     ],
   },

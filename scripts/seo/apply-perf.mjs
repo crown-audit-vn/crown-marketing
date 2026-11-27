@@ -76,6 +76,23 @@ function heroSrcset(folder, ext) {
     .join(", ");
 }
 
+/** Match CSS image-set() 1x/2x so preload and the background pick the same file. */
+function heroDensitySrcset(folder) {
+  const x1 = heroOneXWidth(folder);
+  const x2 = heroMaxWidth(folder);
+  return `/assets/images/hero-lcp-${x1}.avif 1x, /assets/images/hero-lcp-${x2}.avif 2x`;
+}
+
+/** www, cons and fas already used media=print onload in 0b1e5cb. */
+const PREEXISTING_ASYNC_CSS = new Set(["www", "cons", "fas"]);
+
+function stripPrintOnload(tag) {
+  return tag
+    .replace(/\s*media=["']print["']/i, "")
+    .replace(/\s*onload="this\.media='all'"/i, "")
+    .replace(/\s*onload='this\.media="all"'/i, "");
+}
+
 const FONT_PRELOAD_EN = [
   "/assets/fonts/inter-latin.woff2",
   "/assets/fonts/playfair-display-latin.woff2",
@@ -231,14 +248,12 @@ function stripGoogleFontLinks(html) {
     .replace(/\s*<link\b[^>]*href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+"[^>]*>/gi, "");
 }
 
-function deferNonCriticalScripts(html) {
+function restoreDeferredLeadScript(html) {
+  // defer moved consultation-leads-client.js past FCP and added TBT.
+  // Restore the 0b1e5cb blocking script; it is small first-party JS.
   return html.replace(
-    /<script\b([^>]*\bsrc=["'][^"']+["'][^>]*)>/gi,
-    (full, attrs) => {
-      if (/\b(?:defer|async)\b/i.test(attrs)) return full;
-      // Keep any type=module as-is; still add defer (module is deferred already).
-      return `<script${attrs} defer>`;
-    }
+    /<script\b([^>]*\bsrc=["'][^"']*consultation-leads-client\.js[^"']*["'][^>]*)>/gi,
+    (full, attrs) => `<script${attrs.replace(/\s*\bdefer\b/gi, "")}>`
   );
 }
 
@@ -259,19 +274,21 @@ else setTimeout(l,2000);
   });
 }
 
-function enhanceFaStylesheet(html) {
+function enhanceFaStylesheet(html, folder) {
   return html.replace(
     /(<noscript>)?<link\b([^>]*font-awesome[^>]*)>/gi,
     (full, noscript, attrs) => {
       if (noscript) return full;
-      let next = full;
-      if (!/\bmedia=/.test(attrs || "")) {
-        next = next.replace(
-          /\brel=["']stylesheet["']/,
-          'rel="stylesheet" media="print" onload="this.media=\'all\'"'
-        );
+      if (PREEXISTING_ASYNC_CSS.has(folder)) {
+        if (!/\bmedia=/.test(attrs || "")) {
+          return full.replace(
+            /\brel=["']stylesheet["']/,
+            'rel="stylesheet" media="print" onload="this.media=\'all\'"'
+          );
+        }
+        return full;
       }
-      return next;
+      return stripPrintOnload(full);
     }
   );
 }
@@ -296,38 +313,51 @@ function ensureFaNoscript(html) {
   return html.replace(first, `${first}\n${tag}`);
 }
 
-function enhanceGoogleFontStylesheet(html) {
+function enhanceGoogleFontStylesheet(html, folder) {
   return html.replace(
     /<link\b([^>]*fonts\.googleapis\.com\/css2[^>]*)>/gi,
     (full) => {
-      if (/\bmedia=/.test(full)) return full;
-      return full.replace(
-        /\brel=["']stylesheet["']/,
-        'rel="stylesheet" media="print" onload="this.media=\'all\'"'
-      );
+      if (PREEXISTING_ASYNC_CSS.has(folder)) {
+        if (/\bmedia=/.test(full)) return full;
+        return full.replace(
+          /\brel=["']stylesheet["']/,
+          'rel="stylesheet" media="print" onload="this.media=\'all\'"'
+        );
+      }
+      return stripPrintOnload(full);
     }
   );
 }
 
 function lcpPreloadTag(lcp) {
-  if (!lcp || !lcp.href) return "";
+  if (!lcp || !(lcp.densitySrcset || lcp.srcset || lcp.href)) return "";
   const typeAttr = lcp.type ? ` type="${lcp.type}"` : "";
-  const cross = /^https?:\/\//i.test(lcp.href) ? ' crossorigin="anonymous"' : "";
-  const srcset = lcp.srcset
-    ? ` imagesrcset="${lcp.srcset}" imagesizes="${lcp.sizes || "100vw"}"`
-    : "";
-  return `<link rel="preload" as="image" href="${lcp.href}" fetchpriority="high"${typeAttr}${srcset}${cross} data-crown-lcp="hero">`;
+  const href = lcp.href || "";
+  const cross = /^https?:\/\//i.test(href) ? ' crossorigin="anonymous"' : "";
+  let srcset = "";
+  let hrefAttr = "";
+  if (lcp.densitySrcset) {
+    // 1x/2x must match CSS image-set. Omit href so it cannot fetch a second candidate.
+    srcset = ` imagesrcset="${lcp.densitySrcset}"`;
+  } else if (lcp.srcset) {
+    // <picture> heroes (up): keep w-descriptors, omit href to avoid a double fetch.
+    srcset = ` imagesrcset="${lcp.srcset}" imagesizes="${lcp.sizes || "100vw"}"`;
+  } else {
+    hrefAttr = ` href="${lcp.href}"`;
+  }
+  return `<link rel="preload" as="image"${hrefAttr} fetchpriority="high"${typeAttr}${srcset}${cross} data-crown-lcp="hero">`;
 }
 
-function fontAndLcpHead(html, { lcp }) {
+function fontAndLcpHead(html, { lcp, folder }) {
   // Do not self-host UI fonts: metric differences (especially italic)
-  // change wrapping. Keep the original Google Fonts CSS, make it
-  // non-render-blocking, and preload only the LCP image.
+  // change wrapping. Keep the original Google Fonts CSS.
   html = html.replace(/\n?\[object Object\]\s*/g, "");
   html = html.replace(/\s*<link rel="preload" href="\/assets\/fonts\/[^"]+" as="font" type="font\/woff2" crossorigin>/g, "");
   html = html.replace(/\s*<style id="crown-fonts">[\s\S]*?<\/style>/g, "");
-  html = enhanceGoogleFontStylesheet(html);
-  const lcpTag = html.includes('data-crown-lcp="hero"') ? "" : lcpPreloadTag(lcp);
+  html = enhanceGoogleFontStylesheet(html, folder);
+  // Always refresh the LCP preload so a previous w-descriptor tag is replaced.
+  html = html.replace(/\s*<link rel="preload"[^>]*data-crown-lcp="hero"[^>]*>/gi, "");
+  const lcpTag = lcpPreloadTag(lcp);
   if (!lcpTag) return html;
   if (/<\/head>/i.test(html)) {
     return html.replace(/<\/head>/i, `${lcpTag}\n</head>`);
@@ -446,7 +476,14 @@ function wrapUpHeroPicture(html, folder) {
 }
 
 function detectLcpHref(html, folder, relPosix) {
-  if (isHomePage(relPosix) && (HERO_PHOTO_ID[folder] || folder === "up")) {
+  if (isHomePage(relPosix) && HERO_PHOTO_ID[folder]) {
+    return {
+      href: `/assets/images/hero-lcp-${heroMaxWidth(folder)}.avif`,
+      type: "image/avif",
+      densitySrcset: heroDensitySrcset(folder),
+    };
+  }
+  if (isHomePage(relPosix) && folder === "up") {
     const max = heroMaxWidth(folder);
     return {
       href: `/assets/images/hero-lcp-${max}.avif`,
@@ -497,14 +534,14 @@ function applyHtml(file, folder, dims, localCache, report) {
 
   html = replaceHeroBackgrounds(html, folder);
   html = wrapUpHeroPicture(html, folder);
-  html = enhanceFaStylesheet(html);
+  html = enhanceFaStylesheet(html, folder);
   html = ensureFaNoscript(html);
-  html = deferNonCriticalScripts(html);
+  html = restoreDeferredLeadScript(html);
   html = delayThirdPartyWidgets(html);
   html = patchAllImages(html, { siteDir: join(root, "sites", folder), dims, localCache, folder, relPosix });
 
   const lcp = detectLcpHref(html, folder, relPosix);
-  html = fontAndLcpHead(html, { vi: isViPage(relPosix), lcp });
+  html = fontAndLcpHead(html, { vi: isViPage(relPosix), lcp, folder });
 
   scanDanglingServices(html, `${folder}/${relPosix}`, report);
 
