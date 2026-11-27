@@ -11,60 +11,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/"/>
   </url>
   <url>
-    <loc>https://fas.crown.com.vn/services/business-valuation</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/business-valuation"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/business-valuation"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/business-valuation"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/services/financial-due-diligence</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/financial-due-diligence"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/financial-due-diligence"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/financial-due-diligence"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/services/financial-planning-funding</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/financial-planning-funding"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/financial-planning-funding"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/financial-planning-funding"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/services/financial-restructuring</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/financial-restructuring"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/financial-restructuring"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/financial-restructuring"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/services/ma-advisory</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/ma-advisory"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/ma-advisory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/ma-advisory"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/services/virtual-cfo</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/virtual-cfo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/virtual-cfo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/virtual-cfo"/>
-  </url>
-  <url>
     <loc>https://fas.crown.com.vn/vi</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -72,59 +18,5 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/vi/services/business-valuation</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/business-valuation"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/business-valuation"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/business-valuation"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/vi/services/financial-due-diligence</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/financial-due-diligence"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/financial-due-diligence"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/financial-due-diligence"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/vi/services/financial-planning-funding</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/financial-planning-funding"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/financial-planning-funding"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/financial-planning-funding"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/vi/services/financial-restructuring</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/financial-restructuring"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/financial-restructuring"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/financial-restructuring"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/vi/services/ma-advisory</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/ma-advisory"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/ma-advisory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/ma-advisory"/>
-  </url>
-  <url>
-    <loc>https://fas.crown.com.vn/vi/services/virtual-cfo</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://fas.crown.com.vn/vi/services/virtual-cfo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fas.crown.com.vn/services/virtual-cfo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fas.crown.com.vn/services/virtual-cfo"/>
   </url>
 </urlset>

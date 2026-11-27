@@ -318,7 +318,7 @@ ${services.map((u) => `- ${u}`).join("\n")}
   } else {
     const pages = locs.filter((u) => {
       const path = u.replace(`https://${domain}`, "");
-      return path === "/" || path === "/vi" || path.startsWith("/services");
+      return path === "/" || path === "/vi";
     });
     body = `# ${siteName}
 

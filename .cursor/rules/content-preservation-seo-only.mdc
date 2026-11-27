@@ -1,0 +1,39 @@
+---
+description: Không được tự ý sửa nội dung marketing của các site Crown; chỉ được chỉnh kỹ thuật SEO khi chưa có yêu cầu rõ ràng từ user.
+globs: sites/**/*,scripts/**/*,vercel.json,package.json
+alwaysApply: true
+---
+
+# Bảo toàn nội dung site — chỉ SEO kỹ thuật
+
+## Nguyên tắc (bắt buộc)
+
+- **Không được tự ý sửa, thêm, bớt, hoặc viết lại nội dung marketing/landing** trên các site (`sites/acc`, `sites/audit`, `sites/cons`, `sites/esg`, `sites/fas`, `sites/tax`, `sites/up`, `sites/www`) **khi user chưa đồng ý hoặc chưa yêu cầu rõ ràng**.
+- User sẽ yêu cầu chỉnh nội dung sau; cho đến lúc đó **mặc định giữ nguyên copy, heading, đoạn văn, danh sách dịch vụ, CTA text, hình ảnh alt/copy hiển thị** như bản gốc của khách.
+- Mọi thay đổi phải **tối thiểu phạm vi** (minimal diff) và **không gây side effect** lên UX/nội dung hiển thị.
+
+## Được phép (chỉ kỹ thuật SEO / routing)
+
+- Thẻ `<head>`: `title`, `meta description`, `canonical`, `hreflang`, Open Graph / Twitter Card **khi chỉ phục vụ SEO metadata** (không đổi nội dung body).
+- `robots.txt`, `sitemap.xml`, `llms.txt` và script sinh/kiểm tra chúng.
+- JSON-LD / structured data **kỹ thuật** (Organization, WebSite, BreadcrumbList, v.v.) — không dùng để chèn thêm copy marketing mới vào trang.
+- Edge `middleware.js`: redirect 308 `?lang=`, prefix `/en`, `www` → canonical path; **không** đổi HTML body.
+- Script locale switcher: đổi **đường dẫn** (`/vi/...`), không đổi text trên nút/menu trừ khi user yêu cầu.
+- Sửa link **kỹ thuật** (404, canonical mismatch) bằng URL đích đúng — **không** viết lại anchor text hay thêm block nội dung mới.
+- Script kiểm tra SEO (`scripts/seo/*`), test locale, deploy config — không inject HTML vào homepage/body.
+
+## Cấm (trừ khi user yêu cầu rõ ràng)
+
+- Chèn section/block mới vào body (ví dụ `svc-index`, service grid, FAQ, bài viết, “Explore each service”, v.v.).
+- Chạy hoặc mở rộng generator **tự động chèn nội dung** vào `index.html` / trang marketing (`generate-service-pages`, inject vào `.services`, v.v.) **mà không có approval**.
+- Dịch lại, rút gọn, SEO-rewrite paragraph/heading trong phần hiển thị cho người dùng.
+- Xóa hoặc thay thế nội dung khách chỉ để “tối ưu SEO” bằng copy mới.
+
+## Trước khi commit / deploy
+
+- Với file HTML trong `sites/`, so diff body: thay đổi chỉ nên nằm ở `<head>` hoặc attribute kỹ thuật; **diff body visible = cần user approve**.
+- Nếu task SEO buộc phải đụng body (hiếm), **dừng và hỏi user** trước khi sửa.
+
+## Phạm vi repo
+
+Áp dụng cho toàn bộ multi-site Crown marketing trong repo này và mọi script (`scripts/`) có thể ghi đè HTML các site trên.

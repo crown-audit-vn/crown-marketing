@@ -12,7 +12,6 @@ const steps = [
   ["node", "scripts/seo/locale-path.test.mjs"],
   ["node", "scripts/seo/locale-redirect.test.mjs"],
   ["node", "scripts/seo/write-middleware.mjs"],
-  ["node", "scripts/generate-service-pages.mjs"],
   ["node", "scripts/generate-insights.mjs"],
   ["node", "scripts/patch-locale-switcher.mjs"],
   ["node", "scripts/prerender-locale.mjs", "all"],

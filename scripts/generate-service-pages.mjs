@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 /**
  * Generate EN + VI service pages that reuse each site's header, footer and CSS.
- * Run from repo root: node scripts/generate-service-pages.mjs
+ * Disabled by default — requires explicit approval (CROWN_GENERATE_SERVICE_PAGES=1).
+ * Run from repo root: CROWN_GENERATE_SERVICE_PAGES=1 node scripts/generate-service-pages.mjs
  */
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
+
+if (process.env.CROWN_GENERATE_SERVICE_PAGES !== "1") {
+  console.log(
+    "skip: service page generation is off (set CROWN_GENERATE_SERVICE_PAGES=1 to enable)"
+  );
+  process.exit(0);
+}
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { writeTextIfChanged } from "./fs-write-if-changed.mjs";

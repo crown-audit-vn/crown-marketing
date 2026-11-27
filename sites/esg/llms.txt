@@ -4,12 +4,6 @@
 
 ## Key URLs
 - https://esg.crown.com.vn/
-- https://esg.crown.com.vn/services/cbam-compliance
-- https://esg.crown.com.vn/services/esg-strategy
-- https://esg.crown.com.vn/services/ghg-inventory
-- https://esg.crown.com.vn/services/green-factory
-- https://esg.crown.com.vn/services/sustainability-assurance
-- https://esg.crown.com.vn/services/sustainability-reporting
 - https://esg.crown.com.vn/vi
 
 ## Group

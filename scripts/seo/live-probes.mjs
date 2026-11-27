@@ -11,32 +11,11 @@ export const liveSeoProbes = [
     domain: "crown.com.vn",
     paths: ["/insights/fdi-tax-compliance", "/about"],
   },
-  {
-    domain: "audit.crown.com.vn",
-    paths: ["/services/financial-statement-audit"],
-  },
-  {
-    domain: "tax.crown.com.vn",
-    paths: ["/services/transfer-pricing"],
-  },
-  {
-    domain: "cons.crown.com.vn",
-    paths: ["/services/settlement-audit"],
-  },
-  {
-    domain: "acc.crown.com.vn",
-    paths: ["/services/management-accounting"],
-  },
-  {
-    domain: "fas.crown.com.vn",
-    paths: ["/services/financial-due-diligence"],
-  },
-  {
-    domain: "esg.crown.com.vn",
-    paths: ["/services/sustainability-reporting"],
-  },
-  {
-    domain: "up.crown.com.vn",
-    paths: ["/services/capabilities"],
-  },
+  { domain: "audit.crown.com.vn", paths: ["/vi"] },
+  { domain: "tax.crown.com.vn", paths: ["/vi"] },
+  { domain: "cons.crown.com.vn", paths: ["/vi"] },
+  { domain: "acc.crown.com.vn", paths: ["/vi"] },
+  { domain: "fas.crown.com.vn", paths: ["/vi"] },
+  { domain: "esg.crown.com.vn", paths: ["/vi"] },
+  { domain: "up.crown.com.vn", paths: ["/vi"] },
 ];

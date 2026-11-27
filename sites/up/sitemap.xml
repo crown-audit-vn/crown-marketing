@@ -11,42 +11,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/"/>
   </url>
   <url>
-    <loc>https://up.crown.com.vn/services/capabilities</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/capabilities"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/capabilities"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/capabilities"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/services/four-stages</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/four-stages"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/four-stages"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/four-stages"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/services/three-systems</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/three-systems"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/three-systems"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/three-systems"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/services/who-it-is-for</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/who-it-is-for"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/who-it-is-for"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/who-it-is-for"/>
-  </url>
-  <url>
     <loc>https://up.crown.com.vn/vi</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -54,41 +18,5 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/vi/services/capabilities</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/capabilities"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/capabilities"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/capabilities"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/vi/services/four-stages</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/four-stages"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/four-stages"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/four-stages"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/vi/services/three-systems</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/three-systems"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/three-systems"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/three-systems"/>
-  </url>
-  <url>
-    <loc>https://up.crown.com.vn/vi/services/who-it-is-for</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://up.crown.com.vn/vi/services/who-it-is-for"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://up.crown.com.vn/services/who-it-is-for"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://up.crown.com.vn/services/who-it-is-for"/>
   </url>
 </urlset>
